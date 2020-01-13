@@ -4,7 +4,7 @@
 
     <table>
       <caption>The Beatles</caption>
-      <tr v-for="invoice in invoices">
+      <tr v-for="invoice in invoices" v-bind:key="invoice.invoiceNumber">
         <td>{{ invoice.invoiceDate }}</td>
         <td>{{ invoice.amount }}</td>
         <td>{{ invoice.invoiceNumber }}</td>
