@@ -14,3 +14,9 @@ npm run serve
 cd web
 npm run serve
 ```
+
+## Run end-to-end test
+
+1. run api
+1. `cd web`
+1. `yarn test:e2e --headless`
