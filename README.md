@@ -20,3 +20,8 @@ npm run serve
 1. run api
 1. `cd web`
 1. `yarn test:e2e --headless`
+
+## Production configuration 
+
+overwrite it in `web/.env.production.local` 
+<https://cli.vuejs.org/guide/mode-and-env.html>
