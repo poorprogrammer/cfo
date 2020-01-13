@@ -7,9 +7,6 @@ services:
   e2e:
     build:
       context: ../../web
-    command: yarn serve --mode=production
-    ports:
-        - "8081:8080"
     command: yarn test:e2e --headless
     volumes:
         - '../../web/tests/e2e/screenshots:/app/tests/e2e/screenshots'
