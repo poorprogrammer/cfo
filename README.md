@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.com/poorprogrammer/cfo.svg?branch=master)](https://travis-ci.com/poorprogrammer/cfo)
-# cfo
+# CFO for Odds
 
-Chief Finance Officer
+Chief Finance Officer for Odds people
 
 ## Run api server
 
