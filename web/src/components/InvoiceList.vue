@@ -28,7 +28,7 @@ export default {
   },
   mounted() {
     axios
-      .get('http://localhost:3000/spacex/invoices')
+      .get(process.env.VUE_APP_BASE_API + '/spacex/invoices')
       .then(response => (this.invoices = response.data))
   }
 }
