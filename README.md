@@ -1,4 +1,6 @@
+[![Build Status](https://travis-ci.com/poorprogrammer/cfo.svg?branch=master)](https://travis-ci.com/poorprogrammer/cfo)
 # cfo
+
 Chief Finance Officer
 
 ## Run api server

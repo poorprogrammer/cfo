@@ -1,0 +1,5 @@
+services:
+    - docker
+
+script:
+    - docker-compose -f compose/test/docker-compose.yml run e2e
