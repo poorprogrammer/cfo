@@ -17,9 +17,9 @@ npm run serve
 
 ## Run end-to-end test
 
-1. run api
-1. `cd web`
-1. `yarn test:e2e --headless`
+```
+docker-compose -f compose/test/docker-compose.yml run e2e
+```
 
 ## Production configuration 
 
