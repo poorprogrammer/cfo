@@ -8,22 +8,22 @@ app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/spacex/invoices', (req, res) => {
     let invoices = [
         {
-            invoiceNumber: '202001001',
+            invoiceNumber: '202001-001',
             amount: 130000,
             invoiceDate: '2020-01-03'
         },
         {
-            invoiceNumber: '202001003',
+            invoiceNumber: '202001-003',
             amount: 80000,
             invoiceDate: '2020-01-07'
         },
         {
-            invoiceNumber: '202001004',
+            invoiceNumber: '202001-004',
             amount: 100000,
             invoiceDate: '2020-01-07'
         },
         {
-            invoiceNumber: '202001005',
+            invoiceNumber: '202001-005',
             amount: 150000,
             invoiceDate: '2020-01-07'
         },

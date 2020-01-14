@@ -4,6 +4,6 @@ describe('Home Page Now', () => {
   it('Visits the app root url should see homepage and proper title', () => {
     cy.visit('/')
     cy.contains('h1', 'Invoice List')
-    cy.contains('202001001')
+    cy.contains('202001-001')
   })
 })
