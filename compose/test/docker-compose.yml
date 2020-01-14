@@ -11,5 +11,6 @@ services:
     volumes:
         - '../../web/tests/e2e/screenshots:/app/tests/e2e/screenshots'
         - '../../web/tests/e2e/videos:/app/tests/e2e/videos'
+        - '../../web/.env.test:/app/.env.production.local'
     depends_on:
         - api
