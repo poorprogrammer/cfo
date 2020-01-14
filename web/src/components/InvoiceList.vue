@@ -3,7 +3,6 @@
     <h1>{{ msg }}</h1>
 
     <table>
-      <caption>The Beatles</caption>
       <tr v-for="invoice in invoices" v-bind:key="invoice.invoiceNumber">
         <td>{{ invoice.invoiceDate }}</td>
         <td>{{ invoice.amount }}</td>
