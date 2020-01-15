@@ -1,14 +1,7 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-
-    <table>
-      <tr v-for="invoice in invoices" v-bind:key="invoice.invoiceNumber">
-        <td>{{ invoice.invoiceDate }}</td>
-        <td>{{ invoice.amount }}</td>
-        <td>{{ invoice.invoiceNumber }}</td>
-      </tr>
-    </table>
+  <div>
+    <h1>{{titleMsg}}</h1>
+    <v-data-table :headers="headers" :items="invoices" :items-per-page="5"></v-data-table>
   </div>
 </template>
 
@@ -18,17 +11,22 @@ import axios from 'axios'
 export default {
   name: 'InvoiceList',
   props: {
-    msg: String
-  },
-  data() {
-    return {
-      invoices: null
-    }
+    titleMsg: String
   },
   mounted() {
     axios
       .get(process.env.VUE_APP_BASE_API + '/spacex/invoices')
       .then(response => (this.invoices = response.data))
+  },
+  data() {
+    return {
+      invoices: [],
+      headers: [
+        { text: 'Number', value: 'invoiceNumber' },
+        { text: 'Date', value: 'invoiceDate' },
+        { text: 'Amount (baht)', value: 'amount' }
+      ]
+    }
   }
 }
 </script>

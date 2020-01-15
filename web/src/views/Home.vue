@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <InvoiceList msg="Invoice List" />
+    <InvoiceList titleMsg="Invoice List" />
   </div>
 </template>
 
