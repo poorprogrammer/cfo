@@ -1,7 +1,16 @@
 <template>
   <div>
-    <h1>{{titleMsg}}</h1>
-    <v-data-table :headers="headers" :items="invoices" :items-per-page="5"></v-data-table>
+    <v-card>
+      <v-card-title>
+        {{titleMsg}}
+        <v-card-actions>
+          <v-btn fab color="green" center right absolute>
+            <v-icon>mdi-plus</v-icon>
+          </v-btn>
+        </v-card-actions>
+      </v-card-title>
+      <v-data-table :headers="headers" :items="invoices" :items-per-page="5"></v-data-table>
+    </v-card>
   </div>
 </template>
 
