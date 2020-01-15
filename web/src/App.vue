@@ -11,7 +11,7 @@
           width="130"
         />
 
-        <h1>Chief Finance Officer for Odds people</h1>
+        <h1>CFO for Odds</h1>
       </div>
 
       <v-spacer></v-spacer>
