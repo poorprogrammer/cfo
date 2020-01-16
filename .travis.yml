@@ -8,7 +8,7 @@ addons:
   sonarcloud:
     organization: "poorprogrammer"
     token:
-      secure: "travis encrypt 498b44a50aefdfc4545e1e37fd70ad82c16fab49" # encrypted value of your token
+      secure: "498b44a50aefdfc4545e1e37fd70ad82c16fab49" # encrypted value of your token
 
 script:
   # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
