@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import Presenter from '@/presenters/invoicelistpresenter'
+import Presenter from '@/presenters/InvoiceList'
 
 export default {
   name: 'InvoiceList',
