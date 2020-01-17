@@ -9,10 +9,11 @@ export default class {
         { text: 'Date', value: 'invoiceDate' },
         { text: 'Amount (baht)', value: 'amount' }
       ]
+      this.API = new API()
     }
     init () {
-        API.getInvoices()
-           .then(this.setInvoices)
+      this.API.getInvoices()
+        .then(this.setInvoices)
     }
     setInvoices = (invoices) => {
       this.invoices = invoices
