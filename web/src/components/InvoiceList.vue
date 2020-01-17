@@ -9,13 +9,13 @@
           </v-btn>
         </v-card-actions>
       </v-card-title>
-      <v-data-table :headers="headers" :items="invoices" :items-per-page="5"></v-data-table>
+      <v-data-table :headers="p.headers" :items="p.invoices" :items-per-page="5"></v-data-table>
     </v-card>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import Presenter from '@/presenters/invoicelistpresenter'
 
 export default {
   name: 'InvoiceList',
@@ -23,18 +23,11 @@ export default {
     titleMsg: String
   },
   mounted() {
-    axios
-      .get(process.env.VUE_APP_BASE_API + '/spacex/invoices')
-      .then(response => (this.invoices = response.data))
+    this.p.init()
   },
   data() {
     return {
-      invoices: [],
-      headers: [
-        { text: 'Number', value: 'invoiceNumber' },
-        { text: 'Date', value: 'invoiceDate' },
-        { text: 'Amount (baht)', value: 'amount' }
-      ]
+      p: new Presenter(this)
     }
   }
 }
