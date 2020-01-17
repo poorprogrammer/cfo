@@ -14,9 +14,3 @@ services:
         - '../../web/.env.test:/app/.env.production.local'
     depends_on:
         - api
-  unit:
-    build:
-      context: ../../web
-    command: yarn test:unit --coverage
-    volumes:
-        - '../../web/coverage/:/app/coverage/'
