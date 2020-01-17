@@ -17,4 +17,6 @@ services:
   unit:
     build:
       context: ../../web
-    command: yarn test:unit
+    command: yarn test:unit --coverage
+    volumes:
+        - '../../web/coverage/:/app/coverage/'
