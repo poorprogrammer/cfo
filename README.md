@@ -18,6 +18,12 @@ cd web
 npm run serve
 ```
 
+## Run unit test
+
+```
+docker-compose -f compose/test/docker-compose.yml run --rm unit
+```
+
 ## Run end-to-end test
 
 ```
