@@ -1,10 +1,16 @@
+language: node_js
+node_js:
+  - 9
 services:
-    - docker
+  - docker
+cache:
+  directories:
+    - node_modules
 
 script:
-    - docker-compose -f compose/test/docker-compose.yml run unit
-    - docker-compose -f compose/test/docker-compose.yml run e2e
-    - sonar-scanner
+  - ./script/unittestweb
+  - docker-compose -f compose/test/docker-compose.yml run e2e
+  - sonar-scanner
 
 addons:
   sonarcloud:
