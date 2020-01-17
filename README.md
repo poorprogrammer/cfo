@@ -21,7 +21,7 @@ npm run serve
 ## Run end-to-end test
 
 ```
-docker-compose -f compose/test/docker-compose.yml run e2e
+docker-compose -f compose/test/docker-compose.yml run --rm e2e
 ```
 
 ## Production configuration 
