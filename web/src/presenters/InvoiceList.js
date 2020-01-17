@@ -11,8 +11,10 @@ export default class {
       ]
     }
     init () {
-        let setInvoices = (invoices) => ( this.invoices = invoices  )
         API.getInvoices()
-           .then(setInvoices)
+           .then(this.setInvoices)
+    }
+    setInvoices = (invoices) => {
+      this.invoices = invoices
     }
 }
