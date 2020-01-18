@@ -9,21 +9,25 @@ app.get('/spacex/invoices', (req, res) => {
     let invoices = [
         {
             amount: 130000,
+            companySlug: 'spacex',
             invoiceDate: '2020-01-03',
             invoiceNumber: '202001-001',
         },
         {
             amount: 80000,
+            companySlug: 'spacex',
             invoiceDate: '2020-01-07',
             invoiceNumber: '202001-003',
         },
         {
             amount: 100000,
+            companySlug: 'spacex',
             invoiceDate: '2020-01-07',
             invoiceNumber: '202001-004',
         },
         {
             amount: 150000,
+            companySlug: 'spacex',
             invoiceDate: '2020-01-07',
             invoiceNumber: '202001-005',
         },
