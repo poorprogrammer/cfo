@@ -47,7 +47,7 @@ app.get('/2020/invoices', (req, res) => {
             amount: 450000,
             companySlug: 'facebook',
             invoiceDate: '2020-01-04',
-            invoiceNumber: '202001-006',
+            invoiceNumber: '202001-007',
         },
     ]
     res.json(invoices)
