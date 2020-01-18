@@ -12,10 +12,16 @@ describe('InvoiceList Presenter', () => {
       expectHeadersToBeCorrect(p.headers)
     })
 
+    it('should keep amount out of invoice list page for privacy', () => {
+      p.headers.forEach(header => {
+        expect(Object.values(header)).not.toContain('amount')
+      });
+    })
+
     let expectHeadersToBeCorrect = (headers) => {
       expect('Number').toEqual(headers[0].text)
-      expect('Date').toEqual(headers[1].text)
-      expect('Amount (baht)').toEqual(headers[2].text)
+      expect('Company').toEqual(headers[1].text)
+      expect('Date').toEqual(headers[2].text)
     }
   })
   it('should get invoices from API when init', () => {

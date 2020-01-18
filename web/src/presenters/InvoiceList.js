@@ -6,8 +6,8 @@ export default class {
       this.invoices = []
       this.headers = [
         { text: 'Number', value: 'invoiceNumber' },
+        { text: 'Company', value: 'companySlug' },
         { text: 'Date', value: 'invoiceDate' },
-        { text: 'Amount (baht)', value: 'amount' }
       ]
       this.API = new API()
     }
