@@ -4,6 +4,6 @@ describe('invoices API', () => {
   let api = new API()
   
   it('should be empty list initally or the screen would not render', () => {
-    expect(api.invoicesUrl()).toEqual('http://api:3000/invoices/2020')
+    expect(api.invoicesUrl()).toEqual('/invoices/2020')
   })
 })

@@ -1,8 +1,12 @@
 import axios from "axios";
 
 export default class {
+  constructor() { this.root = '' }
+
+  init() { this.root = process.env.VUE_APP_BASE_API }
+
   invoicesUrl() {
-    return process.env.VUE_APP_BASE_API + "/invoices/2020";
+    return  `${this.root}/invoices/2020`
   }
 
   getInvoices() {
