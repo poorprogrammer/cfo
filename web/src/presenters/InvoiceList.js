@@ -1,4 +1,5 @@
 import API from '@/services/invoices'
+import Invoice from '@/models/Invoice'
 
 export default class {
     constructor (view) {
@@ -24,15 +25,4 @@ export default class {
     }
     sortBy = () => ("invoiceNumber")
     sortDesc = () => (true)
-}
-
-class Invoice {
-  constructor(data) {
-    this.invoiceNumber = data.invoiceNumber
-    this.companySlug = data.companySlug
-    this.invoiceDate = data.invoiceDate
-  }
-  url() {
-    return `/invoice/${this.invoiceNumber}`
-  }
 }
