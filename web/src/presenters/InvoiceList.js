@@ -11,7 +11,6 @@ export default class {
       { text: 'Date', value: 'invoiceDate' },
     ]
     this.API = new API()
-    // this.API.init()
   }
   init() {
     this.API.getInvoices()
