@@ -3,8 +3,21 @@ import Presenter from '@/presenters/InvoiceList'
 describe('InvoiceList Presenter', () => {
   let p = new Presenter()
   describe('invoices', () => {
-    it('should be empty list initally or the screen would not render', () => {
-      expect([]).toEqual(p.invoices)
+    describe('when there no invoices', () => {
+      it('should be empty list initally or the screen would not render', () => {
+        expect([]).toEqual(p.invoices)
+      })
+    })
+    describe('when there is an invoice', () => {
+      beforeEach(() => {
+        let invoices = [ {invoiceNumber: '202001-001'} ]
+        p.setInvoices(invoices)
+      })
+
+      it('should go to view invoice when clicked', () => {
+        let invoice = p.invoices[0]
+        expect(invoice.url()).toEqual('/202001-001/invoice')
+      })
     })
   })
   describe('headers', () => {

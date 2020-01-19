@@ -16,6 +16,20 @@ export default class {
         .then(this.setInvoices)
     }
     setInvoices = (invoices) => {
-      this.invoices = invoices
+      this.invoices = []
+      invoices.forEach(invoice => {
+        this.invoices.push(new Invoice(invoice))
+      })
     }
+}
+
+class Invoice {
+  constructor(data) {
+    this.invoiceNumber = data.invoiceNumber
+    this.companySlug = data.companySlug
+    this.invoiceDate = data.invoiceDate
+  }
+  url() {
+    return `/${this.invoiceNumber}/invoice`
+  }
 }

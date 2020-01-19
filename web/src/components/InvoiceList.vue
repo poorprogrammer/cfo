@@ -9,7 +9,11 @@
           </v-btn>
         </v-card-actions>
       </v-card-title>
-      <v-data-table :headers="p.headers" :items="p.invoices" :items-per-page="5"></v-data-table>
+      <v-data-table :headers="p.headers" :items="p.invoices" :items-per-page="5" @click="showInvoice(invoice['.invoiceNumber'])">
+        <template v-slot:item.invoiceNumber="{ item }">
+          <router-link :to="item.url()">{{ item.invoiceNumber }}</router-link>
+        </template>
+      </v-data-table>
     </v-card>
   </div>
 </template>
