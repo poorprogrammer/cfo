@@ -3,6 +3,6 @@
 describe('Home Page Now', () => {
   it('Visits the app root url should see homepage and proper title', () => {
     cy.visit('/')
-    cy.contains('202001-001')
+    cy.contains('202001-007')
   })
 })
