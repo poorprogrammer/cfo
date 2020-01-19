@@ -42,6 +42,10 @@ describe('InvoiceList Presenter', () => {
     p.init()
     p.API.expectGetInvoicesToBeCalled()
   })
+  it('should sort by decending invoice number', () => {
+    expect(p.sortBy()).toEqual("invoiceNumber")
+    expect(p.sortDesc()).toEqual(true)
+  })
 })
 
 class StubAPI {

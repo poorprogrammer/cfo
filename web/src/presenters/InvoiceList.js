@@ -21,6 +21,8 @@ export default class {
         this.invoices.push(new Invoice(invoice))
       })
     }
+    sortBy = () => ("invoiceNumber")
+    sortDesc = () => (true)
 }
 
 class Invoice {
