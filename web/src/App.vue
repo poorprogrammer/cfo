@@ -3,7 +3,7 @@
     <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
         <v-img
-          alt="Vuetify Logo"
+          alt="Automated Chief Finance Officer"
           class="shrink mr-2"
           contain
           src="./assets/odds_logo.png"
@@ -11,7 +11,7 @@
           width="130"
         />
 
-        <h1>CFO for Odds</h1>
+        <h1>Automated Chief Finance Officer</h1>
       </div>
 
       <v-spacer></v-spacer>
