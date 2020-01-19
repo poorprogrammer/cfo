@@ -5,7 +5,7 @@ const cors = require('cors')
 
 app.use(cors())
 app.get('/', (req, res) => res.send('Hello World!'))
-app.get('/2020/invoices', (req, res) => {
+app.get('/invoices/2020', (req, res) => {
     let invoices = [
         {
             amount: 130000,
