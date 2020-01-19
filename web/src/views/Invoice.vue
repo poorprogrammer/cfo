@@ -7,10 +7,10 @@
     <template v-slot:default>
       <thead>
         <tr>
-          <th class="text-left">Item</th>
-          <th class="text-left">Price</th>
-          <th class="text-left">Amount</th>
-          <th class="text-left">Total</th>
+          <th scope="col" class="text-left">Item</th>
+          <th scope="col" class="text-left">Price</th>
+          <th scope="col" class="text-left">Amount</th>
+          <th scope="col" class="text-left">Total</th>
         </tr>
       </thead>
       <tbody>
