@@ -5,4 +5,11 @@ describe('Home Page Now', () => {
     cy.visit('/')
     cy.contains('202001-007')
   })
+
+  it('Should be able to get back to home page from whereever page by clicking at logo', () => {
+    cy.visit('/shouldNotHaveThisPage')
+    cy.contains('Page not found')
+    cy.get('#app_logo').click()
+    cy.contains('202001-007')
+  })
 })
