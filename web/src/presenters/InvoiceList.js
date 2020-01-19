@@ -32,6 +32,6 @@ class Invoice {
     this.invoiceDate = data.invoiceDate
   }
   url() {
-    return `/${this.invoiceNumber}/invoice`
+    return `/invoice/${this.invoiceNumber}`
   }
 }

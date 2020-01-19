@@ -15,7 +15,7 @@ export default new Router({
       component: Home
     },
     {
-      path: '/:invoiceNumber/invoice',
+      path: '/invoice/:invoiceNumber',
       name: 'invoice',
       component: Invoice
     },

@@ -16,7 +16,7 @@ describe('InvoiceList Presenter', () => {
 
       it('should go to view invoice when clicked', () => {
         let invoice = p.invoices[0]
-        expect(invoice.url()).toEqual('/202001-001/invoice')
+        expect(invoice.url()).toEqual('/invoice/202001-001')
       })
     })
   })
