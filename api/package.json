@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "./node_modules/.bin/nodemon app.js",
+    "serve": "./node_modules/.bin/nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "poorprogrammer",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "http": "0.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
