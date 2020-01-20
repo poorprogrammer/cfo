@@ -12,7 +12,7 @@
       <v-data-table :headers="p.headers" :items="p.invoices" :items-per-page="5"
         :sort-by="p.sortBy()" :sort-desc="p.sortDesc()">
         <template v-slot:item.invoiceNumber="{ item }">
-          <router-link :to="item.url()">{{ item.invoiceNumber }}</router-link>
+          <router-link @click.native="invoiceClicked(item)" :to="item.url()">{{ item.invoiceNumber }}</router-link>
         </template>
       </v-data-table>
     </v-card>
@@ -21,11 +21,17 @@
 
 <script>
 import Presenter from '@/presenters/InvoiceList'
+import { serverBus } from '@/main.js';
 
 export default {
   name: 'InvoiceList',
   props: {
     titleMsg: String
+  },
+  methods: {
+    invoiceClicked: (i) => {
+      serverBus.$emit('invoiceSelected', i)
+    }
   },
   mounted() {
     this.p.init()

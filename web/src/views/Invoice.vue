@@ -3,6 +3,7 @@
     <v-card>
       <v-card-title>Invoice (original)</v-card-title>
     </v-card>
+    <p>{{ p.invoice }}</p>
     <v-simple-table>
     <template v-slot:default>
       <thead>
@@ -28,13 +29,20 @@
 
 <script>
 import Presenter from '@/presenters/Invoice'
+import { serverBus } from '@/main.js';
 
 export default {
   name: 'invoice',
   data() {
     return {
       p: new Presenter(this),
+      invoice: null
     }
+  },
+  created() {
+    serverBus.$on('invoiceSelected', (i) => {
+      this.p.invoice = i
+    })
   }
 }
 </script>

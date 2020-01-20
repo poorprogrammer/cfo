@@ -3,6 +3,7 @@ import InvoiceItem from '@/models/InvoiceItem'
 export default class {
     constructor (view) {
       this.view = view
+      this.invoice = view.invoice
       this.items = [
         new InvoiceItem({
           name: 'Developer',
