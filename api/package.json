@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "./node_modules/.bin/nodemon server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/jest --watch"
   },
   "author": "poorprogrammer",
   "license": "ISC",
@@ -15,6 +15,14 @@
     "http": "0.0.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.2",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
