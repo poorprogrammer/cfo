@@ -12,6 +12,10 @@
         <template v-slot:item.invoiceNumber="{ item }">
           <router-link :to="item.url()">{{ item.invoiceNumber }}</router-link>
         </template>
+
+        <template v-slot:item.action="{ item }">
+          <v-btn text small color="primary">duplicate</v-btn>
+        </template>
       </v-data-table>
     </v-card>
   </div>

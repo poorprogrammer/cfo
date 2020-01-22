@@ -9,6 +9,7 @@ export default class {
       { text: 'Number', value: 'invoiceNumber' },
       { text: 'Company', value: 'companySlug' },
       { text: 'Date', value: 'invoiceDate' },
+      { text: 'Actions', value: 'action', sortable: false },
     ]
     this.API = new API()
   }
