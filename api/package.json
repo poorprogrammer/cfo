@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "serve": "./node_modules/.bin/nodemon server.js",
-    "test": "./node_modules/.bin/jest --watch"
+    "test": "./node_modules/.bin/jest --watch",
+    "ci": "jest --coverage"
   },
   "author": "poorprogrammer",
   "license": "ISC",

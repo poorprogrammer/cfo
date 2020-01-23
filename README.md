@@ -22,6 +22,7 @@ npm run serve
 
 ```
 ./script/unittestweb
+./script/unittestapi
 ```
 
 ## Run end-to-end test

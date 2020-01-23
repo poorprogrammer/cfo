@@ -9,6 +9,7 @@ cache:
 
 script:
   - ./script/unittestweb
+  - ./script/unittestapi
   - docker-compose -f compose/test/docker-compose.yml run e2e
   - sonar-scanner
 
