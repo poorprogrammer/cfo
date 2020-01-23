@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "./node_modules/.bin/nodemon server.js",
+    "serve": "./node_modules/.bin/nodemon src/server.js",
     "test": "./node_modules/.bin/jest --watch",
     "ci": "jest --coverage"
   },
