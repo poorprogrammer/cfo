@@ -1,8 +1,10 @@
 [![Build Status](https://travis-ci.com/poorprogrammer/cfo.svg?branch=master)](https://travis-ci.com/poorprogrammer/cfo)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=poorprogrammer_cfo&metric=coverage)](https://sonarcloud.io/dashboard?id=poorprogrammer_cfo)[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=poorprogrammer_cfo&metric=bugs)](https://sonarcloud.io/dashboard?id=poorprogrammer_cfo)
-# CFO for Odds
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=poorprogrammer_cfo&metric=code_smells)](https://sonarcloud.io/dashboard?id=poorprogrammer_cfo)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=poorprogrammer_cfo&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=poorprogrammer_cfo)
+# Automated CFO for Odds
 
-Chief Finance Officer for Odds people
+Automated Chief Finance Officer for Odds people
 
 ## Run api server
 
