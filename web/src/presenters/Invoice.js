@@ -9,6 +9,6 @@ export default class {
     }
     init(invoiceNumber) {
       this.API.getInvoice(invoiceNumber)
-        .then((invoice) => this.invoice = new Invoice(invoice))
+        .then((invoice) => this.invoice = invoice)
     }
 }

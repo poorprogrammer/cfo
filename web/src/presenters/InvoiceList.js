@@ -1,6 +1,5 @@
 import API from '@/services/invoices'
 
-
 export default class {
   constructor(view) {
     this.view = view
