@@ -1,5 +1,4 @@
 import API from '@/services/invoices'
-import Invoice from '@/models/Invoice'
 
 export default class {
   constructor(view) {
