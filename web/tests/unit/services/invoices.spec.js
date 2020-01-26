@@ -32,4 +32,17 @@ describe('invoices API', () => {
       })
     })
   })
+  describe('getInvoice', () => {
+    describe('after call', () => {
+      beforeEach(() => {
+        let response = { data: {invoiceNumber: '202001-001'} }
+        jest.spyOn(axios, 'get').mockResolvedValue(response)
+      })
+
+      it('should parse response into Invoice', async() => {
+        let invoice = await api.getInvoice('202001-001')
+        expect(invoice.url()).toEqual('/invoice/202001-001')
+      })
+    })
+  })
 })

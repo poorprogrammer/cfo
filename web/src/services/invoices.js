@@ -17,7 +17,7 @@ export default class {
 
   getInvoice(invoiceNumber) {
     return axios.get(`${this.root}/invoice/${invoiceNumber}`)
-      .then(response => response.data)
+      .then(this.parseInvoice)
   }
 
   parseInvoices = (response) => {
@@ -26,5 +26,9 @@ export default class {
       invoices.push(new Invoice(invoice))
     })
     return invoices
+  }
+
+  parseInvoice = (response) => {
+    return new Invoice(response.data)
   }
 }
