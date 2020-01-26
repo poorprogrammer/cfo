@@ -62,5 +62,19 @@ describe('Invoice', () => {
         expect(item.total()).toEqual(80 * 10)
       })
     })
+    describe('total', () => {
+      it('should follow last item', () => {
+        let total = invoice.getItems()[2]
+        expect(total.name).toEqual('Total')
+        expect(total.total()).toEqual(400800)
+      })
+    })
+    describe('tax', () => {
+      it('should follow total', () => {
+        let tax = invoice.getItems()[3]
+        expect(tax.name).toEqual('Tax')
+        expect(tax.total()).toEqual(400800 * 0.07)
+      })
+    })
   })
 })
