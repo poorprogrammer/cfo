@@ -27,25 +27,12 @@ describe('InvoiceList Presenter', () => {
     }
   })
   it('should get invoices from API when init', () => {
-    p.API = new StubAPI()
+    jest.spyOn(p.API, 'getInvoices')
     p.init()
-    p.API.expectGetInvoicesToBeCalled()
+    expect(p.API.getInvoices).toHaveBeenCalled()
   })
   it('should sort by decending invoice number', () => {
     expect(p.sortBy()).toEqual("invoiceNumber")
     expect(p.sortDesc()).toEqual(true)
   })
 })
-
-class StubAPI {
-  constructor () {
-    this.called = false
-  }
-  getInvoices () {
-    this.called = true
-    return Promise.resolve()
-  }
-  expectGetInvoicesToBeCalled() {
-    expect(true).toEqual(this.called)
-  }
-}
