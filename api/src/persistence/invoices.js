@@ -4,6 +4,13 @@ module.exports = {
         companySlug: 'spacex',
         invoiceDate: '2020-01-03',
         invoiceNumber: '202001-001',
+        items: [
+            {
+                name: 'Training',
+                price: 299,
+                amount: 50,
+            },
+        ]
     },
     '202001-002' : {
         amount: 70000,
