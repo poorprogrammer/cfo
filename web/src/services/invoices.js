@@ -13,4 +13,9 @@ export default class {
     return axios.get(this.invoicesUrl())
       .then(response => response.data);
   }
+
+  getInvoice(invoiceNumber) {
+    return axios.get(`${this.root}/invoice/${invoiceNumber}`)
+      .then(response => response.data)
+  }
 }

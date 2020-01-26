@@ -1,3 +1,5 @@
+import API from '@/services/invoices'
+import Invoice from '@/models/Invoice'
 import InvoiceItem from '@/models/InvoiceItem'
 
 export default class {
@@ -15,5 +17,11 @@ export default class {
           amount: 10,
         }),
       ]
+      this.invoice = new Invoice()
+      this.API = new API();
+    }
+    init(invoiceNumber) {
+      this.API.getInvoice(invoiceNumber)
+        .then((invoice) => this.invoice = invoice)
     }
 }

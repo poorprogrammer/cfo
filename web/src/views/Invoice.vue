@@ -3,6 +3,9 @@
     <v-card>
       <v-card-title>Invoice (original)</v-card-title>
     </v-card>
+    <p>Invoice Number: {{ p.invoice.invoiceNumber }}</p>
+    <p>Company: {{ p.invoice.companySlug }}</p>
+    <p>Invoice Date: {{ p.invoice.invoiceDate }}</p>
     <v-simple-table>
     <template v-slot:default>
       <thead>
@@ -31,6 +34,9 @@ import Presenter from '@/presenters/Invoice'
 
 export default {
   name: 'invoice',
+  mounted() {
+    this.p.init(this.$route.params.invoiceNumber)
+  },
   data() {
     return {
       p: new Presenter(this),
