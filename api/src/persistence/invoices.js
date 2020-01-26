@@ -40,5 +40,17 @@ module.exports = {
         companySlug: 'facebook',
         invoiceDate: '2020-01-04',
         invoiceNumber: '202001-007',
+        items: [
+            {
+                name: 'Developer',
+                price: 20000,
+                amount: 20,
+            },
+            {
+                name: 'Scrum master',
+                price: 80,
+                amount: 10,
+            },
+        ]
     },
 }
