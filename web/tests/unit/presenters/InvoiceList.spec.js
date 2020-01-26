@@ -8,17 +8,6 @@ describe('InvoiceList Presenter', () => {
         expect([]).toEqual(p.invoices)
       })
     })
-    describe('when there is an invoice', () => {
-      beforeEach(() => {
-        let invoices = [ {invoiceNumber: '202001-001'} ]
-        p.setInvoices(invoices)
-      })
-
-      it('should go to view invoice when clicked', () => {
-        let invoice = p.invoices[0]
-        expect(invoice.url()).toEqual('/invoice/202001-001')
-      })
-    })
   })
   describe('headers', () => {
     it('should contains correct headers', () => {

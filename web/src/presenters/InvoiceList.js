@@ -18,10 +18,7 @@ export default class {
       .then(this.setInvoices)
   }
   setInvoices = (invoices) => {
-    this.invoices = []
-    invoices.forEach(invoice => {
-      this.invoices.push(new Invoice(invoice))
-    })
+    this.invoices = invoices
   }
   sortBy = () => ("invoiceNumber")
   sortDesc = () => (true)
