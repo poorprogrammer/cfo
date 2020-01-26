@@ -7,7 +7,7 @@ describe('invoices API', () => {
     api = new API()
   })
 
-  it('should be empty list initally or the screen would not render', () => {
+  it('should have invoice url as /invoices/:year', () => {
     expect(api.invoicesUrl()).toEqual('http://api:3000/invoices/2020')
   })
 
