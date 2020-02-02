@@ -30,5 +30,5 @@ class CalculatedItem {
     this.name = name
     this.t = t
   }
-  total() { return this.t }
+  total() { return new Intl.NumberFormat('th-TH', {style: 'currency', currency: 'THB'}).format(this.t) }
 }
