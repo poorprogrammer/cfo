@@ -13,17 +13,17 @@
           <thead>
             <tr>
               <th scope="col" class="text-left">Item</th>
-              <th scope="col" class="text-left">Price</th>
-              <th scope="col" class="text-left">Amount</th>
-              <th scope="col" class="text-left">Total</th>
+              <th scope="col" class="text-right">Price</th>
+              <th scope="col" class="text-right">Amount</th>
+              <th scope="col" class="text-right">Total</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="item in p.invoice.getItems()" :key="item.name">
-              <td>{{ item.name }}</td>
-              <td>{{ item.price }}</td>
-              <td>{{ item.amount }}</td>
-              <td>{{ item.total() }}</td>
+              <td class="text-left">{{ item.name }}</td>
+              <td class="text-right">{{ item.price }}</td>
+              <td class="text-right">{{ item.amount }}</td>
+              <td class="text-right">{{ item.total() }}</td>
             </tr>
           </tbody>
         </template>
