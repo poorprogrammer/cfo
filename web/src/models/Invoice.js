@@ -15,15 +15,23 @@ export default class Invoice {
     });
   }
   url() { return `/invoice/${this.invoiceNumber}` }
-  getItems() { return [...this.items, this.total(), this.tax()] }
+  getItems() { return [...this.items, this.total(), this.tax(), this.grandTotal()] }
   total() { return new Total(this.getTotal()) }
   tax() { return new Tax(this.getTotal()) }
+  grandTotal() { return new CalculatedItem('Grand Total', this.getTotal() * 1.07)}
   getTotal() { return this.items.map(getItemTotal).reduce(sum) }
 }
 
 function getItemTotal(item) { return item.total() }
 function sum(x, y) { return x + y }
 
+class CalculatedItem {
+  constructor(name, t) {
+    this.name = name
+    this.t = t
+  }
+  total() { return this.t }
+}
 class Total {
   constructor(t) {
     this.name = 'Total'
