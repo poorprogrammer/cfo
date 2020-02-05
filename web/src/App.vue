@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
+      <div id="header" class="d-flex align-center">
         <router-link to="/">
           <v-img
             id="app_logo"

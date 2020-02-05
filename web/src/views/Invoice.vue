@@ -49,3 +49,14 @@ export default {
   }
 }
 </script>
+<style>
+@media print {
+  html, body {
+    width: 210mm;
+    height: 297mm;
+  }
+  header {
+    visibility: hidden;
+  }
+}
+</style>
