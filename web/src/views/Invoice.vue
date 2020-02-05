@@ -6,12 +6,14 @@
         <div v-if="!p.invoice.invoiceNumber">Loading Please wait...</div>
         <div v-else>
           <v-row align="stretch" justify="space-between">
-            <v-col cols="8">
+            <v-col cols="6">
               <v-card class="ma-3 pa-2">
                 <v-card-title>{{ p.invoice.getTargetCompanyName() }}</v-card-title>
-                <p>{{ p.invoice.getTargetCompanyAddress() }}</p>
-                <p><v-chip color="primary" outlined>Tax Id</v-chip> {{ p.invoice.getTargetCompanyTaxId() }}</p>
-                <p><v-chip color="primary" outlined>Tel</v-chip> {{ p.invoice.getTargetCompanyTel() }}</p>
+                <v-card-text>
+                  <div class="text--primary">{{ p.invoice.getTargetCompanyAddress() }}</div>
+                  <p><v-chip color="primary" outlined>Tax Id</v-chip> {{ p.invoice.getTargetCompanyTaxId() }}</p>
+                  <p><v-chip color="primary" outlined>Tel</v-chip> {{ p.invoice.getTargetCompanyTel() }}</p>
+                </v-card-text>
               </v-card>
             </v-col>
             <v-col cols="4">
