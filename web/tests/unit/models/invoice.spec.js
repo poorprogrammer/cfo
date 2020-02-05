@@ -8,7 +8,13 @@ describe('Invoice', () => {
   describe('parsing json data', () => {
     let json = {
       amount: 130000,
-      companySlug: 'spacex',
+      companySlug: 'facebook',
+      targetCompany: {
+        name: 'Facebook HQ',
+        address: '1601 Willow Rd Menlo Park, California',
+        taxId: '0100008000007',
+        tel: '+1 650-960-1300',
+      },
       invoiceDate: '2020-01-03',
       invoiceNumber: '202001-001',
       items: [
@@ -32,7 +38,23 @@ describe('Invoice', () => {
     })
 
     it('should have companySlug', () => {
-      expect(invoice.companySlug).toEqual('spacex')
+      expect(invoice.companySlug).toEqual('facebook')
+    })
+
+    it('should have target company name', () => {
+      expect(invoice.getTargetCompanyName()).toEqual('Facebook HQ')
+    })
+
+    it('should have target company address', () => {
+      expect(invoice.getTargetCompanyAddress()).toEqual('1601 Willow Rd Menlo Park, California')
+    })
+
+    it('should have target company tax id', () => {
+      expect(invoice.getTargetCompanyTaxId()).toEqual('0100008000007')
+    })
+
+    it('should have target company telephone number', () => {
+      expect(invoice.getTargetCompanyTel()).toEqual('+1 650-960-1300')
     })
 
     it('should have invoiceDate', () => {

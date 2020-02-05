@@ -5,17 +5,22 @@
       <v-card-text>
         <div v-if="!p.invoice.invoiceNumber">Loading Please wait...</div>
         <div v-else>
-          <v-col cols="12">
-            <v-row justify="space-between">
-              <v-card class="pa-2">
-                <p>Company: {{ p.invoice.companySlug }}</p>
+          <v-row align="stretch" justify="space-between">
+            <v-col cols="8">
+              <v-card class="ma-3 pa-2">
+                <v-card-title>{{ p.invoice.getTargetCompanyName() }}</v-card-title>
+                <p>{{ p.invoice.getTargetCompanyAddress() }}</p>
+                <p><v-chip color="primary" outlined>Tax Id</v-chip> {{ p.invoice.getTargetCompanyTaxId() }}</p>
+                <p><v-chip color="primary" outlined>Tel</v-chip> {{ p.invoice.getTargetCompanyTel() }}</p>
               </v-card>
-              <v-card class="pa-2">
-                <p>Invoice Number: {{ p.invoice.invoiceNumber }}</p>
-                <p>Invoice Date: {{ p.invoice.invoiceDate }}</p>
+            </v-col>
+            <v-col cols="4">
+              <v-card class="ma-3 pa-2">
+                <p><v-chip color="primary" outlined>Invoice Number</v-chip> {{ p.invoice.invoiceNumber }}</p>
+                <p><v-chip color="primary" outlined>Invoice Date</v-chip> {{ p.invoice.invoiceDate }}</p>
               </v-card>
-            </v-row>
-          </v-col>
+            </v-col>
+          </v-row>
           <v-simple-table>
             <template v-slot:default>
               <thead>

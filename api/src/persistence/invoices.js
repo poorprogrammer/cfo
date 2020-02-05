@@ -2,6 +2,12 @@ module.exports = {
     '202001-001' : {
         amount: 130000,
         companySlug: 'spacex',
+        targetCompany: {
+            name: 'SPACEX HEADQUARTERS',
+            address: 'Rocket Road Hawthorne, California',
+            taxId: '0100000000000',
+            tel: '310-363-6000',
+        },
         invoiceDate: '2020-01-03',
         invoiceNumber: '202001-001',
         items: [
@@ -15,36 +21,72 @@ module.exports = {
     '202001-002' : {
         amount: 70000,
         companySlug: 'google',
+        targetCompany: {
+            name: 'Googleplex',
+            address: '1600 Amphitheatre Parkway in Mountain View, California, United States',
+            taxId: '0000000000000',
+            tel: '',
+        },
         invoiceDate: '2020-01-04',
         invoiceNumber: '202001-002',
     },
     '202001-003' : {
         amount: 80000,
         companySlug: 'spacex',
+        targetCompany: {
+            name: 'SPACEX HEADQUARTERS',
+            address: 'Rocket Road Hawthorne, California',
+            taxId: '0100000000000',
+            tel: '310-363-6000',
+        },
         invoiceDate: '2020-01-07',
         invoiceNumber: '202001-003',
     },
     '202001-004' : {
         amount: 100000,
         companySlug: 'spacex',
+        targetCompany: {
+            name: 'SPACEX HEADQUARTERS',
+            address: 'Rocket Road Hawthorne, California',
+            taxId: '0100000000000',
+            tel: '310-363-6000',
+        },
         invoiceDate: '2020-01-07',
         invoiceNumber: '202001-004',
     },
     '202001-005' : {
         amount: 150000,
         companySlug: 'spacex',
+        targetCompany: {
+            name: 'SPACEX HEADQUARTERS',
+            address: 'Rocket Road Hawthorne, California',
+            taxId: '0100000000000',
+            tel: '310-363-6000',
+        },
         invoiceDate: '2020-01-07',
         invoiceNumber: '202001-005',
     },
     '202001-006' : {
         amount: 300000,
         companySlug: 'facebook',
+        targetCompany: {
+            name: 'Facebook HQ',
+            address: '1601 Willow Rd Menlo Park, California',
+            taxId: '0100008000007',
+            tel: '+1 650-960-1300',
+        },
         invoiceDate: '2020-01-04',
         invoiceNumber: '202001-006',
     },
     '202001-007' : {
         amount: 450000,
         companySlug: 'facebook',
+        targetCompany: {
+            name: 'Facebook HQ',
+            address: '1601 Willow Rd Menlo Park, California',
+            taxId: '0100008000007',
+            tel: '+1 650-960-1300',
+        },
         invoiceDate: '2020-01-04',
         invoiceNumber: '202001-007',
         items: [
