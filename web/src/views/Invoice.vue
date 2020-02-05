@@ -5,9 +5,17 @@
       <v-card-text>
         <div v-if="!p.invoice.invoiceNumber">Loading Please wait...</div>
         <div v-else>
-          <p>Invoice Number: {{ p.invoice.invoiceNumber }}</p>
-          <p>Company: {{ p.invoice.companySlug }}</p>
-          <p>Invoice Date: {{ p.invoice.invoiceDate }}</p>
+          <v-col cols="12">
+            <v-row justify="space-between">
+              <v-card class="pa-2">
+                <p>Company: {{ p.invoice.companySlug }}</p>
+              </v-card>
+              <v-card class="pa-2">
+                <p>Invoice Number: {{ p.invoice.invoiceNumber }}</p>
+                <p>Invoice Date: {{ p.invoice.invoiceDate }}</p>
+              </v-card>
+            </v-row>
+          </v-col>
           <v-simple-table>
             <template v-slot:default>
               <thead>
