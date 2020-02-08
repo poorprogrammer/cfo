@@ -3,5 +3,6 @@ export default class InvoiceItem {
     this.name = name
     this.t = t
   }
-  getTotal() { return new Intl.NumberFormat('th-TH', {style: 'currency', currency: 'THB'}).format(this.t) }
+  getTotal() { return InvoiceItem.getCurrency(this.t)}
+  static getCurrency(n) { return new Intl.NumberFormat('th-TH', {style: 'currency', currency: 'THB'}).format(n) }
 }

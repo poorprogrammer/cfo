@@ -1,3 +1,5 @@
+import InvoiceItem from '@/models/InvoiceItem'
+
 export default class PricedInvoiceItem {
   constructor(data) {
     this.name = data.name
@@ -8,6 +10,6 @@ export default class PricedInvoiceItem {
     return this.price * this.amount
   }
   getTotal() {
-    return new Intl.NumberFormat('th-TH', {style: 'currency', currency: 'THB'}).format(this.total())
+    return InvoiceItem.getCurrency(this.total())
   }
 }
