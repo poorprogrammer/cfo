@@ -73,7 +73,7 @@ describe('Invoice', () => {
       })
 
       it('should have a price', () => {
-        expect(item.price).toEqual(80)
+        expect(item.getPrice()).toEqual('THB 80.00')
       })
 
       it('should have an amount', () => {
@@ -85,10 +85,13 @@ describe('Invoice', () => {
       })
     })
     describe('total', () => {
+      let total = invoice.getItems()[2]
       it('should follow last item', () => {
-        let total = invoice.getItems()[2]
         expect(total.name).toEqual('Total')
         expect(total.getTotal()).toEqual('THB 400,800.00')
+      })
+      it('should have getPrice or the invoice items would not show on the invoice page', () => {
+        expect(total.getPrice()).toEqual('')
       })
     })
     describe('tax', () => {

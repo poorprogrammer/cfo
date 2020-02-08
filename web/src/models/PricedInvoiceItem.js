@@ -12,4 +12,7 @@ export default class PricedInvoiceItem {
   getTotal() {
     return InvoiceItem.getCurrency(this.total())
   }
+  getPrice() {
+    return InvoiceItem.getCurrency(this.price)
+  }
 }
