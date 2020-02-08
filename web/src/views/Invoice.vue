@@ -1,11 +1,9 @@
 <template>
-  <div class="invoice">
-    <v-card>
-      <v-card-title>Invoice (original)</v-card-title>
-      <v-card-text>
+  <div class="invoice pa-3">
+      <h2>Invoice (original)</h2>
         <div v-if="!p.invoice.invoiceNumber">Loading Please wait...</div>
         <div v-else>
-          <v-row dense>
+          <v-row align="stretch" dense>
             <v-col cols="6">
               <v-card class="pa-2" outlined>
                 <v-card-title class="headline">{{ p.invoice.getTargetCompanyName() }}</v-card-title>
@@ -52,8 +50,6 @@
             </template>
           </v-simple-table>
         </div>
-      </v-card-text>
-    </v-card>
   </div>
 </template>
 
@@ -81,5 +77,8 @@ export default {
   header {
     visibility: hidden;
   }
+}
+h2 {
+  font-weight: 500
 }
 </style>
