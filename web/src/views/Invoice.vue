@@ -11,22 +11,22 @@
                 <v-card-title class="headline">{{ p.invoice.getTargetCompanyName() }}</v-card-title>
                 <v-card-text>
                   <div class="text--primary">{{ p.invoice.getTargetCompanyAddress() }}</div>
-                  <p><v-row>
-                    <v-col cols="3"><v-chip color="primary" outlined>Tax Id</v-chip></v-col>
-                    <v-col cols="3">{{ p.invoice.getTargetCompanyTaxId() }}</v-col>
-                    <v-col cols="3"><v-chip color="primary" outlined>Tel</v-chip></v-col>
-                    <v-col cols="3">{{ p.invoice.getTargetCompanyTel() }}</v-col>
+                  <p><v-row dense>
+                    <v-col cols="6" sm="3"><v-chip color="primary" outlined>Tax Id</v-chip></v-col>
+                    <v-col cols="6" sm="3">{{ p.invoice.getTargetCompanyTaxId() }}</v-col>
+                    <v-col cols="6" sm="3"><v-chip color="primary" outlined>Tel</v-chip></v-col>
+                    <v-col cols="6" sm="3">{{ p.invoice.getTargetCompanyTel() }}</v-col>
                   </v-row></p>
                 </v-card-text>
               </v-card>
             </v-col>
             <v-col cols="6">
               <v-card class="pa-2" outlined>
-                <p><v-row>
-                  <v-col cols="3"><v-chip color="primary" outlined>Invoice Number</v-chip></v-col>
-                  <v-col cols="3">{{ p.invoice.invoiceNumber }}</v-col>
-                  <v-col cols="3"><v-chip color="primary" outlined>Invoice Date</v-chip></v-col>
-                  <v-col cols="3">{{ p.invoice.invoiceDate }}</v-col>
+                <p><v-row dense>
+                  <v-col cols="6" sm="3"><v-chip color="primary" outlined>Invoice Number</v-chip></v-col>
+                  <v-col cols="6" sm="3">{{ p.invoice.invoiceNumber }}</v-col>
+                  <v-col cols="6" sm="3"><v-chip color="primary" outlined>Invoice Date</v-chip></v-col>
+                  <v-col cols="6" sm="3">{{ p.invoice.invoiceDate }}</v-col>
                 </v-row></p>
               </v-card>
             </v-col>
