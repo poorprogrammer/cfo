@@ -1,4 +1,4 @@
-export default class InvoiceItem {
+export default class PricedInvoiceItem {
   constructor(data) {
     this.name = data.name
     this.price = data.price

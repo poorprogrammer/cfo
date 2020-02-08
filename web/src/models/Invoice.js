@@ -1,4 +1,4 @@
-import InvoiceItem from '@/models/InvoiceItem'
+import PricedInvoiceItem from '@/models/PricedInvoiceItem'
 
 export default class Invoice {
   constructor(data) {
@@ -12,7 +12,7 @@ export default class Invoice {
 
     if(!data.items) return
     data.items.forEach(i => {
-      this.items.push(new InvoiceItem(i))
+      this.items.push(new PricedInvoiceItem(i))
     });
   }
   url() { return `/invoice/${this.invoiceNumber}` }
