@@ -7,4 +7,7 @@ export default class InvoiceItem {
   total() {
     return this.price * this.amount
   }
+  getTotal() {
+    return new Intl.NumberFormat('th-TH', {style: 'currency', currency: 'THB'}).format(this.total())
+  }
 }

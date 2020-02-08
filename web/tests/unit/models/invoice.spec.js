@@ -81,7 +81,7 @@ describe('Invoice', () => {
       })
 
       it('should have a total', () => {
-        expect(item.total()).toEqual(80 * 10)
+        expect(item.getTotal()).toEqual('THB 800.00')
       })
     })
     describe('total', () => {
