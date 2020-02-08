@@ -4,7 +4,7 @@
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=poorprogrammer_cfo&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=poorprogrammer_cfo)
 # Automated CFO for Odds
 
-Automated Chief Finance Officer for Odds people
+Automated Chief Financial Officer for Odds people
 
 ## Run api server
 
