@@ -1,6 +1,8 @@
 <template>
   <div class="invoice pa-3">
-    <h2>Invoice (original)</h2>
+    <v-row justify="center" dense>
+      <h2>Invoice (original)</h2>
+    </v-row>
     <div v-if="!p.invoice.invoiceNumber">Loading Please wait...</div>
     <div v-else>
       <v-row align="stretch" dense>
