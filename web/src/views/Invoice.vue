@@ -11,15 +11,23 @@
                 <v-card-title>{{ p.invoice.getTargetCompanyName() }}</v-card-title>
                 <v-card-text>
                   <div class="text--primary">{{ p.invoice.getTargetCompanyAddress() }}</div>
-                  <p><v-chip color="primary" outlined>Tax Id</v-chip> {{ p.invoice.getTargetCompanyTaxId() }}</p>
-                  <p><v-chip color="primary" outlined>Tel</v-chip> {{ p.invoice.getTargetCompanyTel() }}</p>
+                  <p><v-row>
+                    <v-col cols="3"><v-chip color="primary" outlined>Tax Id</v-chip></v-col>
+                    <v-col cols="3">{{ p.invoice.getTargetCompanyTaxId() }}</v-col>
+                    <v-col cols="3"><v-chip color="primary" outlined>Tel</v-chip></v-col>
+                    <v-col cols="3">{{ p.invoice.getTargetCompanyTel() }}</v-col>
+                  </v-row></p>
                 </v-card-text>
               </v-card>
             </v-col>
-            <v-col cols="4">
+            <v-col cols="6">
               <v-card class="ma-3 pa-2">
-                <p><v-chip color="primary" outlined>Invoice Number</v-chip> {{ p.invoice.invoiceNumber }}</p>
-                <p><v-chip color="primary" outlined>Invoice Date</v-chip> {{ p.invoice.invoiceDate }}</p>
+                <p><v-row>
+                  <v-col cols="3"><v-chip color="primary" outlined>Invoice Number</v-chip></v-col>
+                  <v-col cols="3">{{ p.invoice.invoiceNumber }}</v-col>
+                  <v-col cols="3"><v-chip color="primary" outlined>Invoice Date</v-chip></v-col>
+                  <v-col cols="3">{{ p.invoice.invoiceDate }}</v-col>
+                </v-row></p>
               </v-card>
             </v-col>
           </v-row>
