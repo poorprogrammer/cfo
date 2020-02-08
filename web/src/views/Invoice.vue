@@ -51,6 +51,24 @@
           </tbody>
         </template>
       </v-simple-table>
+      <v-row id="signatures" class="pa-3" dense>
+        <v-col id="receive-signature" cols="6">
+          <v-card outlined>
+            <v-img></v-img>
+            <v-card-text>
+              Received By
+            </v-card-text>
+          </v-card>
+        </v-col>
+        <v-col id="approve-signature" cols="6">
+          <v-card outlined>
+            <v-img></v-img>
+            <v-card-text>
+              Approved By
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
     </div>
   </div>
 </template>
@@ -79,8 +97,17 @@ export default {
   header {
     visibility: hidden;
   }
+  div#signatures {
+    display: flex;
+  }
 }
 h2 {
   font-weight: 500
+}
+div.v-image {
+  height: 200px
+}
+#signatures {
+  display: none;
 }
 </style>
