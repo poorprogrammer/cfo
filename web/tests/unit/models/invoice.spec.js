@@ -81,28 +81,28 @@ describe('Invoice', () => {
       })
 
       it('should have a total', () => {
-        expect(item.getTotal()).toEqual('THB 800.00')
+        expect(item.getTotal()).toEqual('THB 800.00')
       })
     })
     describe('total', () => {
       it('should follow last item', () => {
         let total = invoice.getItems()[2]
         expect(total.name).toEqual('Total')
-        expect(total.total()).toEqual('THB 400,800.00')
+        expect(total.getTotal()).toEqual('THB 400,800.00')
       })
     })
     describe('tax', () => {
       it('should follow total', () => {
         let tax = invoice.getItems()[3]
         expect(tax.name).toEqual('Tax')
-        expect(tax.total()).toEqual('THB 28,056.00')
+        expect(tax.getTotal()).toEqual('THB 28,056.00')
       })
     })
     describe('grand total', () => {
       it('should follow tax', () => {
         let grandTotal = invoice.getItems()[4]
         expect(grandTotal.name).toEqual('Grand Total')
-        expect(grandTotal.total()).toEqual('THB 428,856.00')
+        expect(grandTotal.getTotal()).toEqual('THB 428,856.00')
       })
     })
   })

@@ -38,7 +38,7 @@
                   <td class="text-left">{{ item.name }}</td>
                   <td class="text-right">{{ item.price }}</td>
                   <td class="text-right">{{ item.amount }}</td>
-                  <td class="text-right">{{ item.total() }}</td>
+                  <td class="text-right">{{ item.getTotal() }}</td>
                 </tr>
               </tbody>
             </template>
