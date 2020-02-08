@@ -5,10 +5,10 @@
       <v-card-text>
         <div v-if="!p.invoice.invoiceNumber">Loading Please wait...</div>
         <div v-else>
-          <v-row align="stretch" justify="space-between">
+          <v-row dense>
             <v-col cols="6">
-              <v-card class="ma-3 pa-2">
-                <v-card-title>{{ p.invoice.getTargetCompanyName() }}</v-card-title>
+              <v-card class="pa-2" outlined>
+                <v-card-title class="headline">{{ p.invoice.getTargetCompanyName() }}</v-card-title>
                 <v-card-text>
                   <div class="text--primary">{{ p.invoice.getTargetCompanyAddress() }}</div>
                   <p><v-row>
@@ -21,7 +21,7 @@
               </v-card>
             </v-col>
             <v-col cols="6">
-              <v-card class="ma-3 pa-2">
+              <v-card class="pa-2" outlined>
                 <p><v-row>
                   <v-col cols="3"><v-chip color="primary" outlined>Invoice Number</v-chip></v-col>
                   <v-col cols="3">{{ p.invoice.invoiceNumber }}</v-col>
