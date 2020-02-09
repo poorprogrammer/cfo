@@ -126,6 +126,9 @@ export default {
   header {
     visibility: hidden;
   }
+  #from-company-logo {
+     -webkit-print-color-adjust: exact;
+  }
   div#signatures {
     display: flex;
   }
