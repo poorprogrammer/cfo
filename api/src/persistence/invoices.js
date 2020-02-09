@@ -1,6 +1,12 @@
 module.exports = {
     '202001-001' : {
         amount: 130000,
+        fromCompany: {
+            name: 'ODDS HQ',
+            address: '69 We are not hiring',
+            taxId: '0100000000000',
+            tel: '+66896669999',
+        },
         companySlug: 'spacex',
         targetCompany: {
             name: 'SPACEX HEADQUARTERS',
@@ -20,6 +26,12 @@ module.exports = {
     },
     '202001-002' : {
         amount: 70000,
+        fromCompany: {
+            name: 'ODDS HQ',
+            address: '69 We are not hiring',
+            taxId: '0100000000000',
+            tel: '+66896669999',
+        },
         companySlug: 'google',
         targetCompany: {
             name: 'Googleplex',
@@ -32,6 +44,12 @@ module.exports = {
     },
     '202001-003' : {
         amount: 80000,
+        fromCompany: {
+            name: 'ODDS HQ',
+            address: '69 We are not hiring',
+            taxId: '0100000000000',
+            tel: '+66896669999',
+        },
         companySlug: 'spacex',
         targetCompany: {
             name: 'SPACEX HEADQUARTERS',
@@ -44,6 +62,12 @@ module.exports = {
     },
     '202001-004' : {
         amount: 100000,
+        fromCompany: {
+            name: 'ODDS HQ',
+            address: '69 We are not hiring',
+            taxId: '0100000000000',
+            tel: '+66896669999',
+        },
         companySlug: 'spacex',
         targetCompany: {
             name: 'SPACEX HEADQUARTERS',
@@ -56,6 +80,12 @@ module.exports = {
     },
     '202001-005' : {
         amount: 150000,
+        fromCompany: {
+            name: 'ODDS HQ',
+            address: '69 We are not hiring',
+            taxId: '0100000000000',
+            tel: '+66896669999',
+        },
         companySlug: 'spacex',
         targetCompany: {
             name: 'SPACEX HEADQUARTERS',
@@ -68,6 +98,12 @@ module.exports = {
     },
     '202001-006' : {
         amount: 300000,
+        fromCompany: {
+            name: 'ODDS HQ',
+            address: '69 We are not hiring',
+            taxId: '0100000000000',
+            tel: '+66896669999',
+        },
         companySlug: 'facebook',
         targetCompany: {
             name: 'Facebook HQ',
