@@ -11,7 +11,7 @@
              <v-list-item three-line>
               <v-list-item-content>
                 <div class="overline mb-4">From Company</div>
-                <v-list-item-title class="headline mb-1">{{ p.invoice.getFromCompanyName() }}</v-list-item-title>
+                <v-list-item-title class="title mb-1">{{ p.invoice.getFromCompanyName() }}</v-list-item-title>
                 <v-list-item-subtitle>
                   <p class="text--primary">{{ p.invoice.getFromCompanyAddress() }}</p>
                   <p><v-row dense>
@@ -34,7 +34,7 @@
         <v-col cols="6">
           <v-card class="pa-2" outlined>
             <div class="overline mb-4">To Company</div>
-            <v-card-title class="headline">{{ p.invoice.getTargetCompanyName() }}</v-card-title>
+            <v-card-title class="title">{{ p.invoice.getTargetCompanyName() }}</v-card-title>
             <v-card-text>
               <p class="text--primary">{{ p.invoice.getTargetCompanyAddress() }}</p>
               <p><v-row dense>
