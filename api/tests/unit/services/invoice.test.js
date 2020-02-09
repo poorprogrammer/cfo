@@ -18,4 +18,16 @@ describe('invoice', () => {
     it('should have target company telephone number', () => {
         expect(inv.targetCompany.tel).toBe('+1 650-960-1300')
     })
+    it('should have from company name', () => {
+        expect(inv.fromCompany.name).toBe('ODDS HQ')
+    })
+    it('should have from company address', () => {
+        expect(inv.fromCompany.address).toBe('69 We are not hiring')
+    })
+    it('should have from company tax id', () => {
+        expect(inv.fromCompany.taxId).toBe('0100000000000')
+    })
+    it('should have from company telephone number', () => {
+        expect(inv.fromCompany.tel).toBe('+66896669999')
+    })
 })

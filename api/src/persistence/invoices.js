@@ -80,6 +80,12 @@ module.exports = {
     },
     '202001-007' : {
         amount: 450000,
+        fromCompany: {
+            name: 'ODDS HQ',
+            address: '69 We are not hiring',
+            taxId: '0100000000000',
+            tel: '+66896669999',
+        },
         companySlug: 'facebook',
         targetCompany: {
             name: 'Facebook HQ',
