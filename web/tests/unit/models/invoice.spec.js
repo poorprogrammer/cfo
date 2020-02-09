@@ -9,6 +9,12 @@ describe('Invoice', () => {
     let json = {
       amount: 130000,
       companySlug: 'facebook',
+      fromCompany: {
+        name: 'ODDS HQ',
+        address: '69 We are not hiring',
+        taxId: '0100000000000',
+        tel: '+66896669999',
+      },
       targetCompany: {
         name: 'Facebook HQ',
         address: '1601 Willow Rd Menlo Park, California',
@@ -39,6 +45,22 @@ describe('Invoice', () => {
 
     it('should have companySlug', () => {
       expect(invoice.companySlug).toEqual('facebook')
+    })
+
+    it('should have from company name', () => {
+      expect(invoice.getFromCompanyName()).toEqual('ODDS HQ')
+    })
+
+    it('should have from company address', () => {
+      expect(invoice.getFromCompanyAddress()).toEqual('69 We are not hiring')
+    })
+
+    it('should have from company tax id', () => {
+      expect(invoice.getFromCompanyTaxId()).toEqual('0100000000000')
+    })
+
+    it('should have from company telephone number', () => {
+      expect(invoice.getFromCompanyTel()).toEqual('+66896669999')
     })
 
     it('should have target company name', () => {

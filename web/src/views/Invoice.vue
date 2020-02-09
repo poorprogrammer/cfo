@@ -1,13 +1,40 @@
 <template>
   <div class="invoice pa-3">
-    <v-row justify="center" dense>
-      <h2>Invoice (original)</h2>
-    </v-row>
     <div v-if="!p.invoice.invoiceNumber">Loading Please wait...</div>
     <div v-else>
+      <v-row justify="center" dense>
+        <h2>Invoice (original)</h2>
+      </v-row>
+      <v-row align="stretch" dense>
+        <v-col cols="12">
+          <v-card class="pa-2" outlined>
+             <v-list-item three-line>
+              <v-list-item-content>
+                <div class="overline mb-4">From Company</div>
+                <v-list-item-title class="headline mb-1">{{ p.invoice.getFromCompanyName() }}</v-list-item-title>
+                <v-list-item-subtitle class="text--primary">
+                  {{ p.invoice.getFromCompanyAddress() }}
+
+                  <p><v-row dense>
+                    <v-col cols="3" sm="2"><v-chip color="primary" outlined>Tax Id</v-chip></v-col>
+                    <v-col cols="3" sm="2">{{ p.invoice.getFromCompanyTaxId() }}</v-col>
+                    <v-col cols="3" sm="2"><v-chip color="primary" outlined>Tel</v-chip></v-col>
+                    <v-col cols="3" sm="2">{{ p.invoice.getFromCompanyTel() }}</v-col>
+                  </v-row></p>
+                </v-list-item-subtitle>
+              </v-list-item-content>
+
+              <v-list-item-avatar tile size="150">
+                <v-img id="from-company-logo" contain src="@/assets/odds_logo.png"/>
+              </v-list-item-avatar>
+             </v-list-item>
+          </v-card>
+        </v-col>
+      </v-row>
       <v-row align="stretch" dense>
         <v-col cols="6">
           <v-card class="pa-2" outlined>
+            <div class="overline mb-4">To Company</div>
             <v-card-title class="headline">{{ p.invoice.getTargetCompanyName() }}</v-card-title>
             <v-card-text>
               <div class="text--primary">{{ p.invoice.getTargetCompanyAddress() }}</div>

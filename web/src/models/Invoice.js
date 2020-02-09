@@ -9,6 +9,7 @@ export default class Invoice {
     this.companySlug = data.companySlug
     this.invoiceDate = data.invoiceDate
     this.items = []
+    this.fromCompany = data.fromCompany
     this.targetCompany = data.targetCompany
 
     if(!data.items) return
@@ -22,6 +23,10 @@ export default class Invoice {
   tax() { return new InvoiceItem('Tax', this.getTotal() * 0.07) }
   grandTotal() { return new InvoiceItem('Grand Total', this.getTotal() * 1.07)}
   getTotal() { return this.items.map(getItemTotal).reduce(sum) }
+  getFromCompanyName() { return this.fromCompany.name }
+  getFromCompanyAddress() { return this.fromCompany.address }
+  getFromCompanyTaxId() { return this.fromCompany.taxId }
+  getFromCompanyTel() { return this.fromCompany.tel }
   getTargetCompanyName() { return this.targetCompany.name }
   getTargetCompanyAddress() { return this.targetCompany.address }
   getTargetCompanyTaxId() { return this.targetCompany.taxId }
