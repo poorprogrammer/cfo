@@ -11,6 +11,7 @@
             src="./assets/odds_logo.png"
             transition="scale-transition"
             width="130"
+            height="80"
           />
         </router-link>
         <h1>Automated Chief Financial Officer</h1>
