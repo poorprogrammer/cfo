@@ -20,7 +20,7 @@ export default class Invoice {
   url() { return `/invoice/${this.invoiceNumber}` }
   getItems() { return [...this.items, this.total(), this.tax(), this.grandTotal()] }
   total() { return new InvoiceItem('Total', this.getTotal()) }
-  tax() { return new InvoiceItem('Tax', this.getTotal() * 0.07) }
+  tax() { return new InvoiceItem('VAT 7%', this.getTotal() * 0.07) }
   grandTotal() { return new InvoiceItem('Grand Total', this.getTotal() * 1.07)}
   getTotal() { return this.items.map(getItemTotal).reduce(sum) }
   getFromCompanyName() { return this.fromCompany.name }

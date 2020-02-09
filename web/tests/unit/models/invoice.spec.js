@@ -116,15 +116,15 @@ describe('Invoice', () => {
         expect(total.getPrice()).toEqual('')
       })
     })
-    describe('tax', () => {
+    describe('vat', () => {
       it('should follow total', () => {
-        let tax = invoice.getItems()[3]
-        expect(tax.name).toEqual('Tax')
-        expect(tax.getTotal()).toEqual('THB 28,056.00')
+        let vat = invoice.getItems()[3]
+        expect(vat.name).toEqual('VAT 7%')
+        expect(vat.getTotal()).toEqual('THB 28,056.00')
       })
     })
     describe('grand total', () => {
-      it('should follow tax', () => {
+      it('should follow vat', () => {
         let grandTotal = invoice.getItems()[4]
         expect(grandTotal.name).toEqual('Grand Total')
         expect(grandTotal.getTotal()).toEqual('THB 428,856.00')
