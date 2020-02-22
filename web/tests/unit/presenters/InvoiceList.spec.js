@@ -23,7 +23,8 @@ describe('InvoiceList Presenter', () => {
     let expectHeadersToBeCorrect = (headers) => {
       expect('Number').toEqual(headers[0].text)
       expect('Company').toEqual(headers[1].text)
-      expect('Date').toEqual(headers[2].text)
+      expect('Project').toEqual(headers[2].text)
+      expect('Date').toEqual(headers[3].text)
     }
   })
   it('should get invoices from API when init', () => {

@@ -11,6 +11,7 @@ export default class Invoice {
     this.items = []
     this.fromCompany = data.fromCompany
     this.targetCompany = data.targetCompany
+    this.projectName = data.projectName
 
     if(!data.items) return
     data.items.forEach(i => {
@@ -31,6 +32,7 @@ export default class Invoice {
   getTargetCompanyAddress() { return this.targetCompany.address }
   getTargetCompanyTaxId() { return this.targetCompany.taxId }
   getTargetCompanyTel() { return this.targetCompany.tel }
+  getProjectName() { return this.projectName }
 }
 
 function getItemTotal(item) { return item.total() }

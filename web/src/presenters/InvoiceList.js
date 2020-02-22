@@ -6,7 +6,8 @@ export default class {
     this.invoices = []
     this.headers = [
       { text: 'Number', value: 'invoiceNumber' },
-      { text: 'Company', value: 'companySlug' },
+      { text: 'Company', value: 'targetCompany.name' },
+      { text: 'Project', value: 'projectName' },
       { text: 'Date', value: 'invoiceDate' },
       { text: 'Actions', value: 'action', sortable: false },
     ]

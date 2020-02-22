@@ -8,7 +8,7 @@ describe('Invoice', () => {
   describe('parsing json data', () => {
     let json = {
       amount: 130000,
-      companySlug: 'facebook',
+      projectName: 'React',
       fromCompany: {
         name: 'ODDS HQ',
         address: '69 We are not hiring',
@@ -43,10 +43,6 @@ describe('Invoice', () => {
       expect(invoice.invoiceNumber).toEqual('202001-001')
     })
 
-    it('should have companySlug', () => {
-      expect(invoice.companySlug).toEqual('facebook')
-    })
-
     it('should have from company name', () => {
       expect(invoice.getFromCompanyName()).toEqual('ODDS HQ')
     })
@@ -61,6 +57,10 @@ describe('Invoice', () => {
 
     it('should have from company telephone number', () => {
       expect(invoice.getFromCompanyTel()).toEqual('+66896669999')
+    })
+
+    it('should have target company name field for invoice list to use', () => {
+      expect(invoice.targetCompany.name).toEqual('Facebook HQ')
     })
 
     it('should have target company name', () => {
@@ -81,6 +81,10 @@ describe('Invoice', () => {
 
     it('should have invoiceDate', () => {
       expect(invoice.invoiceDate).toEqual('2020-01-03')
+    })
+
+    it('should have project name field which used in invoice list page', () => {
+      expect(invoice.projectName).toEqual('React')
     })
 
     it('should have items as Array', () => {
