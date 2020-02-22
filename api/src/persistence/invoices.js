@@ -7,7 +7,7 @@ module.exports = {
             taxId: '0100000000000',
             tel: '+66896669999',
         },
-        companySlug: 'spacex',
+        projectName: 'Dragon',
         targetCompany: {
             name: 'SPACEX HEADQUARTERS',
             address: 'Rocket Road Hawthorne, California',
@@ -32,7 +32,7 @@ module.exports = {
             taxId: '0100000000000',
             tel: '+66896669999',
         },
-        companySlug: 'google',
+        projectName: 'Google Map',
         targetCompany: {
             name: 'Googleplex',
             address: '1600 Amphitheatre Parkway in Mountain View, California, United States',
@@ -50,7 +50,7 @@ module.exports = {
             taxId: '0100000000000',
             tel: '+66896669999',
         },
-        companySlug: 'spacex',
+        projectName: 'Dragon II',
         targetCompany: {
             name: 'SPACEX HEADQUARTERS',
             address: 'Rocket Road Hawthorne, California',
@@ -68,7 +68,7 @@ module.exports = {
             taxId: '0100000000000',
             tel: '+66896669999',
         },
-        companySlug: 'spacex',
+        projectName: 'Mars transportation',
         targetCompany: {
             name: 'SPACEX HEADQUARTERS',
             address: 'Rocket Road Hawthorne, California',
@@ -86,7 +86,7 @@ module.exports = {
             taxId: '0100000000000',
             tel: '+66896669999',
         },
-        companySlug: 'spacex',
+        projectName: 'Falcon',
         targetCompany: {
             name: 'SPACEX HEADQUARTERS',
             address: 'Rocket Road Hawthorne, California',
@@ -104,7 +104,7 @@ module.exports = {
             taxId: '0100000000000',
             tel: '+66896669999',
         },
-        companySlug: 'facebook',
+        projectName: 'GraphQL',
         targetCompany: {
             name: 'Facebook HQ',
             address: '1601 Willow Rd Menlo Park, California',
@@ -122,7 +122,7 @@ module.exports = {
             taxId: '0100000000000',
             tel: '+66896669999',
         },
-        companySlug: 'facebook',
+        projectName: 'React',
         targetCompany: {
             name: 'Facebook HQ',
             address: '1601 Willow Rd Menlo Park, California',

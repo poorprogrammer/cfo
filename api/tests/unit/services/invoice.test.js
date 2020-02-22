@@ -30,4 +30,7 @@ describe('invoice', () => {
     it('should have from company telephone number', () => {
         expect(inv.fromCompany.tel).toBe('+66896669999')
     })
+    it('should have project name', () => {
+        expect(inv.projectName).toBe('React')
+    })
 })
