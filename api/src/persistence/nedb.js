@@ -1,11 +1,20 @@
-const Datastore = require('nedb')
-
+const Datastore = require("nedb")
 
 module.exports = class Database {
-    constructor() {
-        db = new Datastore({ filename: '/tmp/cfo/invoices', autoload: true })
-    }
-    insert(data) {
-        db.insert(data)
-    }
+  constructor() {
+    this.db = new Datastore({ filename: "/tmp/cfo/invoices", autoload: true })
+  }
+
+  insert(data) {
+    this.db.insert(data)
+  }
+
+  find(query) {
+    return new Promise((resolve, reject) => {
+      this.db.find(query, (e, docs) => {
+        if (e != null) reject(e)
+        resolve(docs)
+      })
+    })
+  }
 }

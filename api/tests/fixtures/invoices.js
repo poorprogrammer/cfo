@@ -135,4 +135,4 @@ let invoices = [
     }
 ]
 
-Database.insert(invoices)
+new Database().insert(invoices)

@@ -7,7 +7,9 @@ const invoice = require('./services/invoice')
 app.use(cors())
 app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/invoices/2020', (req, res) => {
-    res.json(invoices())
+    invoices().then((results) => {
+        res.json(results)
+    })
 })
 app.get('/invoice/:invoiceNumber', function (req, res) {
     res.json(invoice(req.params.invoiceNumber))
