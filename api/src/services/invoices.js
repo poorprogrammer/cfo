@@ -1,5 +1,5 @@
-const Database = require("../persistence/nedb")
+const Invoices = require('../persistence/invoices')
 
 module.exports = function invoices() {
-    return new Database().find({invoiceDate: /2020/})
+    return Object.values(Invoices)
 }

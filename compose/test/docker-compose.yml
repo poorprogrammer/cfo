@@ -4,12 +4,6 @@ services:
   api:
     build:
       context: ../../api
-  fixture:
-    build:
-      context: ../../api
-    command: node tests/fixtures/invoices.js
-    depends_on:
-        - api
   e2e:
     build:
       context: ../../web
@@ -19,4 +13,4 @@ services:
         - '../../web/tests/e2e/videos:/app/tests/e2e/videos'
         - '../../web/.env.test:/app/.env.production.local'
     depends_on:
-        - fixture
+        - api
