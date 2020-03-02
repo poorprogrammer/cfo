@@ -12,18 +12,12 @@ variables:
   tag: '$(Build.BuildId)'
 
 stages:
+- stage: UnitTest
+  displayName: Run unit test
+  jobs:
+    - job: jest
+      steps:
+        - script: ./script/unittestweb
+
 - stage: Build
   displayName: Build image
-  jobs:  
-  - job: Build
-    displayName: Build
-    pool:
-      vmImage: 'ubuntu-latest'
-    steps:
-    - task: Docker@2
-      displayName: Build an image
-      inputs:
-        command: build
-        dockerfile: '$(Build.SourcesDirectory)/api/Dockerfile'
-        tags: |
-          $(tag)
