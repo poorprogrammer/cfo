@@ -2,11 +2,13 @@ const Invoices = require('../persistence/invoices')
 
 module.exports = class Invoice {
     get(invoiceNumber) {
-        return new Promise((resolve, _) => {
+        return new Promise((resolve) => {
             resolve(Invoices[invoiceNumber])
         })
     }
     all() {
-        return Object.values(Invoices)
+        return new Promise((resolve) => {
+            resolve(Object.values(Invoices))
+        })
     }
 }
