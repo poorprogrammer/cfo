@@ -1,0 +1,5 @@
+#!/bin/sh
+cd $(dirname "$0")
+cd ..
+node tests/fixtures/loadInvoices.js
+node src/server.js
