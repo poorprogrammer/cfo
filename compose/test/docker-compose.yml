@@ -4,6 +4,7 @@ services:
   api:
     build:
       context: ../../api
+    command: /app/scripts/start_api_with_test_fixture
   e2e:
     build:
       context: ../../web
