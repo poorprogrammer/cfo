@@ -1,4 +1,4 @@
-const Invoices = require('../../../src/persistence/invoices')
+const Invoices = require('./invoices')
 
 module.exports = class MockDatabase {
     find() {
