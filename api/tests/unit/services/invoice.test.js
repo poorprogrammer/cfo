@@ -1,9 +1,13 @@
 const Invoice = require('../../../src/services/invoice')
+const MockDatabase = require('./MockDatabase')
 
 describe('invoice', () => {
     var inv
-    new Invoice().get('202001-007').then((invoice) => {
-        inv = invoice
+    beforeEach(() => {
+        let service = new Invoice(new MockDatabase())
+        service.get('202001-007').then((invoice) => {
+            inv = invoice
+        })
     })
     it('should have invoiceNumber', () => {
         expect(inv.invoiceNumber).toBe('202001-007')

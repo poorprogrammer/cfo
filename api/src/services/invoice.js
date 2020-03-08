@@ -1,14 +1,15 @@
-const Invoices = require('../persistence/invoices')
+const Database = require("../persistence/nedb")
 
 module.exports = class Invoice {
-    get(invoiceNumber) {
-        return new Promise((resolve) => {
-            resolve(Invoices[invoiceNumber])
-        })
+    constructor(db) {
+        this.db = db || new Database()
     }
+
+    get(invoiceNumber) {
+        return this.db.findOne({invoiceNumber: invoiceNumber})
+    }
+
     all() {
-        return new Promise((resolve) => {
-            resolve(Object.values(Invoices))
-        })
+        return this.db.find({invoiceDate: /2020/})
     }
 }
