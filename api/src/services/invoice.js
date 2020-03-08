@@ -1,7 +1,5 @@
 const Invoices = require('../persistence/invoices')
 
-module.exports = class Invoice {
-    get(invoiceNumber) {
-        return Invoices[invoiceNumber]
-    }
+module.exports = function invoice(invoiceNumber) {
+    return Invoices[invoiceNumber]
 }

@@ -1,7 +1,7 @@
-const Invoice = require('../../../src/services/invoice')
+const invoice = require('../../../src/services/invoice')
 
 describe('invoice', () => {
-    var inv = new Invoice().get('202001-007')
+    var inv = invoice('202001-007')
     it('should have invoiceNumber', () => {
         expect(inv.invoiceNumber).toBe('202001-007')
     })
