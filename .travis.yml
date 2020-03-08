@@ -16,4 +16,5 @@ script:
 addons:
   sonarcloud:
     organization: "poorprogrammer"
-    token: "9aaba7ff14be8ecf928c7b57e73271907f2f3310" # encrypted value of your token
+    token:
+      secure: "9aaba7ff14be8ecf928c7b57e73271907f2f3310" # encrypted value of your token
