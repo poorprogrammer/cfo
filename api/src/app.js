@@ -9,7 +9,9 @@ app.get('/invoices/2020', (_, res) => {
     res.json(new Invoice().all())
 })
 app.get('/invoice/:invoiceNumber', function (req, res) {
-    res.json(new Invoice().get(req.params.invoiceNumber))
+    new Invoice().get(req.params.invoiceNumber).then((inv)=>{
+        res.json(inv)
+    })
 })
 
 module.exports = app
