@@ -1,4 +1,4 @@
-const Invoices = require('./invoices')
+const Invoices = require('../../fixtures/invoicesData')
 
 module.exports = class MockDatabase {
     find() {
