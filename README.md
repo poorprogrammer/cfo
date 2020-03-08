@@ -13,6 +13,13 @@ cd api
 npm run serve
 ```
 
+### Load initial fixtures
+
+```
+cd api
+node tests/fixtures/loadInvoices.js
+```
+
 ## Run web server
 
 ```
