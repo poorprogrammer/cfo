@@ -1,7 +1,7 @@
-const Invoice = require('../../../src/services/invoice')
+const invoices = require('../../../src/services/invoices')
 
 describe('invoices', () => {
     it('should return a hardcoded array', () => {
-        expect(new Invoice().all().length).toBe(7)
+        expect(invoices().length).toBe(7)
     })
 })
