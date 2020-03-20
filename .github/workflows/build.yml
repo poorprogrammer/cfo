@@ -13,14 +13,19 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js 12.x
+    
+    - name: Use Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: 12.x
-    - run: cd web
-    - run: npm test
+        node-version: '12.x'
+    
+    - name: Install dependencies
+      run: cd web && yarn --frozen-lockfile
+  
+    - name: Test
+    - run: ce web && yarn test
       env:
         NODE_ENV: test
