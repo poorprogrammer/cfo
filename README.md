@@ -9,6 +9,19 @@
 
 Automated Chief Financial Officer for Odds people
 
+## Run unit test
+
+```
+./script/unittestweb
+./script/unittestapi
+```
+
+## Run end-to-end test
+
+```
+docker-compose -f compose/test/docker-compose.yml run --rm e2e
+```
+
 ## Run api server
 
 ```
@@ -30,18 +43,7 @@ cd web
 npm run serve
 ```
 
-## Run unit test
 
-```
-./script/unittestweb
-./script/unittestapi
-```
-
-## Run end-to-end test
-
-```
-docker-compose -f compose/test/docker-compose.yml run --rm e2e
-```
 
 ## Production configuration 
 
