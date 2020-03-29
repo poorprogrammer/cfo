@@ -8,25 +8,31 @@
       <v-row align="stretch" dense>
         <v-col cols="12">
           <v-card class="pa-2" outlined>
-             <v-list-item three-line>
+            <v-list-item three-line>
               <v-list-item-content>
                 <div class="overline mb-4">From Company</div>
                 <v-list-item-title class="title mb-1">{{ p.invoice.getFromCompanyName() }}</v-list-item-title>
                 <v-list-item-subtitle class="text--primary">
                   <p class="text--primary">{{ p.invoice.getFromCompanyAddress() }}</p>
-                  <p><v-row dense>
-                    <v-col cols="3" sm="2"><span class="font-weight-bold">Tax Id</span></v-col>
-                    <v-col cols="3" sm="2">{{ p.invoice.getFromCompanyTaxId() }}</v-col>
-                    <v-col cols="3" sm="2"><span class="font-weight-bold">Tel</span></v-col>
-                    <v-col cols="3" sm="2">{{ p.invoice.getFromCompanyTel() }}</v-col>
-                  </v-row></p>
+                  <p>
+                    <v-row dense>
+                      <v-col cols="3" sm="2">
+                        <span class="font-weight-bold">Tax Id</span>
+                      </v-col>
+                      <v-col cols="3" sm="2">{{ p.invoice.getFromCompanyTaxId() }}</v-col>
+                      <v-col cols="3" sm="2">
+                        <span class="font-weight-bold">Tel</span>
+                      </v-col>
+                      <v-col cols="3" sm="2">{{ p.invoice.getFromCompanyTel() }}</v-col>
+                    </v-row>
+                  </p>
                 </v-list-item-subtitle>
               </v-list-item-content>
 
               <v-list-item-avatar tile size="130">
-                <v-img id="from-company-logo" contain src="@/assets/odds_logo.png"/>
+                <v-img id="from-company-logo" contain src="@/assets/odds_logo.png" />
               </v-list-item-avatar>
-             </v-list-item>
+            </v-list-item>
           </v-card>
         </v-col>
       </v-row>
@@ -37,23 +43,35 @@
             <v-card-title class="title">{{ p.invoice.getTargetCompanyName() }}</v-card-title>
             <v-card-text>
               <p class="text--primary">{{ p.invoice.getTargetCompanyAddress() }}</p>
-              <p class="text--primary"><v-row dense>
-                <v-col cols="6" sm="3"><span class="font-weight-bold">Tax Id</span></v-col>
-                <v-col cols="6" sm="3">{{ p.invoice.getTargetCompanyTaxId() }}</v-col>
-                <v-col cols="6" sm="3"><span class="font-weight-bold">Tel</span></v-col>
-                <v-col cols="6" sm="3">{{ p.invoice.getTargetCompanyTel() }}</v-col>
-              </v-row></p>
+              <p class="text--primary">
+                <v-row dense>
+                  <v-col cols="6" sm="3">
+                    <span class="font-weight-bold">Tax Id</span>
+                  </v-col>
+                  <v-col cols="6" sm="3">{{ p.invoice.getTargetCompanyTaxId() }}</v-col>
+                  <v-col cols="6" sm="3">
+                    <span class="font-weight-bold">Tel</span>
+                  </v-col>
+                  <v-col cols="6" sm="3">{{ p.invoice.getTargetCompanyTel() }}</v-col>
+                </v-row>
+              </p>
             </v-card-text>
           </v-card>
         </v-col>
         <v-col cols="6">
           <v-card class="pa-2" outlined>
-            <p class="body-2"><v-row dense>
-              <v-col cols="6" sm="3"><span class="font-weight-bold">Invoice Number</span></v-col>
-              <v-col cols="6" sm="3">{{ p.invoice.invoiceNumber }}</v-col>
-              <v-col cols="6" sm="3"><span class="font-weight-bold">Invoice Date</span></v-col>
-              <v-col cols="6" sm="3">{{ p.invoice.invoiceDate }}</v-col>
-            </v-row></p>
+            <p class="body-2">
+              <v-row dense>
+                <v-col cols="6" sm="3">
+                  <span class="font-weight-bold">Invoice Number</span>
+                </v-col>
+                <v-col cols="6" sm="3">{{ p.invoice.invoiceNumber }}</v-col>
+                <v-col cols="6" sm="3">
+                  <span class="font-weight-bold">Invoice Date</span>
+                </v-col>
+                <v-col cols="6" sm="3">{{ p.invoice.invoiceDate }}</v-col>
+              </v-row>
+            </p>
           </v-card>
         </v-col>
       </v-row>
@@ -82,21 +100,22 @@
           <v-card outlined>
             <v-img></v-img>
             <v-divider></v-divider>
-            <v-card-text>
-              Received By
-            </v-card-text>
+            <v-card-text>Received By</v-card-text>
           </v-card>
         </v-col>
         <v-col id="approve-signature" cols="6">
           <v-card outlined>
             <v-img></v-img>
             <v-divider></v-divider>
-            <v-card-text>
-              Approved By
-            </v-card-text>
+            <v-card-text>Approved By</v-card-text>
           </v-card>
         </v-col>
       </v-row>
+    </div>
+    <div>
+      <router-link to="/invoices">
+        <v-btn id="back-button" text small color="primary">back</v-btn>
+      </router-link>
     </div>
   </div>
 </template>
@@ -111,14 +130,15 @@ export default {
   },
   data() {
     return {
-      p: new Presenter(this),
+      p: new Presenter(this)
     }
   }
 }
 </script>
 <style>
 @media print {
-  html, body {
+  html,
+  body {
     width: 210mm;
     height: 297mm;
   }
@@ -126,17 +146,17 @@ export default {
     visibility: hidden;
   }
   #from-company-logo {
-     -webkit-print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
   }
   div#signatures {
     display: flex;
   }
 }
 h2 {
-  font-weight: 500
+  font-weight: 500;
 }
 div.v-image {
-  height: 200px
+  height: 200px;
 }
 #signatures {
   display: none;
