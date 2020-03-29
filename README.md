@@ -3,8 +3,6 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=poorprogrammer_cfo&metric=code_smells)](https://sonarcloud.io/dashboard?id=poorprogrammer_cfo)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=poorprogrammer_cfo&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=poorprogrammer_cfo)
 
-![Github Action Unit Test](https://github.com/poorprogrammer/cfo/workflows/Github%20Action%20Unit%20Test/badge.svg?branch=master)
-
 # Automated CFO for Odds
 
 Automated Chief Financial Officer for Odds people
