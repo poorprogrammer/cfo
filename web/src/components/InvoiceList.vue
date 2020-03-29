@@ -5,9 +5,10 @@
       <v-data-table
         :headers="p.headers"
         :items="p.invoices"
-        :items-per-page="5"
         :sort-by="p.sortBy()"
         :sort-desc="p.sortDesc()"
+        hide-default-footer="true"
+        disable-pagination="true"
       >
         <template v-slot:item.invoiceNumber="{ item }">
           <router-link :to="item.url()">{{ item.invoiceNumber }}</router-link>
