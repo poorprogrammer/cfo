@@ -112,7 +112,7 @@
         </v-col>
       </v-row>
     </div>
-    <div>
+    <div class="no-print">
       <router-link to="/invoices">
         <v-btn id="back-button" text small color="primary">back</v-btn>
       </router-link>
@@ -150,6 +150,10 @@ export default {
   }
   div#signatures {
     display: flex;
+  }
+
+  .no-print {
+    display: none;
   }
 }
 h2 {
