@@ -2,7 +2,6 @@ describe('List Invoices Page', () => {
   it('Prints an old invoice', () => {
     cy.visit('/invoices')
     shouldSeeLastestInvoiceNumber(cy)
-    gotoSecondPage(cy)
     clickOnInvoice(cy, '202001-001')
     shouldSee(cy, 'Training')
   })
@@ -17,10 +16,6 @@ describe('List Invoices Page', () => {
   function shouldSeeLastestInvoiceNumber(cy) {
     let latestInvoiceNumber = '202001-007'
     shouldSee(cy, latestInvoiceNumber)
-  }
-
-  function gotoSecondPage(cy) {
-    cy.get('.v-data-footer__icons-after').click()
   }
 
   function clickOnInvoice(cy, invoiceNumber) {
