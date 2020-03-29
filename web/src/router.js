@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import Invoices from './views/Invoices.vue'
 import Invoice from './views/Invoice.vue'
 import PageNotFound from './views/PageNotFound.vue'
 
@@ -13,7 +13,12 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Invoices
+    },
+    {
+      path: '/invoices',
+      name: 'invocies',
+      component: Invoices
     },
     {
       path: '/invoice/:invoiceNumber',

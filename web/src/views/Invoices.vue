@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div>
     <InvoiceList titleMsg="Invoice List" />
   </div>
 </template>
@@ -9,7 +9,7 @@
 import InvoiceList from '@/components/InvoiceList.vue'
 
 export default {
-  name: 'home',
+  name: 'invoices',
   components: {
     InvoiceList
   }
