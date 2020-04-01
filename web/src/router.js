@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Invoices from './views/Invoices.vue'
 import Invoice from './views/Invoice.vue'
 import PageNotFound from './views/PageNotFound.vue'
-
+import DuplicatedInvoice from './views/DuplicatedInvoice.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -19,6 +19,11 @@ export default new Router({
       path: '/invoices',
       name: 'invocies',
       component: Invoices
+    },
+    {
+      path: '/invoice/:invoiceNumber/duplicate',
+      name: 'duplicatedInvoice',
+      component: DuplicatedInvoice
     },
     {
       path: '/invoice/:invoiceNumber',
