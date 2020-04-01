@@ -1,9 +1,6 @@
 import Invoice from "../../../src/models/Invoice"
 
 describe('Invoice', () => {
-  it('should be able to new empty invoice or Invoice page will not load', () => {
-    new Invoice()
-  })
 
   describe('parsing json data', () => {
     let json = {
@@ -89,6 +86,10 @@ describe('Invoice', () => {
 
     it('should have items as Array', () => {
       expect(Array.isArray(invoice.getItems())).toEqual(true)
+    })
+
+    it('should have duplicattion url', () => {
+      expect(invoice.duplicationUrl()).toEqual('/invoice/202001-001/duplicate')
     })
 
     describe('for each item', () => {

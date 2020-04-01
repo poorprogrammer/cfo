@@ -3,7 +3,7 @@ import PricedInvoiceItem from '@/models/PricedInvoiceItem'
 
 export default class Invoice {
   constructor(data) {
-    if(!data) return
+    if (!data) return
 
     this.invoiceNumber = data.invoiceNumber
     this.companySlug = data.companySlug
@@ -13,16 +13,17 @@ export default class Invoice {
     this.targetCompany = data.targetCompany
     this.projectName = data.projectName
 
-    if(!data.items) return
+    if (!data.items) return
     data.items.forEach(i => {
       this.items.push(new PricedInvoiceItem(i))
     });
   }
   url() { return `/invoice/${this.invoiceNumber}` }
+  duplicationUrl() { return `/invoice/${this.invoiceNumber}/duplicate` }
   getItems() { return [...this.items, this.total(), this.tax(), this.grandTotal()] }
   total() { return new InvoiceItem('Total', this.getTotal()) }
   tax() { return new InvoiceItem('VAT 7%', this.getTotal() * 0.07) }
-  grandTotal() { return new InvoiceItem('Grand Total', this.getTotal() * 1.07)}
+  grandTotal() { return new InvoiceItem('Grand Total', this.getTotal() * 1.07) }
   getTotal() { return this.items.map(getItemTotal).reduce(sum) }
   getFromCompanyName() { return this.fromCompany.name }
   getFromCompanyAddress() { return this.fromCompany.address }
