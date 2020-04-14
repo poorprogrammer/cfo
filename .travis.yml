@@ -15,7 +15,10 @@ script:
 
 deploy:
   provider: script
-  script: bash script/docker_push
+  script:
+    - docker build -t poorprogrammer/cfo-web web
+    - docker build -t poorprogrammer/cfo-api api
+    - bash script/docker_push
   on:
     branch: master
     
