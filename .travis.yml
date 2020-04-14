@@ -12,13 +12,14 @@ script:
   - ./script/unittestapi
   - docker-compose -f compose/test/docker-compose.yml run e2e
   - sonar-scanner
-
+  
+before_install:
+  - docker build -t poorprogrammer/cfo-web web
+  - docker build -t poorprogrammer/cfo-api api
+    
 deploy:
   provider: script
-  script:
-    - docker build -t poorprogrammer/cfo-web web
-    - docker build -t poorprogrammer/cfo-api api
-    - bash script/docker_push
+  script: bash script/docker_push
   on:
     branch: master
     
