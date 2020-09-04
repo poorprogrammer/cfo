@@ -17,6 +17,7 @@ Automated Chief Financial Officer for Odds people
 ## Run end-to-end test
 
 ```
+docker-compose -f compose/test/docker-compose.yml build e2e
 docker-compose -f compose/test/docker-compose.yml run --rm e2e
 ```
 
