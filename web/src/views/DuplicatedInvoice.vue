@@ -30,7 +30,7 @@
               </v-list-item-content>
 
               <v-list-item-avatar tile size="130">
-                <v-img id="from-company-logo" contain src="@/assets/odds_logo.png" />
+                <v-img id="from-company-logo" contain src="@/assets/logo.png" />
               </v-list-item-avatar>
             </v-list-item>
           </v-card>

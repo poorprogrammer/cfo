@@ -8,7 +8,7 @@
             alt="Automated Chief Finance Officer"
             class="shrink mr-2"
             contain
-            src="./assets/odds_logo.png"
+            src="./assets/logo.png"
             transition="scale-transition"
             width="130"
             height="80"
