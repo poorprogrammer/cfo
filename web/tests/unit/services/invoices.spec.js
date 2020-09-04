@@ -16,7 +16,7 @@ describe('invoices API', () => {
         expect(axios.get).toHaveBeenCalled()
       })
       it('should call with correct url', () => {
-        expect(axios.get).toHaveBeenCalledWith('http://api:3000/invoices/2020')
+        expect(axios.get).toHaveBeenCalledWith('http://localhost:3000/invoices/2020')
       })
     })
 
