@@ -13,6 +13,7 @@ services:
     volumes:
         - '../../web/tests/e2e/screenshots:/app/tests/e2e/screenshots'
         - '../../web/tests/e2e/videos:/app/tests/e2e/videos'
-        - '../../web/.env.test:/app/.env.production.local'
+    environment:
+      - VUE_APP_BASE_API=http://api:3000
     depends_on:
         - api
