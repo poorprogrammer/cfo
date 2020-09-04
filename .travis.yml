@@ -24,6 +24,8 @@ deploy:
     branch: master
 
 addons:
+  packages:
+    - docker-ce
   sonarcloud:
     organization: "poorprogrammer"
     token: ${SONAR_TOKEN}
