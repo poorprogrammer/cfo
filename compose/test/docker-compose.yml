@@ -1,4 +1,4 @@
-version: "2.0"
+version: "3.8"
 
 services:
   api:
@@ -8,6 +8,7 @@ services:
   e2e:
     build:
       context: ../../web
+      dockerfile: Dockerfile.test
     command: yarn test:e2e --headless
     volumes:
         - '../../web/tests/e2e/screenshots:/app/tests/e2e/screenshots'
