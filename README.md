@@ -46,5 +46,6 @@ npm run serve
 
 ## Production configuration 
 
-overwrite it in `web/.env.production.local` 
+overwrite it using Environment Variables. See `.env` for more details.
+
 <https://cli.vuejs.org/guide/mode-and-env.html>
