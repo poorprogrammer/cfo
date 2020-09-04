@@ -3,7 +3,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-CMD [ "npm", "run", "build", "--mode", "production" ]
+RUN yarn build --mode production
 
 FROM node:current-alpine3.12
 WORKDIR /app
