@@ -1,8 +1,9 @@
 const Datastore = require("nedb")
+const config = require("config")
 
 module.exports = class Database {
     constructor() {
-        this.db = new Datastore({ filename: "/tmp/cfo/invoices", autoload: true })
+        this.db = new Datastore({ filename: config.get("DB_PATH"), autoload: true })
     }
 
     insert(data) {
