@@ -11,19 +11,13 @@
             <v-list-item three-line>
               <v-list-item-content>
                 <div class="overline mb-4">From Company</div>
-                <v-list-item-title class="title mb-1">{{ p.invoice.getFromCompanyName() }}</v-list-item-title>
+                <v-list-item-title class="title mb-1"><v-text-field label="Name" v-bind:value="p.invoice.fromCompany.name"/></v-list-item-title>
                 <v-list-item-subtitle class="text--primary">
-                  <p class="text--primary">{{ p.invoice.getFromCompanyAddress() }}</p>
+                  <p class="text--primary"><v-text-field label="Address" v-bind:value="p.invoice.fromCompany.address"/></p>
                   <p>
                     <v-row dense>
-                      <v-col cols="3" sm="2">
-                        <span class="font-weight-bold">Tax Id</span>
-                      </v-col>
-                      <v-col cols="3" sm="2">{{ p.invoice.getFromCompanyTaxId() }}</v-col>
-                      <v-col cols="3" sm="2">
-                        <span class="font-weight-bold">Tel</span>
-                      </v-col>
-                      <v-col cols="3" sm="2">{{ p.invoice.getFromCompanyTel() }}</v-col>
+                      <v-col cols="6" sm="4"><v-text-field label="Tax Id" v-bind:value="p.invoice.fromCompany.taxId"/></v-col>
+                      <v-col cols="6" sm="4"><v-text-field label="Tel" v-bind:value="p.invoice.fromCompany.tel"/></v-col>
                     </v-row>
                   </p>
                 </v-list-item-subtitle>
@@ -40,19 +34,13 @@
         <v-col cols="6">
           <v-card class="pa-2" outlined>
             <div class="overline mb-4">To Company</div>
-            <v-card-title class="title">{{ p.invoice.getTargetCompanyName() }}</v-card-title>
+            <v-card-title class="title"><v-text-field label="Name" v-bind:value="p.invoice.targetCompany.name"/></v-card-title>
             <v-card-text>
-              <p class="text--primary">{{ p.invoice.getTargetCompanyAddress() }}</p>
+              <p class="text--primary"><v-text-field label="Address" v-bind:value="p.invoice.targetCompany.address"/></p>
               <p class="text--primary">
                 <v-row dense>
-                  <v-col cols="6" sm="3">
-                    <span class="font-weight-bold">Tax Id</span>
-                  </v-col>
-                  <v-col cols="6" sm="3">{{ p.invoice.getTargetCompanyTaxId() }}</v-col>
-                  <v-col cols="6" sm="3">
-                    <span class="font-weight-bold">Tel</span>
-                  </v-col>
-                  <v-col cols="6" sm="3">{{ p.invoice.getTargetCompanyTel() }}</v-col>
+                  <v-col cols="12" sm="6"><v-text-field label="Tax Id" v-bind:value="p.invoice.targetCompany.taxId"/></v-col>
+                  <v-col cols="12" sm="6"><v-text-field label="Tel" v-bind:value="p.invoice.targetCompany.tel"/></v-col>
                 </v-row>
               </p>
             </v-card-text>
@@ -62,14 +50,8 @@
           <v-card class="pa-2" outlined>
             <p class="body-2">
               <v-row dense>
-                <v-col cols="6" sm="3">
-                  <span class="font-weight-bold">Invoice Number</span>
-                </v-col>
-                <v-col cols="6" sm="3">{{ p.invoice.invoiceNumber }}</v-col>
-                <v-col cols="6" sm="3">
-                  <span class="font-weight-bold">Invoice Date</span>
-                </v-col>
-                <v-col cols="6" sm="3">{{ p.invoice.invoiceDate }}</v-col>
+                <v-col cols="12" sm="6"><v-text-field label="Invoice Number" v-bind:value="p.invoice.invoiceNumber"/></v-col>
+                <v-col cols="12" sm="6"><v-text-field label="Invoice Date" v-bind:value="p.invoice.invoiceDate"/></v-col>
               </v-row>
             </p>
           </v-card>
