@@ -95,8 +95,10 @@
       </v-row>
     </div>
     <div class="no-print">
-      <router-link to="/invoices">
-        <v-btn id="back-button" text small color="primary">back</v-btn>
+      <router-link to="/invoices" class="back-btn">
+        <v-btn id="back-button" fab dark color="accent">
+          <v-icon dark>mdi-arrow-left-circle</v-icon>
+        </v-btn>
       </router-link>
     </div>
   </div>
@@ -146,5 +148,8 @@ div.v-image {
 }
 #signatures {
   display: none;
+}
+a.back-btn {
+  text-decoration: none;
 }
 </style>
