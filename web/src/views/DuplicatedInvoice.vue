@@ -96,10 +96,13 @@
     </div>
     <div class="no-print">
       <router-link to="/invoices" class="back-btn">
-        <v-btn id="back-button" fab dark color="accent">
+        <v-btn id="back-button" class="mx-1" fab dark color="accent">
           <v-icon dark>mdi-arrow-left-circle</v-icon>
         </v-btn>
       </router-link>
+      <v-btn id="save-button" class="mx-1" fab dark color="primary">
+        <v-icon dark>mdi-content-save</v-icon>
+      </v-btn>
     </div>
   </div>
 </template>
