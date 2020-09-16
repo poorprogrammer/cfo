@@ -12,4 +12,8 @@ module.exports = class Invoice {
     all() {
         return this.db.find({invoiceDate: /2020/})
     }
+
+    save(invoice) {
+        return this.db.insert(invoice)
+    }
 }

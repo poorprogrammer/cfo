@@ -7,7 +7,12 @@ module.exports = class Database {
     }
 
     insert(data) {
-        this.db.insert(data)
+        return new Promise((resolve, reject) => {
+            this.db.insert(data, (e, docs) => {
+                if (e != null) reject(e)
+                resolve(docs)
+            })
+        })
     }
 
     find(query) {

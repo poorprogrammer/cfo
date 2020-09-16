@@ -6,6 +6,14 @@ describe("invoice", () => {
   beforeEach(() => {
     service = new Invoice(new MockDatabase());
   });
+  describe("save", () => {
+    it("should return invoice number", () => {
+      let inv = {invoiceNumber: '202001-001'}
+      service.save(inv).then((invoiceNumber) => {
+        expect(invoiceNumber).toEqual('202001-001')
+      })
+    })
+  })
   describe("all", () => {
     it("should return an array", () => {
       service.all().then((invoices) => {
