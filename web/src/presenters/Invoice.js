@@ -11,4 +11,7 @@ export default class {
       this.API.getInvoice(invoiceNumber)
         .then((invoice) => this.invoice = invoice)
     }
+    save() {
+      this.view.goTo({name: 'invoice', params: {invoiceNumber: this.invoice.invoiceNumber}})
+    }
 }

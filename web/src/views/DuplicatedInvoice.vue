@@ -50,8 +50,8 @@
           <v-card class="pa-2" outlined>
             <p class="body-2">
               <v-row dense>
-                <v-col cols="12" sm="6"><v-text-field label="Invoice Number" v-bind:value="p.invoice.invoiceNumber"/></v-col>
-                <v-col cols="12" sm="6"><v-text-field label="Invoice Date" v-bind:value="p.invoice.invoiceDate"/></v-col>
+                <v-col cols="12" sm="6"><v-text-field label="Invoice Number" v-model="p.invoice.invoiceNumber"/></v-col>
+                <v-col cols="12" sm="6"><v-text-field label="Invoice Date" v-model="p.invoice.invoiceDate"/></v-col>
               </v-row>
             </p>
           </v-card>
@@ -100,7 +100,7 @@
           <v-icon dark>mdi-arrow-left-circle</v-icon>
         </v-btn>
       </router-link>
-      <v-btn id="save-button" class="mx-1" fab dark color="primary">
+      <v-btn id="save-button" v-on:click="save" class="mx-1" fab dark color="primary">
         <v-icon dark>mdi-content-save</v-icon>
       </v-btn>
     </div>
@@ -119,6 +119,10 @@ export default {
     return {
       p: new Presenter(this)
     }
+  },
+  methods: {
+    save: function() { this.p.save() },
+    goTo: function(path) { this.$router.push(path) }
   }
 }
 </script>
