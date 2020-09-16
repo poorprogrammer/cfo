@@ -50,8 +50,8 @@
           <v-card class="pa-2" outlined>
             <p class="body-2">
               <v-row dense>
-                <v-col cols="12" sm="6"><v-text-field label="Invoice Number" v-model="p.invoice.invoiceNumber"/></v-col>
-                <v-col cols="12" sm="6"><v-text-field label="Invoice Date" v-model="p.invoice.invoiceDate"/></v-col>
+                <v-col cols="12" sm="6"><v-text-field id="invoice-number" label="Invoice Number" v-model="p.invoice.invoiceNumber"/></v-col>
+                <v-col cols="12" sm="6"><v-text-field id="invoice-date" label="Invoice Date" v-model="p.invoice.invoiceDate"/></v-col>
               </v-row>
             </p>
           </v-card>
