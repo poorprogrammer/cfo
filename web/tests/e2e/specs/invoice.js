@@ -29,11 +29,11 @@ describe('Invoice Page Now', () => {
   }
 
   function containsOriginalInvoice(cy) {
-    cy.contains('Invoice (original)')
+    cy.containsOriginalInvoiceHeading()
     containsFromCompanyLogo(cy)
     containsFromCompanyName(cy)
     containsTargetCompanyName(cy)
-    containsInvoiceNumber(cy)
+    cy.containsInvoiceNumber('202001-001')
     containsInvoiceDate(cy)
     containsSignaturesWhenPrint(cy)
   }
@@ -48,11 +48,6 @@ describe('Invoice Page Now', () => {
 
   function containsTargetCompanyName(cy) {
     cy.contains('SPACEX HEADQUARTERS')
-  }
-
-  function containsInvoiceNumber(cy) {
-    cy.contains('Invoice Number')
-    cy.contains('202001-001')
   }
 
   function containsInvoiceDate(cy) {

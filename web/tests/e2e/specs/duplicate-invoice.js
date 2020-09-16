@@ -12,7 +12,8 @@ describe('To Create New Invoice Via Invoice Duplication Feature ', () => {
         editInvoiceNumber('202001-008')
         editInvoiceDate('2020-01-15')
         clickSave()
-        containsInvoiceNumber(cy, '202001-008')
+        cy.containsOriginalInvoiceHeading()
+        cy.containsInvoiceNumber('202001-008')
     })
     function duplicate_invoice(invoiceNumber) {
         cy.get(`#duplicate_${invoiceNumber}`).click()
@@ -26,9 +27,5 @@ describe('To Create New Invoice Via Invoice Duplication Feature ', () => {
     function clickSave() {
         cy.get('#save-button').click()
         cy.wait('@saveInvoice')
-    }
-    function containsInvoiceNumber(cy, invoiceNumber) {
-        cy.contains('Invoice Number')
-        cy.contains(invoiceNumber)
     }
 })
