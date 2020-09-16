@@ -2,10 +2,20 @@ const Invoice = require("../../../src/services/invoice");
 const MockDatabase = require("./MockDatabase");
 
 describe("invoice", () => {
+  let service
+  beforeEach(() => {
+    service = new Invoice(new MockDatabase());
+  });
+  describe("all", () => {
+    it("should return an array", () => {
+      service.all().then((invoices) => {
+        expect(invoices.length).toBe(7);
+      });
+    });
+  });
   describe("get", () => {
     var inv;
     beforeEach(() => {
-      let service = new Invoice(new MockDatabase());
       service.get("202001-007").then((invoice) => {
         inv = invoice;
       });
