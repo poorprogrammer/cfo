@@ -11,4 +11,9 @@ export default class {
       this.API.getInvoice(invoiceNumber)
         .then((invoice) => this.invoice = invoice)
     }
+
+    save() {
+      this.API.save(this.invoice)
+        .then((invoiceNumber) => this.view.gotoViewInvoice(invoiceNumber))
+    }
 }

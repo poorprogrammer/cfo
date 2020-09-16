@@ -31,4 +31,13 @@ export default class {
   parseInvoice = (response) => {
     return new Invoice(response.data)
   }
+
+  save(invoice) {
+    return axios.post(`${this.root}/invoice/${invoice.invoiceNumber}`, invoice)
+      .then(this.parseInvoiceNumber)
+  }
+
+  parseInvoiceNumber = (response) => {
+    return response.data
+  }
 }

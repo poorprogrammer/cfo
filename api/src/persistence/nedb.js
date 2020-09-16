@@ -1,13 +1,19 @@
 const Datastore = require("nedb")
 const config = require("config")
 
+
 module.exports = class Database {
     constructor() {
         this.db = new Datastore({ filename: config.get("DB_PATH"), autoload: true })
     }
 
     insert(data) {
-        this.db.insert(data)
+        return new Promise((resolve, reject) => {
+            this.db.insert(data, (e, docs) => {
+                if (e != null) reject(e)
+                resolve(docs)
+            })
+        })
     }
 
     find(query) {
