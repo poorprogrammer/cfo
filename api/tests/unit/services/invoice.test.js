@@ -1,5 +1,5 @@
-const Invoice = require("./invoice");
-const MockDatabase = require("../../tests/unit/services/MockDatabase");
+const Invoice = require("../../../src/services/invoice");
+const MockDatabase = require("./MockDatabase");
 
 describe("invoice", () => {
   let service

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "nodemon src/server.js",
-    "test": "jest",
+    "test": "jest --watch",
     "ci": "jest --coverage"
   },
   "author": "poorprogrammer",
@@ -21,5 +21,11 @@
     "jest": "^25.5.4",
     "nodemon": "^2.0.4",
     "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   }
 }
