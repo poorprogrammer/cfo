@@ -8,9 +8,6 @@ cache:
     - api/node_modules
     - web/node_modules
 
-environment:
-  CHILD_CONCURRENCY: 1
-
 script:
   - ./script/unittestweb
   - ./script/unittestapi

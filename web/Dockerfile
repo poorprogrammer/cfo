@@ -1,5 +1,6 @@
 FROM node:latest AS build
 WORKDIR /app
+ENV CHILD_CONCURRENCY 1
 COPY package*.json ./
 RUN npm install
 COPY . .
