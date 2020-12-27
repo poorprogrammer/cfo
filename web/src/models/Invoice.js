@@ -34,6 +34,12 @@ export default class Invoice {
   getTargetCompanyTaxId() { return this.targetCompany.taxId }
   getTargetCompanyTel() { return this.targetCompany.tel }
   getProjectName() { return this.projectName }
+  getTitles() {
+    return [
+      {id: 1, title: 'Invoice (original)', css: ''},
+      {id: 2, title: 'Invoice (copy)', css: 'print-only'},
+    ]
+  }
 }
 
 function getItemTotal(item) { return item.total() }

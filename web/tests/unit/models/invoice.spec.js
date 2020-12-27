@@ -178,5 +178,23 @@ describe('Invoice', () => {
         expect(grandTotal.getTotal()).toEqual('THB 428,856.00')
       })
     })
+    describe('Invoice (copy)', () => {
+      it('invoice should have original', () => {
+        let titles = invoice.getTitles();
+        expect(titles[0].title).toEqual('Invoice (original)')
+      })
+      it('original invoice displays on screen and paper', () => {
+        let titles = invoice.getTitles();
+        expect(titles[0].css).toEqual('')
+      })
+      it('invoice should have copy', () => {
+        let titles = invoice.getTitles();
+        expect(titles[1].title).toEqual('Invoice (copy)')
+      })
+      it('copy invoice displays paper only', () => {
+        let titles = invoice.getTitles();
+        expect(titles[1].css).toEqual('print-only')
+      })
+    })
   })
 })

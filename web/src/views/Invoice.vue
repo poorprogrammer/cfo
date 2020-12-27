@@ -2,8 +2,13 @@
   <div class="invoice pa-3">
     <div v-if="!p.invoice.invoiceNumber">Loading Please wait...</div>
     <div v-else>
+      <div
+        v-for="{ id, title, css } in p.invoice.getTitles()"
+        :key="id"
+        :class="css"
+      >
       <v-row justify="center" dense>
-        <h2>Invoice (original)</h2>
+        <h2>{{ title }}</h2>
       </v-row>
       <v-row align="stretch" dense>
         <v-col cols="12">
@@ -38,7 +43,11 @@
               </v-list-item-content>
 
               <v-list-item-avatar tile size="130">
-                <v-img id="from-company-logo" contain src="@/assets/logo.png" />
+                <v-img
+                  id="from-company-logo"
+                  contain
+                  src="@/assets/logo.png"
+                />
               </v-list-item-avatar>
             </v-list-item>
           </v-card>
@@ -127,6 +136,7 @@
           </v-card>
         </v-col>
       </v-row>
+      </div>
     </div>
     <div class="no-print">
       <router-link to="/invoices">
@@ -165,7 +175,7 @@ export default {
     -webkit-print-color-adjust: exact;
   }
   div.print-only {
-    display: flex;
+    display: block;
   }
 
   .no-print {
