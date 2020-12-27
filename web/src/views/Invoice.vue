@@ -84,7 +84,7 @@
             </v-card>
           </v-col>
           <v-col cols="6">
-            <v-card class="pa-2" outlined>
+            <v-card class="invoice-id pa-2" outlined>
               <p class="body-2">
                 <v-row dense>
                   <v-col cols="6" sm="3">
@@ -189,8 +189,17 @@ export default {
   .v-application .pa-2 .v-application .pd-3 {
     padding: 0px;
   }
-  .v-card__text {
+  .v-application .v-card__text {
     padding: 2px;
+  }
+  .v-application .invoice-id {
+    min-height: 215px;
+  }
+  .v-application .v-data-table {
+    min-height: 364px;
+  }
+  main.v-main {
+    padding: 0px !important;
   }
 }
 h2 {
@@ -202,7 +211,7 @@ div.v-image {
 .print-only {
   display: none;
 }
-.v-data-table {
-  min-height: 300px;
+.invoice-id {
+  min-height: 230px
 }
 </style>
