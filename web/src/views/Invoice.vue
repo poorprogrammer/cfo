@@ -95,7 +95,7 @@
           </tbody>
         </template>
       </v-simple-table>
-      <v-row id="signatures" class="pa-3" dense>
+      <v-row id="signatures" class="print-only pa-3" dense>
         <v-col id="receive-signature" cols="6">
           <v-card outlined>
             <v-img></v-img>
@@ -148,7 +148,7 @@ export default {
   #from-company-logo {
     -webkit-print-color-adjust: exact;
   }
-  div#signatures {
+  div.print-only {
     display: flex;
   }
 
@@ -162,7 +162,7 @@ h2 {
 div.v-image {
   height: 200px;
 }
-#signatures {
+.print-only {
   display: none;
 }
 </style>
