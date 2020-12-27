@@ -150,9 +150,6 @@ export default {
 h2 {
   font-weight: 500;
 }
-div.v-image {
-  height: 200px;
-}
 #signatures {
   display: none;
 }

@@ -12,7 +12,7 @@
         </v-row>
         <v-row align="stretch" dense>
           <v-col cols="12">
-            <v-card class="pa-2" outlined>
+            <v-card outlined>
               <v-list-item three-line>
                 <v-list-item-content>
                   <div class="overline mb-4">From Company</div>
@@ -177,18 +177,32 @@ export default {
   div.print-only {
     display: block;
   }
-
   .no-print {
     display: none;
+  }
+  .v-application .mb-4 {
+    margin-bottom: 0px !important;
+  }
+  .v-application .title {
+    line-height: 1rem;
+  }
+  .v-application .pa-2 .v-application .pd-3 {
+    padding: 0px;
+  }
+  .v-card__text {
+    padding: 2px;
   }
 }
 h2 {
   font-weight: 500;
 }
 div.v-image {
-  height: 200px;
+  height: 150px;
 }
 .print-only {
   display: none;
+}
+.v-data-table {
+  min-height: 300px;
 }
 </style>
