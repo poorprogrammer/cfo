@@ -1,6 +1,6 @@
 FROM node:latest AS build
 WORKDIR /app
-ENV CHILD_CONCURRENCY 1
+ENV CYPRESS_INSTALL_BINARY 0
 COPY package*.json ./
 RUN npm install
 COPY . .
