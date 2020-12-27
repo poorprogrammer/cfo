@@ -11,19 +11,27 @@
             <v-list-item three-line>
               <v-list-item-content>
                 <div class="overline mb-4">From Company</div>
-                <v-list-item-title class="title mb-1">{{ p.invoice.getFromCompanyName() }}</v-list-item-title>
+                <v-list-item-title class="title mb-1">{{
+                  p.invoice.getFromCompanyName()
+                }}</v-list-item-title>
                 <v-list-item-subtitle class="text--primary">
-                  <p class="text--primary">{{ p.invoice.getFromCompanyAddress() }}</p>
+                  <p class="text--primary">
+                    {{ p.invoice.getFromCompanyAddress() }}
+                  </p>
                   <p>
                     <v-row dense>
                       <v-col cols="3" sm="2">
                         <span class="font-weight-bold">Tax Id</span>
                       </v-col>
-                      <v-col cols="3" sm="2">{{ p.invoice.getFromCompanyTaxId() }}</v-col>
+                      <v-col cols="3" sm="2">{{
+                        p.invoice.getFromCompanyTaxId()
+                      }}</v-col>
                       <v-col cols="3" sm="2">
                         <span class="font-weight-bold">Tel</span>
                       </v-col>
-                      <v-col cols="3" sm="2">{{ p.invoice.getFromCompanyTel() }}</v-col>
+                      <v-col cols="3" sm="2">{{
+                        p.invoice.getFromCompanyTel()
+                      }}</v-col>
                     </v-row>
                   </p>
                 </v-list-item-subtitle>
@@ -40,19 +48,27 @@
         <v-col cols="6">
           <v-card class="pa-2" outlined>
             <div class="overline mb-4">To Company</div>
-            <v-card-title class="title">{{ p.invoice.getTargetCompanyName() }}</v-card-title>
+            <v-card-title class="title">{{
+              p.invoice.getTargetCompanyName()
+            }}</v-card-title>
             <v-card-text>
-              <p class="text--primary">{{ p.invoice.getTargetCompanyAddress() }}</p>
+              <p class="text--primary">
+                {{ p.invoice.getTargetCompanyAddress() }}
+              </p>
               <p class="text--primary">
                 <v-row dense>
                   <v-col cols="6" sm="3">
                     <span class="font-weight-bold">Tax Id</span>
                   </v-col>
-                  <v-col cols="6" sm="3">{{ p.invoice.getTargetCompanyTaxId() }}</v-col>
+                  <v-col cols="6" sm="3">{{
+                    p.invoice.getTargetCompanyTaxId()
+                  }}</v-col>
                   <v-col cols="6" sm="3">
                     <span class="font-weight-bold">Tel</span>
                   </v-col>
-                  <v-col cols="6" sm="3">{{ p.invoice.getTargetCompanyTel() }}</v-col>
+                  <v-col cols="6" sm="3">{{
+                    p.invoice.getTargetCompanyTel()
+                  }}</v-col>
                 </v-row>
               </p>
             </v-card-text>
@@ -121,19 +137,19 @@
 </template>
 
 <script>
-import Presenter from '@/presenters/Invoice'
+import Presenter from "@/presenters/Invoice";
 
 export default {
-  name: 'invoice',
+  name: "invoice",
   mounted() {
-    this.p.init(this.$route.params.invoiceNumber)
+    this.p.init(this.$route.params.invoiceNumber);
   },
   data() {
     return {
-      p: new Presenter(this)
-    }
-  }
-}
+      p: new Presenter(this),
+    };
+  },
+};
 </script>
 <style>
 @media print {
