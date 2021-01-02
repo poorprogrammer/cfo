@@ -139,8 +139,10 @@
       </div>
     </div>
     <div class="no-print">
-      <router-link to="/invoices">
-        <v-btn id="back-button" text small color="primary">back</v-btn>
+      <router-link to="/invoices" class="back-btn">
+        <v-btn id="back-button" class="mx-1" fab dark color="accent">
+          <v-icon dark>mdi-arrow-left-circle</v-icon>
+        </v-btn>
       </router-link>
     </div>
   </div>
