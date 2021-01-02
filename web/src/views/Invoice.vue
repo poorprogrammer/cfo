@@ -174,7 +174,7 @@ export default {
   #from-company-logo {
     -webkit-print-color-adjust: exact;
   }
-  div.print-only {
+  .v-application div.print-only {
     display: block;
   }
   .no-print {
