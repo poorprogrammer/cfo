@@ -46,6 +46,7 @@
                   <v-img
                     id="from-company-logo"
                     contain
+                    eager
                     src="@/assets/logo.png"
                   />
                 </v-list-item-avatar>
