@@ -3,7 +3,7 @@ describe('To Create New Invoice Via Invoice Duplication Feature ', () => {
         cy.server()
         cy.route({
             method: 'POST',
-            url: '/invoice/202001-008',
+            url: '/invoices/',
         }).as('saveInvoice')
 
         cy.visit('/invoices/2020')
