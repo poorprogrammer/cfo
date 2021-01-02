@@ -6,12 +6,12 @@ export default class {
     this.root = process.env.VUE_APP_BASE_API
   }
 
-  invoicesUrl() {
-    return `${this.root}/invoices/2020`
+  invoicesUrl(year) {
+    return `${this.root}/invoices/${year}`
   }
 
-  getInvoices() {
-    return axios.get(this.invoicesUrl())
+  getInvoices(year) {
+    return axios.get(this.invoicesUrl(year))
       .then(this.parseInvoices)
   }
 

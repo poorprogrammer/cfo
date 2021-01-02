@@ -33,7 +33,8 @@ export default {
     titleMsg: String
   },
   mounted() {
-    this.p.init()
+    let year = this.$route.params.year || new Date().getFullYear()
+    this.p.init(year)
   },
   data() {
     return {

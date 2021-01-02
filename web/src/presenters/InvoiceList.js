@@ -13,8 +13,8 @@ export default class {
     ]
     this.API = new API()
   }
-  init() {
-    this.API.getInvoices()
+  init(year) {
+    this.API.getInvoices(year)
       .then(this.setInvoices)
   }
   setInvoices = (invoices) => {

@@ -16,7 +16,7 @@ export default new Router({
       component: Invoices
     },
     {
-      path: '/invoices',
+      path: '/invoices/:year?',
       name: 'invocies',
       component: Invoices
     },

@@ -9,7 +9,7 @@ describe('invoices API', () => {
     describe('before call', () => {
       beforeEach(() => {
         jest.spyOn(axios, 'get')
-        api.getInvoices()
+        api.getInvoices(2020)
       })
 
       it('should call api', () => {
