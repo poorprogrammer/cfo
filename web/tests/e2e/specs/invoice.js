@@ -56,7 +56,7 @@ describe('Invoice Page Now', () => {
   }
 
   function containsSignaturesWhenPrint(cy) {
-    cy.get('#signatures').should(onlyVisibleWhenPrint)
+    cy.get('.signature.print-only').should(onlyVisibleWhenPrint)
   }
 
   function onlyVisibleWhenPrint($el) {
