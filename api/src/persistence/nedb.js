@@ -15,6 +15,15 @@ module.exports = class Database {
         })
     }
 
+    update(data) {
+        return new Promise((resolve, reject) => {
+            this.db.update(data, (e, docs) => {
+                if (e != null) reject(e)
+                resolve(docs)
+            })
+        })
+    }
+
     find(query) {
         return new Promise((resolve, reject) => {
             this.db.find(query, (e, docs) => {

@@ -14,6 +14,12 @@ module.exports = class Invoice {
     }
 
     save(invoice) {
-        return this.db.insert(invoice)
+        return this.db.insert(invoice).then((inv) => {
+            return inv.invoiceNumber
+        })
+    }
+
+    update(invoice) {
+        return this.db.update(invoice)
     }
 }

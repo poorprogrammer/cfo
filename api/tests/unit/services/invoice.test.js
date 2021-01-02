@@ -14,6 +14,15 @@ describe("invoice", () => {
       })
     })
   })
+  describe("update", () => {
+    it("should return updated invoice", () => {
+      let inv = {invoiceNumber: '202001-001', items: [ {name: 'training'}]}
+      service.update(inv).then((invoice) => {
+        expect(invoice.invoiceNumber).toEqual('202001-001')
+        expect(invoice.items[0].name).toEqual('training')
+      })
+    })
+  })
   describe("all", () => {
     it("should return an array", () => {
       service.all().then((invoices) => {
