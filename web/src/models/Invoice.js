@@ -12,6 +12,8 @@ export default class Invoice {
     this.fromCompany = data.fromCompany
     this.targetCompany = data.targetCompany
     this.projectName = data.projectName
+    this.dialog = false
+    this.deleted = data.deleted || false
 
     if (!data.items) return
     data.items.forEach(i => {

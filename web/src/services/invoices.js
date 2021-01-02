@@ -25,6 +25,12 @@ export default class {
       .then(this.parseInvoiceNumber)
   }
 
+  delete(invoice) {
+    invoice.deleted = true
+    return axios.put(`${this.root}/invoice/${invoice.invoiceNumber}`, invoice)
+      .then(this.parseInvoice)
+  }
+
   parseInvoices = (response) => {
     let invoices = []
     response.data.forEach(invoice => {

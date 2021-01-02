@@ -24,6 +24,39 @@
               >duplicate</v-btn
             >
           </router-link>
+
+          <v-dialog v-model="item.dialog" max-width="290">
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn
+                dark
+                v-bind="attrs"
+                v-on="on"
+                :id="'delete_' + item.invoiceNumber"
+                text
+                small
+                color="primary"
+                >delete</v-btn
+              >
+            </template>
+            <v-card>
+              <v-card-title class="headline">
+                Delete this invoice?
+              </v-card-title>
+              <v-card-text
+                >This action will mark the invoice as deleted. A deleted invoice
+                will be excluded from the list.</v-card-text
+              >
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn color="darken-1" text @click="p.cancelDelete(item)">
+                  Cancel
+                </v-btn>
+                <v-btn color="red darken-1" text @click="p.delete(item)">
+                  Delete
+                </v-btn>
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
         </template>
       </v-data-table>
     </v-card>
