@@ -9,8 +9,8 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
 app.get('/', (req, res) => res.send('Hello World!'))
-app.get('/invoices/2020', (_, res) => {
-    new Invoice().all().then((invoices) => {
+app.get('/invoices/:year', (req, res) => {
+    new Invoice().all(req.params.year).then((invoices) => {
         res.json(invoices)
     })
 })
