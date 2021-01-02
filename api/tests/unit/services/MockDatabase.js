@@ -3,7 +3,7 @@ const Invoices = require('../../fixtures/invoicesData')
 module.exports = class MockDatabase {
     insert(data) {
         return new Promise((resolve) => {
-            resolve(data)
+            resolve(data.invoiceNumber)
         })
     }
     find() {
