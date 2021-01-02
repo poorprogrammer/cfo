@@ -11,9 +11,11 @@ describe('To Create New Invoice Via Invoice Duplication Feature ', () => {
         cy.contains('Unsave Invoice (edit mode)')
         editInvoiceNumber('202001-008')
         editInvoiceDate('2020-01-15')
+        editItemPriceOnRow(1, '1000')
         clickSave()
         cy.containsOriginalInvoiceHeading()
         cy.containsInvoiceNumber('202001-008')
+        cy.containsTotal('THB 214,856.00')
     })
     function duplicate_invoice(invoiceNumber) {
         cy.get(`#duplicate_${invoiceNumber}`).click()
@@ -23,6 +25,9 @@ describe('To Create New Invoice Via Invoice Duplication Feature ', () => {
     }
     function editInvoiceDate(date) {
         cy.get('#invoice-date').click().type('{selectall}'+date)
+    }
+    function editItemPriceOnRow(row, amount) {
+        cy.get(`div.v-data-table tr:nth-child(${row}) td:nth-child(2) input[type=text]`).type('{selectall}'+amount)
     }
     function clickSave() {
         cy.get('#save-button').click()
