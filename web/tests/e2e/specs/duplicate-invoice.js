@@ -15,7 +15,7 @@ describe('To Create New Invoice Via Invoice Duplication Feature ', () => {
         clickSave()
         cy.containsOriginalInvoiceHeading()
         cy.containsInvoiceNumber('202001-008')
-        cy.containsTotal('THB 22,256.00')
+        cy.containsTotal('22,256.00')
     })
     function duplicate_invoice(invoiceNumber) {
         cy.get(`#duplicate_${invoiceNumber}`).click()
