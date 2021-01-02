@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card>
-      <v-card-title>{{titleMsg}}</v-card-title>
+      <v-card-title>{{ titleMsg }}</v-card-title>
       <v-data-table
         :headers="p.headers"
         :items="p.invoices"
@@ -16,7 +16,13 @@
 
         <template v-slot:item.action="{ item }">
           <router-link :to="item.duplicationUrl()">
-            <v-btn :id="'duplicate_' + item.invoiceNumber" text small color="primary">duplicate</v-btn>
+            <v-btn
+              :id="'duplicate_' + item.invoiceNumber"
+              text
+              small
+              color="primary"
+              >duplicate</v-btn
+            >
           </router-link>
         </template>
       </v-data-table>
@@ -25,23 +31,23 @@
 </template>
 
 <script>
-import Presenter from '@/presenters/InvoiceList'
+import Presenter from "@/presenters/InvoiceList";
 
 export default {
-  name: 'InvoiceList',
+  name: "InvoiceList",
   props: {
-    titleMsg: String
+    titleMsg: String,
   },
   mounted() {
-    let year = this.$route.params.year || new Date().getFullYear()
-    this.p.init(year)
+    let year = this.$route.params.year || new Date().getFullYear();
+    this.p.init(year);
   },
   data() {
     return {
-      p: new Presenter(this)
-    }
-  }
-}
+      p: new Presenter(this),
+    };
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
