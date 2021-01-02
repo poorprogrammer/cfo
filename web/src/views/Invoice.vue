@@ -121,14 +121,14 @@
           </template>
         </v-simple-table>
         <v-row class="signature print-only pa-3" dense>
-          <v-col id="receive-signature" cols="6">
+          <v-col cols="6">
             <v-card outlined>
               <v-img></v-img>
               <v-divider></v-divider>
               <v-card-text>Received By</v-card-text>
             </v-card>
           </v-col>
-          <v-col id="approve-signature" cols="6">
+          <v-col cols="6">
             <v-card outlined>
               <v-img></v-img>
               <v-divider></v-divider>
