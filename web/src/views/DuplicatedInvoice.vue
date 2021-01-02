@@ -7,7 +7,7 @@
       </v-row>
       <v-row align="stretch" dense>
         <v-col cols="12">
-          <v-card class="pa-2" outlined>
+          <v-card outlined>
             <v-list-item three-line>
               <v-list-item-content>
                 <div class="overline mb-4">From Company</div>
@@ -77,22 +77,6 @@
           </tbody>
         </template>
       </v-simple-table>
-      <v-row id="signatures" class="pa-3" dense>
-        <v-col id="receive-signature" cols="6">
-          <v-card outlined>
-            <v-img></v-img>
-            <v-divider></v-divider>
-            <v-card-text>Received By</v-card-text>
-          </v-card>
-        </v-col>
-        <v-col id="approve-signature" cols="6">
-          <v-card outlined>
-            <v-img></v-img>
-            <v-divider></v-divider>
-            <v-card-text>Approved By</v-card-text>
-          </v-card>
-        </v-col>
-      </v-row>
     </div>
     <div class="no-print">
       <router-link to="/invoices" class="back-btn">
@@ -127,31 +111,8 @@ export default {
 }
 </script>
 <style>
-@media print {
-  html,
-  body {
-    width: 210mm;
-    height: 297mm;
-  }
-  header {
-    visibility: hidden;
-  }
-  #from-company-logo {
-    -webkit-print-color-adjust: exact;
-  }
-  div#signatures {
-    display: flex;
-  }
-
-  .no-print {
-    display: none;
-  }
-}
 h2 {
   font-weight: 500;
-}
-#signatures {
-  display: none;
 }
 a.back-btn {
   text-decoration: none;
