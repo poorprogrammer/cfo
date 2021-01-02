@@ -36,4 +36,32 @@ describe("InvoiceList Presenter", () => {
     expect(p.sortBy()).toEqual("invoiceNumber");
     expect(p.sortDesc()).toEqual(true);
   });
+  it("should remove deleted invoice after API complete", () => {
+    p.invoices = [
+      {
+        invoiceNumber: "202101-003",
+        deleted: false,
+        _id: "3",
+      },
+      {
+        invoiceNumber: "202101-004",
+        deleted: false,
+        _id: "4",
+      },
+      {
+        invoiceNumber: "202101-005",
+        deleted: false,
+        _id: "5",
+      },
+    ];
+    let deletedInvoice = {
+      invoiceNumber: "202101-004",
+      deleted: true,
+      _id: "4",
+    };
+    p.removeInvoiceFromList(deletedInvoice);
+    expect(p.invoices.length).toEqual(2);
+    expect(p.invoices[0].invoiceNumber).toEqual('202101-003');
+    expect(p.invoices[1].invoiceNumber).toEqual('202101-005');
+  });
 });
