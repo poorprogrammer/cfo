@@ -120,7 +120,7 @@
             </tbody>
           </template>
         </v-simple-table>
-        <v-row id="signatures" class="print-only pa-3" dense>
+        <v-row class="signature print-only pa-3" dense>
           <v-col id="receive-signature" cols="6">
             <v-card outlined>
               <v-img></v-img>
@@ -178,6 +178,9 @@ export default {
   }
   .v-application div.print-only {
     display: block;
+  }
+  .v-application div.print-only.signature {
+    display: flex;
   }
   .no-print {
     display: none;
