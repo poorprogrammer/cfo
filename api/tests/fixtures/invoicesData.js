@@ -114,6 +114,25 @@ module.exports = {
         invoiceDate: '2020-01-04',
         invoiceNumber: '202001-006',
     },
+    '202001-006-cancelled' : {
+        amount: 300000,
+        fromCompany: {
+            name: 'ODDS HQ',
+            address: '69 We are not hiring',
+            taxId: '0100000000000',
+            tel: '+66896669999',
+        },
+        projectName: 'GraphQL',
+        targetCompany: {
+            name: 'Facebook HQ',
+            address: '1601 Willow Rd Menlo Park, California',
+            taxId: '0100008000007',
+            tel: '+1 650-960-1300',
+        },
+        invoiceDate: '2020-01-04',
+        invoiceNumber: '202001-006',
+        deleted: true
+    },
     '202001-007' : {
         amount: 450000,
         fromCompany: {

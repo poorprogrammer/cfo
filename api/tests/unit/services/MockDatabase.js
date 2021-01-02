@@ -13,7 +13,7 @@ module.exports = class MockDatabase {
     }
     find() {
         return new Promise((resolve) => {
-            resolve(Object.values(Invoices))
+            resolve(Object.values(Invoices).filter((e) => !e.deleted))
         })
     }
     findOne(query) {
@@ -21,5 +21,8 @@ module.exports = class MockDatabase {
         return new Promise((resolve) => {
             resolve(Invoices[invoiceNumber])
         })
+    }
+    mockAll() {
+        this.find = jest.fn();
     }
 }

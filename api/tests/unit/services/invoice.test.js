@@ -2,9 +2,10 @@ const Invoice = require("../../../src/services/invoice");
 const MockDatabase = require("./MockDatabase");
 
 describe("invoice", () => {
-  let service
+  let service, db
   beforeEach(() => {
-    service = new Invoice(new MockDatabase());
+    db = new MockDatabase();
+    service = new Invoice(db);
   });
   describe("save", () => {
     it("should return invoice number", () => {
@@ -28,6 +29,11 @@ describe("invoice", () => {
       service.all().then((invoices) => {
         expect(invoices.length).toBe(7);
       });
+    });
+    it("should exclude deleted invoices", () => {
+      db.mockAll();
+      service.all();
+      expect(db.find).toHaveBeenCalledWith({deleted: false, invoiceDate: /(?:)/});
     });
   });
   describe("get", () => {

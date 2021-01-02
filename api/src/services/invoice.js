@@ -10,7 +10,7 @@ module.exports = class Invoice {
     }
 
     all(year) {
-        return this.db.find({invoiceDate: new RegExp(year)})
+        return this.db.find({invoiceDate: new RegExp(year), deleted: false})
     }
 
     save(invoice) {
