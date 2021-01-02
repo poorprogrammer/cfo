@@ -6,7 +6,7 @@ describe('To Create New Invoice Via Invoice Duplication Feature ', () => {
             url: '/invoice/202001-008',
         }).as('saveInvoice')
 
-        cy.visit('/invoices')
+        cy.visit('/invoices/2020')
         duplicate_invoice('202001-007')
         cy.contains('Unsave Invoice (edit mode)')
         editInvoiceNumber('202001-008')
