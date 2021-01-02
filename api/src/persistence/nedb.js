@@ -15,10 +15,10 @@ module.exports = class Database {
         })
     }
 
-    update(data) {
+    update(id, data) {
         return new Promise((resolve, reject) => {
-            this.db.update(data, (e, docs) => {
-                if (e != null) reject(e)
+            this.db.update(id, data, {}, (e, n, docs) => {
+                if (e != null || n === 0) reject(e)
                 resolve(docs)
             })
         })
