@@ -69,9 +69,9 @@
           </thead>
           <tbody>
             <tr v-for="item in p.invoice.getItems()" :key="item.name">
-              <td class="text-left">{{ item.name }}</td>
-              <td class="text-right">{{ item.getPrice() }}</td>
-              <td class="text-right">{{ item.amount }}</td>
+              <td class="text-left"><v-text-field label="Item" v-model="item.name"/></td>
+              <td class="text-right"><v-text-field label="Price" v-model="item.price"/></td>
+              <td class="text-right"><v-text-field label="Amount" v-model="item.amount"/></td>
               <td class="text-right">{{ item.getTotal() }}</td>
             </tr>
           </tbody>
