@@ -21,7 +21,7 @@ export default class {
   }
 
   save(invoice) {
-    return axios.post(`${this.root}/invoice/${invoice.invoiceNumber}`, invoice)
+    return axios.post(`${this.root}/invoices/`, invoice)
       .then(this.parseInvoiceNumber)
   }
 

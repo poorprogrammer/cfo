@@ -19,7 +19,7 @@ app.get('/invoice/:invoiceNumber', function (req, res) {
         res.json(inv)
     })
 })
-app.post('/invoice/:invoiceNumber', function (req, res) {
+app.post('/invoices/', function (req, res) {
     new Invoice().save(req.body).then((id)=>{
         res.json(id)
     })
