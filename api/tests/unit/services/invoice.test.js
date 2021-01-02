@@ -33,7 +33,7 @@ describe("invoice", () => {
     it("should exclude deleted invoices", () => {
       db.mockAll();
       service.all();
-      expect(db.find).toHaveBeenCalledWith({deleted: false, invoiceDate: /(?:)/});
+      expect(db.find).toHaveBeenCalledWith({deleted: {$ne: true}, invoiceDate: /(?:)/});
     });
   });
   describe("get", () => {
