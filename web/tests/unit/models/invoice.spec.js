@@ -133,6 +133,10 @@ describe('Invoice', () => {
         invoice.invoiceDate = 'new date'
         expect(invoice.invoiceDate).toEqual('new date')
       })
+      it('should be able to change project', () => {
+        invoice.projectName = 'new project'
+        expect(invoice.getProjectName()).toEqual('new project')
+      })
     })
 
     describe('for each item', () => {
