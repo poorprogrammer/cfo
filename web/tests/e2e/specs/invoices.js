@@ -1,6 +1,6 @@
 describe('List Invoices Page', () => {
   it('Prints an old invoice', () => {
-    cy.visit('/invoices')
+    cy.visit('/invoices/2020')
     shouldSeeLastestInvoiceNumber(cy)
     clickOnInvoice(cy, '202001-001')
     shouldSee(cy, 'Training')
@@ -10,7 +10,7 @@ describe('List Invoices Page', () => {
     cy.visit('/shouldNotHaveThisPage')
     cy.contains('Page not found')
     cy.get('#app_logo').click()
-    cy.contains('202001-007')
+    cy.contains('Invoice List')
   })
 
   function shouldSeeLastestInvoiceNumber(cy) {
