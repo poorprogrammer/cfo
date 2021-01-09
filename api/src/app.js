@@ -27,6 +27,13 @@ app.put('/invoice/:invoiceNumber/', function (req, res) {
 app.post('/invoices/', function (req, res) {
     new Invoice().save(req.body).then((id)=>{
         res.json(id)
-    })
+    }, serverErrorHandler(res))
 })
+
+let serverErrorHandler = (res) => {
+    return (error) => {
+        res.status(500)
+        res.json({error: error})
+    }
+}
 module.exports = app
