@@ -16,7 +16,10 @@ export default class {
         .then((invoiceNumber) => {
           this.view.goTo({name: 'invoice', params: {invoiceNumber: invoiceNumber}})
         }, (error) => {
-          alert(error)
+          this.showError(error)
         })
+    }
+    showError(error) {
+      alert(error)
     }
 }

@@ -24,9 +24,18 @@ describe('Invoice Presenter', () => {
     await p.save()
     expectToRedirectToViewInvoicePage(p.view, invoiceNumber)
   })
+  it('should show error after save duplicated invoice', async () => {
+    givenSaveFailedWithError('Error: Request failed with status code 500')
+    await p.save()
+    expectPopupShownWithError('Error: Request failed with status code 500')
+  })
   function givenSaveSuccessWithInvoiceNumber(invoiceNumber) {
     jest.spyOn(p.view, 'goTo')
     jest.spyOn(p.API, 'save').mockResolvedValue(invoiceNumber)
+  }
+  function givenSaveFailedWithError(err) {
+    jest.spyOn(p, 'showError')
+    jest.spyOn(p.API, 'save').mockRejectedValue(err)
   }
   function expectToBeCalledWith(api, invoiceNumber) {
     expect(api.getInvoice).toHaveBeenCalled()
@@ -34,5 +43,8 @@ describe('Invoice Presenter', () => {
   }
   function expectToRedirectToViewInvoicePage(view, invoiceNumber) {
     expect(view.goTo).toHaveBeenCalledWith({name: 'invoice', params: {invoiceNumber: invoiceNumber}})
+  }
+  function expectPopupShownWithError(error) {
+    expect(p.showError).toHaveBeenCalledWith(error)
   }
 })
