@@ -114,7 +114,7 @@ module.exports = {
         invoiceDate: '2020-01-04',
         invoiceNumber: '202001-006',
     },
-    '202001-006-cancelled' : {
+    '202001-006-cancelled-1610189367307' : {
         amount: 300000,
         fromCompany: {
             name: 'ODDS HQ',
@@ -130,7 +130,7 @@ module.exports = {
             tel: '+1 650-960-1300',
         },
         invoiceDate: '2020-01-04',
-        invoiceNumber: '202001-006',
+        invoiceNumber: '202001-006-cancelled-1610189367307',
         deleted: true
     },
     '202001-007' : {

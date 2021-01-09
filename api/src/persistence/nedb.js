@@ -4,6 +4,10 @@ const config = require("config")
 module.exports = class Database {
     constructor() {
         this.db = new Datastore({ filename: config.get("DB_PATH"), autoload: true })
+        this.db.ensureIndex({ fieldName: 'invoiceNumber', unique: true }, function (err) {
+            console.log(err)
+        });
+
     }
 
     insert(data) {
