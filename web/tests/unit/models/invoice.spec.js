@@ -1,39 +1,38 @@
 import Invoice from "../../../src/models/Invoice"
 
 describe('Invoice', () => {
+  let json = {
+    amount: 130000,
+    projectName: 'React',
+    fromCompany: {
+      name: 'ODDS HQ',
+      address: '69 We are not hiring',
+      taxId: '0100000000000',
+      tel: '+66896669999',
+    },
+    targetCompany: {
+      name: 'Facebook HQ',
+      address: '1601 Willow Rd Menlo Park, California',
+      taxId: '0100008000007',
+      tel: '+1 650-960-1300',
+    },
+    invoiceDate: '2020-01-03',
+    invoiceNumber: '202001-001',
+    items: [
+      {
+        name: 'Developer',
+        price: 20000,
+        amount: 20,
+      },
+      {
+        name: 'Scrum master',
+        price: 80,
+        amount: 10,
+      },
+    ]
+  }
 
   describe('parsing json data', () => {
-    let json = {
-      amount: 130000,
-      projectName: 'React',
-      fromCompany: {
-        name: 'ODDS HQ',
-        address: '69 We are not hiring',
-        taxId: '0100000000000',
-        tel: '+66896669999',
-      },
-      targetCompany: {
-        name: 'Facebook HQ',
-        address: '1601 Willow Rd Menlo Park, California',
-        taxId: '0100008000007',
-        tel: '+1 650-960-1300',
-      },
-      invoiceDate: '2020-01-03',
-      invoiceNumber: '202001-001',
-      items: [
-        {
-          name: 'Developer',
-          price: 20000,
-          amount: 20,
-        },
-        {
-          name: 'Scrum master',
-          price: 80,
-          amount: 10,
-        },
-      ]
-    }
-
     let invoice = new Invoice(json)
 
     it('should have invoiceNumber', () => {
@@ -201,4 +200,25 @@ describe('Invoice', () => {
       })
     })
   })
+
+  describe("delete invoice", () => {
+    it('should mark as deleted', () => {
+      let invoice = new Invoice(json)
+      invoice.markAsDeleted()
+      expect(invoice.deleted).toEqual(true)
+    })
+    it('should update invoice number so the invoice number can be reused while unique', () => {
+      let t = '1610194022999'
+      let invoice = new Invoice(json)
+      mockCurrentTimestamp(invoice, t)
+      invoice.invoiceNumber = '202001-008'
+
+      invoice.markAsDeleted()
+
+      expect(invoice.invoiceNumber).toEqual(`202001-008-cancelled-${t}`)
+    })
+  })
 })
+function mockCurrentTimestamp(invoice, timestamp) {
+  jest.spyOn(invoice, 'currentTimestamp').mockReturnValue(timestamp)
+}

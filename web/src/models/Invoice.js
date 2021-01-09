@@ -42,6 +42,13 @@ export default class Invoice {
       {id: 2, title: 'Invoice (copy)', css: 'print-only'},
     ]
   }
+  markAsDeleted() {
+    this.deleted = true
+    this.invoiceNumber = `${this.invoiceNumber}-cancelled-${this.currentTimestamp()}`
+  }
+  currentTimestamp() {
+    return new Date().getTime()
+  }
 }
 
 function getItemTotal(item) { return item.total() }

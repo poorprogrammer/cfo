@@ -26,7 +26,7 @@ export default class {
   }
 
   delete(invoice) {
-    invoice.deleted = true
+    invoice.markAsDeleted()
     return axios.put(`${this.root}/invoice/${invoice.invoiceNumber}`, invoice)
       .then(this.parseInvoice)
   }
