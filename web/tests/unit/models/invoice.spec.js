@@ -204,6 +204,15 @@ describe('Invoice', () => {
       invoice.projectName = 'new project'
       expect(invoice.getProjectName()).toEqual('new project')
     })
+    it('should be able to add new item', () => {
+      let invoice = new Invoice(json)
+      invoice.addItemBefore(invoice.items[0])
+      expect(invoice.items.length).toEqual(3)
+      console.log(invoice.getItems())
+      expect(invoice.getItems()[0].name).toEqual('')
+      expect(invoice.getItems()[0].price).toEqual('')
+      expect(invoice.getItems()[0].amount).toEqual('')
+    })
   })
 
   describe("delete invoice", () => {

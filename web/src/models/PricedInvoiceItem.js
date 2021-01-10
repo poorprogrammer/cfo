@@ -1,10 +1,10 @@
 import InvoiceItem from '@/models/InvoiceItem'
 
 export default class PricedInvoiceItem {
-  constructor(data) {
-    this.name = data.name
-    this.price = data.price
-    this.amount = data.amount
+  constructor(name="", price="", amount="") {
+    this.name = name
+    this.price = price
+    this.amount = amount
   }
   total() {
     return this.price * this.amount

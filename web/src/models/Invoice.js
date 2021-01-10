@@ -18,7 +18,7 @@ export default class Invoice {
 
     if (!data.items) return
     data.items.forEach(i => {
-      this.items.push(new PricedInvoiceItem(i))
+      this.items.push(Object.assign(new PricedInvoiceItem(), i))
     });
   }
   url() { return `/invoice/${this.invoiceNumber}` }
@@ -49,6 +49,12 @@ export default class Invoice {
   }
   currentTimestamp() {
     return new Date().getTime()
+  }
+  addItemBefore(item) {
+    let i = this.items.indexOf(item)
+    console.log(`i = ${i}`)
+    this.items.splice(i, 0, new PricedInvoiceItem())
+    console.log(`items = ${this.items}`)
   }
 }
 
