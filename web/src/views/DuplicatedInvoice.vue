@@ -66,6 +66,7 @@
               <th scope="col" class="text-right">Price</th>
               <th scope="col" class="text-right">Amount</th>
               <th scope="col" class="text-right">Total</th>
+              <th scope="col" class="text-right">+/-</th>
             </tr>
           </thead>
           <tbody>
@@ -74,6 +75,14 @@
               <td class="text-right"><v-text-field label="Price" v-model="item.price"/></td>
               <td class="text-right"><v-text-field label="Amount" v-model="item.amount"/></td>
               <td class="text-right">{{ item.getTotal() }}</td>
+              <td class="text-right">
+                <v-btn class="mx-1 add-item" x-small fab dark color="green">
+                  <v-icon>mdi-arrow-up-circle</v-icon>
+                </v-btn>
+                <v-btn class="mx-1 remove-item" x-small fab dark color="red">
+                  <v-icon>mdi-close-circle</v-icon>
+                </v-btn>
+              </td>
             </tr>
           </tbody>
         </template>
