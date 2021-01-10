@@ -17,12 +17,26 @@ describe("invoice", () => {
   })
   describe("update", () => {
     it("should return updated invoice", () => {
-      let inv = {invoiceNumber: '202001-001', items: [ {name: 'training'}]}
+      let inv = {id: 1, invoiceNumber: '202001-001', items: [ {name: 'training'}]}
+      db.mockUpdate(inv);
+
       service.update(inv).then((invoice) => {
         expect(invoice.invoiceNumber).toEqual('202001-001')
         expect(invoice.items[0].name).toEqual('training')
       })
     })
+    it("should update with id", () => {
+      let id = 1
+      let invoice = {
+        id: id,
+        invoiceNumber: '202001-008'
+      }
+      db.mockUpdate(invoice);
+
+      service.update(invoice);
+
+      expect(db.update).toHaveBeenCalledWith({_id: id}, invoice)
+    });
   })
   describe("all", () => {
     it("should return an array", () => {

@@ -20,7 +20,7 @@ module.exports = class Invoice {
     }
 
     update(invoice) {
-        return this.db.update({invoiceNumber: invoice.invoiceNumber}, invoice).then((inv) => {
+        return this.db.update({_id: invoice.id}, invoice).then((inv) => {
             return inv
         })
     }

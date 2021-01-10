@@ -25,4 +25,11 @@ module.exports = class MockDatabase {
     mockAll() {
         this.find = jest.fn();
     }
+    mockUpdate(invoice) {
+        this.update = jest.fn();
+        let returnedValue = {...invoice}
+        returnedValue._id = invoice.id
+
+        this.update.mockResolvedValue(returnedValue)
+    }
 }
