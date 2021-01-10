@@ -5,8 +5,12 @@ describe('To Create New Invoice Via Invoice Duplication Feature ', () => {
             method: 'POST',
             url: '/invoices/',
         }).as('saveInvoice')
+        cy.route({
+            method: 'GET',
+            url: '/invoices/2020',
+        }).as('getInvoices')
 
-        cy.visit('/invoices/2020')
+        visitInvoicesPage()
         duplicate_invoice('202001-007')
         cy.contains('Unsave Invoice (edit mode)')
         editInvoiceNumber('202001-008')
@@ -18,7 +22,15 @@ describe('To Create New Invoice Via Invoice Duplication Feature ', () => {
         cy.containsInvoiceNumber('202001-008')
         cy.containsItemNameOnRow(1, 'Technical coach')
         cy.containsTotal('22,256.00')
+
+        visitInvoicesPage()
+        cy.contains('202001-008')
+        deleteInvoice('202001-008')
     })
+    function visitInvoicesPage() {
+        cy.visit('/invoices/2020')
+        cy.wait('@getInvoices')
+    }
     function duplicate_invoice(invoiceNumber) {
         cy.get(`#duplicate_${invoiceNumber}`).click()
     }
@@ -37,5 +49,10 @@ describe('To Create New Invoice Via Invoice Duplication Feature ', () => {
     function clickSave() {
         cy.get('#save-button').click()
         cy.wait('@saveInvoice')
+    }
+    function deleteInvoice(invoiceNumber) {
+        cy.get(`#delete_${invoiceNumber}`).click()
+        cy.get('.confirm-delete-btn').click()
+        cy.contains('202001-008').should('not.exist')
     }
 })

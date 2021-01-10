@@ -51,7 +51,7 @@
                 <v-btn color="darken-1" text @click="p.cancelDelete(item)">
                   Cancel
                 </v-btn>
-                <v-btn color="red darken-1" text @click="p.delete(item)">
+                <v-btn class="confirm-delete-btn" color="red darken-1" text @click="p.delete(item)">
                   Delete
                 </v-btn>
               </v-card-actions>
