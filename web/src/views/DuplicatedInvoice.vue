@@ -75,7 +75,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="item in p.invoice.getItems()" :key="item">
+            <tr v-for="item in p.invoice.getItems()" :key="item.key">
               <td class="text-left"><v-text-field label="Item" v-model="item.name"/></td>
               <td class="text-right"><v-text-field label="Price" v-model="item.price"/></td>
               <td class="text-right"><v-text-field label="Amount" v-model="item.amount"/></td>

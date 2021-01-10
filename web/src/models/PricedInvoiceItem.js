@@ -5,6 +5,7 @@ export default class PricedInvoiceItem {
     this.name = name
     this.price = price
     this.amount = amount
+    this.key = Math.random()
   }
   total() {
     return this.price * this.amount
