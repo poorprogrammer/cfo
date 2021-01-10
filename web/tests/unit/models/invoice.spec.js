@@ -204,11 +204,11 @@ describe('Invoice', () => {
       invoice.projectName = 'new project'
       expect(invoice.getProjectName()).toEqual('new project')
     })
-    describe("add new item", () => {
+    describe("add and remove item", () => {
       beforeEach(() =>{
         invoice = new Invoice(json)
       })
-      it('should increase total length', () => {
+      it('add should increase total length', () => {
         invoice.addItemBefore(invoice.items[0])
         expect(invoice.items.length).toEqual(3)
       })
@@ -223,6 +223,18 @@ describe('Invoice', () => {
         expect(invoice.getItems()[2].name).toEqual('')
         expect(invoice.getItems()[2].price).toEqual('')
         expect(invoice.getItems()[2].amount).toEqual('')
+      })
+      it('remove should decrease total length', () => {
+        invoice.removeItem(invoice.items[0])
+        expect(invoice.items.length).toEqual(1)
+      })
+      it('remove then the next item is moved up', () => {
+        invoice.removeItem(invoice.items[0])
+        expect(invoice.getItems()[0].name).toEqual('Scrum master')
+      })
+      it('remove unknown item does nothing', () => {
+        invoice.removeItem()
+        expect(invoice.items.length).toEqual(2)
       })
     })
   })

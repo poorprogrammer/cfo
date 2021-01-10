@@ -55,6 +55,11 @@ export default class Invoice {
     if(i<0) i = this.items.length
     this.items.splice(i, 0, new PricedInvoiceItem())
   }
+  removeItem(item) {
+    let i = this.items.indexOf(item)
+    if(i<0) return
+    this.items.splice(i, 1)
+  }
 }
 
 function getItemTotal(item) { return item.total() }

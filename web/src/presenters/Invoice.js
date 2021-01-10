@@ -23,7 +23,7 @@ export default class {
       this.invoice.addItemBefore(item)
     }
     removeItemClickedOn(item) {
-      console.log(item)
+      this.invoice.removeItem(item)
     }
     showError(error) {
       alert(error)
