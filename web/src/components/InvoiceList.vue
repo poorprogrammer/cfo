@@ -21,7 +21,9 @@
               text
               small
               color="primary"
-              >duplicate</v-btn
+              >
+                <v-icon dark>mdi-content-duplicate</v-icon>
+              </v-btn
             >
           </router-link>
 
@@ -35,7 +37,9 @@
                 text
                 small
                 color="primary"
-                >delete</v-btn
+                >
+                  <v-icon dark>mdi-delete</v-icon>
+                </v-btn
               >
             </template>
             <v-card>
