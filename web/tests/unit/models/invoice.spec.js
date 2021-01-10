@@ -204,14 +204,26 @@ describe('Invoice', () => {
       invoice.projectName = 'new project'
       expect(invoice.getProjectName()).toEqual('new project')
     })
-    it('should be able to add new item', () => {
-      let invoice = new Invoice(json)
-      invoice.addItemBefore(invoice.items[0])
-      expect(invoice.items.length).toEqual(3)
-      console.log(invoice.getItems())
-      expect(invoice.getItems()[0].name).toEqual('')
-      expect(invoice.getItems()[0].price).toEqual('')
-      expect(invoice.getItems()[0].amount).toEqual('')
+    describe("add new item", () => {
+      beforeEach(() =>{
+        invoice = new Invoice(json)
+      })
+      it('should increase total length', () => {
+        invoice.addItemBefore(invoice.items[0])
+        expect(invoice.items.length).toEqual(3)
+      })
+      it('new item is added before the given item', () => {
+        invoice.addItemBefore(invoice.items[0])
+        expect(invoice.getItems()[0].name).toEqual('')
+        expect(invoice.getItems()[0].price).toEqual('')
+        expect(invoice.getItems()[0].amount).toEqual('')
+      })
+      it('add last item when click on add before total', () => {
+        invoice.addItemBefore()
+        expect(invoice.getItems()[2].name).toEqual('')
+        expect(invoice.getItems()[2].price).toEqual('')
+        expect(invoice.getItems()[2].amount).toEqual('')
+      })
     })
   })
 

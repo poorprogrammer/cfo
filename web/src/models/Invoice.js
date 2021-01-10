@@ -52,9 +52,8 @@ export default class Invoice {
   }
   addItemBefore(item) {
     let i = this.items.indexOf(item)
-    console.log(`i = ${i}`)
+    if(i<0) i = this.items.length
     this.items.splice(i, 0, new PricedInvoiceItem())
-    console.log(`items = ${this.items}`)
   }
 }
 
