@@ -53,7 +53,7 @@
                 <v-col cols="12" sm="6"><v-text-field id="invoice-number" label="Invoice Number" v-model="p.invoice.invoiceNumber"/></v-col>
                 <v-col cols="8" sm="4"><v-text-field id="invoice-date" label="Invoice Date" v-model="p.invoice.invoiceDate"/></v-col>
                 <v-col cols="4" sm="2">
-                  <v-btn id="today-button" class="mx-1" fab dark color="accent" @click="today">
+                  <v-btn id="today-button" class="mx-1" fab dark color="primary" @click="today">
                     <v-icon dark>mdi-calendar</v-icon>
                   </v-btn>
                 </v-col>
