@@ -76,10 +76,10 @@
               <td class="text-right"><v-text-field label="Amount" v-model="item.amount"/></td>
               <td class="text-right">{{ item.getTotal() }}</td>
               <td class="text-right">
-                <v-btn class="mx-1 add-item" x-small fab dark color="green">
+                <v-btn class="mx-1 add-item" v-on:click="addItem(item)" x-small fab dark color="green">
                   <v-icon>mdi-arrow-up-circle</v-icon>
                 </v-btn>
-                <v-btn class="mx-1 remove-item" x-small fab dark color="red">
+                <v-btn class="mx-1 remove-item" v-on:click="removeItem(item)" x-small fab dark color="red">
                   <v-icon>mdi-close-circle</v-icon>
                 </v-btn>
               </td>
@@ -116,6 +116,8 @@ export default {
   },
   methods: {
     save: function() { this.p.save() },
+    addItem: function(item) { this.p.addItemClickedOn(item) },
+    removeItem: function(item) { this.p.removeItemClickedOn(item) },
     goTo: function(path) { this.$router.push(path) }
   }
 }

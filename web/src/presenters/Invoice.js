@@ -19,6 +19,12 @@ export default class {
           this.showError(error)
         })
     }
+    addItemClickedOn(item) {
+      this.invoice.addItemBefore(item)
+    }
+    removeItemClickedOn(item) {
+      console.log(item)
+    }
     showError(error) {
       alert(error)
     }
