@@ -29,11 +29,16 @@ describe('Invoice', () => {
         price: 80,
         amount: 10,
       },
-    ]
+    ],
+    _id: "oRFlyXTZX9cV6hIS"
   }
 
   describe('parsing json data', () => {
     let invoice = new Invoice(json)
+
+    it('should have id', () => {
+      expect(invoice.id).toEqual('oRFlyXTZX9cV6hIS')
+    })
 
     it('should have invoiceNumber', () => {
       expect(invoice.invoiceNumber).toEqual('202001-001')
