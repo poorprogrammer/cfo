@@ -25,6 +25,9 @@ export default class {
     removeItemClickedOn(item) {
       this.invoice.removeItem(item)
     }
+    todayClicked() {
+      this.invoice.setInvoiceDateToday()
+    }
     showError(error) {
       alert(error)
     }

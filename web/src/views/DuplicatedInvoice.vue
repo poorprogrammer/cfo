@@ -51,7 +51,12 @@
             <p class="body-2">
               <v-row dense>
                 <v-col cols="12" sm="6"><v-text-field id="invoice-number" label="Invoice Number" v-model="p.invoice.invoiceNumber"/></v-col>
-                <v-col cols="12" sm="6"><v-text-field id="invoice-date" label="Invoice Date" v-model="p.invoice.invoiceDate"/></v-col>
+                <v-col cols="8" sm="4"><v-text-field id="invoice-date" label="Invoice Date" v-model="p.invoice.invoiceDate"/></v-col>
+                <v-col cols="4" sm="2">
+                  <v-btn id="today-button" class="mx-1" fab dark color="accent" @click="today">
+                    <v-icon dark>mdi-calendar</v-icon>
+                  </v-btn>
+                </v-col>
                 <v-col cols="12" sm="6"><v-text-field id="project" label="Project" v-model="p.invoice.projectName"/></v-col>
               </v-row>
             </p>
@@ -94,7 +99,7 @@
           <v-icon dark>mdi-arrow-left-circle</v-icon>
         </v-btn>
       </router-link>
-      <v-btn id="save-button" v-on:click="save" class="mx-1" fab dark color="primary">
+      <v-btn id="save-button" @click="save" class="mx-1" fab dark color="primary">
         <v-icon dark>mdi-content-save</v-icon>
       </v-btn>
     </div>
@@ -116,6 +121,7 @@ export default {
   },
   methods: {
     save: function() { this.p.save() },
+    today: function() { this.p.todayClicked() },
     addItem: function(item) { this.p.addItemClickedOn(item) },
     removeItem: function(item) { this.p.removeItemClickedOn(item) },
     goTo: function(path) { this.$router.push(path) }

@@ -60,6 +60,15 @@ export default class Invoice {
     if(i<0) return
     this.items.splice(i, 1)
   }
+  setInvoiceDateToday(today=new Date()) {
+    this.invoiceDate = this.formatDate(today)
+  }
+  formatDate(date) {
+    let y = date.getFullYear();
+    let m = (1 + date.getMonth()).toString().padStart(2, '0');
+    let d = date.getDate().toString().padStart(2, '0');
+    return `${y}-${m}-${d}`
+  }
 }
 
 function getItemTotal(item) { return item.total() }
