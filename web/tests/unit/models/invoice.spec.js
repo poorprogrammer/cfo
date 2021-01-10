@@ -33,9 +33,9 @@ describe('Invoice', () => {
     _id: "oRFlyXTZX9cV6hIS"
   }
 
-  describe('parsing json data', () => {
-    let invoice = new Invoice(json)
+  let invoice = new Invoice(json)
 
+  describe('parsing json data', () => {
     it('should have id', () => {
       expect(invoice.id).toEqual('oRFlyXTZX9cV6hIS')
     })
@@ -94,53 +94,6 @@ describe('Invoice', () => {
 
     it('should have duplicattion url', () => {
       expect(invoice.duplicationUrl()).toEqual('/invoice/202001-001/duplicate')
-    })
-
-    describe('Update duplicated invoice', () => {
-      it('should be able to change from company name', () => {
-        invoice.fromCompany.name = 'ODDSTria'
-        expect(invoice.getFromCompanyName()).toEqual('ODDSTria')
-      })
-      it('should be able to change from company address', () => {
-        invoice.fromCompany.address = 'new address'
-        expect(invoice.getFromCompanyAddress()).toEqual('new address')
-      })
-      it('should be able to change from company tax id', () => {
-        invoice.fromCompany.taxId = 'new taxId'
-        expect(invoice.getFromCompanyTaxId()).toEqual('new taxId')
-      })
-      it('should be able to change from company tel', () => {
-        invoice.fromCompany.tel = 'new tel'
-        expect(invoice.getFromCompanyTel()).toEqual('new tel')
-      })
-      it('should be able to change target company name', () => {
-        invoice.targetCompany.name = 'ODDSTria'
-        expect(invoice.getFromCompanyName()).toEqual('ODDSTria')
-      })
-      it('should be able to change target company address', () => {
-        invoice.targetCompany.address = 'new address'
-        expect(invoice.getFromCompanyAddress()).toEqual('new address')
-      })
-      it('should be able to change target company tax id', () => {
-        invoice.targetCompany.taxId = 'new taxId'
-        expect(invoice.getFromCompanyTaxId()).toEqual('new taxId')
-      })
-      it('should be able to change target company tel', () => {
-        invoice.targetCompany.tel = 'new tel'
-        expect(invoice.getFromCompanyTel()).toEqual('new tel')
-      })
-      it('should be able to change invoice number', () => {
-        invoice.invoiceNumber = 'new number'
-        expect(invoice.invoiceNumber).toEqual('new number')
-      })
-      it('should be able to change invoice date', () => {
-        invoice.invoiceDate = 'new date'
-        expect(invoice.invoiceDate).toEqual('new date')
-      })
-      it('should be able to change project', () => {
-        invoice.projectName = 'new project'
-        expect(invoice.getProjectName()).toEqual('new project')
-      })
     })
 
     describe('for each item', () => {
@@ -203,6 +156,53 @@ describe('Invoice', () => {
         let titles = invoice.getTitles();
         expect(titles[1].css).toEqual('print-only')
       })
+    })
+  })
+
+  describe('Update duplicated invoice', () => {
+    it('should be able to change from company name', () => {
+      invoice.fromCompany.name = 'ODDSTria'
+      expect(invoice.getFromCompanyName()).toEqual('ODDSTria')
+    })
+    it('should be able to change from company address', () => {
+      invoice.fromCompany.address = 'new address'
+      expect(invoice.getFromCompanyAddress()).toEqual('new address')
+    })
+    it('should be able to change from company tax id', () => {
+      invoice.fromCompany.taxId = 'new taxId'
+      expect(invoice.getFromCompanyTaxId()).toEqual('new taxId')
+    })
+    it('should be able to change from company tel', () => {
+      invoice.fromCompany.tel = 'new tel'
+      expect(invoice.getFromCompanyTel()).toEqual('new tel')
+    })
+    it('should be able to change target company name', () => {
+      invoice.targetCompany.name = 'ODDSTria'
+      expect(invoice.getFromCompanyName()).toEqual('ODDSTria')
+    })
+    it('should be able to change target company address', () => {
+      invoice.targetCompany.address = 'new address'
+      expect(invoice.getFromCompanyAddress()).toEqual('new address')
+    })
+    it('should be able to change target company tax id', () => {
+      invoice.targetCompany.taxId = 'new taxId'
+      expect(invoice.getFromCompanyTaxId()).toEqual('new taxId')
+    })
+    it('should be able to change target company tel', () => {
+      invoice.targetCompany.tel = 'new tel'
+      expect(invoice.getFromCompanyTel()).toEqual('new tel')
+    })
+    it('should be able to change invoice number', () => {
+      invoice.invoiceNumber = 'new number'
+      expect(invoice.invoiceNumber).toEqual('new number')
+    })
+    it('should be able to change invoice date', () => {
+      invoice.invoiceDate = 'new date'
+      expect(invoice.invoiceDate).toEqual('new date')
+    })
+    it('should be able to change project', () => {
+      invoice.projectName = 'new project'
+      expect(invoice.getProjectName()).toEqual('new project')
     })
   })
 
