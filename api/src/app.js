@@ -53,10 +53,10 @@ let serverErrorHandler = (res) => {
         res.json(error.message);
       }
       throw error;
-    } catch (error) {
-      console.log(error);
+    } catch (e) {
+      console.log(e);
       res.status(500);
-      res.json({ error: error.toString() });
+      res.json({ error: e.toString() });
     }
   };
 };
