@@ -82,7 +82,7 @@
                 id="invoice-number"
                 label="Invoice Number"
                 v-model="p.invoice.invoiceNumber"
-              ></base-input>
+              />
               <v-col cols="8" sm="4"
                 ><v-text-field
                   id="invoice-date"
@@ -102,10 +102,15 @@
                 </v-btn>
               </v-col>
               <base-input
+                id="quotation-number"
+                label="Quotation Number"
+                v-model="p.invoice.quotationNumber"
+              />
+              <base-input
                 id="project"
                 label="Project"
                 v-model="p.invoice.projectName"
-              ></base-input>
+              />
             </v-row>
           </p>
         </v-card>

@@ -88,6 +88,10 @@
             <v-card class="invoice-id pa-2" outlined>
               <p class="body-2">
                 <v-row dense>
+                  <v-col v-if="p.invoice.quotationNumber" cols="6" sm="3">
+                    <span class="font-weight-bold">Quotation Number</span>
+                  </v-col>
+                  <v-col v-if="p.invoice.quotationNumber" cols="6" sm="3">{{ p.invoice.quotationNumber }}</v-col>
                   <v-col cols="6" sm="3">
                     <span class="font-weight-bold">Invoice Number</span>
                   </v-col>

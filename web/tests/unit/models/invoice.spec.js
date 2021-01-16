@@ -18,6 +18,7 @@ describe('Invoice', () => {
     },
     invoiceDate: '2020-01-03',
     invoiceNumber: '202001-001',
+    quotationNumber: '201912-060',
     items: [
       {
         name: 'Developer',
@@ -42,6 +43,10 @@ describe('Invoice', () => {
 
     it('should have invoiceNumber', () => {
       expect(invoice.invoiceNumber).toEqual('202001-001')
+    })
+
+    it('should have quotation number', () => {
+      expect(invoice.quotationNumber).toEqual('201912-060')
     })
 
     it('should have from company name', () => {

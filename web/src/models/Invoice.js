@@ -13,6 +13,7 @@ export default class Invoice {
     this.fromCompany = data.fromCompany
     this.targetCompany = data.targetCompany
     this.projectName = data.projectName
+    this.quotationNumber = data.quotationNumber
     this.dialog = false
     this.deleted = data.deleted || false
 
