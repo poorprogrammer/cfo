@@ -35,6 +35,7 @@ export default {
   },
   methods: {
     login: function() { this.p.login() },
+    goTo: function(path) { this.$router.push(path) }
   }
 };
 </script>

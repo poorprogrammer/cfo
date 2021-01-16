@@ -1,8 +1,18 @@
+import API from "@/services/login";
 export default class {
-  constructor(view, username, password) {
+  constructor(view) {
     this.view = view;
-    this.username = username;
-    this.password = password;
+    this.API = new API();
   }
-  login() {}
+  login() {
+    this.API.login(this.username, this.password)
+      .then(() => {
+        this.view.goTo({name: 'home'})
+      }, (error) => {
+        this.showError(error);
+      });
+  }
+  showError(error) {
+    alert(error)
+  }
 }
