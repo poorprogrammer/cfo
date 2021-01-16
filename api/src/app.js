@@ -21,14 +21,20 @@ app.get("/invoice/:invoiceNumber", function (req, res) {
   });
 });
 app.put("/invoice/:invoiceNumber/", function (req, res) {
-  new Invoice().update(req.body).then((inv) => {
-    res.json(req.body);
-  }, serverErrorHandler(res));
+  new Invoice()
+    .update(req.body)
+    .then((inv) => {
+      res.json(req.body);
+    })
+    .catch(serverErrorHandler(res));
 });
 app.post("/invoices/", function (req, res) {
-  new Invoice().save(req.body).then((id) => {
-    res.json(id);
-  }, serverErrorHandler(res));
+  new Invoice()
+    .save(req.body)
+    .then((id) => {
+      res.json(id);
+    })
+    .catch(serverErrorHandler(res));
 });
 app.post("/login/", function (req, res) {
   new Auth()
