@@ -8,7 +8,7 @@ module.exports = class Auth {
     login(password) {
         return new Promise((resolve, reject) => {
             if(password === this.password)
-                resolve({status: 200})
+                resolve(password)
             else
                 reject({status: 401, message: "Authentication failed"})
         })

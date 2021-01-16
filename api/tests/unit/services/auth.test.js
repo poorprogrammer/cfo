@@ -6,9 +6,9 @@ describe("auth", () => {
     service = new Auth("correct-password");
   });
   describe("login", () => {
-    it("should return ok when password is correct", () => {
+    it("should return token when password is correct", () => {
       service.login("correct-password").then((resp) => {
-        expect(resp.status).toEqual(200)
+        expect(resp).toEqual("correct-password")
       })
     })
     it("should return error when password is wrong", () => {
