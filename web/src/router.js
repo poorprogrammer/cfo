@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Invoices from './views/Invoices.vue'
 import Invoice from './views/Invoice.vue'
+import Login from './views/Login.vue'
 import PageNotFound from './views/PageNotFound.vue'
 import DuplicatedInvoice from './views/DuplicatedInvoice.vue'
 Vue.use(Router)
@@ -14,6 +15,11 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Invoices
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
     },
     {
       path: '/invoices/:year?',
