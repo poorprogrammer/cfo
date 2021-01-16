@@ -59,16 +59,16 @@
             </p>
             <p class="text--primary">
               <v-row dense>
-                <v-col cols="12" sm="6"
-                  ><v-text-field
-                    label="Tax Id"
-                    v-model="p.invoice.targetCompany.taxId"
-                /></v-col>
-                <v-col cols="12" sm="6"
-                  ><v-text-field
-                    label="Tel"
-                    v-model="p.invoice.targetCompany.tel"
-                /></v-col>
+                <base-input
+                  id="to-tax-id"
+                  label="Tax Id"
+                  v-model="p.invoice.targetCompany.taxId"
+                />
+                <base-input
+                  id="to-tel"
+                  label="Tel"
+                  v-model="p.invoice.targetCompany.tel"
+                />
               </v-row>
             </p>
           </v-card-text>
@@ -101,12 +101,11 @@
                   <v-icon dark>mdi-calendar</v-icon>
                 </v-btn>
               </v-col>
-              <v-col cols="12" sm="6"
-                ><v-text-field
-                  id="project"
-                  label="Project"
-                  v-model="p.invoice.projectName"
-              /></v-col>
+              <base-input
+                id="project"
+                label="Project"
+                v-model="p.invoice.projectName"
+              ></base-input>
             </v-row>
           </p>
         </v-card>
