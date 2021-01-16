@@ -1,7 +1,11 @@
 describe('List Invoices Page', () => {
+  beforeEach(() => {
+    cy.visit('/invoices/2020')
+    cy.login()
+  })
+
   it('Prints an old invoice', () => {
     cy.visit('/invoices/2020')
-    shouldSeeLastestInvoiceNumber(cy)
     clickOnInvoice(cy, '202001-001')
     shouldSee(cy, 'Training')
   })

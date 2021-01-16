@@ -3,8 +3,8 @@
     <v-col cols="6">
       <v-card outlined class="pa-2">
         <div>
-          <v-text-field label="Username" v-model="p.username" />
-          <v-text-field label="Password" type="password" v-model="p.password" />
+          <v-text-field id="username" label="Username" v-model="p.username" />
+          <v-text-field id="password" label="Password" type="password" v-model="p.password" />
 
           <v-btn
             id="login-button"

@@ -1,4 +1,9 @@
-describe('Invoice Page Now', () => {
+describe('Invoice Page 2020', () => {
+
+  beforeEach(() => {
+    cy.visit('/invoices/2020')
+    cy.login()
+  })
 
   it('Visits the view invoice url should see the original invoice', () => {
     openInvoiceDetailNumber('202001-001')

@@ -17,3 +17,15 @@ Cypress.Commands.add("containsTotal", (total) => {
     cy.get('div.v-data-table tr:last-child td:last-child')
       .contains(total)
 })
+
+Cypress.Commands.add("login", (username, password) => {
+    username = username || "user"
+    password = password || "s3cr3t"
+    cy.input("#username", username)
+    cy.input("#password", password)
+    cy.get("#login-button").click()
+})
+
+Cypress.Commands.add("input", (key, value) => {
+    cy.get(key).click().type('{selectall}'+value)
+})

@@ -1,4 +1,9 @@
 describe('To Create New Invoice Via Invoice Duplication Feature ', () => {
+    beforeEach(() => {
+        cy.visit('/invoices/2020')
+        cy.login()
+    })
+
     it('Can create new Invoice by duplcate from existing one', () => {
         cy.server()
         cy.route({
