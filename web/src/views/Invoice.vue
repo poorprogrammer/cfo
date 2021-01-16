@@ -58,11 +58,11 @@
           <v-col cols="6">
             <v-card class="pa-2" outlined>
               <div class="overline mb-4">To Company</div>
-              <v-card-title class="title">{{
+              <v-card-title class="title" :class="p.invoice.targetCompanyNameClass()">{{
                 p.invoice.getTargetCompanyName()
               }}</v-card-title>
               <v-card-text>
-                <p class="text--primary">
+                <p class="text--primary address">
                   {{ p.invoice.getTargetCompanyAddress() }}
                 </p>
                 <p class="text--primary">
@@ -201,7 +201,10 @@ export default {
     padding: 2px;
   }
   .v-application .invoice-id {
-    min-height: 215px;
+    min-height: 239px;
+  }
+  .v-application .address {
+    min-height: 44px;
   }
   .v-application .v-data-table {
     min-height: 364px;
@@ -221,5 +224,9 @@ div.v-image {
 }
 .invoice-id {
   min-height: 230px
+}
+.title.small {
+  font-size: 1rem !important;
+  line-height: 1rem;
 }
 </style>
