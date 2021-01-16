@@ -88,10 +88,7 @@
             <v-card class="invoice-id pa-2" outlined>
               <p class="body-2">
                 <v-row dense>
-                  <v-col v-if="p.invoice.quotationNumber" cols="6" sm="3">
-                    <span class="font-weight-bold">Quotation Number</span>
-                  </v-col>
-                  <v-col v-if="p.invoice.quotationNumber" cols="6" sm="3">{{ p.invoice.quotationNumber }}</v-col>
+                  <base-text label="Quotation Number" :value="p.invoice.quotationNumber"/>
                   <v-col cols="6" sm="3">
                     <span class="font-weight-bold">Invoice Number</span>
                   </v-col>
@@ -152,9 +149,10 @@
 <script>
 import Presenter from "@/presenters/Invoice";
 import BackButton from '@/components/BackButton.vue';
+import BaseText from '@/components/BaseText.vue';
 
 export default {
-  components: { BackButton },
+  components: { BackButton, BaseText },
   name: "invoice",
   mounted() {
     this.p.init(this.$route.params.invoiceNumber);
