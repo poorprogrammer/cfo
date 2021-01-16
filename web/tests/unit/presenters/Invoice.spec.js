@@ -34,7 +34,7 @@ describe('Invoice Presenter', () => {
     jest.spyOn(p.API, 'save').mockResolvedValue(invoiceNumber)
   }
   function givenSaveFailedWithError(err) {
-    jest.spyOn(p, 'showError')
+    jest.spyOn(p, 'showError').mockImplementation()
     jest.spyOn(p.API, 'save').mockRejectedValue(err)
   }
   function expectToBeCalledWith(api, invoiceNumber) {
