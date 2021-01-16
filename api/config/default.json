@@ -1,3 +1,4 @@
 {
-  "DB_PATH": "/tmp/cfo/invoices" 
+  "DB_PATH": "/tmp/cfo/invoices",
+  "PASSWORD": "s3cr3t"
 }

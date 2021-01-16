@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const app = express()
 const cors = require('cors')
 const Invoice = require('./services/invoice')
+const Auth = require('./services/auth')
 
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -29,11 +30,26 @@ app.post('/invoices/', function (req, res) {
         res.json(id)
     }, serverErrorHandler(res))
 })
+app.post('/login/', function (req, res) {
+    new Auth().login(req.body.password).then((out)=>{
+        res.json(out)
+    }).catch(serverErrorHandler(res))
+})
 
 let serverErrorHandler = (res) => {
     return (error) => {
-        res.status(500)
-        res.json({error: error})
+        try {
+            if(error.status === 401) {
+                res.status(error.status)
+                res.json(error.message)
+            }
+            throw error
+        } catch(error) {
+            console.log(error)
+            res.status(500)
+            res.json({error: error.toString()})
+        }
+
     }
 }
 module.exports = app
