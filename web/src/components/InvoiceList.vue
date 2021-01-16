@@ -15,16 +15,27 @@
         </template>
 
         <template v-slot:item.action="{ item }">
+
           <router-link :to="item.duplicationUrl()">
             <v-btn
               :id="'duplicate_' + item.invoiceNumber"
               text
               small
               color="primary"
-              >
-                <v-icon dark>mdi-content-duplicate</v-icon>
-              </v-btn
             >
+              <v-icon dark>mdi-content-duplicate</v-icon>
+            </v-btn>
+          </router-link>
+
+          <router-link :to="item.url()">
+            <v-btn
+              :id="'print_' + item.invoiceNumber"
+              text
+              small
+              color="primary"
+            >
+              <v-icon dark>mdi-printer</v-icon>
+            </v-btn>
           </router-link>
 
           <v-dialog v-model="item.dialog" max-width="290">
@@ -37,10 +48,9 @@
                 text
                 small
                 color="primary"
-                >
-                  <v-icon dark>mdi-delete</v-icon>
-                </v-btn
               >
+                <v-icon dark>mdi-delete</v-icon>
+              </v-btn>
             </template>
             <v-card>
               <v-card-title class="headline">
@@ -55,7 +65,12 @@
                 <v-btn color="darken-1" text @click="p.cancelDelete(item)">
                   Cancel
                 </v-btn>
-                <v-btn class="confirm-delete-btn" color="red darken-1" text @click="p.delete(item)">
+                <v-btn
+                  class="confirm-delete-btn"
+                  color="red darken-1"
+                  text
+                  @click="p.delete(item)"
+                >
                   Delete
                 </v-btn>
               </v-card-actions>
