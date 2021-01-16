@@ -23,6 +23,7 @@ export default class Invoice {
   }
   url() { return `/invoice/${this.invoiceNumber}` }
   duplicationUrl() { return `/invoice/${this.invoiceNumber}/duplicate` }
+  editionUrl() { return `/invoice/${this.invoiceNumber}/edit` }
   getItems() { return [...this.items, this.total(), this.tax(), this.grandTotal()] }
   total() { return new InvoiceItem('Total', this.getTotal()) }
   tax() { return new InvoiceItem('VAT 7%', this.getTotal() * 0.07) }

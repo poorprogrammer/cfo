@@ -11,7 +11,7 @@
         :disable-pagination="true"
       >
         <template v-slot:item.invoiceNumber="{ item }">
-          <router-link :to="item.url()">{{ item.invoiceNumber }}</router-link>
+          <router-link :to="item.editionUrl()">{{ item.invoiceNumber }}</router-link>
         </template>
 
         <template v-slot:item.action="{ item }">

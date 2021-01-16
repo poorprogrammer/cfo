@@ -19,6 +19,14 @@ export default class {
           this.showError(error)
         })
     }
+    update() {
+      this.API.update(this.invoice)
+      .then(() => {
+        this.view.goTo({name: 'home'})
+      }, (error) => {
+        this.showError(error)
+      })
+    }
     addItemClickedOn(item) {
       this.invoice.addItemBefore(item)
     }

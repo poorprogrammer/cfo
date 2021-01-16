@@ -33,7 +33,10 @@ export default {
     }
   },
   methods: {
-    save: function() { this.p.save() },
+    save: function() { this.p.update() },
+    today: function() { this.p.todayClicked() },
+    addItem: function(item) { this.p.addItemClickedOn(item) },
+    removeItem: function(item) { this.p.removeItemClickedOn(item) },
     goTo: function(path) { this.$router.push(path) }
   }
 }

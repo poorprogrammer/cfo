@@ -5,6 +5,8 @@ import Invoice from './views/Invoice.vue'
 import Login from './views/Login.vue'
 import PageNotFound from './views/PageNotFound.vue'
 import DuplicatedInvoice from './views/DuplicatedInvoice.vue'
+import UpdateInvoice from './views/UpdateInvoice.vue'
+
 Vue.use(Router)
 
 const isAuthenticated = (to, from, next) => {
@@ -40,6 +42,12 @@ export default new Router({
       path: '/invoice/:invoiceNumber/duplicate',
       name: 'duplicatedInvoice',
       component: DuplicatedInvoice,
+      beforeEnter: isAuthenticated,
+    },
+    {
+      path: '/invoice/:invoiceNumber/edit',
+      name: 'updateInvoice',
+      component: UpdateInvoice,
       beforeEnter: isAuthenticated,
     },
     {
