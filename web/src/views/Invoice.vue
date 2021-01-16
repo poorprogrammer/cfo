@@ -56,7 +56,7 @@
         </v-row>
         <v-row align="stretch" dense>
           <v-col cols="6">
-            <v-card class="pa-2" outlined>
+            <v-card class="pa-2 to-company" outlined>
               <div class="overline mb-4">To Company</div>
               <v-card-title class="title" :class="p.invoice.targetCompanyNameClass()">{{
                 p.invoice.getTargetCompanyName()
@@ -67,18 +67,8 @@
                 </p>
                 <p class="text--primary">
                   <v-row dense>
-                    <v-col cols="6" sm="3">
-                      <span class="font-weight-bold">Tax Id</span>
-                    </v-col>
-                    <v-col cols="6" sm="3">{{
-                      p.invoice.getTargetCompanyTaxId()
-                    }}</v-col>
-                    <v-col cols="6" sm="3">
-                      <span class="font-weight-bold">Tel</span>
-                    </v-col>
-                    <v-col cols="6" sm="3">{{
-                      p.invoice.getTargetCompanyTel()
-                    }}</v-col>
+                    <base-text label="Tax Id" :value="p.invoice.getTargetCompanyTaxId()"/>
+                    <base-text label="Tel" :value="p.invoice.getTargetCompanyTel()"/>
                   </v-row>
                 </p>
               </v-card-text>
@@ -89,14 +79,8 @@
               <p class="body-2">
                 <v-row dense>
                   <base-text label="Quotation Number" :value="p.invoice.quotationNumber"/>
-                  <v-col cols="6" sm="3">
-                    <span class="font-weight-bold">Invoice Number</span>
-                  </v-col>
-                  <v-col cols="6" sm="3">{{ p.invoice.invoiceNumber }}</v-col>
-                  <v-col cols="6" sm="3">
-                    <span class="font-weight-bold">Invoice Date</span>
-                  </v-col>
-                  <v-col cols="6" sm="3">{{ p.invoice.invoiceDate }}</v-col>
+                  <base-text label="Invoice Number" :value="p.invoice.invoiceNumber"/>
+                  <base-text label="Invoice Date" :value="p.invoice.invoiceDate"/>
                 </v-row>
               </p>
             </v-card>
@@ -201,8 +185,8 @@ export default {
   .v-application .invoice-id {
     min-height: 239px;
   }
-  .v-application .address {
-    min-height: 44px;
+  .v-application .to-company {
+    min-height: 239px;
   }
   .v-application .v-data-table {
     min-height: 364px;
