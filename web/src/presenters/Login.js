@@ -6,7 +6,8 @@ export default class {
   }
   login() {
     this.API.login(this.username, this.password)
-      .then(() => {
+      .then((token) => {
+        localStorage.setItem("token", token)
         this.view.goTo({name: 'home'})
       }, (error) => {
         this.showError(error);

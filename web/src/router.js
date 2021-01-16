@@ -7,6 +7,14 @@ import PageNotFound from './views/PageNotFound.vue'
 import DuplicatedInvoice from './views/DuplicatedInvoice.vue'
 Vue.use(Router)
 
+const isAuthenticated = (to, from, next) => {
+  if (localStorage.getItem('token')) {
+    next()
+    return
+  }
+  next('/login')
+}
+
 export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
@@ -14,7 +22,8 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Invoices
+      component: Invoices,
+      beforeEnter: isAuthenticated,
     },
     {
       path: '/login',
@@ -24,17 +33,20 @@ export default new Router({
     {
       path: '/invoices/:year?',
       name: 'invocies',
-      component: Invoices
+      component: Invoices,
+      beforeEnter: isAuthenticated,
     },
     {
       path: '/invoice/:invoiceNumber/duplicate',
       name: 'duplicatedInvoice',
-      component: DuplicatedInvoice
+      component: DuplicatedInvoice,
+      beforeEnter: isAuthenticated,
     },
     {
       path: '/invoice/:invoiceNumber',
       name: 'invoice',
-      component: Invoice
+      component: Invoice,
+      beforeEnter: isAuthenticated,
     },
     {
       path: '/about',

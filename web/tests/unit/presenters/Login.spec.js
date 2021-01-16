@@ -16,17 +16,22 @@ describe('Login Presenter', () => {
   })
   it('should redirect to home page after login success', async () => {
     givenLoginSuccess()
-    await p.login('username', 'correct password')
+    await p.login()
     expectToRedirectToHomePage(p.view)
+  })
+  it('should store token in local storage after login success', async () => {
+    givenLoginSuccess('ok')
+    await p.login()
+    expect(localStorage.getItem('token')).toEqual('ok')
   })
   it('should show error after login failed', async () => {
     givenLoginFailedWithError('Error: Request failed with status code 401')
-    await p.login('username', 'wrong password')
+    await p.login()
     expectPopupShownWithError('Error: Request failed with status code 401')
   })
-  function givenLoginSuccess() {
+  function givenLoginSuccess(res) {
     jest.spyOn(p.view, 'goTo')
-    jest.spyOn(p.API, 'login').mockResolvedValue()
+    jest.spyOn(p.API, 'login').mockResolvedValue(res)
   }
   function givenLoginFailedWithError(err) {
     jest.spyOn(p, 'showError').mockImplementation()
