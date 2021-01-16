@@ -140,19 +140,17 @@
       </div>
     </div>
     <div class="no-print">
-      <router-link to="/invoices" class="back-btn">
-        <v-btn id="back-button" class="mx-1" fab dark color="accent">
-          <v-icon dark>mdi-arrow-left-circle</v-icon>
-        </v-btn>
-      </router-link>
+      <back-button></back-button>
     </div>
   </div>
 </template>
 
 <script>
 import Presenter from "@/presenters/Invoice";
+import BackButton from '@/components/BackButton.vue';
 
 export default {
+  components: { BackButton },
   name: "invoice",
   mounted() {
     this.p.init(this.$route.params.invoiceNumber);

@@ -4,11 +4,7 @@
     <div v-else>
       <edit-invoice v-bind:presenter="p"></edit-invoice>
       <div class="no-print">
-        <router-link to="/invoices" class="back-btn">
-          <v-btn id="back-button" class="mx-1" fab dark color="accent">
-            <v-icon dark>mdi-arrow-left-circle</v-icon>
-          </v-btn>
-        </router-link>
+        <back-button></back-button>
         <v-btn id="save-button" @click="save" class="mx-1" fab dark color="primary">
           <v-icon dark>mdi-content-save</v-icon>
         </v-btn>
@@ -20,9 +16,10 @@
 <script>
 import Presenter from '@/presenters/Invoice'
 import EditInvoice from '@/components/EditInvoice.vue'
+import BackButton from '@/components/BackButton.vue'
 
 export default {
-  components: { EditInvoice },
+  components: { EditInvoice, BackButton },
   name: 'duplicatedInvoice',
   mounted() {
     this.p.init(this.$route.params.invoiceNumber)
