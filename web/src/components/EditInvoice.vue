@@ -78,12 +78,11 @@
         <v-card class="pa-2" outlined>
           <p class="body-2">
             <v-row dense>
-              <v-col cols="12" sm="6"
-                ><v-text-field
-                  id="invoice-number"
-                  label="Invoice Number"
-                  v-model="p.invoice.invoiceNumber"
-              /></v-col>
+              <base-input
+                id="invoice-number"
+                label="Invoice Number"
+                v-model="p.invoice.invoiceNumber"
+              ></base-input>
               <v-col cols="8" sm="4"
                 ><v-text-field
                   id="invoice-date"
@@ -166,16 +165,18 @@
 </template>
 <script>
 import Presenter from "@/presenters/Invoice";
+import BaseInput from "@/components/BaseInput.vue";
 
 export default {
   name: "editInvoice",
   props: {'presenter': Presenter },
+  components: { BaseInput },
   mounted() {
-    this.p = this.presenter
+    this.p = this.presenter;
   },
   data() {
     return {
-      p: this.p 
+      p: this.p,
     };
   },
   methods: {
