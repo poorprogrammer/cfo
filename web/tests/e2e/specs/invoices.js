@@ -6,7 +6,8 @@ describe('List Invoices Page', () => {
 
   it('Prints an old invoice', () => {
     cy.visit('/invoices/2020')
-    clickOnInvoice(cy, '202001-001')
+    shouldSeeLastestInvoiceNumber(cy)
+    clickPrintInvoice(cy, '202001-001')
     shouldSee(cy, 'Training')
   })
 
@@ -22,8 +23,8 @@ describe('List Invoices Page', () => {
     shouldSee(cy, latestInvoiceNumber)
   }
 
-  function clickOnInvoice(cy, invoiceNumber) {
-    cy.contains(invoiceNumber).click()
+  function clickPrintInvoice(cy, invoiceNumber) {
+    cy.get(`#print_${invoiceNumber}`).click()
   }
 
   function shouldSee(cy, expected) {
