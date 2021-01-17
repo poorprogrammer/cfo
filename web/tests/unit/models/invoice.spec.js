@@ -166,31 +166,32 @@ describe('Invoice', () => {
         expect(grandTotal.getTotal()).toEqual('THB 428,856.00')
       })
     })
-    describe('Printing', () => {
-      it('should make company name small when the name is too long', () => {
-        invoice.targetCompany.name = 'ตลาดหลักทรัพย์แห่งประเทศไทย (สำนักงานใหญ่)'
-        expect(invoice.targetCompanyNameClass()).toEqual('small')
-      })
-      it('should not make company name small when the name normal', () => {
-        invoice.targetCompany.name = '*3*5*7*10*13*16*19*22*25*28'
-        expect(invoice.targetCompanyNameClass()).toEqual('')
-      })
-      it('invoice should have original', () => {
-        let titles = invoice.getTitles();
-        expect(titles[0].title).toEqual('Invoice (original)')
-      })
-      it('original invoice displays on screen and paper', () => {
-        let titles = invoice.getTitles();
-        expect(titles[0].css).toEqual('')
-      })
-      it('invoice should have copy', () => {
-        let titles = invoice.getTitles();
-        expect(titles[1].title).toEqual('Invoice (copy)')
-      })
-      it('copy invoice displays paper only', () => {
-        let titles = invoice.getTitles();
-        expect(titles[1].css).toEqual('print-only')
-      })
+  })
+
+  describe('Printing', () => {
+    it('should make company name small when the name is too long', () => {
+      invoice.targetCompany.name = 'ตลาดหลักทรัพย์แห่งประเทศไทย (สำนักงานใหญ่)'
+      expect(invoice.targetCompanyNameClass()).toEqual('small')
+    })
+    it('should not make company name small when the name normal', () => {
+      invoice.targetCompany.name = '*3*5*7*10*13*16*19*22*25*28'
+      expect(invoice.targetCompanyNameClass()).toEqual('')
+    })
+    it('invoice should have original', () => {
+      let titles = invoice.getTitles();
+      expect(titles[0].title).toEqual('Invoice (original)')
+    })
+    it('original invoice displays on screen and paper', () => {
+      let titles = invoice.getTitles();
+      expect(titles[0].css).toEqual('')
+    })
+    it('invoice should have copy', () => {
+      let titles = invoice.getTitles();
+      expect(titles[1].title).toEqual('Invoice (copy)')
+    })
+    it('copy invoice displays paper only', () => {
+      let titles = invoice.getTitles();
+      expect(titles[1].css).toEqual('print-only')
     })
   })
 
