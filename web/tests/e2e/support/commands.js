@@ -19,11 +19,17 @@ Cypress.Commands.add("containsTotal", (total) => {
 })
 
 Cypress.Commands.add("login", (username, password) => {
+    cy.server()
+    cy.route({
+        method: 'POST',
+        url: '/login/',
+    }).as('login')
     username = username || "user"
     password = password || "s3cr3t"
     cy.input("#username", username)
     cy.input("#password", password)
     cy.get("#login-button").click()
+    cy.wait('@login')
 })
 
 Cypress.Commands.add("input", (key, value) => {
