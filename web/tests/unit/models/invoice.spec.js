@@ -246,6 +246,10 @@ describe('Invoice', () => {
         expect(invoice.getItems()[0].price).toEqual('')
         expect(invoice.getItems()[0].amount).toEqual('')
       })
+      it('new item can get price or adding would fail to render', () => {
+        invoice.addItemBefore(invoice.items[0])
+        expect(invoice.getItems()[0].getPrice()).toEqual('THB 0.00')
+      })
       it('add last item when click on add before total', () => {
         invoice.addItemBefore()
         expect(invoice.getItems()[2].name).toEqual('')

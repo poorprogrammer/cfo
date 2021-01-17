@@ -26,7 +26,7 @@ export default class Invoice {
 
     if (!data.items) return
     data.items.forEach(i => {
-      this.items.push(Object.assign(new PricedInvoiceItem(this), i))
+      this.items.push(Object.assign(this.createPricedInvoiceItem(), i))
     });
   }
   url() { return `/invoice/${this.invoiceNumber}` }
@@ -68,7 +68,7 @@ export default class Invoice {
   addItemBefore(item) {
     let i = this.items.indexOf(item)
     if(i<0) i = this.items.length
-    this.items.splice(i, 0, new PricedInvoiceItem())
+    this.items.splice(i, 0, this.createPricedInvoiceItem())
   }
   removeItem(item) {
     let i = this.items.indexOf(item)
@@ -83,6 +83,9 @@ export default class Invoice {
     let m = (1 + date.getMonth()).toString().padStart(2, '0');
     let d = date.getDate().toString().padStart(2, '0');
     return `${y}-${m}-${d}`
+  }
+  createPricedInvoiceItem() {
+    return new PricedInvoiceItem(this)
   }
 }
 
