@@ -121,6 +121,11 @@
                 label="Remark"
                 v-model="p.invoice.remark"
               />
+              <base-input
+                id="currency"
+                label="Currency"
+                v-model="p.invoice.currency"
+              />
             </v-row>
           </p>
         </v-card>

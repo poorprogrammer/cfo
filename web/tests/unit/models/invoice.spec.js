@@ -99,6 +99,13 @@ describe('Invoice', () => {
       expect(invoice.invoiceDate).toEqual('2020-01-03')
     })
 
+    it('should use saved currency so that item price and total is shown correctly', () => {
+      let data = Object.assign({}, json)
+      data.currency = 'USD'
+      let invoice = new Invoice(data)
+      expect(invoice.currency).toEqual('USD')
+    })
+
     it('should have project name field which used in invoice list page', () => {
       expect(invoice.projectName).toEqual('React')
     })
@@ -184,6 +191,20 @@ describe('Invoice', () => {
         let titles = invoice.getTitles();
         expect(titles[1].css).toEqual('print-only')
       })
+    })
+  })
+
+  describe('switching currency', () => {
+    let item
+
+    beforeEach(() =>{
+      invoice = new Invoice(json)
+      item = invoice.getItems()[1]
+    })
+
+    it('should have a price in USD', () => {
+      invoice.currency = 'USD'
+      expect(item.getPrice()).toEqual('USD 80.00')
     })
   })
 

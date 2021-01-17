@@ -16,21 +16,22 @@ export default class Invoice {
     this.quotationNumber = data.quotationNumber
     this.purchaseOrderNumber = data.purchaseOrderNumber
     this.remark = data.remark
+    this.currency = data.currency
     this.dialog = false
     this.deleted = data.deleted || false
 
     if (!data.items) return
     data.items.forEach(i => {
-      this.items.push(Object.assign(new PricedInvoiceItem(), i))
+      this.items.push(Object.assign(new PricedInvoiceItem(this), i))
     });
   }
   url() { return `/invoice/${this.invoiceNumber}` }
   duplicationUrl() { return `/invoice/${this.invoiceNumber}/duplicate` }
   editionUrl() { return `/invoice/${this.invoiceNumber}/edit` }
   getItems() { return [...this.items, this.total(), this.tax(), this.grandTotal()] }
-  total() { return new InvoiceItem('Total', this.getTotal()) }
-  tax() { return new InvoiceItem('VAT 7%', this.getTotal() * 0.07) }
-  grandTotal() { return new InvoiceItem('Grand Total', this.getTotal() * 1.07) }
+  total() { return new InvoiceItem('Total', this.getTotal(), this) }
+  tax() { return new InvoiceItem('VAT 7%', this.getTotal() * 0.07, this) }
+  grandTotal() { return new InvoiceItem('Grand Total', this.getTotal() * 1.07, this) }
   getTotal() { return this.items.map(getItemTotal).reduce(sum) }
   getFromCompanyName() { return this.fromCompany.name }
   getFromCompanyAddress() { return this.fromCompany.address }
