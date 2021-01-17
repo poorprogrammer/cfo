@@ -169,6 +169,11 @@ describe('Invoice', () => {
       item = invoice.getItems()[1]
     })
 
+    it('should support THB and USD', () => {
+      expect(invoice.getCurrencies()).toContain('THB')
+      expect(invoice.getCurrencies()).toContain('USD')
+    })
+
     it('should have a price in USD', () => {
       invoice.currency = 'USD'
       expect(item.getPrice()).toEqual('USD 80.00')

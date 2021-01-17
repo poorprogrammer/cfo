@@ -19,11 +19,7 @@ export default class InvoiceItem {
   }
 
   currency(key='THB') {
-    let currencies = {
-      "THB": new Intl.NumberFormat('th-TH', { style: 'currency', currency: 'THB', currencyDisplay: 'code' }),
-      "USD": new Intl.NumberFormat('us-US', { style: 'currency', currency: 'USD', currencyDisplay: 'code' }),
-    }
-    return currencies[key]
+    return this.invoice.currencies[key]
   }
 
 }

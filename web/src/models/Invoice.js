@@ -19,6 +19,10 @@ export default class Invoice {
     this.currency = data.currency
     this.dialog = false
     this.deleted = data.deleted || false
+    this.currencies = {
+      "THB": new Intl.NumberFormat('th-TH', { style: 'currency', currency: 'THB', currencyDisplay: 'code' }),
+      "USD": new Intl.NumberFormat('us-US', { style: 'currency', currency: 'USD', currencyDisplay: 'code' }),
+    }
 
     if (!data.items) return
     data.items.forEach(i => {
@@ -50,6 +54,9 @@ export default class Invoice {
       {id: 1, title: 'Invoice (original)', css: ''},
       {id: 2, title: 'Invoice (copy)', css: 'print-only'},
     ]
+  }
+  getCurrencies() {
+    return Object.keys(this.currencies)
   }
   markAsDeleted() {
     this.deleted = true

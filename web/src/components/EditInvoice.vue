@@ -121,11 +121,14 @@
                 label="Remark"
                 v-model="p.invoice.remark"
               />
-              <base-input
-                id="currency"
-                label="Currency"
-                v-model="p.invoice.currency"
-              />
+
+              <v-col cols="12" sm="6">
+                <v-select
+                  v-model="p.invoice.currency"
+                  :items="p.invoice.getCurrencies()"
+                  label="Currency"
+                ></v-select>
+              </v-col>
             </v-row>
           </p>
         </v-card>
@@ -188,7 +191,7 @@ import BaseInput from "@/components/BaseInput.vue";
 
 export default {
   name: "editInvoice",
-  props: {'presenter': Presenter },
+  props: { presenter: Presenter },
   components: { BaseInput },
   mounted() {
     this.p = this.presenter;
