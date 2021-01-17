@@ -172,6 +172,7 @@ describe('Invoice', () => {
     it('should have a price in USD', () => {
       invoice.currency = 'USD'
       expect(item.getPrice()).toEqual('USD 80.00')
+      expect(item.getTotal()).toEqual('USD 800.00')
     })
   })
 

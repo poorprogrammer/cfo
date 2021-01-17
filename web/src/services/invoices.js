@@ -21,7 +21,7 @@ export default class {
   }
 
   save(invoice) {
-    return axios.post(`${this.root}/invoices/`, invoice)
+    return axios.post(`${this.root}/invoices/`, this.createDTO(invoice))
       .then(this.parseInvoiceNumber)
   }
 
@@ -31,7 +31,8 @@ export default class {
   }
 
   update(invoice) {
-    return axios.put(`${this.root}/invoice/${invoice.invoiceNumber}`, invoice)
+    let url = `${this.root}/invoice/${invoice.invoiceNumber}`
+    return axios.put(url, this.createDTO(invoice))
       .then(this.parseInvoice)
   }
 
@@ -49,5 +50,15 @@ export default class {
 
   parseInvoiceNumber = (response) => {
     return response.data
+  }
+
+  createDTO = (invoice) => {
+    let dto = {}
+    Object.assign(dto, invoice)
+    if(!dto.items) return dto
+    dto.items.forEach((item) => {
+      delete item.item
+    })
+    return dto
   }
 }

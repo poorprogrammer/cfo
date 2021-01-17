@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="p.invoice">
     <v-row justify="center" dense>
       <h2>Unsave Invoice (edit mode)</h2>
     </v-row>

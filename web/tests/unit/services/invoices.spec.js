@@ -1,5 +1,6 @@
 import API from '@/services/invoices'
 import axios from 'axios'
+import { Factory } from '../factory';
 describe('invoices API', () => {
   let api;
 
@@ -46,6 +47,12 @@ describe('invoices API', () => {
     })
   })
   describe('save', () => {
+    describe('Data Transfer Object', () => {
+      it('remove circular dependencies to avoid save fail', async () => {
+        let dto = api.createDTO(Factory.createInvoice())
+        expect(dto.items[0].item).toEqual(undefined)
+      })
+    })
     describe('after call', () => {
       it('should parse response into invoiceNumber', async () => {
         let invoiceNumber = api.parseInvoiceNumber({data: '202001-001'})
