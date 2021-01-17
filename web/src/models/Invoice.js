@@ -45,6 +45,9 @@ export default class Invoice {
   targetCompanyNameClass() {
     return this.getTargetCompanyName().length > 40? "small" : ""
   }
+  itemClass() {
+    return this.items.length > 3? "small": ""
+  }
   getTargetCompanyAddress() { return this.targetCompany.address }
   getTargetCompanyTaxId() { return this.targetCompany.taxId }
   getTargetCompanyTel() { return this.targetCompany.tel }

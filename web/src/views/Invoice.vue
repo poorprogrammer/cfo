@@ -100,10 +100,10 @@
             </thead>
             <tbody>
               <tr v-for="item in p.invoice.getItems()" :key="item.name">
-                <td class="text-left">{{ item.name }}</td>
-                <td class="text-right">{{ item.getPrice() }}</td>
-                <td class="text-right">{{ item.amount }}</td>
-                <td class="text-right">{{ item.getTotal() }}</td>
+                <td :class="p.invoice.itemClass()" class="item text-left">{{ item.name }}</td>
+                <td :class="p.invoice.itemClass()" class="item text-right">{{ item.getPrice() }}</td>
+                <td :class="p.invoice.itemClass()" class="item text-right">{{ item.amount }}</td>
+                <td :class="p.invoice.itemClass()" class="item text-right">{{ item.getTotal() }}</td>
               </tr>
             </tbody>
           </template>
@@ -192,6 +192,10 @@ export default {
   }
   .v-application .v-data-table {
     min-height: 364px;
+  }
+  .v-application td.item.small {
+    padding: 2px;
+    height: 24px;
   }
   main.v-main {
     padding: 0px !important;

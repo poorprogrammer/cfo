@@ -135,6 +135,12 @@ describe('Invoice', () => {
   })
 
   describe('Printing', () => {
+    it('should print small items when there are more than 3 items so it fits in 1 page', () => {
+      invoice.addItemBefore()
+      invoice.addItemBefore()
+      expect(invoice.items.length).toEqual(4)
+      expect(invoice.itemClass()).toEqual("small")
+    })
     it('should make company name small when the name is too long', () => {
       invoice.targetCompany.name = 'ตลาดหลักทรัพย์แห่งประเทศไทย (สำนักงานใหญ่)'
       expect(invoice.targetCompanyNameClass()).toEqual('small')
