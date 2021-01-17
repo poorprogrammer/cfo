@@ -107,9 +107,19 @@
                 v-model="p.invoice.quotationNumber"
               />
               <base-input
+                id="purchase-order-number"
+                label="Purchase Order Number"
+                v-model="p.invoice.purchaseOrderNumber"
+              />
+              <base-input
                 id="project"
                 label="Project"
                 v-model="p.invoice.projectName"
+              />
+              <base-input
+                id="remark"
+                label="Remark"
+                v-model="p.invoice.remark"
               />
             </v-row>
           </p>

@@ -79,8 +79,10 @@
               <p class="body-2">
                 <v-row dense>
                   <base-text label="Quotation Number" :value="p.invoice.quotationNumber"/>
+                  <base-text label="Purchase Order Number" :value="p.invoice.purchaseOrderNumber"/>
                   <base-text label="Invoice Number" :value="p.invoice.invoiceNumber"/>
                   <base-text label="Invoice Date" :value="p.invoice.invoiceDate"/>
+                  <base-text label="Remark" :value="p.invoice.remark"/>
                 </v-row>
               </p>
             </v-card>

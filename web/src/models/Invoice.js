@@ -14,6 +14,8 @@ export default class Invoice {
     this.targetCompany = data.targetCompany
     this.projectName = data.projectName
     this.quotationNumber = data.quotationNumber
+    this.purchaseOrderNumber = data.purchaseOrderNumber
+    this.remark = data.remark
     this.dialog = false
     this.deleted = data.deleted || false
 
