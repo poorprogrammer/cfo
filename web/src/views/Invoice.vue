@@ -7,39 +7,23 @@
         :key="id"
         :class="css"
       >
-        <v-row justify="center" dense>
-          <h2>{{ title }}</h2>
-        </v-row>
         <v-row align="stretch" dense>
           <v-col cols="12">
-            <v-card outlined>
+            <v-card flat class="from-company">
               <v-list-item three-line>
                 <v-list-item-content>
-                  <div class="overline mb-4">From Company</div>
-                  <v-list-item-title class="title mb-1">{{
+                  <p class="title mb-1">{{
                     p.invoice.getFromCompanyName()
-                  }}</v-list-item-title>
-                  <v-list-item-subtitle class="text--primary">
-                    <p class="text--primary">
-                      {{ p.invoice.getFromCompanyAddress() }}
-                    </p>
-                    <p>
-                      <v-row dense>
-                        <v-col cols="3" sm="2">
-                          <span class="font-weight-bold">Tax Id</span>
-                        </v-col>
-                        <v-col cols="3" sm="2">{{
-                          p.invoice.getFromCompanyTaxId()
-                        }}</v-col>
-                        <v-col cols="3" sm="2">
-                          <span class="font-weight-bold">Tel</span>
-                        </v-col>
-                        <v-col cols="3" sm="2">{{
-                          p.invoice.getFromCompanyTel()
-                        }}</v-col>
-                      </v-row>
-                    </p>
-                  </v-list-item-subtitle>
+                  }}</p>
+                  <p class="text--primary">
+                    {{ p.invoice.getFromCompanyAddress() }}
+                  </p>
+                  <p>
+                    <span class="font-weight-bold">Tax Id</span>
+                    {{ p.invoice.getFromCompanyTaxId() }}
+                    <span class="font-weight-bold">Tel</span>
+                    {{ p.invoice.getFromCompanyTel() }}
+                  </p>
                 </v-list-item-content>
 
                 <v-list-item-avatar tile size="130">
@@ -54,9 +38,16 @@
             </v-card>
           </v-col>
         </v-row>
+
+        <v-row justify="center" dense>
+          <h2 class="heading">{{ title }}</h2>
+        </v-row>
+
+        <v-divider></v-divider>
+
         <v-row align="stretch" dense>
           <v-col cols="6">
-            <v-card class="pa-2 to-company" outlined>
+            <v-card class="pa-2 to-company" flat>
               <div class="overline mb-4">To Company</div>
               <v-card-title class="title" :class="p.invoice.targetCompanyNameClass()">{{
                 p.invoice.getTargetCompanyName()
@@ -75,7 +66,7 @@
             </v-card>
           </v-col>
           <v-col cols="6">
-            <v-card class="invoice-id pa-2" outlined>
+            <v-card class="invoice-id pa-2" flat>
               <p class="body-2">
                 <v-row dense>
                   <base-text label="Quotation Number" :value="p.invoice.quotationNumber"/>
@@ -216,5 +207,14 @@ div.v-image {
 .title.small {
   font-size: 1rem !important;
   line-height: 1rem;
+}
+.v-application div.from-company div.v-list-item__content {
+  align-self: center;
+}
+.v-application .from-company p {
+  margin-bottom: 4px;
+}
+h2.heading {
+  font-size: 2rem;
 }
 </style>
