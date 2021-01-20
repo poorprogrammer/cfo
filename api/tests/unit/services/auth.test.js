@@ -13,7 +13,6 @@ describe("auth", () => {
     })
     it("should return error when password is wrong", () => {
       service.login("wrong-password").catch((error) => {
-        console.log(error)
         expect(error.status).toEqual(401)
         expect(error.message).toEqual('Authentication failed')
       })
