@@ -171,10 +171,10 @@ export default {
     padding: 2px;
   }
   .v-application .invoice-id {
-    min-height: 239px;
+    min-height: 220px;
   }
   .v-application .to-company {
-    min-height: 239px;
+    min-height: 220px;
   }
   .v-application .v-data-table {
     min-height: 364px;
