@@ -46,27 +46,22 @@
         <v-divider></v-divider>
 
         <v-row align="stretch" dense>
-          <v-col cols="6">
-            <v-card class="pa-2 to-company" flat>
-              <div class="overline mb-4">To Company</div>
-              <v-card-title class="title" :class="p.invoice.targetCompanyNameClass()">{{
-                p.invoice.getTargetCompanyName()
-              }}</v-card-title>
-              <v-card-text>
-                <p class="text--primary address">
-                  {{ p.invoice.getTargetCompanyAddress() }}
-                </p>
-                <p class="text--primary">
-                  <v-row dense>
-                    <base-text label="Tax Id" :value="p.invoice.getTargetCompanyTaxId()"/>
-                    <base-text label="Tel" :value="p.invoice.getTargetCompanyTel()"/>
-                  </v-row>
-                </p>
-              </v-card-text>
-            </v-card>
+          <v-col cols="6" class="pa-4">
+            <p class="text--primary title" :class="p.invoice.targetCompanyNameClass()">
+              {{ p.invoice.getTargetCompanyName() }}
+            </p>
+            <p class="text--primary address">
+              {{ p.invoice.getTargetCompanyAddress() }}
+            </p>
+            <p class="text--primary">
+              <v-row dense>
+                <base-text label="Tax Id" :value="p.invoice.getTargetCompanyTaxId()"/>
+                <base-text label="Tel" :value="p.invoice.getTargetCompanyTel()"/>
+              </v-row>
+            </p>
           </v-col>
           <v-col cols="6">
-            <v-card class="invoice-id pa-2" flat>
+            <v-card class="invoice-id" flat>
               <p class="body-2">
                 <v-row dense>
                   <base-text label="Quotation Number" :value="p.invoice.quotationNumber"/>
