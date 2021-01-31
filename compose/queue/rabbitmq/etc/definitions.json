@@ -1,0 +1,62 @@
+{
+    "rabbit_version": "3.8.11",
+    "rabbitmq_version": "3.8.11",
+    "product_name": "RabbitMQ",
+    "product_version": "3.8.11",
+    "users": [
+      {
+        "name": "cfo",
+        "password_hash": "RBn4q2sKTHfvtjIBl0lWzJB7SWhaT13og2mO3QdaGIayJ/UX",
+        "hashing_algorithm": "rabbit_password_hashing_sha256",
+        "tags": "",
+        "limits": {}
+      },
+      {
+        "name": "admin",
+        "password_hash": "sqoS/Tj7pMPm13q/4MTjmGJniXQZJsHxt8QsvSc4mwUOm0vm",
+        "hashing_algorithm": "rabbit_password_hashing_sha256",
+        "tags": "administrator",
+        "limits": {}
+      }
+    ],
+    "vhosts": [{ "name": "/" }],
+    "permissions": [
+      {
+        "user": "cfo",
+        "vhost": "/",
+        "configure": ".*",
+        "write": ".*",
+        "read": ".*"
+      },
+      {
+        "user": "admin",
+        "vhost": "/",
+        "configure": ".*",
+        "write": ".*",
+        "read": ".*"
+      }
+    ],
+    "topic_permissions": [
+      { "user": "cfo", "vhost": "/", "exchange": "", "write": ".*", "read": ".*" }
+    ],
+    "parameters": [],
+    "global_parameters": [
+      { "name": "cluster_name", "value": "rabbit@my-rabbit" },
+      {
+        "name": "internal_cluster_id",
+        "value": "rabbitmq-cluster-id-I3FzPYYrYBKDp0R1ZQ64-g"
+      }
+    ],
+    "policies": [],
+    "queues": [
+      {
+        "name": "invoice-created",
+        "vhost": "/",
+        "durable": false,
+        "auto_delete": false,
+        "arguments": {}
+      }
+    ],
+    "exchanges": [],
+    "bindings": []
+  }
