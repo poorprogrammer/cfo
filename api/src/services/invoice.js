@@ -1,4 +1,5 @@
 const Database = require("../persistence/nedb");
+const invoiceCreatedMessage = require("../queue/message");
 const Sender = require("../queue/sender");
 
 module.exports = class Invoice {
@@ -17,7 +18,7 @@ module.exports = class Invoice {
 
     save(invoice) {
         return this.db.insert(invoice).then((inv) => {
-            this.sender.send()
+            this.sender.send('invoice-created', invoiceCreatedMessage(inv))
             return inv.invoiceNumber
         })
     }

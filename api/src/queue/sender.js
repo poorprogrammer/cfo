@@ -1,35 +1,50 @@
 const amqp = require("amqplib/callback_api");
 
 module.exports = class Sender {
-  constructor(connection) {
-    this.connection = connection;
-  }
+  static connection;
 
-  static create(queue) {
-    amqp.connect("amqp://localhost", function (error0, connection) {
-      if (error0) {
-        console.log("cannot connect to queue server %s", error0.toString());
-        return new MockSender();
-      }
-      return Sender(connection);
-    });
+  static create() {
+    if (!Sender.connection) Sender.connect();
+    if (Sender.connection) {
+      return new Sender();
+    }
+    return new MockSender();
   }
 
   send(queue, msg) {
-    this.connection.createChannel(function (error1, channel) {
-      if (error1) {
-        console.log(
-          "cannot create channel to queue server %s",
-          error1.toString()
-        );
-        return;
-      }
-      channel.assertQueue(queue, {
-        durable: false,
+    try {
+      Sender.createChannel(queue).then((channel) => {
+        channel.sendToQueue(queue, Buffer.from(msg));
+        console.log(" [x] Sent %s", msg);
       });
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
-      channel.sendToQueue(queue, Buffer.from(msg));
-      console.log(" [x] Sent %s", msg);
+  static connect() {
+    amqp.connect("amqp://cfo:password@localhost", function (e, connection) {
+      if (e) {
+        console.log("cannot connect to queue server %s", e.toString());
+      }
+      Sender.connection = connection;
+    });
+  }
+
+  static createChannel(queue) {
+    return new Promise((resolve, reject) => {
+      if (Sender.channel) return resolve(Sender.channel);
+      Sender.connection.createChannel(function (e, channel) {
+        if (e) {
+          console.log("cannot create channel to queue server %s", e.toString());
+          return reject(e);
+        }
+        Sender.channel = channel;
+        Sender.channel.assertQueue(queue, {
+          durable: false,
+        });
+        return resolve(Sender.channel);
+      });
     });
   }
 };
