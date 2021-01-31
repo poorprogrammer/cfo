@@ -1,4 +1,5 @@
 const amqp = require("amqplib/callback_api");
+const config = require("config")
 
 module.exports = class Sender {
   static connection;
@@ -23,7 +24,7 @@ module.exports = class Sender {
   }
 
   static connect() {
-    amqp.connect("amqp://cfo:password@localhost", function (e, connection) {
+    amqp.connect(config.get("QUEUE_SERVER"), function (e, connection) {
       if (e) {
         console.log("cannot connect to queue server %s", e.toString());
       }
