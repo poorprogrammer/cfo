@@ -1,43 +1,48 @@
 const Invoice = require("../../../src/services/invoice");
+const Sender = require("../../../src/queue/sender");
 const MockDatabase = require("./MockDatabase");
 
 describe("invoice", () => {
-  let service, db
+  let service, db;
   beforeEach(() => {
     db = new MockDatabase();
-    service = new Invoice(db);
+    service = new Invoice(db, Sender.create());
   });
   describe("save", () => {
     it("should return invoice number", () => {
-      let inv = {invoiceNumber: '202001-001'}
+      let inv = { invoiceNumber: "202001-001" };
       service.save(inv).then((invoiceNumber) => {
-        expect(invoiceNumber).toEqual('202001-001')
-      })
-    })
-  })
+        expect(invoiceNumber).toEqual("202001-001");
+      });
+    });
+  });
   describe("update", () => {
     it("should return updated invoice", () => {
-      let inv = {id: 1, invoiceNumber: '202001-001', items: [ {name: 'training'}]}
+      let inv = {
+        id: 1,
+        invoiceNumber: "202001-001",
+        items: [{ name: "training" }],
+      };
       db.mockUpdate(inv);
 
       service.update(inv).then((invoice) => {
-        expect(invoice.invoiceNumber).toEqual('202001-001')
-        expect(invoice.items[0].name).toEqual('training')
-      })
-    })
+        expect(invoice.invoiceNumber).toEqual("202001-001");
+        expect(invoice.items[0].name).toEqual("training");
+      });
+    });
     it("should update with id", () => {
-      let id = 1
+      let id = 1;
       let invoice = {
         id: id,
-        invoiceNumber: '202001-008'
-      }
+        invoiceNumber: "202001-008",
+      };
       db.mockUpdate(invoice);
 
       service.update(invoice);
 
-      expect(db.update).toHaveBeenCalledWith({_id: id}, invoice)
+      expect(db.update).toHaveBeenCalledWith({ _id: id }, invoice);
     });
-  })
+  });
   describe("all", () => {
     it("should return an array", () => {
       service.all().then((invoices) => {
@@ -47,7 +52,10 @@ describe("invoice", () => {
     it("should exclude deleted invoices", () => {
       db.mockAll();
       service.all();
-      expect(db.find).toHaveBeenCalledWith({deleted: {$ne: true}, invoiceDate: /(?:)/});
+      expect(db.find).toHaveBeenCalledWith({
+        deleted: { $ne: true },
+        invoiceDate: /(?:)/,
+      });
     });
   });
   describe("get", () => {

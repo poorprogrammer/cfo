@@ -1,8 +1,10 @@
-const Database = require("../persistence/nedb")
+const Database = require("../persistence/nedb");
+const Sender = require("../queue/sender");
 
 module.exports = class Invoice {
-    constructor(db) {
+    constructor(db, sender) {
         this.db = db || new Database()
+        this.sender = sender || Sender.create()
     }
 
     get(invoiceNumber) {
@@ -15,6 +17,7 @@ module.exports = class Invoice {
 
     save(invoice) {
         return this.db.insert(invoice).then((inv) => {
+            this.sender.send()
             return inv.invoiceNumber
         })
     }
