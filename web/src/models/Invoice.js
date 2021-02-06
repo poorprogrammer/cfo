@@ -10,8 +10,8 @@ export default class Invoice {
     this.companySlug = data.companySlug
     this.invoiceDate = data.invoiceDate
     this.items = []
-    this.fromCompany = data.fromCompany
-    this.targetCompany = data.targetCompany
+    this.fromCompany = Object.assign({}, data.fromCompany)
+    this.targetCompany = Object.assign({}, data.targetCompany)
     this.projectName = data.projectName
     this.quotationNumber = data.quotationNumber
     this.purchaseOrderNumber = data.purchaseOrderNumber
@@ -89,6 +89,13 @@ export default class Invoice {
   }
   createPricedInvoiceItem() {
     return new PricedInvoiceItem(this)
+  }
+  filename() {
+    return `${this.reverseInvoiceNumber()}_INVOICE_${this.targetCompany.name}_${this.projectName}`
+  }
+  reverseInvoiceNumber() {
+    let words = this.invoiceNumber.split('-')
+    return `${words[1]}-${words[0].substring(4)}${words[0].substring(0,4)}`
   }
 }
 

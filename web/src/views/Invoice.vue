@@ -9,6 +9,10 @@
       >
         <v-row align="stretch" dense>
           <v-col cols="12">
+            <div class="no-print">
+              <span class="font-weight-bold">Filename: </span>
+              {{ p.invoice.filename() }}
+            </div>
             <v-card flat class="from-company">
               <v-list-item three-line>
                 <v-list-item-content>

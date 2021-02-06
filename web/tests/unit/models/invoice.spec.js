@@ -2,8 +2,8 @@ import Invoice from "../../../src/models/Invoice"
 import { Factory } from "../factory"
 
 describe('Invoice', () => {
-
   let invoice = Factory.createInvoice()
+
   describe('parsing json data', () => {
     it('should have id', () => {
       expect(invoice.id).toEqual('oRFlyXTZX9cV6hIS')
@@ -142,10 +142,12 @@ describe('Invoice', () => {
       expect(invoice.itemClass()).toEqual("small")
     })
     it('should make company name small when the name is too long', () => {
+      let invoice = Factory.createInvoice()
       invoice.targetCompany.name = 'ตลาดหลักทรัพย์แห่งประเทศไทย (สำนักงานใหญ่)'
       expect(invoice.targetCompanyNameClass()).toEqual('small')
     })
     it('should not make company name small when the name normal', () => {
+      let invoice = Factory.createInvoice()
       invoice.targetCompany.name = '*3*5*7*10*13*16*19*22*25*28'
       expect(invoice.targetCompanyNameClass()).toEqual('')
     })
@@ -164,6 +166,9 @@ describe('Invoice', () => {
     it('copy invoice displays paper only', () => {
       let titles = invoice.getTitles();
       expect(titles[1].css).toEqual('print-only')
+    })
+    it('should have filename to be save when export to PDF and store in storage', () => {
+      expect(invoice.filename()).toEqual('001-012020_INVOICE_Facebook HQ_React')
     })
   })
 
