@@ -1,6 +1,5 @@
 module.exports = {
     '202001-001' : {
-        amount: 130000,
         fromCompany: {
             name: 'ODDS HQ',
             address: '69 We are not hiring',
@@ -25,7 +24,6 @@ module.exports = {
         ]
     },
     '202001-002' : {
-        amount: 70000,
         fromCompany: {
             name: 'ODDS HQ',
             address: '69 We are not hiring',
@@ -43,7 +41,6 @@ module.exports = {
         invoiceNumber: '202001-002',
     },
     '202001-003' : {
-        amount: 80000,
         fromCompany: {
             name: 'ODDS HQ',
             address: '69 We are not hiring',
@@ -61,7 +58,6 @@ module.exports = {
         invoiceNumber: '202001-003',
     },
     '202001-004' : {
-        amount: 100000,
         fromCompany: {
             name: 'ODDS HQ',
             address: '69 We are not hiring',
@@ -79,7 +75,6 @@ module.exports = {
         invoiceNumber: '202001-004',
     },
     '202001-005' : {
-        amount: 150000,
         fromCompany: {
             name: 'ODDS HQ',
             address: '69 We are not hiring',
@@ -97,7 +92,6 @@ module.exports = {
         invoiceNumber: '202001-005',
     },
     '202001-006' : {
-        amount: 300000,
         fromCompany: {
             name: 'ODDS HQ',
             address: '69 We are not hiring',
@@ -115,7 +109,6 @@ module.exports = {
         invoiceNumber: '202001-006',
     },
     '202001-006-cancelled-1610189367307' : {
-        amount: 300000,
         fromCompany: {
             name: 'ODDS HQ',
             address: '69 We are not hiring',
@@ -134,7 +127,6 @@ module.exports = {
         deleted: true
     },
     '202001-007' : {
-        amount: 450000,
         fromCompany: {
             name: 'ODDS HQ',
             address: '69 We are not hiring',
