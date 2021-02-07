@@ -84,20 +84,21 @@
 
 <script>
 import Presenter from "@/presenters/InvoiceList";
-import API from '@/services/invoices'
 
 export default {
   name: "InvoiceList",
   props: {
     titleMsg: String,
+    presenter: Presenter,
   },
   mounted() {
     let year = this.$route.params.year || new Date().getFullYear();
+    this.p = this.presenter;
     this.p.init(year);
   },
   data() {
     return {
-      p: new Presenter(this, new API()),
+      p: this.p,
     };
   },
 };
