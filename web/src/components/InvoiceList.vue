@@ -54,10 +54,10 @@
             </template>
             <v-card>
               <v-card-title class="headline">
-                Delete this invoice?
+                Delete this {{ item.documentType.toLowerCase() }}?
               </v-card-title>
               <v-card-text
-                >This action will mark the invoice as deleted. A deleted invoice
+                >This action will mark the {{ item.documentType.toLowerCase() }} as deleted. A deleted {{ item.documentType.toLowerCase() }}
                 will be excluded from the list.</v-card-text
               >
               <v-card-actions>
