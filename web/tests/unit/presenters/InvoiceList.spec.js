@@ -59,7 +59,7 @@ describe("InvoiceList Presenter", () => {
       deleted: true,
       _id: "4",
     };
-    p.removeInvoiceFromList(deletedInvoice);
+    p.removeItemFromList(deletedInvoice);
     expect(p.items.length).toEqual(2);
     expect(p.items[0].invoiceNumber).toEqual('202101-003');
     expect(p.items[1].invoiceNumber).toEqual('202101-005');

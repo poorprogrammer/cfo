@@ -22,17 +22,17 @@ export default class {
   }
   sortBy = () => ("invoiceNumber")
   sortDesc = () => (true)
-  delete = (invoice) => {
-    this.API.delete(invoice).then(this.removeInvoiceFromList)
-    this.closeDeleteConfirmDialogOf(invoice)
+  delete = (item) => {
+    this.API.delete(item).then(this.removeItemFromList)
+    this.closeDeleteConfirmDialogOf(item)
   }
-  removeInvoiceFromList = (invoice) => {
-    this.items = this.items.filter((i) => i.invoiceNumber !== invoice.invoiceNumber)
+  removeItemFromList = (item) => {
+    this.items = this.items.filter((i) => i.invoiceNumber !== item.invoiceNumber)
   }
-  cancelDelete = (invoice) => {
-    this.closeDeleteConfirmDialogOf(invoice)
+  cancelDelete = (item) => {
+    this.closeDeleteConfirmDialogOf(item)
   }
-  closeDeleteConfirmDialogOf = (invoice) => {
-    invoice.dialog = false
+  closeDeleteConfirmDialogOf = (item) => {
+    item.dialog = false
   }
 }
