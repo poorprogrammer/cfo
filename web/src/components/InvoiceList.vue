@@ -10,15 +10,15 @@
         :hide-default-footer="true"
         :disable-pagination="true"
       >
-        <template v-slot:item.invoiceNumber="{ item }">
-          <router-link :to="item.editionUrl()">{{ item.invoiceNumber }}</router-link>
+        <template v-slot:item.number="{ item }">
+          <router-link :to="item.editionUrl()">{{ item.number }}</router-link>
         </template>
 
         <template v-slot:item.action="{ item }">
 
           <router-link :to="item.duplicationUrl()">
             <v-btn
-              :id="'duplicate_' + item.invoiceNumber"
+              :id="'duplicate_' + item.number"
               text
               small
               color="primary"
@@ -29,7 +29,7 @@
 
           <router-link :to="item.url()">
             <v-btn
-              :id="'print_' + item.invoiceNumber"
+              :id="'print_' + item.number"
               text
               small
               color="primary"
@@ -44,7 +44,7 @@
                 dark
                 v-bind="attrs"
                 v-on="on"
-                :id="'delete_' + item.invoiceNumber"
+                :id="'delete_' + item.number"
                 text
                 small
                 color="primary"
