@@ -29,6 +29,8 @@ export default class Invoice {
       this.items.push(Object.assign(this.createPricedInvoiceItem(), i))
     });
   }
+  get number() { return this.invoiceNumber }
+  get date() { return this.invoiceDate }
   url() { return `/invoice/${this.invoiceNumber}` }
   duplicationUrl() { return `/invoice/${this.invoiceNumber}/duplicate` }
   editionUrl() { return `/invoice/${this.invoiceNumber}/edit` }

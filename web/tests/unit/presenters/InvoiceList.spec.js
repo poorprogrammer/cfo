@@ -1,7 +1,8 @@
 import Presenter from "@/presenters/InvoiceList";
+import API from "@/services/invoices"
 
 describe("InvoiceList Presenter", () => {
-  let p = new Presenter();
+  let p = new Presenter(undefined, new API());
   describe("invoices", () => {
     describe("when there no invoices", () => {
       it("should be empty list initally or the screen would not render", () => {

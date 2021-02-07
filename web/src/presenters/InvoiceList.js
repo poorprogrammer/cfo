@@ -1,17 +1,15 @@
-import API from '@/services/invoices'
-
 export default class {
-  constructor(view) {
+  constructor(view, api) {
     this.view = view
     this.items = []
     this.headers = [
-      { text: 'Number', value: 'invoiceNumber' },
+      { text: 'Number', value: 'number' },
       { text: 'Company', value: 'targetCompany.name' },
       { text: 'Project', value: 'projectName' },
-      { text: 'Date', value: 'invoiceDate' },
+      { text: 'Date', value: 'date' },
       { text: 'Actions', value: 'action', sortable: false },
     ]
-    this.API = new API()
+    this.API = api
   }
   init(year) {
     this.API.getAll(year)
@@ -20,7 +18,7 @@ export default class {
   setAll = (items) => {
     this.items = items
   }
-  sortBy = () => ("invoiceNumber")
+  sortBy = () => ("number")
   sortDesc = () => (true)
   delete = (item) => {
     this.API.delete(item).then(this.removeItemFromList)

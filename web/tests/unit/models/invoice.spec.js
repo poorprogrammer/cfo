@@ -192,6 +192,15 @@ describe('Invoice', () => {
     })
   })
 
+  describe('list invoice', () => {
+    it('should have number expeced by presenter', () => {
+      expect(invoice.number).toEqual('202001-001')
+    })
+    it('should have date expeced by presenter', () => {
+      expect(invoice.date).toEqual('2020-01-03')
+    })
+  })
+
   describe('Update duplicated invoice', () => {
     it('should be able to change from company name', () => {
       invoice.fromCompany.name = 'ODDSTria'

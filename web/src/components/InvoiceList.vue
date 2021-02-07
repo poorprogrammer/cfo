@@ -84,6 +84,7 @@
 
 <script>
 import Presenter from "@/presenters/InvoiceList";
+import API from '@/services/invoices'
 
 export default {
   name: "InvoiceList",
@@ -96,7 +97,7 @@ export default {
   },
   data() {
     return {
-      p: new Presenter(this),
+      p: new Presenter(this, new API()),
     };
   },
 };
