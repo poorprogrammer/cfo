@@ -33,7 +33,7 @@ describe('invoices API', () => {
       })
     })
   })
-  describe('getInvoice', () => {
+  describe('get', () => {
     describe('after call', () => {
       beforeEach(() => {
         let response = { data: { invoiceNumber: '202001-001' } }
@@ -41,7 +41,7 @@ describe('invoices API', () => {
       })
 
       it('should parse response into Invoice', async () => {
-        let invoice = await api.getInvoice('202001-001')
+        let invoice = await api.get('202001-001')
         expect(invoice.url()).toEqual('/invoice/202001-001')
       })
     })

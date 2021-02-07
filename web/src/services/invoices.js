@@ -6,16 +6,16 @@ export default class {
     this.root = process.env.VUE_APP_BASE_API
   }
 
-  invoicesUrl(year) {
+  allUrl(year) {
     return `${this.root}/invoices/${year}`
   }
 
   getAll(year) {
-    return axios.get(this.invoicesUrl(year))
-      .then(this.parseInvoices)
+    return axios.get(this.allUrl(year))
+      .then(this.parseAll)
   }
 
-  getInvoice(invoiceNumber) {
+  get(invoiceNumber) {
     return axios.get(`${this.root}/invoice/${invoiceNumber}`)
       .then(this.parseInvoice)
   }
@@ -36,7 +36,7 @@ export default class {
       .then(this.parseInvoice)
   }
 
-  parseInvoices = (response) => {
+  parseAll = (response) => {
     let invoices = []
     response.data.forEach(invoice => {
       invoices.push(new Invoice(invoice))

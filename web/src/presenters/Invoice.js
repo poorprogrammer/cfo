@@ -8,7 +8,7 @@ export default class {
       this.API = new API();
     }
     init(invoiceNumber) {
-      this.API.getInvoice(invoiceNumber)
+      this.API.get(invoiceNumber)
         .then((invoice) => this.invoice = invoice)
     }
     save() {

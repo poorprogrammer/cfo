@@ -9,7 +9,7 @@ describe('Invoice Presenter', () => {
   let invoiceNumber = '202001-001'
 
   it('should get invoice with specific number from API when init', () => {
-    jest.spyOn(p.API, 'getInvoice')
+    jest.spyOn(p.API, 'get')
     p.init(invoiceNumber)
     expectToBeCalledWith(p.API, invoiceNumber)
   })
@@ -38,8 +38,8 @@ describe('Invoice Presenter', () => {
     jest.spyOn(p.API, 'save').mockRejectedValue(err)
   }
   function expectToBeCalledWith(api, invoiceNumber) {
-    expect(api.getInvoice).toHaveBeenCalled()
-    expect(api.getInvoice.mock.calls[0][0]).toEqual(invoiceNumber)
+    expect(api.get).toHaveBeenCalled()
+    expect(api.get.mock.calls[0][0]).toEqual(invoiceNumber)
   }
   function expectToRedirectToViewInvoicePage(view, invoiceNumber) {
     expect(view.goTo).toHaveBeenCalledWith({name: 'invoice', params: {invoiceNumber: invoiceNumber}})
