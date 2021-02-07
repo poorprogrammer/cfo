@@ -32,7 +32,7 @@ npm run serve
 
 ```
 cd api
-node tests/fixtures/loadInvoices.js
+node tests/fixtures/loadData.js
 ```
 
 ## Run web server
