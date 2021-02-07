@@ -34,7 +34,7 @@ describe("InvoiceList Presenter", () => {
     expect(p.API.getAll).toHaveBeenCalledWith(2021);
   });
   it("should sort by decending invoice number", () => {
-    expect(p.sortBy()).toEqual("invoiceNumber");
+    expect(p.sortBy()).toEqual("number");
     expect(p.sortDesc()).toEqual(true);
   });
   it("should remove deleted invoice after API complete", () => {
