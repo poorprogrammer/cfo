@@ -3,6 +3,6 @@ const Invoices = require('./invoicesData')
 const Quotations = require('./quotationsData')
 
 let invoices = Object.values(Invoices)
-new Database('invoices').insert(invoices)
+new Database('invoice').insert(invoices)
 let quotations = Object.values(Quotations)
-new Database('quotations').insert(quotations)
+new Database('quotation').insert(quotations)
