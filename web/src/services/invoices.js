@@ -7,7 +7,15 @@ export default class {
   }
 
   allUrl(year) {
-    return `${this.root}/invoices/${year}`
+    return `${this.collectionUrl()}${year}`
+  }
+
+  collectionUrl() {
+    return `${this.root}/invoices/`
+  }
+
+  itemUrl(invoiceNumber) {
+    return `${this.root}/invoice/${invoiceNumber}`
   }
 
   getAll(year) {
@@ -16,12 +24,12 @@ export default class {
   }
 
   get(invoiceNumber) {
-    return axios.get(`${this.root}/invoice/${invoiceNumber}`)
+    return axios.get(this.itemUrl(invoiceNumber))
       .then(this.parseItem)
   }
 
   save(invoice) {
-    return axios.post(`${this.root}/invoices/`, this.createDTO(invoice))
+    return axios.post(this.collectionUrl(), this.createDTO(invoice))
       .then(this.parseNumber)
   }
 
@@ -31,7 +39,7 @@ export default class {
   }
 
   update(invoice) {
-    let url = `${this.root}/invoice/${invoice.invoiceNumber}`
+    let url = this.itemUrl(invoice.invoiceNumber)
     return axios.put(url, this.createDTO(invoice))
       .then(this.parseItem)
   }
@@ -39,17 +47,21 @@ export default class {
   parseAll = (response) => {
     let invoices = []
     response.data.forEach(invoice => {
-      invoices.push(new Invoice(invoice))
+      invoices.push(this.createItem(invoice))
     })
     return invoices
   }
 
   parseItem = (response) => {
-    return new Invoice(response.data)
+    return this.createItem(response.data)
   }
 
   parseNumber = (response) => {
     return response.data
+  }
+
+  createItem = (item) => {
+    return new Invoice(item)
   }
 
   createDTO = (invoice) => {
