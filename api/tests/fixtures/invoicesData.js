@@ -1,5 +1,6 @@
 module.exports = {
     '202001-001' : {
+        currency: "USD",
         fromCompany: {
             name: 'ODDS HQ',
             address: '69 We are not hiring',
