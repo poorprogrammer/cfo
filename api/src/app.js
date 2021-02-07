@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const app = express();
 const cors = require("cors");
 const Invoice = require("./services/invoice");
+const Quotation = require("./services/quotation");
 const Auth = require("./services/auth");
 
 app.use(cors());
@@ -35,6 +36,11 @@ app.post("/invoices/", function (req, res) {
       res.json(id);
     })
     .catch(serverErrorHandler(res));
+});
+app.get("/quotations/:year", (req, res) => {
+  new Quotation().all(req.params.year).then((quotations) => {
+    res.json(quotations);
+  });
 });
 app.post("/login/", function (req, res) {
   new Auth()
