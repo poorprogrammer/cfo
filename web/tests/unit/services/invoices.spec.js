@@ -6,11 +6,11 @@ describe('invoices API', () => {
 
   beforeEach(() => { api = new API() })
 
-  describe('getInvoices', () => {
+  describe('getAll', () => {
     describe('before call', () => {
       beforeEach(() => {
         jest.spyOn(axios, 'get')
-        api.getInvoices(2020)
+        api.getAll(2020)
       })
 
       it('should call api', () => {
@@ -28,7 +28,7 @@ describe('invoices API', () => {
       })
 
       it('should parse response into Invoice', async () => {
-        let invoices = await api.getInvoices()
+        let invoices = await api.getAll()
         expect(invoices[0].url()).toEqual('/invoice/202001-001')
       })
     })

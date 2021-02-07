@@ -14,11 +14,11 @@ export default class {
     this.API = new API()
   }
   init(year) {
-    this.API.getInvoices(year)
-      .then(this.setInvoices)
+    this.API.getAll(year)
+      .then(this.setAll)
   }
-  setInvoices = (invoices) => {
-    this.invoices = invoices
+  setAll = (items) => {
+    this.invoices = items
   }
   sortBy = () => ("invoiceNumber")
   sortDesc = () => (true)

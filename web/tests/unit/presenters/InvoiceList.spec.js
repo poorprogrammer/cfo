@@ -28,9 +28,9 @@ describe("InvoiceList Presenter", () => {
     };
   });
   it("should get invoices from API when init", () => {
-    jest.spyOn(p.API, "getInvoices");
+    jest.spyOn(p.API, "getAll");
     p.init(2021);
-    expect(p.API.getInvoices).toHaveBeenCalledWith(2021);
+    expect(p.API.getAll).toHaveBeenCalledWith(2021);
   });
   it("should sort by decending invoice number", () => {
     expect(p.sortBy()).toEqual("invoiceNumber");

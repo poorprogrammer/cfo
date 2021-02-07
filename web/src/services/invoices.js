@@ -10,7 +10,7 @@ export default class {
     return `${this.root}/invoices/${year}`
   }
 
-  getInvoices(year) {
+  getAll(year) {
     return axios.get(this.invoicesUrl(year))
       .then(this.parseInvoices)
   }
