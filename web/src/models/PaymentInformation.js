@@ -25,7 +25,7 @@ export default class PaymentInformation {
       this.items.push(Object.assign(this.createPricedInvoiceItem(), i))
     });
   }
-  url() { return `` }
+  url() { return `/${this.documentType.toLowerCase()}/${this.number}` }
   duplicationUrl() { return `${this.url()}/duplicate` }
   editionUrl() { return `${this.url()}/edit` }
   getItems() { return [...this.items, this.total(), this.tax(), this.grandTotal()] }
@@ -50,8 +50,8 @@ export default class PaymentInformation {
   getProjectName() { return this.projectName }
   getTitles() {
     return [
-      {id: 1, title: 'Invoice (original)', css: ''},
-      {id: 2, title: 'Invoice (copy)', css: 'print-only'},
+      {id: 1, title: `${this.documentType} (original)`, css: ''},
+      {id: 2, title: `${this.documentType} (copy)`, css: 'print-only'},
     ]
   }
   getCurrencies() {
@@ -74,6 +74,9 @@ export default class PaymentInformation {
     if(i<0) return
     this.items.splice(i, 1)
   }
+  setDateToday(today=new Date()) {
+    this.date = this.formatDate(today)
+  }
   formatDate(date) {
     let y = date.getFullYear();
     let m = (1 + date.getMonth()).toString().padStart(2, '0');
@@ -82,6 +85,13 @@ export default class PaymentInformation {
   }
   createPricedInvoiceItem() {
     return new PricedInvoiceItem(this)
+  }
+  filename() {
+    return `${this.reverseNumber()}_${this.documentType.toUpperCase()}_${this.targetCompany.name}_${this.projectName}`
+  }
+  reverseNumber() {
+    let words = this.number.split('-')
+    return `${words[1]}-${words[0].substring(4)}${words[0].substring(0,4)}`
   }
 }
 

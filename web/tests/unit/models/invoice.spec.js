@@ -245,7 +245,7 @@ describe('Invoice', () => {
     it('should be able to set invoice date to today', () => {
       let today = new Date("January 13, 2021")
       invoice.invoiceDate = '2021-01-02'
-      invoice.setInvoiceDateToday(today)
+      invoice.setDateToday(today)
       expect(invoice.invoiceDate).toEqual('2021-01-13')
     })
     it('should be able to change project', () => {

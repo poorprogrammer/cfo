@@ -34,7 +34,7 @@ export default class {
       this.invoice.removeItem(item)
     }
     todayClicked() {
-      this.invoice.setInvoiceDateToday()
+      this.invoice.setDateToday()
     }
     showError(error) {
       alert(error)
