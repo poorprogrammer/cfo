@@ -17,12 +17,12 @@ export default class {
 
   get(invoiceNumber) {
     return axios.get(`${this.root}/invoice/${invoiceNumber}`)
-      .then(this.parseInvoice)
+      .then(this.parseItem)
   }
 
   save(invoice) {
     return axios.post(`${this.root}/invoices/`, this.createDTO(invoice))
-      .then(this.parseInvoiceNumber)
+      .then(this.parseNumber)
   }
 
   delete(invoice) {
@@ -33,7 +33,7 @@ export default class {
   update(invoice) {
     let url = `${this.root}/invoice/${invoice.invoiceNumber}`
     return axios.put(url, this.createDTO(invoice))
-      .then(this.parseInvoice)
+      .then(this.parseItem)
   }
 
   parseAll = (response) => {
@@ -44,11 +44,11 @@ export default class {
     return invoices
   }
 
-  parseInvoice = (response) => {
+  parseItem = (response) => {
     return new Invoice(response.data)
   }
 
-  parseInvoiceNumber = (response) => {
+  parseNumber = (response) => {
     return response.data
   }
 
