@@ -5,7 +5,7 @@ describe("InvoiceList Presenter", () => {
   describe("invoices", () => {
     describe("when there no invoices", () => {
       it("should be empty list initally or the screen would not render", () => {
-        expect([]).toEqual(p.invoices);
+        expect([]).toEqual(p.items);
       });
     });
   });
@@ -37,7 +37,7 @@ describe("InvoiceList Presenter", () => {
     expect(p.sortDesc()).toEqual(true);
   });
   it("should remove deleted invoice after API complete", () => {
-    p.invoices = [
+    p.items = [
       {
         invoiceNumber: "202101-003",
         deleted: false,
@@ -60,8 +60,8 @@ describe("InvoiceList Presenter", () => {
       _id: "4",
     };
     p.removeInvoiceFromList(deletedInvoice);
-    expect(p.invoices.length).toEqual(2);
-    expect(p.invoices[0].invoiceNumber).toEqual('202101-003');
-    expect(p.invoices[1].invoiceNumber).toEqual('202101-005');
+    expect(p.items.length).toEqual(2);
+    expect(p.items[0].invoiceNumber).toEqual('202101-003');
+    expect(p.items[1].invoiceNumber).toEqual('202101-005');
   });
 });

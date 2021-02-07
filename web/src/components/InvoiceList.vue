@@ -4,7 +4,7 @@
       <v-card-title>{{ titleMsg }}</v-card-title>
       <v-data-table
         :headers="p.headers"
-        :items="p.invoices"
+        :items="p.items"
         :sort-by="p.sortBy()"
         :sort-desc="p.sortDesc()"
         :hide-default-footer="true"

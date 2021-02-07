@@ -3,7 +3,7 @@ import API from '@/services/invoices'
 export default class {
   constructor(view) {
     this.view = view
-    this.invoices = []
+    this.items = []
     this.headers = [
       { text: 'Number', value: 'invoiceNumber' },
       { text: 'Company', value: 'targetCompany.name' },
@@ -18,7 +18,7 @@ export default class {
       .then(this.setAll)
   }
   setAll = (items) => {
-    this.invoices = items
+    this.items = items
   }
   sortBy = () => ("invoiceNumber")
   sortDesc = () => (true)
@@ -27,7 +27,7 @@ export default class {
     this.closeDeleteConfirmDialogOf(invoice)
   }
   removeInvoiceFromList = (invoice) => {
-    this.invoices = this.invoices.filter((i) => i.invoiceNumber !== invoice.invoiceNumber)
+    this.items = this.items.filter((i) => i.invoiceNumber !== invoice.invoiceNumber)
   }
   cancelDelete = (invoice) => {
     this.closeDeleteConfirmDialogOf(invoice)
