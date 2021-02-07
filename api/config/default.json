@@ -1,5 +1,5 @@
 {
-  "DB_PATH": "/tmp/cfo/invoices",
+  "DB_PATH": "/tmp/cfo",
   "PASSWORD": "s3cr3t",
   "QUEUE_SERVER": "amqp://cfo:password@localhost"
 }

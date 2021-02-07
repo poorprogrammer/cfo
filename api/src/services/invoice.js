@@ -4,7 +4,7 @@ const Sender = require("../queue/sender");
 
 module.exports = class Invoice {
     constructor(db, sender) {
-        this.db = db || new Database()
+        this.db = db || new Database('invoice')
         this.sender = sender || Sender.create()
     }
 

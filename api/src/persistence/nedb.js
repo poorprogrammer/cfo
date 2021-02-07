@@ -2,9 +2,9 @@ const Datastore = require("nedb")
 const config = require("config")
 
 module.exports = class Database {
-    constructor() {
-        this.db = new Datastore({ filename: config.get("DB_PATH"), autoload: true })
-        this.db.ensureIndex({ fieldName: 'invoiceNumber', unique: true }, function (err) {
+    constructor(collection) {
+        this.db = new Datastore({ filename: `${config.get("DB_PATH")}/${collection}s`, autoload: true })
+        this.db.ensureIndex({ fieldName: `${collection}Number`, unique: true }, function (err) {
             if(err) console.log(err)
         });
 
