@@ -1,6 +1,6 @@
 <template>
   <div class="invoice pa-3">
-    <div v-if="!p.invoice.invoiceNumber">Loading Please wait...</div>
+    <div v-if="!p.invoice.number">Loading Please wait...</div>
     <div v-else>
       <edit-invoice v-bind:presenter="p"></edit-invoice>
       <div class="no-print">
@@ -23,7 +23,7 @@ export default {
   components: { EditInvoice, BackButton },
   name: 'duplicatedInvoice',
   mounted() {
-    this.p.init(this.$route.params.invoiceNumber)
+    this.p.init(this.$route.params.number)
   },
   data() {
     return {

@@ -41,7 +41,7 @@ export default new Router({
       beforeEnter: isAuthenticated,
     },
     {
-      path: '/invoice/:invoiceNumber/duplicate',
+      path: '/invoice/:number/duplicate',
       name: 'duplicatedInvoice',
       component: DuplicatedInvoice,
       beforeEnter: isAuthenticated,
