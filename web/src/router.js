@@ -7,6 +7,7 @@ import PageNotFound from './views/PageNotFound.vue'
 import DuplicatedInvoice from './views/DuplicatedInvoice.vue'
 import UpdateInvoice from './views/UpdateInvoice.vue'
 import Quotations from './views/Quotations.vue'
+import Quotation from './views/Quotation.vue'
 
 Vue.use(Router)
 
@@ -61,6 +62,12 @@ export default new Router({
       path: '/quotations/:year?',
       name: 'quotations',
       component: Quotations,
+      beforeEnter: isAuthenticated,
+    },
+    {
+      path: '/quotation/:quotationNumber',
+      name: 'quotation',
+      component: Quotation,
       beforeEnter: isAuthenticated,
     },
     {
