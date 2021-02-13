@@ -42,6 +42,11 @@ app.get("/quotations/:year", (req, res) => {
     res.json(quotations);
   });
 });
+app.get("/quotation/:number", function (req, res) {
+  new Quotation().get(req.params.number).then((doc) => {
+    res.json(doc);
+  });
+});
 app.post("/login/", function (req, res) {
   new Auth()
     .login(req.body.password)
