@@ -1,6 +1,6 @@
 <template>
   <div class="invoice pa-3">
-    <div v-if="!p.invoice.invoiceNumber">Loading Please wait...</div>
+    <div v-if="!p.invoice.number">Loading Please wait...</div>
     <div v-else>
       <div
         v-for="{ id, title, css } in p.invoice.getTitles()"
@@ -126,6 +126,7 @@
 import Presenter from "@/presenters/Invoice";
 import BackButton from '@/components/BackButton.vue';
 import BaseText from '@/components/BaseText.vue';
+import API from '@/services/invoices'
 
 export default {
   components: { BackButton, BaseText },
@@ -135,7 +136,7 @@ export default {
   },
   data() {
     return {
-      p: new Presenter(this),
+      p: new Presenter(this, new API()),
     };
   },
 };

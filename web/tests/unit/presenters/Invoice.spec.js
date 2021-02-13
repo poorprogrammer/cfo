@@ -1,11 +1,12 @@
 import Presenter from '@/presenters/Invoice'
+import API from '@/services/invoices'
 
 class MockView {
   goTo() {}
 }
 
 describe('Invoice Presenter', () => {
-  let p = new Presenter(new MockView())
+  let p = new Presenter(new MockView(), new API())
   let invoiceNumber = '202001-001'
 
   it('should get invoice with specific number from API when init', () => {

@@ -17,6 +17,7 @@
 import Presenter from '@/presenters/Invoice'
 import EditInvoice from '@/components/EditInvoice.vue'
 import BackButton from '@/components/BackButton.vue'
+import API from '@/services/invoices'
 
 export default {
   components: { EditInvoice, BackButton },
@@ -26,7 +27,7 @@ export default {
   },
   data() {
     return {
-      p: new Presenter(this)
+      p: new Presenter(this, new API())
     }
   },
   methods: {

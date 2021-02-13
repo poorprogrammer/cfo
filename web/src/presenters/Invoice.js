@@ -1,11 +1,10 @@
-import API from '@/services/invoices'
 import Invoice from '@/models/Invoice'
 
 export default class {
-    constructor (view) {
+    constructor (view, api) {
       this.view = view
       this.invoice = new Invoice()
-      this.API = new API();
+      this.API = api;
     }
     init(invoiceNumber) {
       this.API.get(invoiceNumber)
