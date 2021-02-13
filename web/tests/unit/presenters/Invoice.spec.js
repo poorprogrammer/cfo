@@ -43,7 +43,7 @@ describe('Invoice Presenter', () => {
     expect(api.get.mock.calls[0][0]).toEqual(invoiceNumber)
   }
   function expectToRedirectToViewInvoicePage(view, invoiceNumber) {
-    expect(view.goTo).toHaveBeenCalledWith({name: 'invoice', params: {invoiceNumber: invoiceNumber}})
+    expect(view.goTo).toHaveBeenCalledWith({name: 'invoice', params: {number: invoiceNumber}})
   }
   function expectPopupShownWithError(error) {
     expect(p.showError).toHaveBeenCalledWith(error)

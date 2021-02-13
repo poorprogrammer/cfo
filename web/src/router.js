@@ -53,7 +53,7 @@ export default new Router({
       beforeEnter: isAuthenticated,
     },
     {
-      path: '/invoice/:invoiceNumber',
+      path: '/invoice/:number',
       name: 'invoice',
       component: Invoice,
       beforeEnter: isAuthenticated,
@@ -65,7 +65,7 @@ export default new Router({
       beforeEnter: isAuthenticated,
     },
     {
-      path: '/quotation/:quotationNumber',
+      path: '/quotation/:number',
       name: 'quotation',
       component: Quotation,
       beforeEnter: isAuthenticated,

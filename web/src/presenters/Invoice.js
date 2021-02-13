@@ -13,7 +13,7 @@ export default class {
     save() {
       this.API.save(this.invoice)
         .then((invoiceNumber) => {
-          this.view.goTo({name: 'invoice', params: {invoiceNumber: invoiceNumber}})
+          this.view.goTo({name: 'invoice', params: {number: invoiceNumber}})
         }, (error) => {
           this.showError(error)
         })

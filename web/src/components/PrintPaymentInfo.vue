@@ -135,7 +135,7 @@ export default {
   },
   mounted() {
     this.p = this.presenter;
-    this.p.init(this.$route.params.invoiceNumber);
+    this.p.init(this.$route.params.number);
   },
   data() {
     return {
