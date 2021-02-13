@@ -21,7 +21,7 @@ import API from '@/services/invoices'
 
 export default {
   components: { EditInvoice, BackButton },
-  name: 'duplicatedInvoice',
+  name: 'updateInvoice',
   mounted() {
     this.p.init(this.$route.params.invoiceNumber)
   },
@@ -32,9 +32,6 @@ export default {
   },
   methods: {
     save: function() { this.p.update() },
-    today: function() { this.p.todayClicked() },
-    addItem: function(item) { this.p.addItemClickedOn(item) },
-    removeItem: function(item) { this.p.removeItemClickedOn(item) },
     goTo: function(path) { this.$router.push(path) }
   }
 }
