@@ -10,7 +10,7 @@ describe("connect to server", () => {
   it("should create channel once so that the server is not spam channels", () => {
     Sender.connection = jest.fn();
     Sender.connection.createChannel = jest.fn(
-      () => (Sender.channel = new MockChannel())
+      () => (Sender.channel["greet-sent"] = new MockChannel())
     );
     Sender.createChannel("greet-sent");
     Sender.createChannel("greet-sent");

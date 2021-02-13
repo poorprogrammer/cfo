@@ -3,6 +3,7 @@ const config = require("config")
 
 module.exports = class Sender {
   static connection;
+  static channel = {};
 
   static create() {
     if (!Sender.connection) Sender.connect();
@@ -34,17 +35,17 @@ module.exports = class Sender {
 
   static createChannel(queue) {
     return new Promise((resolve, reject) => {
-      if (Sender.channel) return resolve(Sender.channel);
+      if (Sender.channel[queue]) return resolve(Sender.channel[queue]);
       Sender.connection.createChannel(function (e, channel) {
         if (e) {
           console.log("cannot create channel to queue server %s", e.toString());
           return reject(e);
         }
-        Sender.channel = channel;
-        Sender.channel.assertQueue(queue, {
+        Sender.channel[queue] = channel;
+        Sender.channel[queue].assertQueue(queue, {
           durable: false,
         });
-        return resolve(Sender.channel);
+        return resolve(Sender.channel[queue]);
       });
     });
   }
