@@ -106,6 +106,12 @@
                 label="Quotation Number"
                 v-model="p.invoice.quotationNumber"
               />
+              <v-col cols="8" sm="4"
+                ><v-text-field
+                  id="quotation-date"
+                  label="Quotation Date"
+                  v-model="p.invoice.quotationDate"
+              /></v-col>
               <base-input
                 id="purchase-order-number"
                 label="Purchase Order Number"
