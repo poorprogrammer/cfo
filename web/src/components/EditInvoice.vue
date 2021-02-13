@@ -1,7 +1,7 @@
 <template>
   <div v-if="p.invoice">
     <v-row justify="center" dense>
-      <h2>Unsave Invoice (edit mode)</h2>
+      <h2>Unsave {{ p.invoice.documentType }} (edit mode)</h2>
     </v-row>
     <v-row align="stretch" dense>
       <v-col cols="12">
