@@ -47,6 +47,14 @@ app.get("/quotation/:number", function (req, res) {
     res.json(doc);
   });
 });
+app.post("/quotations/", function (req, res) {
+  new Quotation()
+    .save(req.body)
+    .then((id) => {
+      res.json(id);
+    })
+    .catch(serverErrorHandler(res));
+});
 app.post("/login/", function (req, res) {
   new Auth()
     .login(req.body.password)
