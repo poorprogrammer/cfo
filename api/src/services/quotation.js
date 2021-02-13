@@ -1,5 +1,5 @@
 const Database = require("../persistence/nedb");
-const quotationCreatedMessage = require("../queue/message");
+const m = require("../queue/message");
 const Sender = require("../queue/sender");
 
 module.exports = class Quotation {
@@ -18,7 +18,7 @@ module.exports = class Quotation {
 
     save(quotation) {
         return this.db.insert(quotation).then((inv) => {
-            this.sender.send('quotation-created', quotationCreatedMessage(inv))
+            this.sender.send('quotation-created', m.quotationCreatedMessage(inv))
             return inv.quotationNumber
         })
     }

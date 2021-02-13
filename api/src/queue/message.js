@@ -1,5 +1,9 @@
 function invoiceCreatedMessage(i) {
-  return `${i.invoiceNumber}, ${i.targetCompany.name}, ${toCurrency(total(i), i.currency)}`;
+  return `I${i.invoiceNumber}| ${i.targetCompany.name}| ${toCurrency(total(i), i.currency)}`;
+}
+
+function quotationCreatedMessage (i) {
+  return `Q${i.quotationNumber}| ${i.targetCompany.name}| ${toCurrency(total(i), i.currency)}`;
 }
 
 function total(inv) {
@@ -17,4 +21,7 @@ function toCurrency(amount, currency='THB') {
 
 }
 
-module.exports = invoiceCreatedMessage;
+module.exports = {
+  invoiceCreatedMessage,
+  quotationCreatedMessage,
+};
