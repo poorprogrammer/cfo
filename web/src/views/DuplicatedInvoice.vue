@@ -37,9 +37,6 @@ export default {
 }
 </script>
 <style scoped>
-h2 {
-  font-weight: 500;
-}
 a.back-btn {
   text-decoration: none;
 }
