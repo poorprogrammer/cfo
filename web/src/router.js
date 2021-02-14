@@ -8,6 +8,7 @@ import DuplicatedInvoice from './views/DuplicatedInvoice.vue'
 import UpdateInvoice from './views/UpdateInvoice.vue'
 import Quotations from './views/Quotations.vue'
 import Quotation from './views/Quotation.vue'
+import UpdateQuotation from './views/UpdateQuotation.vue'
 import DuplicatedQuotation from './views/DuplicatedQuotation.vue'
 
 Vue.use(Router)
@@ -75,6 +76,12 @@ export default new Router({
       path: '/quotation/:number/duplicate',
       name: 'duplicatedQuotation',
       component: DuplicatedQuotation,
+      beforeEnter: isAuthenticated,
+    },
+    {
+      path: '/quotation/:number/edit',
+      name: 'UpdateQuotation',
+      component: UpdateQuotation,
       beforeEnter: isAuthenticated,
     },
     {
