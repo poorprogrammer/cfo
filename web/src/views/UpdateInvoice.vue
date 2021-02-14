@@ -10,9 +10,6 @@ import API from '@/services/invoices'
 export default {
   components: { UpdatePaymentInfo },
   name: 'updateInvoice',
-  mounted() {
-    this.p.init(this.$route.params.invoiceNumber)
-  },
   data() {
     return {
       p: new Presenter(this, new API())
