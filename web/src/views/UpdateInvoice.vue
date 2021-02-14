@@ -36,8 +36,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-a.back-btn {
-  text-decoration: none;
-}
-</style>
