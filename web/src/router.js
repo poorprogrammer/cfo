@@ -48,7 +48,7 @@ export default new Router({
       beforeEnter: isAuthenticated,
     },
     {
-      path: '/invoice/:invoiceNumber/edit',
+      path: '/invoice/:number/edit',
       name: 'updateInvoice',
       component: UpdateInvoice,
       beforeEnter: isAuthenticated,
