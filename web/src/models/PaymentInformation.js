@@ -93,6 +93,9 @@ export default class PaymentInformation {
     let words = this.number.split('-')
     return `${words[1]}-${words[0].substring(4)}${words[0].substring(0,4)}`
   }
+  get listUrl() {
+    return {name: `${this.documentType.toLowerCase()}s`}
+  }
 }
 
 function getItemTotal(item) { return item.total() }

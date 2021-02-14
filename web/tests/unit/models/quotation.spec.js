@@ -47,12 +47,18 @@ describe('Qutation', () => {
     })
   })
 
-  describe('Update duplicated quotation', () => {
+  describe('duplicate quotation', () => {
     it('should be able to set quotation date to today', () => {
       let today = new Date("January 13, 2021")
       quotation.quotationDate = '2021-01-02'
       quotation.setDateToday(today)
       expect(quotation.quotationDate).toEqual('2021-01-13')
+    })
+  })
+
+  describe('update quotation', () => {
+    it('should have listUrl to redirect to after saved', () => {
+      expect(quotation.listUrl.name).toEqual('quotations')
     })
   })
 

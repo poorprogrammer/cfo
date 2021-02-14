@@ -38,7 +38,7 @@ export default new Router({
     },
     {
       path: '/invoices/:year?',
-      name: 'invocies',
+      name: 'invoices',
       component: Invoices,
       beforeEnter: isAuthenticated,
     },

@@ -21,7 +21,7 @@ export default class {
     update() {
       this.API.update(this.invoice)
       .then(() => {
-        this.view.goTo({name: 'home'})
+        this.view.goTo(this.invoice.listUrl)
       }, (error) => {
         this.showError(error)
       })
