@@ -1,4 +1,3 @@
-
 <template>
   <div class="invoice pa-3">
     <div v-if="!p.invoice.number">Loading Please wait...</div>
