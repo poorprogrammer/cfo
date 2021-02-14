@@ -25,7 +25,7 @@ app.put("/invoice/:invoiceNumber/", function (req, res) {
   new Invoice()
     .update(req.body)
     .then((inv) => {
-      res.json(req.body);
+      res.json(inv);
     })
     .catch(serverErrorHandler(res));
 });
@@ -52,6 +52,14 @@ app.post("/quotations/", function (req, res) {
     .save(req.body)
     .then((id) => {
       res.json(id);
+    })
+    .catch(serverErrorHandler(res));
+});
+app.put("/quotation/:number", function (req, res) {
+  new Quotation()
+    .update(req.body)
+    .then((inv) => {
+      res.json(inv);
     })
     .catch(serverErrorHandler(res));
 });

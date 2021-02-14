@@ -39,7 +39,7 @@ export default class {
   }
 
   update(invoice) {
-    let url = this.itemUrl(invoice.invoiceNumber)
+    let url = this.itemUrl(invoice.number)
     return axios.put(url, this.createDTO(invoice))
       .then(this.parseItem)
   }
