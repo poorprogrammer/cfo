@@ -4,7 +4,7 @@
     <div v-else>
       <edit-invoice v-bind:presenter="p"></edit-invoice>
       <div class="no-print">
-        <back-button></back-button>
+        <back-button v-bind:target="p.invoice.listUrl"></back-button>
         <v-btn id="save-button" @click="save" class="mx-1" fab dark color="primary">
           <v-icon dark>mdi-content-save</v-icon>
         </v-btn>

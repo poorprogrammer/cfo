@@ -118,7 +118,7 @@
       </div>
     </div>
     <div class="no-print">
-      <back-button></back-button>
+      <back-button v-bind:target="p.invoice.listUrl"></back-button>
     </div>
   </div>
 </template>
