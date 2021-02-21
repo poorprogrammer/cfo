@@ -79,16 +79,18 @@
           <p class="body-2">
             <v-row dense>
               <base-input
+                v-if="p.invoice.hasInvoiceNumber"
                 id="invoice-number"
                 label="Invoice Number"
                 v-model="p.invoice.invoiceNumber"
               />
-              <v-col cols="8" sm="4"
-                ><v-text-field
+              <v-col cols="8" sm="4" v-if="p.invoice.hasInvoiceNumber">
+                <v-text-field
                   id="invoice-date"
                   label="Invoice Date"
                   v-model="p.invoice.invoiceDate"
-              /></v-col>
+                />
+              </v-col>
               <v-col cols="4" sm="2">
                 <v-btn
                   id="today-button"
@@ -113,6 +115,7 @@
                   v-model="p.invoice.quotationDate"
               /></v-col>
               <base-input
+                v-if="p.invoice.hasInvoiceNumber"
                 id="purchase-order-number"
                 label="Purchase Order Number"
                 v-model="p.invoice.purchaseOrderNumber"

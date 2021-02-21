@@ -17,4 +17,5 @@ export default class Invoice extends PaymentInformation {
   get documentType() {
     return 'Invoice'
   }
+  get hasInvoiceNumber() { return true; }
 }

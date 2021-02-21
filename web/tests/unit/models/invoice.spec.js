@@ -252,6 +252,9 @@ describe('Invoice', () => {
       invoice.projectName = 'new project'
       expect(invoice.getProjectName()).toEqual('new project')
     })
+    it('should show invoice number, invoice date and PO field to edit', () => {
+      expect(invoice.hasInvoiceNumber).toEqual(true)
+    })
     describe("add and remove item", () => {
       beforeEach(() =>{
         invoice = Factory.createInvoice()

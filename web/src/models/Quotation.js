@@ -15,4 +15,5 @@ export default class Quotation extends PaymentInformation {
   get documentType() {
     return 'Quotation'
   }
+  get hasInvoiceNumber() { return false; }
 }

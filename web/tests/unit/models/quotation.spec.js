@@ -54,6 +54,9 @@ describe('Qutation', () => {
       quotation.setDateToday(today)
       expect(quotation.quotationDate).toEqual('2021-01-13')
     })
+    it('should not show invoice number, invoice date and PO field to edit', () => {
+      expect(quotation.hasInvoiceNumber).toEqual(false)
+    })
   })
 
   describe('update quotation', () => {
