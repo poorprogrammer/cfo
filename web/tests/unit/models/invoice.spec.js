@@ -271,7 +271,7 @@ describe('Invoice', () => {
       })
       it('new item can get price or adding would fail to render', () => {
         invoice.addItemBefore(invoice.items[0])
-        expect(invoice.getItems()[0].getPrice()).toEqual('THB 0.00')
+        expect(invoice.getItems()[0].getPrice()).toEqual('')
       })
       it('add last item when click on add before total', () => {
         invoice.addItemBefore()

@@ -12,9 +12,11 @@ export default class PricedInvoiceItem {
     return this.price * this.amount
   }
   getTotal() {
+    if(this.total()== 0) return ''
     return this.item.getCurrency(this.total())
   }
   getPrice() {
+    if(this.price == 0) return ''
     return this.item.getCurrency(this.price)
   }
 }
