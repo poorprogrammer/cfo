@@ -7,7 +7,7 @@
 <script>
 // @ is an alias to /src
 import PaymentInfoList from '@/components/PaymentInfoList.vue'
-import Presenter from "@/presenters/InvoiceList";
+import Presenter from "@/presenters/PaymentInfoList";
 import API from '@/services/receipts'
 
 export default {
