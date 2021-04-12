@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card>
-      <v-card-title>{{ titleMsg }}</v-card-title>
+      <v-card-title>{{ titleMsg }}<slot></slot></v-card-title>
       <v-data-table
         :headers="p.headers"
         :items="p.items"
