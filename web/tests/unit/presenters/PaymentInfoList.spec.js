@@ -1,4 +1,4 @@
-import Presenter from "@/presenters/InvoiceList";
+import Presenter from "@/presenters/PaymentInfoList";
 import API from "@/services/invoices"
 import Invoice from "../../../src/models/Invoice";
 
