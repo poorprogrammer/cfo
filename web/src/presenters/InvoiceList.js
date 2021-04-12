@@ -25,7 +25,7 @@ export default class {
     this.closeDeleteConfirmDialogOf(item)
   }
   removeItemFromList = (item) => {
-    this.items = this.items.filter((i) => i.invoiceNumber !== item.invoiceNumber)
+    this.items = this.items.filter((i) => i.number !== item.number)
   }
   cancelDelete = (item) => {
     this.closeDeleteConfirmDialogOf(item)

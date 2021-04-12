@@ -1,5 +1,6 @@
 import Presenter from "@/presenters/InvoiceList";
 import API from "@/services/invoices"
+import Invoice from "../../../src/models/Invoice";
 
 describe("InvoiceList Presenter", () => {
   let p = new Presenter(undefined, new API());
@@ -39,27 +40,23 @@ describe("InvoiceList Presenter", () => {
   });
   it("should remove deleted invoice after API complete", () => {
     p.items = [
-      {
+      new Invoice({
         invoiceNumber: "202101-003",
         deleted: false,
-        _id: "3",
-      },
-      {
+      }),
+      new Invoice({
         invoiceNumber: "202101-004",
         deleted: false,
-        _id: "4",
-      },
-      {
+      }),
+      new Invoice({
         invoiceNumber: "202101-005",
         deleted: false,
-        _id: "5",
-      },
+      }),
     ];
-    let deletedInvoice = {
+    let deletedInvoice = new Invoice({
       invoiceNumber: "202101-004",
       deleted: true,
-      _id: "4",
-    };
+    });
     p.removeItemFromList(deletedInvoice);
     expect(p.items.length).toEqual(2);
     expect(p.items[0].invoiceNumber).toEqual('202101-003');

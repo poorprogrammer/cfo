@@ -82,6 +82,14 @@ app.post("/receipts/", function (req, res) {
     })
     .catch(serverErrorHandler(res));
 });
+app.put("/receipt/:number", function (req, res) {
+  new Receipt()
+    .update(req.body)
+    .then((inv) => {
+      res.json(req.body);
+    })
+    .catch(serverErrorHandler(res));
+});
 app.post("/login/", function (req, res) {
   new Auth()
     .login(req.body.password)
