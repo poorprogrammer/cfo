@@ -76,6 +76,12 @@ export default new Router({
       beforeEnter: isAuthenticated,
     },
     {
+      path: '/receipt/:number/duplicate',
+      name: 'duplicatedReceipt',
+      component: DuplicatedReceipt,
+      beforeEnter: isAuthenticated,
+    },
+    {
       path: '/quotation/:number/duplicate',
       name: 'duplicatedQuotation',
       component: DuplicatedQuotation,
@@ -91,12 +97,6 @@ export default new Router({
       path: '/quotation/:number',
       name: 'quotation',
       component: Quotation,
-      beforeEnter: isAuthenticated,
-    },
-    {
-      path: '/receipt/:number/duplicate',
-      name: 'duplicatedReceipt',
-      component: DuplicatedReceipt,
       beforeEnter: isAuthenticated,
     },
     {
