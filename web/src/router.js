@@ -10,6 +10,7 @@ import Quotations from './views/Quotations.vue'
 import Quotation from './views/Quotation.vue'
 import UpdateQuotation from './views/UpdateQuotation.vue'
 import DuplicatedQuotation from './views/DuplicatedQuotation.vue'
+import Receipts from './views/Receipts.vue'
 
 Vue.use(Router)
 
@@ -58,6 +59,12 @@ export default new Router({
       path: '/invoice/:number',
       name: 'invoice',
       component: Invoice,
+      beforeEnter: isAuthenticated,
+    },
+    {
+      path: '/receipts/:year?',
+      name: 'receipts',
+      component: Receipts,
       beforeEnter: isAuthenticated,
     },
     {

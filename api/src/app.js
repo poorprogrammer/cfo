@@ -4,6 +4,7 @@ const app = express();
 const cors = require("cors");
 const Invoice = require("./services/invoice");
 const Quotation = require("./services/quotation");
+const Receipt = require("./services/receipt");
 const Auth = require("./services/auth");
 
 app.use(cors());
@@ -60,6 +61,19 @@ app.put("/quotation/:number", function (req, res) {
     .update(req.body)
     .then((inv) => {
       res.json(req.body);
+    })
+    .catch(serverErrorHandler(res));
+});
+app.get("/receipts/:year", (req, res) => {
+  new Receipt().all(req.params.year).then((invoices) => {
+    res.json(invoices);
+  });
+});
+app.post("/receipts/", function (req, res) {
+  new Receipt()
+    .save(req.body)
+    .then((id) => {
+      res.json(id);
     })
     .catch(serverErrorHandler(res));
 });
