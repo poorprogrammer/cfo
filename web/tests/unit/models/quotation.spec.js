@@ -19,6 +19,10 @@ describe('Qutation', () => {
       expect(quotation.quotationNumber).toEqual('202001-001')
     })
 
+    it('should not have receipt number', () => {
+      expect(quotation.hasReceiptNumber).toEqual(false)
+    })
+
     it('should have duplicattion url', () => {
       expect(quotation.duplicationUrl()).toEqual('/quotation/202001-001/duplicate')
     })

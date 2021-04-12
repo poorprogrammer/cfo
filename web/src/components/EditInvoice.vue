@@ -91,6 +91,19 @@
                   v-model="p.invoice.invoiceDate"
                 />
               </v-col>
+              <base-input
+                v-if="p.invoice.hasReceiptNumber"
+                id="receipt-number"
+                label="Receipt Number"
+                v-model="p.invoice.receiptNumber"
+              />
+              <v-col cols="8" sm="4" v-if="p.invoice.hasReceiptNumber">
+                <v-text-field
+                  id="receipt-date"
+                  label="Receipt Date"
+                  v-model="p.invoice.receiptDate"
+                />
+              </v-col>
               <v-col cols="4" sm="2">
                 <v-btn
                   id="today-button"

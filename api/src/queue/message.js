@@ -6,6 +6,10 @@ function quotationCreatedMessage (i) {
   return `Q${i.quotationNumber}| ${i.targetCompany.name}| ${toCurrency(total(i), i.currency)}`;
 }
 
+function receiptCreatedMessage (i) {
+  return `R${i.receiptNumber}| ${i.targetCompany.name}| ${toCurrency(total(i), i.currency)}`;
+}
+
 function total(inv) {
   if(!inv.items) return 0
   let itemPrices = inv.items.map((i) => i.amount * i.price)
@@ -24,4 +28,5 @@ function toCurrency(amount, currency='THB') {
 module.exports = {
   invoiceCreatedMessage,
   quotationCreatedMessage,
+  receiptCreatedMessage,
 };

@@ -18,4 +18,5 @@ export default class Invoice extends PaymentInformation {
     return 'Invoice'
   }
   get hasInvoiceNumber() { return true; }
+  get hasReceiptNumber() { return false; }
 }

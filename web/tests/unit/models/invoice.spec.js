@@ -17,6 +17,10 @@ describe('Invoice', () => {
       expect(invoice.quotationNumber).toEqual('201912-060')
     })
 
+    it('should not have receipt number', () => {
+      expect(invoice.hasReceiptNumber).toEqual(false)
+    })
+
     it('should have purchase order number', () => {
       expect(invoice.purchaseOrderNumber).toEqual('PO 20034910343')
     })

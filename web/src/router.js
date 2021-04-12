@@ -12,6 +12,7 @@ import UpdateQuotation from './views/UpdateQuotation.vue'
 import DuplicatedQuotation from './views/DuplicatedQuotation.vue'
 import Receipts from './views/Receipts.vue'
 import Receipt from './views/Receipt.vue'
+import DuplicatedReceipt from './views/DuplicatedReceipt.vue'
 
 Vue.use(Router)
 
@@ -75,6 +76,12 @@ export default new Router({
       beforeEnter: isAuthenticated,
     },
     {
+      path: '/quotation/:number/duplicate',
+      name: 'duplicatedQuotation',
+      component: DuplicatedQuotation,
+      beforeEnter: isAuthenticated,
+    },
+    {
       path: '/quotations/:year?',
       name: 'quotations',
       component: Quotations,
@@ -87,9 +94,9 @@ export default new Router({
       beforeEnter: isAuthenticated,
     },
     {
-      path: '/quotation/:number/duplicate',
-      name: 'duplicatedQuotation',
-      component: DuplicatedQuotation,
+      path: '/receipt/:number/duplicate',
+      name: 'duplicatedReceipt',
+      component: DuplicatedReceipt,
       beforeEnter: isAuthenticated,
     },
     {
