@@ -1,17 +1,7 @@
 <template>
   <div>
     <v-card>
-      <v-card-title>
-        {{ titleMsg }}
-        <v-btn
-          id="generate-receipt"
-          text
-          small
-          color="primary"
-        >
-          <v-icon dark>mdi-forwardburger</v-icon>
-        </v-btn>
-      </v-card-title>
+      <v-card-title>{{ titleMsg }}</v-card-title>
       <v-data-table
         :headers="p.headers"
         :items="p.items"
@@ -96,7 +86,7 @@
 import Presenter from "@/presenters/InvoiceList";
 
 export default {
-  name: "InvoiceList",
+  name: "PaymentInfoList",
   props: {
     titleMsg: String,
     presenter: Presenter,
