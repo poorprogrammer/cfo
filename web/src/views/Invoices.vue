@@ -5,8 +5,8 @@
         id="generate-receipt"
         text
         small
-        color="purple"
-        v-on:click="toggleGenerateReceipt(item)"
+        :color="p.buttonColor"
+        v-on:click="p.toggleGenerateReceipt()"
       >
         <v-icon dark>mdi-forwardburger</v-icon>
       </v-btn>
