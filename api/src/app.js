@@ -69,6 +69,11 @@ app.get("/receipts/:year", (req, res) => {
     res.json(invoices);
   });
 });
+app.get("/receipt/:number", function (req, res) {
+  new Receipt().get(req.params.number).then((doc) => {
+    res.json(doc);
+  });
+});
 app.post("/receipts/", function (req, res) {
   new Receipt()
     .save(req.body)
