@@ -1,15 +1,27 @@
 <template>
   <div>
     <payment-info-list titleMsg="Invoice List"  v-bind:presenter="p">
-      <v-btn
-        id="generate-receipt"
-        text
-        small
-        :color="p.buttonColor"
-        v-on:click="p.toggleGenerateReceipt()"
-      >
-        <v-icon dark>mdi-forwardburger</v-icon>
-      </v-btn>
+      <template v-slot:header>
+        <v-btn
+          id="generate-receipt"
+          text
+          small
+          :color="p.buttonColor"
+          v-on:click="p.toggleGenerateReceipt()"
+        >
+          <v-icon dark>mdi-forwardburger</v-icon>
+        </v-btn>
+      </template>
+      <template v-slot:col1="slotProps">
+        <span class="selecting-invoices"
+          v-if="p.isGeneratingReceipt">
+          <input
+            type="checkbox"
+            v-model="p.selectedInvoices"
+            :value="slotProps.item.number"
+          />
+        </span>
+      </template>
     </payment-info-list>
   </div>
 </template>
@@ -30,3 +42,9 @@ export default {
   },
 }
 </script>
+
+<style scoped>
+.selecting-invoices {
+  padding-right: 0.5em;
+}
+</style>

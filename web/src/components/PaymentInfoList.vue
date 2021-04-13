@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card>
-      <v-card-title>{{ titleMsg }}<slot></slot></v-card-title>
+      <v-card-title>{{ titleMsg }} <slot name="header"></slot></v-card-title>
       <v-data-table
         :headers="p.headers"
         :items="p.items"
@@ -11,6 +11,7 @@
         :disable-pagination="true"
       >
         <template v-slot:item.number="{ item }">
+          <slot name="col1" v-bind:item="item"></slot>
           <router-link :to="item.editionUrl()">{{ item.number }}</router-link>
         </template>
 
