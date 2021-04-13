@@ -18,7 +18,7 @@
           <input
             type="checkbox"
             v-model="p.selectedInvoices"
-            :value="slotProps.item.number"
+            :value="slotProps.item"
           />
         </span>
       </template>
