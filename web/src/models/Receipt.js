@@ -1,7 +1,7 @@
 import PaymentInformation from '@/models/PaymentInformation'
 
 export default class Receipt extends PaymentInformation {
-  static createFromInvoices(invoices) {
+  static createFromInvoices(invoices, today=new Date()) {
     let r = new Receipt(invoices[0])
     r.items = []
     invoices.forEach((invoice) => {
@@ -11,8 +11,8 @@ export default class Receipt extends PaymentInformation {
       item.amount = 1
       r.items.push(item)
     })
-    r.setDateToday()
-    r.number = '202101-'
+    r.setDateToday(today)
+    r.number = r.newInvoiceNumber(today)
     return r
   }
   constructor(data) {

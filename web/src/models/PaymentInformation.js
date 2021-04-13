@@ -81,10 +81,19 @@ export default class PaymentInformation {
     this.date = this.formatDate(today)
   }
   formatDate(date) {
-    let y = date.getFullYear();
-    let m = (1 + date.getMonth()).toString().padStart(2, '0');
+    let y = this.year(date);
+    let m = this.month(date);
     let d = date.getDate().toString().padStart(2, '0');
     return `${y}-${m}-${d}`
+  }
+  newInvoiceNumber(date) {
+    return `${this.year(date)}${this.month(date)}-`
+  }
+  year(date) {
+    return date.getFullYear()
+  }
+  month(date) {
+    return (1 + date.getMonth()).toString().padStart(2, '0')
   }
   createPricedInvoiceItem() {
     return new PricedInvoiceItem(this)
