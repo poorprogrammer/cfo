@@ -13,7 +13,7 @@ function receiptCreatedMessage (i) {
 function total(inv) {
   if(!inv.items) return 0
   let itemPrices = inv.items.map((i) => i.amount * i.price)
-  return itemPrices.reduce((a, b) => a + b)
+  return itemPrices.reduce((a, b) => a + b, 0)
 }
 
 function toCurrency(amount, currency='THB') {

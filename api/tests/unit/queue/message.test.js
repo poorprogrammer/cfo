@@ -13,6 +13,12 @@ describe("invoice created", () => {
     let msg = m.invoiceCreatedMessage(inv)
     expect(msg).toEqual(`I202001-002| Googleplex| THB 0.00`);
   });
+  it("should have total 0 for invoice with no items (empty arrary)", () => {
+    let inv = Invoices["202001-002"];
+    inv.items = []
+    let msg = m.invoiceCreatedMessage(inv)
+    expect(msg).toEqual(`I202001-002| Googleplex| THB 0.00`);
+  });
   it("should support USD", () => {
     let inv = Invoices["202001-001"];
     let msg = m.invoiceCreatedMessage(inv)
