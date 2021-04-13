@@ -12,10 +12,9 @@ export default {
   components: { DuplicatedPaymentInfo },
   name: 'createReceipt',
   mounted() {
-    this.p.invoice = new Receipt()
+    this.p.invoice = Receipt.createFromInvoices(this.$route.params.invoices)
     this.p.invoice.number = '202101-001'
     this.p.invoice.setDateToday()
-    console.log(this.$route.params.invoices)
   },
   data() {
     return {

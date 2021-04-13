@@ -1,6 +1,18 @@
 import PaymentInformation from '@/models/PaymentInformation'
 
 export default class Receipt extends PaymentInformation {
+  static createFromInvoices(invoices) {
+    let r = new Receipt(invoices[0])
+    r.items = []
+    invoices.forEach((invoice) => {
+      let item = r.createPricedInvoiceItem()
+      item.name = invoice.invoiceNumber
+      item.price = invoice.getTotal()
+      item.amount = 1
+      r.items.push(item)
+    })
+    return r
+  }
   constructor(data) {
     super(data)
     if (!data) return
