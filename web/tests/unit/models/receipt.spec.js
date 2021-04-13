@@ -79,5 +79,14 @@ describe('Receipt', () => {
       expect(receipt.items[0].price).toEqual(invoices[0].getTotal())
       expect(receipt.items[0].amount).toEqual(1)
     })
+    it('should have receipt date as today', () => {
+      let today = receipt.formatDate(new Date())
+      receipt = Receipt.createFromInvoices(invoices)
+      expect(receipt.receiptDate).toEqual(today)
+    })
+    it('should have receipt number', () => {
+      receipt = Receipt.createFromInvoices(invoices)
+      expect(receipt.receiptNumber).toEqual('202101-')
+    })
   })
 })

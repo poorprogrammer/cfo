@@ -11,6 +11,8 @@ export default class Receipt extends PaymentInformation {
       item.amount = 1
       r.items.push(item)
     })
+    r.setDateToday()
+    r.number = '202101-'
     return r
   }
   constructor(data) {
