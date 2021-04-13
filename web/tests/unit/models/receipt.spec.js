@@ -40,5 +40,8 @@ describe('Receipt', () => {
       receipt = new Receipt()
       receipt.getItems()
     })
+    it('should have invoice number in for a receipt of a single invoice', () => {
+      expect(receipt.hasInvoiceNumber).toEqual(true)
+    })
   })
 })

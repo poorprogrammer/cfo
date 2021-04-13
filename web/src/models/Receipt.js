@@ -15,6 +15,6 @@ export default class Receipt extends PaymentInformation {
   get documentType() {
     return 'Receipt'
   }
-  get hasInvoiceNumber() { return false; }
+  get hasInvoiceNumber() { return true; }
   get hasReceiptNumber() { return true; }
 }

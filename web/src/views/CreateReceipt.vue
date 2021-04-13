@@ -14,6 +14,7 @@ export default {
   mounted() {
     this.p.invoice = new Receipt()
     this.p.invoice.number = '202101-001'
+    this.p.invoice.setDateToday()
   },
   data() {
     return {
