@@ -13,7 +13,7 @@ describe("InvoiceList Presenter", () => {
     it("should have primary color by default", () => {
       expect(p.buttonColor).toEqual('primary')
     });
-    it("should change button color back to primary after exit generate receipt mode", () => {
+    it("should change button color back to primary after confirm generating a receipt", () => {
       p.toggleGenerateReceipt()
       p.toggleGenerateReceipt()
       expect(p.buttonColor).toEqual('primary')

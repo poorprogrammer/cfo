@@ -13,6 +13,7 @@ import DuplicatedQuotation from './views/DuplicatedQuotation.vue'
 import Receipts from './views/Receipts.vue'
 import Receipt from './views/Receipt.vue'
 import DuplicatedReceipt from './views/DuplicatedReceipt.vue'
+import CreateReceipt from './views/CreateReceipt.vue'
 import UpdateReceipt from './views/UpdateReceipt.vue'
 
 Vue.use(Router)
@@ -68,6 +69,12 @@ export default new Router({
       path: '/receipts/:year?',
       name: 'receipts',
       component: Receipts,
+      beforeEnter: isAuthenticated,
+    },
+    {
+      path: '/receipt/create',
+      name: 'createReceipt',
+      component: CreateReceipt,
       beforeEnter: isAuthenticated,
     },
     {

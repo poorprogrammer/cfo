@@ -3,11 +3,18 @@ import PricedInvoiceItem from '@/models/PricedInvoiceItem'
 
 export default class PaymentInformation {
   constructor(data) {
+    this.currencies = {
+      "THB": new Intl.NumberFormat('th-TH', { style: 'currency', currency: 'THB', currencyDisplay: 'code' }),
+      "USD": new Intl.NumberFormat('us-US', { style: 'currency', currency: 'USD', currencyDisplay: 'code' }),
+    }
+    this.fromCompany = { name: "" }
+    this.targetCompany = { name: "" }
+    this.items = []
+
     if (!data) return
 
     this.id = data._id
     this.companySlug = data.companySlug
-    this.items = []
     this.fromCompany = Object.assign({}, data.fromCompany)
     this.targetCompany = Object.assign({}, data.targetCompany)
     this.projectName = data.projectName
@@ -15,10 +22,6 @@ export default class PaymentInformation {
     this.currency = data.currency
     this.dialog = false
     this.deleted = data.deleted || false
-    this.currencies = {
-      "THB": new Intl.NumberFormat('th-TH', { style: 'currency', currency: 'THB', currencyDisplay: 'code' }),
-      "USD": new Intl.NumberFormat('us-US', { style: 'currency', currency: 'USD', currencyDisplay: 'code' }),
-    }
 
     if (!data.items) return
     data.items.forEach(i => {
@@ -32,7 +35,7 @@ export default class PaymentInformation {
   total() { return new InvoiceItem('Total', this.getTotal(), this) }
   tax() { return new InvoiceItem('VAT 7%', this.getTotal() * 0.07, this) }
   grandTotal() { return new InvoiceItem('Grand Total', this.getTotal() * 1.07, this) }
-  getTotal() { return this.items.map(getItemTotal).reduce(sum) }
+  getTotal() { return this.items.map(getItemTotal).reduce(sum, 0) }
   getFromCompanyName() { return this.fromCompany.name }
   getFromCompanyAddress() { return this.fromCompany.address }
   getFromCompanyTaxId() { return this.fromCompany.taxId }

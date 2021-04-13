@@ -8,6 +8,12 @@ export default class extends PaymentInfoList {
   }
   toggleGenerateReceipt = () => {
     this.isGeneratingReceipt = !this.isGeneratingReceipt
+    if(!this.isGeneratingReceipt) {
+      this.generateReceipt()
+    }
+  }
+  generateReceipt = () => {
+    console.log(this.selectedInvoices)
   }
   get buttonColor() {
     return this.isGeneratingReceipt? 'purple': 'primary'
