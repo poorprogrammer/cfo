@@ -40,6 +40,9 @@ export default {
       p: new Presenter(this, new API()),
     }
   },
+  methods: {
+    goTo: function(path) { this.$router.push(path) }
+  }
 }
 </script>
 

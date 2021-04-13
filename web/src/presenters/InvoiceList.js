@@ -13,7 +13,12 @@ export default class extends PaymentInfoList {
     }
   }
   generateReceipt = () => {
-    console.log(this.selectedInvoices)
+    this.view.goTo({
+      name: 'createReceipt',
+      params: {
+        invoices: this.selectedInvoices,
+      },
+    })
   }
   get buttonColor() {
     return this.isGeneratingReceipt? 'purple': 'primary'
