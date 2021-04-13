@@ -117,11 +117,13 @@
                 </v-btn>
               </v-col>
               <base-input
+                v-if="!p.invoice.hasReceiptNumber"
                 id="quotation-number"
                 label="Quotation Number"
                 v-model="p.invoice.quotationNumber"
               />
               <v-col cols="8" sm="4"
+                v-if="!p.invoice.hasReceiptNumber"
                 ><v-text-field
                   id="quotation-date"
                   label="Quotation Date"
