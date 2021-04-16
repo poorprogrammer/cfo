@@ -170,7 +170,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in p.invoice.getItems()" :key="item.key">
+          <tr v-for="(item, index) in p.invoice.getItems()" :key="index">
             <td class="text-left">
               <v-text-field label="Item" v-model="item.name" />
             </td>

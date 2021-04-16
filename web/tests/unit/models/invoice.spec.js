@@ -91,11 +91,6 @@ describe('Invoice', () => {
     describe('for each item', () => {
       let item = invoice.getItems()[1]
 
-      it('should have key for v-for to loop on', () => {
-        console.log(item)
-        expect(typeof(item.key)).toEqual('number')
-      })
-
       it('should have a name', () => {
         expect(item.name).toEqual('Scrum master')
       })
