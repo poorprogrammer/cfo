@@ -153,6 +153,12 @@
                   label="Currency"
                 ></v-select>
               </v-col>
+
+              <base-input
+                id="payment"
+                label="Payment"
+                v-model="p.invoice.payment"
+              />
             </v-row>
           </p>
         </v-card>
