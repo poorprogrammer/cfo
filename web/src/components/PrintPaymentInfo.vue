@@ -198,7 +198,7 @@ export default {
   .v-application .v-data-table {
     min-height: 364px;
   }
-  .v-application .v-data-table.small {
+  .v-application .v-data-table.dense {
     min-height: 304px;
   }
   .v-application td.item.small {
