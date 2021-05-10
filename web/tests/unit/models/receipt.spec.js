@@ -106,4 +106,14 @@ describe('Receipt', () => {
       expect(receipt.receiptNumber).toEqual('202101-')
     })
   })
+
+  describe('Printing', () => {
+    it('should print small items when there are more than 2 items so it fits in 1 page. It was 1 less than invoice because WHT takes a row', () => {
+      receipt.addItemBefore()
+      receipt.addItemBefore()
+      receipt.addItemBefore()
+      expect(receipt.items.length).toEqual(3)
+      expect(receipt.itemClass()).toEqual("small")
+    })
+  })
 })
