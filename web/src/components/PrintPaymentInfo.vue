@@ -81,7 +81,7 @@
             </v-card>
           </v-col>
         </v-row>
-        <v-simple-table :class="p.invoice.signatureClass()">
+        <v-simple-table :class="p.invoice.tablePaddingClass()">
           <template v-slot:default>
             <thead>
               <tr>

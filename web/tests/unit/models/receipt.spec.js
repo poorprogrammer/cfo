@@ -117,10 +117,10 @@ describe('Receipt', () => {
     })
   })
     it('should have small signature class when it has payment info', () => {
-      expect(receipt.signatureClass()).toEqual('dense')
+      expect(receipt.tablePaddingClass()).toEqual('dense')
     })
     it('should have normal signature class when no payment info', () => {
       receipt.payment = ''
-      expect(receipt.signatureClass()).toEqual('')
+      expect(receipt.tablePaddingClass()).toEqual('')
     })
 })
