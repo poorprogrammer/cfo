@@ -116,4 +116,7 @@ describe('Receipt', () => {
       expect(receipt.itemClass()).toEqual("small")
     })
   })
+    it('should have small signature class when it has payment info', () => {
+      expect(receipt.signatureClass()).toEqual('small')
+    })
 })

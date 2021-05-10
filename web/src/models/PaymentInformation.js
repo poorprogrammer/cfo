@@ -47,6 +47,7 @@ export default class PaymentInformation {
   itemClass() {
     return this.items.length > 3? "small": ""
   }
+  signatureClass() { return "" }
   getTargetCompanyAddress() { return this.targetCompany.address }
   getTargetCompanyTaxId() { return this.targetCompany.taxId }
   getTargetCompanyTel() { return this.targetCompany.tel }

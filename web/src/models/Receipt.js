@@ -39,4 +39,5 @@ export default class Receipt extends PaymentInformation {
   itemClass() {
     return this.items.length > 2? "small": ""
   }
+  signatureClass() { return "small" }
 }

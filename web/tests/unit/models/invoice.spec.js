@@ -169,6 +169,9 @@ describe('Invoice', () => {
     it('should have filename to be save when export to PDF and store in storage', () => {
       expect(invoice.filename()).toEqual('001-012020_INVOICE_Facebook HQ_React')
     })
+    it('should always have normal signature class as it does not have payment info like receipt', () => {
+      expect(invoice.signatureClass()).toEqual('')
+    })
   })
 
   describe('switching currency', () => {

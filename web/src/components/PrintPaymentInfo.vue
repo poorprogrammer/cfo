@@ -81,7 +81,7 @@
             </v-card>
           </v-col>
         </v-row>
-        <v-simple-table>
+        <v-simple-table :class="p.invoice.signatureClass()">
           <template v-slot:default>
             <thead>
               <tr>
@@ -197,6 +197,9 @@ export default {
   }
   .v-application .v-data-table {
     min-height: 364px;
+  }
+  .v-application .v-data-table.small {
+    min-height: 304px;
   }
   .v-application td.item.small {
     padding: 2px;
