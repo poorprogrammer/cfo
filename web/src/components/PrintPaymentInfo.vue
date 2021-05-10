@@ -73,6 +73,8 @@
                   <base-text label="Purchase Order Number" :value="p.invoice.purchaseOrderNumber"/>
                   <base-text label="Invoice Number" :value="p.invoice.invoiceNumber"/>
                   <base-text label="Invoice Date" :value="p.invoice.invoiceDate"/>
+                  <base-text label="Receipt Number" :value="p.invoice.receiptNumber"/>
+                  <base-text label="Receipt Date" :value="p.invoice.receiptDate"/>
                   <base-text label="Remark" :value="p.invoice.remark"/>
                 </v-row>
               </p>
