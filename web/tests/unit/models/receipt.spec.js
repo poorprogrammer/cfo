@@ -79,6 +79,18 @@ describe('Receipt', () => {
       expect(receipt.items[0].price).toEqual(invoices[0].getTotal())
       expect(receipt.items[0].amount).toEqual(1)
     })
+    it('should have withholding tax 3%', () => {
+      receipt = Receipt.createFromInvoices(invoices)
+      let wht = receipt.getItems()[3]
+      expect(wht.name).toEqual('WHT 3%')
+      expect(wht.t).toEqual(receipt.getTotal() * -0.03)
+    })
+    it('should have withholding decucted from grand total as the customer would be submitting this tax to the government', () => {
+      receipt = Receipt.createFromInvoices(invoices)
+      let grandTotal = receipt.getItems()[5]
+      expect(grandTotal.name).toEqual('Grand Total')
+      expect(grandTotal.t).toEqual(receipt.getTotal() * 1.04)
+    })
     it('should have receipt date as today', () => {
       let today = new Date("January 13, 2021")
       receipt = Receipt.createFromInvoices(invoices, today)

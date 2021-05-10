@@ -1,3 +1,4 @@
+import InvoiceItem from '@/models/InvoiceItem'
 import PaymentInformation from '@/models/PaymentInformation'
 
 export default class Receipt extends PaymentInformation {
@@ -31,4 +32,7 @@ export default class Receipt extends PaymentInformation {
   }
   get hasInvoiceNumber() { return true; }
   get hasReceiptNumber() { return true; }
+  getItems() { return [...this.items, this.total(), this.wht(), this.tax(), this.grandTotal()] }
+  wht() { return new InvoiceItem('WHT 3%', this.getTotal() * -0.03, this) }
+  grandTotal() { return new InvoiceItem('Grand Total', this.getTotal() * 1.04, this) }
 }
