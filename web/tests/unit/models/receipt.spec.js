@@ -11,7 +11,8 @@ describe('Receipt', () => {
       targetCompany: {
         name: "Facebook HQ",
       },
-      payment: "bank transfer"
+      payment: "bank transfer",
+      _wht: {name: "WHT 3%", price: "-515", amount: 1},
     }
     receipt = new Receipt(json)
   })
@@ -23,6 +24,11 @@ describe('Receipt', () => {
     it('should have payment', () => {
       expect(receipt.payment).toEqual('bank transfer')
     })
+    it('should have editable WHT', () => {
+      expect(receipt._wht.getTotal()).toEqual('-THB 515.00')
+    })
+  })
+  describe('editable WHT', () => {
   })
   describe('render create receipt page', () => {
     it('should have target company name', () => {
@@ -61,14 +67,14 @@ describe('Receipt', () => {
         },
         items: [
           {name: 'item 1', price: 10, amount: 1},
-          {name: 'item 2', price: 2, amount: 1},
+          {name: 'item 2', price: 20, amount: 1},
         ],
       }),
       new Invoice({
         invoiceNumber: '202101-002',
         items: [
           {name: 'item 3', price: 30, amount: 1},
-          {name: 'item 4', price: 4, amount: 1},
+          {name: 'item 4', price: 40, amount: 1},
         ],
       }),
     ]
@@ -94,6 +100,14 @@ describe('Receipt', () => {
       let grandTotal = receipt.getItems()[5]
       expect(grandTotal.name).toEqual('Grand Total')
       expect(grandTotal.t).toEqual(receipt.getTotal() * 1.04)
+    })
+    it('should have withholding deducted from grand total for custom WHT', () => {
+      receipt = Receipt.createFromInvoices(invoices)
+      receipt._wht.name = 'WHT 1%'
+      receipt._wht.price = receipt.getTotal() * -0.01
+      let grandTotal = receipt.getItems()[5]
+      expect(grandTotal.name).toEqual('Grand Total')
+      expect(grandTotal.t).toEqual(receipt.getTotal() * 1.06)
     })
     it('should have receipt date as today', () => {
       let today = new Date("January 13, 2021")

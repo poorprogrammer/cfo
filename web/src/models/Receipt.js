@@ -27,7 +27,9 @@ export default class Receipt extends PaymentInformation {
     this.receiptNumber = data.receiptNumber
     this.receiptDate = data.receiptDate
     this.payment = data.payment
-    this._wht = data._wht ? data._wht : this._wht
+    if(data._wht) {
+      Object.assign(this._wht, data._wht)
+    }
   }
   get number() { return this.receiptNumber }
   set number(n) { this.receiptNumber = n }
@@ -40,7 +42,7 @@ export default class Receipt extends PaymentInformation {
   get hasReceiptNumber() { return true; }
   getItems() { return [...this.items, this.total(), this.wht(), this.tax(), this.grandTotal()] }
   wht() { return this._wht }
-  grandTotal() { return new InvoiceItem('Grand Total', this.getTotal() * 1.04, this) }
+  grandTotal() { return new InvoiceItem('Grand Total', this.getTotal() + this.tax().t + this.wht().total() , this) }
   itemClass() {
     return this.items.length > 2? "small": ""
   }
