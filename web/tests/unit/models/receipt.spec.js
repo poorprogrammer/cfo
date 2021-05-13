@@ -89,7 +89,7 @@ describe('Receipt', () => {
       expect(wht.name).toEqual('WHT 3%')
       expect(wht.t).toEqual(receipt.getTotal() * -0.03)
     })
-    it('should have withholding decucted from grand total as the customer would be submitting this tax to the government', () => {
+    it('should have withholding deducted from grand total as the customer would be submitting this tax to the government', () => {
       receipt = Receipt.createFromInvoices(invoices)
       let grandTotal = receipt.getItems()[5]
       expect(grandTotal.name).toEqual('Grand Total')
