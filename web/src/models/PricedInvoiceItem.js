@@ -18,4 +18,7 @@ export default class PricedInvoiceItem {
     if(this.price == 0) return ''
     return this.item.getCurrency(this.price)
   }
+  get t() {
+    return this.total()
+  }
 }

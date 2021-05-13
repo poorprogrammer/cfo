@@ -83,9 +83,11 @@ describe('Receipt', () => {
       expect(receipt.items[0].price).toEqual(invoices[0].getTotal())
       expect(receipt.items[0].amount).toEqual(1)
     })
-    it('should have withholding tax 3%', () => {
+    fit('should have withholding tax 3%', () => {
       receipt = Receipt.createFromInvoices(invoices)
+      console.log(receipt.getItems())
       let wht = receipt.getItems()[3]
+      console.log(`wht = ${wht.name}`)
       expect(wht.name).toEqual('WHT 3%')
       expect(wht.t).toEqual(receipt.getTotal() * -0.03)
     })

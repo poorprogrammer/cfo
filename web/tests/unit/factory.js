@@ -1,4 +1,5 @@
 import Invoice from "../../src/models/Invoice";
+import Receipt from "../../src/models/Receipt";
 
 export class Factory {
   static json = {
@@ -38,5 +39,9 @@ export class Factory {
 
   static createInvoice() {
     return new Invoice(Factory.json);
+  }
+
+  static createReceipt() {
+    return Receipt.createFromInvoices([this.createInvoice()])
   }
 }
