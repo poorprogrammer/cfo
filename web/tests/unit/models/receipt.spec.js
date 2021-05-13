@@ -85,9 +85,7 @@ describe('Receipt', () => {
     })
     fit('should have withholding tax 3%', () => {
       receipt = Receipt.createFromInvoices(invoices)
-      console.log(receipt.getItems())
       let wht = receipt.getItems()[3]
-      console.log(`wht = ${wht.name}`)
       expect(wht.name).toEqual('WHT 3%')
       expect(wht.t).toEqual(receipt.getTotal() * -0.03)
     })

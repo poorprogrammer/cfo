@@ -20,8 +20,6 @@ export default class Receipt extends PaymentInformation {
   }
   constructor(data) {
     super(data)
-    console.log(`items length = ${this.items.length}`)
-    console.log(`total = ${this.getTotal()}`)
     this._wht = new PricedInvoiceItem(this, 'WHT 3%', this.getTotal() * -0.03, 1)
 
     if (!data) return
