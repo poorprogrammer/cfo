@@ -18,16 +18,4 @@ export default class ReceiptService extends InvoiceService {
   createItem = (item) => {
     return new Receipt(item)
   }
-
-  createDTO = (receipt) => {
-    let dto = {}
-    Object.assign(dto, receipt)
-    if(!dto.items) return dto
-    dto.items.forEach((item) => {
-      delete item.item
-    })
-    if(!dto._wht) return dto
-    delete dto._wht.item
-    return dto
-  }
 }

@@ -24,11 +24,6 @@ describe('Receipt', () => {
     it('should have payment', () => {
       expect(receipt.payment).toEqual('bank transfer')
     })
-    it('should have editable WHT', () => {
-      expect(receipt._wht.getTotal()).toEqual('-THB 515.00')
-    })
-  })
-  describe('editable WHT', () => {
   })
   describe('render create receipt page', () => {
     it('should have target company name', () => {
@@ -88,26 +83,6 @@ describe('Receipt', () => {
       expect(receipt.items[0].name).toEqual(invoices[0].invoiceNumber)
       expect(receipt.items[0].price).toEqual(invoices[0].getTotal())
       expect(receipt.items[0].amount).toEqual(1)
-    })
-    it('should have withholding tax 3%', () => {
-      receipt = Receipt.createFromInvoices(invoices)
-      let wht = receipt.getItems()[3]
-      expect(wht.name).toEqual('WHT 3%')
-      expect(wht.t).toEqual(receipt.getTotal() * -0.03)
-    })
-    it('should have withholding deducted from grand total as the customer would be submitting this tax to the government', () => {
-      receipt = Receipt.createFromInvoices(invoices)
-      let grandTotal = receipt.getItems()[5]
-      expect(grandTotal.name).toEqual('Grand Total')
-      expect(grandTotal.t).toEqual(receipt.getTotal() * 1.04)
-    })
-    it('should have withholding deducted from grand total for custom WHT', () => {
-      receipt = Receipt.createFromInvoices(invoices)
-      receipt._wht.name = 'WHT 1%'
-      receipt._wht.price = receipt.getTotal() * -0.01
-      let grandTotal = receipt.getItems()[5]
-      expect(grandTotal.name).toEqual('Grand Total')
-      expect(grandTotal.t).toEqual(receipt.getTotal() * 1.06)
     })
     it('should have receipt date as today', () => {
       let today = new Date("January 13, 2021")

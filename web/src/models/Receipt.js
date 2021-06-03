@@ -1,5 +1,4 @@
 import InvoiceItem from '@/models/InvoiceItem'
-import PricedInvoiceItem from '@/models/PricedInvoiceItem'
 import PaymentInformation from '@/models/PaymentInformation'
 
 export default class Receipt extends PaymentInformation {
@@ -15,21 +14,15 @@ export default class Receipt extends PaymentInformation {
     })
     r.setDateToday(today)
     r.number = r.newInvoiceNumber(today)
-    r._wht.price = r.getTotal() * -0.03
     return r
   }
   constructor(data) {
     super(data)
-    this._wht = new PricedInvoiceItem(this, 'WHT 3%', this.getTotal() * -0.03, 1)
-
     if (!data) return
 
     this.receiptNumber = data.receiptNumber
     this.receiptDate = data.receiptDate
     this.payment = data.payment
-    if(data._wht) {
-      Object.assign(this._wht, data._wht)
-    }
   }
   get number() { return this.receiptNumber }
   set number(n) { this.receiptNumber = n }
@@ -40,9 +33,8 @@ export default class Receipt extends PaymentInformation {
   }
   get hasInvoiceNumber() { return true; }
   get hasReceiptNumber() { return true; }
-  getItems() { return [...this.items, this.total(), this.wht(), this.tax(), this.grandTotal()] }
-  wht() { return this._wht }
-  grandTotal() { return new InvoiceItem('Grand Total', this.getTotal() + this.tax().t + this.wht().total() , this) }
+  getItems() { return [...this.items, this.total(), this.tax(), this.grandTotal()] }
+  grandTotal() { return new InvoiceItem('Grand Total', this.getTotal() + this.tax().t, this) }
   itemClass() {
     return this.items.length > 2? "small": ""
   }
