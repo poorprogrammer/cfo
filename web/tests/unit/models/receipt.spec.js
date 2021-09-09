@@ -11,7 +11,6 @@ describe('Receipt', () => {
       targetCompany: {
         name: "Facebook HQ",
       },
-      payment: "bank transfer",
       _wht: {name: "WHT 3%", price: "-515", amount: 1},
     }
     receipt = new Receipt(json)
@@ -20,9 +19,6 @@ describe('Receipt', () => {
   describe('parsing json data', () => {
     it('should have receipt number', () => {
       expect(receipt.receiptNumber).toEqual('202001-001')
-    })
-    it('should have payment', () => {
-      expect(receipt.payment).toEqual('bank transfer')
     })
   })
   describe('render create receipt page', () => {

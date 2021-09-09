@@ -9,6 +9,7 @@ export default class Invoice extends PaymentInformation {
     this.invoiceDate = data.invoiceDate
     this.quotationNumber = data.quotationNumber
     this.purchaseOrderNumber = data.purchaseOrderNumber
+    this.payment = data.payment
   }
   get number() { return this.invoiceNumber }
   set number(n) { this.invoiceNumber = n }

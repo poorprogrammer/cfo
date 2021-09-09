@@ -88,6 +88,10 @@ describe('Invoice', () => {
       expect(invoice.duplicationUrl()).toEqual('/invoice/202001-001/duplicate')
     })
 
+    it('should have payment', () => {
+      expect(invoice.payment).toEqual('bank transfer')
+    })
+
     describe('for each item', () => {
       let item = invoice.getItems()[1]
 

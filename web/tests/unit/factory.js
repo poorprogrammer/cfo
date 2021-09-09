@@ -22,6 +22,7 @@ export class Factory {
     quotationNumber: "201912-060",
     purchaseOrderNumber: "PO 20034910343",
     remark: "Dec 2019",
+    payment: "bank transfer",
     items: [
       {
         name: "Developer",

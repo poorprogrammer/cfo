@@ -22,7 +22,6 @@ export default class Receipt extends PaymentInformation {
 
     this.receiptNumber = data.receiptNumber
     this.receiptDate = data.receiptDate
-    this.payment = data.payment
   }
   get number() { return this.receiptNumber }
   set number(n) { this.receiptNumber = n }
