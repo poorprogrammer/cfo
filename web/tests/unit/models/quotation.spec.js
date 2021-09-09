@@ -40,6 +40,9 @@ describe('Qutation', () => {
     it('should have filename to be save when export to PDF and store in storage', () => {
       expect(quotation.filename()).toEqual('001-012020_QUOTATION_Facebook HQ_React')
     })
+    it('should always have normal signature class as it does not have payment info like invoice', () => {
+      expect(quotation.tablePaddingClass()).toEqual('')
+    })
   })
 
   describe('list quotation', () => {

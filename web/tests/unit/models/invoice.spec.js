@@ -173,7 +173,19 @@ describe('Invoice', () => {
     it('should have filename to be save when export to PDF and store in storage', () => {
       expect(invoice.filename()).toEqual('001-012020_INVOICE_Facebook HQ_React')
     })
-    it('should always have normal signature class as it does not have payment info like receipt', () => {
+    it('should have small signature class when it has payment info', () => {
+      expect(invoice.tablePaddingClass()).toEqual('dense')
+    })
+    it('should have normal signature class when have empty payment info', () => {
+      let invoice = Factory.createInvoice()
+      invoice.payment = ''
+      console.log(invoice.payment)
+      expect(invoice.tablePaddingClass()).toEqual('')
+    })
+    it('should have normal signature class when no payment infos', () => {
+      let invoice = Factory.createInvoice()
+      delete invoice.payment
+      console.log(invoice.payment)
       expect(invoice.tablePaddingClass()).toEqual('')
     })
   })

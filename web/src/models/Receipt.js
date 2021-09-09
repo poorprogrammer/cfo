@@ -37,5 +37,4 @@ export default class Receipt extends PaymentInformation {
   itemClass() {
     return this.items.length > 2? "small": ""
   }
-  tablePaddingClass() { return this.payment === ""? "": "dense" }
 }
