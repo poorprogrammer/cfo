@@ -103,7 +103,7 @@
         </v-simple-table>
         <v-col v-if="p.invoice.payment" cols="12" sm="12">
           <v-row dense>
-            <v-col>
+            <v-col class="payment-info">
               {{ p.invoice.payment }}
             </v-col>
           </v-row>
@@ -230,6 +230,9 @@ div.v-image {
 }
 .v-application .from-company p {
   margin-bottom: 4px;
+}
+.payment-info {
+  font-size: 0.8em;
 }
 h2.heading {
   font-size: 2rem;
