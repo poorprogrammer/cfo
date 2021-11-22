@@ -1,13 +1,17 @@
 function invoiceCreatedMessage(i) {
-  return `I${i.invoiceNumber}| ${i.targetCompany.name}| ${toCurrency(total(i), i.currency)}`;
+  return `I${i.invoiceNumber}| ${targetCompanyName(i)}| ${toCurrency(total(i), i.currency)}`;
 }
 
 function quotationCreatedMessage (i) {
-  return `Q${i.quotationNumber}| ${i.targetCompany.name}| ${toCurrency(total(i), i.currency)}`;
+  return `Q${i.quotationNumber}| ${targetCompanyName(i)}| ${toCurrency(total(i), i.currency)}`;
 }
 
 function receiptCreatedMessage (i) {
-  return `R${i.receiptNumber}| ${i.targetCompany.name}| ${toCurrency(total(i), i.currency)}`;
+  return `R${i.receiptNumber}| ${targetCompanyName(i)}| ${toCurrency(total(i), i.currency)}`;
+}
+
+function targetCompanyName(i) {
+  return i.targetCompany? i.targetCompany.name: "";
 }
 
 function total(inv) {

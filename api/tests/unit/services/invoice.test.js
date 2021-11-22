@@ -2,11 +2,15 @@ const Invoice = require("../../../src/services/invoice");
 const Sender = require("../../../src/queue/sender");
 const MockDatabase = require("./MockDatabase");
 
+class MockSender {
+  send(queue, msg) {}
+}
+
 describe("invoice", () => {
   let service, db;
   beforeEach(() => {
     db = new MockDatabase();
-    service = new Invoice(db, Sender.create());
+    service = new Invoice(db, new MockSender());
   });
   describe("save", () => {
     it("should return invoice number", () => {
