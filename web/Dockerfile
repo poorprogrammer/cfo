@@ -12,5 +12,5 @@ FROM node:current-alpine3.12
 WORKDIR /app
 COPY --from=build /app/dist ./
 RUN npm install -g serve
-EXPOSE 5000
+EXPOSE 3000
 CMD [ "serve", "-s", "/app" ]
