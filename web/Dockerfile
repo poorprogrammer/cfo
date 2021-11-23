@@ -6,7 +6,7 @@ RUN npm install
 COPY . .
 ARG VUE_APP_BASE_API
 ENV VUE_APP_BASE_API=${VUE_APP_BASE_API}
-RUN yarn build --mode production --openssl-legacy-provider
+RUN yarn build --mode production
 
 FROM node:current-alpine3.12
 WORKDIR /app
