@@ -18,6 +18,8 @@ script:
 
 before_install:
   - python --version
+  - echo $(yarn -g bin)
+  - ls -l $(yarn -g bin)
   - docker build -t poorprogrammer/cfo-web web
   - docker build -t poorprogrammer/cfo-api api
 
