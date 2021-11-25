@@ -1,4 +1,6 @@
 language: node_js
+python:
+  - "3.7"
 node_js:
   - lts/*
 services:
@@ -15,6 +17,7 @@ script:
   - sonar-scanner
 
 before_install:
+  - python --version
   - docker build -t poorprogrammer/cfo-web web
   - docker build -t poorprogrammer/cfo-api api
 
