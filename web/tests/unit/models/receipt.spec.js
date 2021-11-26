@@ -1,7 +1,7 @@
 import Invoice from "../../../src/models/Invoice"
 import Receipt from "../../../src/models/Receipt"
 
-describe('Receipt', () => {
+describe('Receipt/Tax Invoice', () => {
   let receipt
   beforeEach(() =>{
     let json = {
@@ -22,6 +22,14 @@ describe('Receipt', () => {
     })
   })
   describe('render create receipt page', () => {
+    it('should have Tax Invoice in title so it can also be used as tax invoice', () => {
+      var titles = new Receipt().getTitles()
+      expect(titles[0].title).toEqual('Receipt/Tax Invoice (original)')
+    })
+    it('should have copy', () => {
+      var titles = new Receipt().getTitles()
+      expect(titles[1].title).toEqual('Receipt/Tax Invoice (copy)')
+    })
     it('should have target company name', () => {
       receipt = new Receipt()
       expect(receipt.targetCompany.name).toEqual('')

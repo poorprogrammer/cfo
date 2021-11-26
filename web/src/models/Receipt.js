@@ -37,4 +37,10 @@ export default class Receipt extends PaymentInformation {
   itemClass() {
     return this.items.length > 2? "small": ""
   }
+  getTitles() {
+    return [
+      {id: 1, title: `${this.documentType}/Tax Invoice (original)`, css: ''},
+      {id: 2, title: `${this.documentType}/Tax Invoice (copy)`, css: 'print-only'},
+    ]
+  }
 }
