@@ -17,3 +17,11 @@ services:
       - VUE_APP_BASE_API=http://api:3000
     depends_on:
         - api
+
+  unittestweb:
+    build:
+      context: ../../web
+      dockerfile: Dockerfile.test
+    command: yarn test:unit --coverage
+    volumes:
+        - '../../web/coverage:/app/coverage'

@@ -11,15 +11,12 @@ cache:
     - web/node_modules
 
 script:
-  - ./script/unittestweb
+  - docker-compose -f compose/test/docker-compose.yml run unittestweb
   - ./script/unittestapi
   - docker-compose -f compose/test/docker-compose.yml run e2e
   - sonar-scanner
 
 before_install:
-  - python --version
-  - echo $(yarn -g bin)
-  - ls -l $(yarn -g bin)
   - docker build -t poorprogrammer/cfo-web web
   - docker build -t poorprogrammer/cfo-api api
 
