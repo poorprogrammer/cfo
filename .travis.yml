@@ -17,8 +17,9 @@ script:
 before_install:
   - pyenv --version
   - pyenv version
-  - pyenv install 3.7.12
-  - pyenv global 3.7.12
+  - pyenv install --list
+  - pyenv install 3.7.1
+  - pyenv global 3.7.1
   - python3 --version
   - python3.7 --version
   # - docker build -t poorprogrammer/cfo-web web
