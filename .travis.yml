@@ -19,6 +19,7 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install -y python3.7
   - python3 --version
+  - cd web && npm install
   # - docker build -t poorprogrammer/cfo-web web
   # - docker build -t poorprogrammer/cfo-api api
 
