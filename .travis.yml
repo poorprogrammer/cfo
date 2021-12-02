@@ -10,24 +10,24 @@ cache:
 
 script:
   - ./script/unittestweb
-  - ./script/unittestapi
-  - docker-compose -f compose/test/docker-compose.yml run e2e
-  - sonar-scanner
+  # - ./script/unittestapi
+  # - docker-compose -f compose/test/docker-compose.yml run e2e
+  # - sonar-scanner
 
 before_install:
   - sudo apt-get update
-  - sudo apt-get install python3
-  - python --version
-  - docker build -t poorprogrammer/cfo-web web
-  - docker build -t poorprogrammer/cfo-api api
+  - sudo apt-get install python3.6
+  - python3 --version
+  # - docker build -t poorprogrammer/cfo-web web
+  # - docker build -t poorprogrammer/cfo-api api
 
-deploy:
-  provider: script
-  script: bash script/docker_push
-  on:
-    branch: master
+# deploy:
+#   provider: script
+#   script: bash script/docker_push
+#   on:
+#     branch: master
 
-addons:
-  sonarcloud:
-    organization: "poorprogrammer"
-    token: ${SONAR_TOKEN}
+# addons:
+#   sonarcloud:
+#     organization: "poorprogrammer"
+#     token: ${SONAR_TOKEN}
