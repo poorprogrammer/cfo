@@ -15,13 +15,8 @@ script:
   # - sonar-scanner
 
 before_install:
-  - pyenv --version
-  - pyenv version
-  - pyenv install --list
   - pyenv install 3.6.3
   - pyenv global 3.6.3
-  - python3 --version
-  - python3.6 --version
   # - docker build -t poorprogrammer/cfo-web web
   # - docker build -t poorprogrammer/cfo-api api
 
