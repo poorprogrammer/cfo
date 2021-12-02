@@ -9,7 +9,6 @@ cache:
     - web/node_modules
 
 script:
-  - cd web && npm install
   - ./script/unittestweb
   # - ./script/unittestapi
   # - docker-compose -f compose/test/docker-compose.yml run e2e
@@ -20,6 +19,8 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install -y python3.7
   - python3 --version
+  - python3.7 --version
+  - lsb_release -a
   # - docker build -t poorprogrammer/cfo-web web
   # - docker build -t poorprogrammer/cfo-api api
 
