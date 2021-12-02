@@ -17,13 +17,10 @@ script:
 before_install:
   - pyenv --version
   - pyenv version
-  - sudo add-apt-repository -y ppa:deadsnakes/ppa
-  - sudo apt-get remove python3
-  - sudo apt-get update
-  - sudo apt-get install -y python3.7
+  - pyenv install 3.7.12
+  - pyenv global 3.7.12
   - python3 --version
   - python3.7 --version
-  - lsb_release -a
   # - docker build -t poorprogrammer/cfo-web web
   # - docker build -t poorprogrammer/cfo-api api
 
