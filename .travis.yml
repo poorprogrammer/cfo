@@ -10,23 +10,23 @@ cache:
 
 script:
   - ./script/unittestweb
-  # - ./script/unittestapi
-  # - docker-compose -f compose/test/docker-compose.yml run e2e
-  # - sonar-scanner
+  - ./script/unittestapi
+  - docker-compose -f compose/test/docker-compose.yml run e2e
+  - sonar-scanner
 
 before_install:
   - pyenv install 3.6.3
   - pyenv global 3.6.3
-  # - docker build -t poorprogrammer/cfo-web web
-  # - docker build -t poorprogrammer/cfo-api api
+  - docker build -t poorprogrammer/cfo-web web
+  - docker build -t poorprogrammer/cfo-api api
 
-# deploy:
-#   provider: script
-#   script: bash script/docker_push
-#   on:
-#     branch: master
+deploy:
+  provider: script
+  script: bash script/docker_push
+  on:
+    branch: master
 
-# addons:
-#   sonarcloud:
-#     organization: "poorprogrammer"
-#     token: ${SONAR_TOKEN}
+addons:
+  sonarcloud:
+    organization: "poorprogrammer"
+    token: ${SONAR_TOKEN}
