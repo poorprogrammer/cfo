@@ -15,6 +15,8 @@ script:
   # - sonar-scanner
 
 before_install:
+  - pyenv --version
+  - pyenv version
   - sudo add-apt-repository -y ppa:deadsnakes/ppa
   - sudo apt-get remove python3
   - sudo apt-get update
