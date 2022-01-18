@@ -2,9 +2,9 @@ import Quotation from "../../../src/models/Quotation"
 
 describe('Qutation', () => {
   let quotation
-  beforeEach(() =>{
+  beforeEach(() => {
     let json = {
-      quotationNumber: "202001-001",
+      quotationNumber: "Q202001-001",
       quotationDate: "2020-01-03",
       projectName: "React",
       targetCompany: {
@@ -16,7 +16,7 @@ describe('Qutation', () => {
 
   describe('parsing json data', () => {
     it('should have quotation number', () => {
-      expect(quotation.quotationNumber).toEqual('202001-001')
+      expect(quotation.quotationNumber).toEqual('Q202001-001')
     })
 
     it('should not have receipt number', () => {
@@ -24,7 +24,7 @@ describe('Qutation', () => {
     })
 
     it('should have duplicattion url', () => {
-      expect(quotation.duplicationUrl()).toEqual('/quotation/202001-001/duplicate')
+      expect(quotation.duplicationUrl()).toEqual('/quotation/Q202001-001/duplicate')
     })
   })
 
@@ -38,7 +38,7 @@ describe('Qutation', () => {
       expect(titles[1].title).toEqual('Quotation (copy)')
     })
     it('should have filename to be save when export to PDF and store in storage', () => {
-      expect(quotation.filename()).toEqual('001-012020_QUOTATION_Facebook HQ_React')
+      expect(quotation.filename()).toEqual('Q202001-001_QUOTATION_Facebook HQ_React')
     })
     it('should always have normal signature class as it does not have payment info like invoice', () => {
       expect(quotation.tablePaddingClass()).toEqual('')
@@ -47,7 +47,7 @@ describe('Qutation', () => {
 
   describe('list quotation', () => {
     it('should have number expeced by presenter', () => {
-      expect(quotation.number).toEqual('202001-001')
+      expect(quotation.number).toEqual('Q202001-001')
     })
     it('should have date expeced by presenter', () => {
       expect(quotation.date).toEqual('2020-01-03')
@@ -79,7 +79,7 @@ describe('Qutation', () => {
 
       quotation.markAsDeleted()
 
-      expect(quotation.quotationNumber).toEqual(`202001-001-cancelled-${t}`)
+      expect(quotation.quotationNumber).toEqual(`Q202001-001-cancelled-${t}`)
     })
   })
 })

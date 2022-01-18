@@ -42,10 +42,10 @@ export default class PaymentInformation {
   getFromCompanyTel() { return this.fromCompany.tel }
   getTargetCompanyName() { return this.targetCompany.name }
   targetCompanyNameClass() {
-    return this.getTargetCompanyName().length > 40? "small" : ""
+    return this.getTargetCompanyName().length > 40 ? "small" : ""
   }
   itemClass() {
-    return this.items.length > 3? "small": ""
+    return this.items.length > 3 ? "small" : ""
   }
   tablePaddingClass() { return "" }
   getTargetCompanyAddress() { return this.targetCompany.address }
@@ -54,8 +54,8 @@ export default class PaymentInformation {
   getProjectName() { return this.projectName }
   getTitles() {
     return [
-      {id: 1, title: `${this.documentType} (original)`, css: ''},
-      {id: 2, title: `${this.documentType} (copy)`, css: 'print-only'},
+      { id: 1, title: `${this.documentType} (original)`, css: '' },
+      { id: 2, title: `${this.documentType} (copy)`, css: 'print-only' },
     ]
   }
   getCurrencies() {
@@ -70,15 +70,15 @@ export default class PaymentInformation {
   }
   addItemBefore(item) {
     let i = this.items.indexOf(item)
-    if(i<0) i = this.items.length
+    if (i < 0) i = this.items.length
     this.items.splice(i, 0, this.createPricedInvoiceItem())
   }
   removeItem(item) {
     let i = this.items.indexOf(item)
-    if(i<0) return
+    if (i < 0) return
     this.items.splice(i, 1)
   }
-  setDateToday(today=new Date()) {
+  setDateToday(today = new Date()) {
     this.date = this.formatDate(today)
   }
   formatDate(date) {
@@ -100,14 +100,11 @@ export default class PaymentInformation {
     return new PricedInvoiceItem(this)
   }
   filename() {
-    return `${this.reverseNumber()}_${this.documentType.toUpperCase()}_${this.targetCompany.name}_${this.projectName}`
+    return `${this.number}_${this.documentType.toUpperCase()}_${this.targetCompany.name}_${this.projectName}`
   }
-  reverseNumber() {
-    let words = this.number.split('-')
-    return `${words[1]}-${words[0].substring(4)}${words[0].substring(0,4)}`
-  }
+
   get listUrl() {
-    return {name: `${this.documentType.toLowerCase()}s`}
+    return { name: `${this.documentType.toLowerCase()}s` }
   }
 }
 

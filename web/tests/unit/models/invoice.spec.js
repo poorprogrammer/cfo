@@ -10,7 +10,7 @@ describe('Invoice', () => {
     })
 
     it('should have invoiceNumber', () => {
-      expect(invoice.invoiceNumber).toEqual('202001-001')
+      expect(invoice.invoiceNumber).toEqual('I202001-001')
     })
 
     it('should have quotation number', () => {
@@ -85,7 +85,7 @@ describe('Invoice', () => {
     })
 
     it('should have duplicattion url', () => {
-      expect(invoice.duplicationUrl()).toEqual('/invoice/202001-001/duplicate')
+      expect(invoice.duplicationUrl()).toEqual('/invoice/I202001-001/duplicate')
     })
 
     it('should have payment', () => {
@@ -171,7 +171,7 @@ describe('Invoice', () => {
       expect(titles[1].css).toEqual('print-only')
     })
     it('should have filename to be save when export to PDF and store in storage', () => {
-      expect(invoice.filename()).toEqual('001-012020_INVOICE_Facebook HQ_React')
+      expect(invoice.filename()).toEqual('I202001-001_INVOICE_Facebook HQ_React')
     })
     it('should have small signature class when it has payment info', () => {
       expect(invoice.tablePaddingClass()).toEqual('dense')
@@ -179,13 +179,11 @@ describe('Invoice', () => {
     it('should have normal signature class when have empty payment info', () => {
       let invoice = Factory.createInvoice()
       invoice.payment = ''
-      console.log(invoice.payment)
       expect(invoice.tablePaddingClass()).toEqual('')
     })
     it('should have normal signature class when no payment infos', () => {
       let invoice = Factory.createInvoice()
       delete invoice.payment
-      console.log(invoice.payment)
       expect(invoice.tablePaddingClass()).toEqual('')
     })
   })
@@ -193,7 +191,7 @@ describe('Invoice', () => {
   describe('switching currency', () => {
     let item
 
-    beforeEach(() =>{
+    beforeEach(() => {
       invoice = Factory.createInvoice()
       item = invoice.getItems()[1]
     })
@@ -212,7 +210,7 @@ describe('Invoice', () => {
 
   describe('list invoice', () => {
     it('should have number expeced by presenter', () => {
-      expect(invoice.number).toEqual('202001-001')
+      expect(invoice.number).toEqual('I202001-001')
     })
     it('should have date expeced by presenter', () => {
       expect(invoice.date).toEqual('2020-01-03')
@@ -274,7 +272,7 @@ describe('Invoice', () => {
       expect(invoice.hasInvoiceNumber).toEqual(true)
     })
     describe("add and remove item", () => {
-      beforeEach(() =>{
+      beforeEach(() => {
         invoice = Factory.createInvoice()
       })
       it('add should increase total length', () => {
@@ -314,7 +312,7 @@ describe('Invoice', () => {
 
   describe("delete invoice", () => {
     let invoice
-    beforeEach(() =>{
+    beforeEach(() => {
       invoice = Factory.createInvoice()
     })
     it('should mark as deleted', () => {
