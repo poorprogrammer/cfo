@@ -32,8 +32,8 @@ jobs:
 
     - name: Install dependencies
       run: yarn
-      working-directory: web
+      working-directory: api
 
-    - name: Run web unit test
+    - name: Run api unit test
       run: yarn test:unit --coverage 
-      working-directory: web
+      working-directory: api
