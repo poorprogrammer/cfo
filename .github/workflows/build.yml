@@ -30,7 +30,15 @@ jobs:
         cache: 'npm'
         cache-dependency-path: '**/package-lock.json'
 
-    - name: Install dependencies
+    - name: Install web dependencies
+      run: npm i
+      working-directory: web
+
+    - name: Run web unit test
+      run: npm run test:unit --coverage
+      working-directory: web
+
+    - name: Install api dependencies
       run: npm i 
       working-directory: api
 
