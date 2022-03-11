@@ -2,10 +2,6 @@ import { describe, it, expect, vi } from "vitest";
 import Presenter from '@/presenters/Invoice'
 import API from '@/services/invoices'
 
-class MockView {
-  goTo() {}
-}
-
 describe('Invoice Presenter', () => {
   let p = new Presenter(new MockView(), new API())
   let invoiceNumber = '202001-001'
@@ -33,11 +29,11 @@ describe('Invoice Presenter', () => {
   })
   function givenSaveSuccessWithInvoiceNumber(invoiceNumber) {
     vi.spyOn(p.view, 'goTo')
-    vi.spyOn(p.API, 'save').mockResolvedValue(invoiceNumber)
+    p.API = new MockAPISaveSuccess(invoiceNumber);
   }
   function givenSaveFailedWithError(err) {
     vi.spyOn(p, 'showError').mockImplementation()
-    vi.spyOn(p.API, 'save').mockRejectedValue(err)
+    p.API = new MockAPISaveFail(err)
   }
   function expectToBeCalledWith(api, invoiceNumber) {
     expect(api.get).toHaveBeenCalled()
@@ -50,3 +46,25 @@ describe('Invoice Presenter', () => {
     expect(p.showError).toHaveBeenCalledWith(error)
   }
 })
+
+class MockView {
+  goTo() {}
+}
+
+class MockAPISaveSuccess {
+  constructor(invoiceNumber) {
+    this.invoiceNumber = invoiceNumber;
+  }
+  save() {
+    return Promise.resolve(this.invoiceNumber);
+  }
+}
+
+class MockAPISaveFail {
+  constructor(error) {
+    this.error = error;
+  }
+  save() {
+    return Promise.reject(this.error);
+  }
+}
