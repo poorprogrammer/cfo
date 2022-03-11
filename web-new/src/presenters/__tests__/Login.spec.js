@@ -1,10 +1,6 @@
 import { describe, it, expect, vi } from "vitest";
 import Presenter from '@/presenters/Login'
 
-class MockView {
-  goTo() {}
-}
-
 describe('Login Presenter', () => {
   let p = new Presenter(new MockView())
 
@@ -13,7 +9,7 @@ describe('Login Presenter', () => {
     p.username = 'username'
     p.password = 'password'
     p.login()
-    expect(p.API.login).toHaveBeenCalledWith('username', 'password')
+    p.API.expectToHaveBeenCalledWith('username', 'password')
   })
   it('should redirect to home page after login success', async () => {
     givenLoginSuccess()
@@ -32,11 +28,11 @@ describe('Login Presenter', () => {
   })
   function givenLoginSuccess(res) {
     vi.spyOn(p.view, 'goTo')
-    vi.spyOn(p.API, 'login').mockResolvedValue(res)
+    p.API = new MockAPILoginSuccess(res)
   }
   function givenLoginFailedWithError(err) {
     vi.spyOn(p, 'showError').mockImplementation()
-    vi.spyOn(p.API, 'login').mockRejectedValue(err)
+    p.API = new MockAPILoginFail(err)
   }
   function expectToRedirectToHomePage(view) {
     expect(view.goTo).toHaveBeenCalledWith({name: 'home'})
@@ -45,3 +41,33 @@ describe('Login Presenter', () => {
     expect(p.showError).toHaveBeenCalledWith(error)
   }
 })
+
+class MockView {
+  goTo() {}
+}
+
+class MockAPILoginSuccess {
+  constructor(result) {
+    this.result = result;
+    console.log(`new MockAPI, result = ${this.result}`)
+  }
+  login(username, password) {
+    this.username = username;
+    this.password = password;
+    console.log(`login, result = ${this.result}`)
+    return Promise.resolve(this.result);
+  }
+  expectToHaveBeenCalledWith(username, password) {
+    expect(this.username).toEqual(username);
+    expect(this.password).toEqual(password);
+  }
+}
+
+class MockAPILoginFail{
+  constructor(error) {
+    this.error = error;
+  }
+  login() {
+    return Promise.reject(this.error);
+  }
+}
