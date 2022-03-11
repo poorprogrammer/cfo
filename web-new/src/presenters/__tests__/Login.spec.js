@@ -49,12 +49,10 @@ class MockView {
 class MockAPILoginSuccess {
   constructor(result) {
     this.result = result;
-    console.log(`new MockAPI, result = ${this.result}`)
   }
   login(username, password) {
     this.username = username;
     this.password = password;
-    console.log(`login, result = ${this.result}`)
     return Promise.resolve(this.result);
   }
   expectToHaveBeenCalledWith(username, password) {
