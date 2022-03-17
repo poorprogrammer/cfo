@@ -8,15 +8,12 @@ describe('invoices API', () => {
 
   describe('getAll', () => {
     describe('before call', () => {
-      beforeEach(() => {
-        jest.spyOn(axios, 'get')
-        api.getAll(2020)
-      })
-
-      it('should call api', () => {
-        expect(axios.get).toHaveBeenCalled()
-      })
       it('should call with correct url', () => {
+        jest.spyOn(axios, 'get')
+
+        api.getAll(2020)
+
+        expect(axios.get).toHaveBeenCalled()
         expect(axios.get).toHaveBeenCalledWith('http://localhost:3000/invoices/2020')
       })
     })
