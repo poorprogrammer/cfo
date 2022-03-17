@@ -15,7 +15,7 @@ describe('Invoice Presenter', () => {
     expectToBeCalledWith(p.API, invoiceNumber)
   })
   it('should save the current invoice', () => {
-    jest.spyOn(p.API, 'save')
+    jest.spyOn(p.API, 'save').mockResolvedValueOnce("ok")
     p.invoice.invoiceNumber = invoiceNumber
     p.save()
     expect(p.API.save).toHaveBeenCalledWith(p.invoice)
