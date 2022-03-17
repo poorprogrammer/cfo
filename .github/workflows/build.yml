@@ -32,11 +32,11 @@ jobs:
 
     - name: Install web dependencies
       run: npm i
-      working-directory: web-new
+      working-directory: web2
 
     - name: Run web unit test
       run: npm run test:unit:ci
-      working-directory: web-new
+      working-directory: web2
 
     - name: Install api dependencies
       run: npm i 
