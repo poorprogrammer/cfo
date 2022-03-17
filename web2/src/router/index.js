@@ -18,6 +18,15 @@ import UpdateReceipt from "../views/UpdateReceipt.vue";
 
 Vue.use(VueRouter);
 
+const isAuthenticated = (to, from, next) => {
+  console.log("enter isAuthenticated");
+  if (localStorage.getItem("token")) {
+    next();
+    return;
+  }
+  next("/login");
+};
+
 const routes = [
   {
     path: "/",
@@ -121,11 +130,3 @@ const router = new VueRouter({
 });
 
 export default router;
-
-const isAuthenticated = (to, from, next) => {
-  if (localStorage.getItem("token")) {
-    next();
-    return;
-  }
-  next("/login");
-};
