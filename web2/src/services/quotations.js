@@ -1,22 +1,21 @@
-import Quotation from '@/models/Quotation'
-import InvoiceService from '@/services/invoices'
+import Quotation from "@/models/Quotation";
+import InvoiceService from "@/services/invoices";
 
 export default class QuotationService extends InvoiceService {
   constructor() {
-    super()
-    this.root = process.env.VUE_APP_BASE_API
+    super();
+    this.root = process.env.VUE_APP_BASE_API;
   }
 
   collectionUrl() {
-    return `${this.root}/quotations/`
+    return `${this.root}/quotations/`;
   }
 
   itemUrl(quotationNumber) {
-    return `${this.root}/quotation/${quotationNumber}`
+    return `${this.root}/quotation/${quotationNumber}`;
   }
 
   createItem = (item) => {
-    return new Quotation(item)
-  }
-
+    return new Quotation(item);
+  };
 }
