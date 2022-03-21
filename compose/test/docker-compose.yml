@@ -7,7 +7,7 @@ services:
     command: /app/scripts/start_api_with_test_fixture
   e2e:
     build:
-      context: ../../web
+      context: ../../web2
       dockerfile: Dockerfile.test
     command: yarn test:e2e --headless
     volumes:
