@@ -49,6 +49,12 @@ jobs:
     - name: run e2e tests
       run: docker-compose -f compose/test/docker-compose.yml run e2e
 
+    - name: Analyze with SonarCloud
+      uses: sonarsource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v1
 
