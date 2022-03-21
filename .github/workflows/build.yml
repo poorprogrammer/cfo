@@ -68,7 +68,7 @@ jobs:
         tags: poorprogrammer/cfo-web
         context: "{{defaultContext}}:web"
 
-    - name: Build and push web
+    - name: Build and push api
       uses: docker/build-push-action@v2
       with:
         push: true
