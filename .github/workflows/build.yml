@@ -48,3 +48,12 @@ jobs:
 
     - name: run e2e tests
       run: docker-compose -f compose/test/docker-compose.yml run e2e
+
+    - name: build web
+      run: docker build -t poorprogrammer/cfo-web web
+
+    - name: build api
+      run: docker build -t poorprogrammer/cfo-api api
+
+    - name: push images
+      run: script/docker_push
