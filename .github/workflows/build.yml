@@ -45,3 +45,6 @@ jobs:
     - name: Run api unit test
       run: npm run ci
       working-directory: api
+
+    - name: run e2e tests
+      run: docker-compose -f compose/test/docker-compose.yml run e2e
