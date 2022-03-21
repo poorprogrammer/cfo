@@ -46,13 +46,6 @@ jobs:
       run: npm run ci
       working-directory: api
 
-    - name: Cache node_modules for e2e tests
-      uses: actions/cache@v2
-      with:
-        path: |
-          compose/test/cache
-        key: ${{ runner.os }}-${{ hashFiles('**/node_modules/**') }}
-
     - name: run e2e tests
       run: docker-compose -f compose/test/docker-compose.yml run e2e
 
