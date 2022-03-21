@@ -56,4 +56,7 @@ jobs:
       run: docker build -t poorprogrammer/cfo-api api
 
     - name: push images
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: script/docker_push
