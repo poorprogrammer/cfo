@@ -1,4 +1,3 @@
 compose/queue/rabbitmq/data/
 compose/queue/rabbitmq/logs/
-compose/test/cache/
 .vscode
