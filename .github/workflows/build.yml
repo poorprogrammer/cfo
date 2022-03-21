@@ -51,7 +51,7 @@ jobs:
       with:
         path: |
           compose/test/cache
-        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/node_modules/**') }}
+        key: ${{ runner.os }}-${{ hashFiles('**/node_modules/**') }}
 
     - name: run e2e tests
       run: docker-compose -f compose/test/docker-compose.yml run e2e
