@@ -31,7 +31,7 @@ const routes = [
   {
     path: "/",
     name: "home",
-    component: Invoices,
+    redirect: { name: "invoicesThisYear" },
     beforeEnter: isAuthenticated,
   },
   {
@@ -40,7 +40,13 @@ const routes = [
     component: Login,
   },
   {
-    path: "/invoices/:year?",
+    path: "/invoices/",
+    name: "invoicesThisYear",
+    redirect: { name: "invoices", params: { year: new Date().getFullYear() } },
+    beforeEnter: isAuthenticated,
+  },
+  {
+    path: "/invoices/:year",
     name: "invoices",
     component: Invoices,
     beforeEnter: isAuthenticated,
