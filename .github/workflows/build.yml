@@ -46,6 +46,12 @@ jobs:
       run: npm run ci
       working-directory: api
 
+    - name: Build docker cache for e2e tests
+      uses: docker/build-push-action@v2
+      with:
+        context: "{{defaultContext}}:web2"
+        file: "{context}/Dockerfile.test"
+
     - name: run e2e tests
       run: docker-compose -f compose/test/docker-compose.yml run e2e
 
