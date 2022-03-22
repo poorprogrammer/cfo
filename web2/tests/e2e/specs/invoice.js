@@ -2,7 +2,7 @@ describe("Invoice Page 2020", () => {
   describe("for guest", () => {
     it("requires login to see an invoice", () => {
       openInvoiceDetailNumber("202001-001");
-      cy.location('pathname').should('eq', '/login')
+      cy.location("pathname").should("eq", "/login");
     });
   });
   describe("for authenticated user", () => {
