@@ -70,7 +70,16 @@ const routes = [
     beforeEnter: isAuthenticated,
   },
   {
-    path: "/receipts/:year?",
+    path: "/receipts/",
+    name: "receiptsThisYear",
+    redirect: {
+      name: "receipts",
+      params: { year: new Date().getFullYear() },
+    },
+    beforeEnter: isAuthenticated,
+  },
+  {
+    path: "/receipts/:year",
     name: "receipts",
     component: Receipts,
     beforeEnter: isAuthenticated,
@@ -106,7 +115,16 @@ const routes = [
     beforeEnter: isAuthenticated,
   },
   {
-    path: "/quotations/:year?",
+    path: "/quotations/",
+    name: "quotationsThisYear",
+    redirect: {
+      name: "quotations",
+      params: { year: new Date().getFullYear() },
+    },
+    beforeEnter: isAuthenticated,
+  },
+  {
+    path: "/quotations/:year",
     name: "quotations",
     component: Quotations,
     beforeEnter: isAuthenticated,
