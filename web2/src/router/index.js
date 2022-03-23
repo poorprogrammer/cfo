@@ -18,6 +18,8 @@ import UpdateReceipt from "../views/UpdateReceipt.vue";
 
 Vue.use(VueRouter);
 
+const currentYear = new Date().getFullYear();
+
 const isAuthenticated = (to, from, next) => {
   console.log("enter isAuthenticated");
   if (localStorage.getItem("token")) {
@@ -42,7 +44,7 @@ const routes = [
   {
     path: "/invoices/",
     name: "invoicesThisYear",
-    redirect: { name: "invoices", params: { year: new Date().getFullYear() } },
+    redirect: { name: "invoices", params: { year: currentYear } },
     beforeEnter: isAuthenticated,
   },
   {
@@ -74,7 +76,7 @@ const routes = [
     name: "receiptsThisYear",
     redirect: {
       name: "receipts",
-      params: { year: new Date().getFullYear() },
+      params: { year: currentYear },
     },
     beforeEnter: isAuthenticated,
   },
@@ -119,7 +121,7 @@ const routes = [
     name: "quotationsThisYear",
     redirect: {
       name: "quotations",
-      params: { year: new Date().getFullYear() },
+      params: { year: currentYear },
     },
     beforeEnter: isAuthenticated,
   },
