@@ -8,7 +8,7 @@
 // @ is an alias to /src
 import PaymentInfoList from "@/components/PaymentInfoList.vue";
 import Presenter from "@/presenters/PaymentInfoList";
-import API from "@/services/quotations";
+import API from "@/services/QuotationService";
 
 export default {
   name: "QuotationsView",

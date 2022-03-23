@@ -5,7 +5,7 @@
 <script>
 import Presenter from "@/presenters/Invoice";
 import UpdatePaymentInfo from "@/components/UpdatePaymentInfo.vue";
-import API from "@/services/quotations";
+import API from "@/services/QuotationService";
 
 export default {
   components: { UpdatePaymentInfo },

@@ -5,7 +5,7 @@
 <script>
 import Presenter from "@/presenters/Invoice";
 import DuplicatedPaymentInfo from "@/components/DuplicatedPaymentInfo.vue";
-import API from "@/services/receipts";
+import API from "@/services/ReceiptService";
 import Receipt from "@/models/Receipt";
 
 export default {
