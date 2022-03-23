@@ -21,7 +21,7 @@ function total(inv) {
 }
 
 function toCurrency(amount, currency='THB') {
-  currencies = {
+  const currencies = {
     "THB": new Intl.NumberFormat('th-TH', { style: 'currency', currency: 'THB', currencyDisplay: 'code' }),
     "USD": new Intl.NumberFormat('us-US', { style: 'currency', currency: 'USD', currencyDisplay: 'code' }),
   }

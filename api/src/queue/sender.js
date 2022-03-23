@@ -52,5 +52,7 @@ module.exports = class Sender {
 };
 
 class MockSender {
-  send(queue, msg) {}
+  send(queue, msg) {
+    // do nothing when there is no queue system to connect
+  }
 }
