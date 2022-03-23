@@ -32,7 +32,6 @@ import Presenter from "@/presenters/Login";
 
 export default {
   name: "LoginView",
-  mounted() {},
   data() {
     return {
       p: new Presenter(this),
