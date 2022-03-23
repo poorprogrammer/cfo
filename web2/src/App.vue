@@ -18,6 +18,16 @@
       </div>
 
       <v-spacer></v-spacer>
+
+      <router-link to="/quotations">
+        <v-icon dark>mdi-format-quote-open</v-icon>
+      </router-link>
+      <router-link to="/invoices">
+        <v-icon dark>mdi-file-document-outline</v-icon>
+      </router-link>
+      <router-link to="/receipts">
+        <v-icon dark>mdi-currency-usd</v-icon>
+      </router-link>
     </v-app-bar>
 
     <v-main>
