@@ -7,6 +7,7 @@ const Quotation = require("./services/quotation");
 const Receipt = require("./services/receipt");
 const Auth = require("./services/auth");
 
+app.disable("x-powered-by");
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
