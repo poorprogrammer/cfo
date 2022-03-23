@@ -14,7 +14,7 @@
             height="80"
           />
         </router-link>
-        <h1>Automated Chief Financial Officer</h1>
+        <div class="text-md-h4">Automated Chief Financial Officer</div>
       </div>
 
       <v-spacer></v-spacer>
