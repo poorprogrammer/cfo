@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default class {
+export default class LoginService {
   constructor() {
     this.root = process.env.VUE_APP_BASE_API;
   }

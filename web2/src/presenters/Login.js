@@ -1,4 +1,4 @@
-import API from "@/services/login";
+import API from "@/services/LoginService";
 export default class {
   constructor(view) {
     this.view = view;
