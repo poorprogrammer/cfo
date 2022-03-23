@@ -1,4 +1,4 @@
-import API from "@/services/invoices";
+import API from "@/services/InvoiceService";
 import axios from "axios";
 import { Factory } from "../factory";
 describe("invoices API", () => {

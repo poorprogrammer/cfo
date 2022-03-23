@@ -29,7 +29,7 @@
 // @ is an alias to /src
 import PaymentInfoList from "@/components/PaymentInfoList.vue";
 import Presenter from "@/presenters/InvoiceList";
-import API from "@/services/invoices";
+import API from "@/services/InvoiceService";
 
 export default {
   name: "InvoicesView",

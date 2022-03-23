@@ -1,5 +1,5 @@
 import Receipt from "@/models/Receipt";
-import InvoiceService from "@/services/invoices";
+import InvoiceService from "@/services/InvoiceService";
 
 export default class ReceiptService extends InvoiceService {
   constructor() {

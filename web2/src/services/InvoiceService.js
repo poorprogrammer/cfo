@@ -1,7 +1,7 @@
 import axios from "axios";
 import Invoice from "@/models/Invoice";
 
-export default class {
+export default class InvoiceService {
   constructor() {
     this.root = process.env.VUE_APP_BASE_API;
   }

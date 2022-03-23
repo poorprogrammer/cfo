@@ -1,5 +1,5 @@
 import Presenter from "@/presenters/InvoiceList";
-import API from "@/services/invoices";
+import API from "@/services/InvoiceService";
 import Invoice from "../../../src/models/Invoice";
 
 describe("PaymentInfoList Presenter", () => {

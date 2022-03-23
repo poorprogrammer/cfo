@@ -1,5 +1,5 @@
 import Quotation from "@/models/Quotation";
-import InvoiceService from "@/services/invoices";
+import InvoiceService from "@/services/InvoiceService";
 
 export default class QuotationService extends InvoiceService {
   constructor() {
