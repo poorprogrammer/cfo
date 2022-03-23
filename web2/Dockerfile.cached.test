@@ -1,0 +1,7 @@
+FROM juacompe/cfo-e2e-cache
+
+COPY . .
+
+EXPOSE 8080
+
+CMD [ "npm", "run", "serve" ]

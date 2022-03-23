@@ -1,0 +1,19 @@
+version: "3.3"
+
+services:
+  api:
+    build:
+      context: ../../api
+    command: /app/scripts/start_api_with_test_fixture
+  e2e:
+    build:
+      context: ../../web2
+      dockerfile: Dockerfile.cached.test
+    command: yarn test:e2e --headless
+    volumes:
+        - '../../web/tests/e2e/screenshots:/app/tests/e2e/screenshots'
+        - '../../web/tests/e2e/videos:/app/tests/e2e/videos'
+    environment:
+      - VUE_APP_BASE_API=http://api:3000
+    depends_on:
+        - api
