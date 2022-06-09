@@ -137,13 +137,13 @@
             </tbody>
           </template>
         </v-simple-table>
-        <v-col v-if="p.invoice.payment" cols="12" sm="12">
-          <v-row dense>
+        <v-row dense>
+          <v-col v-if="p.invoice.payment" cols="12" sm="12">
             <v-col class="payment-info">
               {{ p.invoice.payment }}
             </v-col>
-          </v-row>
-        </v-col>
+          </v-col>
+        </v-row>
         <v-row class="signature print-only pa-3" dense>
           <v-col cols="6">
             <v-card outlined>
