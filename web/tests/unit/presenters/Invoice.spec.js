@@ -6,8 +6,11 @@ class MockView {
 }
 
 describe("Invoice Presenter", () => {
-  let p = new Presenter(new MockView(), new API());
-  let invoiceNumber = "202001-001";
+  let invoiceNumber, p;
+  beforeEach(() => {
+    p = new Presenter(new MockView(), new API());
+    invoiceNumber = "202001-001";
+  });
 
   it("should get invoice with specific number from API when init", () => {
     jest.spyOn(p.API, "get");
@@ -30,9 +33,18 @@ describe("Invoice Presenter", () => {
     await p.save();
     expectPopupShownWithError("Error: Request failed with status code 500");
   });
+  it("should redirect to view page after update existing invoice so it is ready to be printed", async () => {
+    givenUpdateSuccessWithInvoiceNumber(invoiceNumber);
+    await p.update();
+    expectToRedirectToViewInvoicePage(p.view, invoiceNumber);
+  });
   function givenSaveSuccessWithInvoiceNumber(invoiceNumber) {
     jest.spyOn(p.view, "goTo");
     jest.spyOn(p.API, "save").mockResolvedValue(invoiceNumber);
+  }
+  function givenUpdateSuccessWithInvoiceNumber(invoiceNumber) {
+    jest.spyOn(p.view, "goTo");
+    jest.spyOn(p.API, "update").mockResolvedValue({invoiceNumber:invoiceNumber});
   }
   function givenSaveFailedWithError(err) {
     jest.spyOn(p, "showError").mockImplementation();

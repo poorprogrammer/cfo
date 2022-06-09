@@ -24,8 +24,11 @@ export default class {
   }
   update() {
     this.API.update(this.invoice).then(
-      () => {
-        this.view.goTo(this.invoice.listUrl);
+      (invoice) => {
+        this.view.goTo({
+          name: this.invoice.documentType.toLowerCase(),
+          params: { number: invoice.invoiceNumber },
+        });
       },
       (error) => {
         this.showError(error);
