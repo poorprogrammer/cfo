@@ -44,7 +44,7 @@ describe("Invoice Presenter", () => {
   }
   function givenUpdateSuccessWithInvoiceNumber(invoiceNumber) {
     jest.spyOn(p.view, "goTo");
-    jest.spyOn(p.API, "update").mockResolvedValue({number: () => invoiceNumber});
+    jest.spyOn(p.API, "update").mockResolvedValue({number: invoiceNumber});
   }
   function givenSaveFailedWithError(err) {
     jest.spyOn(p, "showError").mockImplementation();
