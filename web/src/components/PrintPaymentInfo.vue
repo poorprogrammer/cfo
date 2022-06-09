@@ -237,6 +237,9 @@ export default {
   .v-application .v-data-table.dense {
     min-height: 304px;
   }
+  .v-application .payment-info {
+    margin-top: 30px;
+  }
   .v-application td.item.small {
     padding: 2px;
     height: 24px;
