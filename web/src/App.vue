@@ -45,3 +45,9 @@ export default {
   }),
 };
 </script>
+<style>
+#app_logo div.v-image__image {
+  width: 90%;
+  height: 90%;
+}
+</style>
