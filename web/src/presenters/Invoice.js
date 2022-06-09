@@ -12,10 +12,7 @@ export default class {
   save() {
     this.API.save(this.invoice).then(
       (invoiceNumber) => {
-        this.view.goTo({
-          name: this.invoice.documentType.toLowerCase(),
-          params: { number: invoiceNumber },
-        });
+        this.view.goTo(this.getPrintPageParameters(invoiceNumber));
       },
       (error) => {
         this.showError(error);
@@ -25,15 +22,18 @@ export default class {
   update() {
     this.API.update(this.invoice).then(
       (invoice) => {
-        this.view.goTo({
-          name: this.invoice.documentType.toLowerCase(),
-          params: { number: invoice.invoiceNumber },
-        });
+        this.view.goTo(this.getPrintPageParameters(invoice.invoiceNumber));
       },
       (error) => {
         this.showError(error);
       }
     );
+  }
+  getPrintPageParameters(invoiceNumber) {
+    return {
+      name: this.invoice.documentType.toLowerCase(),
+      params: { number: invoiceNumber },
+    };
   }
   addItemClickedOn(item) {
     this.invoice.addItemBefore(item);
