@@ -10,31 +10,20 @@
         :hide-default-footer="true"
         :disable-pagination="true"
       >
-        <template v-slot:item.number="{ item }">
+        <template v-slot:[`item.number`]="{ item }">
           <slot name="col1" v-bind:item="item"></slot>
           <router-link :to="item.editionUrl()">{{ item.number }}</router-link>
         </template>
 
-        <template v-slot:item.action="{ item }">
-
+        <template v-slot:[`item.action`]="{ item }">
           <router-link :to="item.duplicationUrl()">
-            <v-btn
-              :id="'duplicate_' + item.number"
-              text
-              small
-              color="primary"
-            >
+            <v-btn :id="'duplicate_' + item.number" text small color="primary">
               <v-icon dark>mdi-content-duplicate</v-icon>
             </v-btn>
           </router-link>
 
           <router-link :to="item.url()">
-            <v-btn
-              :id="'print_' + item.number"
-              text
-              small
-              color="primary"
-            >
+            <v-btn :id="'print_' + item.number" text small color="primary">
               <v-icon dark>mdi-printer</v-icon>
             </v-btn>
           </router-link>
@@ -58,8 +47,10 @@
                 Delete this {{ item.documentType.toLowerCase() }}?
               </v-card-title>
               <v-card-text
-                >This action will mark the {{ item.documentType.toLowerCase() }} as deleted. A deleted {{ item.documentType.toLowerCase() }}
-                will be excluded from the list.</v-card-text
+                >This action will mark the
+                {{ item.documentType.toLowerCase() }} as deleted. A deleted
+                {{ item.documentType.toLowerCase() }} will be excluded from the
+                list.</v-card-text
               >
               <v-card-actions>
                 <v-spacer></v-spacer>

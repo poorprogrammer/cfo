@@ -1,4 +1,4 @@
-# web
+# web2
 
 ## Project setup
 ```
@@ -7,25 +7,28 @@ yarn install
 
 ### Compiles and hot-reloads for development
 ```
-yarn run serve
+yarn serve
 ```
 
 ### Compiles and minifies for production
 ```
-yarn run build
-```
-
-### Lints and fixes files
-```
-yarn run lint
+yarn build
 ```
 
 ### Run your unit tests
 ```
-yarn run test:unit
+yarn test:unit
 ```
 
 ### Run your end-to-end tests
 ```
-yarn run test:e2e
+yarn test:e2e
 ```
+
+### Lints and fixes files
+```
+yarn lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

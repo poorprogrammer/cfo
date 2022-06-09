@@ -1,5 +1,5 @@
 import Presenter from "@/presenters/InvoiceList";
-import API from "@/services/invoices"
+import API from "@/services/InvoiceService";
 import Invoice from "../../../src/models/Invoice";
 
 describe("PaymentInfoList Presenter", () => {
@@ -59,7 +59,7 @@ describe("PaymentInfoList Presenter", () => {
     });
     p.removeItemFromList(deletedInvoice);
     expect(p.items.length).toEqual(2);
-    expect(p.items[0].invoiceNumber).toEqual('202101-003');
-    expect(p.items[1].invoiceNumber).toEqual('202101-005');
+    expect(p.items[0].invoiceNumber).toEqual("202101-003");
+    expect(p.items[1].invoiceNumber).toEqual("202101-005");
   });
 });

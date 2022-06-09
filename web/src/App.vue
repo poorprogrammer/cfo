@@ -14,10 +14,20 @@
             height="80"
           />
         </router-link>
-        <h1>Automated Chief Financial Officer</h1>
+        <div class="text-md-h4">Automated Chief Financial Officer</div>
       </div>
 
       <v-spacer></v-spacer>
+
+      <router-link to="/quotations">
+        <v-icon dark>mdi-format-quote-open</v-icon>
+      </router-link>
+      <router-link to="/invoices">
+        <v-icon dark>mdi-file-document-outline</v-icon>
+      </router-link>
+      <router-link to="/receipts">
+        <v-icon dark>mdi-currency-usd</v-icon>
+      </router-link>
     </v-app-bar>
 
     <v-main>
@@ -28,10 +38,10 @@
 
 <script>
 export default {
-  name: 'App',
+  name: "App",
 
   data: () => ({
     //
-  })
-}
+  }),
+};
 </script>

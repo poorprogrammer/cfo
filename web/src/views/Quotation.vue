@@ -4,12 +4,12 @@
 
 <script>
 import Presenter from "@/presenters/Invoice";
-import PrintPaymentInfo from '@/components/PrintPaymentInfo.vue';
-import API from '@/services/quotations'
+import PrintPaymentInfo from "@/components/PrintPaymentInfo.vue";
+import API from "@/services/QuotationService";
 
 export default {
   components: { PrintPaymentInfo },
-  name: "quotation",
+  name: "QuotationView",
   data() {
     return {
       p: new Presenter(this, new API()),

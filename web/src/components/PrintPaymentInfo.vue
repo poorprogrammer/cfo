@@ -16,9 +16,7 @@
             <v-card flat class="from-company">
               <v-list-item three-line>
                 <v-list-item-content>
-                  <p class="title mb-1">{{
-                    p.invoice.getFromCompanyName()
-                  }}</p>
+                  <p class="title mb-1">{{ p.invoice.getFromCompanyName() }}</p>
                   <p class="text--primary">
                     {{ p.invoice.getFromCompanyAddress() }}
                   </p>
@@ -51,7 +49,10 @@
 
         <v-row align="stretch" dense>
           <v-col cols="6" class="pa-4">
-            <p class="text--primary title" :class="p.invoice.targetCompanyNameClass()">
+            <p
+              class="text--primary title"
+              :class="p.invoice.targetCompanyNameClass()"
+            >
               {{ p.invoice.getTargetCompanyName() }}
             </p>
             <p class="text--primary address">
@@ -59,8 +60,14 @@
             </p>
             <p class="text--primary">
               <v-row dense>
-                <base-text label="Tax Id" :value="p.invoice.getTargetCompanyTaxId()"/>
-                <base-text label="Tel" :value="p.invoice.getTargetCompanyTel()"/>
+                <base-text
+                  label="Tax Id"
+                  :value="p.invoice.getTargetCompanyTaxId()"
+                />
+                <base-text
+                  label="Tel"
+                  :value="p.invoice.getTargetCompanyTel()"
+                />
               </v-row>
             </p>
           </v-col>
@@ -68,14 +75,35 @@
             <v-card class="invoice-id" flat>
               <p class="body-2">
                 <v-row dense>
-                  <base-text label="Quotation Number" :value="p.invoice.quotationNumber"/>
-                  <base-text label="Quotation  Date" :value="p.invoice.quotationDate"/>
-                  <base-text label="Purchase Order Number" :value="p.invoice.purchaseOrderNumber"/>
-                  <base-text label="Invoice Number" :value="p.invoice.invoiceNumber"/>
-                  <base-text label="Invoice Date" :value="p.invoice.invoiceDate"/>
-                  <base-text label="Receipt Number" :value="p.invoice.receiptNumber"/>
-                  <base-text label="Receipt Date" :value="p.invoice.receiptDate"/>
-                  <base-text label="Remark" :value="p.invoice.remark"/>
+                  <base-text
+                    label="Quotation Number"
+                    :value="p.invoice.quotationNumber"
+                  />
+                  <base-text
+                    label="Quotation  Date"
+                    :value="p.invoice.quotationDate"
+                  />
+                  <base-text
+                    label="Purchase Order Number"
+                    :value="p.invoice.purchaseOrderNumber"
+                  />
+                  <base-text
+                    label="Invoice Number"
+                    :value="p.invoice.invoiceNumber"
+                  />
+                  <base-text
+                    label="Invoice Date"
+                    :value="p.invoice.invoiceDate"
+                  />
+                  <base-text
+                    label="Receipt Number"
+                    :value="p.invoice.receiptNumber"
+                  />
+                  <base-text
+                    label="Receipt Date"
+                    :value="p.invoice.receiptDate"
+                  />
+                  <base-text label="Remark" :value="p.invoice.remark" />
                 </v-row>
               </p>
             </v-card>
@@ -93,10 +121,18 @@
             </thead>
             <tbody>
               <tr v-for="item in p.invoice.getItems()" :key="item.name">
-                <td :class="p.invoice.itemClass()" class="item text-left">{{ item.name }}</td>
-                <td :class="p.invoice.itemClass()" class="item text-right">{{ item.getPrice() }}</td>
-                <td :class="p.invoice.itemClass()" class="item text-right">{{ item.amount }}</td>
-                <td :class="p.invoice.itemClass()" class="item text-right">{{ item.getTotal() }}</td>
+                <td :class="p.invoice.itemClass()" class="item text-left">
+                  {{ item.name }}
+                </td>
+                <td :class="p.invoice.itemClass()" class="item text-right">
+                  {{ item.getPrice() }}
+                </td>
+                <td :class="p.invoice.itemClass()" class="item text-right">
+                  {{ item.amount }}
+                </td>
+                <td :class="p.invoice.itemClass()" class="item text-right">
+                  {{ item.getTotal() }}
+                </td>
               </tr>
             </tbody>
           </template>
@@ -134,8 +170,8 @@
 
 <script>
 import Presenter from "@/presenters/Invoice";
-import BackButton from '@/components/BackButton.vue';
-import BaseText from '@/components/BaseText.vue';
+import BackButton from "@/components/BackButton.vue";
+import BaseText from "@/components/BaseText.vue";
 
 export default {
   components: { BackButton, BaseText },
@@ -219,7 +255,7 @@ div.v-image {
   display: none;
 }
 .invoice-id {
-  min-height: 230px
+  min-height: 230px;
 }
 .title.small {
   font-size: 1rem !important;

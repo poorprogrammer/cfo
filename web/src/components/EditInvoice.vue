@@ -10,7 +10,9 @@
             <v-list-item-content>
               <div class="overline mb-4">From Company</div>
               <v-list-item-title class="title mb-1"
-                ><v-text-field label="Name" v-model="p.invoice.fromCompany.name"
+                ><v-text-field
+                  label="Name"
+                  v-model="p.invoice.fromCompany.name"
               /></v-list-item-title>
               <v-list-item-subtitle class="text--primary">
                 <p class="text--primary">
@@ -122,8 +124,7 @@
                 label="Quotation Number"
                 v-model="p.invoice.quotationNumber"
               />
-              <v-col cols="8" sm="4"
-                v-if="!p.invoice.hasReceiptNumber"
+              <v-col cols="8" sm="4" v-if="!p.invoice.hasReceiptNumber"
                 ><v-text-field
                   id="quotation-date"
                   label="Quotation Date"
@@ -232,13 +233,13 @@ export default {
     };
   },
   methods: {
-    today: function() {
+    today: function () {
       this.p.todayClicked();
     },
-    addItem: function(item) {
+    addItem: function (item) {
       this.p.addItemClickedOn(item);
     },
-    removeItem: function(item) {
+    removeItem: function (item) {
       this.p.removeItemClickedOn(item);
     },
   },
