@@ -232,7 +232,7 @@ export default {
     min-height: 220px;
   }
   .v-application .v-data-table {
-    min-height: 364px;
+    min-height: 384px;
   }
   .v-application .v-data-table.dense {
     min-height: 304px;
