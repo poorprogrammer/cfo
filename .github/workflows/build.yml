@@ -32,11 +32,11 @@ jobs:
 
     - name: Install web dependencies
       run: npm i
-      working-directory: web2
+      working-directory: web
 
     - name: Run web unit test
       run: npm run test:unit:ci
-      working-directory: web2
+      working-directory: web
 
     - name: Install api dependencies
       run: npm i 
@@ -72,7 +72,7 @@ jobs:
       with:
         push: true
         tags: poorprogrammer/cfo-web
-        context: "{{defaultContext}}:web2"
+        context: "{{defaultContext}}:web"
 
     - name: Build and push api
       uses: docker/build-push-action@v2
