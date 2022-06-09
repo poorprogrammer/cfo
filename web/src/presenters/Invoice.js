@@ -22,7 +22,7 @@ export default class {
   update() {
     this.API.update(this.invoice).then(
       (invoice) => {
-        this.view.goTo(this.getPrintPageParameters(invoice.invoiceNumber));
+        this.view.goTo(this.getPrintPageParameters(invoice.number()));
       },
       (error) => {
         this.showError(error);
