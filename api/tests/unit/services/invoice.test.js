@@ -75,7 +75,7 @@ describe('invoice', () => {
       expect(inv.targetCompany.name).toBe('Facebook HQ')
     })
     it('should have target company address', () => {
-      var expected = '1601 Willow Rd Menlo Park, California'
+      const expected = '1601 Willow Rd Menlo Park, California'
       expect(inv.targetCompany.address).toBe(expected)
     })
     it('should have target company tax id', () => {
