@@ -16,16 +16,12 @@ describe('connect to server', () => {
     Sender.createChannel('greet-sent')
     expect(Sender.connection.createChannel.mock.calls.length).toEqual(1)
   })
-  xit('should send message correctly', async () => {
+  it('should send message correctly', async () => {
     const channel = new MockChannel()
-    const p = Promise.resolve(() => channel)
-    Sender.createChannel = jest.fn(() => p)
+    const p = Promise.resolve(channel)
+    Sender.createChannel = jest.fn().mockReturnValue(p)
     expect.assertions(1)
     const s = new Sender()
-
-    Sender.createChannel('greet-sent').then((channel) => {
-      console.log(`in test ${channel}`)
-    })
 
     await s.send('greet-sent', 'hello!')
 
