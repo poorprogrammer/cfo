@@ -6,6 +6,15 @@ module.exports = {
   },
   extends: 'standard',
   overrides: [
+    {
+      files: [
+        '**/tests/unit/**/*.test.{j,t}s?(x)'
+      ],
+      plugins: ['jest'],
+      env: {
+        jest: true
+      }
+    }
   ],
   parserOptions: {
     ecmaVersion: 'latest'
