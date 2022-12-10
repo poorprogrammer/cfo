@@ -20,13 +20,21 @@
       <v-spacer></v-spacer>
 
       <router-link to="/quotations">
-        <v-icon dark>mdi-format-quote-open</v-icon>
+        <v-btn class="ma-2" outlined>
+          Quotation
+        </v-btn>
       </router-link>
       <router-link to="/invoices">
-        <v-icon dark>mdi-file-document-outline</v-icon>
+        <v-btn class="ma-2" outlined>
+          invoice
+        </v-btn>
+      
       </router-link>
       <router-link to="/receipts">
-        <v-icon dark>mdi-currency-usd</v-icon>
+        <v-btn class="ma-2" outlined>
+          receipt
+        </v-btn>
+        
       </router-link>
     </v-app-bar>
 
