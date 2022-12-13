@@ -20,21 +20,13 @@
       <v-spacer></v-spacer>
 
       <router-link to="/quotations">
-        <v-btn class="ma-2" outlined>
-          Quotation
-        </v-btn>
+        <v-btn class="ma-2" outlined>Quotation</v-btn>
       </router-link>
       <router-link to="/invoices">
-        <v-btn class="ma-2" outlined>
-          invoice
-        </v-btn>
-      
+        <v-btn class="ma-2" outlined>invoice</v-btn>
       </router-link>
       <router-link to="/receipts">
-        <v-btn class="ma-2" outlined>
-          receipt
-        </v-btn>
-        
+        <v-btn class="ma-2" outlined>receipt</v-btn>
       </router-link>
     </v-app-bar>
 
