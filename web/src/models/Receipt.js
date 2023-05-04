@@ -13,7 +13,7 @@ export default class Receipt extends PaymentInformation {
       r.items.push(item);
     });
     r.setDateToday(today);
-    r.number = r.newInvoiceNumber(today);
+    r.number = `R${r.newInvoiceNumber(today)}`;
     return r;
   }
   constructor(data) {

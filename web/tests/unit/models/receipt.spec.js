@@ -57,7 +57,7 @@ describe("Receipt/Tax Invoice", () => {
   describe("generate receipt from selected invoices", () => {
     let invoices = [
       new Invoice({
-        invoiceNumber: "202101-001",
+        invoiceNumber: "I202101-001",
         fromCompany: {
           name: "from",
         },
@@ -96,7 +96,7 @@ describe("Receipt/Tax Invoice", () => {
     it("should have receipt number", () => {
       let today = new Date("January 13, 2021");
       receipt = Receipt.createFromInvoices(invoices, today);
-      expect(receipt.receiptNumber).toEqual("202101-");
+      expect(receipt.receiptNumber).toEqual("R202101-");
     });
   });
 
