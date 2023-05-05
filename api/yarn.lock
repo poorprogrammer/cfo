@@ -1636,6 +1636,10 @@ escodegen@^1.11.1:
   optionalDependencies:
     source-map "~0.6.1"
 
+eslint-config-prettier@^8.8.0:
+  version "8.8.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.8.0.tgz#bfda738d412adc917fd7b038857110efe98c9348"
+
 eslint-config-standard@^17.0.0:
   version "17.0.0"
   resolved "https://registry.npmjs.org/eslint-config-standard/-/eslint-config-standard-17.0.0.tgz"
@@ -2319,8 +2323,8 @@ html-escaper@^2.0.0:
   resolved "https://registry.npmjs.org/html-escaper/-/html-escaper-2.0.2.tgz"
 
 http-cache-semantics@^4.0.0:
-  version "4.1.0"
-  resolved "https://registry.npmjs.org/http-cache-semantics/-/http-cache-semantics-4.1.0.tgz"
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/http-cache-semantics/-/http-cache-semantics-4.1.1.tgz#abe02fcb2985460bf0323be664436ec3476a6d5a"
 
 http-errors@1.7.2, http-errors@~1.7.2:
   version "1.7.2"
