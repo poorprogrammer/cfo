@@ -1,58 +1,56 @@
-const amqp = require('amqplib/callback_api')
-const config = require('config')
+const amqp = require("amqplib/callback_api");
+const config = require("config");
 
 module.exports = class Sender {
-  static connection
-  static channel = {}
+  static connection;
+  static channel = {};
 
-  static create () {
-    if (!Sender.connection) Sender.connect()
+  static create() {
+    if (!Sender.connection) Sender.connect();
     if (Sender.connection) {
-      return new Sender()
+      return new Sender();
     }
-    return new MockSender()
+    return new MockSender();
   }
 
-  send (queue, msg) {
-    try {
-      Sender.createChannel(queue).then((channel) => {
-        channel.sendToQueue(queue, Buffer.from(msg))
-        console.log(' [x] Sent %s', msg)
+  send(queue, msg) {
+    Sender.createChannel(queue)
+      .then((channel) => {
+        channel.sendToQueue(queue, Buffer.from(msg));
+        console.log(" [x] Sent %s", msg);
       })
-    } catch (e) {
-      console.log(e)
-    }
+      .catch((e) => console.log(e));
   }
 
-  static connect () {
-    amqp.connect(config.get('QUEUE_SERVER'), function (e, connection) {
+  static connect() {
+    amqp.connect(config.get("QUEUE_SERVER"), function (e, connection) {
       if (e) {
-        console.log('cannot connect to queue server %s', e.toString())
+        console.log("cannot connect to queue server %s", e.toString());
       }
-      Sender.connection = connection
-    })
+      Sender.connection = connection;
+    });
   }
 
-  static createChannel (queue) {
+  static createChannel(queue) {
     return new Promise((resolve, reject) => {
-      if (Sender.channel[queue]) return resolve(Sender.channel[queue])
+      if (Sender.channel[queue]) return resolve(Sender.channel[queue]);
       Sender.connection.createChannel(function (e, channel) {
         if (e) {
-          console.log('cannot create channel to queue server %s', e.toString())
-          return reject(e)
+          console.log("cannot create channel to queue server %s", e.toString());
+          return reject(e);
         }
-        Sender.channel[queue] = channel
+        Sender.channel[queue] = channel;
         Sender.channel[queue].assertQueue(queue, {
-          durable: false
-        })
-        return resolve(Sender.channel[queue])
-      })
-    })
+          durable: false,
+        });
+        return resolve(Sender.channel[queue]);
+      });
+    });
   }
-}
+};
 
 class MockSender {
-  send (queue, msg) {
+  send(queue, msg) {
     // do nothing when there is no queue system to connect
   }
 }

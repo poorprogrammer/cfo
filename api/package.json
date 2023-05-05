@@ -23,6 +23,7 @@
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/plugin-syntax-class-properties": "^7.12.1",
     "eslint": "^8.24.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.3.0",
