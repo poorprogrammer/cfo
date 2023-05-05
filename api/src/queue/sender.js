@@ -14,14 +14,12 @@ module.exports = class Sender {
   }
 
   send(queue, msg) {
-    try {
-      Sender.createChannel(queue).then((channel) => {
+    Sender.createChannel(queue)
+      .then((channel) => {
         channel.sendToQueue(queue, Buffer.from(msg));
         console.log(" [x] Sent %s", msg);
-      });
-    } catch (e) {
-      console.log(e);
-    }
+      })
+      .catch((e) => console.log(e));
   }
 
   static connect() {
