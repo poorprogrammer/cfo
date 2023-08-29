@@ -149,14 +149,14 @@
             <v-card outlined>
               <v-img></v-img>
               <v-divider></v-divider>
-              <v-card-text>Received By</v-card-text>
+              <v-card-text>Customer Acceptance</v-card-text>
             </v-card>
           </v-col>
           <v-col cols="6">
             <v-card outlined>
               <v-img></v-img>
               <v-divider></v-divider>
-              <v-card-text>Approved By</v-card-text>
+              <v-card-text>Issued By</v-card-text>
             </v-card>
           </v-col>
         </v-row>
