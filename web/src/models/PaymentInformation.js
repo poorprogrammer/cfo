@@ -23,8 +23,8 @@ export default class PaymentInformation {
 
     this.id = data._id;
     this.companySlug = data.companySlug;
-    this.fromCompany = Object.assign({}, data.fromCompany);
-    this.targetCompany = Object.assign({}, data.targetCompany);
+    this.fromCompany = { ...data.fromCompany };
+    this.targetCompany = { ...data.targetCompany };
     this.projectName = data.projectName;
     this.remark = data.remark;
     this.currency = data.currency;
