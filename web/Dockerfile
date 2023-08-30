@@ -1,4 +1,4 @@
-FROM node:latest AS build
+FROM node:lts-alpine AS build
 WORKDIR /app
 ENV CYPRESS_INSTALL_BINARY 0
 COPY package*.json ./
