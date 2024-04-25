@@ -26,8 +26,16 @@ yarn test:unit
 
 ### Run your end-to-end tests
 
+With cypress,
+
 ```
 yarn test:e2e
+```
+
+With playwright,
+
+```
+npx playwright test
 ```
 
 ### Lints and fixes files
