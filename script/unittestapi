@@ -1,4 +1,4 @@
 #!/bin/bash
 cd api
-npm install
+yarn install &&
 ./runtests.md
