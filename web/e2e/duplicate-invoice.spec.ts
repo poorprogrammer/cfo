@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { LoginPage } from "./pages/LoginPage";
-import { Browser } from "./pages/browser";
+import { PlayWrightBrowser } from "./browsers/PlayWrightBrowser";
 import { InvoiceListPage } from "./pages/InvoiceListPage";
 
 test.describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
@@ -8,7 +8,7 @@ test.describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
 
   test.beforeEach(async ({ page }) => {
     await page.goto("http://localhost:8080/invoices/2020");
-    invoiceListPage = await new LoginPage(new Browser(page)).login();
+    invoiceListPage = await new LoginPage(new PlayWrightBrowser(page)).login();
   });
 
   test("Can create new Invoice by duplcate from existing one", async ({

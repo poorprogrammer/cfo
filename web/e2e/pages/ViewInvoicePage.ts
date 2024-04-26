@@ -1,4 +1,4 @@
-import { Browser } from "./browser";
+import { Browser } from "../browsers/Browser";
 
 export class ViewInvoicePage {
   browser: Browser;

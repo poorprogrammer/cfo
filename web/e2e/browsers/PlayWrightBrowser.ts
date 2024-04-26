@@ -1,6 +1,7 @@
 import { Locator, Page, expect } from "@playwright/test";
+import { Browser, Role } from "./Browser";
 
-export class Browser {
+export class PlayWrightBrowser implements Browser {
   page: Page;
 
   constructor(page: Page) {
@@ -31,5 +32,3 @@ export class Browser {
     await expect(this.page.getByText(text)).toBeVisible();
   }
 }
-
-type Role = "button" | "row";

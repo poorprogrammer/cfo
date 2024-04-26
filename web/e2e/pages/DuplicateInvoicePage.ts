@@ -1,5 +1,5 @@
 import { Locator } from "@playwright/test";
-import { Browser } from "./browser";
+import { Browser } from "../browsers/Browser";
 import { ViewInvoicePage } from "./ViewInvoicePage";
 
 export class DuplicateInvoicePage {

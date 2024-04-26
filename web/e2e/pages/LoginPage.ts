@@ -1,5 +1,5 @@
-import { Locator, Page } from "@playwright/test";
-import { Browser } from "./browser";
+import { Locator } from "@playwright/test";
+import { Browser } from "../browsers/Browser";
 import { InvoiceListPage } from "./InvoiceListPage";
 
 export class LoginPage {
