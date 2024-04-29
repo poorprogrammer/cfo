@@ -3,12 +3,14 @@ import { Browser, Element } from "./Browser";
 
 export class PlayWrightBrowser implements Browser {
   page: Page;
+  baseUrl: string;
 
-  constructor(page: Page) {
+  constructor(page: Page, baseUrl) {
     this.page = page;
+    this.baseUrl = baseUrl;
   }
-  async goto(url) {
-    await this.page.goto(url);
+  async goto(uri) {
+    await this.page.goto(`${this.baseUrl}${uri}`);
   }
 
   locator(selector: string): Element {

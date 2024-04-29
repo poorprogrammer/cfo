@@ -21,7 +21,7 @@ export class InvoiceListPage {
   }
 
   async visit(year = 2020) {
-    await this.browser.goto(`http://localhost:8080/invoices/${year}`);
+    await this.browser.goto(`/invoices/${year}`);
   }
 
   async clickDuplicateInvoiceNumber(

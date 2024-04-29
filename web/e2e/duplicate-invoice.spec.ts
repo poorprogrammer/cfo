@@ -7,8 +7,9 @@ test.describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
   let invoiceListPage: InvoiceListPage;
 
   test.beforeEach(async ({ page }) => {
-    await page.goto("http://localhost:8080/");
-    invoiceListPage = await new LoginPage(new PlayWrightBrowser(page)).login();
+    let browser = new PlayWrightBrowser(page, "http://localhost:8080");
+    await browser.goto("/");
+    invoiceListPage = await new LoginPage(browser).login();
   });
 
   test("Can create new Invoice by duplcate from existing one", async ({
