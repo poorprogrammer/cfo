@@ -1,7 +1,13 @@
+import { CypressBrowser } from "../../../e2e/browsers/CypressBrowser";
+import { InvoiceListPage } from "../../../e2e/pages/InvoiceListPage";
+import { LoginPage } from "../pages/LoginPage";
+
 describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
+  let invoiceListPage: InvoiceListPage;
+
   beforeEach(() => {
-    cy.visit("/invoices/2020");
-    cy.login();
+    cy.visit("/");
+    invoiceListPage = new LoginPage(new CypressBrowser()).login();
   });
 
   it("Can create new Invoice by duplcate from existing one", () => {
