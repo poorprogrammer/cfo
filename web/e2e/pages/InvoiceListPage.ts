@@ -1,24 +1,23 @@
-import { Locator } from "@playwright/test";
 import { DuplicateInvoicePage } from "./DuplicateInvoicePage";
-import { Browser } from "../browsers/Browser";
+import { Browser, Element } from "../browsers/Browser";
 
 export class InvoiceListPage {
   browser: Browser;
-  confirmDeleteButton: Locator;
+  confirmDeleteButton: Element;
 
   constructor(browser: Browser) {
     this.browser = browser;
     this.confirmDeleteButton = this.browser.locator(".confirm-delete-btn");
   }
 
-  static async create(browser: Browser): Promise<InvoiceListPage> {
+  static create(browser: Browser): InvoiceListPage {
     let page = new InvoiceListPage(browser);
-    await page.ready();
+    page.ready();
     return page;
   }
 
-  async ready() {
-    await this.browser.containsText("Invoice List");
+  ready() {
+    this.browser.containsText("Invoice List");
   }
 
   async visit(year = 2020) {

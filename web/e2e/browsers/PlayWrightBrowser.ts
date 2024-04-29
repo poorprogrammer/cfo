@@ -1,5 +1,5 @@
 import { Locator, Page, expect } from "@playwright/test";
-import { Browser, Role } from "./Browser";
+import { Browser, Element } from "./Browser";
 
 export class PlayWrightBrowser implements Browser {
   page: Page;
@@ -7,28 +7,55 @@ export class PlayWrightBrowser implements Browser {
   constructor(page: Page) {
     this.page = page;
   }
-
   async goto(url) {
     await this.page.goto(url);
   }
 
-  locator(selector: string): Locator {
-    return this.page.locator(selector);
+  locator(selector: string): Element {
+    return new PlayWrightElement(this.page.locator(selector));
   }
 
-  getByLabel(text: string): Locator {
-    return this.page.getByLabel(text);
+  getByLabel(text: string): Element {
+    return new PlayWrightElement(this.page.getByLabel(text));
   }
 
-  getButtonByName(name: string): Locator {
-    return this.getRoleByName("button", name);
+  getButtonByName(name: string): Element {
+    return new PlayWrightElement(this.getRoleByName("button", name));
   }
 
-  getRoleByName(role: Role, name: string): Locator {
+  getFieldByRowAndLabel(rowName: string, label: string): Element {
+    return new PlayWrightElement(
+      this.getRoleByName("row", rowName).getByLabel(label)
+    );
+  }
+
+  getRoleByName(role: Role, name: string) {
     return this.page.getByRole(role, { name: name });
   }
 
   async containsText(text: string) {
     await expect(this.page.getByText(text)).toBeVisible();
+  }
+}
+
+type Role = "button" | "row";
+
+class PlayWrightElement implements Element {
+  el: Locator;
+
+  constructor(el: Locator) {
+    this.el = el;
+  }
+
+  async click(): Promise<void> {
+    await this.el.click();
+  }
+
+  async type(text: string): Promise<void> {
+    await this.el.type(text);
+  }
+
+  async fill(value: string): Promise<void> {
+    await this.el.fill(value);
   }
 }

@@ -1,12 +1,12 @@
 import { Locator } from "@playwright/test";
-import { Browser } from "../browsers/Browser";
+import { Browser, Element } from "../browsers/Browser";
 import { ViewInvoicePage } from "./ViewInvoicePage";
 
 export class DuplicateInvoicePage {
   browser: Browser;
-  invoiceNumber: Locator;
-  invoiceDate: Locator;
-  saveButton: Locator;
+  invoiceNumber: Element;
+  invoiceDate: Element;
+  saveButton: Element;
 
   constructor(browser: Browser) {
     this.browser = browser;
@@ -35,35 +35,29 @@ export class DuplicateInvoicePage {
 
   async editFirstItem(item: string, price: string, amount: string) {
     await this.browser
-      .getRoleByName("row", "Item Price Amount THB 400,000.00")
-      .getByLabel("Item")
+      .getFieldByRowAndLabel("Item Price Amount THB 400,000.00", "Item")
       .fill(item);
 
     await this.browser
-      .getRoleByName("row", "Item Price Amount THB 400,000.00")
-      .getByLabel("Price")
+      .getFieldByRowAndLabel("Item Price Amount THB 400,000.00", "Price")
       .fill(price);
 
     await this.browser
-      .getRoleByName("row", "Item Price Amount THB 20,000.00")
-      .getByLabel("Amount")
+      .getFieldByRowAndLabel("Item Price Amount THB 20,000.00", "Amount")
       .fill(amount);
   }
 
   async editSecondItem(item: string, price: string, amount: string) {
     await this.browser
-      .getRoleByName("row", "Item Price Amount THB 800.00")
-      .getByLabel("Item")
+      .getFieldByRowAndLabel("Item Price Amount THB 800.00", "Item")
       .fill(item);
 
     await this.browser
-      .getRoleByName("row", "Item Price Amount THB 800.00")
-      .getByLabel("Price")
+      .getFieldByRowAndLabel("Item Price Amount THB 800.00", "Price")
       .fill(price);
 
     await this.browser
-      .getRoleByName("row", "Item Price Amount THB 20,000.00")
-      .getByLabel("Amount")
+      .getFieldByRowAndLabel("Item Price Amount THB 20,000.00", "Amount")
       .fill(amount);
   }
 

@@ -1,12 +1,11 @@
-import { Locator } from "@playwright/test";
-import { Browser } from "../browsers/Browser";
+import { Browser, Element } from "../browsers/Browser";
 import { InvoiceListPage } from "./InvoiceListPage";
 
 export class LoginPage {
   browser: Browser;
-  username: Locator;
-  password: Locator;
-  loginButton: Locator;
+  username: Element;
+  password: Element;
+  loginButton: Element;
 
   constructor(browser: Browser) {
     this.browser = browser;
@@ -16,11 +15,8 @@ export class LoginPage {
   }
 
   async login(): Promise<InvoiceListPage> {
-    await this.username.click();
     await this.username.type("user");
-
     await this.password.type("s3cr3t");
-
     await this.loginButton.click();
     return InvoiceListPage.create(this.browser);
   }
