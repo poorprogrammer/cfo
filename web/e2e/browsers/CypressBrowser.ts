@@ -18,7 +18,7 @@ export class CypressBrowser implements Browser {
   }
 
   async containsText(text: string) {
-    // await expect(this.page.getByText(text)).toBeVisible();
+    cy.contains(text);
   }
 
   locator(locator: string) {
