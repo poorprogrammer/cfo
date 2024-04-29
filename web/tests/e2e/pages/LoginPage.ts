@@ -15,17 +15,9 @@ export class LoginPage {
   }
 
   login(): InvoiceListPage {
-    this.mockLogin();
     this.username.type("user");
     this.password.type("s3cr3t");
     this.loginButton.click();
     return InvoiceListPage.create(this.browser);
-  }
-  mockLogin() {
-    cy.server();
-    cy.route({
-      method: "POST",
-      url: "/login/",
-    }).as("login");
   }
 }
