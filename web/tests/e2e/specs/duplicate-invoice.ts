@@ -16,10 +16,6 @@ describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
       method: "POST",
       url: "/invoices/",
     }).as("saveInvoice");
-    cy.route({
-      method: "GET",
-      url: "/invoices/2020",
-    }).as("getInvoices");
 
     visitInvoicesPage();
     duplicate_invoice("202001-007");
@@ -40,7 +36,8 @@ describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
     deleteInvoice("202001-008");
   });
   function visitInvoicesPage() {
-    cy.visit("/invoices/2020");
+    cy.intercept("GET", "/invoices/2020").as("getInvoices");
+    invoiceListPage.visit(2020);
     cy.wait("@getInvoices");
   }
   function duplicate_invoice(invoiceNumber) {

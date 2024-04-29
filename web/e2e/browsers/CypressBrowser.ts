@@ -2,7 +2,7 @@ import { Browser, Element } from "./Browser";
 
 export class CypressBrowser implements Browser {
   async goto(url) {
-    // await this.page.goto(url);
+    cy.visit(url);
   }
 
   getByLabel(label: string): Element {
