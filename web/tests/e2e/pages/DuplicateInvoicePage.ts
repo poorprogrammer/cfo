@@ -33,15 +33,27 @@ export class DuplicateInvoicePage {
   }
 
   editFirstItem(item: string, price: string, amount: string) {
-    this.browser.getFieldByRowAndLabel("1", "1").fill(item);
-    this.browser.getFieldByRowAndLabel("1", "2").fill(price);
-    this.browser.getFieldByRowAndLabel("1", "3").fill(amount);
+    this.browser
+      .getFieldByRowAndLabel("1", "td:nth-child(1) input[type=text]")
+      .fill(item);
+    this.browser
+      .getFieldByRowAndLabel("1", "td:nth-child(2) input[type=text]")
+      .fill(price);
+    this.browser
+      .getFieldByRowAndLabel("1", "td:nth-child(3) input[type=text]")
+      .fill(amount);
   }
 
   async editSecondItem(item: string, price: string, amount: string) {
-    this.browser.getFieldByRowAndLabel("2", "1").fill(item);
-    this.browser.getFieldByRowAndLabel("2", "2").fill(price);
-    this.browser.getFieldByRowAndLabel("2", "3").fill(amount);
+    this.browser
+      .getFieldByRowAndLabel("2", "td:nth-child(1) input[type=text]")
+      .fill(item);
+    this.browser
+      .getFieldByRowAndLabel("2", "td:nth-child(2) input[type=text]")
+      .fill(price);
+    this.browser
+      .getFieldByRowAndLabel("2", "td:nth-child(3) input[type=text]")
+      .fill(amount);
   }
 
   save(): ViewInvoicePage {

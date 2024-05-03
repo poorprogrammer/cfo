@@ -15,7 +15,7 @@ export class CypressBrowser implements Browser {
 
   getFieldByRowAndLabel(row: string, label: string): Element {
     return CypressElement.getByLocator(
-      `div.v-data-table tr:nth-child(${row}) td:nth-child(${label}) input[type=text]`
+      `div.v-data-table tr:nth-child(${row}) ${label}`
     );
   }
 
@@ -38,7 +38,6 @@ class CypressElement implements Element {
   constructor(el) {
     this.el = el;
   }
-
   static getByLabel(label: string) {
     return new CypressElement(() => cy.contains("label", label).next("input"));
   }
@@ -61,5 +60,8 @@ class CypressElement implements Element {
 
   click(): void {
     this.el().click();
+  }
+  contains(text: string) {
+    this.el().contains(text);
   }
 }

@@ -12,4 +12,5 @@ export interface Element {
   click(): void;
   fill(item: string): void;
   type(text: string): void;
+  contains(text: string): void;
 }

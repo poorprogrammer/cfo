@@ -13,7 +13,16 @@ export class ViewInvoicePage {
     return page;
   }
 
-  async ready() {
-    await this.browser.containsText("Invoice (original)");
+  ready() {
+    this.browser.containsText("Invoice (original)");
+  }
+
+  containsInvoiceNumber(invoiceNumber: string) {
+    this.browser.containsText(`${invoiceNumber}`);
+  }
+  containsItemNameOnRow(row: number, text: string) {
+    this.browser
+      .getFieldByRowAndLabel(`${row}`, "td:nth-child(1)")
+      .contains(text);
   }
 }

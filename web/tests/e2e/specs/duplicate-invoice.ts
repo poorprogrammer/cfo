@@ -26,8 +26,8 @@ describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
     addNewItemBeforeRow(2);
     duplicateInvoicePage.editSecondItem("UX", "2000", "10");
     let viewInvoicePage = duplicateInvoicePage.save();
-    cy.containsInvoiceNumber("202001-008");
-    cy.containsItemNameOnRow(1, "Technical coach");
+    viewInvoicePage.containsInvoiceNumber("202001-008");
+    viewInvoicePage.containsItemNameOnRow(1, "Technical coach");
     cy.containsTotal("43,656.00");
 
     invoiceListPage.visit(2020);
