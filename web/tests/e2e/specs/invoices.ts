@@ -1,7 +1,13 @@
+import { CypressBrowser } from "../../../e2e/browsers/CypressBrowser";
+import { InvoiceListPage } from "../pages/InvoiceListPage";
+import { LoginPage } from "../pages/LoginPage";
+
 describe("List Invoices Page", () => {
+  let invoiceListPage: InvoiceListPage;
+
   beforeEach(() => {
     cy.visit("/invoices/2020");
-    cy.login();
+    invoiceListPage = new LoginPage(new CypressBrowser()).login();
   });
 
   describe("in laptop", () => {
@@ -9,7 +15,7 @@ describe("List Invoices Page", () => {
       cy.viewport(800, 600);
     });
     it("Prints an old invoice", () => {
-      cy.visit("/invoices/2020");
+      invoiceListPage.visit(2020);
       shouldSeeShortcutLabelsToMakeItFriendlyToNewUsers();
       shouldSeeLastestInvoiceNumber(cy);
       clickPrintInvoice(cy, "202001-001");
