@@ -1,5 +1,5 @@
 import { Browser, Element } from "../../../e2e/browsers/Browser";
-import { InvoiceListPage } from "../../../e2e/pages/InvoiceListPage";
+import { InvoiceListPage } from "./InvoiceListPage";
 
 export class LoginPage {
   browser: Browser;

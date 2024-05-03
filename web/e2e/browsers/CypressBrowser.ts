@@ -42,11 +42,11 @@ class CypressElement implements Element {
   }
 
   static getByLocator(locator: string) {
-    return new CypressElement(() => cy.contains(locator));
+    return new CypressElement(() => cy.get(locator));
   }
 
   fill(text: string): void {
-    this.type(text);
+    this.type("{selectall}" + text);
   }
 
   type(text: string): void {

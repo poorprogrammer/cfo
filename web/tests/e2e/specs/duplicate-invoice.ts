@@ -1,5 +1,5 @@
 import { CypressBrowser } from "../../../e2e/browsers/CypressBrowser";
-import { InvoiceListPage } from "../../../e2e/pages/InvoiceListPage";
+import { InvoiceListPage } from "../pages/InvoiceListPage";
 import { LoginPage } from "../pages/LoginPage";
 
 describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
@@ -17,11 +17,11 @@ describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
       url: "/invoices/",
     }).as("saveInvoice");
 
-    visitInvoicesPage();
-    duplicate_invoice("202001-007");
-    cy.contains("Unsave Invoice (edit mode)");
-    editInvoiceNumber("202001-008");
-    editInvoiceDate("2020-01-15");
+    invoiceListPage.visit(2020);
+    let duplicateInvoicePage =
+      invoiceListPage.clickDuplicateInvoiceNumber("202001-007");
+    duplicateInvoicePage.editInvoiceNumber("202001-008");
+    duplicateInvoicePage.editInvoiceDate("2020-01-15");
     editItemOnRow(1, "Technical coach", "1000", "20");
     addNewItemBeforeRow(2);
     editItemOnRow(2, "UX", "2000", "10");
@@ -31,15 +31,10 @@ describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
     cy.containsItemNameOnRow(1, "Technical coach");
     cy.containsTotal("43,656.00");
 
-    visitInvoicesPage();
+    invoiceListPage.visit(2020);
     cy.contains("202001-008");
     deleteInvoice("202001-008");
   });
-  function visitInvoicesPage() {
-    cy.intercept("GET", "/invoices/2020").as("getInvoices");
-    invoiceListPage.visit(2020);
-    cy.wait("@getInvoices");
-  }
   function duplicate_invoice(invoiceNumber) {
     cy.get(`#duplicate_${invoiceNumber}`).click();
   }
