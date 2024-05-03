@@ -13,8 +13,10 @@ export class CypressBrowser implements Browser {
     return CypressElement.getButtonByName(name);
   }
 
-  getFieldByRowAndLabel(rowName: string, label: string): Element {
-    return CypressElement.getByLabel(label);
+  getFieldByRowAndLabel(row: string, label: string): Element {
+    return CypressElement.getByLocator(
+      `div.v-data-table tr:nth-child(${row}) td:nth-child(${label}) input[type=text]`
+    );
   }
 
   async containsText(text: string) {

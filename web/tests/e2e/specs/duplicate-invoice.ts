@@ -22,7 +22,7 @@ describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
       invoiceListPage.clickDuplicateInvoiceNumber("202001-007");
     duplicateInvoicePage.editInvoiceNumber("202001-008");
     duplicateInvoicePage.editInvoiceDate("2020-01-15");
-    editItemOnRow(1, "Technical coach", "1000", "20");
+    duplicateInvoicePage.editFirstItem("Technical coach", "1000", "20");
     addNewItemBeforeRow(2);
     editItemOnRow(2, "UX", "2000", "10");
     clickSave();
@@ -35,19 +35,6 @@ describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
     cy.contains("202001-008");
     deleteInvoice("202001-008");
   });
-  function duplicate_invoice(invoiceNumber) {
-    cy.get(`#duplicate_${invoiceNumber}`).click();
-  }
-  function editInvoiceNumber(invoiceNumber) {
-    cy.get("#invoice-number")
-      .click()
-      .type("{selectall}" + invoiceNumber);
-  }
-  function editInvoiceDate(date) {
-    cy.get("#invoice-date")
-      .click()
-      .type("{selectall}" + date);
-  }
   function editItemOnRow(row, name, price, amount) {
     editItemNameOnRow(row, name);
     editItemPriceOnRow(row, price);

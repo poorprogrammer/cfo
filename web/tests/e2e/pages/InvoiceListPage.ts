@@ -24,9 +24,7 @@ export class InvoiceListPage {
     this.browser.goto(`/invoices/${year}`);
   }
 
-  clickDuplicateInvoiceNumber(
-    invoiceNumber: string
-  ): Promise<DuplicateInvoicePage> {
+  clickDuplicateInvoiceNumber(invoiceNumber: string): DuplicateInvoicePage {
     this.browser.locator(`#duplicate_${invoiceNumber}`).click();
     return DuplicateInvoicePage.create(this.browser);
   }

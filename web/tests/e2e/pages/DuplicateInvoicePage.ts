@@ -32,32 +32,16 @@ export class DuplicateInvoicePage {
     await this.invoiceDate.fill(date);
   }
 
-  async editFirstItem(item: string, price: string, amount: string) {
-    await this.browser
-      .getFieldByRowAndLabel("Item Price Amount THB 400,000.00", "Item")
-      .fill(item);
-
-    await this.browser
-      .getFieldByRowAndLabel("Item Price Amount THB 400,000.00", "Price")
-      .fill(price);
-
-    await this.browser
-      .getFieldByRowAndLabel("Item Price Amount THB 20,000.00", "Amount")
-      .fill(amount);
+  editFirstItem(item: string, price: string, amount: string) {
+    this.browser.getFieldByRowAndLabel("1", "1").fill(item);
+    this.browser.getFieldByRowAndLabel("1", "2").fill(price);
+    this.browser.getFieldByRowAndLabel("1", "3").fill(amount);
   }
 
   async editSecondItem(item: string, price: string, amount: string) {
-    await this.browser
-      .getFieldByRowAndLabel("Item Price Amount THB 800.00", "Item")
-      .fill(item);
-
-    await this.browser
-      .getFieldByRowAndLabel("Item Price Amount THB 800.00", "Price")
-      .fill(price);
-
-    await this.browser
-      .getFieldByRowAndLabel("Item Price Amount THB 20,000.00", "Amount")
-      .fill(amount);
+    this.browser.getFieldByRowAndLabel("2", "1").fill(item);
+    this.browser.getFieldByRowAndLabel("2", "2").fill(price);
+    this.browser.getFieldByRowAndLabel("2", "3").fill(amount);
   }
 
   async save(): Promise<ViewInvoicePage> {
