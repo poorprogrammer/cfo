@@ -44,8 +44,8 @@ export class DuplicateInvoicePage {
     this.browser.getFieldByRowAndLabel("2", "3").fill(amount);
   }
 
-  async save(): Promise<ViewInvoicePage> {
-    await this.saveButton.click();
+  save(): ViewInvoicePage {
+    this.saveButton.click();
     return ViewInvoicePage.create(this.browser);
   }
 }

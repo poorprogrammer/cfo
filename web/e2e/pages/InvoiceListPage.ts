@@ -34,5 +34,6 @@ export class InvoiceListPage {
   async delete(invoiceNumber: string) {
     await this.browser.locator(`#delete_${invoiceNumber}`).click();
     await this.confirmDeleteButton.click();
+    await this.browser.shouldNotContains(`${invoiceNumber}`);
   }
 }

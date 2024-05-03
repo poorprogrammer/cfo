@@ -38,6 +38,9 @@ export class PlayWrightBrowser implements Browser {
   async containsText(text: string) {
     await expect(this.page.getByText(text)).toBeVisible();
   }
+  async shouldNotContains(text: string) {
+    await expect(this.page.getByText(text)).not.toBeVisible();
+  }
 }
 
 type Role = "button" | "row";

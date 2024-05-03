@@ -23,6 +23,10 @@ export class CypressBrowser implements Browser {
     cy.contains(text);
   }
 
+  async shouldNotContains(text: string) {
+    cy.contains(text).should("not.exist");
+  }
+
   locator(locator: string) {
     return CypressElement.getByLocator(locator);
   }

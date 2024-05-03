@@ -1,5 +1,6 @@
 export interface Browser {
-  containsText(string);
+  containsText(text);
+  shouldNotContains(text: string);
   getButtonByName(string): Element;
   getByLabel(label: string): Element;
   getFieldByRowAndLabel(rowName: string, label: string): Element;

@@ -7,9 +7,9 @@ export class ViewInvoicePage {
     this.browser = browser;
   }
 
-  static async create(browser: Browser): Promise<ViewInvoicePage> {
+  static create(browser: Browser): ViewInvoicePage {
     let page = new ViewInvoicePage(browser);
-    await page.ready();
+    page.ready();
     return page;
   }
 

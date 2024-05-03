@@ -32,5 +32,6 @@ export class InvoiceListPage {
   delete(invoiceNumber: string) {
     this.browser.locator(`#delete_${invoiceNumber}`).click();
     this.confirmDeleteButton.click();
+    this.browser.shouldNotContains(`${invoiceNumber}`);
   }
 }
