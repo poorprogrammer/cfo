@@ -1,4 +1,10 @@
+import { CypressBrowser } from "../../../e2e/browsers/CypressBrowser";
+import { InvoiceListPage } from "../pages/InvoiceListPage";
+import { LoginPage } from "../pages/LoginPage";
+
 describe("Invoice Page 2020", () => {
+  let invoiceListPage: InvoiceListPage;
+
   describe("for guest", () => {
     it("requires login to see an invoice", () => {
       openInvoiceDetailNumber("202001-001");
@@ -8,7 +14,7 @@ describe("Invoice Page 2020", () => {
   describe("for authenticated user", () => {
     beforeEach(() => {
       cy.visit("/invoices/2020");
-      cy.login();
+      invoiceListPage = new LoginPage(new CypressBrowser()).login();
     });
 
     it("Visits the view invoice url should see the original invoice", () => {
