@@ -36,4 +36,8 @@ export class InvoiceListPage {
     await this.confirmDeleteButton.click();
     await this.browser.shouldNotContains(`${invoiceNumber}`);
   }
+
+  async containsInvoice(invoiceNumber: string) {
+    await this.browser.containsText(`${invoiceNumber}`);
+  }
 }

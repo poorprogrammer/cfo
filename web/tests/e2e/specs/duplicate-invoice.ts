@@ -31,7 +31,7 @@ describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
     cy.containsTotal("43,656.00");
 
     invoiceListPage.visit(2020);
-    cy.contains("202001-008");
+    invoiceListPage.containsInvoice("202001-008");
     invoiceListPage.delete("202001-008");
   });
   function addNewItemBeforeRow(row) {

@@ -25,6 +25,7 @@ test.describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
     let viewInvoicePage = await duplicateInvoicePage.save();
     // await containInvoiceNumber(page);
     await invoiceListPage.visit(2020);
+    await invoiceListPage.containsInvoice("202001-008");
     await invoiceListPage.delete("202001-008");
     // cy.contains("202001-008").should("not.exist");
   });

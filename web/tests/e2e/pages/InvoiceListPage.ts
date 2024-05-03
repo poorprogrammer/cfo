@@ -34,4 +34,7 @@ export class InvoiceListPage {
     this.confirmDeleteButton.click();
     this.browser.shouldNotContains(`${invoiceNumber}`);
   }
+  containsInvoice(invoiceNumber: string) {
+    this.browser.containsText(`${invoiceNumber}`);
+  }
 }
