@@ -56,6 +56,12 @@ export class DuplicateInvoicePage {
       .fill(amount);
   }
 
+  addNewItemBeforeRow(row: number) {
+    this.browser
+      .getFieldByRowAndLabel("1", "td:nth-child(5) button.green")
+      .click();
+  }
+
   save(): ViewInvoicePage {
     this.saveButton.click();
     return ViewInvoicePage.create(this.browser);

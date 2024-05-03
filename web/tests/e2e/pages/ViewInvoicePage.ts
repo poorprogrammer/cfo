@@ -25,4 +25,9 @@ export class ViewInvoicePage {
       .getFieldByRowAndLabel(`${row}`, "td:nth-child(1)")
       .contains(text);
   }
+  containsTotal(text: string) {
+    this.browser
+      .locator("div.v-data-table tr:last-child td:last-child")
+      .contains(text);
+  }
 }
