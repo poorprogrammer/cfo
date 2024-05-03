@@ -58,7 +58,7 @@ export class DuplicateInvoicePage {
 
   addNewItemBeforeRow(row: number) {
     this.browser
-      .getFieldByRowAndLabel("1", "td:nth-child(5) button.green")
+      .getFieldByRowAndLabel(`${row}`, "td:nth-child(5) button.green")
       .click();
   }
 
