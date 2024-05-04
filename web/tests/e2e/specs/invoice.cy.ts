@@ -4,6 +4,11 @@ import { LoginPage } from "../pages/LoginPage";
 
 describe("Invoice Page 2020", () => {
   let invoiceListPage: InvoiceListPage;
+  let browser: CypressBrowser;
+
+  beforeEach(() => {
+    browser = new CypressBrowser("http://localhost:8080");
+  });
 
   describe("for guest", () => {
     it("requires login to see an invoice", () => {
@@ -13,8 +18,8 @@ describe("Invoice Page 2020", () => {
   });
   describe("for authenticated user", () => {
     beforeEach(() => {
-      cy.visit("/invoices/2020");
-      invoiceListPage = new LoginPage(new CypressBrowser()).login();
+      browser.goto("/invoices/2020");
+      invoiceListPage = new LoginPage(browser).login();
     });
 
     it("Visits the view invoice url should see the original invoice", () => {
@@ -35,7 +40,7 @@ describe("Invoice Page 2020", () => {
   }
 
   function openInvoiceDetailNumber(invoiceNumber) {
-    cy.visit("/invoice/" + invoiceNumber);
+    browser.goto("/invoice/" + invoiceNumber);
   }
 
   function shouldSeeHeaderSoThatInvoicePrintingIsPretty(cy) {

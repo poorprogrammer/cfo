@@ -6,8 +6,9 @@ describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
   let invoiceListPage: InvoiceListPage;
 
   beforeEach(() => {
-    cy.visit("/");
-    invoiceListPage = new LoginPage(new CypressBrowser()).login();
+    let browser = new CypressBrowser("http://localhost:8080");
+    browser.goto("/");
+    invoiceListPage = new LoginPage(browser).login();
   });
 
   it("Can create new Invoice by duplcate from existing one", () => {

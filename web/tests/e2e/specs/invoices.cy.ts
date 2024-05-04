@@ -4,10 +4,12 @@ import { LoginPage } from "../pages/LoginPage";
 
 describe("List Invoices Page", () => {
   let invoiceListPage: InvoiceListPage;
+  let browser: CypressBrowser;
 
   beforeEach(() => {
-    cy.visit("/invoices/2020");
-    invoiceListPage = new LoginPage(new CypressBrowser()).login();
+    browser = new CypressBrowser("http://localhost:8080");
+    browser.goto("/invoices/2020");
+    invoiceListPage = new LoginPage(browser).login();
   });
 
   describe("in laptop", () => {
@@ -23,7 +25,7 @@ describe("List Invoices Page", () => {
     });
 
     it("Should be able to get back to home page from whereever page by clicking at logo", () => {
-      cy.visit("/shouldNotHaveThisPage");
+      browser.goto("/shouldNotHaveThisPage");
       cy.contains("Page not found");
       cy.get("#app_logo").click();
       cy.contains("Invoice List");
@@ -35,7 +37,7 @@ describe("List Invoices Page", () => {
       cy.viewport(600, 581);
     });
     it("Shows 3 icons", () => {
-      cy.visit("/invoices/2020");
+      browser.goto("/invoices/2020");
       const quotationIcon = ".mdi-format-quote-open";
       const invoiceIcon = ".mdi-file-document-outline";
       const receiptIcon = ".mdi-currency-usd";
@@ -44,7 +46,7 @@ describe("List Invoices Page", () => {
       cy.get("#receipt-list-btn").find(receiptIcon);
     });
     it("Hides labels so all icons are visible on screen", () => {
-      cy.visit("/invoices/2020");
+      browser.goto("/invoices/2020");
       labelShouldNotVisible("#quotation-list-btn");
       labelShouldNotVisible("#invoice-list-btn");
       labelShouldNotVisible("#receipt-list-btn");
