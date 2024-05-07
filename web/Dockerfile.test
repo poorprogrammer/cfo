@@ -1,6 +1,6 @@
-FROM cypress/included:13.8.1
+FROM cypress/base:12
 
-WORKDIR /e2e
+WORKDIR /app
 
 COPY package*.json ./
 
@@ -10,3 +10,4 @@ COPY . .
 
 EXPOSE 8080
 
+CMD [ "npm", "run", "serve" ]

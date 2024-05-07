@@ -1,13 +1,8 @@
 import { Browser, Element } from "./Browser";
 
 export class CypressBrowser implements Browser {
-  host: string;
-
-  constructor(host: string) {
-    this.host = host;
-  }
   async goto(url) {
-    cy.visit(`${this.host}${url}`);
+    cy.visit(url);
   }
 
   getByLabel(label: string): Element {
