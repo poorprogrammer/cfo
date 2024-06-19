@@ -9,30 +9,29 @@
           <v-list-item three-line>
             <v-list-item-content>
               <div class="overline mb-4">From Company</div>
-              <v-list-item-title class="title mb-1"
-                ><v-text-field
+              <v-list-item-title class="title mb-1">
+                <v-text-field
                   label="Name"
-                  v-model="p.invoice.fromCompany.name"
-              /></v-list-item-title>
+                  v-model="p.invoice.fromCompany.name"/>
+              </v-list-item-title>
               <v-list-item-subtitle class="text--primary">
                 <p class="text--primary">
                   <v-text-field
                     label="Address"
-                    v-model="p.invoice.fromCompany.address"
-                  />
+                    v-model="p.invoice.fromCompany.address"/>
                 </p>
                 <p>
                   <v-row dense>
                     <v-col cols="6" sm="4"
-                      ><v-text-field
-                        label="Tax Id"
-                        v-model="p.invoice.fromCompany.taxId"
-                    /></v-col>
-                    <v-col cols="6" sm="4"
-                      ><v-text-field
+                    ><v-text-field
+                      label="Tax Id"
+                      v-model="p.invoice.fromCompany.taxId"/>
+                    </v-col>
+                    <v-col cols="6" sm="4">
+                      <v-text-field
                         label="Tel"
-                        v-model="p.invoice.fromCompany.tel"
-                    /></v-col>
+                        v-model="p.invoice.fromCompany.tel"/>
+                    </v-col>
                   </v-row>
                 </p>
               </v-list-item-subtitle>
@@ -49,28 +48,25 @@
       <v-col cols="6">
         <v-card class="pa-2" outlined>
           <div class="overline mb-4">To Company</div>
-          <v-card-title class="title"
-            ><v-text-field label="Name" v-model="p.invoice.targetCompany.name"
-          /></v-card-title>
+          <v-card-title class="title">
+            <v-text-field label="Name" v-model="p.invoice.targetCompany.name"/>
+          </v-card-title>
           <v-card-text>
             <p class="text--primary">
               <v-text-field
                 label="Address"
-                v-model="p.invoice.targetCompany.address"
-              />
+                v-model="p.invoice.targetCompany.address"/>
             </p>
             <p class="text--primary">
               <v-row dense>
                 <base-input
                   id="to-tax-id"
                   label="Tax Id"
-                  v-model="p.invoice.targetCompany.taxId"
-                />
+                  v-model="p.invoice.targetCompany.taxId"/>
                 <base-input
                   id="to-tel"
                   label="Tel"
-                  v-model="p.invoice.targetCompany.tel"
-                />
+                  v-model="p.invoice.targetCompany.tel"/>
               </v-row>
             </p>
           </v-card-text>
@@ -84,27 +80,23 @@
                 v-if="p.invoice.hasInvoiceNumber"
                 id="invoice-number"
                 label="Invoice Number"
-                v-model="p.invoice.invoiceNumber"
-              />
+                v-model="p.invoice.invoiceNumber"/>
               <v-col cols="8" sm="4" v-if="p.invoice.hasInvoiceNumber">
                 <v-text-field
                   id="invoice-date"
                   label="Invoice Date"
-                  v-model="p.invoice.invoiceDate"
-                />
+                  v-model="p.invoice.invoiceDate"/>
               </v-col>
               <base-input
                 v-if="p.invoice.hasReceiptNumber"
                 id="receipt-number"
                 label="Receipt Number"
-                v-model="p.invoice.receiptNumber"
-              />
+                v-model="p.invoice.receiptNumber"/>
               <v-col cols="8" sm="4" v-if="p.invoice.hasReceiptNumber">
                 <v-text-field
                   id="receipt-date"
                   label="Receipt Date"
-                  v-model="p.invoice.receiptDate"
-                />
+                  v-model="p.invoice.receiptDate"/>
               </v-col>
               <v-col cols="4" sm="2">
                 <v-btn
@@ -113,8 +105,7 @@
                   fab
                   dark
                   color="primary"
-                  @click="today"
-                >
+                  @click="today">
                   <v-icon dark>mdi-calendar</v-icon>
                 </v-btn>
               </v-col>
@@ -122,44 +113,38 @@
                 v-if="!p.invoice.hasReceiptNumber"
                 id="quotation-number"
                 label="Quotation Number"
-                v-model="p.invoice.quotationNumber"
-              />
-              <v-col cols="8" sm="4" v-if="!p.invoice.hasReceiptNumber"
-                ><v-text-field
+                v-model="p.invoice.quotationNumber"/>
+              <v-col cols="8" sm="4" v-if="!p.invoice.hasReceiptNumber">
+                <v-text-field
                   id="quotation-date"
                   label="Quotation Date"
-                  v-model="p.invoice.quotationDate"
-              /></v-col>
+                  v-model="p.invoice.quotationDate"/>
+              </v-col>
               <base-input
                 v-if="p.invoice.hasInvoiceNumber"
                 id="purchase-order-number"
                 label="Purchase Order Number"
-                v-model="p.invoice.purchaseOrderNumber"
-              />
+                v-model="p.invoice.purchaseOrderNumber"/>
               <base-input
                 id="project"
                 label="Project"
-                v-model="p.invoice.projectName"
-              />
+                v-model="p.invoice.projectName"/>
               <base-input
                 id="remark"
                 label="Remark"
-                v-model="p.invoice.remark"
-              />
+                v-model="p.invoice.remark"/>
 
               <v-col cols="12" sm="6">
                 <v-select
                   v-model="p.invoice.currency"
                   :items="p.invoice.getCurrencies()"
-                  label="Currency"
-                ></v-select>
+                  label="Currency"></v-select>
               </v-col>
 
               <base-input
                 id="payment"
                 label="Payment"
-                v-model="p.invoice.payment"
-              />
+                v-model="p.invoice.payment"/>
             </v-row>
           </p>
         </v-card>
@@ -195,8 +180,7 @@
                 x-small
                 fab
                 dark
-                color="green"
-              >
+                color="green">
                 <v-icon>mdi-arrow-up-circle</v-icon>
               </v-btn>
               <v-btn
@@ -205,8 +189,7 @@
                 x-small
                 fab
                 dark
-                color="red"
-              >
+                color="red">
                 <v-icon>mdi-close-circle</v-icon>
               </v-btn>
             </td>
