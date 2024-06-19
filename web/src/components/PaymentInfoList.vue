@@ -8,8 +8,7 @@
         :sort-by="p.sortBy()"
         :sort-desc="p.sortDesc()"
         :hide-default-footer="true"
-        :disable-pagination="true"
-      >
+        :disable-pagination="true">
         <template v-slot:[`item.number`]="{ item }">
           <slot name="col1" v-bind:item="item"></slot>
           <router-link :to="item.editionUrl()">{{ item.number }}</router-link>
@@ -37,8 +36,7 @@
                 :id="'delete_' + item.number"
                 text
                 small
-                color="primary"
-              >
+                color="primary">
                 <v-icon dark>mdi-delete</v-icon>
               </v-btn>
             </template>
@@ -46,12 +44,12 @@
               <v-card-title class="headline">
                 Delete this {{ item.documentType.toLowerCase() }}?
               </v-card-title>
-              <v-card-text
-                >This action will mark the
+              <v-card-text>
+                This action will mark the
                 {{ item.documentType.toLowerCase() }} as deleted. A deleted
                 {{ item.documentType.toLowerCase() }} will be excluded from the
-                list.</v-card-text
-              >
+                list.
+              </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn color="darken-1" text @click="p.cancelDelete(item)">
@@ -61,8 +59,7 @@
                   class="confirm-delete-btn"
                   color="red darken-1"
                   text
-                  @click="p.delete(item)"
-                >
+                  @click="p.delete(item)">
                   Delete
                 </v-btn>
               </v-card-actions>
