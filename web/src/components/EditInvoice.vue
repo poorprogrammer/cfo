@@ -22,10 +22,8 @@
                 </p>
                 <p>
                   <v-row dense>
-                    <v-col cols="6" sm="4"
-                    ><v-text-field
-                      label="Tax Id"
-                      v-model="p.invoice.fromCompany.taxId"/>
+                    <v-col cols="6" sm="4">
+                      <v-text-field label="Tax Id" v-model="p.invoice.fromCompany.taxId"/>
                     </v-col>
                     <v-col cols="6" sm="4">
                       <v-text-field
