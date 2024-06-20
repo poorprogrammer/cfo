@@ -41,11 +41,7 @@ module.exports = {
     "vue/require-prop-types": "off",
     "vue/require-default-prop": "off",
     "vue/attribute-hyphenation": "off",
-    'vue/max-attributes-per-line': [
-      'warn', {
-        'singleline': 5,
-      },
-    ],
+
   },
   overrides: [
     {
