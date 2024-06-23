@@ -1,6 +1,6 @@
 # 3. Remove auto prettier plug in from eslint
 
-Date: 2020-09-07
+Date: 2024-06-21
 
 ## Status
 
