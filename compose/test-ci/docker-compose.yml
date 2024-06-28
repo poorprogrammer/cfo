@@ -1,19 +1,30 @@
-version: "3.3"
-
 services:
+
   api:
     build:
       context: ../../api
     command: /app/scripts/start_api_with_test_fixture
-  e2e:
+    networks:
+      - cfo
+
+  web:
     build:
       context: ../../web
-      dockerfile: Dockerfile.cached.test
-    command: yarn test:e2e --headless
-    volumes:
-      - '../../web/tests/e2e/screenshots:/app/tests/e2e/screenshots'
-      - '../../web/tests/e2e/videos:/app/tests/e2e/videos'
-    environment:
-      - VUE_APP_BASE_API=http://api:3000
+      args:
+        - VUE_APP_BASE_API=http://api:3000
+    command: serve -s -L /app -p 8080
+    networks:
+      - cfo
     depends_on:
       - api
+
+  e2e:
+    build:
+      context: ../../e2e
+    command: npx playwright test
+    depends_on:
+      - web
+    networks:
+      - cfo
+networks:
+  cfo:

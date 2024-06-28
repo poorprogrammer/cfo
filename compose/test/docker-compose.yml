@@ -14,7 +14,7 @@ services:
       context: ../../web
       args:
         - VUE_APP_BASE_API=http://api:3000
-    command: serve -s /app -p 8080
+    command: serve -s -L /app -p 8080
     networks:
       - cfo
     depends_on:
