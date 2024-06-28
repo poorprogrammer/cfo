@@ -4,8 +4,8 @@ FROM mcr.microsoft.com/playwright:v1.44.1-jammy
 # RUN npx playwright install --with-deps
 
 WORKDIR /app
-# COPY package*.json ./
-# RUN npm install
+COPY package*.json ./
+RUN npm install
 COPY . .
 
 # Set the entry point for the container
