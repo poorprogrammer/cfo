@@ -35,14 +35,14 @@ module.exports = defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'Setup DB',
-      testMatch: /global\.setup\.js/,
-    },
+    // {
+    //   name: 'Setup DB',
+    //   testMatch: /global\.setup\.js/,
+    // },
     {
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
-      dependencies: ['Setup DB'],
+
     },
     // {
     //   name: 'Mobile Safari',
