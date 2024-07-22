@@ -36,7 +36,7 @@ jobs:
           key: ${{ runner.os }}-docker-${{ hashFiles('**/Dockerfile') }}
 
       - name: Install web dependencies
-        run: npm i
+        run: npm install
         working-directory: web
 
       - name: Run web unit test
