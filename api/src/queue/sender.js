@@ -40,9 +40,6 @@ module.exports = class Sender {
           return reject(e);
         }
         Sender.channel[queue] = channel;
-        Sender.channel[queue].assertQueue(queue, {
-          durable: false,
-        });
         return resolve(Sender.channel[queue]);
       });
     });
