@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+
 import Invoices from "../views/Invoices.vue";
 const currentYear = new Date().getFullYear();
 
@@ -10,13 +10,8 @@ const router = createRouter({
       path: '/',
       name: 'home',
       redirect: { name: "invoicesThisYear" },
+      // beforeEnter: isAuthenticated,
     },
-    // {
-    //   path: "/",
-    //   name: "home",
-    //   redirect: { name: "invoicesThisYear" },
-    //   // beforeEnter: isAuthenticated,
-    // },
     {
       path: "/invoices/",
       name: "invoicesThisYear",
@@ -29,14 +24,25 @@ const router = createRouter({
       component: Invoices,
       // beforeEnter: isAuthenticated,
     },
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    }
+    // {
+    //   path: "/invoice/:number/duplicate",
+    //   name: "duplicatedInvoice",
+    //   component: DuplicatedInvoice,
+    //   beforeEnter: isAuthenticated,
+    // },
+    // {
+    //   path: "/invoice/:number/edit",
+    //   name: "updateInvoice",
+    //   component: UpdateInvoice,
+    //   beforeEnter: isAuthenticated,
+    // },
+    // {
+    //   path: "/invoice/:number",
+    //   name: "invoice",
+    //   component: Invoice,
+    //   beforeEnter: isAuthenticated,
+    // },
+
   ]
 })
 

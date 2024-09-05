@@ -1,12 +1,14 @@
 <template>
   <div>
     <v-card>
+      
+    
       <v-card-title>{{ titleMsg }} <slot name="header"></slot></v-card-title>
       <v-data-table
-        :headers="p.headers"
-        :items="p.items"
-        :sort-by="p.sortBy()"
-        :sort-desc="p.sortDesc()"
+        :headers="invoiceListPresenter.headers"
+        :items="itemsRef"
+        :sort-by="invoiceListPresenter.sortBy()"
+        :sort-desc="invoiceListPresenter.sortDesc()"
         :hide-default-footer="true"
         :disable-pagination="true">
         <template v-slot:[`item.number`]="{ item }">
@@ -16,14 +18,14 @@
 
         <template v-slot:[`item.action`]="{ item }">
           <router-link :to="item.duplicationUrl()">
-            <v-btn :id="'duplicate_' + item.number" text small color="primary">
-              <v-icon dark>mdi-content-duplicate</v-icon>
+            <v-btn :id="'duplicate_' + item.number" small color="primary">
+              duplicate
             </v-btn>
           </router-link>
 
           <router-link :to="item.url()">
-            <v-btn :id="'print_' + item.number" text small color="primary">
-              <v-icon dark>mdi-printer</v-icon>
+            <v-btn :id="'print_' + item.number" small color="primary">
+              print
             </v-btn>
           </router-link>
 
@@ -34,10 +36,9 @@
                 v-bind="attrs"
                 v-on="on"
                 :id="'delete_' + item.number"
-                text
                 small
                 color="primary">
-                <v-icon dark>mdi-delete</v-icon>
+                delete
               </v-btn>
             </template>
             <v-card>
@@ -52,14 +53,14 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color="darken-1" text @click="p.cancelDelete(item)">
+                <v-btn color="darken-1" text @click="invoiceListPresenter.cancelDelete(item)">
                   Cancel
                 </v-btn>
                 <v-btn
                   class="confirm-delete-btn"
                   color="red darken-1"
                   text
-                  @click="p.delete(item)">
+                  @click="invoiceListPresenter.delete(item)">
                   Delete
                 </v-btn>
               </v-card-actions>
@@ -71,26 +72,29 @@
   </div>
 </template>
 
-<script>
-import Presenter from "@/presenters/InvoiceList";
+<script setup lang="ts">
+import InvoiceListPresenter from "@/presenters/InvoiceList";
+import { onMounted, ref } from "vue";
+import { useRoute } from "vue-router";
+import Invoice from "@/models/Invoice";
 
-export default {
-  name: "PaymentInfoList",
-  props: {
-    titleMsg: String,
-    presenter: Presenter,
-  },
-  mounted() {
-    let year = this.$route.params.year || new Date().getFullYear();
-    this.p = this.presenter;
-    this.p.init(year);
-  },
-  data() {
-    return {
-      p: this.p,
-    };
-  },
-};
+const route = useRoute();
+
+const props = defineProps({
+  titleMsg: String,
+  presenter: InvoiceListPresenter
+})
+
+const invoiceListPresenter: InvoiceListPresenter = props.presenter;
+const itemsRef = ref<Invoice[]>([]);
+
+onMounted(() => {
+  let year = route.params.year || new Date().getFullYear();
+  invoiceListPresenter.init(year).then(() => {
+    itemsRef.value = invoiceListPresenter.items;
+  });
+});
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -12,12 +12,12 @@ export default class {
     this.API = api;
   }
   init(year) {
-    this.API.getAll(year).then(this.setAll);
+    return this.API.getAll(year).then(this.setAll);
   }
   setAll = (items) => {
     this.items = items;
   };
-  sortBy = () => "number";
+  sortBy = () => ["number"];
   sortDesc = () => true;
   delete = (item) => {
     this.API.delete(item).then(this.removeItemFromList);

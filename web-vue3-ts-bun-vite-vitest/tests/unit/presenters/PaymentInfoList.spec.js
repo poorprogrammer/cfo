@@ -38,7 +38,7 @@ describe("PaymentInfoList Presenter", () => {
         });
 
         it("should sort by decending invoice number", () => {
-            expect(invoiceListPresenter.sortBy()).toEqual("number");
+            expect(invoiceListPresenter.sortBy()).toEqual(["number"]);
             expect(invoiceListPresenter.sortDesc()).toEqual(true);
         });
 

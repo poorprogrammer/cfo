@@ -1,40 +1,32 @@
 <template>
   <div>
-    <payment-info-list titleMsg="Invoice List" v-bind:presenter="p">
+    <payment-info-list titleMsg="Invoice List" v-bind:presenter="invoiceListPresenter">
       <template v-slot:header>
-        <v-btn id="generate-receipt" text small :color="p.buttonColor" v-on:click="p.toggleGenerateReceipt()">
-          <v-icon dark>mdi-forwardburger</v-icon>
+        <v-btn id="generate-receipt"  small :color="invoiceListPresenter.buttonColor" v-on:click="invoiceListPresenter.toggleGenerateReceipt()">
+          convert to receipt
         </v-btn>
       </template>
       <template v-slot:col1="slotProps">
-        <span class="selecting-invoices" v-if="p.isGeneratingReceipt">
-          <input type="checkbox" v-model="p.selectedInvoices" :value="slotProps.item" />
+        <span class="selecting-invoices" v-if="invoiceListPresenter.isGeneratingReceipt">
+          <input type="checkbox" v-model="invoiceListPresenter.selectedInvoices" :value="slotProps.item" />
         </span>
       </template>
     </payment-info-list>
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 // @ is an alias to /src
 import PaymentInfoList from "@/components/PaymentInfoList.vue";
 import Presenter from "@/presenters/InvoiceList";
 import API from "@/services/InvoiceService";
+import { useRouter } from "vue-router";
+const invoiceListPresenter = new Presenter(this, new API());
+const router = useRouter();
 
-export default {
-  name: "InvoicesView",
-  components: { PaymentInfoList },
-  data() {
-    return {
-      p: new Presenter(this, new API()),
-    };
-  },
-  methods: {
-    goTo: function (path) {
-      this.$router.push(path);
-    },
-  },
-};
+function goTo(path: string) {
+  router.push(path);
+}
 </script>
 
 <style scoped>
