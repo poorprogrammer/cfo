@@ -1,16 +1,29 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
+import Login from "@/views/Login.vue";
 import Invoices from "../views/Invoices.vue";
 const currentYear = new Date().getFullYear();
+
+const isAuthenticated = (to, from, next) => {
+  if (localStorage.getItem("token")) {
+    next();
+    return;
+  }
+  next("/login");
+};
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
+      path: "/login",
+      name: "login",
+      component: Login,
+    },
+    {
       path: '/',
       name: 'home',
       redirect: { name: "invoicesThisYear" },
-      // beforeEnter: isAuthenticated,
+      beforeEnter: isAuthenticated,
     },
     {
       path: "/invoices/",

@@ -1,9 +1,5 @@
 export default class InvoiceItem {
-  constructor(name, t, invoice) {
-    this.name = name;
-    this.t = t;
-    this.invoice = invoice;
-  }
+  constructor(public name: string, public t: number, public invoice: any) { }
 
   getTotal() {
     return this.getCurrency(this.t);
@@ -13,7 +9,7 @@ export default class InvoiceItem {
     return "";
   }
 
-  getCurrency(n) {
+  getCurrency(n: number) {
     return this.currency(this.invoice.currency).format(n);
   }
 
