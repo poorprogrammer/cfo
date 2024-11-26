@@ -2,15 +2,14 @@
   <div>
     <payment-info-list titleMsg="Invoice List" v-bind:presenter="p">
       <template v-slot:header>
-        <v-btn
+        <button
           id="generate-receipt"
-          text
-          small
-          :color="p.buttonColor"
-          v-on:click="p.toggleGenerateReceipt()"
+          class="icon-button"
+          :class="p.buttonColor"
+          @click="p.toggleGenerateReceipt()"
         >
-          <v-icon dark>mdi-forwardburger</v-icon>
-        </v-btn>
+          <span class="icon">≡</span>
+        </button>
       </template>
       <template v-slot:col1="slotProps">
         <span class="selecting-invoices" v-if="p.isGeneratingReceipt">
@@ -48,6 +47,17 @@ export default {
 </script>
 
 <style scoped>
+.icon-button {
+  padding: 8px;
+  cursor: pointer;
+  font-size: 1.2em;
+  margin-left: 0.5em;
+}
+
+.icon-button:hover {
+  opacity: 0.8;
+}
+
 .selecting-invoices {
   padding-right: 0.5em;
 }
