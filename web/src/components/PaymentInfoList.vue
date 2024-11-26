@@ -2,19 +2,18 @@
   <div>
     <v-card>
       <v-card-title>{{ titleMsg }} <slot name="header"></slot></v-card-title>
-      <v-data-table
+      <data-table
         :headers="p.headers"
         :items="p.items"
         :sort-by="p.sortBy()"
         :sort-desc="p.sortDesc()"
-        :hide-default-footer="true"
-        :disable-pagination="true">
-        <template v-slot:[`item.number`]="{ item }">
+      >
+        <template #[`item.number`]="{ item }">
           <slot name="col1" v-bind:item="item"></slot>
           <router-link :to="item.editionUrl()">{{ item.number }}</router-link>
         </template>
 
-        <template v-slot:[`item.action`]="{ item }">
+        <template #[`item.action`]="{ item }">
           <router-link :to="item.duplicationUrl()">
             <v-btn :id="'duplicate_' + item.number" text small color="primary">
               <v-icon dark>mdi-content-duplicate</v-icon>
@@ -36,7 +35,8 @@
                 :id="'delete_' + item.number"
                 text
                 small
-                color="primary">
+                color="primary"
+              >
                 <v-icon dark>mdi-delete</v-icon>
               </v-btn>
             </template>
@@ -59,23 +59,28 @@
                   class="confirm-delete-btn"
                   color="red darken-1"
                   text
-                  @click="p.delete(item)">
+                  @click="p.delete(item)"
+                >
                   Delete
                 </v-btn>
               </v-card-actions>
             </v-card>
           </v-dialog>
         </template>
-      </v-data-table>
+      </data-table>
     </v-card>
   </div>
 </template>
 
 <script>
 import Presenter from "@/presenters/InvoiceList";
+import DataTable from "./DataTable.vue";
 
 export default {
   name: "PaymentInfoList",
+  components: {
+    DataTable,
+  },
   props: {
     titleMsg: String,
     presenter: Presenter,
