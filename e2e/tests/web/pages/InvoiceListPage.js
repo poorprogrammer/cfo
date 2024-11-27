@@ -2,10 +2,9 @@ const { expect } = require("@playwright/test");
 const { DuplicateInvoicePage } = require("./DuplicateInvoicePage");
 
 exports.InvoiceListPage = class InvoiceListPage {
-
   constructor(page) {
     this.page = page;
-    this.confirmDeleteButton = page.locator(".confirm-delete-btn");
+    this.confirmDeleteButton = page.locator(".delete-btn");
   }
 
   static async create(page) {
@@ -15,7 +14,7 @@ exports.InvoiceListPage = class InvoiceListPage {
   }
 
   async ready() {
-    return this.page.getByText("Invoice List").waitFor()
+    return this.page.getByText("Invoice List").waitFor();
   }
 
   async visit(year = 2020) {
@@ -39,4 +38,4 @@ exports.InvoiceListPage = class InvoiceListPage {
   async shouldNotContainsInvoice(invoiceNumber) {
     await expect(this.page.getByText(`${invoiceNumber}`)).not.toBeVisible();
   }
-}
+};
