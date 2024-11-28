@@ -1,69 +1,63 @@
 <template>
-  <div v-if="p.invoice">
-    <v-row justify="center" dense>
+  <div v-if="p.invoice" class="edit-invoice">
+    <div class="header">
       <h2>Unsave {{ p.invoice.documentType }} (edit mode)</h2>
-    </v-row>
-    <v-row align="stretch" dense>
-      <v-col cols="12">
-        <v-card outlined>
-          <v-list-item three-line>
-            <v-list-item-content>
-              <div class="overline mb-4">From Company</div>
-              <v-list-item-title class="title mb-1">
-                <v-text-field
-                  label="Name"
+    </div>
+
+    <div class="form-section">
+      <div class="form-grid">
+        <!-- From Company Card -->
+        <div class="card full-width">
+          <div class="card-content">
+            <div class="company-section">
+              <div class="section-label">From Company</div>
+              <div class="company-details">
+                <input
+                  class="form-input"
+                  placeholder="Name"
                   v-model="p.invoice.fromCompany.name"
                 />
-              </v-list-item-title>
-              <v-list-item-subtitle class="text--primary">
-                <p class="text--primary">
-                  <v-text-field
-                    label="Address"
-                    v-model="p.invoice.fromCompany.address"
+                <input
+                  class="form-input"
+                  placeholder="Address"
+                  v-model="p.invoice.fromCompany.address"
+                />
+                <div class="input-row">
+                  <input
+                    class="form-input"
+                    placeholder="Tax Id"
+                    v-model="p.invoice.fromCompany.taxId"
                   />
-                </p>
-                <p>
-                  <v-row dense>
-                    <v-col cols="6" sm="4">
-                      <v-text-field
-                        label="Tax Id"
-                        v-model="p.invoice.fromCompany.taxId"
-                      />
-                    </v-col>
-                    <v-col cols="6" sm="4">
-                      <v-text-field
-                        label="Tel"
-                        v-model="p.invoice.fromCompany.tel"
-                      />
-                    </v-col>
-                  </v-row>
-                </p>
-              </v-list-item-subtitle>
-            </v-list-item-content>
+                  <input
+                    class="form-input"
+                    placeholder="Tel"
+                    v-model="p.invoice.fromCompany.tel"
+                  />
+                </div>
+              </div>
+              <div class="company-logo">
+                <img src="@/assets/logo.png" alt="Company Logo" />
+              </div>
+            </div>
+          </div>
+        </div>
 
-            <v-list-item-avatar tile size="130">
-              <v-img id="from-company-logo" contain src="@/assets/logo.png" />
-            </v-list-item-avatar>
-          </v-list-item>
-        </v-card>
-      </v-col>
-    </v-row>
-    <v-row align="stretch" dense>
-      <v-col cols="6">
-        <v-card class="pa-2" outlined>
-          <div class="overline mb-4">To Company</div>
-          <v-card-title class="title">
-            <v-text-field label="Name" v-model="p.invoice.targetCompany.name" />
-          </v-card-title>
-          <v-card-text>
-            <p class="text--primary">
-              <v-text-field
-                label="Address"
+        <!-- To Company Card -->
+        <div class="card half-width">
+          <div class="card-content">
+            <div class="section-label">To Company</div>
+            <div class="company-details">
+              <input
+                class="form-input"
+                placeholder="Name"
+                v-model="p.invoice.targetCompany.name"
+              />
+              <input
+                class="form-input"
+                placeholder="Address"
                 v-model="p.invoice.targetCompany.address"
               />
-            </p>
-            <p class="text--primary">
-              <v-row dense>
+              <div class="input-row">
                 <base-input
                   id="to-tax-id"
                   label="Tax Id"
@@ -74,70 +68,84 @@
                   label="Tel"
                   v-model="p.invoice.targetCompany.tel"
                 />
-              </v-row>
-            </p>
-          </v-card-text>
-        </v-card>
-      </v-col>
-      <v-col cols="6">
-        <v-card class="pa-2" outlined>
-          <p class="body-2">
-            <v-row dense>
-              <base-input
-                v-if="p.invoice.hasInvoiceNumber"
-                id="invoice-number"
-                label="Invoice Number"
-                v-model="p.invoice.invoiceNumber"
-              />
-              <v-col cols="8" sm="4" v-if="p.invoice.hasInvoiceNumber">
-                <v-text-field
-                  id="invoice-date"
-                  label="Invoice Date"
-                  v-model="p.invoice.invoiceDate"
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Invoice Details Card -->
+        <div class="card half-width">
+          <div class="card-content">
+            <div class="section-label">Invoice Details</div>
+            <div class="details-grid">
+              <!-- Invoice Number & Date -->
+              <div v-if="p.invoice.hasInvoiceNumber" class="input-group">
+                <base-input
+                  id="invoice-number"
+                  label="Invoice Number"
+                  v-model="p.invoice.invoiceNumber"
                 />
-              </v-col>
-              <base-input
-                v-if="p.invoice.hasReceiptNumber"
-                id="receipt-number"
-                label="Receipt Number"
-                v-model="p.invoice.receiptNumber"
-              />
-              <v-col cols="8" sm="4" v-if="p.invoice.hasReceiptNumber">
-                <v-text-field
-                  id="receipt-date"
-                  label="Receipt Date"
-                  v-model="p.invoice.receiptDate"
+                <div class="date-input-group">
+                  <input
+                    id="invoice-date"
+                    class="form-input"
+                    placeholder="Invoice Date"
+                    v-model="p.invoice.invoiceDate"
+                  />
+                  <button
+                    id="today-button"
+                    class="action-button small primary"
+                    @click="today"
+                    title="Set Today's Date"
+                  >
+                    <span class="icon">📅</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Receipt Number & Date -->
+              <div v-if="p.invoice.hasReceiptNumber" class="input-group">
+                <base-input
+                  id="receipt-number"
+                  label="Receipt Number"
+                  v-model="p.invoice.receiptNumber"
                 />
-              </v-col>
-              <v-col cols="4" sm="2">
-                <button
-                  id="today-button"
-                  class="action-button primary"
-                  @click="today"
-                  title="Set Today's Date"
-                >
-                  <span class="icon">📅</span>
-                </button>
-              </v-col>
-              <base-input
-                v-if="!p.invoice.hasReceiptNumber"
-                id="quotation-number"
-                label="Quotation Number"
-                v-model="p.invoice.quotationNumber"
-              />
-              <v-col cols="8" sm="4" v-if="!p.invoice.hasReceiptNumber">
-                <v-text-field
-                  id="quotation-date"
-                  label="Quotation Date"
-                  v-model="p.invoice.quotationDate"
+                <div class="date-input-group">
+                  <input
+                    id="receipt-date"
+                    class="form-input"
+                    placeholder="Receipt Date"
+                    v-model="p.invoice.receiptDate"
+                  />
+                </div>
+              </div>
+
+              <!-- Quotation Number & Date -->
+              <div v-if="!p.invoice.hasReceiptNumber" class="input-group">
+                <base-input
+                  id="quotation-number"
+                  label="Quotation Number"
+                  v-model="p.invoice.quotationNumber"
                 />
-              </v-col>
+                <div class="date-input-group">
+                  <input
+                    id="quotation-date"
+                    class="form-input"
+                    placeholder="Quotation Date"
+                    v-model="p.invoice.quotationDate"
+                  />
+                </div>
+              </div>
+
+              <!-- Purchase Order -->
               <base-input
                 v-if="p.invoice.hasInvoiceNumber"
                 id="purchase-order-number"
                 label="Purchase Order Number"
                 v-model="p.invoice.purchaseOrderNumber"
               />
+
+              <!-- Project & Remark -->
               <base-input
                 id="project"
                 label="Project"
@@ -149,48 +157,72 @@
                 v-model="p.invoice.remark"
               />
 
-              <v-col cols="12" sm="6">
-                <v-select
+              <!-- Currency Selection -->
+              <div class="select-group">
+                <label for="currency">Currency</label>
+                <select
+                  id="currency"
+                  class="form-select"
                   v-model="p.invoice.currency"
-                  :items="p.invoice.getCurrencies()"
-                  label="Currency"
-                ></v-select>
-              </v-col>
+                >
+                  <option
+                    v-for="currency in p.invoice.getCurrencies()"
+                    :key="currency"
+                    :value="currency"
+                  >
+                    {{ currency }}
+                  </option>
+                </select>
+              </div>
 
+              <!-- Payment -->
               <base-input
                 id="payment"
                 label="Payment"
                 v-model="p.invoice.payment"
               />
-            </v-row>
-          </p>
-        </v-card>
-      </v-col>
-    </v-row>
-    <v-simple-table>
-      <template v-slot:default>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-section">
+      <table class="items-table">
         <thead>
           <tr>
-            <th scope="col" class="text-left">Item</th>
-            <th scope="col" class="text-right">Price</th>
-            <th scope="col" class="text-right">Amount</th>
-            <th scope="col" class="text-right">Total</th>
-            <th scope="col" class="text-right">+/-</th>
+            <th class="text-left">Item</th>
+            <th class="text-right">Price</th>
+            <th class="text-right">Amount</th>
+            <th class="text-right">Total</th>
+            <th class="text-right">Actions</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="(item, index) in p.invoice.getItems()" :key="index">
             <td class="text-left">
-              <v-text-field label="Item" v-model="item.name" />
+              <input
+                class="form-input"
+                placeholder="Item"
+                v-model="item.name"
+              />
             </td>
             <td class="text-right">
-              <v-text-field label="Price" v-model="item.price" />
+              <input
+                class="form-input text-right"
+                placeholder="Price"
+                v-model="item.price"
+              />
             </td>
             <td class="text-right">
-              <v-text-field label="Amount" v-model="item.amount" />
+              <input
+                class="form-input text-right"
+                placeholder="Amount"
+                v-model="item.amount"
+              />
             </td>
             <td class="text-right">{{ item.getTotal() }}</td>
-            <td class="text-right">
+            <td class="text-right actions-cell">
               <button
                 class="action-button small green add-item"
                 @click="addItem(item)"
@@ -208,8 +240,8 @@
             </td>
           </tr>
         </tbody>
-      </template>
-    </v-simple-table>
+      </table>
+    </div>
   </div>
 </template>
 <script>
@@ -288,5 +320,236 @@ h2 {
 
 .action-button.small .icon {
   font-size: 1em;
+}
+
+.edit-invoice {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.form-section {
+  margin-bottom: 24px;
+}
+
+.form-grid {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.card.full-width {
+  grid-column: span 2;
+}
+
+.card.half-width {
+  grid-column: span 1;
+}
+
+.card-content {
+  padding: 16px;
+}
+
+.section-label {
+  font-size: 0.75rem;
+  color: rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+}
+
+.company-section {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+}
+
+.company-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color, #1976d2);
+}
+
+.company-logo {
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card.half-width {
+    grid-column: span 2;
+  }
+
+  .input-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.details-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.date-input-group {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.select-group label {
+  font-size: 0.875rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.form-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: white;
+  cursor: pointer;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: var(--primary-color, #1976d2);
+}
+
+@media (max-width: 768px) {
+  .input-group {
+    grid-template-columns: 1fr;
+  }
+
+  .date-input-group {
+    width: 100%;
+  }
+
+  .date-input-group .form-input {
+    flex: 1;
+  }
+}
+
+.table-section {
+  margin-top: 24px;
+  overflow-x: auto;
+}
+
+.items-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.items-table th,
+.items-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.items-table th {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.items-table .form-input {
+  margin: 0;
+  background: transparent;
+}
+
+.items-table .form-input.text-right {
+  text-align: right;
+}
+
+.actions-cell {
+  white-space: nowrap;
+  width: 1%;
+  padding-right: 16px;
+}
+
+@media (max-width: 768px) {
+  .table-section {
+    margin: 24px -20px 0;
+    padding: 0 20px;
+  }
+
+  .items-table {
+    font-size: 0.875rem;
+  }
+
+  .items-table th,
+  .items-table td {
+    padding: 8px;
+  }
 }
 </style>

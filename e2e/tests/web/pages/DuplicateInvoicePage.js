@@ -1,8 +1,7 @@
-const { expect } = require('@playwright/test');
+const { expect } = require("@playwright/test");
 const { ViewInvoicePage } = require("./ViewInvoicePage");
 
 exports.DuplicateInvoicePage = class DuplicateInvoicePage {
-
   constructor(page) {
     this.page = page;
     this.invoiceNumber = page.locator("#invoice-number");
@@ -17,7 +16,9 @@ exports.DuplicateInvoicePage = class DuplicateInvoicePage {
   }
 
   async ready() {
-    await expect(this.page.getByText("Unsave Invoice (edit mode)")).toBeVisible();
+    await expect(
+      this.page.getByText("Unsave Invoice (edit mode)")
+    ).toBeVisible();
   }
 
   async editInvoiceNumber(invoiceNumber) {
@@ -29,19 +30,43 @@ exports.DuplicateInvoicePage = class DuplicateInvoicePage {
   }
 
   async editFirstItem(item, price, amount) {
-    await this.page.getByRole('cell', { name: 'Item Developer' }).getByLabel('Item').fill(item);
-    await this.page.getByRole('cell', { name: 'Price 20000' }).getByLabel('Price').fill(price);
-    await this.page.getByRole('cell', { name: 'Amount 20' }).getByLabel('Amount').fill(amount);
+    await this.page
+      .locator(
+        'table.items-table tbody tr:first-child input[placeholder="Item"]'
+      )
+      .fill(item);
+    await this.page
+      .locator(
+        'table.items-table tbody tr:first-child input[placeholder="Price"]'
+      )
+      .fill(price);
+    await this.page
+      .locator(
+        'table.items-table tbody tr:first-child input[placeholder="Amount"]'
+      )
+      .fill(amount);
   }
 
   async editSecondItem(item, price, amount) {
-    await this.page.getByRole('cell', { name: 'Item Scrum master' }).getByLabel('Item').fill(item);
-    await this.page.getByRole('cell', { name: 'Price 80' }).getByLabel('Price').fill(price);
-    await this.page.getByRole('cell', { name: 'Amount 10' }).getByLabel('Amount').fill(amount);
+    await this.page
+      .locator(
+        'table.items-table tbody tr:nth-child(2) input[placeholder="Item"]'
+      )
+      .fill(item);
+    await this.page
+      .locator(
+        'table.items-table tbody tr:nth-child(2) input[placeholder="Price"]'
+      )
+      .fill(price);
+    await this.page
+      .locator(
+        'table.items-table tbody tr:nth-child(2) input[placeholder="Amount"]'
+      )
+      .fill(amount);
   }
 
   async save() {
     await this.saveButton.click();
     return ViewInvoicePage.create(this.page);
   }
-}
+};
