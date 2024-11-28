@@ -1,5 +1,5 @@
 <template>
-  <v-col cols="12" sm="6">
+  <v-col cols="12">
     <v-text-field
       :id="id"
       :label="label"
