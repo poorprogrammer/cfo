@@ -1,7 +1,7 @@
 <template>
   <div>
-    <v-card>
-      <v-card-title>{{ titleMsg }} <slot name="header"></slot></v-card-title>
+    <div class="list-card">
+      <div class="card-header">{{ titleMsg }} <slot name="header"></slot></div>
       <data-table
         :headers="p.headers"
         :items="p.items"
@@ -17,7 +17,7 @@
           <router-link :to="item.duplicationUrl()">
             <button
               :id="'duplicate_' + item.number"
-              class="action-button"
+              class="action-button small"
               title="Duplicate"
             >
               <span class="icon">📋</span>
@@ -27,7 +27,7 @@
           <router-link :to="item.url()">
             <button
               :id="'print_' + item.number"
-              class="action-button"
+              class="action-button small"
               title="Print"
             >
               <span class="icon">🖨</span>
@@ -36,7 +36,7 @@
 
           <button
             :id="'delete_' + item.number"
-            class="action-button delete"
+            class="action-button small delete"
             @click="confirmDelete(item)"
             title="Delete"
           >
@@ -65,7 +65,7 @@
           </div>
         </template>
       </data-table>
-    </v-card>
+    </div>
   </div>
 </template>
 
@@ -114,19 +114,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.list-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+
+.card-header {
+  padding: 16px;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .action-button {
