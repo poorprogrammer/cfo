@@ -137,20 +137,22 @@
                 </div>
               </div>
 
-              <!-- Purchase Order -->
-              <base-input
-                v-if="p.invoice.hasInvoiceNumber"
-                id="purchase-order-number"
-                label="Purchase Order Number"
-                v-model="p.invoice.purchaseOrderNumber"
-              />
+              <!-- Purchase Order and Project -->
+              <div class="input-group">
+                <base-input
+                  v-if="p.invoice.hasInvoiceNumber"
+                  id="purchase-order-number"
+                  label="Purchase Order Number"
+                  v-model="p.invoice.purchaseOrderNumber"
+                />
+                <base-input
+                  id="project"
+                  label="Project"
+                  v-model="p.invoice.projectName"
+                />
+              </div>
 
-              <!-- Project & Remark -->
-              <base-input
-                id="project"
-                label="Project"
-                v-model="p.invoice.projectName"
-              />
+              <!-- Remark -->
               <base-input
                 id="remark"
                 label="Remark"
@@ -347,7 +349,7 @@ h2 {
   background: white;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
-  padding: 16px;
+  padding: 12px;
 }
 
 .card.full-width {
@@ -359,7 +361,7 @@ h2 {
 }
 
 .card-content {
-  padding: 16px;
+  padding: 12px;
 }
 
 .section-label {
@@ -367,34 +369,35 @@ h2 {
   color: rgba(0, 0, 0, 0.6);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .company-section {
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 24px;
+  gap: 16px;
+  align-items: start;
 }
 
 .company-details {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .input-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  gap: 8px;
 }
 
 .form-input {
   width: 100%;
-  padding: 8px 12px;
+  padding: 6px 10px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  height: 32px;
 }
 
 .form-input:focus {
@@ -404,10 +407,13 @@ h2 {
 
 .company-logo {
   width: 130px;
-  height: 130px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 8px;
+  background: #f5f5f5;
+  border-radius: 4px;
 }
 
 .company-logo img {
@@ -433,39 +439,42 @@ h2 {
 .details-grid {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 }
 
 .input-group {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 8px;
+  align-items: center;
 }
 
 .date-input-group {
   display: flex;
-  gap: 8px;
+  gap: 4px;
   align-items: flex-start;
 }
 
 .select-group {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 
 .select-group label {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 0;
 }
 
 .form-select {
   width: 100%;
-  padding: 8px 12px;
+  padding: 6px 10px;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
-  font-size: 1rem;
-  line-height: 1.5;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  height: 32px;
   background-color: white;
   cursor: pointer;
 }
@@ -478,14 +487,20 @@ h2 {
 @media (max-width: 768px) {
   .input-group {
     grid-template-columns: 1fr;
+    gap: 6px;
   }
 
   .date-input-group {
     width: 100%;
+    gap: 4px;
   }
 
   .date-input-group .form-input {
     flex: 1;
+  }
+
+  .details-grid {
+    gap: 6px;
   }
 }
 
