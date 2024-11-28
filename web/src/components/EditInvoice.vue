@@ -78,9 +78,10 @@
           <div class="card-content">
             <div class="section-label">Invoice Details</div>
             <div class="details-grid">
-              <!-- Invoice Number & Date -->
-              <div v-if="p.invoice.hasInvoiceNumber" class="input-group">
+              <!-- First Row: Invoice/Receipt/Quotation Number, Date, and PO -->
+              <div class="input-group three-columns">
                 <base-input
+                  v-if="p.invoice.hasInvoiceNumber"
                   id="invoice-number"
                   label="Invoice Number"
                   v-model="p.invoice.invoiceNumber"
@@ -101,69 +102,31 @@
                     <span class="icon">📅</span>
                   </button>
                 </div>
-              </div>
-
-              <!-- Receipt Number & Date -->
-              <div v-if="p.invoice.hasReceiptNumber" class="input-group">
-                <base-input
-                  id="receipt-number"
-                  label="Receipt Number"
-                  v-model="p.invoice.receiptNumber"
-                />
-                <div class="date-input-group">
-                  <input
-                    id="receipt-date"
-                    class="form-input"
-                    placeholder="Receipt Date"
-                    v-model="p.invoice.receiptDate"
-                  />
-                </div>
-              </div>
-
-              <!-- Quotation Number & Date -->
-              <div v-if="!p.invoice.hasReceiptNumber" class="input-group">
-                <base-input
-                  id="quotation-number"
-                  label="Quotation Number"
-                  v-model="p.invoice.quotationNumber"
-                />
-                <div class="date-input-group">
-                  <input
-                    id="quotation-date"
-                    class="form-input"
-                    placeholder="Quotation Date"
-                    v-model="p.invoice.quotationDate"
-                  />
-                </div>
-              </div>
-
-              <!-- Purchase Order and Project -->
-              <div class="input-group">
                 <base-input
                   v-if="p.invoice.hasInvoiceNumber"
                   id="purchase-order-number"
                   label="Purchase Order Number"
                   v-model="p.invoice.purchaseOrderNumber"
                 />
+              </div>
+
+              <!-- Second Row: Project, Remark, Currency -->
+              <div class="input-group three-columns">
                 <base-input
                   id="project"
                   label="Project"
                   v-model="p.invoice.projectName"
                 />
-              </div>
-
-              <!-- Remark and Currency -->
-              <div class="input-group">
                 <base-input
                   id="remark"
                   label="Remark"
                   v-model="p.invoice.remark"
                 />
-                <div class="select-group compact">
+                <div class="select-group">
                   <label for="currency">Currency</label>
                   <select
                     id="currency"
-                    class="form-select compact"
+                    class="form-select"
                     v-model="p.invoice.currency"
                   >
                     <option
@@ -177,7 +140,7 @@
                 </div>
               </div>
 
-              <!-- Payment -->
+              <!-- Payment in its own row or could be added to another row -->
               <base-input
                 id="payment"
                 label="Payment"
@@ -568,18 +531,14 @@ h2 {
   }
 }
 
-.select-group.compact {
-  width: 120px;
-}
-
-.form-select.compact {
-  padding: 6px 8px;
-  font-size: 0.875rem;
+.input-group.three-columns {
+  grid-template-columns: 1fr 1fr 1fr; /* Three equal columns */
+  gap: 8px;
 }
 
 @media (max-width: 768px) {
-  .select-group.compact {
-    width: 100%;
+  .input-group.three-columns {
+    grid-template-columns: 1fr; /* Stack on mobile */
   }
 }
 </style>
