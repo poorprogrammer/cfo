@@ -7,7 +7,7 @@
     <div class="form-section">
       <div class="form-grid">
         <!-- From Company Card -->
-        <div class="card full-width">
+        <div class="card half-width">
           <div class="card-content">
             <div class="company-section">
               <div class="section-label">From Company</div>
@@ -74,7 +74,7 @@
         </div>
 
         <!-- Invoice Details Card -->
-        <div class="card half-width">
+        <div class="card full-width">
           <div class="card-content">
             <div class="section-label">Invoice Details</div>
             <div class="details-grid">
@@ -152,29 +152,29 @@
                 />
               </div>
 
-              <!-- Remark -->
-              <base-input
-                id="remark"
-                label="Remark"
-                v-model="p.invoice.remark"
-              />
-
-              <!-- Currency Selection -->
-              <div class="select-group">
-                <label for="currency">Currency</label>
-                <select
-                  id="currency"
-                  class="form-select"
-                  v-model="p.invoice.currency"
-                >
-                  <option
-                    v-for="currency in p.invoice.getCurrencies()"
-                    :key="currency"
-                    :value="currency"
+              <!-- Remark and Currency -->
+              <div class="input-group">
+                <base-input
+                  id="remark"
+                  label="Remark"
+                  v-model="p.invoice.remark"
+                />
+                <div class="select-group compact">
+                  <label for="currency">Currency</label>
+                  <select
+                    id="currency"
+                    class="form-select compact"
+                    v-model="p.invoice.currency"
                   >
-                    {{ currency }}
-                  </option>
-                </select>
+                    <option
+                      v-for="currency in p.invoice.getCurrencies()"
+                      :key="currency"
+                      :value="currency"
+                    >
+                      {{ currency }}
+                    </option>
+                  </select>
+                </div>
               </div>
 
               <!-- Payment -->
@@ -565,6 +565,21 @@ h2 {
   .items-table th,
   .items-table td {
     padding: 8px;
+  }
+}
+
+.select-group.compact {
+  width: 120px;
+}
+
+.form-select.compact {
+  padding: 6px 8px;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .select-group.compact {
+    width: 100%;
   }
 }
 </style>
