@@ -1,23 +1,21 @@
 <template>
-  <v-row justify="center">
-    <v-col cols="6">
-      <v-card outlined class="pa-2">
-        <div>
-          <base-input id="username" label="Username" v-model="p.username" />
-          <base-input
-            id="password"
-            label="Password"
-            v-model="p.password"
-            type="password"
-          />
-          <button id="login-button" class="login-button" @click="login">
-            <span class="button-text">Login</span>
-            <span class="icon">➜</span>
-          </button>
-        </div>
-      </v-card>
-    </v-col>
-  </v-row>
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-form">
+        <base-input id="username" label="Username" v-model="p.username" />
+        <base-input
+          id="password"
+          label="Password"
+          v-model="p.password"
+          type="password"
+        />
+        <button id="login-button" class="login-button" @click="login">
+          <span class="button-text">Login</span>
+          <span class="icon">➜</span>
+        </button>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -44,6 +42,25 @@ export default {
 </script>
 
 <style scoped>
+.login-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 500px; /* Equivalent to cols="6" in most cases */
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+  padding: 16px;
+}
+
 .login-button {
   display: flex;
   align-items: center;
