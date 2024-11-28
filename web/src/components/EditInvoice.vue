@@ -452,7 +452,7 @@ h2 {
 .date-input-group {
   display: flex;
   gap: 4px;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .select-group {
