@@ -5,16 +5,7 @@
       <edit-invoice v-bind:presenter="p"></edit-invoice>
       <div class="no-print">
         <back-button v-bind:target="p.invoice.listUrl"></back-button>
-        <v-btn
-          id="save-button"
-          @click="save"
-          class="mx-1"
-          fab
-          dark
-          color="primary"
-        >
-          <v-icon dark>mdi-content-save</v-icon>
-        </v-btn>
+        <save-button @save="save"></save-button>
       </div>
     </div>
   </div>
@@ -24,10 +15,11 @@
 import Presenter from "@/presenters/Invoice";
 import EditInvoice from "@/components/EditInvoice.vue";
 import BackButton from "@/components/BackButton.vue";
+import SaveButton from "@/components/SaveButton.vue";
 
 export default {
   props: { presenter: Presenter },
-  components: { EditInvoice, BackButton },
+  components: { EditInvoice, BackButton, SaveButton },
   name: "UpdatePaymentInfo",
   mounted() {
     this.p = this.presenter;
