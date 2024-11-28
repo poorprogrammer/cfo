@@ -12,23 +12,29 @@
               <v-list-item-title class="title mb-1">
                 <v-text-field
                   label="Name"
-                  v-model="p.invoice.fromCompany.name"/>
+                  v-model="p.invoice.fromCompany.name"
+                />
               </v-list-item-title>
               <v-list-item-subtitle class="text--primary">
                 <p class="text--primary">
                   <v-text-field
                     label="Address"
-                    v-model="p.invoice.fromCompany.address"/>
+                    v-model="p.invoice.fromCompany.address"
+                  />
                 </p>
                 <p>
                   <v-row dense>
                     <v-col cols="6" sm="4">
-                      <v-text-field label="Tax Id" v-model="p.invoice.fromCompany.taxId"/>
+                      <v-text-field
+                        label="Tax Id"
+                        v-model="p.invoice.fromCompany.taxId"
+                      />
                     </v-col>
                     <v-col cols="6" sm="4">
                       <v-text-field
                         label="Tel"
-                        v-model="p.invoice.fromCompany.tel"/>
+                        v-model="p.invoice.fromCompany.tel"
+                      />
                     </v-col>
                   </v-row>
                 </p>
@@ -47,24 +53,27 @@
         <v-card class="pa-2" outlined>
           <div class="overline mb-4">To Company</div>
           <v-card-title class="title">
-            <v-text-field label="Name" v-model="p.invoice.targetCompany.name"/>
+            <v-text-field label="Name" v-model="p.invoice.targetCompany.name" />
           </v-card-title>
           <v-card-text>
             <p class="text--primary">
               <v-text-field
                 label="Address"
-                v-model="p.invoice.targetCompany.address"/>
+                v-model="p.invoice.targetCompany.address"
+              />
             </p>
             <p class="text--primary">
               <v-row dense>
                 <base-input
                   id="to-tax-id"
                   label="Tax Id"
-                  v-model="p.invoice.targetCompany.taxId"/>
+                  v-model="p.invoice.targetCompany.taxId"
+                />
                 <base-input
                   id="to-tel"
                   label="Tel"
-                  v-model="p.invoice.targetCompany.tel"/>
+                  v-model="p.invoice.targetCompany.tel"
+                />
               </v-row>
             </p>
           </v-card-text>
@@ -78,71 +87,81 @@
                 v-if="p.invoice.hasInvoiceNumber"
                 id="invoice-number"
                 label="Invoice Number"
-                v-model="p.invoice.invoiceNumber"/>
+                v-model="p.invoice.invoiceNumber"
+              />
               <v-col cols="8" sm="4" v-if="p.invoice.hasInvoiceNumber">
                 <v-text-field
                   id="invoice-date"
                   label="Invoice Date"
-                  v-model="p.invoice.invoiceDate"/>
+                  v-model="p.invoice.invoiceDate"
+                />
               </v-col>
               <base-input
                 v-if="p.invoice.hasReceiptNumber"
                 id="receipt-number"
                 label="Receipt Number"
-                v-model="p.invoice.receiptNumber"/>
+                v-model="p.invoice.receiptNumber"
+              />
               <v-col cols="8" sm="4" v-if="p.invoice.hasReceiptNumber">
                 <v-text-field
                   id="receipt-date"
                   label="Receipt Date"
-                  v-model="p.invoice.receiptDate"/>
+                  v-model="p.invoice.receiptDate"
+                />
               </v-col>
               <v-col cols="4" sm="2">
-                <v-btn
+                <button
                   id="today-button"
-                  class="mx-1"
-                  fab
-                  dark
-                  color="primary"
-                  @click="today">
-                  <v-icon dark>mdi-calendar</v-icon>
-                </v-btn>
+                  class="action-button primary"
+                  @click="today"
+                  title="Set Today's Date"
+                >
+                  <span class="icon">📅</span>
+                </button>
               </v-col>
               <base-input
                 v-if="!p.invoice.hasReceiptNumber"
                 id="quotation-number"
                 label="Quotation Number"
-                v-model="p.invoice.quotationNumber"/>
+                v-model="p.invoice.quotationNumber"
+              />
               <v-col cols="8" sm="4" v-if="!p.invoice.hasReceiptNumber">
                 <v-text-field
                   id="quotation-date"
                   label="Quotation Date"
-                  v-model="p.invoice.quotationDate"/>
+                  v-model="p.invoice.quotationDate"
+                />
               </v-col>
               <base-input
                 v-if="p.invoice.hasInvoiceNumber"
                 id="purchase-order-number"
                 label="Purchase Order Number"
-                v-model="p.invoice.purchaseOrderNumber"/>
+                v-model="p.invoice.purchaseOrderNumber"
+              />
               <base-input
                 id="project"
                 label="Project"
-                v-model="p.invoice.projectName"/>
+                v-model="p.invoice.projectName"
+              />
               <base-input
                 id="remark"
                 label="Remark"
-                v-model="p.invoice.remark"/>
+                v-model="p.invoice.remark"
+              />
 
               <v-col cols="12" sm="6">
                 <v-select
                   v-model="p.invoice.currency"
                   :items="p.invoice.getCurrencies()"
-                  label="Currency"></v-select>
+                  label="Currency"
+                ></v-select>
               </v-col>
 
               <base-input
                 id="payment"
                 label="Payment"
-                v-model="p.invoice.payment"/>
+                v-model="p.invoice.payment"
+              />
             </v-row>
           </p>
         </v-card>
@@ -172,24 +191,20 @@
             </td>
             <td class="text-right">{{ item.getTotal() }}</td>
             <td class="text-right">
-              <v-btn
-                class="mx-1 add-item"
-                v-on:click="addItem(item)"
-                x-small
-                fab
-                dark
-                color="green">
-                <v-icon>mdi-arrow-up-circle</v-icon>
-              </v-btn>
-              <v-btn
-                class="mx-1 remove-item"
-                v-on:click="removeItem(item)"
-                x-small
-                fab
-                dark
-                color="red">
-                <v-icon>mdi-close-circle</v-icon>
-              </v-btn>
+              <button
+                class="action-button small green add-item"
+                @click="addItem(item)"
+                title="Add Item"
+              >
+                <span class="icon">⇧</span>
+              </button>
+              <button
+                class="action-button small red remove-item"
+                @click="removeItem(item)"
+                title="Remove Item"
+              >
+                <span class="icon">✖</span>
+              </button>
             </td>
           </tr>
         </tbody>
@@ -229,5 +244,49 @@ export default {
 <style scoped>
 h2 {
   font-weight: 500;
+}
+
+.action-button {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  cursor: pointer;
+  align-items: center;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+  justify-content: center;
+  margin: 4px;
+  transition: background-color 0.2s;
+}
+
+.action-button.small {
+  width: 40px;
+  height: 40px;
+}
+
+.action-button.primary {
+  background-color: var(--primary-color, #1976d2);
+}
+
+.action-button.green {
+  background-color: var(--success-color, #4caf50);
+}
+
+.action-button.red {
+  background-color: var(--error-color, #ff5252);
+}
+
+.action-button:hover {
+  opacity: 0.8;
+}
+
+.action-button .icon {
+  font-size: 1.2em;
+}
+
+.action-button.small .icon {
+  font-size: 1em;
 }
 </style>
