@@ -20,22 +20,24 @@
       <v-spacer></v-spacer>
 
       <router-link to="/quotations">
-        <v-btn id="quotation-list-btn" class="ma-2" outlined>
-          <v-icon dark>mdi-format-quote-open</v-icon>
+        <button id="quotation-list-btn" class="nav-button">
+          <span class="icon">❝</span>
           <span class="list-btn-label">quotation</span>
-        </v-btn>
+        </button>
       </router-link>
+
       <router-link to="/invoices">
-        <v-btn id="invoice-list-btn" class="ma-2" outlined>
-          <v-icon dark>mdi-file-document-outline</v-icon>
+        <button id="invoice-list-btn" class="nav-button">
+          <span class="icon">📄</span>
           <span class="list-btn-label">invoice</span>
-        </v-btn>
+        </button>
       </router-link>
+
       <router-link to="/receipts">
-        <v-btn id="receipt-list-btn" class="ma-2" outlined>
-          <v-icon dark>mdi-currency-usd</v-icon>
+        <button id="receipt-list-btn" class="nav-button">
+          <span class="icon">💰</span>
           <span class="list-btn-label">receipt</span>
-        </v-btn>
+        </button>
       </router-link>
     </v-app-bar>
 
@@ -48,20 +50,53 @@
 <script>
 export default {
   name: "App",
-
   data: () => ({
     //
   }),
 };
 </script>
+
 <style>
 #app_logo div.v-image__image {
   width: 90%;
   height: 90%;
 }
+
+.nav-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-size: 1em;
+  transition: opacity 0.2s;
+}
+
+.nav-button:hover {
+  opacity: 0.8;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-button .icon {
+  font-size: 1.2em;
+}
+
 @media (max-width: 600px) {
   .list-btn-label {
     display: none;
+  }
+
+  .nav-button {
+    padding: 8px;
+  }
+
+  .nav-button .icon {
+    margin: 0;
   }
 }
 </style>
