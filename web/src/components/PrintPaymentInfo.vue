@@ -7,59 +7,57 @@
         :key="id"
         :class="css"
       >
-        <v-row align="stretch" dense>
-          <v-col cols="12">
+        <div class="content-row">
+          <div class="full-width">
             <div class="no-print">
               <span class="font-weight-bold">Filename: </span>
               {{ p.invoice.filename() }}
             </div>
-            <v-card flat class="from-company">
-              <v-list-item three-line>
-                <v-list-item-content>
-                  <p class="title mb-1">{{ p.invoice.getFromCompanyName() }}</p>
-                  <p class="text--primary">
+            <div class="company-card from-company">
+              <div class="company-content">
+                <div class="company-details">
+                  <p class="company-name">
+                    {{ p.invoice.getFromCompanyName() }}
+                  </p>
+                  <p class="company-address">
                     {{ p.invoice.getFromCompanyAddress() }}
                   </p>
-                  <p>
-                    <span class="font-weight-bold">Tax Id</span>
+                  <p class="company-info">
+                    <span class="label">Tax Id</span>
                     {{ p.invoice.getFromCompanyTaxId() }}
-                    <span class="font-weight-bold">Tel</span>
+                    <span class="label">Tel</span>
                     {{ p.invoice.getFromCompanyTel() }}
                   </p>
-                </v-list-item-content>
+                </div>
 
-                <v-list-item-avatar tile size="130">
-                  <v-img
+                <div class="company-logo">
+                  <img
                     id="from-company-logo"
-                    contain
-                    eager
                     src="@/assets/logo.png"
+                    alt="Company Logo"
                   />
-                </v-list-item-avatar>
-              </v-list-item>
-            </v-card>
-          </v-col>
-        </v-row>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <v-row justify="center" dense>
+        <div class="content-row center">
           <h2 class="heading">{{ title }}</h2>
-        </v-row>
+        </div>
 
-        <v-divider></v-divider>
+        <hr class="divider" />
 
-        <v-row align="stretch" dense>
-          <v-col cols="6" class="pa-4">
-            <p
-              class="text--primary title"
-              :class="p.invoice.targetCompanyNameClass()"
-            >
+        <div class="content-row">
+          <div class="half-width left-pad">
+            <p class="company-name" :class="p.invoice.targetCompanyNameClass()">
               {{ p.invoice.getTargetCompanyName() }}
             </p>
-            <p class="text--primary address">
+            <p class="company-address">
               {{ p.invoice.getTargetCompanyAddress() }}
             </p>
-            <p class="text--primary">
-              <v-row dense>
+            <div class="company-info">
+              <div class="info-grid">
                 <base-text
                   label="Tax Id"
                   :value="p.invoice.getTargetCompanyTaxId()"
@@ -68,47 +66,46 @@
                   label="Tel"
                   :value="p.invoice.getTargetCompanyTel()"
                 />
-              </v-row>
-            </p>
-          </v-col>
-          <v-col cols="6">
-            <v-card class="invoice-id" flat>
-              <p class="body-2">
-                <v-row dense>
-                  <base-text
-                    label="Quotation Number"
-                    :value="p.invoice.quotationNumber"
-                  />
-                  <base-text
-                    label="Quotation  Date"
-                    :value="p.invoice.quotationDate"
-                  />
-                  <base-text
-                    label="Purchase Order Number"
-                    :value="p.invoice.purchaseOrderNumber"
-                  />
-                  <base-text
-                    label="Invoice Number"
-                    :value="p.invoice.invoiceNumber"
-                  />
-                  <base-text
-                    label="Invoice Date"
-                    :value="p.invoice.invoiceDate"
-                  />
-                  <base-text
-                    label="Receipt Number"
-                    :value="p.invoice.receiptNumber"
-                  />
-                  <base-text
-                    label="Receipt Date"
-                    :value="p.invoice.receiptDate"
-                  />
-                  <base-text label="Remark" :value="p.invoice.remark" />
-                </v-row>
-              </p>
-            </v-card>
-          </v-col>
-        </v-row>
+              </div>
+            </div>
+          </div>
+          <div class="half-width">
+            <div class="invoice-details invoice-id">
+              <div class="info-grid">
+                <base-text
+                  label="Quotation Number"
+                  :value="p.invoice.quotationNumber"
+                />
+                <base-text
+                  label="Quotation Date"
+                  :value="p.invoice.quotationDate"
+                />
+                <base-text
+                  label="Purchase Order Number"
+                  :value="p.invoice.purchaseOrderNumber"
+                />
+                <base-text
+                  label="Invoice Number"
+                  :value="p.invoice.invoiceNumber"
+                />
+                <base-text
+                  label="Invoice Date"
+                  :value="p.invoice.invoiceDate"
+                />
+                <base-text
+                  label="Receipt Number"
+                  :value="p.invoice.receiptNumber"
+                />
+                <base-text
+                  label="Receipt Date"
+                  :value="p.invoice.receiptDate"
+                />
+                <base-text label="Remark" :value="p.invoice.remark" />
+              </div>
+            </div>
+          </div>
+        </div>
+
         <v-simple-table :class="p.invoice.tablePaddingClass()">
           <template v-slot:default>
             <thead>
@@ -137,29 +134,29 @@
             </tbody>
           </template>
         </v-simple-table>
-        <v-row dense>
-          <v-col v-if="p.invoice.payment" cols="12" sm="12">
-            <v-col class="payment-info">
+
+        <div class="content-row">
+          <div v-if="p.invoice.payment" class="full-width">
+            <div class="payment-info">
               {{ p.invoice.payment }}
-            </v-col>
-          </v-col>
-        </v-row>
-        <v-row class="signature print-only pa-3" dense>
-          <v-col cols="6">
-            <v-card outlined>
-              <v-img></v-img>
-              <v-divider></v-divider>
-              <v-card-text>Customer Acceptance</v-card-text>
-            </v-card>
-          </v-col>
-          <v-col cols="6">
-            <v-card outlined>
-              <v-img></v-img>
-              <v-divider></v-divider>
-              <v-card-text>Issued By</v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
+            </div>
+          </div>
+        </div>
+
+        <div class="signature-section print-only">
+          <div class="signature-container">
+            <div class="signature-box">
+              <div class="signature-space"></div>
+              <hr class="signature-line" />
+              <div class="signature-label">Customer Acceptance</div>
+            </div>
+            <div class="signature-box">
+              <div class="signature-space"></div>
+              <hr class="signature-line" />
+              <div class="signature-label">Issued By</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="no-print">
@@ -191,15 +188,138 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.content-row {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.content-row.center {
+  justify-content: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.left-pad {
+  padding-left: 16px;
+}
+
+.company-card {
+  padding: 16px;
+  background: white;
+}
+
+.company-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.company-details {
+  flex: 1;
+}
+
+.company-name {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.company-address {
+  color: rgba(0, 0, 0, 0.87);
+  margin-bottom: 8px;
+}
+
+.company-info {
+  margin-bottom: 8px;
+}
+
+.label {
+  font-weight: 500;
+  margin-right: 8px;
+}
+
+.company-logo {
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  margin: 16px 0;
+}
+
+.invoice-details {
+  padding: 16px;
+  min-height: 230px;
+}
+
+.info-grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr;
+}
+
+.signature-section {
+  width: 100%;
+  margin-top: 30px;
+  page-break-inside: avoid;
+}
+
+.signature-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.signature-box {
+  width: 50%; /* Fixed width instead of flex */
+  border: 1px solid #000;
+  padding: 16px;
+  text-align: center;
+}
+
+.signature-space {
+  height: 100px;
+}
+
+.signature-line {
+  border: none;
+  border-top: 1px solid #000;
+  margin: 8px 0;
+}
+
+.signature-label {
+  padding: 4px;
+  font-weight: 500;
+}
+
+/* Keep existing print styles */
 @media print {
   html,
   body {
     width: 210mm;
     height: 297mm;
   }
-  header {
-    visibility: hidden;
+  .v-app-bar {
+    display: none !important;
   }
   #from-company-logo {
     -webkit-print-color-adjust: exact;
@@ -246,6 +366,34 @@ export default {
   }
   main.v-main {
     padding: 0px !important;
+  }
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+  }
+  .info-grid .base-text {
+    font-size: 0.9em;
+  }
+  .info-grid .base-text span {
+    white-space: nowrap;
+  }
+  .invoice-details {
+    padding: 8px;
+    min-height: auto;
+  }
+  .signature-section {
+    display: block !important; /* Force block display when printing */
+  }
+
+  .signature-container {
+    display: flex !important; /* Force flex display when printing */
+    page-break-inside: avoid;
+  }
+
+  .signature-box {
+    width: 50% !important; /* Force width when printing */
+    margin: 0 !important; /* Remove any margins */
+    float: none !important; /* Prevent floating */
   }
 }
 h2 {
