@@ -395,6 +395,88 @@ export default {
     margin: 0 !important; /* Remove any margins */
     float: none !important; /* Prevent floating */
   }
+
+  /* Optimize spacing for 2-page layout */
+  .content-row {
+    margin-bottom: 8px; /* Reduce from 16px */
+  }
+
+  .company-card {
+    padding: 8px; /* Reduce from 16px */
+  }
+
+  .company-name {
+    font-size: 1.1rem; /* Reduce from 1.25rem */
+    margin-bottom: 4px; /* Reduce from 8px */
+  }
+
+  .company-address {
+    margin-bottom: 4px; /* Reduce from 8px */
+    font-size: 0.9rem;
+  }
+
+  .company-info {
+    margin-bottom: 4px; /* Reduce from 8px */
+    font-size: 0.9rem;
+  }
+
+  .company-logo {
+    width: 100px; /* Reduce from 130px */
+    height: 100px; /* Reduce from 130px */
+  }
+
+  .divider {
+    margin: 8px 0; /* Reduce from 16px */
+  }
+
+  h2.heading {
+    font-size: 1.5rem; /* Reduce from 2rem */
+    margin: 8px 0;
+  }
+
+  /* Optimize table spacing */
+  .v-simple-table {
+    margin: 8px 0;
+  }
+
+  .v-simple-table th,
+  .v-simple-table td {
+    padding: 4px 8px !important;
+    font-size: 0.9rem;
+  }
+
+  /* Optimize signature section */
+  .signature-section {
+    margin-top: 16px; /* Reduce from 30px */
+  }
+
+  .signature-box {
+    padding: 8px; /* Reduce from 16px */
+  }
+
+  .signature-space {
+    height: 60px; /* Reduce from 100px */
+  }
+
+  /* Ensure payment info doesn't take too much space */
+  .payment-info {
+    margin-top: 16px; /* Reduce from 30px */
+    font-size: 0.75em; /* Slightly smaller */
+    line-height: 1.2;
+  }
+
+  /* Force single page break between original and copy */
+  .copy {
+    page-break-before: always;
+  }
+
+  /* Prevent unwanted page breaks */
+  .content-row,
+  .company-card,
+  .invoice-details,
+  .v-simple-table {
+    page-break-inside: avoid;
+  }
 }
 h2 {
   font-weight: 500;
