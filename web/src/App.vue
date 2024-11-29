@@ -99,4 +99,19 @@ export default {
     margin: 0;
   }
 }
+
+/* Global print styles */
+@media print {
+  .v-app-bar {
+    display: none !important;
+  }
+
+  .v-main {
+    padding-top: 0 !important;
+  }
+
+  .v-application {
+    padding-top: 0 !important;
+  }
+}
 </style>
