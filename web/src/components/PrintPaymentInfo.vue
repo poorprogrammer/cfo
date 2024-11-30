@@ -604,6 +604,23 @@ export default {
     padding: 0;
     margin-bottom: 16px;
   }
+  /* Force page breaks */
+  .print-only {
+    page-break-before: always !important;
+    margin-top: 0;
+  }
+
+  /* Ensure first page content stays together */
+  .print-only:first-child {
+    page-break-inside: avoid;
+  }
+
+  /* Remove any margins that might affect page breaks */
+  .content-row:last-child,
+  .signature-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
 }
 h2 {
   font-weight: 500;
