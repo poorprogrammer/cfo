@@ -1,14 +1,10 @@
 <template>
-  <v-col v-if="value" cols="12" sm="6">
-    <v-row dense>
-      <v-col>
-        <span class="font-weight-bold">{{ label }}</span>
-      </v-col>
-      <v-col>
-        {{ value }}
-      </v-col>
-    </v-row>
-  </v-col>
+  <div class="invoice-meta" v-if="value">
+    <div class="invoice-meta-item">
+      <span class="invoice-meta-label">{{ label }}</span>
+      <span class="invoice-meta-value">{{ value }}</span>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -17,3 +13,38 @@ export default {
   props: ["value", "label"],
 };
 </script>
+
+<style>
+.invoice-meta {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 24px;
+  text-align: left;
+}
+@media print {
+  html,
+  body {
+    width: 210mm;
+    height: 297mm;
+  }
+
+  .invoice-meta-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .invoice-meta-label {
+    font-size: 0.8rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+  }
+
+  .invoice-meta-value {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+  }
+}
+</style>

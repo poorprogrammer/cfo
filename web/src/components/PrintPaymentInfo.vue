@@ -477,6 +477,133 @@ export default {
   .v-simple-table {
     page-break-inside: avoid;
   }
+
+  /* Elegant typography and spacing */
+  .company-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+  }
+
+  .company-address {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  /* Header section refinements */
+  h2.heading {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 12px 0;
+  }
+
+  /* Table styling for elegance */
+  .v-simple-table {
+    margin: 16px 0;
+    border-collapse: collapse;
+  }
+
+  .v-simple-table th {
+    font-weight: 600;
+    color: #333;
+    border-bottom: 2px solid #333;
+    padding: 8px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .v-simple-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    color: #444;
+  }
+
+  .v-simple-table tr:last-child td {
+    border-bottom: 2px solid #333;
+  }
+
+  /* Totals section */
+  .v-simple-table tr:nth-last-child(-n + 3) td {
+    font-weight: 500;
+    border-bottom: none;
+  }
+
+  .v-simple-table tr:last-child td {
+    font-weight: 600;
+    border-top: 2px solid #333;
+    padding-top: 12px;
+  }
+
+  /* Company info grid */
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .info-grid .base-text {
+    font-size: 0.85rem;
+    color: #444;
+  }
+
+  .info-grid .base-text span:first-child {
+    font-weight: 600;
+    color: #333;
+    margin-right: 4px;
+  }
+
+  /* Signature section refinements */
+  .signature-section {
+    margin-top: 24px;
+  }
+
+  .signature-box {
+    border: 1px solid #333;
+    padding: 12px;
+  }
+
+  .signature-space {
+    height: 70px;
+  }
+
+  .signature-line {
+    border-top: 1px solid #333;
+  }
+
+  .signature-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+    margin-top: 4px;
+  }
+
+  /* Logo sizing */
+  .company-logo {
+    width: 110px;
+    height: 110px;
+  }
+
+  /* Payment info */
+  .payment-info {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.4;
+    margin-top: 16px;
+    font-style: italic;
+  }
+
+  /* Invoice number and date styling */
+  .invoice-details {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+    margin-bottom: 16px;
+  }
 }
 h2 {
   font-weight: 500;
