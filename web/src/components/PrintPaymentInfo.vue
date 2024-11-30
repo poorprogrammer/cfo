@@ -143,7 +143,7 @@
           </div>
         </div>
 
-        <div class="signature-section print-only">
+        <div class="signature-section">
           <div class="signature-container">
             <div class="signature-box">
               <div class="signature-space"></div>
