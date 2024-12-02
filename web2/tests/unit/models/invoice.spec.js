@@ -288,8 +288,8 @@ describe("Invoice", () => {
       it("new item is added before the given item", () => {
         invoice.addItemBefore(invoice.items[0]);
         expect(invoice.getItems()[0].name).toEqual("");
-        expect(invoice.getItems()[0].price).toEqual("");
-        expect(invoice.getItems()[0].amount).toEqual("");
+        expect(invoice.getItems()[0].price).toEqual(0);
+        expect(invoice.getItems()[0].amount).toEqual(0);
       });
       it("new item can get price or adding would fail to render", () => {
         invoice.addItemBefore(invoice.items[0]);
@@ -298,8 +298,8 @@ describe("Invoice", () => {
       it("add last item when click on add before total", () => {
         invoice.addItemBefore();
         expect(invoice.getItems()[2].name).toEqual("");
-        expect(invoice.getItems()[2].price).toEqual("");
-        expect(invoice.getItems()[2].amount).toEqual("");
+        expect(invoice.getItems()[2].price).toEqual(0);
+        expect(invoice.getItems()[2].amount).toEqual(0);
       });
       it("remove should decrease total length", () => {
         invoice.removeItem(invoice.items[0]);

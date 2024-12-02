@@ -1,72 +1,74 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import Invoice from "@/models/Invoice";
 
 export default class InvoiceService {
+  protected root: string;
+
   constructor() {
     this.root = process.env.VUE_APP_BASE_API;
   }
 
-  allUrl(year) {
+  protected allUrl(year: number): string {
     return `${this.collectionUrl()}${year}`;
   }
 
-  collectionUrl() {
+  protected collectionUrl(): string {
     return `${this.root}/invoices/`;
   }
 
-  itemUrl(invoiceNumber) {
+  protected itemUrl(invoiceNumber: string): string {
     return `${this.root}/invoice/${invoiceNumber}`;
   }
 
-  getAll(year) {
+  getAll(year: number): Promise<Invoice[]> {
     return axios.get(this.allUrl(year)).then(this.parseAll);
   }
 
-  get(invoiceNumber) {
+  get(invoiceNumber: string): Promise<Invoice> {
     return axios.get(this.itemUrl(invoiceNumber)).then(this.parseItem);
   }
 
-  save(invoice) {
+  save(invoice: Invoice): Promise<string> {
     return axios
       .post(this.collectionUrl(), this.createDTO(invoice))
       .then(this.parseNumber);
   }
 
-  delete(invoice) {
+  delete(invoice: Invoice): Promise<Invoice> {
     invoice.markAsDeleted();
     return this.update(invoice);
   }
 
-  update(invoice) {
-    let url = this.itemUrl(invoice.number);
+  update(invoice: Invoice): Promise<Invoice> {
+    const url = this.itemUrl(invoice.number);
     return axios.put(url, this.createDTO(invoice)).then(this.parseItem);
   }
 
-  parseAll = (response) => {
-    let invoices = [];
-    response.data.forEach((invoice) => {
+  protected parseAll = (response: AxiosResponse): Invoice[] => {
+    const invoices: Invoice[] = [];
+    response.data.forEach((invoice: any) => {
       invoices.push(this.createItem(invoice));
     });
     return invoices;
   };
 
-  parseItem = (response) => {
+  protected parseItem = (response: AxiosResponse): Invoice => {
     return this.createItem(response.data);
   };
 
-  parseNumber = (response) => {
+  protected parseNumber = (response: AxiosResponse): string => {
     return response.data;
   };
 
-  createItem = (item) => {
+  protected createItem = (item: any): Invoice => {
     return new Invoice(item);
   };
 
-  createDTO = (invoice) => {
-    let dto = {};
+  protected createDTO = (invoice: Invoice): any => {
+    const dto: any = {};
     Object.assign(dto, invoice);
     if (!dto.items) return dto;
-    dto.items.forEach((item) => {
+    dto.items.forEach((item: any) => {
       delete item.item;
     });
     return dto;

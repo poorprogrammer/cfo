@@ -1,7 +1,12 @@
-import { InvoiceService } from "./InvoiceService";
-import type { PaymentInfoItem } from "./types";
+import Quotation from "@/models/Quotation";
+import InvoiceService from "@/services/InvoiceService";
 
-export class QuotationService extends InvoiceService {
+export default class QuotationService extends InvoiceService {
+  constructor() {
+    super();
+    this.root = process.env.VUE_APP_BASE_API;
+  }
+
   protected collectionUrl(): string {
     return `${this.root}/quotations/`;
   }
@@ -10,10 +15,7 @@ export class QuotationService extends InvoiceService {
     return `${this.root}/quotation/${quotationNumber}`;
   }
 
-  protected createItem(item: any): PaymentInfoItem {
-    return {
-      ...item,
-      documentType: "Quotation",
-    };
-  }
+  protected createItem = (item: any): Quotation => {
+    return new Quotation(item);
+  };
 }
