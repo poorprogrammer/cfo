@@ -21,30 +21,22 @@ export default {
   gap: 24px;
   text-align: left;
 }
-@media print {
-  html,
-  body {
-    width: 210mm;
-    height: 297mm;
-  }
+.invoice-meta-item {
+  display: flex;
+  flex-direction: column;
+}
 
-  .invoice-meta-item {
-    display: flex;
-    flex-direction: column;
-  }
+.invoice-meta-label {
+  font-size: 0.8rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
 
-  .invoice-meta-label {
-    font-size: 0.8rem;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 2px;
-  }
-
-  .invoice-meta-value {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #333;
-  }
+.invoice-meta-value {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
 }
 </style>
