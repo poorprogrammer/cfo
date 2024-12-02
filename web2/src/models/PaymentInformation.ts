@@ -186,9 +186,9 @@ export default class PaymentInformation {
   }
 
   formatDate(date: Date): string {
-    let y = this.year(date);
-    let m = this.month(date);
-    let d = date.getDate().toString().padStart(2, "0");
+    const y = this.year(date);
+    const m = this.month(date);
+    const d = date.getDate().toString().padStart(2, "0");
     return `${y}-${m}-${d}`;
   }
 

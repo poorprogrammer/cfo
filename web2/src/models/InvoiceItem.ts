@@ -2,7 +2,7 @@ import PaymentInformation from "./PaymentInformation";
 
 export default class InvoiceItem {
   protected name: string;
-  protected t: number;
+  public t: number;
   protected invoice: PaymentInformation;
 
   constructor(name: string, t: number, invoice: PaymentInformation) {

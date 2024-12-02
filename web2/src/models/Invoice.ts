@@ -67,4 +67,15 @@ export default class Invoice {
       this.invoiceNumber
     }-cancelled-${this.currentTimestamp()}`;
   }
+
+  get number(): string {
+    return this.invoiceNumber;
+  }
+
+  getTotal(): number {
+    return this.items.reduce(
+      (sum, item) => sum + parseFloat(item.price) * item.amount,
+      0
+    );
+  }
 }

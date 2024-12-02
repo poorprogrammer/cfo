@@ -1,8 +1,10 @@
 import InvoiceItem from "./InvoiceItem";
-import PaymentInformation from "./PaymentInformation";
+import PaymentInformation, {
+  PaymentInformationData,
+} from "./PaymentInformation";
 import Invoice from "./Invoice";
 
-interface ReceiptData {
+interface ReceiptData extends PaymentInformationData {
   receiptNumber?: string;
   receiptDate?: string;
 }
@@ -17,19 +19,19 @@ export default class Receipt extends PaymentInformation {
   ): Receipt {
     const r = new Receipt(invoices[0]);
     r.items = [];
-    invoices.forEach((invoice) => {
+    invoices.forEach((invoice: Invoice) => {
       const item = r.createPricedInvoiceItem();
       item.name = invoice.number;
-      item.price = invoice.getTotal();
+      item.price = invoice.getTotal().toString();
       item.amount = 1;
-      r.items.push(item);
+      r.items.push(item as unknown as InvoiceItem);
     });
     r.setDateToday(today);
     r.number = `R${r.newInvoiceNumber(today)}`;
     return r;
   }
 
-  constructor(data?: ReceiptData & PaymentInformationData) {
+  constructor(data?: ReceiptData) {
     super(data);
     if (!data) return;
 
