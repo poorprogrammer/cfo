@@ -1,5 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import Invoice from "@/models/Invoice";
+import PaymentInformation from "@/models/PaymentInformation";
 
 export default class InvoiceService {
   protected root: string;
@@ -60,9 +61,9 @@ export default class InvoiceService {
     return response.data;
   };
 
-  protected createItem = (item: any): Invoice => {
+  protected createItem(item: any): PaymentInformation {
     return new Invoice(item);
-  };
+  }
 
   protected createDTO = (invoice: Invoice): any => {
     const dto: any = {};

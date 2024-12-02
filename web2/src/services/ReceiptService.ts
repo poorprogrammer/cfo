@@ -1,5 +1,6 @@
-import { InvoiceService } from "./InvoiceService";
+import InvoiceService from "@/services/InvoiceService";
 import type { PaymentInfoItem } from "./types";
+import PaymentInformation from "@/models/PaymentInformation";
 
 export class ReceiptService extends InvoiceService {
   protected collectionUrl(): string {
@@ -10,7 +11,7 @@ export class ReceiptService extends InvoiceService {
     return `${this.root}/receipt/${receiptNumber}`;
   }
 
-  protected createItem(item: any): PaymentInfoItem {
+  protected createItem(item: any): PaymentInformation {
     return {
       ...item,
       documentType: "Receipt",

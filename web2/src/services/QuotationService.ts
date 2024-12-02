@@ -1,3 +1,4 @@
+import PaymentInformation from "@/models/PaymentInformation";
 import Quotation from "@/models/Quotation";
 import InvoiceService from "@/services/InvoiceService";
 
@@ -15,7 +16,7 @@ export default class QuotationService extends InvoiceService {
     return `${this.root}/quotation/${quotationNumber}`;
   }
 
-  protected createItem = (item: any): Quotation => {
+  protected createItem(item: any): PaymentInformation {
     return new Quotation(item);
-  };
+  }
 }
