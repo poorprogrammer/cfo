@@ -53,6 +53,17 @@ export default {
 </script>
 
 <style>
+/* Set Roboto as default font for the entire app */
+body {
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: rgb(25, 118, 210);
+}
+
 .app {
   display: flex;
   flex-direction: column;
