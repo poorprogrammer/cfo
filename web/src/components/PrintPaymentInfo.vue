@@ -1,5 +1,5 @@
 <template>
-  <div class="invoice pa-3">
+  <div class="invoice">
     <div v-if="!p.invoice.number">Loading Please wait...</div>
     <div v-else>
       <div
@@ -106,34 +106,32 @@
           </div>
         </div>
 
-        <v-simple-table :class="p.invoice.tablePaddingClass()">
-          <template v-slot:default>
-            <thead>
-              <tr>
-                <th scope="col" class="text-left">Item</th>
-                <th scope="col" class="text-right">Price</th>
-                <th scope="col" class="text-right">Amount</th>
-                <th scope="col" class="text-right">Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="item in p.invoice.getItems()" :key="item.name">
-                <td :class="p.invoice.itemClass()" class="item text-left">
-                  {{ item.name }}
-                </td>
-                <td :class="p.invoice.itemClass()" class="item text-right">
-                  {{ item.getPrice() }}
-                </td>
-                <td :class="p.invoice.itemClass()" class="item text-right">
-                  {{ item.amount }}
-                </td>
-                <td :class="p.invoice.itemClass()" class="item text-right">
-                  {{ item.getTotal() }}
-                </td>
-              </tr>
-            </tbody>
-          </template>
-        </v-simple-table>
+        <table class="simple-table" :class="p.invoice.tablePaddingClass()">
+          <thead>
+            <tr>
+              <th scope="col" class="text-left">Item</th>
+              <th scope="col" class="text-right">Price</th>
+              <th scope="col" class="text-right">Amount</th>
+              <th scope="col" class="text-right">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="item in p.invoice.getItems()" :key="item.name">
+              <td :class="p.invoice.itemClass()" class="item text-left">
+                {{ item.name }}
+              </td>
+              <td :class="p.invoice.itemClass()" class="item text-right">
+                {{ item.getPrice() }}
+              </td>
+              <td :class="p.invoice.itemClass()" class="item text-right">
+                {{ item.amount }}
+              </td>
+              <td :class="p.invoice.itemClass()" class="item text-right">
+                {{ item.getTotal() }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
         <div class="content-row">
           <div v-if="p.invoice.payment" class="full-width">
@@ -188,7 +186,97 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+.invoice {
+  padding: 1rem;
+}
+
+.simple-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  background-color: white;
+}
+
+.simple-table th {
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: thin solid rgba(0, 0, 0, 0.12);
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.simple-table td {
+  padding: 0.75rem;
+  border-bottom: thin solid rgba(0, 0, 0, 0.12);
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* Print styles */
+@media print {
+  html,
+  body {
+    width: 210mm;
+    height: 297mm;
+  }
+  #from-company-logo {
+    -webkit-print-color-adjust: exact;
+  }
+  div.print-only {
+    display: block;
+  }
+  div.print-only.signature {
+    display: flex;
+  }
+  .no-print {
+    display: none;
+  }
+  .invoice-id {
+    min-height: 220px;
+  }
+  .to-company {
+    min-height: 220px;
+  }
+  .payment-info {
+    margin-top: 30px;
+  }
+  td.item.small {
+    padding: 2px;
+    height: 24px;
+  }
+  main.v-main {
+    padding: 0px !important;
+  }
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+  }
+  .info-grid .base-text {
+    font-size: 0.9em;
+  }
+  .info-grid .base-text span {
+    white-space: nowrap;
+  }
+  .invoice-details {
+    padding: 8px;
+    min-height: auto;
+  }
+  .print-only {
+    page-break-before: always !important;
+    margin-top: 0;
+  }
+  .print-only:first-child {
+    page-break-inside: avoid;
+  }
+}
+
 .content-row {
   display: flex;
   margin-bottom: 16px;
@@ -318,9 +406,6 @@ export default {
     width: 210mm;
     height: 297mm;
   }
-  .v-app-bar {
-    display: none !important;
-  }
   #from-company-logo {
     -webkit-print-color-adjust: exact;
   }
@@ -333,34 +418,16 @@ export default {
   .no-print {
     display: none;
   }
-  .v-application .mb-4 {
-    margin-bottom: 0px !important;
-  }
-  .v-application .title {
-    line-height: 1rem;
-  }
-  .v-application .pa-2 .v-application .pd-3 {
-    padding: 0px;
-  }
-  .v-application .v-card__text {
-    padding: 2px;
-  }
-  .v-application .invoice-id {
+  .invoice-id {
     min-height: 220px;
   }
-  .v-application .to-company {
+  .to-company {
     min-height: 220px;
   }
-  .v-application .v-data-table {
-    min-height: 384px;
-  }
-  .v-application .v-data-table.dense {
-    min-height: 304px;
-  }
-  .v-application .payment-info {
+  .payment-info {
     margin-top: 30px;
   }
-  .v-application td.item.small {
+  td.item.small {
     padding: 2px;
     height: 24px;
   }
@@ -381,245 +448,12 @@ export default {
     padding: 8px;
     min-height: auto;
   }
-  .signature-section {
-    display: block !important; /* Force block display when printing */
-  }
-
-  .signature-container {
-    display: flex !important; /* Force flex display when printing */
-    page-break-inside: avoid;
-  }
-
-  .signature-box {
-    width: 50% !important; /* Force width when printing */
-    margin: 0 !important; /* Remove any margins */
-    float: none !important; /* Prevent floating */
-  }
-
-  /* Optimize spacing for 2-page layout */
-  .content-row {
-    margin-bottom: 8px; /* Reduce from 16px */
-  }
-
-  .company-card {
-    padding: 8px; /* Reduce from 16px */
-  }
-
-  .company-name {
-    font-size: 1.1rem; /* Reduce from 1.25rem */
-    margin-bottom: 4px; /* Reduce from 8px */
-  }
-
-  .company-address {
-    margin-bottom: 4px; /* Reduce from 8px */
-    font-size: 0.9rem;
-  }
-
-  .company-info {
-    margin-bottom: 4px; /* Reduce from 8px */
-    font-size: 0.9rem;
-  }
-
-  .company-logo {
-    width: 100px; /* Reduce from 130px */
-    height: 100px; /* Reduce from 130px */
-  }
-
-  .divider {
-    margin: 8px 0; /* Reduce from 16px */
-  }
-
-  h2.heading {
-    font-size: 1.5rem; /* Reduce from 2rem */
-    margin: 8px 0;
-  }
-
-  /* Optimize table spacing */
-  .v-simple-table {
-    margin: 8px 0;
-  }
-
-  .v-simple-table th,
-  .v-simple-table td {
-    padding: 4px 8px !important;
-    font-size: 0.9rem;
-  }
-
-  /* Optimize signature section */
-  .signature-section {
-    margin-top: 16px; /* Reduce from 30px */
-  }
-
-  .signature-box {
-    padding: 8px; /* Reduce from 16px */
-  }
-
-  .signature-space {
-    height: 60px; /* Reduce from 100px */
-  }
-
-  /* Ensure payment info doesn't take too much space */
-  .payment-info {
-    margin-top: 16px; /* Reduce from 30px */
-    font-size: 0.75em; /* Slightly smaller */
-    line-height: 1.2;
-  }
-
-  /* Force single page break between original and copy */
-  .copy {
-    page-break-before: always;
-  }
-
-  /* Prevent unwanted page breaks */
-  .content-row,
-  .company-card,
-  .invoice-details,
-  .v-simple-table {
-    page-break-inside: avoid;
-  }
-
-  /* Elegant typography and spacing */
-  .company-name {
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 6px;
-  }
-
-  .company-address {
-    font-size: 0.9rem;
-    color: #555;
-    line-height: 1.4;
-  }
-
-  /* Header section refinements */
-  h2.heading {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: #333;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 12px 0;
-  }
-
-  /* Table styling for elegance */
-  .v-simple-table {
-    margin: 16px 0;
-    border-collapse: collapse;
-  }
-
-  .v-simple-table th {
-    font-weight: 600;
-    color: #333;
-    border-bottom: 2px solid #333;
-    padding: 8px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .v-simple-table td {
-    padding: 8px;
-    border-bottom: 1px solid #ddd;
-    color: #444;
-  }
-
-  .v-simple-table tr:last-child td {
-    border-bottom: 2px solid #333;
-  }
-
-  /* Totals section */
-  .v-simple-table tr:nth-last-child(-n + 3) td {
-    font-weight: 500;
-    border-bottom: none;
-  }
-
-  .v-simple-table tr:last-child td {
-    font-weight: 600;
-    border-top: 2px solid #333;
-    padding-top: 12px;
-  }
-
-  /* Company info grid */
-  .info-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 6px;
-  }
-
-  .info-grid .base-text {
-    font-size: 0.85rem;
-    color: #444;
-  }
-
-  .info-grid .base-text span:first-child {
-    font-weight: 600;
-    color: #333;
-    margin-right: 4px;
-  }
-
-  /* Signature section refinements */
-  .signature-section {
-    margin-top: 24px;
-  }
-
-  .signature-box {
-    border: 1px solid #333;
-    padding: 12px;
-  }
-
-  .signature-space {
-    height: 70px;
-  }
-
-  .signature-line {
-    border-top: 1px solid #333;
-  }
-
-  .signature-label {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: #333;
-    margin-top: 4px;
-  }
-
-  /* Logo sizing */
-  .company-logo {
-    width: 110px;
-    height: 110px;
-  }
-
-  /* Payment info */
-  .payment-info {
-    font-size: 0.85rem;
-    color: #555;
-    line-height: 1.4;
-    margin-top: 16px;
-    font-style: italic;
-  }
-
-  /* Invoice number and date styling */
-  .invoice-details {
-    display: flex;
-    justify-content: flex-end;
-    padding: 0;
-    margin-bottom: 16px;
-  }
-  /* Force page breaks */
   .print-only {
     page-break-before: always !important;
     margin-top: 0;
   }
-
-  /* Ensure first page content stays together */
   .print-only:first-child {
     page-break-inside: avoid;
-  }
-
-  /* Remove any margins that might affect page breaks */
-  .content-row:last-child,
-  .signature-section:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
   }
 }
 h2 {
