@@ -8,7 +8,7 @@ interface Company {
   tel?: string;
 }
 
-interface PaymentInformationData {
+export interface PaymentInformationData {
   _id?: string;
   companySlug?: string;
   fromCompany?: Company;
