@@ -28,8 +28,8 @@ export default class PricedInvoiceItem {
     return this.item.getCurrency(this.total());
   }
 
-  set price(value: string) {
-    this._price = parseFloat(value);
+  set price(value: number) {
+    this._price = value;
   }
 
   get price(): number {

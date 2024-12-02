@@ -22,7 +22,7 @@ export default class Receipt extends PaymentInformation {
     invoices.forEach((invoice: Invoice) => {
       const item = r.createPricedInvoiceItem();
       item.name = invoice.number;
-      item.price = invoice.getTotal().toString();
+      item.price = invoice.getTotal();
       item.amount = 1;
       r.items.push(item as unknown as InvoiceItem);
     });
