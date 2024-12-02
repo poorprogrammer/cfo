@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
-import Invoice from "@/models/Invoice";
 import PaymentInformation from "@/models/PaymentInformation";
+import Invoice from "@/models/Invoice";
 
 export default class InvoiceService {
   protected root: string;
@@ -48,13 +48,13 @@ export default class InvoiceService {
   protected parseAll = (response: AxiosResponse): Invoice[] => {
     const invoices: Invoice[] = [];
     response.data.forEach((invoice: any) => {
-      invoices.push(this.createItem(invoice) as Invoice);
+      invoices.push(this.createItem(invoice) as unknown as Invoice);
     });
     return invoices;
   };
 
   protected parseItem = (response: AxiosResponse): Invoice => {
-    return this.createItem(response.data) as Invoice;
+    return this.createItem(response.data) as unknown as Invoice;
   };
 
   protected parseNumber = (response: AxiosResponse): string => {

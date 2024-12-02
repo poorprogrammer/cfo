@@ -17,7 +17,7 @@ export default class Receipt extends PaymentInformation {
     invoices: Invoice[],
     today: Date = new Date()
   ): Receipt {
-    const r = new Receipt(invoices[0]);
+    const r = new Receipt(invoices[0] as unknown as ReceiptData);
     r.items = [];
     invoices.forEach((invoice: Invoice) => {
       const item = r.createPricedInvoiceItem();

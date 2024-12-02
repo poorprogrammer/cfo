@@ -1,3 +1,5 @@
+import PaymentInformation from "./PaymentInformation";
+
 interface Company {
   name: string;
   address: string;
@@ -5,16 +7,8 @@ interface Company {
   tel: string;
 }
 
-interface Item {
-  name: string;
-  price: string;
-  amount: number;
-  getPrice(): string;
-  getTotal(): string;
-}
-
-export default class Invoice {
-  id?: string;
+export default class Invoice extends PaymentInformation {
+  declare id?: string;
   invoiceNumber = "";
   invoiceDate = "";
   quotationNumber = "";
@@ -33,11 +27,9 @@ export default class Invoice {
     taxId: "",
     tel: "",
   };
-  items: Item[] = [];
-  deleted?: boolean;
-  currency = "THB";
 
   constructor(data: Partial<Invoice>) {
+    super(data);
     Object.assign(this, data);
   }
 
@@ -45,20 +37,8 @@ export default class Invoice {
     return true;
   }
 
-  getItems(): Item[] {
-    return this.items;
-  }
-
-  addItemBefore(): void {
-    this.items.push({ name: "", price: "", amount: 0 } as Item);
-  }
-
   itemClass(): string {
     return this.items.length > 3 ? "small" : "";
-  }
-
-  currentTimestamp(): string {
-    return Date.now().toString();
   }
 
   markAsDeleted(): void {
@@ -70,12 +50,5 @@ export default class Invoice {
 
   get number(): string {
     return this.invoiceNumber;
-  }
-
-  getTotal(): number {
-    return this.items.reduce(
-      (sum, item) => sum + parseFloat(item.price) * item.amount,
-      0
-    );
   }
 }
