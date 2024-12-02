@@ -1,0 +1,1853 @@
+Script started on Mon Dec  2 15:04:44 2024
+]1337;RemoteHost=juacompe@Saphira-2.local]1337;CurrentDir=/Users/juacompe/Projects/github/poorprogrammer/cfo/web2]1337;ShellIntegrationVersion=7;shell=zsh[1m[7m%[27m[1m[0m                                                                                    ]2;juacompe@Saphira-2: ~/Projects/github/poorprogrammer/cfo/web2]1;..mmer/cfo/web2]133;D;0]1337;RemoteHost=juacompe@Saphira-2.local]1337;CurrentDir=/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[0m[27m[24m[J]133;A[01;32m➜  [36mweb2[00m [01;34mgit:([31mmaster[34m) [33m✗[00m ]133;B[K[?1h=[?2004h>....                                                        
+[7mnpm error 404 Not Found - GET https://registry.npmjs.org/@babel%2fpreset-type - Not [7mf[7mound[27m[K
+[7mnpm error 404[27m[K
+[7mnpm error 404  '@babel/preset-type@*' is not in this registry.[27m[K
+[7mnpm error 404[27m[K
+[7mnpm error 404 Note that you can also install from a[27m[K
+[7mnpm error 404 tarball, folder, http url, or git url.[27m[K
+[7mnpm error A complete log of this run can be found in: /Users/juacompe/.npm/_logs/202[27m [K
+[7mnpm error A complete log of this run can be found in: /Users/juacompe/.npm/_logs/202[7m4[7m-12-02T08_04_42_211Z-debug-0.log[27m[K
+[7mScript started, output file is babel-jest[27m[K[11A[27mn[27mp[27mm[27m [27me[27mr[27mr[27mo[27mr[27m [27m4[27m0[27m4[27m [27mN[27mo[27mt[27m [27mF[27mo[27mu[27mn[27md[27m [27m-[27m [27mG[27mE[27mT[27m [27mh[27mt[27mt[27mp[27ms[27m:[27m/[27m/[27mr[27me[27mg[27mi[27ms[27mt[27mr[27my[27m.[27mn[27mp[27mm[27mj[27ms[27m.[27mo[27mr[27mg[27m/[27m@[27mb[27ma[27mb[27me[27ml[27m%[27m2[27mf[27mp[27mr[27me[27ms[27me[27mt[27m-[27mt[27my[27mp[27me[27m [27m-[27m [27mN[27mo[27mt[27m f[27mo[27mu[27mn[27md[1B[27mn[27mp[27mm[27m [27me[27mr[27mr[27mo[27mr[27m [27m4[27m0[27m4[1B[27mn[27mp[27mm[27m [27me[27mr[27mr[27mo[27mr[27m [27m4[27m0[27m4[27m [27m [27m'[27m@[27mb[27ma[27mb[27me[27ml[27m/[27mp[27mr[27me[27ms[27me[27mt[27m-[27mt[27my[27mp[27me[27m@[27m*[27m'[27m [27mi[27ms[27m [27mn[27mo[27mt[27m [27mi[27mn[27m [27mt[27mh[27mi[27ms[27m [27mr[27me[27mg[27mi[27ms[27mt[27mr[27my[27m.[1B[27mn[27mp[27mm[27m [27me[27mr[27mr[27mo[27mr[27m [27m4[27m0[27m4[1B[27mn[27mp[27mm[27m [27me[27mr[27mr[27mo[27mr[27m [27m4[27m0[27m4[27m [27mN[27mo[27mt[27me[27m [27mt[27mh[27ma[27mt[27m [27my[27mo[27mu[27m [27mc[27ma[27mn[27m [27ma[27ml[27ms[27mo[27m [27mi[27mn[27ms[27mt[27ma[27ml[27ml[27m [27mf[27mr[27mo[27mm[27m [27ma[1B[27mn[27mp[27mm[27m [27me[27mr[27mr[27mo[27mr[27m [27m4[27m0[27m4[27m [27mt[27ma[27mr[27mb[27ma[27ml[27ml[27m,[27m [27mf[27mo[27ml[27md[27me[27mr[27m,[27m [27mh[27mt[27mt[27mp[27m [27mu[27mr[27ml[27m,[27m [27mo[27mr[27m [27mg[27mi[27mt[27m [27mu[27mr[27ml[27m.[1B[27mn[27mp[27mm[27m [27me[27mr[27mr[27mo[27mr[27m [27mA[27m [27mc[27mo[27mm[27mp[27ml[27me[27mt[27me[27m [27ml[27mo[27mg[27m [27mo[27mf[27m [27mt[27mh[27mi[27ms[27m [27mr[27mu[27mn[27m [27mc[27ma[27mn[27m [27mb[27me[27m [27mf[27mo[27mu[27mn[27md[27m [27mi[27mn[27m:[27m [27m/[27mU[27ms[27me[27mr[27ms[27m/[27mj[27mu[27ma[27mc[27mo[27mm[27mp[27me[27m/[27m.[27mn[27mp[27mm[27m/[27m_[27ml[27mo[27mg[27ms[27m/[27m2[27m0[27m2 [1B[27mn[27mp[27mm[27m [27me[27mr[27mr[27mo[27mr[27m [27mA[27m [27mc[27mo[27mm[27mp[27ml[27me[27mt[27me[27m [27ml[27mo[27mg[27m [27mo[27mf[27m [27mt[27mh[27mi[27ms[27m [27mr[27mu[27mn[27m [27mc[27ma[27mn[27m [27mb[27me[27m [27mf[27mo[27mu[27mn[27md[27m [27mi[27mn[27m:[27m [27m/[27mU[27ms[27me[27mr[27ms[27m/[27mj[27mu[27ma[27mc[27mo[27mm[27mp[27me[27m/[27m.[27mn[27mp[27mm[27m/[27m_[27ml[27mo[27mg[27ms[27m/[27m2[27m0[27m24[27m-[27m1[27m2[27m-[27m0[27m2[27mT[27m0[27m8[27m_[27m0[27m4[27m_[27m4[27m2[27m_[27m2[27m1[27m1[27mZ[27m-[27md[27me[27mb[27mu[27mg[27m-[27m0[27m.[27ml[27mo[27mg[1B[27mS[27mc[27mr[27mi[27mp[27mt[27m [27ms[27mt[27ma[27mr[27mt[27me[27md[27m,[27m [27mo[27mu[27mt[27mp[27mu[27mt[27m [27mf[27mi[27ml[27me[27m [27mi[27ms[27m [27mb[27ma[27mb[27me[27ml[27m-[27mj[27me[27ms[27mt[?2004l
+[1m[7m%[27m[1m[0m                                                                                    ]2;juacompe@Saphira-2: ~/Projects/github/poorprogrammer/cfo/web2]1;..mmer/cfo/web2]133;C;]133;D;1]1337;RemoteHost=juacompe@Saphira-2.local]1337;CurrentDir=/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[0m[27m[24m[J]133;A[01;31m➜  [36mweb2[00m [01;34mgit:([31mmaster[34m) [33m✗[00m ]133;B[K[?1h=[?2004h[?2004l
+[1m[7m%[27m[1m[0m                                                                                    ]2;juacompe@Saphira-2: ~/Projects/github/poorprogrammer/cfo/web2]1;..mmer/cfo/web2]133;C;]133;D;130]1337;RemoteHost=juacompe@Saphira-2.local]1337;CurrentDir=/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[0m[27m[24m[J]133;A[01;31m➜  [36mweb2[00m [01;34mgit:([31mmaster[34m) [33m✗[00m ]133;B[K[?1h=[?2004h[7myarn add -D vitest[27m[18D[27my[27ma[27mr[27mn[27m [27ma[27md[27md[27m [27m-[27mD[27m [27mv[27mi[27mt[27me[27ms[27mt[?1l>[?2004l
+]2;yarn add -D vitest]1;yarn]133;C;[2K[1G[1myarn add v1.22.22[22m
+[2K[1G[31merror[39m SyntaxError: /Users/juacompe/Projects/github/poorprogrammer/cfo/package.json: Unexpected end of JSON input
+    at JSON.parse (<anonymous>)
+    at /Users/juacompe/.nvm/versions/node/v22.4.1/lib/node_modules/yarn/lib/cli.js:1629:59
+    at Generator.next (<anonymous>)
+    at step (/Users/juacompe/.nvm/versions/node/v22.4.1/lib/node_modules/yarn/lib/cli.js:310:30)
+    at /Users/juacompe/.nvm/versions/node/v22.4.1/lib/node_modules/yarn/lib/cli.js:321:13
+[2K[1G[34minfo[39m Visit [1mhttps://yarnpkg.com/en/docs/cli/add[22m for documentation about this command.
+[1m[7m%[27m[1m[0m                                                                                    ]2;juacompe@Saphira-2: ~/Projects/github/poorprogrammer/cfo/web2]1;..mmer/cfo/web2]133;D;1]1337;RemoteHost=juacompe@Saphira-2.local]1337;CurrentDir=/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[0m[27m[24m[J]133;A[01;31m➜  [36mweb2[00m [01;34mgit:([31mmaster[34m) [33m✗[00m ]133;B[K[?1h=[?2004hnnpm t[?1l>[?2004l
+]2;npm t]1;npm]133;C;
+> web2@0.1.0 test
+> vitest
+
+[1G[0K[33m[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m[39m
+
+[1m[7m[34m DEV [39m[27m[22m [34mv2.1.6 [39m[90m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[39m
+
+[?25l [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+
+[31m[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Suites 9 [27m[22m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/PricedInvoiceItem.spec.js[2m [ tests/unit/models/PricedInvoiceItem.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/invoice.spec.js[2m [ tests/unit/models/invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/quotation.spec.js[2m [ tests/unit/models/quotation.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/receipt.spec.js[2m [ tests/unit/models/receipt.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Invoice.spec.js[2m [ tests/unit/presenters/Invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/InvoiceList.spec.js[2m [ tests/unit/presenters/InvoiceList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Login.spec.js[2m [ tests/unit/presenters/Login.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/PaymentInfoList.spec.js[2m [ tests/unit/presenters/PaymentInfoList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/services/invoices.spec.js[2m [ tests/unit/services/invoices.spec.js ][22m[39m
+[31m[31m[1mError[22m: Invariant violation: "new TextEncoder().encode("") instanceof Uint8Array" is incorrectly false
+
+This indicates that your JavaScript environment is broken. You cannot use
+esbuild in this environment because esbuild relies on this invariant. This
+is not a problem with esbuild. You need to fix your environment instead.
+[39m[39m
+[31m[36m [2m❯[22m Object.<anonymous> node_modules/esbuild/lib/main.js:[2m201:9[22m[39m[39m
+[31m    [90m199| [39m}
+    [90m200| [39m[35mif[39m ([33m![39m([34mencodeUTF8[39m([32m""[39m) [35minstanceof[39m [33mUint8Array[39m))
+    [90m201| [39m  [35mthrow[39m [35mnew[39m [33mError[39m([32m`Invariant violation: "[39m[36m${[39mencodeInvariant[36m}[39m[32m instanceof Uin[39m…
+    [90m   | [39m        [31m^[39m
+    [90m202| [39m
+    [90m203| [39mThis indicates that your JavaScript environment is broken. You cannot use[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯[22m[39m
+[39m
+[2m Test Files [22m [1m[31m9 failed[39m[22m[90m (9)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 15:13:45
+[2m   Duration [22m 1.90s[2m (transform 23ms, setup 0ms, collect 0ms, tests 0ms, environment 1.86s, prepare 400ms)[22m
+
+[1m[7m[31m FAIL [39m[27m[22m [31mTests failed. Watching for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
+c[3J[1m[7m[34m RERUN [39m[27m[22m [34m[2mpackage.json [22m[39m
+
+[?25l [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+
+[31m[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Suites 9 [27m[22m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/invoice.spec.js[2m [ tests/unit/models/invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/receipt.spec.js[2m [ tests/unit/models/receipt.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/quotation.spec.js[2m [ tests/unit/models/quotation.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Invoice.spec.js[2m [ tests/unit/presenters/Invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/services/invoices.spec.js[2m [ tests/unit/services/invoices.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/PaymentInfoList.spec.js[2m [ tests/unit/presenters/PaymentInfoList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/InvoiceList.spec.js[2m [ tests/unit/presenters/InvoiceList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Login.spec.js[2m [ tests/unit/presenters/Login.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/PricedInvoiceItem.spec.js[2m [ tests/unit/models/PricedInvoiceItem.spec.js ][22m[39m
+[31m[31m[1mError[22m: Invariant violation: "new TextEncoder().encode("") instanceof Uint8Array" is incorrectly false
+
+This indicates that your JavaScript environment is broken. You cannot use
+esbuild in this environment because esbuild relies on this invariant. This
+is not a problem with esbuild. You need to fix your environment instead.
+[39m[39m
+[31m[36m [2m❯[22m Object.<anonymous> node_modules/esbuild/lib/main.js:[2m201:9[22m[39m[39m
+[31m    [90m199| [39m}
+    [90m200| [39m[35mif[39m ([33m![39m([34mencodeUTF8[39m([32m""[39m) [35minstanceof[39m [33mUint8Array[39m))
+    [90m201| [39m  [35mthrow[39m [35mnew[39m [33mError[39m([32m`Invariant violation: "[39m[36m${[39mencodeInvariant[36m}[39m[32m instanceof Uin[39m…
+    [90m   | [39m        [31m^[39m
+    [90m202| [39m
+    [90m203| [39mThis indicates that your JavaScript environment is broken. You cannot use[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯[22m[39m
+[39m
+[2m Test Files [22m [1m[31m9 failed[39m[22m[90m (9)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 15:15:26
+[2m   Duration [22m 0ms
+
+[1m[7m[31m FAIL [39m[27m[22m [31mTests failed. Watching for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
+c[3J[1m[7m[34m RERUN [39m[27m[22m [34m[2mvitest.setup.ts [22m[39m
+
+[?25l [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+
+[31m[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Suites 9 [27m[22m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/invoice.spec.js[2m [ tests/unit/models/invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/receipt.spec.js[2m [ tests/unit/models/receipt.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/quotation.spec.js[2m [ tests/unit/models/quotation.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Invoice.spec.js[2m [ tests/unit/presenters/Invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/services/invoices.spec.js[2m [ tests/unit/services/invoices.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/PaymentInfoList.spec.js[2m [ tests/unit/presenters/PaymentInfoList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/InvoiceList.spec.js[2m [ tests/unit/presenters/InvoiceList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Login.spec.js[2m [ tests/unit/presenters/Login.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/PricedInvoiceItem.spec.js[2m [ tests/unit/models/PricedInvoiceItem.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@vitejs/plugin-vue" from "vitest.setup.ts". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/vitest.setup.ts[39m:2:16
+[33m  1  |  import { defineConfig } from "vitest/config";
+  2  |  import vue from "@vitejs/plugin-vue";
+     |                   ^
+  3  |  export default defineConfig({
+  4  |    plugins: [vue()],[39m[39m
+[31m[36m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m    [90m47164| [39m  info = noop;
+    [90m47165| [39m  _formatError(e, position) {
+    [90m47166| [39m    const err = typeof e === "string" ? new Error(e) : e;
+    [90m   | [39m                                        [31m^[39m
+    [90m47167| [39m    if (err.pluginCode) {
+    [90m47168| [39m      return err;[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯[22m[39m
+[39m
+[2m Test Files [22m [1m[31m9 failed[39m[22m[90m (9)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 15:16:32
+[2m   Duration [22m 0ms
+
+[1m[7m[31m FAIL [39m[27m[22m [31mTests failed. Watching for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
+[31mCancelling test run. Press CTRL+c again to exit forcefully.
+[39m
+[?25h[?25h[1G[0K⠙[1G[0K[1m[7m%[27m[1m[0m                                                                                    ]2;juacompe@Saphira-2: ~/Projects/github/poorprogrammer/cfo/web2]1;..mmer/cfo/web2]133;D;130]1337;RemoteHost=juacompe@Saphira-2.local]1337;CurrentDir=/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[0m[27m[24m[J]133;A[01;31m➜  [36mweb2[00m [01;34mgit:([31mmaster[34m) [33m✗[00m ]133;B[K[?1h=[?2004hnpm t[?1l>[?2004l
+]2;npm t]1;npm]133;C;
+> web2@0.1.0 test
+> vitest
+
+[1G[0K[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mDuplicate key "jsdom" in object literal[0m [duplicate-object-key]
+
+    package.json:54:4:
+[37m      54 │     [32m"jsdom"[37m: "^24.x.x",
+         ╵     [32m~~~~~~~[0m
+
+  The original key "jsdom" is here:
+
+    package.json:45:4:
+[37m      45 │     [32m"jsdom"[37m: "^25.0.1",
+         ╵     [32m~~~~~~~[0m
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mDuplicate key "vitest" in object literal[0m [duplicate-object-key]
+
+    package.json:55:4:
+[37m      55 │     [32m"vitest"[37m: "^1.x.x",
+         ╵     [32m~~~~~~~~[0m
+
+  The original key "vitest" is here:
+
+    package.json:51:4:
+[37m      51 │     [32m"vitest"[37m: "^2.1.6",
+         ╵     [32m~~~~~~~~[0m
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mDuplicate key "@testing-library/vue" in object literal[0m [duplicate-object-key]
+
+    package.json:56:4:
+[37m      56 │     [32m"@testing-library/vue"[37m: "^8.x.x",
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  The original key "@testing-library/vue" is here:
+
+    package.json:25:4:
+[37m      25 │     [32m"@testing-library/vue"[37m: "^7.0.0",
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mDuplicate key "@testing-library/jest-dom" in object literal[0m [duplicate-object-key]
+
+    package.json:57:4:
+[37m      57 │     [32m"@testing-library/jest-dom"[37m: "^6.x.x"
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  The original key "@testing-library/jest-dom" is here:
+
+    package.json:24:4:
+[37m      24 │     [32m"@testing-library/jest-dom"[37m: "^5.16.5",
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[33m[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m[39m
+
+[1m[7m[34m DEV [39m[27m[22m [34mv2.1.6 [39m[90m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[39m
+
+[?25l [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[G[31mCancelling test run. Press CTRL+c again to exit forcefully.
+[39m
+[?25l [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [90m·[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [90m·[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+
+[31m[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Suites 8 [27m[22m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/invoice.spec.js[2m [ tests/unit/models/invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/quotation.spec.js[2m [ tests/unit/models/quotation.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/receipt.spec.js[2m [ tests/unit/models/receipt.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Invoice.spec.js[2m [ tests/unit/presenters/Invoice.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@vitejs/plugin-vue" from "vitest.setup.ts". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/vitest.setup.ts[39m:2:16
+[33m  1  |  import { defineConfig } from "vitest/config";
+  2  |  import vue from "@vitejs/plugin-vue";
+     |                   ^
+  3  |  export default defineConfig({
+  4  |    plugins: [vue()],[39m[39m
+[31m[36m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m    [90m47164| [39m  info = noop;
+    [90m47165| [39m  _formatError(e, position) {
+    [90m47166| [39m    const err = typeof e === "string" ? new Error(e) : e;
+    [90m   | [39m                                        [31m^[39m
+    [90m47167| [39m    if (err.pluginCode) {
+    [90m47168| [39m      return err;[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯[22m[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/InvoiceList.spec.js[2m [ tests/unit/presenters/InvoiceList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Login.spec.js[2m [ tests/unit/presenters/Login.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/PaymentInfoList.spec.js[2m [ tests/unit/presenters/PaymentInfoList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/services/invoices.spec.js[2m [ tests/unit/services/invoices.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@vitejs/plugin-vue" from "vitest.setup.ts". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/vitest.setup.ts[39m:2:16
+[33m  1  |  import { defineConfig } from "vitest/config";
+  2  |  import vue from "@vitejs/plugin-vue";
+     |                   ^
+  3  |  export default defineConfig({
+  4  |    plugins: [vue()],[39m[39m
+[31m[36m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m    [90m47164| [39m  info = noop;
+    [90m47165| [39m  _formatError(e, position) {
+    [90m47166| [39m    const err = typeof e === "string" ? new Error(e) : e;
+    [90m   | [39m                                        [31m^[39m
+    [90m47167| [39m    if (err.pluginCode) {
+    [90m47168| [39m      return err;[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯[22m[39m
+[39m
+[2m Test Files [22m [1m[31m8 failed[39m[22m[90m (9)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 15:16:38
+[2m   Duration [22m 1.52s[2m (transform 12ms, setup 0ms, collect 0ms, tests 0ms, environment 1.56s, prepare 338ms)[22m
+
+[1m[7m[31m FAIL [39m[27m[22m [31mTests failed. Watching for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
+[?25h[?25h[1G[0K⠙[1G[0K[1m[7m%[27m[1m[0m                                                                                    ]2;juacompe@Saphira-2: ~/Projects/github/poorprogrammer/cfo/web2]1;..mmer/cfo/web2]133;D;1]1337;RemoteHost=juacompe@Saphira-2.local]1337;CurrentDir=/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[0m[27m[24m[J]133;A[01;31m➜  [36mweb2[00m [01;34mgit:([31mmaster[34m) [33m✗[00m ]133;B[K[?1h=[?2004hyyarn[?1l>[?2004l
+]2;yarn]1;yarn]133;C;[2K[1G[1myarn install v1.22.22[22m
+[2K[1G[2m[1/4][22m 🔍  Resolving packages...
+[1G⠁ [0K[1G⠂ @testing-library/jest-dom@^6.x.x[0K[1G⠄ @testing-library/jest-dom@^6.x.x[0K[1G⡀ @testing-library/jest-dom@^6.x.x[0K[1G⢀ @testing-library/jest-dom@^6.x.x[0K[1G⠠ @testing-library/jest-dom@^6.x.x[0K[1G⠐ @testing-library/jest-dom@^6.x.x[0K[1G⠈ @testing-library/jest-dom@^6.x.x[0K[1G⠁ @testing-library/jest-dom@^6.x.x[0K[1G⠂ @testing-library/jest-dom@^6.x.x[0K[1G⠄ @testing-library/jest-dom@^6.x.x[0K[1G⡀ @testing-library/jest-dom@^6.x.x[0K[1G⢀ @testing-library/jest-dom@^6.x.x[0K[1G⠠ @testing-library/jest-dom@^6.x.x[0K[1G⠐ @testing-library/jest-dom@^6.x.x[0K[1G⠈ @testing-library/jest-dom@^6.x.x[0K[1G⠁ @testing-library/jest-dom@^6.x.x[0K[1G⠂ color-name@~1.1.4[0K[1G⠄ color-name@~1.1.4[0K[1G⡀ color-name@~1.1.4[0K[1G⢀ color-name@~1.1.4[0K[1G⠠ color-name@~1.1.4[0K[1G⠐ @testing-library/vue@^8.x.x[0K[1G⠈ @testing-library/vue@^8.x.x[0K[1G⠁ @testing-library/vue@^8.x.x[0K[1G⠂ @testing-library/vue@^8.x.x[0K[1G⠄ @testing-library/vue@^8.x.x[0K[1G⡀ @testing-library/vue@^8.x.x[0K[1G⢀ @testing-library/vue@^8.x.x[0K[1G⠠ @testing-library/dom@^9.3.3[0K[1G⠐ regenerator-runtime@^0.14.0[0K[1G⠈ strip-ansi@^6.0.1[0K[1G⠁ jsdom@^24.x.x[0K[1G⠂ jsdom@^24.x.x[0K[1G⠄ debug@^4.3.4[0K[1G⡀ debug@^4.3.4[0K[1G⢀ rrweb-cssom@^0.7.1[0K[1G⠠ universalify@^0.2.0[0K[1G⠐ punycode@^2.3.1[0K[1G⠈ punycode@^2.3.1[0K[1G⠁ vitest@^1.x.x[0K[1G⠂ vitest@^1.x.x[0K[1G⠄ vitest@^1.x.x[0K[1G⡀ vitest@^1.x.x[0K[1G⢀ why-is-node-running@^2.2.2[0K[1G⠠ assertion-error@^1.1.0[0K[1G⠐ strip-final-newline@^3.0.0[0K[1G⠈ picocolors@^1.0.0[0K[1G⠁ stackback@0.0.2[0K[1G⠂ get-func-name@^2.0.1[0K[1G⠄ tinyspy@^2.2.0[0K[1G⡀ mimic-fn@^4.0.0[0K[1G⢀ mimic-fn@^4.0.0[0K[1G⠠ path-key@^4.0.0[0K[1G⠐ pathe@^1.1.2[0K[1G⠈ yocto-queue@^1.0.0[0K[1G⠁ @rollup/rollup-linux-x64-musl@4.28.0[0K[1G⠂ @rollup/rollup-linux-x64-musl@4.28.0[0K[1G⠄ @rollup/rollup-linux-x64-musl@4.28.0[0K[1G⡀ js-tokens@^9.0.1[0K[1G⢀ js-tokens@^9.0.1[0K[1G⠠ @types/estree@^1.0.0[0K[1G⠐ @types/estree@^1.0.0[0K[1G⠈ @types/estree@^1.0.0[0K[1G⠁ @types/estree@^1.0.0[0K[1G⠂ @vitest/coverage-v8@^1.x.x[0K[1G⠄ @vitest/coverage-v8@^1.x.x[0K[1G⡀ @vitest/coverage-v8@^1.x.x[0K[1G⢀ @vitest/coverage-v8@^1.x.x[0K[1G⠠ @vitest/coverage-v8@^1.x.x[0K[1G⠐ istanbul-lib-source-maps@^5.0.4[0K[1G⠈ istanbul-lib-coverage@^3.0.0[0K[1G⠁ istanbul-lib-coverage@^3.0.0[0K[1G⠂ @vitejs/plugin-vue@^5.x.x[0K[1G⠄ @vitejs/plugin-vue@^5.x.x[0K[2K[1G[2K[1G[2m[2/4][22m 🚚  Fetching packages...
+[2K[1G[1G[--------------------------------------------------------------------------] 0/1247[1G[####################----------------------------------------------------] 343/1247[1G[#############################################---------------------------] 779/1247[1G[##################################################################-----] 1156/1247[1G[##################################################################-----] 1163/1247[1G[###################################################################----] 1177/1247[1G[###################################################################----] 1183/1247[1G[#####################################################################--] 1210/1247[1G[#####################################################################--] 1212/1247[1G[#####################################################################--] 1213/1247[1G[#####################################################################--] 1214/1247[1G[#####################################################################--] 1217/1247[1G[#####################################################################--] 1218/1247[1G[######################################################################-] 1221/1247[1G[######################################################################-] 1223/1247[1G[######################################################################-] 1224/1247[1G[######################################################################-] 1225/1247[1G[######################################################################-] 1226/1247[1G[######################################################################-] 1227/1247[1G[######################################################################-] 1228/1247[1G[######################################################################-] 1230/1247[1G[######################################################################-] 1231/1247[1G[######################################################################-] 1232/1247[1G[######################################################################-] 1234/1247[1G[######################################################################-] 1236/1247[1G[######################################################################-] 1237/1247[1G[######################################################################-] 1238/1247[1G[#######################################################################] 1240/1247[1G[#######################################################################] 1241/1247[1G[#######################################################################] 1242/1247[1G[#######################################################################] 1243/1247[1G[#######################################################################] 1244/1247[1G[#######################################################################] 1245/1247[1G[#######################################################################] 1246/1247[2K[1G[2m[3/4][22m 🔗  Linking dependencies...
+[2K[1G[33mwarning[39m " > sass-loader@12.6.0" has unmet peer dependency "webpack@^5.0.0".
+[2K[1G[33mwarning[39m " > @vitejs/plugin-vue@5.2.1" has unmet peer dependency "vite@^5.0.0 || ^6.0.0".
+[1G[#######################################################################] 1247/1247[2K[1G[2K[1G[1G[--------------------------------------------------------------------------] 0/1253[2K[1G[2K[1G[1G[--------------------------------------------------------------------------] 0/1347[1G[###########################---------------------------------------------] 500/1347[1G[###########################---------------------------------------------] 513/1347[1G[#####################################################-------------------] 999/1347[1G[#######################################################################] 1347/1347[2K[1G[2K[1G[1G[--------------------------------------------------------------------------] 0/2297[1G[#############################-------------------------------------------] 920/2297[1G[#####################################################################--] 2248/2297[1G[#######################################################################] 2297/2297[2K[1G[2m[4/4][22m 🔨  Building fresh packages...
+[1G⠁ [0K[1G[2m[1/1][22m ⠂ esbuild[0K[1G[2m[1/1][22m ⠄ esbuild[0K[1G[2m[1/1][22m ⡀ esbuild[0K[1G[2m[1/1][22m ⢀ esbuild[0K[1G[2m[1/1][22m ⠠ esbuild[0K[1G[2m[1/1][22m ⠐ esbuild[0K[1G[2m[1/1][22m ⠈ esbuild[0K[2K[1G[2K[1G[32msuccess[39m Saved lockfile.
+[2K[1G[2K[1G✨  Done in 21.16s.
+[1m[7m%[27m[1m[0m                                                                                    ]2;juacompe@Saphira-2: ~/Projects/github/poorprogrammer/cfo/web2]1;..mmer/cfo/web2]133;D;0]1337;RemoteHost=juacompe@Saphira-2.local]1337;CurrentDir=/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[0m[27m[24m[J]133;A[01;32m➜  [36mweb2[00m [01;34mgit:([31mmaster[34m) [33m✗[00m ]133;B[K[?1h=[?2004hggst[?1l>[?2004l
+]2;git status]1;gst]133;C;On branch master
+Your branch is ahead of 'origin/master' by 7 commits.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	[32mdeleted:    tests/setup.ts[m
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	[31mmodified:   package.json[m
+	[31mmodified:   yarn.lock[m
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	[31m../vitest.config.ts[m
+	[31mbabel-jest[m
+	[31msrc/models/[m
+	[31mtests/[m
+	[31mvitest.config.ts[m
+	[31mvitest.setup.ts[m
+
+[1m[7m%[27m[1m[0m                                                                                    ]2;juacompe@Saphira-2: ~/Projects/github/poorprogrammer/cfo/web2]1;..mmer/cfo/web2]133;D;0]1337;RemoteHost=juacompe@Saphira-2.local]1337;CurrentDir=/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[0m[27m[24m[J]133;A[01;32m➜  [36mweb2[00m [01;34mgit:([31mmaster[34m) [33m✗[00m ]133;B[K[?1h=[?2004hyyar y  nnpm t[?1l>[?2004l
+]2;npm t]1;npm]133;C;
+> web2@0.1.0 test
+> vitest
+
+[1G[0K[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mDuplicate key "jsdom" in object literal[0m [duplicate-object-key]
+
+    package.json:54:4:
+[37m      54 │     [32m"jsdom"[37m: "^24.x.x",
+         ╵     [32m~~~~~~~[0m
+
+  The original key "jsdom" is here:
+
+    package.json:45:4:
+[37m      45 │     [32m"jsdom"[37m: "^25.0.1",
+         ╵     [32m~~~~~~~[0m
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mDuplicate key "vitest" in object literal[0m [duplicate-object-key]
+
+    package.json:55:4:
+[37m      55 │     [32m"vitest"[37m: "^1.x.x",
+         ╵     [32m~~~~~~~~[0m
+
+  The original key "vitest" is here:
+
+    package.json:51:4:
+[37m      51 │     [32m"vitest"[37m: "^2.1.6",
+         ╵     [32m~~~~~~~~[0m
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mDuplicate key "@testing-library/vue" in object literal[0m [duplicate-object-key]
+
+    package.json:56:4:
+[37m      56 │     [32m"@testing-library/vue"[37m: "^8.x.x",
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  The original key "@testing-library/vue" is here:
+
+    package.json:25:4:
+[37m      25 │     [32m"@testing-library/vue"[37m: "^7.0.0",
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mDuplicate key "@testing-library/jest-dom" in object literal[0m [duplicate-object-key]
+
+    package.json:57:4:
+[37m      57 │     [32m"@testing-library/jest-dom"[37m: "^6.x.x"
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  The original key "@testing-library/jest-dom" is here:
+
+    package.json:24:4:
+[37m      24 │     [32m"@testing-library/jest-dom"[37m: "^5.16.5",
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[33m[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m[39m
+
+[7m[1m[34m DEV [39m[22m[27m [34mv1.6.0[39m [90m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[39m
+
+[?25l [33m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+
+[31m[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Suites 9 [27m[22m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m[39m
+[31m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/PricedInvoiceItem.spec.js [2m[ tests/unit/models/PricedInvoiceItem.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/invoice.spec.js [2m[ tests/unit/models/invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/quotation.spec.js [2m[ tests/unit/models/quotation.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/receipt.spec.js [2m[ tests/unit/models/receipt.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Invoice.spec.js [2m[ tests/unit/presenters/Invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/InvoiceList.spec.js [2m[ tests/unit/presenters/InvoiceList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Login.spec.js [2m[ tests/unit/presenters/Login.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/PaymentInfoList.spec.js [2m[ tests/unit/presenters/PaymentInfoList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/services/invoices.spec.js [2m[ tests/unit/services/invoices.spec.js ][22m[39m
+[31m[31m[1mError[22m: Invariant violation: "new TextEncoder().encode("") instanceof Uint8Array" is incorrectly false
+
+This indicates that your JavaScript environment is broken. You cannot use
+esbuild in this environment because esbuild relies on this invariant. This
+is not a problem with esbuild. You need to fix your environment instead.
+[39m[39m
+[31m[90m [2m❯[22m Object.<anonymous> node_modules/esbuild/lib/main.js:[2m201:9[22m[39m[39m
+[31m[90m [2m❯[22m TracingChannel.traceSync node:diagnostics_channel:[2m315:14[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯[22m[39m
+[39m
+[2m Test Files [22m [1m[31m9 failed[39m[22m[90m (9)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 15:17:16
+[2m   Duration [22m 1.11s[2m (transform 15ms, setup 0ms, collect 0ms, tests 0ms, environment 1.81s, prepare 341ms)[22m
+
+
+[1m[7m[31m FAIL [39m[27m[22m[31m Tests failed. Watching for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
+[3Jc
+[7m[1m[34m RERUN [39m[22m[27m[2m package.json[22m
+
+[?25l [33m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+
+[31m[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Suites 9 [27m[22m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m[39m
+[31m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/receipt.spec.js [2m[ tests/unit/models/receipt.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Invoice.spec.js [2m[ tests/unit/presenters/Invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/invoice.spec.js [2m[ tests/unit/models/invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/quotation.spec.js [2m[ tests/unit/models/quotation.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/services/invoices.spec.js [2m[ tests/unit/services/invoices.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Login.spec.js [2m[ tests/unit/presenters/Login.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/PaymentInfoList.spec.js [2m[ tests/unit/presenters/PaymentInfoList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/InvoiceList.spec.js [2m[ tests/unit/presenters/InvoiceList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/PricedInvoiceItem.spec.js [2m[ tests/unit/models/PricedInvoiceItem.spec.js ][22m[39m
+[31m[31m[1mError[22m: Invariant violation: "new TextEncoder().encode("") instanceof Uint8Array" is incorrectly false
+
+This indicates that your JavaScript environment is broken. You cannot use
+esbuild in this environment because esbuild relies on this invariant. This
+is not a problem with esbuild. You need to fix your environment instead.
+[39m[39m
+[31m[90m [2m❯[22m Object.<anonymous> node_modules/esbuild/lib/main.js:[2m201:9[22m[39m[39m
+[31m[90m [2m❯[22m TracingChannel.traceSync node:diagnostics_channel:[2m315:14[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯[22m[39m
+[39m
+[2m Test Files [22m [1m[31m9 failed[39m[22m[90m (9)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 15:17:56
+[2m   Duration [22m 0ms
+
+
+[1m[7m[31m FAIL [39m[27m[22m[31m Tests failed. Watching for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
+[3Jc
+[7m[1m[34m RERUN [39m[22m[27m[2m package.json[22m
+
+[?25l [33m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [33m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [33m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+
+[31m[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Suites 9 [27m[22m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m[39m
+[31m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/invoice.spec.js [2m[ tests/unit/models/invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/quotation.spec.js [2m[ tests/unit/models/quotation.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Invoice.spec.js [2m[ tests/unit/presenters/Invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/receipt.spec.js [2m[ tests/unit/models/receipt.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/services/invoices.spec.js [2m[ tests/unit/services/invoices.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/InvoiceList.spec.js [2m[ tests/unit/presenters/InvoiceList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Login.spec.js [2m[ tests/unit/presenters/Login.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/PaymentInfoList.spec.js [2m[ tests/unit/presenters/PaymentInfoList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/PricedInvoiceItem.spec.js [2m[ tests/unit/models/PricedInvoiceItem.spec.js ][22m[39m
+[31m[31m[1mError[22m: Invariant violation: "new TextEncoder().encode("") instanceof Uint8Array" is incorrectly false
+
+This indicates that your JavaScript environment is broken. You cannot use
+esbuild in this environment because esbuild relies on this invariant. This
+is not a problem with esbuild. You need to fix your environment instead.
+[39m[39m
+[31m[90m [2m❯[22m Object.<anonymous> node_modules/esbuild/lib/main.js:[2m201:9[22m[39m[39m
+[31m[90m [2m❯[22m TracingChannel.traceSync node:diagnostics_channel:[2m315:14[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯[22m[39m
+[39m
+[2m Test Files [22m [1m[31m9 failed[39m[22m[90m (9)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 15:17:57
+[2m   Duration [22m 0ms
+
+
+[1m[7m[31m FAIL [39m[27m[22m[31m Tests failed. Watching for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
+[31mCancelling test run. Press CTRL+c again to exit forcefully.
+[39m
+[?25h[?25h[1G[0K⠙[1G[0K[1m[7m%[27m[1m[0m                                                                                    ]2;juacompe@Saphira-2: ~/Projects/github/poorprogrammer/cfo/web2]1;..mmer/cfo/web2]133;D;130]1337;RemoteHost=juacompe@Saphira-2.local]1337;CurrentDir=/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[0m[27m[24m[J]133;A[01;31m➜  [36mweb2[00m [01;34mgit:([31mmaster[34m) [33m✗[00m ]133;B[K[?1h=[?2004hyyarn [?1l>[?2004l
+]2;yarn]1;yarn]133;C;[2K[1G[1myarn install v1.22.22[22m
+[2K[1G[2m[1/4][22m 🔍  Resolving packages...
+[1G⠁ [0K[1G⠂ jsdom@^25.0.1[0K[1G⠄ jsdom@^25.0.1[0K[1G⡀ jsdom@^25.0.1[0K[1G⢀ debug@^4.3.4[0K[1G⠠ rrweb-cssom@^0.7.1[0K[1G⠐ rrweb-cssom@^0.7.1[0K[1G⠈ rrweb-cssom@^0.7.1[0K[1G⠁ tldts-core@^6.1.65[0K[1G⠂ tldts-core@^6.1.65[0K[1G⠄ vitest@^2.1.6[0K[1G⡀ vitest@^2.1.6[0K[1G⢀ vitest@^2.1.6[0K[1G⠠ vitest@^2.1.6[0K[1G⠐ vitest@^2.1.6[0K[1G⠈ vitest@^2.1.6[0K[1G⠁ vitest@^2.1.6[0K[1G⠂ vitest@^2.1.6[0K[1G⠄ vitest@^2.1.6[0K[1G⡀ vitest@^2.1.6[0K[1G⢀ vitest@^2.1.6[0K[1G⠠ vitest@^2.1.6[0K[1G⠐ vitest@^2.1.6[0K[1G⠈ vitest@^2.1.6[0K[1G⠁ vitest@^2.1.6[0K[1G⠂ @vitest/snapshot@2.1.6[0K[1G⠄ pathval@^2.0.0[0K[1G⡀ pathval@^2.0.0[0K[1G⢀ stackback@0.0.2[0K[1G⠠ stackback@0.0.2[0K[1G⠐ fsevents@~2.3.3[0K[1G⠈ vite@^5.0.0 || ^6.0.0[0K[1G⠁ vite@^5.0.0 || ^6.0.0[0K[1G⠂ @vitest/utils@2.1.6[0K[1G⠄ @vitest/pretty-format@2.1.6[0K[1G⡀ @vitest/pretty-format@2.1.6[0K[1G⢀ @vitest/pretty-format@2.1.6[0K[1G⠠ @esbuild/win32-x64@0.24.0[0K[1G⠐ @esbuild/win32-x64@0.24.0[0K[1G⠈ @esbuild/win32-x64@0.24.0[0K[1G⠁ @esbuild/win32-x64@0.24.0[0K[1G⠂ @esbuild/win32-x64@0.24.0[0K[1G⠄ @esbuild/win32-x64@0.24.0[0K[1G⡀ @esbuild/win32-x64@0.24.0[0K[1G⢀ @esbuild/win32-x64@0.24.0[0K[1G⠠ @esbuild/win32-x64@0.24.0[0K[1G⠐ @esbuild/win32-x64@0.24.0[0K[1G⠈ @esbuild/win32-x64@0.24.0[0K[1G⠁ @esbuild/win32-x64@0.24.0[0K[1G⠂ @esbuild/win32-x64@0.24.0[0K[1G⠄ @esbuild/win32-x64@0.24.0[0K[1G⡀ @esbuild/win32-x64@0.24.0[0K[1G⢀ @esbuild/win32-x64@0.24.0[0K[1G⠠ @esbuild/win32-x64@0.24.0[0K[1G⠐ @esbuild/win32-x64@0.24.0[0K[1G⠈ @esbuild/win32-x64@0.24.0[0K[1G⠁ @esbuild/win32-x64@0.24.0[0K[1G⠂ @esbuild/win32-x64@0.24.0[0K[1G⠄ @esbuild/win32-x64@0.24.0[0K[1G⡀ @esbuild/win32-x64@0.24.0[0K[2K[1G[2K[1G[2m[2/4][22m 🚚  Fetching packages...
+[2K[1G[1G[--------------------------------------------------------------------------] 0/1233[1G[#########################-----------------------------------------------] 423/1233[1G[####################################################--------------------] 892/1233[2K[1G[2m[3/4][22m 🔗  Linking dependencies...
+[2K[1G[33mwarning[39m " > sass-loader@12.6.0" has unmet peer dependency "webpack@^5.0.0".
+[2K[1G[33mwarning[39m " > @vitest/coverage-v8@1.6.0" has incorrect peer dependency "vitest@1.6.0".
+[2K[1G[33mwarning[39m " > @vitejs/plugin-vue@5.2.1" has unmet peer dependency "vite@^5.0.0 || ^6.0.0".
+[1G[#######################################################################] 1233/1233[2K[1G[2K[1G[1G[--------------------------------------------------------------------------] 0/1235[2K[1G[2K[1G[1G[--------------------------------------------------------------------------] 0/1108[1G[#########################-----------------------------------------------] 383/1108[1G[##################################################----------------------] 764/1108[1G[#######################################################################] 1108/1108[2K[1G[2K[1G[1G[--------------------------------------------------------------------------] 0/2277[1G[#######################-------------------------------------------------] 716/2277[1G[####################################################-------------------] 1674/2277[1G[#######################################################################] 2277/2277[2K[1G[2m[4/4][22m 🔨  Building fresh packages...
+[1G⠁ [0K[1G[2m[1/1][22m ⠂ esbuild[0K[1G[2m[1/1][22m ⠄ esbuild[0K[1G[2m[1/1][22m ⡀ esbuild[0K[1G[2m[1/1][22m ⢀ esbuild[0K[1G[2m[1/1][22m ⠠ esbuild[0K[1G[2m[1/1][22m ⠐ esbuild[0K[1G[2m[1/1][22m ⠈ esbuild[0K[1G[2m[1/1][22m ⠁ esbuild[0K[1G[2m[1/1][22m ⠂ esbuild[0K[1G[2m[1/1][22m ⠄ esbuild[0K[2K[1G[2K[1G[32msuccess[39m Saved lockfile.
+[2K[1G[2K[1G✨  Done in 5.65s.
+[1m[7m%[27m[1m[0m                                                                                    ]2;juacompe@Saphira-2: ~/Projects/github/poorprogrammer/cfo/web2]1;..mmer/cfo/web2]133;D;0]1337;RemoteHost=juacompe@Saphira-2.local]1337;CurrentDir=/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[0m[27m[24m[J]133;A[01;32m➜  [36mweb2[00m [01;34mgit:([31mmaster[34m) [33m✗[00m ]133;B[K[?1h=[?2004hyyarn test[?1l>[?2004l
+]2;yarn test]1;yarn]133;C;[2K[1G[1myarn run v1.22.22[22m
+[2K[1G[2m$ vitest[22m
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mDuplicate key "@testing-library/vue" in object literal[0m [duplicate-object-key]
+
+    package.json:54:4:
+[37m      54 │     [32m"@testing-library/vue"[37m: "^8.x.x",
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  The original key "@testing-library/vue" is here:
+
+    package.json:25:4:
+[37m      25 │     [32m"@testing-library/vue"[37m: "^7.0.0",
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mDuplicate key "@testing-library/jest-dom" in object literal[0m [duplicate-object-key]
+
+    package.json:55:4:
+[37m      55 │     [32m"@testing-library/jest-dom"[37m: "^6.x.x"
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+  The original key "@testing-library/jest-dom" is here:
+
+    package.json:24:4:
+[37m      24 │     [32m"@testing-library/jest-dom"[37m: "^5.16.5",
+         ╵     [32m~~~~~~~~~~~~~~~~~~~~~~~~~~~[0m
+
+[33m[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m[39m
+
+[1m[7m[34m DEV [39m[27m[22m [34mv2.1.6 [39m[90m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[39m
+
+[?25l [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+
+[31m[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Suites 9 [27m[22m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/PricedInvoiceItem.spec.js[2m [ tests/unit/models/PricedInvoiceItem.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/invoice.spec.js[2m [ tests/unit/models/invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/quotation.spec.js[2m [ tests/unit/models/quotation.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/receipt.spec.js[2m [ tests/unit/models/receipt.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Invoice.spec.js[2m [ tests/unit/presenters/Invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/InvoiceList.spec.js[2m [ tests/unit/presenters/InvoiceList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Login.spec.js[2m [ tests/unit/presenters/Login.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/PaymentInfoList.spec.js[2m [ tests/unit/presenters/PaymentInfoList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/services/invoices.spec.js[2m [ tests/unit/services/invoices.spec.js ][22m[39m
+[31m[31m[1mError[22m: Invariant violation: "new TextEncoder().encode("") instanceof Uint8Array" is incorrectly false
+
+This indicates that your JavaScript environment is broken. You cannot use
+esbuild in this environment because esbuild relies on this invariant. This
+is not a problem with esbuild. You need to fix your environment instead.
+[39m[39m
+[31m[36m [2m❯[22m Object.<anonymous> node_modules/esbuild/lib/main.js:[2m201:9[22m[39m[39m
+[31m    [90m199| [39m}
+    [90m200| [39m[35mif[39m ([33m![39m([34mencodeUTF8[39m([32m""[39m) [35minstanceof[39m [33mUint8Array[39m))
+    [90m201| [39m  [35mthrow[39m [35mnew[39m [33mError[39m([32m`Invariant violation: "[39m[36m${[39mencodeInvariant[36m}[39m[32m instanceof Uin[39m…
+    [90m   | [39m        [31m^[39m
+    [90m202| [39m
+    [90m203| [39mThis indicates that your JavaScript environment is broken. You cannot use[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯[22m[39m
+[39m
+[2m Test Files [22m [1m[31m9 failed[39m[22m[90m (9)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 15:18:13
+[2m   Duration [22m 1.87s[2m (transform 22ms, setup 0ms, collect 0ms, tests 0ms, environment 1.75s, prepare 391ms)[22m
+
+[1m[7m[31m FAIL [39m[27m[22m [31mTests failed. Watching for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
+c[3J[1m[7m[34m RERUN [39m[27m[22m [34m[2mpackage.json [22m[39m
+
+[?25l [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+
+[31m[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Suites 9 [27m[22m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/invoice.spec.js[2m [ tests/unit/models/invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/receipt.spec.js[2m [ tests/unit/models/receipt.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/quotation.spec.js[2m [ tests/unit/models/quotation.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Invoice.spec.js[2m [ tests/unit/presenters/Invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/services/invoices.spec.js[2m [ tests/unit/services/invoices.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/PaymentInfoList.spec.js[2m [ tests/unit/presenters/PaymentInfoList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/InvoiceList.spec.js[2m [ tests/unit/presenters/InvoiceList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Login.spec.js[2m [ tests/unit/presenters/Login.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/PricedInvoiceItem.spec.js[2m [ tests/unit/models/PricedInvoiceItem.spec.js ][22m[39m
+[31m[31m[1mError[22m: Invariant violation: "new TextEncoder().encode("") instanceof Uint8Array" is incorrectly false
+
+This indicates that your JavaScript environment is broken. You cannot use
+esbuild in this environment because esbuild relies on this invariant. This
+is not a problem with esbuild. You need to fix your environment instead.
+[39m[39m
+[31m[36m [2m❯[22m Object.<anonymous> node_modules/esbuild/lib/main.js:[2m201:9[22m[39m[39m
+[31m    [90m199| [39m}
+    [90m200| [39m[35mif[39m ([33m![39m([34mencodeUTF8[39m([32m""[39m) [35minstanceof[39m [33mUint8Array[39m))
+    [90m201| [39m  [35mthrow[39m [35mnew[39m [33mError[39m([32m`Invariant violation: "[39m[36m${[39mencodeInvariant[36m}[39m[32m instanceof Uin[39m…
+    [90m   | [39m        [31m^[39m
+    [90m202| [39m
+    [90m203| [39mThis indicates that your JavaScript environment is broken. You cannot use[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯[22m[39m
+[39m
+[2m Test Files [22m [1m[31m9 failed[39m[22m[90m (9)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 15:18:39
+[2m   Duration [22m 0ms
+
+[1m[7m[31m FAIL [39m[27m[22m [31mTests failed. Watching for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
+[31mCancelling test run. Press CTRL+c again to exit forcefully.
+[39m
+[?25h[?25h[2K[1G[31merror[39m Command failed with exit code 130.
+[2K[1G[34minfo[39m Visit [1mhttps://yarnpkg.com/en/docs/cli/run[22m for documentation about this command.
+[1m[7m%[27m[1m[0m                                                                                    ]2;juacompe@Saphira-2: ~/Projects/github/poorprogrammer/cfo/web2]1;..mmer/cfo/web2]133;D;130]1337;RemoteHost=juacompe@Saphira-2.local]1337;CurrentDir=/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[0m[27m[24m[J]133;A[01;31m➜  [36mweb2[00m [01;34mgit:([31mmaster[34m) [33m✗[00m ]133;B[K[?1h=[?2004hyarn test[?1l>[?2004l
+]2;yarn test]1;yarn]133;C;[2K[1G[1myarn run v1.22.22[22m
+[2K[1G[2m$ vitest[22m
+[33m[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m[39m
+
+[1m[7m[34m DEV [39m[27m[22m [34mv2.1.6 [39m[90m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[39m
+
+[31mCancelling test run. Press CTRL+c again to exit forcefully.
+[39m
+[?25l [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [90m·[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [90m·[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [90m·[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [90m·[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [90m·[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [90m·[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [90m·[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [90m·[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [90m·[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [90m·[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+
+[31m[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Suites 4 [27m[22m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/invoice.spec.js[2m [ tests/unit/models/invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/quotation.spec.js[2m [ tests/unit/models/quotation.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/receipt.spec.js[2m [ tests/unit/models/receipt.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Invoice.spec.js[2m [ tests/unit/presenters/Invoice.spec.js ][22m[39m
+[31m[31m[1mError[22m: Invariant violation: "new TextEncoder().encode("") instanceof Uint8Array" is incorrectly false
+
+This indicates that your JavaScript environment is broken. You cannot use
+esbuild in this environment because esbuild relies on this invariant. This
+is not a problem with esbuild. You need to fix your environment instead.
+[39m[39m
+[31m[36m [2m❯[22m Object.<anonymous> node_modules/esbuild/lib/main.js:[2m201:9[22m[39m[39m
+[31m    [90m199| [39m}
+    [90m200| [39m[35mif[39m ([33m![39m([34mencodeUTF8[39m([32m""[39m) [35minstanceof[39m [33mUint8Array[39m))
+    [90m201| [39m  [35mthrow[39m [35mnew[39m [33mError[39m([32m`Invariant violation: "[39m[36m${[39mencodeInvariant[36m}[39m[32m instanceof Uin[39m…
+    [90m   | [39m        [31m^[39m
+    [90m202| [39m
+    [90m203| [39mThis indicates that your JavaScript environment is broken. You cannot use[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯[22m[39m
+[39m
+[2m Test Files [22m [1m[31m4 failed[39m[22m[90m (9)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 15:18:43
+[2m   Duration [22m 1.13s[2m (transform 20ms, setup 0ms, collect 0ms, tests 0ms, environment 733ms, prepare 184ms)[22m
+
+[1m[7m[31m FAIL [39m[27m[22m [31mTests failed. Watching for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
+[?25h[?25h[2K[1G[31merror[39m Command failed with exit code 1.
+[2K[1G[34minfo[39m Visit [1mhttps://yarnpkg.com/en/docs/cli/run[22m for documentation about this command.
+[1m[7m%[27m[1m[0m                                                                                    ]2;juacompe@Saphira-2: ~/Projects/github/poorprogrammer/cfo/web2]1;..mmer/cfo/web2]133;D;1]1337;RemoteHost=juacompe@Saphira-2.local]1337;CurrentDir=/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[0m[27m[24m[J]133;A[01;31m➜  [36mweb2[00m [01;34mgit:([31mmaster[34m) [33m✗[00m ]133;B[K[?1h=[?2004hyyarn [?1l>[?2004l
+]2;yarn]1;yarn]133;C;[2K[1G[1myarn install v1.22.22[22m
+[2K[1G[2m[1/4][22m 🔍  Resolving packages...
+[1G⠁ [0K[2K[1G[2K[1G[32msuccess[39m Already up-to-date.
+[2K[1G✨  Done in 0.13s.
+[1m[7m%[27m[1m[0m                                                                                    ]2;juacompe@Saphira-2: ~/Projects/github/poorprogrammer/cfo/web2]1;..mmer/cfo/web2]133;D;0]1337;RemoteHost=juacompe@Saphira-2.local]1337;CurrentDir=/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[0m[27m[24m[J]133;A[01;32m➜  [36mweb2[00m [01;34mgit:([31mmaster[34m) [33m✗[00m ]133;B[K[?1h=[?2004hyarn test[?1l>[?2004l
+]2;yarn test]1;yarn]133;C;[2K[1G[1myarn run v1.22.22[22m
+[2K[1G[2m$ vitest[22m
+[33m[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m[39m
+
+[1m[7m[34m DEV [39m[27m[22m [34mv2.1.6 [39m[90m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[39m
+
+[?25l [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+
+[31m[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Suites 9 [27m[22m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/PricedInvoiceItem.spec.js[2m [ tests/unit/models/PricedInvoiceItem.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/invoice.spec.js[2m [ tests/unit/models/invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/quotation.spec.js[2m [ tests/unit/models/quotation.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/receipt.spec.js[2m [ tests/unit/models/receipt.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Invoice.spec.js[2m [ tests/unit/presenters/Invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/InvoiceList.spec.js[2m [ tests/unit/presenters/InvoiceList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Login.spec.js[2m [ tests/unit/presenters/Login.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/PaymentInfoList.spec.js[2m [ tests/unit/presenters/PaymentInfoList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/services/invoices.spec.js[2m [ tests/unit/services/invoices.spec.js ][22m[39m
+[31m[31m[1mError[22m: Invariant violation: "new TextEncoder().encode("") instanceof Uint8Array" is incorrectly false
+
+This indicates that your JavaScript environment is broken. You cannot use
+esbuild in this environment because esbuild relies on this invariant. This
+is not a problem with esbuild. You need to fix your environment instead.
+[39m[39m
+[31m[36m [2m❯[22m Object.<anonymous> node_modules/esbuild/lib/main.js:[2m201:9[22m[39m[39m
+[31m    [90m199| [39m}
+    [90m200| [39m[35mif[39m ([33m![39m([34mencodeUTF8[39m([32m""[39m) [35minstanceof[39m [33mUint8Array[39m))
+    [90m201| [39m  [35mthrow[39m [35mnew[39m [33mError[39m([32m`Invariant violation: "[39m[36m${[39mencodeInvariant[36m}[39m[32m instanceof Uin[39m…
+    [90m   | [39m        [31m^[39m
+    [90m202| [39m
+    [90m203| [39mThis indicates that your JavaScript environment is broken. You cannot use[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯[22m[39m
+[39m
+[2m Test Files [22m [1m[31m9 failed[39m[22m[90m (9)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 15:18:48
+[2m   Duration [22m 1.83s[2m (transform 19ms, setup 0ms, collect 0ms, tests 0ms, environment 1.70s, prepare 378ms)[22m
+
+[1m[7m[31m FAIL [39m[27m[22m [31mTests failed. Watching for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
+[31mCancelling test run. Press CTRL+c again to exit forcefully.
+[39m
+[?25h[?25h[2K[1G[31merror[39m Command failed with exit code 130.
+[2K[1G[34minfo[39m Visit [1mhttps://yarnpkg.com/en/docs/cli/run[22m for documentation about this command.
+[1m[7m%[27m[1m[0m                                                                                    ]2;juacompe@Saphira-2: ~/Projects/github/poorprogrammer/cfo/web2]1;..mmer/cfo/web2]133;D;130]1337;RemoteHost=juacompe@Saphira-2.local]1337;CurrentDir=/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[0m[27m[24m[J]133;A[01;31m➜  [36mweb2[00m [01;34mgit:([31mmaster[34m) [33m✗[00m ]133;B[K[?1h=[?2004hyyarn   y  nnp t m t[?1l>[?2004l
+]2;npm t]1;npm]133;C;
+> web2@0.1.0 test
+> vitest
+
+[1G[0K[33m[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m[39m
+
+[1m[7m[34m DEV [39m[27m[22m [34mv2.1.6 [39m[90m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[39m
+
+[?25l [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+
+[31m[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Suites 9 [27m[22m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/PricedInvoiceItem.spec.js[2m [ tests/unit/models/PricedInvoiceItem.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/invoice.spec.js[2m [ tests/unit/models/invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/quotation.spec.js[2m [ tests/unit/models/quotation.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/receipt.spec.js[2m [ tests/unit/models/receipt.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Invoice.spec.js[2m [ tests/unit/presenters/Invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/InvoiceList.spec.js[2m [ tests/unit/presenters/InvoiceList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Login.spec.js[2m [ tests/unit/presenters/Login.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/PaymentInfoList.spec.js[2m [ tests/unit/presenters/PaymentInfoList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/services/invoices.spec.js[2m [ tests/unit/services/invoices.spec.js ][22m[39m
+[31m[31m[1mError[22m: Invariant violation: "new TextEncoder().encode("") instanceof Uint8Array" is incorrectly false
+
+This indicates that your JavaScript environment is broken. You cannot use
+esbuild in this environment because esbuild relies on this invariant. This
+is not a problem with esbuild. You need to fix your environment instead.
+[39m[39m
+[31m[36m [2m❯[22m Object.<anonymous> node_modules/esbuild/lib/main.js:[2m201:9[22m[39m[39m
+[31m    [90m199| [39m}
+    [90m200| [39m[35mif[39m ([33m![39m([34mencodeUTF8[39m([32m""[39m) [35minstanceof[39m [33mUint8Array[39m))
+    [90m201| [39m  [35mthrow[39m [35mnew[39m [33mError[39m([32m`Invariant violation: "[39m[36m${[39mencodeInvariant[36m}[39m[32m instanceof Uin[39m…
+    [90m   | [39m        [31m^[39m
+    [90m202| [39m
+    [90m203| [39mThis indicates that your JavaScript environment is broken. You cannot use[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯[22m[39m
+[39m
+[2m Test Files [22m [1m[31m9 failed[39m[22m[90m (9)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 15:19:05
+[2m   Duration [22m 1.83s[2m (transform 20ms, setup 0ms, collect 0ms, tests 0ms, environment 1.70s, prepare 358ms)[22m
+
+[1m[7m[31m FAIL [39m[27m[22m [31mTests failed. Watching for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
+[31mCancelling test run. Press CTRL+c again to exit forcefully.
+[39m
+[?25h[?25h[1G[0K⠙[1G[0K[1m[7m%[27m[1m[0m                                                                                    ]2;juacompe@Saphira-2: ~/Projects/github/poorprogrammer/cfo/web2]1;..mmer/cfo/web2]133;D;130]1337;RemoteHost=juacompe@Saphira-2.local]1337;CurrentDir=/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[0m[27m[24m[J]133;A[01;31m➜  [36mweb2[00m [01;34mgit:([31mmaster[34m) [33m✗[00m ]133;B[K[?1h=[?2004hnnpm n  nnpm t[?1l>[?2004l
+]2;npm t]1;npm]133;C;
+> web2@0.1.0 test
+> vitest
+
+[1G[0K[33m[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m[39m
+
+[1m[7m[34m DEV [39m[27m[22m [34mv2.1.6 [39m[90m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[39m
+
+[?25l [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+
+[31m[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Suites 9 [27m[22m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/PricedInvoiceItem.spec.js[2m [ tests/unit/models/PricedInvoiceItem.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to load url /Users/juacompe/Projects/github/poorprogrammer/cfo/web2/vitest.setup.ts (resolved id: /Users/juacompe/Projects/github/poorprogrammer/cfo/web2/vitest.setup.ts). Does the file exist?[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40838:17[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯[22m[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/invoice.spec.js[2m [ tests/unit/models/invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Invoice.spec.js[2m [ tests/unit/presenters/Invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/InvoiceList.spec.js[2m [ tests/unit/presenters/InvoiceList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Login.spec.js[2m [ tests/unit/presenters/Login.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/PaymentInfoList.spec.js[2m [ tests/unit/presenters/PaymentInfoList.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/services/invoices.spec.js[2m [ tests/unit/services/invoices.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to load url /Users/juacompe/Projects/github/poorprogrammer/cfo/web2/vitest.setup.ts (resolved id: /Users/juacompe/Projects/github/poorprogrammer/cfo/web2/vitest.setup.ts). Does the file exist?[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40838:17[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/9]⎯[22m[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/quotation.spec.js[2m [ tests/unit/models/quotation.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/receipt.spec.js[2m [ tests/unit/models/receipt.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to load url /Users/juacompe/Projects/github/poorprogrammer/cfo/web2/vitest.setup.ts (resolved id: /Users/juacompe/Projects/github/poorprogrammer/cfo/web2/vitest.setup.ts). Does the file exist?[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40838:17[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/9]⎯[22m[39m
+[39m
+[2m Test Files [22m [1m[31m9 failed[39m[22m[90m (9)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 15:19:58
+[2m   Duration [22m 1.01s[2m (transform 12ms, setup 0ms, collect 0ms, tests 0ms, environment 1.75s, prepare 367ms)[22m
+
+[1m[7m[31m FAIL [39m[27m[22m [31mTests failed. Watching for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
+c[3J[1m[7m[34m RERUN [39m[27m[22m [34m[2mvitest.setup.ts [22m[39m
+
+[31m[2m3:22:12 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[31m[2m3:22:12 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[31m[2m3:22:12 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/InvoiceItem" from "src/models/Receipt.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Receipt.js[39m:1:26
+[33m  1  |  import InvoiceItem from "@/models/InvoiceItem";
+     |                           ^
+  2  |  import PaymentInformation from "@/models/PaymentInformation";
+  3  |  [39m[39m
+[?25l [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+[31m[2m3:22:12 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/PaymentInformation" from "src/models/Quotation.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Quotation.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Quotation extends PaymentInformation {[39m[39m
+[31m[2m3:22:12 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[31m[2m3:22:12 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/InvoiceItem" from "src/models/Receipt.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Receipt.js[39m:1:26
+[33m  1  |  import InvoiceItem from "@/models/InvoiceItem";
+     |                           ^
+  2  |  import PaymentInformation from "@/models/PaymentInformation";
+  3  |  [39m[39m
+[?25l[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[31m[2m3:22:13 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+[31m[2m3:22:13 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[31m[2m3:22:13 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/InvoiceItem" from "src/models/PricedInvoiceItem.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/PricedInvoiceItem.js[39m:1:26
+[33m  1  |  import InvoiceItem from "@/models/InvoiceItem";
+     |                           ^
+  2  |  
+  3  |  export default class PricedInvoiceItem {[39m[39m
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+
+[31m[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Suites 9 [27m[22m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/invoice.spec.js[2m [ tests/unit/models/invoice.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/receipt.spec.js[2m [ tests/unit/models/receipt.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯[22m[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/quotation.spec.js[2m [ tests/unit/models/quotation.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/models/PaymentInformation" from "src/models/Quotation.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Quotation.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Quotation extends PaymentInformation {[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/9]⎯[22m[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Invoice.spec.js[2m [ tests/unit/presenters/Invoice.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/presenters/Invoice" from "tests/unit/presenters/Invoice.spec.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/tests/unit/presenters/Invoice.spec.js[39m:1:24
+[33m  1  |  import Presenter from "@/presenters/Invoice";
+     |                         ^
+  2  |  import API from "@/services/InvoiceService";
+  3  |  [39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/9]⎯[22m[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/services/invoices.spec.js[2m [ tests/unit/services/invoices.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/services/InvoiceService" from "tests/unit/services/invoices.spec.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/tests/unit/services/invoices.spec.js[39m:1:18
+[33m  1  |  import API from "@/services/InvoiceService";
+     |                   ^
+  2  |  import axios from "axios";
+  3  |  import { Factory } from "../factory";[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/9]⎯[22m[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/PaymentInfoList.spec.js[2m [ tests/unit/presenters/PaymentInfoList.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/presenters/InvoiceList" from "tests/unit/presenters/PaymentInfoList.spec.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/tests/unit/presenters/PaymentInfoList.spec.js[39m:1:24
+[33m  1  |  import Presenter from "@/presenters/InvoiceList";
+     |                         ^
+  2  |  import API from "@/services/InvoiceService";
+  3  |  import Invoice from "../../../src/models/Invoice";[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/9]⎯[22m[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/InvoiceList.spec.js[2m [ tests/unit/presenters/InvoiceList.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/presenters/InvoiceList" from "tests/unit/presenters/InvoiceList.spec.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/tests/unit/presenters/InvoiceList.spec.js[39m:1:24
+[33m  1  |  import Presenter from "@/presenters/InvoiceList";
+     |                         ^
+  2  |  import Invoice from "../../../src/models/Invoice";
+  3  |  [39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/9]⎯[22m[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Login.spec.js[2m [ tests/unit/presenters/Login.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/presenters/Login" from "tests/unit/presenters/Login.spec.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/tests/unit/presenters/Login.spec.js[39m:1:24
+[33m  1  |  import Presenter from "@/presenters/Login";
+     |                         ^
+  2  |  
+  3  |  class MockView {[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/9]⎯[22m[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/PricedInvoiceItem.spec.js[2m [ tests/unit/models/PricedInvoiceItem.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/models/InvoiceItem" from "src/models/PricedInvoiceItem.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/PricedInvoiceItem.js[39m:1:26
+[33m  1  |  import InvoiceItem from "@/models/InvoiceItem";
+     |                           ^
+  2  |  
+  3  |  export default class PricedInvoiceItem {[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/9]⎯[22m[39m
+[39m
+[2m Test Files [22m [1m[31m9 failed[39m[22m[90m (9)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 15:22:12
+[2m   Duration [22m 505ms
+
+[1m[7m[31m FAIL [39m[27m[22m [31mTests failed. Watching for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
+c[3J[1m[7m[34m RERUN [39m[27m[22m [34m[2msrc/models/Invoice.js [22m[39m
+
+[31m[2m3:23:38 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/InvoiceItem" from "src/models/Receipt.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Receipt.js[39m:1:26
+[33m  1  |  import InvoiceItem from "@/models/InvoiceItem";
+     |                           ^
+  2  |  import PaymentInformation from "@/models/PaymentInformation";
+  3  |  [39m[39m
+[31m[2m3:23:38 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[31m[2m3:23:38 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[31m[2m3:23:38 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[31m[2m3:23:38 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/InvoiceItem" from "src/models/Receipt.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Receipt.js[39m:1:26
+[33m  1  |  import InvoiceItem from "@/models/InvoiceItem";
+     |                           ^
+  2  |  import PaymentInformation from "@/models/PaymentInformation";
+  3  |  [39m[39m
+[?25l [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+
+[31m[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Suites 2 [27m[22m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/receipt.spec.js[2m [ tests/unit/models/receipt.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯[22m[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/invoice.spec.js[2m [ tests/unit/models/invoice.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯[22m[39m
+[39m
+[2m Test Files [22m [1m[31m9 failed[39m[22m[90m (9)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 15:23:37
+[2m   Duration [22m 89ms
+
+[1m[7m[31m FAIL [39m[27m[22m [31mTests failed. Watching for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
+c[3J[1m[7m[34m RERUN [39m[27m[22m [34m[2msrc/models/Invoice.js [22m[39m
+
+[31m[2m3:23:38 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[31m[2m3:23:38 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/InvoiceItem" from "src/models/Receipt.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Receipt.js[39m:1:26
+[33m  1  |  import InvoiceItem from "@/models/InvoiceItem";
+     |                           ^
+  2  |  import PaymentInformation from "@/models/PaymentInformation";
+  3  |  [39m[39m
+[31m[2m3:23:38 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[31m[2m3:23:38 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[31m[2m3:23:38 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/InvoiceItem" from "src/models/Receipt.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Receipt.js[39m:1:26
+[33m  1  |  import InvoiceItem from "@/models/InvoiceItem";
+     |                           ^
+  2  |  import PaymentInformation from "@/models/PaymentInformation";
+  3  |  [39m[39m
+[?25l [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+
+[31m[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Suites 2 [27m[22m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/receipt.spec.js[2m [ tests/unit/models/receipt.spec.js ][22m[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/invoice.spec.js[2m [ tests/unit/models/invoice.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯[22m[39m
+[39m
+[2m Test Files [22m [1m[31m9 failed[39m[22m[90m (9)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 15:23:38
+[2m   Duration [22m 91ms
+
+[1m[7m[31m FAIL [39m[27m[22m [31mTests failed. Watching for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
+[31mCancelling test run. Press CTRL+c again to exit forcefully.
+[39m
+[?25h[?25h[1G[0K⠙[1G[0K[1m[7m%[27m[1m[0m                                                                                    ]2;juacompe@Saphira-2: ~/Projects/github/poorprogrammer/cfo/web2]1;..mmer/cfo/web2]133;D;130]1337;RemoteHost=juacompe@Saphira-2.local]1337;CurrentDir=/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[0m[27m[24m[J]133;A[01;31m➜  [36mweb2[00m [01;34mgit:([31mmaster[34m) [33m✗[00m ]133;B[K[?1h=[?2004hlls l  npm t[?1l>[?2004l
+]2;npm t]1;npm]133;C;
+> web2@0.1.0 test
+> vitest
+
+[1G[0K[33m[33mThe CJS build of Vite's Node API is deprecated. See https://vite.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.[39m[39m
+
+[1m[7m[34m DEV [39m[27m[22m [34mv2.1.6 [39m[90m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2[39m
+
+[31m[2m3:24:31 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[31m[2m3:24:31 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/InvoiceItem" from "src/models/Receipt.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Receipt.js[39m:1:26
+[33m  1  |  import InvoiceItem from "@/models/InvoiceItem";
+     |                           ^
+  2  |  import PaymentInformation from "@/models/PaymentInformation";
+  3  |  [39m[39m
+[?25l [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+[31m[2m3:24:31 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[31m[2m3:24:31 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/PaymentInformation" from "src/models/Quotation.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Quotation.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Quotation extends PaymentInformation {[39m[39m
+[31m[2m3:24:31 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/InvoiceItem" from "src/models/Receipt.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Receipt.js[39m:1:26
+[33m  1  |  import InvoiceItem from "@/models/InvoiceItem";
+     |                           ^
+  2  |  import PaymentInformation from "@/models/PaymentInformation";
+  3  |  [39m[39m
+[31m[2m3:24:31 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[?25l[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[31m[2m3:24:31 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[31m[2m3:24:31 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[?25l[31m[2m3:24:31 PM[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m Pre-transform error: Failed to resolve import "@/models/InvoiceItem" from "src/models/PricedInvoiceItem.js". Does the file exist?
+  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/PricedInvoiceItem.js[39m:1:26
+[33m  1  |  import InvoiceItem from "@/models/InvoiceItem";
+     |                           ^
+  2  |  
+  3  |  export default class PricedInvoiceItem {[39m[39m
+[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[1A[2K[G [31m❯[39m [2mtests/unit/models/[22mPricedInvoiceItem[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22minvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mquotation[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/models/[22mreceipt[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoice[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mInvoiceList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mLogin[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/presenters/[22mPaymentInfoList[2m.spec.js[22m[2m (0)[22m
+ [31m❯[39m [2mtests/unit/services/[22minvoices[2m.spec.js[22m[2m (0)[22m
+
+[31m[31m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1m[7m Failed Suites 9 [27m[22m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/PricedInvoiceItem.spec.js[2m [ tests/unit/models/PricedInvoiceItem.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/models/InvoiceItem" from "src/models/PricedInvoiceItem.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/PricedInvoiceItem.js[39m:1:26
+[33m  1  |  import InvoiceItem from "@/models/InvoiceItem";
+     |                           ^
+  2  |  
+  3  |  export default class PricedInvoiceItem {[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/9]⎯[22m[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/invoice.spec.js[2m [ tests/unit/models/invoice.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/9]⎯[22m[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/quotation.spec.js[2m [ tests/unit/models/quotation.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/models/PaymentInformation" from "src/models/Quotation.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Quotation.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Quotation extends PaymentInformation {[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/9]⎯[22m[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/models/receipt.spec.js[2m [ tests/unit/models/receipt.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/models/PaymentInformation" from "src/models/Invoice.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/src/models/Invoice.js[39m:1:33
+[33m  1  |  import PaymentInformation from "@/models/PaymentInformation";
+     |                                  ^
+  2  |  
+  3  |  export default class Invoice extends PaymentInformation {[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/9]⎯[22m[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Invoice.spec.js[2m [ tests/unit/presenters/Invoice.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/presenters/Invoice" from "tests/unit/presenters/Invoice.spec.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/tests/unit/presenters/Invoice.spec.js[39m:1:24
+[33m  1  |  import Presenter from "@/presenters/Invoice";
+     |                         ^
+  2  |  import API from "@/services/InvoiceService";
+  3  |  [39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/9]⎯[22m[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/InvoiceList.spec.js[2m [ tests/unit/presenters/InvoiceList.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/presenters/InvoiceList" from "tests/unit/presenters/InvoiceList.spec.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/tests/unit/presenters/InvoiceList.spec.js[39m:1:24
+[33m  1  |  import Presenter from "@/presenters/InvoiceList";
+     |                         ^
+  2  |  import Invoice from "../../../src/models/Invoice";
+  3  |  [39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/9]⎯[22m[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/Login.spec.js[2m [ tests/unit/presenters/Login.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/presenters/Login" from "tests/unit/presenters/Login.spec.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/tests/unit/presenters/Login.spec.js[39m:1:24
+[33m  1  |  import Presenter from "@/presenters/Login";
+     |                         ^
+  2  |  
+  3  |  class MockView {[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/9]⎯[22m[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/presenters/PaymentInfoList.spec.js[2m [ tests/unit/presenters/PaymentInfoList.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/presenters/InvoiceList" from "tests/unit/presenters/PaymentInfoList.spec.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/tests/unit/presenters/PaymentInfoList.spec.js[39m:1:24
+[33m  1  |  import Presenter from "@/presenters/InvoiceList";
+     |                         ^
+  2  |  import API from "@/services/InvoiceService";
+  3  |  import Invoice from "../../../src/models/Invoice";[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/9]⎯[22m[39m
+[39m
+[31m[31m[1m[7m FAIL [27m[22m[39m tests/unit/services/invoices.spec.js[2m [ tests/unit/services/invoices.spec.js ][22m[39m
+[31m[31m[1mError[22m: Failed to resolve import "@/services/InvoiceService" from "tests/unit/services/invoices.spec.js". Does the file exist?[39m[39m
+[31m  Plugin: [35mvite:import-analysis[39m
+  File: [36m/Users/juacompe/Projects/github/poorprogrammer/cfo/web2/tests/unit/services/invoices.spec.js[39m:1:18
+[33m  1  |  import API from "@/services/InvoiceService";
+     |                   ^
+  2  |  import axios from "axios";
+  3  |  import { Factory } from "../factory";[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext._formatError node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47166:41[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.error node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47161:16[22m[39m[39m
+[31m[90m [2m❯[22m normalizeUrl node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45431:23[22m[39m[39m
+[31m[90m [2m❯[22m node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45550:39[22m[39m[39m
+[31m[90m [2m❯[22m TransformPluginContext.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m45477:7[22m[39m[39m
+[31m[90m [2m❯[22m EnvironmentPluginContainer.transform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m47009:18[22m[39m[39m
+[31m[90m [2m❯[22m loadAndTransform node_modules/vite/dist/node/chunks/dep-A4nAWF7x.js:[2m40848:27[22m[39m[39m
+[31m[39m
+[31m[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/9]⎯[22m[39m
+[39m
+[2m Test Files [22m [1m[31m9 failed[39m[22m[90m (9)[39m
+[2m      Tests [22m [2mno tests[22m
+[2m   Start at [22m 15:24:30
+[2m   Duration [22m 1.30s[2m (transform 70ms, setup 342ms, collect 0ms, tests 0ms, environment 2.31s, prepare 399ms)[22m
+
+[1m[7m[31m FAIL [39m[27m[22m [31mTests failed. Watching for file changes...[39m
+       [2mpress [22m[1mh[22m[2m to show help[22m[2m, [22m[2mpress [22m[1mq[22m[2m to quit[22m
