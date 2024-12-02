@@ -30,12 +30,12 @@ describe("Login Presenter", () => {
     expectPopupShownWithError("Error: Request failed with status code 401");
   });
   function givenLoginSuccess(res) {
-    jest.spyOn(p.view, "goTo");
-    jest.spyOn(p.API, "login").mockResolvedValue(res);
+    vi.spyOn(p.view, "goTo");
+    vi.spyOn(p.API, "login").mockResolvedValue(res);
   }
   function givenLoginFailedWithError(err) {
-    jest.spyOn(p, "showError").mockImplementation();
-    jest.spyOn(p.API, "login").mockRejectedValue(err);
+    vi.spyOn(p, "showError").mockImplementation();
+    vi.spyOn(p.API, "login").mockRejectedValue(err);
   }
   function expectToRedirectToHomePage(view) {
     expect(view.goTo).toHaveBeenCalledWith({ name: "home" });

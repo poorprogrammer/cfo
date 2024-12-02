@@ -33,7 +33,7 @@ describe("InvoiceList Presenter", () => {
     function givenGenerateReceiptWith2Invoices(selectedInvoices) {
       p.toggleGenerateReceipt();
       p.selectedInvoices = selectedInvoices;
-      jest.spyOn(p.view, "goTo");
+      vi.spyOn(p.view, "goTo");
     }
     function expectToRedirectToCreateReceiptPage(view, selectedInvoices) {
       expect(view.goTo).toHaveBeenCalledWith({

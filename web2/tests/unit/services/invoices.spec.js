@@ -11,7 +11,7 @@ describe("invoices API", () => {
   describe("getAll", () => {
     describe("before call", () => {
       it("should call with correct url", () => {
-        jest.spyOn(axios, "get");
+        vi.spyOn(axios, "get");
 
         api.getAll(2020);
 
@@ -25,7 +25,7 @@ describe("invoices API", () => {
     describe("after call", () => {
       beforeEach(() => {
         let response = { data: [{ invoiceNumber: "202001-001" }] };
-        jest.spyOn(axios, "get").mockResolvedValue(response);
+        vi.spyOn(axios, "get").mockResolvedValue(response);
       });
 
       it("should parse response into Invoice", async () => {
@@ -38,7 +38,7 @@ describe("invoices API", () => {
     describe("after call", () => {
       beforeEach(() => {
         let response = { data: { invoiceNumber: "202001-001" } };
-        jest.spyOn(axios, "get").mockResolvedValue(response);
+        vi.spyOn(axios, "get").mockResolvedValue(response);
       });
 
       it("should parse response into Invoice", async () => {

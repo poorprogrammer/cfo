@@ -13,12 +13,12 @@ describe("Invoice Presenter", () => {
   });
 
   it("should get invoice with specific number from API when init", () => {
-    jest.spyOn(p.API, "get");
+    vi.spyOn(p.API, "get");
     p.init(invoiceNumber);
     expectToBeCalledWith(p.API, invoiceNumber);
   });
   it("should save the current invoice", () => {
-    jest.spyOn(p.API, "save").mockResolvedValueOnce("ok");
+    vi.spyOn(p.API, "save").mockResolvedValueOnce("ok");
     p.invoice.invoiceNumber = invoiceNumber;
     p.save();
     expect(p.API.save).toHaveBeenCalledWith(p.invoice);
@@ -39,16 +39,16 @@ describe("Invoice Presenter", () => {
     expectToRedirectToViewInvoicePage(p.view, invoiceNumber);
   });
   function givenSaveSuccessWithInvoiceNumber(invoiceNumber) {
-    jest.spyOn(p.view, "goTo");
-    jest.spyOn(p.API, "save").mockResolvedValue(invoiceNumber);
+    vi.spyOn(p.view, "goTo");
+    vi.spyOn(p.API, "save").mockResolvedValue(invoiceNumber);
   }
   function givenUpdateSuccessWithInvoiceNumber(invoiceNumber) {
-    jest.spyOn(p.view, "goTo");
-    jest.spyOn(p.API, "update").mockResolvedValue({ number: invoiceNumber });
+    vi.spyOn(p.view, "goTo");
+    vi.spyOn(p.API, "update").mockResolvedValue({ number: invoiceNumber });
   }
   function givenSaveFailedWithError(err) {
-    jest.spyOn(p, "showError").mockImplementation();
-    jest.spyOn(p.API, "save").mockRejectedValue(err);
+    vi.spyOn(p, "showError").mockImplementation();
+    vi.spyOn(p.API, "save").mockRejectedValue(err);
   }
   function expectToBeCalledWith(api, invoiceNumber) {
     expect(api.get).toHaveBeenCalled();
