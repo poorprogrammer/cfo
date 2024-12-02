@@ -30,4 +30,8 @@ export default class InvoiceItem {
   currency(key = "THB"): Intl.NumberFormat {
     return this.invoice.currencies[key];
   }
+
+  total(): number {
+    return this.t;
+  }
 }

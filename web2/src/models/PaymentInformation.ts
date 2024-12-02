@@ -98,7 +98,7 @@ export default class PaymentInformation {
   }
 
   getTotal(): number {
-    return this.items.map(getItemTotal).reduce(sum, 0);
+    return this.items.map((i: InvoiceItem) => i.total()).reduce(sum, 0);
   }
 
   getFromCompanyName(): string {
@@ -169,14 +169,14 @@ export default class PaymentInformation {
     return new Date().getTime();
   }
 
-  addItemBefore(item: PricedInvoiceItem): void {
+  addItemBefore(item: InvoiceItem): void {
     let i = this.items.indexOf(item);
     if (i < 0) i = this.items.length;
-    this.items.splice(i, 0, this.createPricedInvoiceItem());
+    this.items.splice(i, 0, this.createPricedInvoiceItem() as InvoiceItem);
   }
 
-  removeItem(item: PricedInvoiceItem): void {
-    let i = this.items.indexOf(item);
+  removeItem(item: InvoiceItem): void {
+    const i = this.items.indexOf(item);
     if (i < 0) return;
     this.items.splice(i, 1);
   }

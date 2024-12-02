@@ -3,7 +3,7 @@ import PaymentInformation from "./PaymentInformation";
 
 export default class PricedInvoiceItem {
   name: string;
-  price: number;
+  _price: number;
   amount: number;
   item: InvoiceItem;
 
@@ -14,13 +14,13 @@ export default class PricedInvoiceItem {
     amount: number | string = ""
   ) {
     this.name = name;
-    this.price = typeof price === "string" ? 0 : price;
+    this._price = typeof price === "string" ? 0 : price;
     this.amount = typeof amount === "string" ? 0 : amount;
     this.item = new InvoiceItem(name, 0, invoice);
   }
 
   total(): number {
-    return this.price * this.amount;
+    return this._price * this.amount;
   }
 
   getTotal(): string {
@@ -28,13 +28,17 @@ export default class PricedInvoiceItem {
     return this.item.getCurrency(this.total());
   }
 
-  //   get price(): string {
-  //     return `${this.price}`;
-  //   }
+  set price(value: string) {
+    this._price = parseFloat(value);
+  }
+
+  get price(): number {
+    return this._price;
+  }
 
   getPrice(): string {
-    if (this.price === 0) return "";
-    return this.item.getCurrency(this.price);
+    if (this._price === 0) return "";
+    return this.item.getCurrency(this._price);
   }
 
   get t(): number {

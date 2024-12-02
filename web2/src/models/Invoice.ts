@@ -1,60 +1,70 @@
-import PaymentInformation from "./PaymentInformation";
-
-interface InvoiceData {
-  invoiceNumber?: string;
-  invoiceDate?: string;
-  quotationNumber?: string;
-  purchaseOrderNumber?: string;
-  payment?: any;
+interface Company {
+  name: string;
+  address: string;
+  taxId: string;
+  tel: string;
 }
 
-export default class Invoice extends PaymentInformation {
-  protected invoiceNumber?: string;
-  protected invoiceDate?: string;
-  protected quotationNumber?: string;
-  protected purchaseOrderNumber?: string;
-  protected payment?: any;
+interface Item {
+  name: string;
+  price: string;
+  amount: number;
+  getPrice(): string;
+  getTotal(): string;
+}
 
-  constructor(data?: InvoiceData & PaymentInformationData) {
-    super(data);
-    if (!data) return;
+export default class Invoice {
+  id?: string;
+  invoiceNumber = "";
+  invoiceDate = "";
+  quotationNumber = "";
+  purchaseOrderNumber = "";
+  remark = "";
+  projectName = "";
+  fromCompany: Company = {
+    name: "",
+    address: "",
+    taxId: "",
+    tel: "",
+  };
+  targetCompany: Company = {
+    name: "",
+    address: "",
+    taxId: "",
+    tel: "",
+  };
+  items: Item[] = [];
+  deleted?: boolean;
+  currency = "THB";
 
-    this.invoiceNumber = data.invoiceNumber;
-    this.invoiceDate = data.invoiceDate;
-    this.quotationNumber = data.quotationNumber;
-    this.purchaseOrderNumber = data.purchaseOrderNumber;
-    this.payment = data.payment;
+  constructor(data: Partial<Invoice>) {
+    Object.assign(this, data);
   }
 
-  get number(): string {
-    return this.invoiceNumber || "";
-  }
-
-  set number(n: string) {
-    this.invoiceNumber = n;
-  }
-
-  get date(): string {
-    return this.invoiceDate || "";
-  }
-
-  set date(d: string) {
-    this.invoiceDate = d;
-  }
-
-  get documentType(): string {
-    return "Invoice";
-  }
-
-  get hasInvoiceNumber(): boolean {
+  get hasInvoiceNumber() {
     return true;
   }
 
-  get hasReceiptNumber(): boolean {
-    return false;
+  getItems(): Item[] {
+    return this.items;
   }
 
-  tablePaddingClass(): string {
-    return this.payment ? "dense" : "";
+  addItemBefore(): void {
+    this.items.push({ name: "", price: "", amount: 0 } as Item);
+  }
+
+  itemClass(): string {
+    return this.items.length > 3 ? "small" : "";
+  }
+
+  currentTimestamp(): string {
+    return Date.now().toString();
+  }
+
+  markAsDeleted(): void {
+    this.deleted = true;
+    this.invoiceNumber = `${
+      this.invoiceNumber
+    }-cancelled-${this.currentTimestamp()}`;
   }
 }
