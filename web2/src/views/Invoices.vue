@@ -25,15 +25,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
-import PaymentInfoList from "@/components/PaymentInfoList.vue"
-import Presenter from "@/presenters/InvoiceList"
-import API from "@/services/InvoiceService"
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import PaymentInfoList from "@/components/PaymentInfoList.vue";
+import Presenter from "@/presenters/InvoiceList";
+import API from "@/services/InvoiceService";
 
-const router = useRouter()
-const presenter = ref(new Presenter({ goTo: (path: string) => router.push(path) }, new API()))
-
+const router = useRouter();
+const presenter = ref(
+  new Presenter({ goTo: (path: string) => router.push(path) }, new API())
+);
 </script>
 
 <style scoped lang="scss">
@@ -51,4 +52,4 @@ const presenter = ref(new Presenter({ goTo: (path: string) => router.push(path) 
 .selecting-invoices {
   padding-right: 0.5em;
 }
-</style> 
+</style>
