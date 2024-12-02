@@ -23,13 +23,13 @@ export interface PaymentInformationData {
 export default class PaymentInformation {
   protected _currencies: Record<string, Intl.NumberFormat>;
   protected _currency?: string;
-  protected id?: string;
+  public id?: string;
   protected companySlug?: string;
   protected fromCompany: Company;
   protected targetCompany: Company;
   protected projectName?: string;
   protected remark?: string;
-  protected dialog: boolean;
+  public dialog: boolean;
   protected deleted: boolean;
   protected items: InvoiceItem[];
 
@@ -172,7 +172,11 @@ export default class PaymentInformation {
   addItemBefore(item: InvoiceItem): void {
     let i = this.items.indexOf(item);
     if (i < 0) i = this.items.length;
-    this.items.splice(i, 0, this.createPricedInvoiceItem() as InvoiceItem);
+    this.items.splice(
+      i,
+      0,
+      this.createPricedInvoiceItem() as unknown as InvoiceItem
+    );
   }
 
   removeItem(item: InvoiceItem): void {

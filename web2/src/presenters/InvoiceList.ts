@@ -1,6 +1,5 @@
-import { PaymentInfoList } from "./PaymentInfoList";
-import type { Router } from "vue-router";
 import type { PaymentInfoService } from "@/services/types";
+import PaymentInfoList from "./PaymentInfoList";
 
 interface View {
   goTo: (path: string | { name: string; params: any }) => void;

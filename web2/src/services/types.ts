@@ -1,9 +1,13 @@
-export interface PaymentInfoItem {
-  id?: string;
-  number: string;
-  dialog?: boolean;
-  [key: string]: any;
-}
+// export interface PaymentInfoItem {
+//   id?: string;
+//   number: string;
+//   dialog?: boolean;
+//   [key: string]: any;
+// }
+
+import PaymentInformation from "@/models/PaymentInformation";
+
+interface PaymentInfoItem extends PaymentInformation {}
 
 export interface PaymentInfoService {
   getAll(year: string): Promise<PaymentInfoItem[]>;
