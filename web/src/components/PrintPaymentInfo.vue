@@ -324,10 +324,10 @@ export default {
   #from-company-logo {
     -webkit-print-color-adjust: exact;
   }
-  .v-application div.print-only {
+  div.print-only {
     display: block;
   }
-  .v-application div.print-only.signature {
+  div.print-only.signature {
     display: flex;
   }
   .no-print {
