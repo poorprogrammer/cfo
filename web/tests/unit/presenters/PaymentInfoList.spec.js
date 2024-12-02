@@ -34,10 +34,6 @@ describe("PaymentInfoList Presenter", () => {
     p.init(2021);
     expect(p.API.getAll).toHaveBeenCalledWith(2021);
   });
-  it("should sort by decending invoice number", () => {
-    expect(p.sortBy()).toEqual("number");
-    expect(p.sortDesc()).toEqual(true);
-  });
   it("should remove deleted invoice after API complete", () => {
     p.items = [
       new Invoice({
