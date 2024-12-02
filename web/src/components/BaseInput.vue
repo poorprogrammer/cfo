@@ -34,7 +34,7 @@ export default {
 
 .input-field {
   width: 100%;
-  padding: 8px 12px;
+  padding: 8px 2px;
   font-size: 1rem;
   line-height: 1.5;
   color: rgba(0, 0, 0, 0.87);
