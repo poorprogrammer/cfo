@@ -2,12 +2,7 @@
   <div>
     <div class="list-card">
       <div class="card-header">{{ titleMsg }} <slot name="header"></slot></div>
-      <data-table
-        :headers="p.headers"
-        :items="p.items"
-        :sort-by="p.sortBy()"
-        :sort-desc="p.sortDesc()"
-      >
+      <data-table :headers="p.headers" :items="p.items">
         <template #[`item.number`]="{ item }">
           <slot name="col1" v-bind:item="item"></slot>
           <router-link :to="item.editionUrl()">{{ item.number }}</router-link>

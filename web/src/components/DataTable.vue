@@ -3,20 +3,8 @@
     <table class="data-table">
       <thead>
         <tr>
-          <th
-            v-for="header in headers"
-            :key="header.value"
-            @click="handleSort(header.value)"
-            :class="{
-              sortable: header.sortable !== false,
-              'sorted-asc': sortBy === header.value && !sortDesc,
-              'sorted-desc': sortBy === header.value && sortDesc,
-            }"
-          >
+          <th v-for="header in headers" :key="header.value">
             {{ header.text }}
-            <span v-if="header.sortable !== false" class="sort-icon">
-              {{ getSortIcon(header.value) }}
-            </span>
           </th>
         </tr>
       </thead>
@@ -70,34 +58,15 @@ export default {
     getItemValue(item, path) {
       return path.split(".").reduce((obj, key) => obj?.[key], item);
     },
-    handleSort(column) {
-      if (column === this.sortBy) {
-        this.$emit("update:sortDesc", !this.sortDesc);
-      } else {
-        this.$emit("update:sortBy", column);
-        this.$emit("update:sortDesc", false);
-      }
-    },
-    getSortIcon(column) {
-      if (column !== this.sortBy) return "↕";
-      return this.sortDesc ? "↓" : "↑";
-    },
   },
   computed: {
     sortedItems() {
       return [...this.items].sort((a, b) => {
-        const aVal = this.getItemValue(a, this.sortBy) || "";
-        const bVal = this.getItemValue(b, this.sortBy) || "";
-
-        // Handle numeric values
-        if (!isNaN(aVal) && !isNaN(bVal)) {
-          return this.sortDesc ? bVal - aVal : aVal - bVal;
-        }
+        const aVal = a.number;
+        const bVal = b.number;
 
         // Handle string values
-        return this.sortDesc
-          ? bVal.toString().localeCompare(aVal.toString())
-          : aVal.toString().localeCompare(bVal.toString());
+        return bVal.toString().localeCompare(aVal.toString());
       });
     },
   },
