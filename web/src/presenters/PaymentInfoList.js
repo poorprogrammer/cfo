@@ -17,8 +17,6 @@ export default class {
   setAll = (items) => {
     this.items = items;
   };
-  sortBy = () => "number";
-  sortDesc = () => true;
   delete = (item) => {
     this.API.delete(item).then(this.removeItemFromList);
     this.closeDeleteConfirmDialogOf(item);
