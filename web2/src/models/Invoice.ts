@@ -51,4 +51,8 @@ export default class Invoice extends PaymentInformation {
   get number(): string {
     return this.invoiceNumber;
   }
+
+  protected get documentType(): string {
+    return "Invoice";
+  }
 }
