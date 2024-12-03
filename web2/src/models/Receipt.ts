@@ -1,8 +1,8 @@
 import LineItem from "./LineItem";
-import BillingDocument, { PaymentInformationData } from "./BillingDocument";
+import BillingDocument, { BillingDocumentData } from "./BillingDocument";
 import Invoice from "./Invoice";
 
-interface ReceiptData extends PaymentInformationData {
+interface ReceiptData extends BillingDocumentData {
   receiptNumber?: string;
   receiptDate?: string;
 }
@@ -63,28 +63,5 @@ export default class Receipt extends BillingDocument {
 
   get hasReceiptNumber(): boolean {
     return true;
-  }
-
-  getItems(): LineItem[] {
-    return [...this.items, this.total(), this.tax(), this.grandTotal()];
-  }
-
-  grandTotal(): LineItem {
-    return new LineItem("Grand Total", this.getTotal() + this.tax().t, this);
-  }
-
-  itemClass(): string {
-    return this.items.length > 2 ? "small" : "";
-  }
-
-  getTitles(): Array<{ id: number; title: string; css: string }> {
-    return [
-      { id: 1, title: `${this.documentType}/Tax Invoice (original)`, css: "" },
-      {
-        id: 2,
-        title: `${this.documentType}/Tax Invoice (copy)`,
-        css: "print-only",
-      },
-    ];
   }
 }

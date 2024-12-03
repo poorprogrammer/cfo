@@ -8,7 +8,7 @@ interface Company {
   tel?: string;
 }
 
-export interface PaymentInformationData {
+export interface BillingDocumentData {
   _id?: string;
   companySlug?: string;
   fromCompany?: Company;
@@ -16,7 +16,7 @@ export interface PaymentInformationData {
   projectName?: string;
   remark?: string;
   currency?: string;
-  items?: any[];
+  items?: LineItem[];
   deleted?: boolean;
 }
 
@@ -25,15 +25,25 @@ export default class BillingDocument {
   protected _currency?: string;
   public id?: string;
   protected companySlug?: string;
-  protected fromCompany: Company;
-  protected targetCompany: Company;
-  protected projectName?: string;
-  protected remark?: string;
+  protected remark = "";
+  protected projectName = "";
   public dialog: boolean;
   protected deleted: boolean;
   protected items: LineItem[];
+  protected fromCompany: Company = {
+    name: "",
+    address: "",
+    taxId: "",
+    tel: "",
+  };
+  protected targetCompany: Company = {
+    name: "",
+    address: "",
+    taxId: "",
+    tel: "",
+  };
 
-  constructor(data?: PaymentInformationData) {
+  constructor(data?: BillingDocumentData) {
     this._currencies = {
       THB: new Intl.NumberFormat("th-TH", {
         style: "currency",
@@ -58,8 +68,8 @@ export default class BillingDocument {
     this.companySlug = data.companySlug;
     this.fromCompany = { ...data.fromCompany } as Company;
     this.targetCompany = { ...data.targetCompany } as Company;
-    this.projectName = data.projectName;
-    this.remark = data.remark;
+    this.projectName = data.projectName || this.projectName;
+    this.remark = data.remark || this.remark;
     this._currency = data.currency;
     this.deleted = data.deleted || false;
 
@@ -250,10 +260,6 @@ export default class BillingDocument {
   set currency(value: string) {
     this._currency = value;
   }
-}
-
-function getItemTotal(item: PricedLineItem): number {
-  return item.total();
 }
 
 function sum(x: number, y: number): number {
