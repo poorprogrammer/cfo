@@ -1,9 +1,9 @@
-import Presenter from "@/presenters/InvoiceList";
+import { InvoiceListPresenter } from "@/presenters/InvoiceList";
 import API from "@/services/InvoiceService";
 import Invoice from "../../../src/models/Invoice";
 
 describe("PaymentInfoList Presenter", () => {
-  let p = new Presenter(undefined, new API());
+  let p = new InvoiceListPresenter(undefined, new API());
   describe("invoices", () => {
     describe("when there no invoices", () => {
       it("should be empty list initally or the screen would not render", () => {
