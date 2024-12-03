@@ -31,8 +31,8 @@ describe("PaymentInfoList Presenter", () => {
   });
   it("should get invoices from API when init", () => {
     vi.spyOn(p.API, "getAll").mockResolvedValue([]);
-    p.init(2021);
-    expect(p.API.getAll).toHaveBeenCalledWith(2021);
+    p.init("2021");
+    expect(p.API.getAll).toHaveBeenCalledWith("2021");
   });
   it("should remove deleted invoice after API complete", () => {
     p.items = [
