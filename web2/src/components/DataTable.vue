@@ -26,6 +26,7 @@
 </template>
 
 <script setup lang="ts">
+import BillingDocument from "@/models/BillingDocument";
 import { computed } from "vue";
 
 interface TableHeader {
@@ -33,15 +34,9 @@ interface TableHeader {
   value: string;
 }
 
-interface TableItem {
-  id?: string;
-  number: string;
-  [key: string]: any;
-}
-
 const props = defineProps<{
   headers: TableHeader[];
-  items: TableItem[];
+  items: BillingDocument[];
   sortBy?: string;
   sortDesc?: boolean;
   hideFooter?: boolean;
@@ -49,10 +44,10 @@ const props = defineProps<{
 }>();
 
 const emit = defineEmits<{
-  (e: "click:row", item: TableItem): void;
+  (e: "click:row", item: BillingDocument): void;
 }>();
 
-const getItemValue = (item: TableItem, path: string): any => {
+const getItemValue = (item: BillingDocument, path: string): any => {
   return path.split(".").reduce((obj, key) => obj?.[key], item);
 };
 

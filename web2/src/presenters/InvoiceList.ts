@@ -1,10 +1,6 @@
 import type { PaymentInfoService } from "@/services/types";
-import PaymentInfoList from "./PaymentInfoList";
+import PaymentInfoList, { View } from "./PaymentInfoList";
 import BillingDocument from "@/models/BillingDocument";
-
-interface View {
-  goTo: (path: string | { name: string; params: any }) => void;
-}
 
 export class InvoiceListPresenter extends PaymentInfoList {
   private isGeneratingReceipt = false;

@@ -68,20 +68,13 @@
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import DataTable from "./DataTable.vue";
-
-interface PaymentInfoItem {
-  number: string;
-  documentType: string;
-  editionUrl(): string;
-  duplicationUrl(): string;
-  url(): string;
-}
+import BillingDocument from "@/models/BillingDocument";
 
 interface Presenter {
   headers: Array<{ text: string; value: string }>;
-  items: PaymentInfoItem[];
+  items: BillingDocument[];
   init(year: string): void;
-  delete(item: PaymentInfoItem): void;
+  delete(item: BillingDocument): void;
 }
 
 const props = defineProps<{
@@ -91,7 +84,7 @@ const props = defineProps<{
 
 const route = useRoute();
 const showDeleteDialog = ref(false);
-const selectedItem = ref<PaymentInfoItem | null>(null);
+const selectedItem = ref<BillingDocument | null>(null);
 
 onMounted(() => {
   const year =
@@ -99,7 +92,7 @@ onMounted(() => {
   props.presenter.init(year);
 });
 
-const confirmDelete = (item: PaymentInfoItem) => {
+const confirmDelete = (item: BillingDocument) => {
   selectedItem.value = item;
   showDeleteDialog.value = true;
 };
@@ -109,7 +102,7 @@ const cancelDelete = () => {
   selectedItem.value = null;
 };
 
-const confirmDeleteAction = (item: PaymentInfoItem) => {
+const confirmDeleteAction = (item: BillingDocument) => {
   props.presenter.delete(item);
   showDeleteDialog.value = false;
   selectedItem.value = null;

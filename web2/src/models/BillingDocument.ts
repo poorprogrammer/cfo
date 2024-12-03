@@ -20,7 +20,7 @@ export interface BillingDocumentData {
   deleted?: boolean;
 }
 
-export default class BillingDocument {
+export default abstract class BillingDocument {
   protected _currencies: Record<string, Intl.NumberFormat>;
   protected _currency?: string;
   public id?: string;
@@ -228,27 +228,6 @@ export default class BillingDocument {
     return { name: `${this.documentType.toLowerCase()}s` };
   }
 
-  // These properties should be implemented by child classes
-  protected get documentType(): string {
-    throw new Error("documentType must be implemented by child class");
-  }
-
-  get number(): string {
-    throw new Error("number must be implemented by child class");
-  }
-
-  set number(value: string) {
-    throw new Error("number setter must be implemented by child class");
-  }
-
-  get date(): string {
-    throw new Error("date must be implemented by child class");
-  }
-
-  set date(value: string) {
-    throw new Error("date setter must be implemented by child class");
-  }
-
   get currencies(): Record<string, Intl.NumberFormat> {
     return this._currencies;
   }
@@ -260,6 +239,13 @@ export default class BillingDocument {
   set currency(value: string) {
     this._currency = value;
   }
+
+  // These properties should be implemented by child classes
+  public abstract get documentType(): string;
+  abstract get number(): string;
+  abstract set number(value: string);
+  abstract get date(): string;
+  abstract set date(value: string);
 }
 
 function sum(x: number, y: number): number {

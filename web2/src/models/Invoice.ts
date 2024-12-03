@@ -20,7 +20,11 @@ export default class Invoice extends BillingDocument {
     return this.invoiceNumber;
   }
 
-  protected get documentType(): string {
+  get documentType(): string {
     return "Invoice";
+  }
+
+  get date(): string {
+    return this.invoiceDate;
   }
 }

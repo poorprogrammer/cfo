@@ -7,13 +7,17 @@ interface Header {
   sortable?: boolean;
 }
 
+export interface View {
+  goTo: (path: string | { name: string; params: any }) => void;
+}
+
 export default class PaymentInfoList {
-  protected view: any;
+  protected view: View;
   public items: BillingDocument[];
   public headers: Header[];
   protected API: PaymentInfoService;
 
-  constructor(view: any, api: PaymentInfoService) {
+  constructor(view: View, api: PaymentInfoService) {
     this.view = view;
     this.items = [];
     this.headers = [
