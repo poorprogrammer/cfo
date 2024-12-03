@@ -1,8 +1,9 @@
 import axios, { AxiosResponse } from "axios";
 import BillingDocument from "@/models/BillingDocument";
 import Invoice from "@/models/Invoice";
+import { PaymentInfoService } from "./types";
 
-export default class InvoiceService {
+export default class InvoiceService implements PaymentInfoService {
   protected root: string;
 
   constructor() {

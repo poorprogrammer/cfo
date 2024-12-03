@@ -31,7 +31,7 @@ export default class PaymentInfoList {
   }
 
   init(year: number): void {
-    this.API.getAll(year.toString()).then(this.setAll);
+    this.API.getAll(year).then(this.setAll);
   }
 
   setAll = (items: BillingDocument[]): void => {

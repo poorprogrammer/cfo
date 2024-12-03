@@ -30,12 +30,17 @@ import { useRouter } from "vue-router";
 import PaymentInfoList from "@/components/PaymentInfoList.vue";
 import InvoiceService from "@/services/InvoiceService";
 import { InvoiceListPresenter } from "@/presenters/InvoiceList";
+import { View } from "@/presenters/PaymentInfoList";
 const router = useRouter();
+
+class MyView implements View {
+  goTo(path: string | { name: string; params: any }) {
+    router.push(path);
+  }
+}
+
 const presenter = ref(
-  new InvoiceListPresenter(
-    { goTo: (path: string) => router.push(path) },
-    new InvoiceService()
-  )
+  new InvoiceListPresenter(new MyView(), new InvoiceService())
 );
 </script>
 

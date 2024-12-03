@@ -1,12 +1,13 @@
 import type { PaymentInfoService } from "@/services/types";
 import PaymentInfoList, { View } from "./PaymentInfoList";
 import BillingDocument from "@/models/BillingDocument";
+import InvoiceService from "@/services/InvoiceService";
 
 export class InvoiceListPresenter extends PaymentInfoList {
   private isGeneratingReceipt = false;
   private selectedInvoices: BillingDocument[] = [];
 
-  constructor(view: View, api: PaymentInfoService) {
+  constructor(view: View, api: InvoiceService) {
     super(view, api);
   }
 
