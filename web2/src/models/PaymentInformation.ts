@@ -69,7 +69,7 @@ export default class PaymentInformation {
     });
   }
 
-  url(): string {
+  public url(): string {
     return `/${this.documentType.toLowerCase()}/${this.number}`;
   }
 

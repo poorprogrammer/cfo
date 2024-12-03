@@ -28,12 +28,14 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import PaymentInfoList from "@/components/PaymentInfoList.vue";
-import Presenter from "@/presenters/InvoiceList";
-import API from "@/services/InvoiceService";
-
+import InvoiceService from "@/services/InvoiceService";
+import { InvoiceListPresenter } from "@/presenters/InvoiceList";
 const router = useRouter();
 const presenter = ref(
-  new Presenter({ goTo: (path: string) => router.push(path) }, new API())
+  new InvoiceListPresenter(
+    { goTo: (path: string) => router.push(path) },
+    new InvoiceService()
+  )
 );
 </script>
 

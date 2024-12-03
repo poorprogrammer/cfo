@@ -9,8 +9,8 @@ interface Header {
 
 export default class PaymentInfoList {
   protected view: any;
-  protected items: PaymentInformation[];
-  protected headers: Header[];
+  public items: PaymentInformation[];
+  public headers: Header[];
   protected API: PaymentInfoService;
 
   constructor(view: any, api: PaymentInfoService) {
