@@ -64,7 +64,65 @@ app.post("/invoices/", (req: Request, res: Response) => {
     .catch(serverErrorHandler(res));
 });
 
-// Similar updates for quotations and receipts endpoints...
+app.get("/quotations/:year", (req, res) => {
+  new Quotation(quotationDb).all(req.params.year).then((quotations) => {
+    res.json(quotations);
+  });
+});
+
+app.get("/quotation/:number", function (req, res) {
+  new Quotation(quotationDb).get(req.params.number).then((doc) => {
+    res.json(doc);
+  });
+});
+
+app.post("/quotations/", function (req, res) {
+  new Quotation(quotationDb)
+    .save(req.body)
+    .then((id) => {
+      res.json(id);
+    })
+    .catch(serverErrorHandler(res));
+});
+
+app.put("/quotation/:number", function (req, res) {
+  new Quotation(quotationDb)
+    .update(req.body)
+    .then((_inv) => {
+      res.json(req.body);
+    })
+    .catch(serverErrorHandler(res));
+});
+
+app.get("/receipts/:year", (req, res) => {
+  new Receipt(receiptDb).all(req.params.year).then((invoices) => {
+    res.json(invoices);
+  });
+});
+
+app.get("/receipt/:number", function (req, res) {
+  new Receipt(receiptDb).get(req.params.number).then((doc) => {
+    res.json(doc);
+  });
+});
+
+app.post("/receipts/", function (req, res) {
+  new Receipt(receiptDb)
+    .save(req.body)
+    .then((id) => {
+      res.json(id);
+    })
+    .catch(serverErrorHandler(res));
+});
+
+app.put("/receipt/:number", function (req, res) {
+  new Receipt(receiptDb)
+    .update(req.body)
+    .then((_inv) => {
+      res.json(req.body);
+    })
+    .catch(serverErrorHandler(res));
+});
 
 app.post("/login/", (req: Request, res: Response) => {
   new Auth()
