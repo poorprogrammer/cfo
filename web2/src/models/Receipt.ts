@@ -1,7 +1,5 @@
-import InvoiceItem from "./InvoiceItem";
-import PaymentInformation, {
-  PaymentInformationData,
-} from "./PaymentInformation";
+import LineItem from "./LineItem";
+import BillingDocument, { PaymentInformationData } from "./BillingDocument";
 import Invoice from "./Invoice";
 
 interface ReceiptData extends PaymentInformationData {
@@ -9,7 +7,7 @@ interface ReceiptData extends PaymentInformationData {
   receiptDate?: string;
 }
 
-export default class Receipt extends PaymentInformation {
+export default class Receipt extends BillingDocument {
   protected receiptNumber?: string;
   protected receiptDate?: string;
 
@@ -20,11 +18,11 @@ export default class Receipt extends PaymentInformation {
     const r = new Receipt(invoices[0] as unknown as ReceiptData);
     r.items = [];
     invoices.forEach((invoice: Invoice) => {
-      const item = r.createPricedInvoiceItem();
+      const item = r.createPricedLineItem();
       item.name = invoice.number;
       item.price = invoice.getTotal();
       item.amount = 1;
-      r.items.push(item as unknown as InvoiceItem);
+      r.items.push(item as unknown as LineItem);
     });
     r.setDateToday(today);
     r.number = `R${r.newInvoiceNumber(today)}`;
@@ -67,12 +65,12 @@ export default class Receipt extends PaymentInformation {
     return true;
   }
 
-  getItems(): InvoiceItem[] {
+  getItems(): LineItem[] {
     return [...this.items, this.total(), this.tax(), this.grandTotal()];
   }
 
-  grandTotal(): InvoiceItem {
-    return new InvoiceItem("Grand Total", this.getTotal() + this.tax().t, this);
+  grandTotal(): LineItem {
+    return new LineItem("Grand Total", this.getTotal() + this.tax().t, this);
   }
 
   itemClass(): string {

@@ -1,5 +1,5 @@
 import InvoiceService from "@/services/InvoiceService";
-import PaymentInformation from "@/models/PaymentInformation";
+import BillingDocument from "@/models/PaymentInformation";
 
 export class ReceiptService extends InvoiceService {
   protected collectionUrl(): string {
@@ -10,7 +10,7 @@ export class ReceiptService extends InvoiceService {
     return `${this.root}/receipt/${receiptNumber}`;
   }
 
-  protected createItem(item: any): PaymentInformation {
+  protected createItem(item: any): BillingDocument {
     return {
       ...item,
       documentType: "Receipt",

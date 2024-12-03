@@ -1,4 +1,4 @@
-import PaymentInformation from "@/models/PaymentInformation";
+import BillingDocument from "@/models/PaymentInformation";
 import { PaymentInfoService } from "@/services/types";
 
 interface Header {
@@ -9,7 +9,7 @@ interface Header {
 
 export default class PaymentInfoList {
   protected view: any;
-  public items: PaymentInformation[];
+  public items: BillingDocument[];
   public headers: Header[];
   protected API: PaymentInfoService;
 
@@ -30,24 +30,24 @@ export default class PaymentInfoList {
     this.API.getAll(year.toString()).then(this.setAll);
   }
 
-  setAll = (items: PaymentInformation[]): void => {
+  setAll = (items: BillingDocument[]): void => {
     this.items = items;
   };
 
-  delete = (item: PaymentInformation): void => {
+  delete = (item: BillingDocument): void => {
     this.API.delete(item).then(this.removeItemFromList);
     this.closeDeleteConfirmDialogOf(item);
   };
 
-  removeItemFromList = (item: PaymentInformation): void => {
+  removeItemFromList = (item: BillingDocument): void => {
     this.items = this.items.filter((i) => i.number !== item.number);
   };
 
-  cancelDelete = (item: PaymentInformation): void => {
+  cancelDelete = (item: BillingDocument): void => {
     this.closeDeleteConfirmDialogOf(item);
   };
 
-  closeDeleteConfirmDialogOf = (item: PaymentInformation): void => {
+  closeDeleteConfirmDialogOf = (item: BillingDocument): void => {
     item.dialog = false;
   };
 }

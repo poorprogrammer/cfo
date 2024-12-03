@@ -1,5 +1,5 @@
-import InvoiceItem from "./InvoiceItem";
-import PricedInvoiceItem from "./PricedInvoiceItem";
+import LineItem from "./LineItem";
+import PricedLineItem from "./PricedLineItem";
 
 interface Company {
   name: string;
@@ -20,7 +20,7 @@ export interface PaymentInformationData {
   deleted?: boolean;
 }
 
-export default class PaymentInformation {
+export default class BillingDocument {
   protected _currencies: Record<string, Intl.NumberFormat>;
   protected _currency?: string;
   public id?: string;
@@ -31,7 +31,7 @@ export default class PaymentInformation {
   protected remark?: string;
   public dialog: boolean;
   protected deleted: boolean;
-  protected items: InvoiceItem[];
+  protected items: LineItem[];
 
   constructor(data?: PaymentInformationData) {
     this._currencies = {
@@ -65,7 +65,7 @@ export default class PaymentInformation {
 
     if (!data.items) return;
     data.items.forEach((i) => {
-      this.items.push(Object.assign(this.createPricedInvoiceItem(), i));
+      this.items.push(Object.assign(this.createPricedLineItem(), i));
     });
   }
 
@@ -81,24 +81,24 @@ export default class PaymentInformation {
     return `${this.url()}/edit`;
   }
 
-  getItems(): InvoiceItem[] {
+  getItems(): LineItem[] {
     return [...this.items, this.total(), this.tax(), this.grandTotal()];
   }
 
-  total(): InvoiceItem {
-    return new InvoiceItem("Total", this.getTotal(), this);
+  total(): LineItem {
+    return new LineItem("Total", this.getTotal(), this);
   }
 
-  tax(): InvoiceItem {
-    return new InvoiceItem("VAT 7%", this.getTotal() * 0.07, this);
+  tax(): LineItem {
+    return new LineItem("VAT 7%", this.getTotal() * 0.07, this);
   }
 
-  grandTotal(): InvoiceItem {
-    return new InvoiceItem("Grand Total", this.getTotal() * 1.07, this);
+  grandTotal(): LineItem {
+    return new LineItem("Grand Total", this.getTotal() * 1.07, this);
   }
 
   getTotal(): number {
-    return this.items.map((i: InvoiceItem) => i.total()).reduce(sum, 0);
+    return this.items.map((i: LineItem) => i.total()).reduce(sum, 0);
   }
 
   getFromCompanyName(): string {
@@ -169,17 +169,13 @@ export default class PaymentInformation {
     return new Date().getTime();
   }
 
-  addItemBefore(item: InvoiceItem): void {
+  addItemBefore(item: LineItem): void {
     let i = this.items.indexOf(item);
     if (i < 0) i = this.items.length;
-    this.items.splice(
-      i,
-      0,
-      this.createPricedInvoiceItem() as unknown as InvoiceItem
-    );
+    this.items.splice(i, 0, this.createPricedLineItem() as unknown as LineItem);
   }
 
-  removeItem(item: InvoiceItem): void {
+  removeItem(item: LineItem): void {
     const i = this.items.indexOf(item);
     if (i < 0) return;
     this.items.splice(i, 1);
@@ -208,8 +204,8 @@ export default class PaymentInformation {
     return (1 + date.getMonth()).toString().padStart(2, "0");
   }
 
-  createPricedInvoiceItem(): PricedInvoiceItem {
-    return new PricedInvoiceItem(this);
+  createPricedLineItem(): PricedLineItem {
+    return new PricedLineItem(this);
   }
 
   filename(): string {
@@ -256,7 +252,7 @@ export default class PaymentInformation {
   }
 }
 
-function getItemTotal(item: PricedInvoiceItem): number {
+function getItemTotal(item: PricedLineItem): number {
   return item.total();
 }
 

@@ -1,4 +1,4 @@
-import PaymentInformation from "./PaymentInformation";
+import BillingDocument from "./BillingDocument";
 
 interface Company {
   name: string;
@@ -7,7 +7,7 @@ interface Company {
   tel: string;
 }
 
-export default class Invoice extends PaymentInformation {
+export default class Invoice extends BillingDocument {
   declare id?: string;
   invoiceNumber = "";
   invoiceDate = "";

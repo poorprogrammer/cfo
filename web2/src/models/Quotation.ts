@@ -1,13 +1,11 @@
-import PaymentInformation, {
-  PaymentInformationData,
-} from "./PaymentInformation";
+import BillingDocument, { PaymentInformationData } from "./BillingDocument";
 
 interface QuotationData extends PaymentInformationData {
   quotationNumber?: string;
   quotationDate?: string;
 }
 
-export default class Quotation extends PaymentInformation {
+export default class Quotation extends BillingDocument {
   protected quotationNumber?: string;
   protected quotationDate?: string;
 

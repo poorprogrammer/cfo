@@ -5,9 +5,9 @@
 //   [key: string]: any;
 // }
 
-import PaymentInformation from "@/models/PaymentInformation";
+import BillingDocument from "@/models/PaymentInformation";
 
-interface PaymentInfoItem extends PaymentInformation {}
+interface PaymentInfoItem extends BillingDocument {}
 
 export interface PaymentInfoService {
   getAll(year: string): Promise<PaymentInfoItem[]>;

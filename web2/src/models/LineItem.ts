@@ -1,11 +1,11 @@
-import PaymentInformation from "./PaymentInformation";
+import BillingDocument from "./BillingDocument";
 
-export default class InvoiceItem {
+export default class LineItem {
   protected name: string;
   public t: number;
-  protected invoice: PaymentInformation;
+  protected invoice: BillingDocument;
 
-  constructor(name: string, t: number, invoice: PaymentInformation) {
+  constructor(name: string, t: number, invoice: BillingDocument) {
     this.name = name;
     this.t = t;
     this.invoice = invoice;

@@ -1,14 +1,14 @@
-import InvoiceItem from "@/models/InvoiceItem";
-import PaymentInformation from "./PaymentInformation";
+import LineItem from "./LineItem";
+import BillingDocument from "./BillingDocument";
 
 export default class PricedInvoiceItem {
   name: string;
   _price: number;
   amount: number;
-  item: InvoiceItem;
+  item: LineItem;
 
   constructor(
-    invoice: PaymentInformation,
+    invoice: BillingDocument,
     name = "",
     price: number | string = "",
     amount: number | string = ""
@@ -16,7 +16,7 @@ export default class PricedInvoiceItem {
     this.name = name;
     this._price = typeof price === "string" ? 0 : price;
     this.amount = typeof amount === "string" ? 0 : amount;
-    this.item = new InvoiceItem(name, 0, invoice);
+    this.item = new LineItem(name, 0, invoice);
   }
 
   total(): number {
