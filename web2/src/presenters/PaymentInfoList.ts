@@ -1,4 +1,4 @@
-import BillingDocument from "@/models/PaymentInformation";
+import BillingDocument from "@/models/BillingDocument";
 import { PaymentInfoService } from "@/services/types";
 
 interface Header {

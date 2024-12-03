@@ -1,6 +1,6 @@
 import type { PaymentInfoService } from "@/services/types";
 import PaymentInfoList from "./PaymentInfoList";
-import BillingDocument from "@/models/PaymentInformation";
+import BillingDocument from "@/models/BillingDocument";
 
 interface View {
   goTo: (path: string | { name: string; params: any }) => void;

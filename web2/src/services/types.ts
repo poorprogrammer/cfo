@@ -5,14 +5,12 @@
 //   [key: string]: any;
 // }
 
-import BillingDocument from "@/models/PaymentInformation";
-
-interface PaymentInfoItem extends BillingDocument {}
+import BillingDocument from "@/models/BillingDocument";
 
 export interface PaymentInfoService {
-  getAll(year: string): Promise<PaymentInfoItem[]>;
-  get(number: string): Promise<PaymentInfoItem>;
-  save(item: PaymentInfoItem): Promise<string>;
-  delete(item: PaymentInfoItem): Promise<PaymentInfoItem>;
-  update(item: PaymentInfoItem): Promise<PaymentInfoItem>;
+  getAll(year: string): Promise<BillingDocument[]>;
+  get(number: string): Promise<BillingDocument>;
+  save(item: BillingDocument): Promise<string>;
+  delete(item: BillingDocument): Promise<BillingDocument>;
+  update(item: BillingDocument): Promise<BillingDocument>;
 }

@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import BillingDocument from "@/models/PaymentInformation";
+import BillingDocument from "@/models/BillingDocument";
 import Invoice from "@/models/Invoice";
 
 export default class InvoiceService {

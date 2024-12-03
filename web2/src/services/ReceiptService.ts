@@ -1,5 +1,5 @@
 import InvoiceService from "@/services/InvoiceService";
-import BillingDocument from "@/models/PaymentInformation";
+import BillingDocument from "@/models/BillingDocument";
 
 export class ReceiptService extends InvoiceService {
   protected collectionUrl(): string {

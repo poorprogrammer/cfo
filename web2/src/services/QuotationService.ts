@@ -1,4 +1,4 @@
-import BillingDocument from "@/models/PaymentInformation";
+import BillingDocument from "@/models/BillingDocument";
 import Quotation from "@/models/Quotation";
 import InvoiceService from "@/services/InvoiceService";
 
