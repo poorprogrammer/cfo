@@ -69,13 +69,7 @@ import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import DataTable from "./DataTable.vue";
 import BillingDocument from "@/models/BillingDocument";
-
-interface Presenter {
-  headers: Array<{ text: string; value: string }>;
-  items: BillingDocument[];
-  init(year: string): void;
-  delete(item: BillingDocument): void;
-}
+import { Presenter } from "@/presenters/PaymentInfoList";
 
 const props = defineProps<{
   titleMsg: string;
@@ -89,7 +83,7 @@ const selectedItem = ref<BillingDocument | null>(null);
 onMounted(() => {
   const year =
     route.params.year?.toString() || new Date().getFullYear().toString();
-  props.presenter.init(year);
+  props.presenter.init(parseInt(year));
 });
 
 const confirmDelete = (item: BillingDocument) => {

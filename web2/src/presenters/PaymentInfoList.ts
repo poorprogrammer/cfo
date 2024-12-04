@@ -11,7 +11,14 @@ export interface View {
   goTo: (path: string | { name: string; params: any }) => void;
 }
 
-export default class PaymentInfoList {
+export interface Presenter {
+  headers: Array<{ text: string; value: string }>;
+  items: BillingDocument[];
+  init(year: number): void;
+  delete(item: BillingDocument): void;
+}
+
+export default class PaymentInfoList implements Presenter {
   protected view: View;
   public items: BillingDocument[];
   public headers: Header[];
