@@ -1,4 +1,4 @@
-import LineItem from "./LineItem";
+import LineItem, { ILineItem } from "./LineItem";
 import PricedLineItem from "./PricedLineItem";
 
 interface Company {
@@ -8,35 +8,41 @@ interface Company {
   tel?: string;
 }
 
-export interface BillingDocumentData {
-  _id?: string;
+export interface IBillingDocument {
   companySlug?: string;
   fromCompany?: Company;
   targetCompany?: Company;
   projectName?: string;
   remark?: string;
   currency?: string;
-  items?: LineItem[];
+  items?: ILineItem[];
   deleted?: boolean;
 }
 
-export default abstract class BillingDocument {
+export interface BillingDocumentData extends IBillingDocument {
+  _id?: string;
+}
+
+export interface BillingDocumentWithId extends IBillingDocument {
+  id?: string;
+}
+export default abstract class BillingDocument implements BillingDocumentWithId {
   protected _currencies: Record<string, Intl.NumberFormat>;
   protected _currency?: string;
   public id?: string;
-  protected companySlug?: string;
-  protected remark = "";
-  protected projectName = "";
+  public companySlug?: string;
+  public remark = "";
+  public projectName = "";
   public dialog: boolean;
-  protected deleted: boolean;
-  protected items: LineItem[];
-  protected fromCompany: Company = {
+  public deleted: boolean;
+  public items: LineItem[];
+  public fromCompany: Company = {
     name: "",
     address: "",
     taxId: "",
     tel: "",
   };
-  protected targetCompany: Company = {
+  public targetCompany: Company = {
     name: "",
     address: "",
     taxId: "",

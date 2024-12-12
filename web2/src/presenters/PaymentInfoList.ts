@@ -1,4 +1,6 @@
-import BillingDocument from "@/models/BillingDocument";
+import BillingDocument, {
+  BillingDocumentWithId,
+} from "@/models/BillingDocument";
 import { PaymentInfoService } from "@/services/types";
 
 interface Header {
@@ -13,7 +15,7 @@ export interface View {
 
 export interface Presenter {
   headers: Array<{ text: string; value: string }>;
-  items: BillingDocument[];
+  items: BillingDocumentWithId[];
   init(year: number): void;
   delete(item: BillingDocument): void;
 }
@@ -37,7 +39,7 @@ export default class PaymentInfoList implements Presenter {
     this.API = api;
   }
 
-  init(year: number): void {
+  public init(year: number): void {
     this.API.getAll(year).then(this.setAll);
   }
 
@@ -45,7 +47,7 @@ export default class PaymentInfoList implements Presenter {
     this.items = items;
   };
 
-  delete = (item: BillingDocument): void => {
+  public delete = (item: BillingDocument): void => {
     this.API.delete(item).then(this.removeItemFromList);
     this.closeDeleteConfirmDialogOf(item);
   };

@@ -1,7 +1,11 @@
 import BillingDocument from "./BillingDocument";
 
-export default class LineItem {
-  protected name: string;
+export interface ILineItem {
+  name: string;
+}
+
+export default class LineItem implements ILineItem {
+  public name: string;
   public t: number;
   protected invoice: BillingDocument;
 

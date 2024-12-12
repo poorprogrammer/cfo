@@ -25,11 +25,14 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { Ref, ref } from "vue";
 import { useRouter } from "vue-router";
 import PaymentInfoList from "@/components/PaymentInfoList.vue";
 import InvoiceService from "@/services/InvoiceService";
-import { InvoiceListPresenter } from "@/presenters/InvoiceList";
+import {
+  IInvoiceListPresenter,
+  InvoiceListPresenter,
+} from "@/presenters/InvoiceList";
 import { View } from "@/presenters/PaymentInfoList";
 const router = useRouter();
 
@@ -39,7 +42,7 @@ class MyView implements View {
   }
 }
 
-const presenter = ref(
+const presenter: Ref<IInvoiceListPresenter> = ref(
   new InvoiceListPresenter(new MyView(), new InvoiceService())
 );
 </script>

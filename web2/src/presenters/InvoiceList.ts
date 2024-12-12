@@ -1,11 +1,22 @@
-import type { PaymentInfoService } from "@/services/types";
-import PaymentInfoList, { View } from "./PaymentInfoList";
-import BillingDocument from "@/models/BillingDocument";
+import BillingDocument, {
+  BillingDocumentWithId,
+} from "@/models/BillingDocument";
 import InvoiceService from "@/services/InvoiceService";
+import PaymentInfoList, { Presenter, View } from "./PaymentInfoList";
 
-export class InvoiceListPresenter extends PaymentInfoList {
-  private isGeneratingReceipt = false;
-  private selectedInvoices: BillingDocument[] = [];
+export interface IInvoiceListPresenter extends Presenter {
+  selectedInvoices: BillingDocumentWithId[];
+  isGeneratingReceipt: boolean;
+  toggleGenerateReceipt(): void;
+  buttonColor: string;
+}
+
+export class InvoiceListPresenter
+  extends PaymentInfoList
+  implements IInvoiceListPresenter
+{
+  public isGeneratingReceipt = false;
+  public selectedInvoices: BillingDocument[] = [];
 
   constructor(view: View, api: InvoiceService) {
     super(view, api);
@@ -18,7 +29,7 @@ export class InvoiceListPresenter extends PaymentInfoList {
     }
   }
 
-  private generateReceipt(): void {
+  generateReceipt(): void {
     this.view.goTo({
       name: "createReceipt",
       params: {
