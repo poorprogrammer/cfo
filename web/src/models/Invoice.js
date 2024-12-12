@@ -32,6 +32,9 @@ export default class Invoice extends PaymentInformation {
   get hasReceiptNumber() {
     return false;
   }
+  get hasQuotationNumber() {
+    return true;
+  }
   tablePaddingClass() {
     return this.payment ? "dense" : "";
   }

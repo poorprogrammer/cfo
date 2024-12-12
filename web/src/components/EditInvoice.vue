@@ -76,12 +76,16 @@
         <!-- Invoice Details Card -->
         <div class="card full-width">
           <div class="card-content">
-            <div class="section-label">Invoice Details</div>
+            <div class="section-label">
+              {{ p.invoice.documentType }} Details
+            </div>
             <div class="details-grid">
-              <!-- First Row: Invoice/Receipt/Quotation Number, Date, and PO -->
-              <div class="input-group three-columns">
+              <!-- First Row: Invoice Number, Date, and PO -->
+              <div
+                class="input-group three-columns"
+                v-if="p.invoice.hasInvoiceNumber"
+              >
                 <base-input
-                  v-if="p.invoice.hasInvoiceNumber"
                   id="invoice-number"
                   label="Invoice Number"
                   v-model="p.invoice.invoiceNumber"
@@ -110,6 +114,61 @@
                 />
               </div>
 
+              <!-- optional First Row: Quotation Number, Date -->
+              <div
+                class="input-group three-columns"
+                v-if="p.invoice.hasQuotationNumber"
+              >
+                <base-input
+                  id="quotation-number"
+                  label="Quotation Number"
+                  v-model="p.invoice.quotationNumber"
+                />
+                <div class="date-input-group">
+                  <input
+                    id="quotation-date"
+                    class="form-input"
+                    placeholder="Quotation Date"
+                    v-model="p.invoice.quotationDate"
+                  />
+                  <button
+                    id="today-button"
+                    class="action-button small primary"
+                    @click="today"
+                    title="Set Today's Date"
+                  >
+                    <span class="icon">📅</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- optional First Row: Receipt Number, Date -->
+              <div
+                class="input-group three-columns"
+                v-if="p.invoice.hasReceiptNumber"
+              >
+                <base-input
+                  id="receipt-number"
+                  label="Receipt Number"
+                  v-model="p.invoice.receiptNumber"
+                />
+                <div class="date-input-group">
+                  <input
+                    id="receipt-date"
+                    class="form-input"
+                    placeholder="Receipt Date"
+                    v-model="p.invoice.receiptDate"
+                  />
+                  <button
+                    id="today-button"
+                    class="action-button small primary"
+                    @click="today"
+                    title="Set Today's Date"
+                  >
+                    <span class="icon">📅</span>
+                  </button>
+                </div>
+              </div>
               <!-- Second Row: Project, Remark, Currency -->
               <div class="input-group three-columns">
                 <base-input

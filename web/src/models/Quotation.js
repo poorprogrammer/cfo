@@ -29,4 +29,7 @@ export default class Quotation extends PaymentInformation {
   get hasReceiptNumber() {
     return false;
   }
+  get hasQuotationNumber() {
+    return true;
+  }
 }

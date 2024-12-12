@@ -44,6 +44,9 @@ export default class Receipt extends PaymentInformation {
   get hasReceiptNumber() {
     return true;
   }
+  get hasQuotationNumber() {
+    return true;
+  }
   getItems() {
     return [...this.items, this.total(), this.tax(), this.grandTotal()];
   }
