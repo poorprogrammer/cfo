@@ -16,8 +16,16 @@ export default class Invoice extends BillingDocument {
     return true;
   }
 
+  get hasReceiptNumber() {
+    return false;
+  }
+
   get number(): string {
     return this.invoiceNumber;
+  }
+
+  set number(value: string) {
+    this.invoiceNumber = value;
   }
 
   get documentType(): string {
@@ -26,5 +34,9 @@ export default class Invoice extends BillingDocument {
 
   get date(): string {
     return this.invoiceDate;
+  }
+
+  set date(value: string) {
+    this.invoiceDate = value;
   }
 }

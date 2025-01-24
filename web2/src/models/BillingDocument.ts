@@ -35,7 +35,7 @@ export default abstract class BillingDocument implements BillingDocumentWithId {
   public projectName = "";
   public dialog: boolean;
   public deleted: boolean;
-  public items: LineItem[];
+  public items: PricedLineItem[];
   public fromCompany: Company = {
     name: "",
     address: "",
@@ -80,9 +80,9 @@ export default abstract class BillingDocument implements BillingDocumentWithId {
     this.deleted = data.deleted || false;
 
     if (!data.items) return;
-    data.items.forEach((i) => {
-      this.items.push(Object.assign(this.createPricedLineItem(), i));
-    });
+    this.items = data.items.map(
+      (i) => new PricedLineItem(this, i.name, i.price, i.amount)
+    );
   }
 
   public url(): string {
@@ -97,8 +97,14 @@ export default abstract class BillingDocument implements BillingDocumentWithId {
     return `${this.url()}/edit`;
   }
 
-  getItems(): LineItem[] {
-    return [...this.items, this.total(), this.tax(), this.grandTotal()];
+  getItems(): (LineItem | PricedLineItem)[] {
+    const total = this.getTotal();
+    return [
+      ...this.items,
+      new PricedLineItem(this, "Total", total, 1),
+      new PricedLineItem(this, "VAT 7%", total * 0.07, 1),
+      new PricedLineItem(this, "Grand Total", total * 1.07, 1),
+    ];
   }
 
   total(): LineItem {
@@ -114,7 +120,7 @@ export default abstract class BillingDocument implements BillingDocumentWithId {
   }
 
   getTotal(): number {
-    return this.items.map((i: LineItem) => i.total()).reduce(sum, 0);
+    return this.items.reduce((sum, item) => sum + item._price * item.amount, 0);
   }
 
   getFromCompanyName(): string {
@@ -220,8 +226,12 @@ export default abstract class BillingDocument implements BillingDocumentWithId {
     return (1 + date.getMonth()).toString().padStart(2, "0");
   }
 
-  createPricedLineItem(): PricedLineItem {
-    return new PricedLineItem(this);
+  createPricedLineItem(
+    name = "",
+    price: number | string = "",
+    amount: number | string = ""
+  ): PricedLineItem {
+    return new PricedLineItem(this, name, price, amount);
   }
 
   filename(): string {
