@@ -64,4 +64,14 @@ export default class Receipt extends BillingDocument {
   get hasReceiptNumber(): boolean {
     return true;
   }
+  getTitles() {
+    return [
+      { id: 1, title: `${this.documentType}/Tax Invoice (original)`, css: "" },
+      {
+        id: 2,
+        title: `${this.documentType}/Tax Invoice (copy)`,
+        css: "print-only",
+      },
+    ];
+  }
 }
