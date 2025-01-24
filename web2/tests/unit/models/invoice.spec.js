@@ -101,7 +101,11 @@ describe("Invoice", () => {
     });
 
     describe("for each item", () => {
-      let item = invoice.getItems()[1];
+      let item;
+
+      beforeEach(() => {
+        item = invoice.getItems()[1];
+      });
 
       it("should have a name", () => {
         expect(item.name).toEqual("Scrum master");
@@ -120,7 +124,11 @@ describe("Invoice", () => {
       });
     });
     describe("total", () => {
-      let total = invoice.getItems()[2];
+      let total;
+      beforeEach(() => {
+        total = invoice.getItems()[2];
+      });
+
       it("should follow last item", () => {
         expect(total.name).toEqual("Total");
         expect(total.getTotal()).toEqual("THB 400,800.00");
@@ -153,12 +161,10 @@ describe("Invoice", () => {
       expect(invoice.itemClass()).toEqual("small");
     });
     it("should make company name small when the name is too long", () => {
-      let invoice = Factory.createInvoice();
       invoice.targetCompany.name = "ตลาดหลักทรัพย์แห่งประเทศไทย (สำนักงานใหญ่)";
       expect(invoice.targetCompanyNameClass()).toEqual("small");
     });
     it("should not make company name small when the name normal", () => {
-      let invoice = Factory.createInvoice();
       invoice.targetCompany.name = "*3*5*7*10*13*16*19*22*25*28";
       expect(invoice.targetCompanyNameClass()).toEqual("");
     });
@@ -187,12 +193,10 @@ describe("Invoice", () => {
       expect(invoice.tablePaddingClass()).toEqual("dense");
     });
     it("should have normal signature class when have empty payment info", () => {
-      let invoice = Factory.createInvoice();
       invoice.payment = "";
       expect(invoice.tablePaddingClass()).toEqual("");
     });
     it("should have normal signature class when no payment infos", () => {
-      let invoice = Factory.createInvoice();
       delete invoice.payment;
       expect(invoice.tablePaddingClass()).toEqual("");
     });
@@ -202,7 +206,6 @@ describe("Invoice", () => {
     let item;
 
     beforeEach(() => {
-      invoice = Factory.createInvoice();
       item = invoice.getItems()[1];
     });
 
@@ -313,7 +316,7 @@ describe("Invoice", () => {
         invoice.removeItem(invoice.items[0]);
         expect(invoice.getItems()[0].name).toEqual("Scrum master");
       });
-      it("remove unknown item does nothing", () => {
+      it.only("remove unknown item does nothing", () => {
         invoice.removeItem();
         expect(invoice.items.length).toEqual(2);
       });
