@@ -35,7 +35,7 @@ export default abstract class BillingDocument implements BillingDocumentWithId {
   public projectName = "";
   public dialog: boolean;
   public deleted: boolean;
-  public items: PricedLineItem[];
+  public items: LineItem[];
   public fromCompany: Company = {
     name: "",
     address: "",
@@ -107,7 +107,7 @@ export default abstract class BillingDocument implements BillingDocumentWithId {
           item.price,
           item.amount
         );
-        newItem._price = item.price;
+        newItem._price = Number(item.price);
         return newItem;
       }),
       new PricedLineItem(this, "Total", total, 1),
@@ -129,7 +129,18 @@ export default abstract class BillingDocument implements BillingDocumentWithId {
   }
 
   getTotal(): number {
-    return this.items.reduce((sum, item) => sum + item._price * item.amount, 0);
+    return this.items.reduce((sum, item) => {
+      let total = 0;
+      if (typeof item === "object") {
+        total = new PricedLineItem(
+          this,
+          item.name,
+          item.price,
+          item.amount
+        ).total();
+      }
+      return sum + total;
+    }, 0);
   }
 
   getFromCompanyName(): string {

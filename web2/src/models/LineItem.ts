@@ -10,6 +10,7 @@ export default class LineItem implements ILineItem {
   public name: string;
   public t: number;
   protected invoice: BillingDocument;
+  amount: string | number | undefined;
 
   constructor(name: string, t: number, invoice: BillingDocument) {
     this.name = name;
@@ -21,7 +22,7 @@ export default class LineItem implements ILineItem {
     return this.getCurrency(this.t);
   }
 
-  get price(): string {
+  get price(): number | string {
     return "";
   }
 
