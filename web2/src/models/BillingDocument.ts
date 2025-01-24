@@ -81,7 +81,7 @@ export default abstract class BillingDocument implements BillingDocumentWithId {
 
     if (!data.items) return;
     this.items = data.items.map(
-      (i) => new PricedLineItem(this, i.name, i.price, i.amount)
+      (i) => new PricedLineItem(this, i.name, i.price || 0, i.amount || 0)
     );
   }
 
@@ -100,7 +100,16 @@ export default abstract class BillingDocument implements BillingDocumentWithId {
   getItems(): (LineItem | PricedLineItem)[] {
     const total = this.getTotal();
     return [
-      ...this.items,
+      ...this.items.map((item) => {
+        const newItem = new PricedLineItem(
+          this,
+          item.name,
+          item.price,
+          item.amount
+        );
+        newItem._price = item.price;
+        return newItem;
+      }),
       new PricedLineItem(this, "Total", total, 1),
       new PricedLineItem(this, "VAT 7%", total * 0.07, 1),
       new PricedLineItem(this, "Grand Total", total * 1.07, 1),

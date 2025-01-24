@@ -2,6 +2,8 @@ import BillingDocument from "./BillingDocument";
 
 export interface ILineItem {
   name: string;
+  price?: number | string;
+  amount?: number | string;
 }
 
 export default class LineItem implements ILineItem {
