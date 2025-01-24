@@ -2,7 +2,11 @@ import Invoice from "../../../src/models/Invoice";
 import { Factory } from "../factory";
 
 describe("Invoice", () => {
-  let invoice = Factory.createInvoice();
+  let invoice;
+
+  beforeEach(() => {
+    invoice = Factory.createInvoice();
+  });
 
   describe("parsing json data", () => {
     it("should have id", () => {
