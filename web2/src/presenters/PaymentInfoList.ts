@@ -2,6 +2,8 @@ import BillingDocument, {
   BillingDocumentWithId,
 } from "@/models/BillingDocument";
 import { PaymentInfoService } from "@/services/types";
+import Invoice from "@/models/Invoice";
+import { ref, Ref } from "vue";
 
 interface Header {
   text: string;
@@ -15,25 +17,25 @@ export interface View {
 
 export interface Presenter {
   headers: Array<{ text: string; value: string }>;
-  items: BillingDocumentWithId[];
+  items: Ref<BillingDocumentWithId[]>;
   init(year: number): void;
   delete(item: BillingDocument): void;
 }
 
 export default class PaymentInfoList implements Presenter {
   protected view: View;
-  public items: BillingDocument[];
+  public items: Ref<BillingDocument[]>;
   public headers: Header[];
   protected API: PaymentInfoService;
 
   constructor(view: View, api: PaymentInfoService) {
     this.view = view;
-    this.items = [];
+    this.items = ref([]);
     this.headers = [
       { text: "Number", value: "number" },
       { text: "Company", value: "targetCompany.name" },
       { text: "Project", value: "projectName" },
-      { text: "Date", value: "date" },
+      { text: "Date", value: "invoiceDate" },
       { text: "Actions", value: "action", sortable: false },
     ];
     this.API = api;
@@ -44,7 +46,13 @@ export default class PaymentInfoList implements Presenter {
   }
 
   setAll = (items: BillingDocument[]): void => {
-    this.items = items;
+    const newItems = items.map((item) => {
+      if (!(item instanceof BillingDocument)) {
+        return new Invoice(item);
+      }
+      return item;
+    });
+    this.items.value = newItems;
   };
 
   public delete = (item: BillingDocument): void => {
@@ -53,7 +61,7 @@ export default class PaymentInfoList implements Presenter {
   };
 
   removeItemFromList = (item: BillingDocument): void => {
-    this.items = this.items.filter((i) => i.number !== item.number);
+    this.items.value = this.items.value.filter((i) => i.number !== item.number);
   };
 
   cancelDelete = (item: BillingDocument): void => {
