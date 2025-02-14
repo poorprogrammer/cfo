@@ -1,5 +1,6 @@
 import Presenter from "@/presenters/Invoice";
 import API from "@/services/InvoiceService";
+import axios from "axios";
 
 class MockView {
   goTo() {}
@@ -13,7 +14,7 @@ describe("Invoice Presenter", () => {
   });
 
   it("should get invoice with specific number from API when init", () => {
-    vi.spyOn(p.API, "get");
+    vi.spyOn(p.API, "get").mockResolvedValue({ data: {} });
     p.init(invoiceNumber);
     expectToBeCalledWith(p.API, invoiceNumber);
   });

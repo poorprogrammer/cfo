@@ -11,7 +11,7 @@ describe("invoices API", () => {
   describe("getAll", () => {
     describe("before call", () => {
       it("should call with correct url", () => {
-        vi.spyOn(axios, "get");
+        vi.spyOn(axios, "get").mockResolvedValue({ data: [] });
 
         api.getAll(2020);
 
