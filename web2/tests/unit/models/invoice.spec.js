@@ -316,7 +316,7 @@ describe("Invoice", () => {
         invoice.removeItem(invoice.items[0]);
         expect(invoice.getItems()[0].name).toEqual("Scrum master");
       });
-      it.only("remove unknown item does nothing", () => {
+      it("remove unknown item does nothing", () => {
         invoice.removeItem();
         expect(invoice.items.length).toEqual(2);
       });
