@@ -2,7 +2,7 @@
   <div>
     <div class="list-card">
       <div class="card-header">{{ titleMsg }} <slot name="header"></slot></div>
-      <data-table :headers="presenter.headers" :items="presenter.items">
+      <data-table :headers="presenter.headers" :items="presenter.items.value">
         <template #[`item.number`]="{ item }">
           <slot name="col1" :item="item"></slot>
           <router-link :to="item.editionUrl()">{{ item.number }}</router-link>

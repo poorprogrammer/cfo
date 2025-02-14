@@ -52,6 +52,9 @@ const getItemValue = (item: BillingDocument, path: string): any => {
 };
 
 const sortedItems = computed(() => {
+  if (!props.items?.length) {
+    return [];
+  }
   return [...props.items].sort((a, b) => {
     const aVal = a.number;
     const bVal = b.number;

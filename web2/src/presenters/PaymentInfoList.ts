@@ -2,7 +2,6 @@ import BillingDocument, {
   BillingDocumentWithId,
 } from "@/models/BillingDocument";
 import { PaymentInfoService } from "@/services/types";
-import Invoice from "@/models/Invoice";
 import { ref, Ref } from "vue";
 
 interface Header {
@@ -22,7 +21,7 @@ export interface Presenter {
   delete(item: BillingDocument): void;
 }
 
-export default class PaymentInfoList implements Presenter {
+export default abstract class PaymentInfoList implements Presenter {
   protected view: View;
   public items: Ref<BillingDocument[]>;
   public headers: Header[];
@@ -42,18 +41,14 @@ export default class PaymentInfoList implements Presenter {
   }
 
   public init(year: number): void {
-    this.API.getAll(year).then(this.setAll);
+    this.API.getAll(year)
+      .then((items) => this.setAll(items))
+      .catch((error) => {
+        console.error("Error fetching items:", error);
+      });
   }
 
-  setAll = (items: BillingDocument[]): void => {
-    const newItems = items.map((item) => {
-      if (!(item instanceof BillingDocument)) {
-        return new Invoice(item);
-      }
-      return item;
-    });
-    this.items.value = newItems;
-  };
+  abstract setAll(items: BillingDocument[]): void;
 
   public delete = (item: BillingDocument): void => {
     this.API.delete(item).then(this.removeItemFromList);

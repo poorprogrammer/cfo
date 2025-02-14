@@ -3,6 +3,7 @@ import BillingDocument, {
 } from "@/models/BillingDocument";
 import InvoiceService from "@/services/InvoiceService";
 import PaymentInfoList, { Presenter, View } from "./PaymentInfoList";
+import Invoice from "@/models/Invoice";
 
 export interface IInvoiceListPresenter extends Presenter {
   selectedInvoices: BillingDocumentWithId[];
@@ -40,5 +41,15 @@ export class InvoiceListPresenter
 
   get buttonColor(): string {
     return this.isGeneratingReceipt ? "purple" : "primary";
+  }
+
+  public setAll(items: BillingDocument[]): void {
+    const newItems = items.map((item) => {
+      if (!(item instanceof BillingDocument)) {
+        return new Invoice(item);
+      }
+      return item;
+    });
+    this.items.value = newItems;
   }
 }
