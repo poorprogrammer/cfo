@@ -112,9 +112,9 @@ export default abstract class BillingDocument implements BillingDocumentWithId {
         newItem._price = Number(item.price);
         return newItem;
       }),
-      new PricedLineItem(this, "Total", total, 1),
-      new PricedLineItem(this, "VAT 7%", total * 0.07, 1),
-      new PricedLineItem(this, "Grand Total", total * 1.07, 1),
+      new LineItem("Total", total, this),
+      new LineItem("VAT 7%", total * 0.07, this),
+      new LineItem("Grand Total", total * 1.07, this),
     ];
   }
 
