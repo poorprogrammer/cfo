@@ -39,10 +39,14 @@ export class Factory {
   };
 
   static createInvoice() {
-    return new Invoice(Factory.json);
+    return new Invoice(deepCopy(Factory.json));
   }
 
   static createReceipt() {
     return Receipt.createFromInvoices([this.createInvoice()]);
   }
+}
+
+function deepCopy(obj) {
+  return JSON.parse(JSON.stringify(obj));
 }

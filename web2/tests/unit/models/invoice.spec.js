@@ -249,19 +249,19 @@ describe("Invoice", () => {
     });
     it("should be able to change target company name", () => {
       invoice.targetCompany.name = "ODDSTria";
-      expect(invoice.getFromCompanyName()).toEqual("ODDSTria");
+      expect(invoice.getTargetCompanyName()).toEqual("ODDSTria");
     });
     it("should be able to change target company address", () => {
       invoice.targetCompany.address = "new address";
-      expect(invoice.getFromCompanyAddress()).toEqual("new address");
+      expect(invoice.getTargetCompanyAddress()).toEqual("new address");
     });
     it("should be able to change target company tax id", () => {
       invoice.targetCompany.taxId = "new taxId";
-      expect(invoice.getFromCompanyTaxId()).toEqual("new taxId");
+      expect(invoice.getTargetCompanyTaxId()).toEqual("new taxId");
     });
     it("should be able to change target company tel", () => {
       invoice.targetCompany.tel = "new tel";
-      expect(invoice.getFromCompanyTel()).toEqual("new tel");
+      expect(invoice.getTargetCompanyTel()).toEqual("new tel");
     });
     it("should be able to change invoice number", () => {
       invoice.invoiceNumber = "new number";
