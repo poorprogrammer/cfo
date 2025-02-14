@@ -17,6 +17,7 @@ export interface IBillingDocument {
   currency?: string;
   items?: ILineItem[];
   deleted?: boolean;
+  payment?: string;
 }
 
 export interface BillingDocumentData extends IBillingDocument {
@@ -48,6 +49,7 @@ export default abstract class BillingDocument implements BillingDocumentWithId {
     taxId: "",
     tel: "",
   };
+  public payment = "";
 
   constructor(data?: BillingDocumentData) {
     this._currencies = {
@@ -78,7 +80,7 @@ export default abstract class BillingDocument implements BillingDocumentWithId {
     this.remark = data.remark || this.remark;
     this._currency = data.currency;
     this.deleted = data.deleted || false;
-
+    this.payment = data.payment || "";
     if (!data.items) return;
     this.items = data.items.map(
       (i) => new PricedLineItem(this, i.name, i.price || 0, i.amount || 0)
@@ -172,7 +174,7 @@ export default abstract class BillingDocument implements BillingDocumentWithId {
   }
 
   tablePaddingClass(): string {
-    return "";
+    return this.payment ? "dense" : "";
   }
 
   getTargetCompanyAddress(): string | undefined {
