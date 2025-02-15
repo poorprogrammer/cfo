@@ -29,8 +29,8 @@ test.describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
       "202001-008"
     );
     await editInvoicePage.editInvoiceDate("2020-01-02");
-    // await editInvoicePage.editFirstItem("Technical coach", "1000", "10");
-    // await editInvoicePage.editSecondItem("UX", "3000", "10");
+    await editInvoicePage.editFirstItem("Fullstack developer", "1000", "10");
+    await editInvoicePage.editSecondItem("UX/UI", "3000", "10");
     await editInvoicePage.save();
     await viewInvoicePage.containInvoiceNumber(page);
     await invoiceListPage.visit(2020);
