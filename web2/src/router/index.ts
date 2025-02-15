@@ -24,6 +24,22 @@ const isAuthenticated = (
   next({ name: "login" });
 };
 
+// Add a navigation guard to handle optional year parameter
+const handleOptionalYear = (
+  to: RouteLocationNormalized,
+  from: RouteLocationNormalized,
+  next: NavigationGuardNext
+) => {
+  if (!to.params.year) {
+    next({
+      name: to.name as string,
+      params: { ...to.params, year: new Date().getFullYear().toString() },
+    });
+  } else {
+    next();
+  }
+};
+
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/login",
@@ -33,20 +49,14 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "home",
-    redirect: { name: "invoicesThisYear" },
+    redirect: { name: "invoices" },
     beforeEnter: isAuthenticated,
   },
   {
-    path: "/invoices",
-    name: "invoicesThisYear",
-    component: Invoices,
-    beforeEnter: isAuthenticated,
-  },
-  {
-    path: "/invoices/:year",
+    path: "/invoices/:year?",
     name: "invoices",
     component: Invoices,
-    beforeEnter: isAuthenticated,
+    beforeEnter: [isAuthenticated, handleOptionalYear],
   },
   {
     path: "/invoice/:number/duplicate",
