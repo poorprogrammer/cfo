@@ -1,38 +1,30 @@
 <template>
   <div class="invoice pa-3">
-    <div v-if="!p.invoice.number">Loading Please wait...</div>
+    <div v-if="!invoice">Loading Please wait...</div>
     <div v-else>
-      <edit-invoice v-bind:presenter="p"></edit-invoice>
+      <edit-invoice v-bind:presenter="props.presenter"></edit-invoice>
       <div class="no-print">
-        <back-button v-bind:target="p.invoice.listUrl"></back-button>
+        <back-button v-bind:target="invoice.listUrl"></back-button>
         <save-button @save="save"></save-button>
       </div>
     </div>
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
+import { computed } from "vue";
 import Presenter from "@/presenters/Invoice";
 import EditInvoice from "@/components/EditInvoice.vue";
 import BackButton from "@/components/BackButton.vue";
 import SaveButton from "@/components/SaveButton.vue";
 
-export default {
-  props: { presenter: Presenter },
-  components: { EditInvoice, BackButton, SaveButton },
-  name: "DuplicatedPaymentInfo",
-  mounted() {
-    this.p = this.presenter;
-  },
-  data() {
-    return {
-      p: this.p,
-    };
-  },
-  methods: {
-    save: function () {
-      this.p.save();
-    },
-  },
-};
+const props = defineProps<{
+  presenter: Presenter;
+}>();
+
+const invoice = computed(() => props.presenter.invoice.value);
+
+function save() {
+  props.presenter.save();
+}
 </script>
