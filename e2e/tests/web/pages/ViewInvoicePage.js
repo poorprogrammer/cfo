@@ -14,8 +14,14 @@ exports.ViewInvoicePage = class ViewInvoicePage {
     await this.page.waitForSelector("text=Invoice (original)");
   }
 
-  async containInvoiceNumber(page) {
-    await expect(page.getByText("Invoice Number").first()).toBeVisible();
-    await expect(page.getByText("-008").nth(1)).toBeVisible();
+  async containsInvoiceNumber() {
+    await expect(this.page.getByText("Invoice Number").first()).toBeVisible();
+    await expect(this.page.getByText("-008").nth(1)).toBeVisible();
+  }
+
+  async containsFirstItem(itemName, itemPrice, itemQuantity) {
+    await expect(this.page.getByText(itemName)).toBeVisible();
+    await expect(this.page.getByText(itemPrice)).toBeVisible();
+    await expect(this.page.getByText(itemQuantity)).toBeVisible();
   }
 };

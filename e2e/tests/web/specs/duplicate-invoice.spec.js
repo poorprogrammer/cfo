@@ -22,7 +22,9 @@ test.describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
     await duplicateInvoicePage.editFirstItem("Technical coach", "1000", "12");
     await duplicateInvoicePage.editSecondItem("UX", "2000", "10");
     let viewInvoicePage = await duplicateInvoicePage.save();
-    await viewInvoicePage.containInvoiceNumber(page);
+    await viewInvoicePage.containsInvoiceNumber();
+    await viewInvoicePage.containsFirstItem("Technical coach", "1000", "12");
+
     await invoiceListPage.visit(2020);
     await invoiceListPage.containsInvoice("202001-008");
     let editInvoicePage = await invoiceListPage.clickEditInvoiceNumber(
@@ -32,7 +34,7 @@ test.describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
     await editInvoicePage.editFirstItem("Fullstack developer", "1000", "10");
     await editInvoicePage.editSecondItem("UX/UI", "3000", "10");
     await editInvoicePage.save();
-    await viewInvoicePage.containInvoiceNumber(page);
+    await viewInvoicePage.containsInvoiceNumber();
     await invoiceListPage.visit(2020);
     await invoiceListPage.containsInvoice("202001-008");
     await invoiceListPage.delete("202001-008");
