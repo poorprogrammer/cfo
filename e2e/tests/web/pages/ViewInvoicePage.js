@@ -20,8 +20,8 @@ exports.ViewInvoicePage = class ViewInvoicePage {
   }
 
   async containsFirstItem(itemName, itemPrice, itemQuantity) {
-    await expect(this.page.getByText(itemName)).toBeVisible();
-    await expect(this.page.getByText(itemPrice)).toBeVisible();
-    await expect(this.page.getByText(itemQuantity)).toBeVisible();
+    await expect(this.page.getByText(itemName).first()).toBeVisible();
+    await expect(this.page.getByText(itemPrice).first()).toBeVisible();
+    await expect(this.page.getByText(itemQuantity).first()).toBeVisible();
   }
 };
