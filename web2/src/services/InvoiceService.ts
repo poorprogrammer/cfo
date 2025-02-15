@@ -32,7 +32,7 @@ export default class InvoiceService implements PaymentInfoService {
 
   save(invoice: Invoice): Promise<string> {
     return axios
-      .post(this.collectionUrl(), this.createDTO(invoice))
+      .post(this.collectionUrl(), this.createNewInvoiceRequest(invoice))
       .then(this.parseNumber);
   }
 
@@ -73,6 +73,13 @@ export default class InvoiceService implements PaymentInfoService {
     dto.items.forEach((item: any) => {
       delete item.item;
     });
+    return dto;
+  };
+  protected createNewInvoiceRequest = (invoice: Invoice): any => {
+    const dto: any = this.createDTO(invoice);
+    delete dto.id;
+    delete dto._id;
+    delete dto._currencies;
     return dto;
   };
 }

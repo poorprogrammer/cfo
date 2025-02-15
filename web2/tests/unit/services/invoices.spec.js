@@ -50,8 +50,17 @@ describe("invoices API", () => {
   describe("save", () => {
     describe("Data Transfer Object", () => {
       it("remove circular dependencies to avoid save fail", async () => {
-        let dto = api.createDTO(Factory.createInvoice());
+        let dto = api.createNewInvoiceRequest(Factory.createInvoice());
         expect(dto.items[0].item).toEqual(undefined);
+      });
+      it("remove id and _id to create new invoice", async () => {
+        let dto = api.createNewInvoiceRequest(Factory.createInvoice());
+        expect(dto.id).toBeUndefined();
+        expect(dto._id).toBeUndefined();
+      });
+      it("remove unused fields to avoid error when print invoice", async () => {
+        let dto = api.createNewInvoiceRequest(Factory.createInvoice());
+        expect(dto._currencies).toBeUndefined();
       });
     });
     describe("after call", () => {
