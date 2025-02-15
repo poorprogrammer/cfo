@@ -29,5 +29,6 @@ e2e:
 
 # Run end-to-end tests in CI environment
 e2e-ci:
-	docker-compose -f compose/test/docker-compose.yml build e2e
-	docker-compose -f compose/test/docker-compose.yml run --rm e2e
+	cd compose/test/ && docker-compose build e2e
+	cd compose/test/ && docker-compose run --rm e2e
+	cd compose/test/ && docker-compose stop 
