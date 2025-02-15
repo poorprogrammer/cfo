@@ -9,7 +9,11 @@ export default class Invoice extends BillingDocument {
 
   constructor(data?: Partial<Invoice>) {
     super(data);
-    Object.assign(this, data);
+    if (!data) return;
+    this.invoiceNumber = data.invoiceNumber || "";
+    this.invoiceDate = data.invoiceDate || "";
+    this.quotationNumber = data.quotationNumber || "";
+    this.purchaseOrderNumber = data.purchaseOrderNumber || "";
   }
 
   get hasInvoiceNumber() {

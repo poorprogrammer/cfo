@@ -1,4 +1,9 @@
-import LineItem, { ILineItem } from "./LineItem";
+import LineItem, {
+  GrandTotalLineItem,
+  ILineItem,
+  TaxLineItem,
+  TotalLineItem,
+} from "./LineItem";
 import PricedLineItem from "./PricedLineItem";
 
 interface Company {
@@ -102,32 +107,11 @@ export default abstract class BillingDocument implements BillingDocumentWithId {
   getItems(): (LineItem | PricedLineItem)[] {
     const total = this.getTotal();
     return [
-      ...this.items.map((item) => {
-        const newItem = new PricedLineItem(
-          this,
-          item.name,
-          item.price,
-          item.amount
-        );
-        newItem._price = Number(item.price);
-        return newItem;
-      }),
-      new LineItem("Total", total, this),
-      new LineItem("VAT 7%", total * 0.07, this),
-      new LineItem("Grand Total", total * 1.07, this),
+      ...this.items,
+      new TotalLineItem("Total", total, this),
+      new TaxLineItem("VAT 7%", total, this),
+      new GrandTotalLineItem("Grand Total", total, this),
     ];
-  }
-
-  total(): LineItem {
-    return new LineItem("Total", this.getTotal(), this);
-  }
-
-  tax(): LineItem {
-    return new LineItem("VAT 7%", this.getTotal() * 0.07, this);
-  }
-
-  grandTotal(): LineItem {
-    return new LineItem("Grand Total", this.getTotal() * 1.07, this);
   }
 
   getTotal(): number {

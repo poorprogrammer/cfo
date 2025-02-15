@@ -104,6 +104,7 @@ describe("Invoice", () => {
       let item;
 
       beforeEach(() => {
+        invoice = Factory.createInvoice();
         item = invoice.getItems()[1];
       });
 
@@ -136,6 +137,15 @@ describe("Invoice", () => {
       it("should have getPrice or the invoice items would not show on the invoice page", () => {
         expect(total.getPrice()).toEqual("");
       });
+      it("should reflect changes in item price", () => {
+        const item = invoice.getItems()[0];
+        item.price = 800;
+        item.amount = 20;
+        expect(item.getTotal()).toEqual("THB 16,000.00");
+        expect(invoice.getItems()[1].getTotal()).toEqual("THB 800.00");
+        expect(invoice.getItems()[2].getTotal()).toEqual("THB 16,800.00");
+        expect(total.getTotal()).toEqual("THB 16,800.00");
+      });
     });
     describe("vat", () => {
       it("should follow total", () => {
@@ -143,12 +153,32 @@ describe("Invoice", () => {
         expect(vat.name).toEqual("VAT 7%");
         expect(vat.getTotal()).toEqual("THB 28,056.00");
       });
+      it("should reflect changes in item price", () => {
+        const item = invoice.getItems()[0];
+        item.price = 800;
+        item.amount = 20;
+        let vat = invoice.getItems()[3];
+        expect(item.getTotal()).toEqual("THB 16,000.00");
+        expect(invoice.getItems()[1].getTotal()).toEqual("THB 800.00");
+        expect(invoice.getItems()[2].getTotal()).toEqual("THB 16,800.00");
+        expect(vat.getTotal()).toEqual("THB 1,176.00");
+      });
     });
     describe("grand total", () => {
       it("should follow vat", () => {
         let grandTotal = invoice.getItems()[4];
         expect(grandTotal.name).toEqual("Grand Total");
         expect(grandTotal.getTotal()).toEqual("THB 428,856.00");
+      });
+      it("should reflect changes in item price", () => {
+        const item = invoice.getItems()[0];
+        item.price = 800;
+        item.amount = 20;
+        let grandTotal = invoice.getItems()[4];
+        expect(item.getTotal()).toEqual("THB 16,000.00");
+        expect(invoice.getItems()[1].getTotal()).toEqual("THB 800.00");
+        expect(invoice.getItems()[2].getTotal()).toEqual("THB 16,800.00");
+        expect(grandTotal.getTotal()).toEqual("THB 17,976.00");
       });
     });
   });

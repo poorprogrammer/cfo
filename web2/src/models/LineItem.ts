@@ -6,7 +6,7 @@ export interface ILineItem {
   amount?: number | string;
 }
 
-export default class LineItem implements ILineItem {
+export default abstract class LineItem implements ILineItem {
   public name: string;
   public t: number;
   protected invoice: BillingDocument;
@@ -17,9 +17,7 @@ export default class LineItem implements ILineItem {
     this.invoice = invoice;
   }
 
-  getTotal(): string {
-    return this.getCurrency(this.t);
-  }
+  abstract getTotal(): string;
 
   get price(): number | string {
     return "";
@@ -43,5 +41,23 @@ export default class LineItem implements ILineItem {
 
   get amount(): number {
     return 0;
+  }
+}
+
+export class TotalLineItem extends LineItem {
+  getTotal(): string {
+    return this.getCurrency(this.invoice.getTotal());
+  }
+}
+
+export class TaxLineItem extends LineItem {
+  getTotal(): string {
+    return this.getCurrency(this.invoice.getTotal() * 0.07);
+  }
+}
+
+export class GrandTotalLineItem extends LineItem {
+  getTotal(): string {
+    return this.getCurrency(this.invoice.getTotal() * 1.07);
   }
 }
