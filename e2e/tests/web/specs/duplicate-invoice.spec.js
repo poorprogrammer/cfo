@@ -1,4 +1,4 @@
-const { test, expect } = require("@playwright/test");
+const { test } = require("@playwright/test");
 const { LoginPage } = require("../pages/LoginPage");
 
 test.describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
@@ -22,7 +22,7 @@ test.describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
     await duplicateInvoicePage.editFirstItem("Technical coach", "1000", "12");
     await duplicateInvoicePage.editSecondItem("UX", "2000", "10");
     let viewInvoicePage = await duplicateInvoicePage.save();
-    await containInvoiceNumber(page);
+    await viewInvoicePage.containInvoiceNumber(page);
     await invoiceListPage.visit(2020);
     await invoiceListPage.containsInvoice("202001-008");
     let editInvoicePage = await invoiceListPage.clickEditInvoiceNumber(
@@ -32,15 +32,10 @@ test.describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
     // await editInvoicePage.editFirstItem("Technical coach", "1000", "10");
     // await editInvoicePage.editSecondItem("UX", "3000", "10");
     await editInvoicePage.save();
-    await containInvoiceNumber(page);
+    await viewInvoicePage.containInvoiceNumber(page);
     await invoiceListPage.visit(2020);
     await invoiceListPage.containsInvoice("202001-008");
     await invoiceListPage.delete("202001-008");
     await invoiceListPage.shouldNotContainsInvoice("202001-008");
   });
 });
-
-async function containInvoiceNumber(page) {
-  await expect(page.getByText("Invoice Number").first()).toBeVisible();
-  await expect(page.getByText("-008").nth(1)).toBeVisible();
-}
