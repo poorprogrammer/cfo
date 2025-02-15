@@ -3,7 +3,7 @@ import BillingDocument from "./BillingDocument";
 
 export default class PricedLineItem extends LineItem {
   _price: number;
-  amount: number;
+  _amount: number;
 
   constructor(
     invoice: BillingDocument,
@@ -13,12 +13,12 @@ export default class PricedLineItem extends LineItem {
   ) {
     super(name, 0, invoice);
     this._price = typeof price === "string" ? 0 : price;
-    this.amount = typeof amount === "string" ? 0 : amount;
+    this._amount = typeof amount === "string" ? 0 : amount;
     this.t = this.total();
   }
 
   override total(): number {
-    return this._price * this.amount;
+    return this._price * this._amount;
   }
 
   getTotal(): string {
@@ -28,6 +28,7 @@ export default class PricedLineItem extends LineItem {
 
   set price(value: number) {
     this._price = value;
+    this.t = this.total();
   }
 
   get price(): number {
@@ -37,5 +38,14 @@ export default class PricedLineItem extends LineItem {
   getPrice(): string {
     if (this._price === 0) return "";
     return this.getCurrency(this._price);
+  }
+
+  set amount(value: number) {
+    this._amount = value;
+    this.t = this.total();
+  }
+
+  get amount(): number {
+    return this._amount;
   }
 }

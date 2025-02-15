@@ -221,7 +221,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in invoice.getItems()" :key="index">
+          <tr v-for="(item, index) in items" :key="index">
             <td class="text-left">
               <input
                 class="form-input"
@@ -233,14 +233,14 @@
               <input
                 class="form-input text-right"
                 placeholder="Price"
-                v-model="item.price"
+                v-model.number="item.price"
               />
             </td>
             <td class="text-right">
               <input
                 class="form-input text-right"
                 placeholder="Amount"
-                v-model="item.amount"
+                v-model.number="item.amount"
               />
             </td>
             <td class="text-right">{{ item.getTotal() }}</td>
@@ -268,15 +268,28 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref, watch } from "vue";
 import Presenter from "@/presenters/Invoice";
 import BaseInput from "@/components/BaseInput.vue";
+import LineItem from "@/models/LineItem";
 
 const props = defineProps<{
   presenter: Presenter;
 }>();
 
 const invoice = computed(() => props.presenter.invoice.value);
+const items = ref(invoice.value?.getItems() || []);
+
+// Update items when invoice changes
+watch(
+  () => invoice.value,
+  (newInvoice) => {
+    if (newInvoice) {
+      items.value = newInvoice.getItems();
+    }
+  },
+  { immediate: true }
+);
 
 function today() {
   props.presenter.todayClicked();

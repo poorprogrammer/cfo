@@ -10,7 +10,6 @@ export default class LineItem implements ILineItem {
   public name: string;
   public t: number;
   protected invoice: BillingDocument;
-  amount: string | number | undefined;
 
   constructor(name: string, t: number, invoice: BillingDocument) {
     this.name = name;
@@ -40,5 +39,9 @@ export default class LineItem implements ILineItem {
 
   total(): number {
     return this.t;
+  }
+
+  get amount(): number {
+    return 0;
   }
 }
