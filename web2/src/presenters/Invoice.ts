@@ -1,13 +1,20 @@
 import Invoice from "@/models/Invoice";
+import LineItem from "@/models/LineItem";
+import InvoiceService from "@/services/InvoiceService";
 
-export default class {
-  constructor(view, api) {
+export default class InvoicePresenter {
+  view: any;
+  API: InvoiceService;
+  invoice: Invoice;
+  constructor(view: any, api: InvoiceService) {
     this.view = view;
     this.invoice = new Invoice();
     this.API = api;
   }
-  init(invoiceNumber) {
-    this.API.get(invoiceNumber).then((invoice) => (this.invoice = invoice));
+  init(invoiceNumber: string) {
+    this.API.get(invoiceNumber).then(
+      (invoice) => (this.invoice = new Invoice(invoice))
+    );
   }
   save() {
     this.API.save(this.invoice).then(
@@ -29,22 +36,22 @@ export default class {
       }
     );
   }
-  getPrintPageParameters(invoiceNumber) {
+  getPrintPageParameters(invoiceNumber: string) {
     return {
       name: this.invoice.documentType.toLowerCase(),
       params: { number: invoiceNumber },
     };
   }
-  addItemClickedOn(item) {
+  addItemClickedOn(item: LineItem) {
     this.invoice.addItemBefore(item);
   }
-  removeItemClickedOn(item) {
+  removeItemClickedOn(item: LineItem) {
     this.invoice.removeItem(item);
   }
   todayClicked() {
     this.invoice.setDateToday();
   }
-  showError(error) {
+  showError(error: string) {
     alert(error);
   }
 }

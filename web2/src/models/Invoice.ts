@@ -7,7 +7,7 @@ export default class Invoice extends BillingDocument {
   quotationNumber = "";
   purchaseOrderNumber = "";
 
-  constructor(data: Partial<Invoice>) {
+  constructor(data?: Partial<Invoice>) {
     super(data);
     Object.assign(this, data);
   }
