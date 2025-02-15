@@ -1,7 +1,7 @@
 <template>
-  <div v-if="p.invoice" class="edit-invoice">
+  <div v-if="invoice" class="edit-invoice">
     <div class="header">
-      <h2>Unsave {{ p.invoice.documentType }} (edit mode)</h2>
+      <h2>Unsave {{ invoice.documentType }} (edit mode)</h2>
     </div>
 
     <div class="form-section">
@@ -15,23 +15,23 @@
                 <input
                   class="form-input"
                   placeholder="Name"
-                  v-model="p.invoice.fromCompany.name"
+                  v-model="invoice.fromCompany.name"
                 />
                 <input
                   class="form-input"
                   placeholder="Address"
-                  v-model="p.invoice.fromCompany.address"
+                  v-model="invoice.fromCompany.address"
                 />
                 <div class="input-row">
                   <input
                     class="form-input"
                     placeholder="Tax Id"
-                    v-model="p.invoice.fromCompany.taxId"
+                    v-model="invoice.fromCompany.taxId"
                   />
                   <input
                     class="form-input"
                     placeholder="Tel"
-                    v-model="p.invoice.fromCompany.tel"
+                    v-model="invoice.fromCompany.tel"
                   />
                 </div>
               </div>
@@ -50,23 +50,23 @@
               <input
                 class="form-input"
                 placeholder="Name"
-                v-model="p.invoice.targetCompany.name"
+                v-model="invoice.targetCompany.name"
               />
               <input
                 class="form-input"
                 placeholder="Address"
-                v-model="p.invoice.targetCompany.address"
+                v-model="invoice.targetCompany.address"
               />
               <div class="input-row">
                 <base-input
                   id="to-tax-id"
                   label="Tax Id"
-                  v-model="p.invoice.targetCompany.taxId"
+                  v-model="invoice.targetCompany.taxId"
                 />
                 <base-input
                   id="to-tel"
                   label="Tel"
-                  v-model="p.invoice.targetCompany.tel"
+                  v-model="invoice.targetCompany.tel"
                 />
               </div>
             </div>
@@ -76,26 +76,24 @@
         <!-- Invoice Details Card -->
         <div class="card full-width">
           <div class="card-content">
-            <div class="section-label">
-              {{ p.invoice.documentType }} Details
-            </div>
+            <div class="section-label">{{ invoice.documentType }} Details</div>
             <div class="details-grid">
               <!-- First Row: Invoice Number, Date, and PO -->
               <div
                 class="input-group three-columns"
-                v-if="p.invoice.hasInvoiceNumber"
+                v-if="invoice.hasInvoiceNumber"
               >
                 <base-input
                   id="invoice-number"
                   label="Invoice Number"
-                  v-model="p.invoice.invoiceNumber"
+                  v-model="invoice.invoiceNumber"
                 />
                 <div class="date-input-group">
                   <input
                     id="invoice-date"
                     class="form-input"
                     placeholder="Invoice Date"
-                    v-model="p.invoice.invoiceDate"
+                    v-model="invoice.invoiceDate"
                   />
                   <button
                     id="today-button"
@@ -107,29 +105,29 @@
                   </button>
                 </div>
                 <base-input
-                  v-if="p.invoice.hasInvoiceNumber"
+                  v-if="invoice.hasInvoiceNumber"
                   id="purchase-order-number"
                   label="Purchase Order Number"
-                  v-model="p.invoice.purchaseOrderNumber"
+                  v-model="invoice.purchaseOrderNumber"
                 />
               </div>
 
               <!-- optional First Row: Quotation Number, Date -->
               <div
                 class="input-group three-columns"
-                v-if="p.invoice.hasQuotationNumber"
+                v-if="invoice.hasQuotationNumber"
               >
                 <base-input
                   id="quotation-number"
                   label="Quotation Number"
-                  v-model="p.invoice.quotationNumber"
+                  v-model="invoice.quotationNumber"
                 />
                 <div class="date-input-group">
                   <input
                     id="quotation-date"
                     class="form-input"
                     placeholder="Quotation Date"
-                    v-model="p.invoice.quotationDate"
+                    v-model="invoice.quotationDate"
                   />
                   <button
                     id="today-button"
@@ -145,19 +143,19 @@
               <!-- optional First Row: Receipt Number, Date -->
               <div
                 class="input-group three-columns"
-                v-if="p.invoice.hasReceiptNumber"
+                v-if="invoice.hasReceiptNumber"
               >
                 <base-input
                   id="receipt-number"
                   label="Receipt Number"
-                  v-model="p.invoice.receiptNumber"
+                  v-model="invoice.receiptNumber"
                 />
                 <div class="date-input-group">
                   <input
                     id="receipt-date"
                     class="form-input"
                     placeholder="Receipt Date"
-                    v-model="p.invoice.receiptDate"
+                    v-model="invoice.receiptDate"
                   />
                   <button
                     id="today-button"
@@ -174,22 +172,22 @@
                 <base-input
                   id="project"
                   label="Project"
-                  v-model="p.invoice.projectName"
+                  v-model="invoice.projectName"
                 />
                 <base-input
                   id="remark"
                   label="Remark"
-                  v-model="p.invoice.remark"
+                  v-model="invoice.remark"
                 />
                 <div class="select-group">
                   <label for="currency">Currency</label>
                   <select
                     id="currency"
                     class="form-select"
-                    v-model="p.invoice.currency"
+                    v-model="invoice.currency"
                   >
                     <option
-                      v-for="currency in p.invoice.getCurrencies()"
+                      v-for="currency in invoice.getCurrencies()"
                       :key="currency"
                       :value="currency"
                     >
@@ -203,7 +201,7 @@
               <base-input
                 id="payment"
                 label="Payment"
-                v-model="p.invoice.payment"
+                v-model="invoice.payment"
               />
             </div>
           </div>
@@ -223,7 +221,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, index) in p.invoice.getItems()" :key="index">
+          <tr v-for="(item, index) in invoice.getItems()" :key="index">
             <td class="text-left">
               <input
                 class="form-input"
@@ -268,34 +266,29 @@
     </div>
   </div>
 </template>
-<script>
+
+<script setup lang="ts">
+import { computed } from "vue";
 import Presenter from "@/presenters/Invoice";
 import BaseInput from "@/components/BaseInput.vue";
 
-export default {
-  name: "editInvoice",
-  props: { presenter: Presenter },
-  components: { BaseInput },
-  mounted() {
-    this.p = this.presenter;
-  },
-  data() {
-    return {
-      p: this.p,
-    };
-  },
-  methods: {
-    today: function () {
-      this.p.todayClicked();
-    },
-    addItem: function (item) {
-      this.p.addItemClickedOn(item);
-    },
-    removeItem: function (item) {
-      this.p.removeItemClickedOn(item);
-    },
-  },
-};
+const props = defineProps<{
+  presenter: Presenter;
+}>();
+
+const invoice = computed(() => props.presenter.invoice.value);
+
+function today() {
+  props.presenter.todayClicked();
+}
+
+function addItem(item: any) {
+  props.presenter.addItemClickedOn(item);
+}
+
+function removeItem(item: any) {
+  props.presenter.removeItemClickedOn(item);
+}
 </script>
 <style scoped>
 h2 {
