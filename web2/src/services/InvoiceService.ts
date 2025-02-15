@@ -73,13 +73,13 @@ export default class InvoiceService implements PaymentInfoService {
     dto.items.forEach((item: any) => {
       delete item.item;
     });
+    delete dto._currencies;
     return dto;
   };
   protected createNewInvoiceRequest = (invoice: Invoice): any => {
     const dto: any = this.createDTO(invoice);
     delete dto.id;
     delete dto._id;
-    delete dto._currencies;
     return dto;
   };
 }

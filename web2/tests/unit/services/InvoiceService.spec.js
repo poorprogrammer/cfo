@@ -70,4 +70,16 @@ describe("invoices API", () => {
       });
     });
   });
+  describe("edit", () => {
+    describe("Data Transfer Object", () => {
+      it("remove circular dependencies to avoid save fail", async () => {
+        let dto = api.createDTO(Factory.createInvoice());
+        expect(dto.items[0].item).toEqual(undefined);
+      });
+      it("remove unused fields to avoid error when print invoice", async () => {
+        let dto = api.createDTO(Factory.createInvoice());
+        expect(dto._currencies).toBeUndefined();
+      });
+    });
+  });
 });

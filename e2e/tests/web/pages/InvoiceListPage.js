@@ -26,6 +26,11 @@ exports.InvoiceListPage = class InvoiceListPage {
     return DuplicateInvoicePage.create(this.page);
   }
 
+  async clickEditInvoiceNumber(invoiceNumber) {
+    await this.page.locator(`#edit_${invoiceNumber}`).click();
+    return DuplicateInvoicePage.create(this.page);
+  }
+
   async delete(invoiceNumber) {
     await this.page.locator(`#delete_${invoiceNumber}`).click();
     await this.confirmDeleteButton.click();

@@ -5,7 +5,9 @@
       <data-table :headers="presenter.headers" :items="presenter.items.value">
         <template #[`item.number`]="{ item }">
           <slot name="col1" :item="item"></slot>
-          <router-link :to="item.editionUrl()">{{ item.number }}</router-link>
+          <router-link :id="'edit_' + item.number" :to="item.editionUrl()">{{
+            item.number
+          }}</router-link>
         </template>
 
         <template #[`item.action`]="{ item }">
