@@ -10,6 +10,7 @@ import DuplicatedInvoice from "@/views/DuplicatedInvoice.vue";
 import UpdateInvoice from "@/views/UpdateInvoice.vue";
 import Invoice from "@/views/Invoice.vue";
 import Login from "@/views/Login.vue";
+import PageNotFound from "@/views/PageNotFound.vue";
 
 const isAuthenticated = (
   to: RouteLocationNormalized,
@@ -85,6 +86,10 @@ const routes: Array<RouteRecordRaw> = [
     path: "/receipts",
     name: "Receipts",
     component: () => import("@/views/Receipts.vue"),
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    component: PageNotFound,
   },
 ];
 
