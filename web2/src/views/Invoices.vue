@@ -1,6 +1,6 @@
 <template>
   <div>
-    <payment-info-list titleMsg="Invoice List" :presenter="presenter">
+    <billing-archive titleMsg="Invoice List" :presenter="presenter">
       <template #header>
         <button
           id="generate-receipt"
@@ -20,14 +20,14 @@
           />
         </span>
       </template>
-    </payment-info-list>
+    </billing-archive>
   </div>
 </template>
 
 <script setup lang="ts">
 import { Ref, ref } from "vue";
 import { useRouter } from "vue-router";
-import PaymentInfoList from "@/components/PaymentInfoList.vue";
+import BillingArchive from "@/components/BillingArchive.vue";
 import InvoiceService from "@/services/InvoiceService";
 import {
   IInvoiceArchivePresenter,

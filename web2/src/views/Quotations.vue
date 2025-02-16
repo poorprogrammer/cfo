@@ -1,12 +1,12 @@
 <template>
   <div>
-    <payment-info-list titleMsg="Quotation List" :presenter="presenter" />
+    <billing-archive titleMsg="Quotation List" :presenter="presenter" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from "vue";
-import PaymentInfoList from "@/components/PaymentInfoList.vue";
+import BillingArchive from "@/components/BillingArchive.vue";
 import Presenter from "@/presenters/BillingArchivePresenter";
 import API from "@/services/QuotationService";
 
