@@ -271,10 +271,11 @@
 import { computed, ref, watch } from "vue";
 import Presenter from "@/presenters/BillingDocumentPresenter";
 import BaseInput from "@/components/BaseInput.vue";
+import BillingDocument from "@/models/BillingDocument";
 import LineItem from "@/models/LineItem";
 
 const props = defineProps<{
-  presenter: Presenter;
+  presenter: Presenter<BillingDocument>;
 }>();
 
 const invoice = computed(() => props.presenter.billingDocument.value);
@@ -295,11 +296,11 @@ function today() {
   props.presenter.todayClicked();
 }
 
-function addItem(item: any) {
+function addItem(item: LineItem) {
   props.presenter.addItemClickedOn(item);
 }
 
-function removeItem(item: any) {
+function removeItem(item: LineItem) {
   props.presenter.removeItemClickedOn(item);
 }
 </script>

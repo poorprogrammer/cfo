@@ -41,6 +41,10 @@ export default class Quotation extends BillingDocument {
     return "Quotation";
   }
 
+  get hasQuotationNumber(): boolean {
+    return true;
+  }
+
   get hasInvoiceNumber(): boolean {
     return false;
   }

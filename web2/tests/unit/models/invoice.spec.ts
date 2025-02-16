@@ -314,6 +314,9 @@ describe("Invoice", () => {
       invoice.projectName = "new project";
       expect(invoice.getProjectName()).toEqual("new project");
     });
+    it("should show quotation number and quotation date field to edit", () => {
+      expect(invoice.hasQuotationNumber).toEqual(true);
+    });
     it("should show invoice number, invoice date and PO field to edit", () => {
       expect(invoice.hasInvoiceNumber).toEqual(true);
     });

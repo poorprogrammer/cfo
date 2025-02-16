@@ -66,6 +66,9 @@ describe("Qutation", () => {
       quotation.setDateToday(today);
       expect(quotation.quotationDate).toEqual("2021-01-13");
     });
+    it("should show quotation number and quotation date field to edit", () => {
+      expect(quotation.hasQuotationNumber).toEqual(true);
+    });
     it("should not show invoice number, invoice date and PO field to edit", () => {
       expect(quotation.hasInvoiceNumber).toEqual(false);
     });

@@ -27,6 +27,10 @@ export default class Invoice extends BillingDocument {
     this.purchaseOrderNumber = data.purchaseOrderNumber || "";
   }
 
+  get hasQuotationNumber() {
+    return true;
+  }
+
   get hasInvoiceNumber() {
     return true;
   }
