@@ -24,12 +24,12 @@ export interface INewBillingDocument {
   payment?: string;
 }
 
-export interface BillingDocumentData extends INewBillingDocument {
+export interface IBillingDocument extends INewBillingDocument {
   _id?: string;
   id?: string;
 }
 
-export default abstract class BillingDocument implements BillingDocumentData {
+export default abstract class BillingDocument implements IBillingDocument {
   protected _currencies: Record<string, Intl.NumberFormat>;
   protected _currency?: string;
   public id?: string;
@@ -53,7 +53,7 @@ export default abstract class BillingDocument implements BillingDocumentData {
   };
   public payment = "";
 
-  constructor(data?: BillingDocumentData) {
+  constructor(data?: IBillingDocument) {
     this._currencies = {
       THB: new Intl.NumberFormat("th-TH", {
         style: "currency",
