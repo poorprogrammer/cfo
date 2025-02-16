@@ -1,4 +1,4 @@
-import BillingDocument from "@/models/BillingDocument";
+import BillingDocument, { BillingDocumentData } from "@/models/BillingDocument";
 import Quotation from "@/models/Quotation";
 import InvoiceService from "@/services/InvoiceService";
 
@@ -11,7 +11,7 @@ export default class QuotationService extends InvoiceService {
     return `${this.root}/quotation/${quotationNumber}`;
   }
 
-  protected createItem(item: any): BillingDocument {
+  protected createItem(item: BillingDocumentData): BillingDocument {
     return new Quotation(item);
   }
 }

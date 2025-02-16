@@ -1,5 +1,5 @@
 import InvoiceService from "@/services/InvoiceService";
-import BillingDocument from "@/models/BillingDocument";
+import BillingDocument, { BillingDocumentData } from "@/models/BillingDocument";
 import Receipt from "@/models/Receipt";
 
 export class ReceiptService extends InvoiceService {
@@ -11,7 +11,7 @@ export class ReceiptService extends InvoiceService {
     return `${this.root}/receipt/${receiptNumber}`;
   }
 
-  protected createItem(item: any): BillingDocument {
+  protected createItem(item: BillingDocumentData): BillingDocument {
     return new Receipt(item);
   }
 }
