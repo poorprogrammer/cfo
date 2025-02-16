@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import Presenter from "@/presenters/BillingDocumentPresenter";
+import Presenter from "@/presenters/QuotationPresenter";
 import PrintBillingDocument from "@/components/PrintBillingDocument.vue";
 import API from "@/services/QuotationService";
 import { ref } from "vue";
