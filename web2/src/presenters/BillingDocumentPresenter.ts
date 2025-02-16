@@ -5,7 +5,7 @@ import BillingDocumentService from "@/services/BillingDocumentService";
 import { View } from "./BillingArchivePresenter";
 import BillingDocument from "@/models/BillingDocument";
 
-export default class InvoicePresenter {
+export default class BillingDocumentPresenter {
   view: View;
   API: BillingDocumentService;
   billingDocument: Ref<Invoice>;

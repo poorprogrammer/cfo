@@ -1,4 +1,4 @@
-import Presenter from "@/presenters/InvoicePresenter";
+import Presenter from "@/presenters/BillingDocumentPresenter";
 import API from "@/services/InvoiceService";
 
 export class MockView {

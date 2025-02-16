@@ -269,7 +269,7 @@
 
 <script setup lang="ts">
 import { computed, ref, watch } from "vue";
-import Presenter from "@/presenters/InvoicePresenter";
+import Presenter from "@/presenters/BillingDocumentPresenter";
 import BaseInput from "@/components/BaseInput.vue";
 import LineItem from "@/models/LineItem";
 

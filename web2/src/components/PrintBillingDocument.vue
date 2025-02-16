@@ -157,7 +157,7 @@
 <script setup lang="ts">
 import { computed, onMounted } from "vue";
 import { useRoute } from "vue-router";
-import Presenter from "@/presenters/InvoicePresenter";
+import Presenter from "@/presenters/BillingDocumentPresenter";
 import BackButton from "@/components/BackButton.vue";
 import BaseText from "@/components/BaseText.vue";
 

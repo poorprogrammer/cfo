@@ -13,7 +13,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import Presenter from "@/presenters/InvoicePresenter";
+import Presenter from "@/presenters/BillingDocumentPresenter";
 import EditInvoice from "@/components/EditInvoice.vue";
 import BackButton from "@/components/BackButton.vue";
 import SaveButton from "@/components/SaveButton.vue";

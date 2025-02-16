@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import Presenter from "@/presenters/InvoicePresenter";
+import Presenter from "@/presenters/BillingDocumentPresenter";
 import PrintBillingDocument from "@/components/PrintBillingDocument.vue";
 import API from "@/services/InvoiceService";
 
