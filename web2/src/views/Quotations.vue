@@ -7,8 +7,10 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import BillingArchive from "@/components/BillingArchive.vue";
-import Presenter from "@/presenters/BillingArchivePresenter";
-import API from "@/services/QuotationService";
+import QuotationArchivePresenter from "@/presenters/QuotationArchivePresenter";
+import QuotationService from "@/services/QuotationService";
 
-const presenter = ref(new Presenter(new API()));
+const presenter = ref(
+  new QuotationArchivePresenter(this, new QuotationService())
+);
 </script>

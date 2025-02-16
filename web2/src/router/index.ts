@@ -1,3 +1,10 @@
+import DuplicatedInvoice from "@/views/DuplicatedInvoice.vue";
+import Invoice from "@/views/Invoice.vue";
+import Invoices from "@/views/Invoices.vue";
+import Login from "@/views/Login.vue";
+import PageNotFound from "@/views/PageNotFound.vue";
+import Quotations from "@/views/Quotations.vue";
+import UpdateInvoice from "@/views/UpdateInvoice.vue";
 import {
   createRouter,
   createWebHistory,
@@ -5,12 +12,6 @@ import {
   RouteLocationNormalized,
   RouteRecordRaw,
 } from "vue-router";
-import Invoices from "@/views/Invoices.vue";
-import DuplicatedInvoice from "@/views/DuplicatedInvoice.vue";
-import UpdateInvoice from "@/views/UpdateInvoice.vue";
-import Invoice from "@/views/Invoice.vue";
-import Login from "@/views/Login.vue";
-import PageNotFound from "@/views/PageNotFound.vue";
 
 const isAuthenticated = (
   to: RouteLocationNormalized,
@@ -60,6 +61,12 @@ const routes: Array<RouteRecordRaw> = [
     beforeEnter: [isAuthenticated, handleOptionalYear],
   },
   {
+    path: "/quotations/:year?",
+    name: "quotations",
+    component: Quotations,
+    beforeEnter: [isAuthenticated, handleOptionalYear],
+  },
+  {
     path: "/invoice/:number/duplicate",
     name: "duplicatedInvoice",
     component: DuplicatedInvoice,
@@ -76,11 +83,6 @@ const routes: Array<RouteRecordRaw> = [
     name: "invoice",
     component: Invoice,
     beforeEnter: isAuthenticated,
-  },
-  {
-    path: "/quotations",
-    name: "Quotations",
-    component: () => import("@/views/Quotations.vue"),
   },
   {
     path: "/receipts",
