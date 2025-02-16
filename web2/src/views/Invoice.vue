@@ -1,12 +1,12 @@
 <template>
-  <print-payment-info v-bind:presenter="p" />
+  <print-billing-document v-bind:presenter="p" />
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import Presenter from "@/presenters/InvoicePresenter";
-import PrintPaymentInfo from "@/components/PrintPaymentInfo.vue";
+import PrintBillingDocument from "@/components/PrintBillingDocument.vue";
 import API from "@/services/InvoiceService";
 
 const route = useRoute();
