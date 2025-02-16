@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import PaymentInfoList from "@/components/PaymentInfoList.vue";
-import Presenter from "@/presenters/BillingArchive";
+import Presenter from "@/presenters/BillingArchivePresenter";
 import { ReceiptService } from "@/services/ReceiptService";
 
 const presenter = ref(new Presenter(new ReceiptService()));

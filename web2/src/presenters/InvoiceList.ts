@@ -1,6 +1,9 @@
 import BillingDocument, { BillingDocumentData } from "@/models/BillingDocument";
 import InvoiceService from "@/services/InvoiceService";
-import BillingArchive, { Presenter, View } from "./BillingArchive";
+import BillingArchivePresenter, {
+  Presenter,
+  View,
+} from "./BillingArchivePresenter";
 import Invoice from "@/models/Invoice";
 
 export interface IInvoiceListPresenter extends Presenter {
@@ -11,7 +14,7 @@ export interface IInvoiceListPresenter extends Presenter {
 }
 
 export class InvoiceListPresenter
-  extends BillingArchive
+  extends BillingArchivePresenter
   implements IInvoiceListPresenter
 {
   public isGeneratingReceipt = false;
