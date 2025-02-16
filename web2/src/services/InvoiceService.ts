@@ -1,6 +1,6 @@
 import axios, { AxiosResponse } from "axios";
 import BillingDocument from "@/models/BillingDocument";
-import Invoice from "@/models/Invoice";
+import Invoice, { InvoiceData } from "@/models/Invoice";
 import { BillingDocumentService } from "./BillingDocumentService";
 import LineItem from "@/models/LineItem";
 
@@ -63,7 +63,7 @@ export default class InvoiceService implements BillingDocumentService {
     return response.data;
   };
 
-  protected createItem(item: any): BillingDocument {
+  protected createItem(item: InvoiceData): BillingDocument {
     return new Invoice(item);
   }
 
