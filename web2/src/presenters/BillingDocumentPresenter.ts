@@ -8,6 +8,7 @@ export default class BillingDocumentPresenter<T extends BillingDocument> {
   view: View;
   API: BillingDocumentService;
   billingDocument: Ref<T>;
+  documentFactory: new (data?: any) => T;
 
   constructor(
     view: View,
@@ -15,14 +16,14 @@ export default class BillingDocumentPresenter<T extends BillingDocument> {
     documentFactory: new (data?: any) => T
   ) {
     this.view = view;
-    this.billingDocument = ref(new documentFactory()) as Ref<T>;
     this.API = api;
+    this.billingDocument = ref(new documentFactory()) as Ref<T>;
+    this.documentFactory = documentFactory;
   }
 
   async init(documentNumber: string): Promise<void> {
     const documentData = await this.API.get(documentNumber);
-    this.billingDocument.value = new (this.billingDocument.value
-      .constructor as new (data: any) => T)(documentData);
+    this.billingDocument.value = new this.documentFactory(documentData);
   }
 
   save() {

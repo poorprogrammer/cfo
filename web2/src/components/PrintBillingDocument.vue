@@ -157,12 +157,13 @@
 <script setup lang="ts">
 import { computed, onMounted } from "vue";
 import { useRoute } from "vue-router";
-import Presenter from "@/presenters/BillingDocumentPresenter";
+import BillingDocumentPresenter from "@/presenters/BillingDocumentPresenter";
+import BillingDocument from "@/models/BillingDocument";
 import BackButton from "@/components/BackButton.vue";
 import BaseText from "@/components/BaseText.vue";
 
 const props = defineProps<{
-  presenter: Presenter;
+  presenter: BillingDocumentPresenter<BillingDocument>;
 }>();
 
 const route = useRoute();
