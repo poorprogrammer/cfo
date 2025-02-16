@@ -3,8 +3,8 @@ import BillingDocument, { BillingDocumentData } from "./BillingDocument";
 interface InvoiceData extends BillingDocumentData {
   invoiceNumber: string;
   invoiceDate: string;
-  quotationNumber: string;
-  purchaseOrderNumber: string;
+  quotationNumber?: string;
+  purchaseOrderNumber?: string;
 }
 
 export default class Invoice extends BillingDocument {
