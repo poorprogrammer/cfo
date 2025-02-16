@@ -4,7 +4,9 @@
     <div v-else>
       <edit-invoice v-bind:presenter="p"></edit-invoice>
       <div class="no-print">
-        <back-button v-bind:target="p.invoice.value.listUrl"></back-button>
+        <back-button
+          v-bind:target="p.billingDocument.value.listUrl"
+        ></back-button>
         <save-button @save="save"></save-button>
       </div>
     </div>

@@ -277,7 +277,7 @@ const props = defineProps<{
   presenter: Presenter;
 }>();
 
-const invoice = computed(() => props.presenter.invoice.value);
+const invoice = computed(() => props.presenter.billingDocument.value);
 const items = ref(invoice.value?.getItems() || []);
 
 // Update items when invoice changes

@@ -22,7 +22,7 @@ const props = defineProps<{
   presenter: Presenter;
 }>();
 
-const invoice = computed(() => props.presenter.invoice.value);
+const invoice = computed(() => props.presenter.billingDocument.value);
 
 function save() {
   props.presenter.save();

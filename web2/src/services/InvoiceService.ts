@@ -2,7 +2,7 @@ import BillingDocument from "@/models/BillingDocument";
 import Invoice, { InvoiceData } from "@/models/Invoice";
 import LineItem from "@/models/LineItem";
 import axios, { AxiosResponse } from "axios";
-import { BillingDocumentService } from "./BillingDocumentService";
+import BillingDocumentService from "./BillingDocumentService";
 
 export default class InvoiceService implements BillingDocumentService {
   protected root: string;

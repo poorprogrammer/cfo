@@ -1,5 +1,5 @@
 import BillingDocument, { BillingDocumentData } from "@/models/BillingDocument";
-import { BillingDocumentService } from "@/services/BillingDocumentService";
+import BillingDocumentService from "@/services/BillingDocumentService";
 import { ref, Ref } from "vue";
 
 interface Header {
