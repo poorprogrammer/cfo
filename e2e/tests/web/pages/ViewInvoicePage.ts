@@ -1,6 +1,8 @@
-const { expect } = require("@playwright/test");
-exports.ViewInvoicePage = class ViewInvoicePage {
-  constructor(page) {
+import { expect, Page } from "@playwright/test";
+
+export class ViewInvoicePage {
+  page: Page;
+  constructor(page: Page) {
     this.page = page;
   }
 
@@ -24,4 +26,4 @@ exports.ViewInvoicePage = class ViewInvoicePage {
     await expect(this.page.getByText(itemPrice).first()).toBeVisible();
     await expect(this.page.getByText(itemQuantity).first()).toBeVisible();
   }
-};
+}

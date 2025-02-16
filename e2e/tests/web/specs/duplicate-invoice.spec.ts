@@ -1,7 +1,7 @@
-const { test } = require("@playwright/test");
-const { LoginPage } = require("../pages/LoginPage");
+import { test } from "@playwright/test";
+import { LoginPage } from "../pages/LoginPage";
 
-test.describe("To Create New Invoice Via Invoice Duplication Feature ", () => {
+test.describe("Create New Invoice Via Invoice Duplication Feature", () => {
   let loginPage;
   let invoiceListPage;
 

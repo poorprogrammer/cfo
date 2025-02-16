@@ -1,7 +1,12 @@
-const { expect } = require("@playwright/test");
-const { ViewInvoicePage } = require("./ViewInvoicePage");
+import { expect, Locator, Page } from "@playwright/test";
+import { ViewInvoicePage } from "./ViewInvoicePage";
 
-exports.DuplicateInvoicePage = class DuplicateInvoicePage {
+export class DuplicateInvoicePage {
+  page: Page;
+  invoiceDate: Locator;
+  invoiceNumber: Locator;
+  saveButton: Locator;
+
   constructor(page) {
     this.page = page;
     this.invoiceNumber = page.locator("#invoice-number");
@@ -9,7 +14,7 @@ exports.DuplicateInvoicePage = class DuplicateInvoicePage {
     this.saveButton = page.locator("#save-button");
   }
 
-  static async create(page) {
+  static async create(page: Page) {
     let duplicateInvoicePage = new DuplicateInvoicePage(page);
     await duplicateInvoicePage.ready();
     return duplicateInvoicePage;
@@ -69,4 +74,4 @@ exports.DuplicateInvoicePage = class DuplicateInvoicePage {
     await this.saveButton.click();
     return ViewInvoicePage.create(this.page);
   }
-};
+}

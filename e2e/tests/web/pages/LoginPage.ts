@@ -1,7 +1,13 @@
-const { InvoiceListPage } = require("./InvoiceListPage");
+import { Locator, Page } from "@playwright/test";
+import { InvoiceListPage } from "./InvoiceListPage";
 
-exports.LoginPage = class LoginPage {
-  constructor(page) {
+export class LoginPage {
+  page: Page;
+  usernameInput: Locator;
+  passwordInput: Locator;
+  loginButton: Locator;
+
+  constructor(page: Page) {
     this.page = page;
     this.usernameInput = page.getByLabel("Username");
     this.passwordInput = page.getByLabel("Password");

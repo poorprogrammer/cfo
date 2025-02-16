@@ -1,8 +1,11 @@
-const { expect } = require("@playwright/test");
-const { DuplicateInvoicePage } = require("./DuplicateInvoicePage");
+import { expect, Locator, Page } from "@playwright/test";
+import { DuplicateInvoicePage } from "./DuplicateInvoicePage";
 
-exports.InvoiceListPage = class InvoiceListPage {
-  constructor(page) {
+export class InvoiceListPage {
+  page: Page;
+  confirmDeleteButton: Locator;
+
+  constructor(page: Page) {
     this.page = page;
     this.confirmDeleteButton = page.locator(".delete-btn");
   }
@@ -43,4 +46,4 @@ exports.InvoiceListPage = class InvoiceListPage {
   async shouldNotContainsInvoice(invoiceNumber) {
     await expect(this.page.getByText(`${invoiceNumber}`)).not.toBeVisible();
   }
-};
+}
