@@ -6,15 +6,14 @@ interface QuotationData extends BillingDocumentData {
 }
 
 export default class Quotation extends BillingDocument {
-  protected quotationNumber?: string;
-  protected quotationDate?: string;
+  public quotationNumber = "";
+  public quotationDate = "";
 
   constructor(data?: QuotationData) {
     super(data);
     if (!data) return;
-
-    this.quotationNumber = data.quotationNumber;
-    this.quotationDate = data.quotationDate;
+    this.quotationNumber = data.quotationNumber || "";
+    this.quotationDate = data.quotationDate || "";
   }
 
   get number(): string {
