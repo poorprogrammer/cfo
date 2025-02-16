@@ -5,6 +5,7 @@ import Invoices from "@/views/Invoices.vue";
 import Login from "@/views/Login.vue";
 import PageNotFound from "@/views/PageNotFound.vue";
 import Quotations from "@/views/Quotations.vue";
+import Quotation from "@/views/Quotation.vue";
 import UpdateInvoice from "@/views/UpdateInvoice.vue";
 import UpdateQuotation from "@/views/UpdateQuotation.vue";
 import {
@@ -96,6 +97,12 @@ const routes: Array<RouteRecordRaw> = [
     path: "/quotation/:number/edit",
     name: "UpdateQuotation",
     component: UpdateQuotation,
+    beforeEnter: isAuthenticated,
+  },
+  {
+    path: "/quotation/:number",
+    name: "quotation",
+    component: Quotation,
     beforeEnter: isAuthenticated,
   },
   {
