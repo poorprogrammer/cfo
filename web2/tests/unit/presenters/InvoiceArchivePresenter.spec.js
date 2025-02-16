@@ -1,6 +1,6 @@
 import { InvoiceArchivePresenter } from "@/presenters/InvoiceArchivePresenter";
 import Invoice from "@/models/Invoice";
-import { MockView } from "./InvoicePresenter.spec";
+import { MockView } from "./BillingDocumentPresenter.spec";
 
 describe("InvoiceArchivePresenter", () => {
   let p;

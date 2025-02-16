@@ -1,6 +1,6 @@
 import { InvoiceArchivePresenter } from "@/presenters/InvoiceArchivePresenter";
 import API from "@/services/InvoiceService";
-import Invoice from "../../../src/models/Invoice";
+import Invoice from "@/models/Invoice";
 import { ref } from "vue";
 
 describe("BillingArchivePresenter", () => {
