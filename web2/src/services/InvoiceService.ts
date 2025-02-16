@@ -67,24 +67,23 @@ export default class InvoiceService implements BillingDocumentService {
     return new Invoice(item);
   }
 
-  protected createDTO = (invoice: Invoice): any => {
-    const dto: any = {};
-    Object.assign(dto, invoice);
+  protected createDTO = (invoice: Invoice): InvoiceData => {
+    const dto: Partial<Invoice> = { ...invoice };
     dto.currency = invoice.currency;
     delete dto._currencies;
-    if (!invoice.items) return dto;
+    if (!invoice.items) return dto as InvoiceData;
     dto.items = [];
     invoice.items.forEach((item: LineItem) => {
-      dto.items.push({
+      dto.items?.push({
         name: item.name,
         price: item.price,
         amount: item.amount,
-      });
+      } as LineItem);
     });
-    return dto;
+    return dto as InvoiceData;
   };
-  protected createNewInvoiceRequest = (invoice: Invoice): any => {
-    const dto: any = this.createDTO(invoice);
+  protected createNewInvoiceRequest = (invoice: Invoice): InvoiceData => {
+    const dto = this.createDTO(invoice);
     delete dto.id;
     delete dto._id;
     return dto;

@@ -30,7 +30,7 @@ export interface BillingDocumentData extends NewBillingDocumentData {
 }
 
 export default abstract class BillingDocument implements BillingDocumentData {
-  protected _currencies: Record<string, Intl.NumberFormat>;
+  public _currencies: Record<string, Intl.NumberFormat>;
   protected _currency?: string;
   public id?: string;
   public companySlug?: string;
