@@ -2,12 +2,13 @@ import { ref, Ref } from "vue";
 import Invoice from "@/models/Invoice";
 import LineItem from "@/models/LineItem";
 import InvoiceService from "@/services/InvoiceService";
+import { View } from "./BillingArchivePresenter";
 
 export default class InvoicePresenter {
-  view: any;
+  view: View;
   API: InvoiceService;
   invoice: Ref<Invoice>;
-  constructor(view: any, api: InvoiceService) {
+  constructor(view: View, api: InvoiceService) {
     this.view = view;
     this.invoice = ref(new Invoice()) as Ref<Invoice>;
     this.API = api;
@@ -18,20 +19,20 @@ export default class InvoicePresenter {
   }
   save() {
     this.API.save(this.invoice.value).then(
-      (invoiceNumber) => {
+      (invoiceNumber: string) => {
         this.view.goTo(this.getPrintPageParameters(invoiceNumber));
       },
-      (error) => {
+      (error: string) => {
         this.showError(error);
       }
     );
   }
   update() {
     this.API.update(this.invoice.value).then(
-      (invoice) => {
+      (invoice: Invoice) => {
         this.view.goTo(this.getPrintPageParameters(invoice.number));
       },
-      (error) => {
+      (error: string) => {
         this.showError(error);
       }
     );

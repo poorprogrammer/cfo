@@ -7,7 +7,7 @@ export default class LoginService {
     this.root = process.env.VUE_APP_BASE_API || "";
   }
 
-  login(username: string, password: string) {
+  login(username: string, password: string): Promise<string> {
     return axios.post(`${this.root}/login/`, {
       username: username,
       password: password,

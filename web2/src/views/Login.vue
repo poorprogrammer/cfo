@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Presenter from "@/presenters/Login";
+import Presenter from "@/presenters/LoginPresenter";
 import BaseInput from "@/components/BaseInput.vue";
 
 export default {

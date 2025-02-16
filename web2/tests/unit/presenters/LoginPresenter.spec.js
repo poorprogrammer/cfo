@@ -1,11 +1,11 @@
-import Presenter from "@/presenters/Login";
+import LoginPresenter from "@/presenters/LoginPresenter";
 
 class MockView {
   goTo() {}
 }
 
 describe("Login Presenter", () => {
-  let p = new Presenter(new MockView());
+  let p = new LoginPresenter(new MockView());
 
   it("should login the current username and password", () => {
     givenLoginSuccess();
@@ -38,7 +38,7 @@ describe("Login Presenter", () => {
     vi.spyOn(p.API, "login").mockRejectedValue(err);
   }
   function expectToRedirectToHomePage(view) {
-    expect(view.goTo).toHaveBeenCalledWith({ name: "home" });
+    expect(view.goTo).toHaveBeenCalledWith({ name: "home", params: {} });
   }
   function expectPopupShownWithError(error) {
     expect(p.showError).toHaveBeenCalledWith(error);
