@@ -1,9 +1,10 @@
+import { vi } from "vitest";
 import Quotation from "../../../src/models/Quotation";
 
 describe("Qutation", () => {
-  let quotation;
+  let quotation: Quotation;
   beforeEach(() => {
-    let json = {
+    const json = {
       quotationNumber: "Q202001-001",
       quotationDate: "2020-01-03",
       projectName: "React",
@@ -32,11 +33,11 @@ describe("Qutation", () => {
 
   describe("Printing", () => {
     it("should have original", () => {
-      let titles = quotation.getTitles();
+      const titles = quotation.getTitles();
       expect(titles[0].title).toEqual("Quotation (original)");
     });
     it("should have copy", () => {
-      let titles = quotation.getTitles();
+      const titles = quotation.getTitles();
       expect(titles[1].title).toEqual("Quotation (copy)");
     });
     it("should have filename to be save when export to PDF and store in storage", () => {
@@ -60,7 +61,7 @@ describe("Qutation", () => {
 
   describe("duplicate quotation", () => {
     it("should be able to set quotation date to today", () => {
-      let today = new Date("January 13, 2021");
+      const today = new Date("January 13, 2021");
       quotation.quotationDate = "2021-01-02";
       quotation.setDateToday(today);
       expect(quotation.quotationDate).toEqual("2021-01-13");
@@ -78,7 +79,7 @@ describe("Qutation", () => {
 
   describe("delete quotation", () => {
     it("should update quotation number so the quotation number can be reused while unique", () => {
-      let t = "1610194022999";
+      const t = 1610194022999;
       mockCurrentTimestamp(quotation, t);
 
       quotation.markAsDeleted();
@@ -87,6 +88,6 @@ describe("Qutation", () => {
     });
   });
 });
-function mockCurrentTimestamp(quotation, timestamp) {
+function mockCurrentTimestamp(quotation: Quotation, timestamp: number) {
   vi.spyOn(quotation, "currentTimestamp").mockReturnValue(timestamp);
 }
