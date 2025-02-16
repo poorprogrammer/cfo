@@ -2,7 +2,7 @@ import BillingDocument, {
   BillingDocumentWithId,
 } from "@/models/BillingDocument";
 import InvoiceService from "@/services/InvoiceService";
-import PaymentInfoList, { Presenter, View } from "./PaymentInfoList";
+import BillingArchive, { Presenter, View } from "./BillingArchive";
 import Invoice from "@/models/Invoice";
 
 export interface IInvoiceListPresenter extends Presenter {
@@ -13,7 +13,7 @@ export interface IInvoiceListPresenter extends Presenter {
 }
 
 export class InvoiceListPresenter
-  extends PaymentInfoList
+  extends BillingArchive
   implements IInvoiceListPresenter
 {
   public isGeneratingReceipt = false;

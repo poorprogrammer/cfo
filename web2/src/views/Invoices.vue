@@ -33,7 +33,7 @@ import {
   IInvoiceListPresenter,
   InvoiceListPresenter,
 } from "@/presenters/InvoiceList";
-import { View } from "@/presenters/PaymentInfoList";
+import { View } from "@/presenters/BillingArchive";
 const router = useRouter();
 
 class MyView implements View {

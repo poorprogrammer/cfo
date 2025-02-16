@@ -21,7 +21,7 @@ export interface Presenter {
   delete(item: BillingDocument): void;
 }
 
-export default abstract class PaymentInfoList implements Presenter {
+export default abstract class BillingArchive implements Presenter {
   protected view: View;
   public items: Ref<BillingDocument[]>;
   public headers: Header[];
