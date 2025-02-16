@@ -6,16 +6,16 @@ import BillingArchivePresenter, {
 } from "./BillingArchivePresenter";
 import Invoice from "@/models/Invoice";
 
-export interface IInvoiceListPresenter extends Presenter {
+export interface IInvoiceArchivePresenter extends Presenter {
   selectedInvoices: BillingDocumentData[];
   isGeneratingReceipt: boolean;
   toggleGenerateReceipt(): void;
   buttonColor: string;
 }
 
-export class InvoiceListPresenter
+export class InvoiceArchivePresenter
   extends BillingArchivePresenter
-  implements IInvoiceListPresenter
+  implements IInvoiceArchivePresenter
 {
   public isGeneratingReceipt = false;
   public selectedInvoices: BillingDocument[] = [];

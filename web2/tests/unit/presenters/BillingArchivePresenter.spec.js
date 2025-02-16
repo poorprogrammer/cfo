@@ -1,10 +1,10 @@
-import { InvoiceListPresenter } from "@/presenters/InvoiceList";
+import { InvoiceArchivePresenter } from "@/presenters/InvoiceArchivePresenter";
 import API from "@/services/InvoiceService";
 import Invoice from "../../../src/models/Invoice";
 import { ref } from "vue";
 
-describe("PaymentInfoList Presenter", () => {
-  let p = new InvoiceListPresenter(undefined, new API());
+describe("BillingArchivePresenter", () => {
+  let p = new InvoiceArchivePresenter(undefined, new API());
   describe("invoices", () => {
     describe("when there no invoices", () => {
       it("should be empty list initally or the screen would not render", () => {

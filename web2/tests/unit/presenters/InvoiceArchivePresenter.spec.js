@@ -1,11 +1,11 @@
-import { InvoiceListPresenter } from "@/presenters/InvoiceList";
+import { InvoiceArchivePresenter } from "@/presenters/InvoiceArchivePresenter";
 import Invoice from "../../../src/models/Invoice";
 
-describe("InvoiceList Presenter", () => {
+describe("InvoiceArchivePresenter", () => {
   let p;
   describe("generate receipt from invoices", () => {
     beforeEach(() => {
-      p = new InvoiceListPresenter(new MockView(), undefined);
+      p = new InvoiceArchivePresenter(new MockView(), undefined);
     });
     it("should change button color after toggle generate receipt mode", () => {
       p.toggleGenerateReceipt();

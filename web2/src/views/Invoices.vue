@@ -30,9 +30,9 @@ import { useRouter } from "vue-router";
 import PaymentInfoList from "@/components/PaymentInfoList.vue";
 import InvoiceService from "@/services/InvoiceService";
 import {
-  IInvoiceListPresenter,
-  InvoiceListPresenter,
-} from "@/presenters/InvoiceList";
+  IInvoiceArchivePresenter,
+  InvoiceArchivePresenter,
+} from "@/presenters/InvoiceArchivePresenter";
 import { View } from "@/presenters/BillingArchivePresenter";
 const router = useRouter();
 
@@ -42,8 +42,8 @@ class MyView implements View {
   }
 }
 
-const presenter: Ref<IInvoiceListPresenter> = ref(
-  new InvoiceListPresenter(new MyView(), new InvoiceService())
+const presenter: Ref<IInvoiceArchivePresenter> = ref(
+  new InvoiceArchivePresenter(new MyView(), new InvoiceService())
 );
 </script>
 
