@@ -1,6 +1,8 @@
 import API from "@/services/InvoiceService";
 import axios from "axios";
 import { Factory } from "../factory";
+import PricedLineItem from "@/models/PricedLineItem";
+
 describe("invoices API", () => {
   let api;
 
@@ -72,9 +74,17 @@ describe("invoices API", () => {
   });
   describe("edit", () => {
     describe("Data Transfer Object", () => {
+      it("contains item price and amount", async () => {
+        let invoice = Factory.createInvoice();
+        let dto = api.createDTO(invoice);
+        expect(dto.items[0] instanceof PricedLineItem).toBeFalsy();
+        expect(dto.items[0].price).toEqual(20000);
+        expect(dto.items[0].amount).toEqual(20);
+      });
       it("remove circular dependencies to avoid save fail", async () => {
         let dto = api.createDTO(Factory.createInvoice());
         expect(dto.items[0].item).toEqual(undefined);
+        expect(dto.items[0].invoice).toEqual(undefined);
       });
       it("remove unused fields to avoid error when print invoice", async () => {
         let dto = api.createDTO(Factory.createInvoice());

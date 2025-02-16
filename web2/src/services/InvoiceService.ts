@@ -2,6 +2,7 @@ import axios, { AxiosResponse } from "axios";
 import BillingDocument from "@/models/BillingDocument";
 import Invoice from "@/models/Invoice";
 import { PaymentInfoService } from "./types";
+import LineItem from "@/models/LineItem";
 
 export default class InvoiceService implements PaymentInfoService {
   protected root: string;
@@ -69,11 +70,16 @@ export default class InvoiceService implements PaymentInfoService {
   protected createDTO = (invoice: Invoice): any => {
     const dto: any = {};
     Object.assign(dto, invoice);
-    if (!dto.items) return dto;
-    dto.items.forEach((item: any) => {
-      delete item.item;
-    });
     delete dto._currencies;
+    if (!invoice.items) return dto;
+    dto.items = [];
+    invoice.items.forEach((item: LineItem) => {
+      dto.items.push({
+        name: item.name,
+        price: item.price,
+        amount: item.amount,
+      });
+    });
     return dto;
   };
   protected createNewInvoiceRequest = (invoice: Invoice): any => {
