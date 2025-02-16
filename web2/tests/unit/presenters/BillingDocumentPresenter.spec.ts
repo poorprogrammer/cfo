@@ -1,4 +1,5 @@
 import BillingDocument from "@/models/BillingDocument";
+import Invoice from "@/models/Invoice";
 import Presenter from "@/presenters/BillingDocumentPresenter";
 import API from "@/services/InvoiceService";
 import { Mock, vi } from "vitest";
@@ -11,10 +12,10 @@ export class MockView {
 
 describe("Invoice Presenter", () => {
   let invoiceNumber: string;
-  let p: Presenter;
+  let p: Presenter<Invoice>;
 
   beforeEach(() => {
-    p = new Presenter(new MockView(), new API());
+    p = new Presenter(new MockView(), new API(), Invoice);
     invoiceNumber = "202001-001";
   });
 
