@@ -12,7 +12,7 @@ interface Company {
   tel?: string;
 }
 
-export interface IBillingDocument {
+export interface INewBillingDocument {
   companySlug?: string;
   fromCompany?: Company;
   targetCompany?: Company;
@@ -24,7 +24,7 @@ export interface IBillingDocument {
   payment?: string;
 }
 
-export interface BillingDocumentData extends IBillingDocument {
+export interface BillingDocumentData extends INewBillingDocument {
   _id?: string;
   id?: string;
 }
