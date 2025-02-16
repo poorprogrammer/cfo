@@ -8,6 +8,7 @@ import { useRoute, useRouter } from "vue-router";
 import Presenter from "@/presenters/BillingDocumentPresenter";
 import DuplicatedPaymentInfo from "@/components/DuplicatedPaymentInfo.vue";
 import API from "@/services/InvoiceService";
+import Invoice from "@/models/Invoice";
 
 const route = useRoute();
 const router = useRouter();
@@ -16,7 +17,8 @@ const p = ref(
     {
       goTo: (path) => router.push(path),
     },
-    new API()
+    new API(),
+    Invoice
   )
 );
 

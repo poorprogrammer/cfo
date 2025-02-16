@@ -2,26 +2,28 @@
   <duplicated-payment-info v-bind:presenter="p" />
 </template>
 
-<script>
+<script setup lang="ts">
 import Presenter from "@/presenters/BillingDocumentPresenter";
 import DuplicatedPaymentInfo from "@/components/DuplicatedPaymentInfo.vue";
 import API from "@/services/QuotationService";
+import { onMounted, ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
+import Quotation from "@/models/Quotation";
 
-export default {
-  components: { DuplicatedPaymentInfo },
-  name: "duplicatedQuotation",
-  mounted() {
-    this.p.init(this.$route.params.number);
-  },
-  data() {
-    return {
-      p: new Presenter(this, new API()),
-    };
-  },
-  methods: {
-    goTo: function (path) {
-      this.$router.push(path);
+const route = useRoute();
+const router = useRouter();
+const p = ref(
+  new Presenter(
+    {
+      goTo: (path) => router.push(path),
     },
-  },
-};
+    new API(),
+    Quotation
+  )
+);
+
+onMounted(async () => {
+  const invoiceNumber = route.params.number as string;
+  await p.value.init(invoiceNumber);
+});
 </script>
