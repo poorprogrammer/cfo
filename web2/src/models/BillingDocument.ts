@@ -79,7 +79,10 @@ export default abstract class BillingDocument implements BillingDocumentData {
     this.deleted = false;
 
     if (!data) return;
+    this.parse(data);
+  }
 
+  public parse(data: BillingDocumentData) {
     this.id = data.id || data._id;
     this.companySlug = data.companySlug;
     this.fromCompany = { ...data.fromCompany } as Company;
@@ -271,8 +274,4 @@ export default abstract class BillingDocument implements BillingDocumentData {
   abstract set number(value: string);
   abstract get date(): string;
   abstract set date(value: string);
-}
-
-function sum(x: number, y: number): number {
-  return x + y;
 }

@@ -16,6 +16,11 @@ export default class Invoice extends BillingDocument {
   constructor(data?: Partial<InvoiceData>) {
     super(data);
     if (!data) return;
+    this.parse(data);
+  }
+
+  public parse(data: Partial<InvoiceData>) {
+    super.parse(data);
     this.invoiceNumber = data.invoiceNumber || "";
     this.invoiceDate = data.invoiceDate || "";
     this.quotationNumber = data.quotationNumber || "";

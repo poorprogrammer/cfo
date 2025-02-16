@@ -12,6 +12,11 @@ export default class Quotation extends BillingDocument {
   constructor(data?: QuotationData) {
     super(data);
     if (!data) return;
+    this.parse(data);
+  }
+
+  public parse(data: Partial<QuotationData>) {
+    super.parse(data);
     this.quotationNumber = data.quotationNumber || "";
     this.quotationDate = data.quotationDate || "";
   }
