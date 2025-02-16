@@ -8,8 +8,8 @@ interface ReceiptData extends BillingDocumentData {
 }
 
 export default class Receipt extends BillingDocument {
-  protected receiptNumber?: string;
-  protected receiptDate?: string;
+  public receiptNumber?: string;
+  public receiptDate?: string;
 
   static createFromInvoices(
     invoices: Invoice[],

@@ -13,7 +13,7 @@ export default class Invoice extends BillingDocument {
   public quotationNumber = "";
   public purchaseOrderNumber = "";
 
-  constructor(data?: InvoiceData) {
+  constructor(data?: Partial<InvoiceData>) {
     super(data);
     if (!data) return;
     this.invoiceNumber = data.invoiceNumber || "";

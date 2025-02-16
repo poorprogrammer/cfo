@@ -1,6 +1,6 @@
-import BillingDocument from "./BillingDocument";
+import BillingDocument, { LineItemData } from "./BillingDocument";
 
-export default abstract class LineItem {
+export default abstract class LineItem implements LineItemData {
   public name: string;
   public value: number;
   protected invoice: BillingDocument;
@@ -13,8 +13,8 @@ export default abstract class LineItem {
 
   abstract getTotal(): string;
 
-  get price(): number | string {
-    return "";
+  get price(): number {
+    return 0;
   }
 
   getPrice(): string {

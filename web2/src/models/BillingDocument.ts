@@ -19,9 +19,15 @@ export interface NewBillingDocumentData {
   projectName?: string;
   remark?: string;
   currency?: string;
-  items?: LineItem[];
+  items?: LineItemData[];
   deleted?: boolean;
   payment?: string;
+}
+
+export interface LineItemData {
+  name: string;
+  price: number;
+  amount: number;
 }
 
 export interface BillingDocumentData extends NewBillingDocumentData {

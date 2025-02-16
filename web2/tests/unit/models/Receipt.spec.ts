@@ -2,9 +2,9 @@ import Invoice from "../../../src/models/Invoice";
 import Receipt from "../../../src/models/Receipt";
 
 describe("Receipt/Tax Invoice", () => {
-  let receipt;
+  let receipt: Receipt;
   beforeEach(() => {
-    let json = {
+    const json = {
       receiptNumber: "202001-001",
       receiptDate: "2020-01-03",
       projectName: "React",
@@ -23,11 +23,11 @@ describe("Receipt/Tax Invoice", () => {
   });
   describe("render create receipt page", () => {
     it("should have Tax Invoice in title so it can also be used as tax invoice", () => {
-      var titles = new Receipt().getTitles();
+      const titles = new Receipt().getTitles();
       expect(titles[0].title).toEqual("Receipt/Tax Invoice (original)");
     });
     it("should have copy", () => {
-      var titles = new Receipt().getTitles();
+      const titles = new Receipt().getTitles();
       expect(titles[1].title).toEqual("Receipt/Tax Invoice (copy)");
     });
     it("should have target company name", () => {
@@ -55,7 +55,7 @@ describe("Receipt/Tax Invoice", () => {
     });
   });
   describe("generate receipt from selected invoices", () => {
-    let invoices = [
+    const invoices = [
       new Invoice({
         invoiceNumber: "I202101-001",
         fromCompany: {
@@ -89,12 +89,12 @@ describe("Receipt/Tax Invoice", () => {
       expect(receipt.items[0].amount).toEqual(1);
     });
     it("should have receipt date as today", () => {
-      let today = new Date("January 13, 2021");
+      const today = new Date("January 13, 2021");
       receipt = Receipt.createFromInvoices(invoices, today);
       expect(receipt.receiptDate).toEqual("2021-01-13");
     });
     it("should have receipt number", () => {
-      let today = new Date("January 13, 2021");
+      const today = new Date("January 13, 2021");
       receipt = Receipt.createFromInvoices(invoices, today);
       expect(receipt.receiptNumber).toEqual("R202101-");
     });
