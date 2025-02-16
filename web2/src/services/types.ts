@@ -1,10 +1,3 @@
-// export interface PaymentInfoItem {
-//   id?: string;
-//   number: string;
-//   dialog?: boolean;
-//   [key: string]: any;
-// }
-
 import BillingDocument from "@/models/BillingDocument";
 
 export interface PaymentInfoService {
