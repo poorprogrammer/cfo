@@ -70,6 +70,7 @@ export default class InvoiceService implements PaymentInfoService {
   protected createDTO = (invoice: Invoice): any => {
     const dto: any = {};
     Object.assign(dto, invoice);
+    dto.currency = invoice.currency;
     delete dto._currencies;
     if (!invoice.items) return dto;
     dto.items = [];

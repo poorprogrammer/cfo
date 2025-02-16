@@ -74,6 +74,11 @@ describe("invoices API", () => {
   });
   describe("edit", () => {
     describe("Data Transfer Object", () => {
+      it("contains currency", async () => {
+        let invoice = Factory.createInvoice();
+        let dto = api.createDTO(invoice);
+        expect(dto.currency).toEqual(invoice.currency);
+      });
       it("contains item price and amount", async () => {
         let invoice = Factory.createInvoice();
         let dto = api.createDTO(invoice);
