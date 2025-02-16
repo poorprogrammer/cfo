@@ -6,11 +6,10 @@
   </router-link>
 </template>
 
-<script>
-export default {
-  name: "backButton",
-  props: ["target"],
-};
+<script setup lang="ts">
+defineProps<{
+  target: string;
+}>();
 </script>
 
 <style scoped>
