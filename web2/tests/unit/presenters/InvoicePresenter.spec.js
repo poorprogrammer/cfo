@@ -1,8 +1,10 @@
 import Presenter from "@/presenters/InvoicePresenter";
 import API from "@/services/InvoiceService";
 
-class MockView {
-  goTo() {}
+export class MockView {
+  goTo() {
+    return;
+  }
 }
 
 describe("Invoice Presenter", () => {
