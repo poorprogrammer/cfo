@@ -1,8 +1,8 @@
-import LineItem from "@/models/LineItem";
 import Invoice from "@/models/Invoice";
-import { Factory } from "../factory";
+import LineItem from "@/models/LineItem";
 import PricedLineItem from "@/models/PricedLineItem";
 import { vi } from "vitest";
+import { Factory } from "../factory";
 
 describe("Invoice", () => {
   let invoice: Invoice;
@@ -79,7 +79,7 @@ describe("Invoice", () => {
     });
 
     it("should use saved currency so that item price and total is shown correctly", () => {
-      const data: any = Object.assign({}, Factory.json);
+      const data = Factory.createInvoice();
       data.currency = "USD";
       const invoice = new Invoice(data);
       expect(invoice.currency).toEqual("USD");
