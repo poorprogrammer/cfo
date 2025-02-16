@@ -1,8 +1,8 @@
-import axios, { AxiosResponse } from "axios";
 import BillingDocument from "@/models/BillingDocument";
 import Invoice, { InvoiceData } from "@/models/Invoice";
-import { BillingDocumentService } from "./BillingDocumentService";
 import LineItem from "@/models/LineItem";
+import axios, { AxiosResponse } from "axios";
+import { BillingDocumentService } from "./BillingDocumentService";
 
 export default class InvoiceService implements BillingDocumentService {
   protected root: string;
@@ -47,10 +47,10 @@ export default class InvoiceService implements BillingDocumentService {
     return axios.put(url, this.createDTO(invoice)).then(this.parseItem);
   }
 
-  protected parseAll = (response: AxiosResponse): Invoice[] => {
+  protected parseAll = (response: AxiosResponse<InvoiceData[]>): Invoice[] => {
     const invoices: Invoice[] = [];
-    response.data.forEach((invoice: any) => {
-      invoices.push(this.createItem(invoice) as Invoice);
+    response.data.forEach((invoice: InvoiceData) => {
+      invoices.push(this.createItem(invoice as InvoiceData) as Invoice);
     });
     return invoices;
   };
@@ -59,7 +59,7 @@ export default class InvoiceService implements BillingDocumentService {
     return this.createItem(response.data) as Invoice;
   };
 
-  protected parseNumber = (response: AxiosResponse): string => {
+  protected parseNumber = (response: AxiosResponse<string, string>): string => {
     return response.data;
   };
 
