@@ -1,7 +1,7 @@
 import BillingDocument, {
   BillingDocumentWithId,
 } from "@/models/BillingDocument";
-import { PaymentInfoService } from "@/services/types";
+import { BillingDocumentService } from "@/services/BillingDocumentService";
 import { ref, Ref } from "vue";
 
 interface Header {
@@ -25,9 +25,9 @@ export default abstract class PaymentInfoList implements Presenter {
   protected view: View;
   public items: Ref<BillingDocument[]>;
   public headers: Header[];
-  protected API: PaymentInfoService;
+  protected API: BillingDocumentService;
 
-  constructor(view: View, api: PaymentInfoService) {
+  constructor(view: View, api: BillingDocumentService) {
     this.view = view;
     this.items = ref([]);
     this.headers = [

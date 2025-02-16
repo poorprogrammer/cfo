@@ -1,6 +1,6 @@
 import BillingDocument from "@/models/BillingDocument";
 
-export interface PaymentInfoService {
+export interface BillingDocumentService {
   getAll(year: number): Promise<BillingDocument[]>;
   get(number: string): Promise<BillingDocument>;
   save(item: BillingDocument): Promise<string>;
