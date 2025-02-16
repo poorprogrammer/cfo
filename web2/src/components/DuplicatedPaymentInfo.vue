@@ -2,7 +2,9 @@
   <div class="invoice pa-3">
     <div v-if="!invoice">Loading Please wait...</div>
     <div v-else>
-      <edit-invoice v-bind:presenter="props.presenter"></edit-invoice>
+      <edit-billing-document
+        v-bind:presenter="props.presenter"
+      ></edit-billing-document>
       <div class="no-print">
         <back-button v-bind:target="invoice.listUrl"></back-button>
         <save-button @save="save"></save-button>
@@ -14,7 +16,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import Presenter from "@/presenters/BillingDocumentPresenter";
-import EditInvoice from "@/components/EditInvoice.vue";
+import EditBillingDocument from "@/components/EditBillingDocument.vue";
 import BackButton from "@/components/BackButton.vue";
 import SaveButton from "@/components/SaveButton.vue";
 
