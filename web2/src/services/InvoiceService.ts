@@ -8,7 +8,7 @@ export default class InvoiceService implements PaymentInfoService {
   protected root: string;
 
   constructor() {
-    this.root = process.env.VUE_APP_BASE_API;
+    this.root = process.env.VUE_APP_BASE_API || "";
   }
 
   protected allUrl(year: number): string {

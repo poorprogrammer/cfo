@@ -1,5 +1,5 @@
-import Invoice from "../../src/models/Invoice";
-import Receipt from "../../src/models/Receipt";
+import Invoice from "@/models/Invoice";
+import Receipt from "@/models/Receipt";
 
 export class Factory {
   static json = {
@@ -38,15 +38,15 @@ export class Factory {
     _id: "oRFlyXTZX9cV6hIS",
   };
 
-  static createInvoice() {
+  static createInvoice(): Invoice {
     return new Invoice(deepCopy(Factory.json));
   }
 
-  static createReceipt() {
-    return Receipt.createFromInvoices([this.createInvoice()]);
+  static createReceipt(): Receipt {
+    return Receipt.createFromInvoices([Factory.createInvoice()]);
   }
 }
 
-function deepCopy(obj) {
+function deepCopy(obj: any) {
   return JSON.parse(JSON.stringify(obj));
 }

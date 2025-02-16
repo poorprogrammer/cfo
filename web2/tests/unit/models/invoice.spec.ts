@@ -1,8 +1,11 @@
-import Invoice from "../../../src/models/Invoice";
+import LineItem from "@/models/LineItem";
+import Invoice from "@/models/Invoice";
 import { Factory } from "../factory";
+import PricedLineItem from "@/models/PricedLineItem";
+import { vi } from "vitest";
 
 describe("Invoice", () => {
-  let invoice;
+  let invoice: Invoice;
 
   beforeEach(() => {
     invoice = Factory.createInvoice();
@@ -76,9 +79,9 @@ describe("Invoice", () => {
     });
 
     it("should use saved currency so that item price and total is shown correctly", () => {
-      let data = Object.assign({}, Factory.json);
+      const data: any = Object.assign({}, Factory.json);
       data.currency = "USD";
-      let invoice = new Invoice(data);
+      const invoice = new Invoice(data);
       expect(invoice.currency).toEqual("USD");
     });
 
@@ -101,7 +104,7 @@ describe("Invoice", () => {
     });
 
     describe("for each item", () => {
-      let item;
+      let item: LineItem;
 
       beforeEach(() => {
         invoice = Factory.createInvoice();
@@ -125,7 +128,7 @@ describe("Invoice", () => {
       });
     });
     describe("total", () => {
-      let total;
+      let total: LineItem;
       beforeEach(() => {
         total = invoice.getItems()[2];
       });
@@ -138,7 +141,7 @@ describe("Invoice", () => {
         expect(total.getPrice()).toEqual("");
       });
       it("should reflect changes in item price", () => {
-        const item = invoice.getItems()[0];
+        const item = invoice.getItems()[0] as PricedLineItem;
         item.price = 800;
         item.amount = 20;
         expect(item.getTotal()).toEqual("THB 16,000.00");
@@ -149,15 +152,15 @@ describe("Invoice", () => {
     });
     describe("vat", () => {
       it("should follow total", () => {
-        let vat = invoice.getItems()[3];
+        const vat = invoice.getItems()[3];
         expect(vat.name).toEqual("VAT 7%");
         expect(vat.getTotal()).toEqual("THB 28,056.00");
       });
       it("should reflect changes in item price", () => {
-        const item = invoice.getItems()[0];
+        const item = invoice.getItems()[0] as PricedLineItem;
         item.price = 800;
         item.amount = 20;
-        let vat = invoice.getItems()[3];
+        const vat = invoice.getItems()[3] as LineItem;
         expect(item.getTotal()).toEqual("THB 16,000.00");
         expect(invoice.getItems()[1].getTotal()).toEqual("THB 800.00");
         expect(invoice.getItems()[2].getTotal()).toEqual("THB 16,800.00");
@@ -166,15 +169,15 @@ describe("Invoice", () => {
     });
     describe("grand total", () => {
       it("should follow vat", () => {
-        let grandTotal = invoice.getItems()[4];
+        const grandTotal = invoice.getItems()[4] as LineItem;
         expect(grandTotal.name).toEqual("Grand Total");
         expect(grandTotal.getTotal()).toEqual("THB 428,856.00");
       });
       it("should reflect changes in item price", () => {
-        const item = invoice.getItems()[0];
+        const item = invoice.getItems()[0] as PricedLineItem;
         item.price = 800;
         item.amount = 20;
-        let grandTotal = invoice.getItems()[4];
+        const grandTotal = invoice.getItems()[4] as LineItem;
         expect(item.getTotal()).toEqual("THB 16,000.00");
         expect(invoice.getItems()[1].getTotal()).toEqual("THB 800.00");
         expect(invoice.getItems()[2].getTotal()).toEqual("THB 16,800.00");
@@ -185,8 +188,8 @@ describe("Invoice", () => {
 
   describe("Printing", () => {
     it("should print small items when there are more than 3 items so it fits in 1 page", () => {
-      invoice.addItemBefore();
-      invoice.addItemBefore();
+      invoice.addItemBefore(invoice.items[0]);
+      invoice.addItemBefore(invoice.items[0]);
       expect(invoice.items.length).toEqual(4);
       expect(invoice.itemClass()).toEqual("small");
     });
@@ -199,19 +202,19 @@ describe("Invoice", () => {
       expect(invoice.targetCompanyNameClass()).toEqual("");
     });
     it("invoice should have original", () => {
-      let titles = invoice.getTitles();
+      const titles = invoice.getTitles();
       expect(titles[0].title).toEqual("Invoice (original)");
     });
     it("original invoice displays on screen and paper", () => {
-      let titles = invoice.getTitles();
+      const titles = invoice.getTitles();
       expect(titles[0].css).toEqual("");
     });
     it("invoice should have copy", () => {
-      let titles = invoice.getTitles();
+      const titles = invoice.getTitles();
       expect(titles[1].title).toEqual("Invoice (copy)");
     });
     it("copy invoice displays paper only", () => {
-      let titles = invoice.getTitles();
+      const titles = invoice.getTitles();
       expect(titles[1].css).toEqual("print-only");
     });
     it("should have filename to be save when export to PDF and store in storage", () => {
@@ -227,13 +230,13 @@ describe("Invoice", () => {
       expect(invoice.tablePaddingClass()).toEqual("");
     });
     it("should have normal signature class when no payment infos", () => {
-      delete invoice.payment;
+      invoice.payment = "";
       expect(invoice.tablePaddingClass()).toEqual("");
     });
   });
 
   describe("switching currency", () => {
-    let item;
+    let item: LineItem;
 
     beforeEach(() => {
       item = invoice.getItems()[1];
@@ -302,7 +305,7 @@ describe("Invoice", () => {
       expect(invoice.invoiceDate).toEqual("new date");
     });
     it("should be able to set invoice date to today", () => {
-      let today = new Date("January 13, 2021");
+      const today = new Date("January 13, 2021");
       invoice.invoiceDate = "2021-01-02";
       invoice.setDateToday(today);
       expect(invoice.invoiceDate).toEqual("2021-01-13");
@@ -333,7 +336,7 @@ describe("Invoice", () => {
         expect(invoice.getItems()[0].getPrice()).toEqual("");
       });
       it("add last item when click on add before total", () => {
-        invoice.addItemBefore();
+        invoice.addItemBefore(invoice.items[2]);
         expect(invoice.getItems()[2].name).toEqual("");
         expect(invoice.getItems()[2].price).toEqual(0);
         expect(invoice.getItems()[2].amount).toEqual(0);
@@ -347,14 +350,14 @@ describe("Invoice", () => {
         expect(invoice.getItems()[0].name).toEqual("Scrum master");
       });
       it("remove unknown item does nothing", () => {
-        invoice.removeItem();
+        invoice.removeItem(invoice.items[2]);
         expect(invoice.items.length).toEqual(2);
       });
     });
   });
 
   describe("delete invoice", () => {
-    let invoice;
+    let invoice: Invoice;
     beforeEach(() => {
       invoice = Factory.createInvoice();
     });
@@ -363,7 +366,7 @@ describe("Invoice", () => {
       expect(invoice.deleted).toEqual(true);
     });
     it("should update invoice number so the invoice number can be reused while unique", () => {
-      let t = "1610194022999";
+      const t = 1610194022999;
       mockCurrentTimestamp(invoice, t);
       invoice.invoiceNumber = "202001-008";
 
@@ -373,6 +376,6 @@ describe("Invoice", () => {
     });
   });
 });
-function mockCurrentTimestamp(invoice, timestamp) {
+function mockCurrentTimestamp(invoice: Invoice, timestamp: number) {
   vi.spyOn(invoice, "currentTimestamp").mockReturnValue(timestamp);
 }
