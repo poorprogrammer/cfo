@@ -11,6 +11,6 @@ import QuotationArchivePresenter from "@/presenters/QuotationArchivePresenter";
 import QuotationService from "@/services/QuotationService";
 
 const presenter = ref(
-  new QuotationArchivePresenter(this, new QuotationService())
+  new QuotationArchivePresenter(undefined, new QuotationService())
 );
 </script>

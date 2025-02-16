@@ -1,10 +1,12 @@
 import DuplicatedInvoice from "@/views/DuplicatedInvoice.vue";
+import DuplicatedQuotation from "@/views/DuplicatedQuotation.vue";
 import Invoice from "@/views/Invoice.vue";
 import Invoices from "@/views/Invoices.vue";
 import Login from "@/views/Login.vue";
 import PageNotFound from "@/views/PageNotFound.vue";
 import Quotations from "@/views/Quotations.vue";
 import UpdateInvoice from "@/views/UpdateInvoice.vue";
+import UpdateQuotation from "@/views/UpdateQuotation.vue";
 import {
   createRouter,
   createWebHistory,
@@ -61,12 +63,6 @@ const routes: Array<RouteRecordRaw> = [
     beforeEnter: [isAuthenticated, handleOptionalYear],
   },
   {
-    path: "/quotations/:year?",
-    name: "quotations",
-    component: Quotations,
-    beforeEnter: [isAuthenticated, handleOptionalYear],
-  },
-  {
     path: "/invoice/:number/duplicate",
     name: "duplicatedInvoice",
     component: DuplicatedInvoice,
@@ -82,6 +78,24 @@ const routes: Array<RouteRecordRaw> = [
     path: "/invoice/:number",
     name: "invoice",
     component: Invoice,
+    beforeEnter: isAuthenticated,
+  },
+  {
+    path: "/quotations/:year?",
+    name: "quotations",
+    component: Quotations,
+    beforeEnter: [isAuthenticated, handleOptionalYear],
+  },
+  {
+    path: "/quotation/:number/duplicate",
+    name: "duplicatedQuotation",
+    component: DuplicatedQuotation,
+    beforeEnter: isAuthenticated,
+  },
+  {
+    path: "/quotation/:number/edit",
+    name: "UpdateQuotation",
+    component: UpdateQuotation,
     beforeEnter: isAuthenticated,
   },
   {
