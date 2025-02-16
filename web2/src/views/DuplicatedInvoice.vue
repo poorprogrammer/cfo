@@ -1,12 +1,12 @@
 <template>
-  <duplicated-payment-info v-bind:presenter="p" />
+  <duplicated-billing-document v-bind:presenter="p" />
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import Presenter from "@/presenters/BillingDocumentPresenter";
-import DuplicatedPaymentInfo from "@/components/DuplicatedPaymentInfo.vue";
+import DuplicatedBillingDocument from "@/components/DuplicatedBillingDocument.vue";
 import API from "@/services/InvoiceService";
 import Invoice from "@/models/Invoice";
 
