@@ -8,11 +8,10 @@ export interface InvoiceData extends BillingDocumentData {
 }
 
 export default class Invoice extends BillingDocument {
-  declare id?: string;
-  invoiceNumber = "";
-  invoiceDate = "";
-  quotationNumber = "";
-  purchaseOrderNumber = "";
+  public invoiceNumber = "";
+  public invoiceDate = "";
+  public quotationNumber = "";
+  public purchaseOrderNumber = "";
 
   constructor(data?: InvoiceData) {
     super(data);
