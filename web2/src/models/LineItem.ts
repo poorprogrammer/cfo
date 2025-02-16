@@ -8,12 +8,12 @@ export interface ILineItem {
 
 export default abstract class LineItem implements ILineItem {
   public name: string;
-  public t: number;
+  public value: number;
   protected invoice: BillingDocument;
 
-  constructor(name: string, t: number, invoice: BillingDocument) {
+  constructor(name: string, value: number, invoice: BillingDocument) {
     this.name = name;
-    this.t = t;
+    this.value = value;
     this.invoice = invoice;
   }
 
@@ -36,7 +36,7 @@ export default abstract class LineItem implements ILineItem {
   }
 
   total(): number {
-    return this.t;
+    return this.value;
   }
 
   get amount(): number {

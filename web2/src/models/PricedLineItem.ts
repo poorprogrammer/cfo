@@ -14,7 +14,7 @@ export default class PricedLineItem extends LineItem {
     super(name, 0, invoice);
     this._price = typeof price === "string" ? 0 : price;
     this._amount = typeof amount === "string" ? 0 : amount;
-    this.t = this.total();
+    this.value = this.total();
   }
 
   override total(): number {
@@ -28,7 +28,7 @@ export default class PricedLineItem extends LineItem {
 
   set price(value: number) {
     this._price = value;
-    this.t = this.total();
+    this.value = this.total();
   }
 
   get price(): number {
@@ -42,7 +42,7 @@ export default class PricedLineItem extends LineItem {
 
   set amount(value: number) {
     this._amount = value;
-    this.t = this.total();
+    this.value = this.total();
   }
 
   get amount(): number {
