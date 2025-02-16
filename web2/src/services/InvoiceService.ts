@@ -50,13 +50,13 @@ export default class InvoiceService implements BillingDocumentService {
   protected parseAll = (response: AxiosResponse): Invoice[] => {
     const invoices: Invoice[] = [];
     response.data.forEach((invoice: any) => {
-      invoices.push(this.createItem(invoice) as unknown as Invoice);
+      invoices.push(this.createItem(invoice) as Invoice);
     });
     return invoices;
   };
 
   protected parseItem = (response: AxiosResponse): Invoice => {
-    return this.createItem(response.data) as unknown as Invoice;
+    return this.createItem(response.data) as Invoice;
   };
 
   protected parseNumber = (response: AxiosResponse): string => {
