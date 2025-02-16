@@ -1,6 +1,5 @@
 import LineItem, {
   GrandTotalLineItem,
-  ILineItem,
   TaxLineItem,
   TotalLineItem,
 } from "./LineItem";
@@ -20,7 +19,7 @@ export interface IBillingDocument {
   projectName?: string;
   remark?: string;
   currency?: string;
-  items?: ILineItem[];
+  items?: LineItem[];
   deleted?: boolean;
   payment?: string;
 }

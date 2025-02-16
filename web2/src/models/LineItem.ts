@@ -1,12 +1,6 @@
 import BillingDocument from "./BillingDocument";
 
-export interface ILineItem {
-  name: string;
-  price?: number | string;
-  amount?: number | string;
-}
-
-export default abstract class LineItem implements ILineItem {
+export default abstract class LineItem {
   public name: string;
   public value: number;
   protected invoice: BillingDocument;
