@@ -1,14 +1,14 @@
 <template>
-  <update-payment-info v-bind:presenter="p" />
+  <update-billing-document v-bind:presenter="p" />
 </template>
 
 <script>
 import Presenter from "@/presenters/InvoicePresenter";
-import UpdatePaymentInfo from "@/components/UpdatePaymentInfo.vue";
+import UpdateBillingDocument from "@/components/UpdateBillingDocument.vue";
 import API from "@/services/InvoiceService";
 
 export default {
-  components: { UpdatePaymentInfo },
+  components: { UpdateBillingDocument },
   name: "updateInvoice",
   data() {
     return {
