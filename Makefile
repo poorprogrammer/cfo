@@ -1,4 +1,4 @@
-.PHONY: dev dev-api dev-web install e2e e2e-ci
+.PHONY: dev dev-api dev-web install e2e e2e-ci test-web
 
 # Default target
 dev: dev-api dev-web
@@ -32,3 +32,6 @@ e2e-ci:
 	cd compose/test/ && docker-compose build e2e
 	cd compose/test/ && docker-compose run --rm e2e
 	cd compose/test/ && docker-compose stop 
+
+test-web:
+	cd web2 && npm run test:single
