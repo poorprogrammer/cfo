@@ -27,6 +27,7 @@ export interface IBillingDocument {
 
 export interface BillingDocumentData extends IBillingDocument {
   _id?: string;
+  id?: string;
 }
 
 export interface BillingDocumentWithId extends IBillingDocument {
@@ -77,7 +78,7 @@ export default abstract class BillingDocument implements BillingDocumentWithId {
 
     if (!data) return;
 
-    this.id = data._id;
+    this.id = data.id || data._id;
     this.companySlug = data.companySlug;
     this.fromCompany = { ...data.fromCompany } as Company;
     this.targetCompany = { ...data.targetCompany } as Company;

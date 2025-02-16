@@ -74,6 +74,12 @@ describe("invoices API", () => {
   });
   describe("edit", () => {
     describe("Data Transfer Object", () => {
+      it("contains id when received invoice from server so that it can be saved", async () => {
+        let invoice = Factory.createInvoice();
+        let parsedInvoice = api.parseItem({ data: invoice });
+        expect(invoice.id).toEqual(Factory.json._id);
+        expect(parsedInvoice.id).toEqual(Factory.json._id);
+      });
       it("contains currency", async () => {
         let invoice = Factory.createInvoice();
         let dto = api.createDTO(invoice);
