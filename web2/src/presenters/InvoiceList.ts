@@ -1,12 +1,10 @@
-import BillingDocument, {
-  BillingDocumentWithId,
-} from "@/models/BillingDocument";
+import BillingDocument, { BillingDocumentData } from "@/models/BillingDocument";
 import InvoiceService from "@/services/InvoiceService";
 import BillingArchive, { Presenter, View } from "./BillingArchive";
 import Invoice from "@/models/Invoice";
 
 export interface IInvoiceListPresenter extends Presenter {
-  selectedInvoices: BillingDocumentWithId[];
+  selectedInvoices: BillingDocumentData[];
   isGeneratingReceipt: boolean;
   toggleGenerateReceipt(): void;
   buttonColor: string;

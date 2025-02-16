@@ -30,10 +30,7 @@ export interface BillingDocumentData extends IBillingDocument {
   id?: string;
 }
 
-export interface BillingDocumentWithId extends IBillingDocument {
-  id?: string;
-}
-export default abstract class BillingDocument implements BillingDocumentWithId {
+export default abstract class BillingDocument implements BillingDocumentData {
   protected _currencies: Record<string, Intl.NumberFormat>;
   protected _currency?: string;
   public id?: string;
