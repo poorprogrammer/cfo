@@ -21,6 +21,10 @@ export default abstract class LineItem implements LineItemData {
     return "";
   }
 
+  get amount(): number {
+    return 0;
+  }
+
   getCurrency(n: number): string {
     return this.currency(this.invoice.currency).format(n);
   }
@@ -31,10 +35,6 @@ export default abstract class LineItem implements LineItemData {
 
   total(): number {
     return this.value;
-  }
-
-  get amount(): number {
-    return 0;
   }
 }
 
