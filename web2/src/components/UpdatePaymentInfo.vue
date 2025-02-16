@@ -14,7 +14,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
-import Presenter from "@/presenters/Invoice";
+import Presenter from "@/presenters/InvoicePresenter";
 import EditInvoice from "@/components/EditInvoice.vue";
 import BackButton from "@/components/BackButton.vue";
 import SaveButton from "@/components/SaveButton.vue";

@@ -1,6 +1,5 @@
-import Presenter from "@/presenters/Invoice";
+import Presenter from "@/presenters/InvoicePresenter";
 import API from "@/services/InvoiceService";
-import axios from "axios";
 
 class MockView {
   goTo() {}

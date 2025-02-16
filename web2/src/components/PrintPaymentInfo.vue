@@ -156,7 +156,7 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import Presenter from "@/presenters/Invoice";
+import Presenter from "@/presenters/InvoicePresenter";
 import BackButton from "@/components/BackButton.vue";
 import BaseText from "@/components/BaseText.vue";
 

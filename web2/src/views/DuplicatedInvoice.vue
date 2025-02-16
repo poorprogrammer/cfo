@@ -5,7 +5,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import Presenter from "@/presenters/Invoice";
+import Presenter from "@/presenters/InvoicePresenter";
 import DuplicatedPaymentInfo from "@/components/DuplicatedPaymentInfo.vue";
 import API from "@/services/InvoiceService";
 

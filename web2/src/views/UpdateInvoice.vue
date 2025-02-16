@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Presenter from "@/presenters/Invoice";
+import Presenter from "@/presenters/InvoicePresenter";
 import UpdatePaymentInfo from "@/components/UpdatePaymentInfo.vue";
 import API from "@/services/InvoiceService";
 
