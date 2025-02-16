@@ -1,4 +1,4 @@
-import BillingDocument, { IBillingDocument } from "@/models/BillingDocument";
+import BillingDocument, { BillingDocumentData } from "@/models/BillingDocument";
 import { BillingDocumentService } from "@/services/BillingDocumentService";
 import { ref, Ref } from "vue";
 
@@ -14,7 +14,7 @@ export interface View {
 
 export interface Presenter {
   headers: Array<{ text: string; value: string }>;
-  items: Ref<IBillingDocument[]>;
+  items: Ref<BillingDocumentData[]>;
   init(year: number): void;
   delete(item: BillingDocument): void;
 }

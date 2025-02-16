@@ -1,8 +1,8 @@
 import LineItem from "./LineItem";
-import BillingDocument, { IBillingDocument } from "./BillingDocument";
+import BillingDocument, { BillingDocumentData } from "./BillingDocument";
 import Invoice from "./Invoice";
 
-interface ReceiptData extends IBillingDocument {
+interface ReceiptData extends BillingDocumentData {
   receiptNumber?: string;
   receiptDate?: string;
 }

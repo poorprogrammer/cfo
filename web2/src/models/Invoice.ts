@@ -1,6 +1,6 @@
-import BillingDocument, { IBillingDocument } from "./BillingDocument";
+import BillingDocument, { BillingDocumentData } from "./BillingDocument";
 
-interface InvoiceData extends IBillingDocument {
+interface InvoiceData extends BillingDocumentData {
   invoiceNumber: string;
   invoiceDate: string;
   quotationNumber: string;
