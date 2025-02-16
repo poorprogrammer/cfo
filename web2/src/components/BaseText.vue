@@ -7,11 +7,11 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "baseText",
-  props: ["value", "label"],
-};
+<script setup lang="ts">
+defineProps<{
+  value: string;
+  label: string;
+}>();
 </script>
 
 <style>
