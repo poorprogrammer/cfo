@@ -6,14 +6,7 @@
 import Presenter from "@/presenters/InvoicePresenter";
 import PrintBillingDocument from "@/components/PrintBillingDocument.vue";
 import API from "@/services/QuotationService";
-import { onMounted, ref } from "vue";
-import { useRoute } from "vue-router";
+import { ref } from "vue";
 
-const route = useRoute();
 const p = ref(new Presenter({}, new API()));
-
-onMounted(async () => {
-  const invoiceNumber = route.params.number as string;
-  await p.value.init(invoiceNumber);
-});
 </script>

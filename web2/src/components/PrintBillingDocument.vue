@@ -155,7 +155,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, onMounted } from "vue";
+import { useRoute } from "vue-router";
 import Presenter from "@/presenters/InvoicePresenter";
 import BackButton from "@/components/BackButton.vue";
 import BaseText from "@/components/BaseText.vue";
@@ -164,7 +165,13 @@ const props = defineProps<{
   presenter: Presenter;
 }>();
 
+const route = useRoute();
 const invoice = computed(() => props.presenter.invoice.value);
+
+onMounted(async () => {
+  const documentNumber = route.params.number as string;
+  await props.presenter.init(documentNumber);
+});
 </script>
 
 <style>
