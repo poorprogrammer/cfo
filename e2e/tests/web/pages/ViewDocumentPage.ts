@@ -20,10 +20,12 @@ export class ViewDocumentPage {
   }
 
   async containsDocumentNumber(number: string) {
-    await expect(
-      this.page.getByText(`${this.documentType} Number`).first()
-    ).toBeVisible();
-    await expect(this.page.getByText(`${number}`).nth(0)).toBeVisible();
+    await this.containsText(`${this.documentType} Number`);
+    await this.containsText(number);
+  }
+
+  async containsText(text: string) {
+    await expect(this.page.getByText(text).first()).toBeVisible();
   }
 
   async containsFirstItem(itemName, itemPrice, itemQuantity) {

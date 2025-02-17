@@ -36,6 +36,7 @@ test.describe("Create New Invoice Via Invoice Duplication Feature", () => {
     await editPage.addSecondItem("Scrum master", "4000", "10");
     await editPage.save();
     await viewPage.containsDocumentNumber("202001-008");
+    await viewPage.containsText("80,000.00");
     await archivePage.visit(2020);
     await archivePage.containsDocument("202001-008");
     await archivePage.delete("202001-008");
