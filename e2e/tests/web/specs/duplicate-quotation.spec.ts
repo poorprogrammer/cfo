@@ -24,7 +24,7 @@ test.describe("Create New Quotation Via Duplication Feature", () => {
     await duplicatePage.editDocumentDate("2020-01-01");
     await duplicatePage.editFirstItem("Technical coach", "1000", "12");
     const viewPage = await duplicatePage.save();
-    await viewPage.containsDocumentNumber();
+    await viewPage.containsDocumentNumber("008");
     await viewPage.containsFirstItem("Technical coach", "1000", "12");
 
     await archivePage.visit(2020);
@@ -33,7 +33,7 @@ test.describe("Create New Quotation Via Duplication Feature", () => {
     await editPage.editDocumentDate("2020-01-02");
     await editPage.editFirstItem("Fullstack developer", "1000", "10");
     await editPage.save();
-    await viewPage.containsDocumentNumber();
+    await viewPage.containsDocumentNumber("008");
     await archivePage.visit(2020);
     await archivePage.containsDocument("202001-008");
     await archivePage.delete("202001-008");

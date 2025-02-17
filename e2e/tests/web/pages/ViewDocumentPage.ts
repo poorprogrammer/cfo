@@ -19,11 +19,11 @@ export class ViewDocumentPage {
     await this.page.waitForSelector(`text=${this.documentType} (original)`);
   }
 
-  async containsDocumentNumber() {
+  async containsDocumentNumber(number: string) {
     await expect(
       this.page.getByText(`${this.documentType} Number`).first()
     ).toBeVisible();
-    await expect(this.page.getByText("-008").nth(1)).toBeVisible();
+    await expect(this.page.getByText(`-${number}`).nth(1)).toBeVisible();
   }
 
   async containsFirstItem(itemName, itemPrice, itemQuantity) {
