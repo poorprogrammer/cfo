@@ -27,7 +27,7 @@ test.describe("Create New Quotation Via Duplication Feature", () => {
     await viewInvoicePage.containsFirstItem("Technical coach", "1000", "12");
 
     await invoiceListPage.visit(2020);
-    await invoiceListPage.containsInvoice("202001-008");
+    await invoiceListPage.containsDocument("202001-008");
     const editInvoicePage = await invoiceListPage.clickEditDocumentNumber(
       "202001-008"
     );
@@ -36,8 +36,8 @@ test.describe("Create New Quotation Via Duplication Feature", () => {
     await editInvoicePage.save();
     await viewInvoicePage.containsInvoiceNumber();
     await invoiceListPage.visit(2020);
-    await invoiceListPage.containsInvoice("202001-008");
+    await invoiceListPage.containsDocument("202001-008");
     await invoiceListPage.delete("202001-008");
-    await invoiceListPage.shouldNotContainsInvoice("202001-008");
+    await invoiceListPage.shouldNotContainDocument("202001-008");
   });
 });

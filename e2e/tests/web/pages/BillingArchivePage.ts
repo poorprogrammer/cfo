@@ -41,11 +41,11 @@ export default class BillingArchivePage {
     await this.confirmDeleteButton.click();
   }
 
-  async containsInvoice(invoiceNumber) {
-    await expect(this.page.getByText(`${invoiceNumber}`)).toBeVisible();
+  async containsDocument(documentNumber) {
+    await expect(this.page.getByText(`${documentNumber}`)).toBeVisible();
   }
 
-  async shouldNotContainsInvoice(invoiceNumber) {
-    await expect(this.page.getByText(`${invoiceNumber}`)).not.toBeVisible();
+  async shouldNotContainDocument(documentNumber) {
+    await expect(this.page.getByText(`${documentNumber}`)).not.toBeVisible();
   }
 }
