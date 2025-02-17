@@ -33,7 +33,7 @@ test.describe("Create New Quotation Via Duplication Feature", () => {
     await editPage.editDocumentDate("2020-01-02");
     await editPage.editFirstItem("Fullstack developer", "1000", "10");
     await editPage.save();
-    await viewPage.containsDocumentNumber("008");
+    await viewPage.containsDocumentNumber("202001-008");
     await archivePage.visit(2020);
     await archivePage.containsDocument("202001-008");
     await archivePage.delete("202001-008");

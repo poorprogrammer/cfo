@@ -23,7 +23,7 @@ export class ViewDocumentPage {
     await expect(
       this.page.getByText(`${this.documentType} Number`).first()
     ).toBeVisible();
-    await expect(this.page.getByText(`-${number}`).nth(1)).toBeVisible();
+    await expect(this.page.getByText(`${number}`).nth(0)).toBeVisible();
   }
 
   async containsFirstItem(itemName, itemPrice, itemQuantity) {
