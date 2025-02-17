@@ -18,8 +18,8 @@ test.describe("Create New Invoice Via Invoice Duplication Feature", () => {
     await invoiceListPage.visit(2020);
     const duplicateInvoicePage =
       await invoiceListPage.clickDuplicateDocumentNumber("202001-007");
-    await duplicateInvoicePage.editInvoiceNumber("202001-008");
-    await duplicateInvoicePage.editInvoiceDate("2020-01-01");
+    await duplicateInvoicePage.editDocumentNumber("202001-008");
+    await duplicateInvoicePage.editDocumentDate("2020-01-01");
     await duplicateInvoicePage.editFirstItem("Technical coach", "1000", "12");
     await duplicateInvoicePage.editSecondItem("UX", "2000", "10");
     const viewInvoicePage = await duplicateInvoicePage.save();
@@ -31,7 +31,7 @@ test.describe("Create New Invoice Via Invoice Duplication Feature", () => {
     const editInvoicePage = await invoiceListPage.clickEditDocumentNumber(
       "202001-008"
     );
-    await editInvoicePage.editInvoiceDate("2020-01-02");
+    await editInvoicePage.editDocumentDate("2020-01-02");
     await editInvoicePage.editFirstItem("Fullstack developer", "1000", "10");
     await editInvoicePage.editSecondItem("UX/UI", "3000", "10");
     await editInvoicePage.save();

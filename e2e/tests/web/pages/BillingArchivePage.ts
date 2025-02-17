@@ -1,5 +1,5 @@
 import { expect, Locator, Page } from "@playwright/test";
-import { DuplicateInvoicePage } from "./DuplicateInvoicePage";
+import { DuplicateDocumentPage } from "./DuplicateInvoicePage";
 
 export default class BillingArchivePage {
   page: Page;
@@ -28,12 +28,12 @@ export default class BillingArchivePage {
 
   async clickDuplicateDocumentNumber(documentNumber) {
     await this.page.locator(`#duplicate_${documentNumber}`).click();
-    return DuplicateInvoicePage.create(this.page, this.documentType);
+    return DuplicateDocumentPage.create(this.page, this.documentType);
   }
 
   async clickEditDocumentNumber(documentNumber) {
     await this.page.locator(`#edit_${documentNumber}`).click();
-    return DuplicateInvoicePage.create(this.page, this.documentType);
+    return DuplicateDocumentPage.create(this.page, this.documentType);
   }
 
   async delete(documentNumber) {

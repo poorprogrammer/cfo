@@ -1,29 +1,25 @@
 import { expect, Locator, Page } from "@playwright/test";
 import { ViewInvoicePage } from "./ViewInvoicePage";
 
-export class DuplicateInvoicePage {
+export class DuplicateDocumentPage {
   page: Page;
-  invoiceDate: Locator;
-  invoiceNumber: Locator;
+  documentDate: Locator;
+  documentNumber: Locator;
   saveButton: Locator;
   documentType: string;
 
-  constructor(page, documentType = "Invoice") {
+  constructor(page, documentType) {
     this.page = page;
-    this.invoiceNumber = page.locator(
-      `#${documentType.toLocaleLowerCase()}-number`
-    );
-    this.invoiceDate = page.locator(
-      `#${documentType.toLocaleLowerCase()}-date`
-    );
+    this.documentNumber = page.locator(`#${documentType.toLowerCase()}-number`);
+    this.documentDate = page.locator(`#${documentType.toLowerCase()}-date`);
     this.saveButton = page.locator("#save-button");
     this.documentType = documentType;
   }
 
-  static async create(page: Page, documentType = "Invoice") {
-    let duplicateInvoicePage = new DuplicateInvoicePage(page, documentType);
-    await duplicateInvoicePage.ready();
-    return duplicateInvoicePage;
+  static async create(page: Page, documentType) {
+    let duplicateDocumentPage = new DuplicateDocumentPage(page, documentType);
+    await duplicateDocumentPage.ready();
+    return duplicateDocumentPage;
   }
 
   async ready() {
@@ -32,12 +28,12 @@ export class DuplicateInvoicePage {
     ).toBeVisible();
   }
 
-  async editInvoiceNumber(invoiceNumber) {
-    await this.invoiceNumber.fill(invoiceNumber);
+  async editDocumentNumber(documentNumber) {
+    await this.documentNumber.fill(documentNumber);
   }
 
-  async editInvoiceDate(date) {
-    await this.invoiceDate.fill(date);
+  async editDocumentDate(date) {
+    await this.documentDate.fill(date);
   }
 
   async editFirstItem(item, price, amount) {
