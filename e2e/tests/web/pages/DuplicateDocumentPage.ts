@@ -1,5 +1,5 @@
 import { expect, Locator, Page } from "@playwright/test";
-import { ViewDocumentPage } from "./ViewInvoicePage";
+import { ViewDocumentPage } from "./ViewDocumentPage";
 
 export class DuplicateDocumentPage {
   page: Page;
