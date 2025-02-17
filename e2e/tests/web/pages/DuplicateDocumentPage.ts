@@ -7,14 +7,12 @@ export class DuplicateDocumentPage {
   documentNumber: Locator;
   saveButton: Locator;
   documentType: string;
-  addSecondItemButton: Locator;
 
   constructor(page, documentType) {
     this.page = page;
     this.documentNumber = page.locator(`#${documentType.toLowerCase()}-number`);
     this.documentDate = page.locator(`#${documentType.toLowerCase()}-date`);
     this.saveButton = page.locator("#save-button");
-    this.addSecondItemButton = this.lineItem("button.add-item", 2);
     this.documentType = documentType;
   }
 
@@ -45,9 +43,13 @@ export class DuplicateDocumentPage {
   }
 
   async addSecondItem(item: string, price: string, amount: string) {
-    await this.addSecondItemButton.click();
+    await this.lineItem("button.add-item", 2).click();
     expect(this.lineItem('input[placeholder="Price"]', 6)).toBeVisible();
     await this.editSecondItem(item, price, amount);
+  }
+
+  async removeSecondItem() {
+    await this.lineItem("button.remove-item", 2).click();
   }
 
   async editSecondItem(item, price, amount) {
