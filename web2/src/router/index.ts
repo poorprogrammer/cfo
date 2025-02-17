@@ -1,5 +1,5 @@
-import DuplicatedInvoice from "@/views/DuplicatedInvoice.vue";
-import DuplicatedQuotation from "@/views/DuplicatedQuotation.vue";
+import DuplicateInvoice from "@/views/DuplicateInvoice.vue";
+import DuplicateQuotation from "@/views/DuplicateQuotation.vue";
 import DuplicateReceipt from "@/views/DuplicateReceipt.vue";
 import Invoice from "@/views/Invoice.vue";
 import Invoices from "@/views/Invoices.vue";
@@ -70,7 +70,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/invoice/:number/duplicate",
     name: "duplicatedInvoice",
-    component: DuplicatedInvoice,
+    component: DuplicateInvoice,
     beforeEnter: isAuthenticated,
   },
   {
@@ -94,7 +94,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/quotation/:number/duplicate",
     name: "duplicatedQuotation",
-    component: DuplicatedQuotation,
+    component: DuplicateQuotation,
     beforeEnter: isAuthenticated,
   },
   {
