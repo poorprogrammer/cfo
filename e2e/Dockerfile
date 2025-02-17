@@ -2,7 +2,8 @@
 FROM mcr.microsoft.com/playwright:v1.46.1-jammy
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+COPY yarn.lock ./
+RUN yarn install
 COPY . .
 
 RUN npx playwright install chromium
