@@ -35,3 +35,6 @@ e2e-ci:
 
 test-web:
 	cd web && npm run test:single
+
+test-web-ci:
+	cd web && npm run test:coverage

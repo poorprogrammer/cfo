@@ -40,7 +40,7 @@ jobs:
         working-directory: web
 
       - name: Run web unit test
-        run: make test-web
+        run: make test-web-ci
 
       - name: Install api dependencies
         run: yarn install
