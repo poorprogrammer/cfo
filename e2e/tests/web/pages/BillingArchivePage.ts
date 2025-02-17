@@ -13,9 +13,9 @@ export default class BillingArchivePage {
   }
 
   static async create(page, documentType) {
-    let invoiceListPage = new BillingArchivePage(page, documentType);
-    await invoiceListPage.ready();
-    return invoiceListPage;
+    let archivePage = new BillingArchivePage(page, documentType);
+    await archivePage.ready();
+    return archivePage;
   }
 
   async ready() {
@@ -26,18 +26,18 @@ export default class BillingArchivePage {
     await this.page.goto(`/${this.documentType.toLocaleLowerCase()}s/${year}`);
   }
 
-  async clickDuplicateInvoiceNumber(invoiceNumber) {
-    await this.page.locator(`#duplicate_${invoiceNumber}`).click();
+  async clickDuplicateDocumentNumber(documentNumber) {
+    await this.page.locator(`#duplicate_${documentNumber}`).click();
     return DuplicateInvoicePage.create(this.page, this.documentType);
   }
 
-  async clickEditInvoiceNumber(invoiceNumber) {
-    await this.page.locator(`#edit_${invoiceNumber}`).click();
+  async clickEditDocumentNumber(documentNumber) {
+    await this.page.locator(`#edit_${documentNumber}`).click();
     return DuplicateInvoicePage.create(this.page, this.documentType);
   }
 
-  async delete(invoiceNumber) {
-    await this.page.locator(`#delete_${invoiceNumber}`).click();
+  async delete(documentNumber) {
+    await this.page.locator(`#delete_${documentNumber}`).click();
     await this.confirmDeleteButton.click();
   }
 
