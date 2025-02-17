@@ -2,22 +2,27 @@ import { expect, Page } from "@playwright/test";
 
 export class ViewInvoicePage {
   page: Page;
-  constructor(page: Page) {
+  documentType: string;
+
+  constructor(page: Page, documentType: string) {
     this.page = page;
+    this.documentType = documentType;
   }
 
-  static async create(page) {
-    let viewInvoicePage = new ViewInvoicePage(page);
+  static async create(page, documentType = "Invoice") {
+    let viewInvoicePage = new ViewInvoicePage(page, documentType);
     await viewInvoicePage.ready();
     return viewInvoicePage;
   }
 
   async ready() {
-    await this.page.waitForSelector("text=Invoice (original)");
+    await this.page.waitForSelector(`text=${this.documentType} (original)`);
   }
 
   async containsInvoiceNumber() {
-    await expect(this.page.getByText("Invoice Number").first()).toBeVisible();
+    await expect(
+      this.page.getByText(`${this.documentType} Number`).first()
+    ).toBeVisible();
     await expect(this.page.getByText("-008").nth(1)).toBeVisible();
   }
 

@@ -3,7 +3,7 @@ import BillingArchivePage from "./BillingArchivePage";
 
 export class InvoiceListPage extends BillingArchivePage {
   constructor(page: Page) {
-    super(page);
+    super(page, "Invoice");
   }
 
   static async create(page) {

@@ -6,23 +6,29 @@ export class DuplicateInvoicePage {
   invoiceDate: Locator;
   invoiceNumber: Locator;
   saveButton: Locator;
+  documentType: string;
 
-  constructor(page) {
+  constructor(page, documentType = "Invoice") {
     this.page = page;
-    this.invoiceNumber = page.locator("#invoice-number");
-    this.invoiceDate = page.locator("#invoice-date");
+    this.invoiceNumber = page.locator(
+      `#${documentType.toLocaleLowerCase()}-number`
+    );
+    this.invoiceDate = page.locator(
+      `#${documentType.toLocaleLowerCase()}-date`
+    );
     this.saveButton = page.locator("#save-button");
+    this.documentType = documentType;
   }
 
-  static async create(page: Page) {
-    let duplicateInvoicePage = new DuplicateInvoicePage(page);
+  static async create(page: Page, documentType = "Invoice") {
+    let duplicateInvoicePage = new DuplicateInvoicePage(page, documentType);
     await duplicateInvoicePage.ready();
     return duplicateInvoicePage;
   }
 
   async ready() {
     await expect(
-      this.page.getByText("Unsave Invoice (edit mode)")
+      this.page.getByText(`Unsave ${this.documentType} (edit mode)`)
     ).toBeVisible();
   }
 
@@ -72,6 +78,6 @@ export class DuplicateInvoicePage {
 
   async save() {
     await this.saveButton.click();
-    return ViewInvoicePage.create(this.page);
+    return ViewInvoicePage.create(this.page, this.documentType);
   }
 }
