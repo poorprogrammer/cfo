@@ -33,6 +33,7 @@ test.describe("Create New Invoice Via Invoice Duplication Feature", () => {
     await editPage.editDocumentDate("2020-01-02");
     await editPage.editFirstItem("Fullstack developer", "1000", "10");
     await editPage.editSecondItem("UX/UI", "3000", "10");
+    await editPage.addSecondItem("Scrum master", "4000", "10");
     await editPage.save();
     await viewPage.containsDocumentNumber("008");
     await archivePage.visit(2020);

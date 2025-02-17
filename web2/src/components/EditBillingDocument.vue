@@ -268,7 +268,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, watch } from "vue";
+import { computed } from "vue";
 import Presenter from "@/presenters/BillingDocumentPresenter";
 import BaseInput from "@/components/BaseInput.vue";
 import BillingDocument from "@/models/BillingDocument";
@@ -279,28 +279,21 @@ const props = defineProps<{
 }>();
 
 const invoice = computed(() => props.presenter.billingDocument.value);
-const items = ref(invoice.value?.getItems() || []);
 
-// Update items when invoice changes
-watch(
-  () => invoice.value,
-  (newInvoice) => {
-    if (newInvoice) {
-      items.value = newInvoice.getItems();
-    }
-  },
-  { immediate: true }
-);
+// Change this to a computed property instead of ref
+const items = computed(() => invoice.value?.getItems() || []);
 
 function today() {
   props.presenter.todayClicked();
 }
 
 function addItem(item: LineItem) {
+  console.log("addItem", item);
   props.presenter.addItemClickedOn(item);
 }
 
 function removeItem(item: LineItem) {
+  console.log("removeItem", item);
   props.presenter.removeItemClickedOn(item);
 }
 </script>

@@ -7,12 +7,14 @@ export class DuplicateDocumentPage {
   documentNumber: Locator;
   saveButton: Locator;
   documentType: string;
+  addSecondItemButton: Locator;
 
   constructor(page, documentType) {
     this.page = page;
     this.documentNumber = page.locator(`#${documentType.toLowerCase()}-number`);
     this.documentDate = page.locator(`#${documentType.toLowerCase()}-date`);
     this.saveButton = page.locator("#save-button");
+    this.addSecondItemButton = this.lineItem("button.add-item", 2);
     this.documentType = documentType;
   }
 
@@ -37,39 +39,27 @@ export class DuplicateDocumentPage {
   }
 
   async editFirstItem(item, price, amount) {
-    await this.page
-      .locator(
-        'table.items-table tbody tr:first-child input[placeholder="Item"]'
-      )
-      .fill(item);
-    await this.page
-      .locator(
-        'table.items-table tbody tr:first-child input[placeholder="Price"]'
-      )
-      .fill(price);
-    await this.page
-      .locator(
-        'table.items-table tbody tr:first-child input[placeholder="Amount"]'
-      )
-      .fill(amount);
+    await this.lineItem('input[placeholder="Item"]', 1).fill(item);
+    await this.lineItem('input[placeholder="Price"]', 1).fill(price);
+    await this.lineItem('input[placeholder="Amount"]', 1).fill(amount);
+  }
+
+  async addSecondItem(item: string, price: string, amount: string) {
+    await this.addSecondItemButton.click();
+    expect(this.lineItem('input[placeholder="Price"]', 6)).toBeVisible();
+    await this.editSecondItem(item, price, amount);
   }
 
   async editSecondItem(item, price, amount) {
-    await this.page
-      .locator(
-        'table.items-table tbody tr:nth-child(2) input[placeholder="Item"]'
-      )
-      .fill(item);
-    await this.page
-      .locator(
-        'table.items-table tbody tr:nth-child(2) input[placeholder="Price"]'
-      )
-      .fill(price);
-    await this.page
-      .locator(
-        'table.items-table tbody tr:nth-child(2) input[placeholder="Amount"]'
-      )
-      .fill(amount);
+    await this.lineItem('input[placeholder="Item"]', 2).fill(item);
+    await this.lineItem('input[placeholder="Price"]', 2).fill(price);
+    await this.lineItem('input[placeholder="Amount"]', 2).fill(amount);
+  }
+
+  lineItem(element: string, row: number) {
+    return this.page.locator(
+      `table.items-table tbody tr:nth-child(${row}) ${element}`
+    );
   }
 
   async save() {

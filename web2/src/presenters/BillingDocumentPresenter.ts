@@ -56,7 +56,9 @@ export default class BillingDocumentPresenter<T extends BillingDocument> {
   }
 
   addItemClickedOn(item: LineItem) {
+    console.log("addItemClickedOn", item);
     this.billingDocument.value.addItemBefore(item);
+    console.log("billingDocument.value", this.billingDocument.value);
   }
 
   removeItemClickedOn(item: LineItem) {
