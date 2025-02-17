@@ -1,5 +1,5 @@
 import { Locator, Page } from "@playwright/test";
-import { InvoiceListPage } from "./InvoiceListPage";
+import BillingArchivePage from "./BillingArchivePage";
 
 export class LoginPage {
   page: Page;
@@ -22,6 +22,6 @@ export class LoginPage {
     await this.usernameInput.type("user");
     await this.passwordInput.type("s3cr3t");
     await this.loginButton.click();
-    return InvoiceListPage.create(this.page);
+    return BillingArchivePage.create(this.page, "Invoice");
   }
 }

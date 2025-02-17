@@ -1,16 +1,16 @@
 import { test } from "@playwright/test";
 import { LoginPage } from "../pages/LoginPage";
-import QuotationListPage from "../pages/QuotationListPage";
+import BillingArchivePage from "../pages/BillingArchivePage";
 
 test.describe("Create New Quotation Via Duplication Feature", () => {
   let loginPage: LoginPage;
-  let invoiceListPage: QuotationListPage;
+  let invoiceListPage: BillingArchivePage;
 
   test.beforeEach(async ({ page }) => {
     loginPage = new LoginPage(page);
     await loginPage.goto();
     invoiceListPage = await loginPage.login();
-    invoiceListPage = new QuotationListPage(page);
+    invoiceListPage = new BillingArchivePage(page, "Quotation");
   });
 
   test("Can create new Quotation by duplicate from existing one", async ({

@@ -1,10 +1,10 @@
 import { test } from "@playwright/test";
 import { LoginPage } from "../pages/LoginPage";
-import { InvoiceListPage } from "../pages/InvoiceListPage";
+import BillingArchivePage from "../pages/BillingArchivePage";
 
 test.describe("Create New Invoice Via Invoice Duplication Feature", () => {
   let loginPage: LoginPage;
-  let invoiceListPage: InvoiceListPage;
+  let invoiceListPage: BillingArchivePage;
 
   test.beforeEach(async ({ page }) => {
     loginPage = new LoginPage(page);

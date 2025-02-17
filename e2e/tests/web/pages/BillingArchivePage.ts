@@ -6,10 +6,16 @@ export default class BillingArchivePage {
   confirmDeleteButton: Locator;
   documentType: string;
 
-  constructor(page: Page, documentType = "Invoice") {
+  constructor(page: Page, documentType) {
     this.page = page;
     this.confirmDeleteButton = page.locator(".delete-btn");
     this.documentType = documentType;
+  }
+
+  static async create(page, documentType) {
+    let invoiceListPage = new BillingArchivePage(page, documentType);
+    await invoiceListPage.ready();
+    return invoiceListPage;
   }
 
   async ready() {
