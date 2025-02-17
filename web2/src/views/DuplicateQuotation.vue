@@ -23,7 +23,7 @@ const p = ref(
 );
 
 onMounted(async () => {
-  const invoiceNumber = route.params.number as string;
-  await p.value.init(invoiceNumber);
+  const number = route.params.number as string;
+  await p.value.init(number);
 });
 </script>
