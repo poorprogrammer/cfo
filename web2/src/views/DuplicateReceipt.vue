@@ -5,7 +5,7 @@
 <script setup lang="ts">
 import Presenter from "@/presenters/BillingDocumentPresenter";
 import DuplicatedBillingDocument from "@/components/DuplicatedBillingDocument.vue";
-import API from "@/services/ReceiptService";
+import { ReceiptService as API } from "@/services/ReceiptService";
 import { onMounted, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import Receipt from "@/models/Receipt";

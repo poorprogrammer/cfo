@@ -5,7 +5,7 @@
 <script>
 import Presenter from "@/presenters/BillingDocumentPresenter";
 import UpdateBillingDocument from "@/components/UpdateBillingDocument.vue";
-import API from "@/services/ReceiptService";
+import { ReceiptService as API } from "@/services/ReceiptService";
 import Receipt from "@/models/Receipt";
 
 export default {
