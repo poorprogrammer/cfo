@@ -17,12 +17,20 @@ export default abstract class LineItem implements LineItemData {
     return 0;
   }
 
+  set price(value: number) {
+    // do nothing
+  }
+
   getPrice(): string {
     return "";
   }
 
   get amount(): number {
     return 0;
+  }
+
+  set amount(value: number) {
+    // do nothing
   }
 
   getCurrency(n: number): string {

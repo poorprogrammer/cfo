@@ -1,5 +1,5 @@
 import Invoice from "@/models/Invoice";
-import PricedLineItem from "../../../src/models/PricedLineItem";
+import PricedLineItem from "@/models/PricedLineItem";
 
 describe("note as item", () => {
   const item = new PricedLineItem(
