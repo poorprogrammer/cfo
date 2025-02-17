@@ -1,5 +1,5 @@
 import { expect, Locator, Page } from "@playwright/test";
-import { ViewInvoicePage } from "./ViewInvoicePage";
+import { ViewDocumentPage } from "./ViewInvoicePage";
 
 export class DuplicateDocumentPage {
   page: Page;
@@ -74,6 +74,6 @@ export class DuplicateDocumentPage {
 
   async save() {
     await this.saveButton.click();
-    return ViewInvoicePage.create(this.page, this.documentType);
+    return ViewDocumentPage.create(this.page, this.documentType);
   }
 }

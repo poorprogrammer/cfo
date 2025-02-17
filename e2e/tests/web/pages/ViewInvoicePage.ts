@@ -1,6 +1,6 @@
 import { expect, Page } from "@playwright/test";
 
-export class ViewInvoicePage {
+export class ViewDocumentPage {
   page: Page;
   documentType: string;
 
@@ -9,17 +9,17 @@ export class ViewInvoicePage {
     this.documentType = documentType;
   }
 
-  static async create(page, documentType = "Invoice") {
-    let viewInvoicePage = new ViewInvoicePage(page, documentType);
-    await viewInvoicePage.ready();
-    return viewInvoicePage;
+  static async create(page, documentType) {
+    let viewDocumentPage = new ViewDocumentPage(page, documentType);
+    await viewDocumentPage.ready();
+    return viewDocumentPage;
   }
 
   async ready() {
     await this.page.waitForSelector(`text=${this.documentType} (original)`);
   }
 
-  async containsInvoiceNumber() {
+  async containsDocumentNumber() {
     await expect(
       this.page.getByText(`${this.documentType} Number`).first()
     ).toBeVisible();
