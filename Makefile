@@ -29,9 +29,9 @@ e2e:
 
 # Run end-to-end tests in CI environment
 e2e-ci:
-	cd compose/test/ && docker-compose build e2e
-	cd compose/test/ && docker-compose run --rm e2e
-	cd compose/test/ && docker-compose stop 
+	cd compose/test-ci/ && docker-compose build e2e
+	cd compose/test-ci/ && docker-compose run --rm e2e
+	cd compose/test-ci/ && docker-compose stop
 
 test-web:
-	cd web2 && npm run test:single
+	cd web && npm run test:single
