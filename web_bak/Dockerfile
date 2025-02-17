@@ -2,7 +2,8 @@ FROM node:lts-alpine AS build
 WORKDIR /app
 
 COPY package*.json ./
-RUN npm install
+RUN npm install -g yarn
+RUN yarn install
 COPY . .
 ARG VUE_APP_BASE_API
 ENV VUE_APP_BASE_API=${VUE_APP_BASE_API}
