@@ -10,7 +10,7 @@ Automated Chief Financial Officer for Odds people
 ## Run unit test
 
 ```
-./script/unittestweb
+make test-web
 ./script/unittestapi
 ```
 
