@@ -188,7 +188,6 @@ onMounted(async () => {
 }
 
 .simple-table th {
-  text-align: left;
   padding: 0.75rem;
   border-bottom: thin solid rgba(0, 0, 0, 0.12);
   font-weight: 500;
