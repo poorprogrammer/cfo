@@ -20,7 +20,7 @@ export default class Receipt extends BillingDocument {
     invoices.forEach((invoice: Invoice) => {
       const item = r.createPricedLineItem();
       item.name = invoice.number;
-      item.price = invoice.getTotal();
+      item.price = invoice.getTotal().toString();
       item.amount = 1;
       r.items.push(item as unknown as LineItem);
     });

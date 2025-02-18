@@ -89,7 +89,7 @@ describe("invoices API", () => {
         let invoice = Factory.createInvoice();
         let dto = api.createDTO(invoice);
         expect(dto.items[0] instanceof PricedLineItem).toBeFalsy();
-        expect(dto.items[0].price).toEqual(20000);
+        expect(dto.items[0].price).toEqual("20000");
         expect(dto.items[0].amount).toEqual(20);
       });
       it("remove circular dependencies to avoid save fail", async () => {

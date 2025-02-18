@@ -65,15 +65,15 @@ describe("Receipt/Tax Invoice", () => {
           name: "to",
         },
         items: [
-          { name: "item 1", price: 10, amount: 1 },
-          { name: "item 2", price: 20, amount: 1 },
+          { name: "item 1", price: "10", amount: 1 },
+          { name: "item 2", price: "20", amount: 1 },
         ],
       }),
       new Invoice({
         invoiceNumber: "202101-002",
         items: [
-          { name: "item 3", price: 30, amount: 1 },
-          { name: "item 4", price: 40, amount: 1 },
+          { name: "item 3", price: "30", amount: 1 },
+          { name: "item 4", price: "40", amount: 1 },
         ],
       }),
     ];
@@ -85,7 +85,7 @@ describe("Receipt/Tax Invoice", () => {
     it("should have invoices as items", () => {
       receipt = Receipt.createFromInvoices(invoices);
       expect(receipt.items[0].name).toEqual(invoices[0].invoiceNumber);
-      expect(receipt.items[0].price).toEqual(invoices[0].getTotal());
+      expect(receipt.items[0].price).toEqual(invoices[0].getTotal().toString());
       expect(receipt.items[0].amount).toEqual(1);
     });
     it("should have receipt date as today", () => {

@@ -142,7 +142,7 @@ describe("Invoice", () => {
       });
       it("should reflect changes in item price", () => {
         const item = invoice.getItems()[0] as PricedLineItem;
-        item.price = 800;
+        item.price = "800";
         item.amount = 20;
         expect(item.getTotal()).toEqual("THB 16,000.00");
         expect(invoice.getItems()[1].getTotal()).toEqual("THB 800.00");
@@ -158,7 +158,7 @@ describe("Invoice", () => {
       });
       it("should reflect changes in item price", () => {
         const item = invoice.getItems()[0] as PricedLineItem;
-        item.price = 800;
+        item.price = "800";
         item.amount = 20;
         const vat = invoice.getItems()[3] as LineItem;
         expect(item.getTotal()).toEqual("THB 16,000.00");
@@ -175,7 +175,7 @@ describe("Invoice", () => {
       });
       it("should reflect changes in item price", () => {
         const item = invoice.getItems()[0] as PricedLineItem;
-        item.price = 800;
+        item.price = "800";
         item.amount = 20;
         const grandTotal = invoice.getItems()[4] as LineItem;
         expect(item.getTotal()).toEqual("THB 16,000.00");
@@ -331,8 +331,8 @@ describe("Invoice", () => {
       it("new item is added before the given item", () => {
         invoice.addItemBefore(invoice.items[0]);
         expect(invoice.getItems()[0].name).toEqual("");
-        expect(invoice.getItems()[0].price).toEqual(0);
-        expect(invoice.getItems()[0].amount).toEqual(0);
+        expect(invoice.getItems()[0].price).toEqual("");
+        expect(invoice.getItems()[0].amount).toEqual(NaN);
       });
       it("new item can get price or adding would fail to render", () => {
         invoice.addItemBefore(invoice.items[0]);
@@ -341,8 +341,8 @@ describe("Invoice", () => {
       it("add last item when click on add before total", () => {
         invoice.addItemBefore(invoice.items[2]);
         expect(invoice.getItems()[2].name).toEqual("");
-        expect(invoice.getItems()[2].price).toEqual(0);
-        expect(invoice.getItems()[2].amount).toEqual(0);
+        expect(invoice.getItems()[2].price).toEqual("");
+        expect(invoice.getItems()[2].amount).toEqual(NaN);
       });
       it("remove should decrease total length", () => {
         invoice.removeItem(invoice.items[0]);

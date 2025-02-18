@@ -13,11 +13,11 @@ export default abstract class LineItem implements LineItemData {
 
   abstract getTotal(): string;
 
-  get price(): number {
-    return 0;
+  get price(): string {
+    return "";
   }
 
-  set price(value: number) {
+  set price(value: string) {
     // do nothing
   }
 

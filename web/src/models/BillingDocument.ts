@@ -26,7 +26,7 @@ export interface NewBillingDocumentData {
 
 export interface LineItemData {
   name: string;
-  price: number;
+  price: string;
   amount: number;
 }
 
@@ -94,7 +94,7 @@ export default abstract class BillingDocument implements BillingDocumentData {
     this.payment = data.payment || "";
     if (!data.items) return;
     this.items = data.items.map(
-      (i) => new PricedLineItem(this, i.name, i.price || 0, i.amount || 0)
+      (i) => new PricedLineItem(this, i.name, i.price || "", i.amount || 0)
     );
   }
 
@@ -243,7 +243,8 @@ export default abstract class BillingDocument implements BillingDocumentData {
     price: number | string = "",
     amount: number | string = ""
   ): PricedLineItem {
-    return new PricedLineItem(this, name, price, amount);
+    const a = typeof amount === "string" ? parseInt(amount) : amount;
+    return new PricedLineItem(this, name, price.toString(), a);
   }
 
   filename(): string {
