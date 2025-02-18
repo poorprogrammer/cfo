@@ -238,11 +238,7 @@ export default abstract class BillingDocument implements BillingDocumentData {
     return (1 + date.getMonth()).toString().padStart(2, "0");
   }
 
-  createPricedLineItem(
-    name = "",
-    price: number | string = "", // TODO: Remove number |
-    amount: number | string = ""
-  ): PricedLineItem {
+  createPricedLineItem(name = "", price = "", amount = ""): PricedLineItem {
     return new PricedLineItem(this, name, price.toString(), amount.toString());
   }
 
