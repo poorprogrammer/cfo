@@ -120,7 +120,7 @@ describe("Invoice", () => {
       });
 
       it("should have an amount", () => {
-        expect(item.amount).toEqual(10);
+        expect(item.amount).toEqual("10");
       });
 
       it("should have a total", () => {
@@ -143,7 +143,7 @@ describe("Invoice", () => {
       it("should reflect changes in item price", () => {
         const item = invoice.getItems()[0] as PricedLineItem;
         item.price = "800";
-        item.amount = 20;
+        item.amount = "20";
         expect(item.getTotal()).toEqual("THB 16,000.00");
         expect(invoice.getItems()[1].getTotal()).toEqual("THB 800.00");
         expect(invoice.getItems()[2].getTotal()).toEqual("THB 16,800.00");
@@ -159,7 +159,7 @@ describe("Invoice", () => {
       it("should reflect changes in item price", () => {
         const item = invoice.getItems()[0] as PricedLineItem;
         item.price = "800";
-        item.amount = 20;
+        item.amount = "20";
         const vat = invoice.getItems()[3] as LineItem;
         expect(item.getTotal()).toEqual("THB 16,000.00");
         expect(invoice.getItems()[1].getTotal()).toEqual("THB 800.00");
@@ -176,7 +176,7 @@ describe("Invoice", () => {
       it("should reflect changes in item price", () => {
         const item = invoice.getItems()[0] as PricedLineItem;
         item.price = "800";
-        item.amount = 20;
+        item.amount = "20";
         const grandTotal = invoice.getItems()[4] as LineItem;
         expect(item.getTotal()).toEqual("THB 16,000.00");
         expect(invoice.getItems()[1].getTotal()).toEqual("THB 800.00");
@@ -332,7 +332,7 @@ describe("Invoice", () => {
         invoice.addItemBefore(invoice.items[0]);
         expect(invoice.getItems()[0].name).toEqual("");
         expect(invoice.getItems()[0].price).toEqual("");
-        expect(invoice.getItems()[0].amount).toEqual(NaN);
+        expect(invoice.getItems()[0].amount).toEqual("");
       });
       it("new item can get price or adding would fail to render", () => {
         invoice.addItemBefore(invoice.items[0]);
@@ -342,7 +342,7 @@ describe("Invoice", () => {
         invoice.addItemBefore(invoice.items[2]);
         expect(invoice.getItems()[2].name).toEqual("");
         expect(invoice.getItems()[2].price).toEqual("");
-        expect(invoice.getItems()[2].amount).toEqual(NaN);
+        expect(invoice.getItems()[2].amount).toEqual("");
       });
       it("remove should decrease total length", () => {
         invoice.removeItem(invoice.items[0]);

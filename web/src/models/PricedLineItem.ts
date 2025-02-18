@@ -5,10 +5,10 @@ export default class PricedLineItem extends LineItem {
   _price: number;
   _amount: number;
 
-  constructor(invoice: BillingDocument, name = "", price = "", amount: number) {
+  constructor(invoice: BillingDocument, name = "", price = "", amount = "") {
     super(name, 0, invoice);
     this._price = price == "" ? 0 : parseInt(price);
-    this._amount = amount;
+    this._amount = amount == "" ? 0 : parseInt(amount);
     this.value = this.total();
   }
 
@@ -35,12 +35,12 @@ export default class PricedLineItem extends LineItem {
     return this.getCurrency(this._price);
   }
 
-  set amount(value: number) {
-    this._amount = value;
+  set amount(value: string) {
+    this._amount = value == "" ? 0 : parseInt(value);
     this.value = this.total();
   }
 
-  get amount(): number {
-    return this._amount;
+  get amount(): string {
+    return this._amount == 0 ? "" : this._amount.toString();
   }
 }

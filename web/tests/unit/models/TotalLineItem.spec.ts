@@ -9,7 +9,7 @@ describe("TotalLineItem", () => {
   });
   test("a user set amount without crashing edit page", () => {
     const item = new TotalLineItem("Price for work below:", 100, new Invoice());
-    item.amount = 200;
-    expect(item.amount).toEqual(0); // amount is not editable
+    item.amount = "200";
+    expect(item.amount).toEqual(""); // amount is not editable
   });
 });

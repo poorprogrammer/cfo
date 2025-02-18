@@ -25,11 +25,11 @@ export default abstract class LineItem implements LineItemData {
     return "";
   }
 
-  get amount(): number {
-    return 0;
+  get amount(): string {
+    return "";
   }
 
-  set amount(value: number) {
+  set amount(value: string) {
     // do nothing
   }
 
