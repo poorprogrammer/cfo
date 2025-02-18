@@ -16,8 +16,8 @@ describe("PricedLineItem", () => {
     it("should have no prices", () => {
       expect(item.price).toEqual("");
     });
-    it.skip("should have no total", () => {
-      expect(item.total).toEqual("");
+    it("should have no total", () => {
+      expect(item.getTotal()).toEqual("");
     });
   });
 });
