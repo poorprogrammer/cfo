@@ -34,11 +34,7 @@ export default abstract class LineItem implements LineItemData {
   }
 
   getCurrency(n: number): string {
-    return this.currency(this.invoice.currency).format(n);
-  }
-
-  currency(key = "THB"): Intl.NumberFormat {
-    return this.invoice.currencies[key];
+    return this.invoice.currentValueWithCurrency(n);
   }
 
   total(): number {

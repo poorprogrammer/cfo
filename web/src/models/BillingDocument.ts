@@ -194,6 +194,10 @@ export default abstract class BillingDocument implements BillingDocumentData {
     return Object.keys(this._currencies);
   }
 
+  currentValueWithCurrency(n: number): string {
+    return this.currencies[this.currency].format(n);
+  }
+
   markAsDeleted(): void {
     this.deleted = true;
     this.number = `${this.number}-cancelled-${this.currentTimestamp()}`;
