@@ -26,6 +26,7 @@ test.describe("Create New Invoice Via Invoice Duplication Feature", () => {
     const viewPage = await duplicatePage.save();
     await viewPage.containsDocumentNumber("202001-008");
     await viewPage.containsFirstItem("Technical coach", "1000", "12");
+    await viewPage.containsText("THB 32,000.00");
 
     await archivePage.visit(2020);
     await archivePage.containsDocument("202001-008");
@@ -37,7 +38,7 @@ test.describe("Create New Invoice Via Invoice Duplication Feature", () => {
     await editPage.removeSecondItem();
     await editPage.save();
     await viewPage.containsDocumentNumber("202001-008");
-    await viewPage.containsText("40,000.00");
+    await viewPage.containsText("THB 40,000.00");
     await archivePage.visit(2020);
     await archivePage.containsDocument("202001-008");
     await archivePage.delete("202001-008");
