@@ -9,7 +9,6 @@ export default class PricedLineItem extends LineItem {
     super(name, 0, invoice);
     this._price = price == "" ? 0 : parseInt(price);
     this._amount = amount == "" ? 0 : parseInt(amount);
-    this.value = this.total();
   }
 
   override total(): number {
@@ -23,7 +22,6 @@ export default class PricedLineItem extends LineItem {
 
   set price(value: string) {
     this._price = value == "" ? 0 : parseInt(value);
-    this.value = this.total();
   }
 
   get price(): string {
@@ -37,7 +35,6 @@ export default class PricedLineItem extends LineItem {
 
   set amount(value: string) {
     this._amount = value == "" ? 0 : parseInt(value);
-    this.value = this.total();
   }
 
   get amount(): string {

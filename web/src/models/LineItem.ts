@@ -2,12 +2,10 @@ import BillingDocument, { LineItemData } from "./BillingDocument";
 
 export default abstract class LineItem implements LineItemData {
   public name: string;
-  public value: number;
   protected invoice: BillingDocument;
 
   constructor(name: string, value: number, invoice: BillingDocument) {
     this.name = name;
-    this.value = value;
     this.invoice = invoice;
   }
 
@@ -38,7 +36,7 @@ export default abstract class LineItem implements LineItemData {
   }
 
   total(): number {
-    return this.value;
+    return 0;
   }
 }
 
