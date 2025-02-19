@@ -15,14 +15,15 @@ describe("PricedLineItem", () => {
     expect(item.amount).toEqual("1.5");
     expect(item.getTotal()).toEqual("THB 1,500.75");
   });
+  test("allow user to type 1.5 (by typing 1. first)", () => {
+    item = new PricedLineItem(new Invoice(), "Developer", "1000.5", "1.");
+    expect(item.price).toEqual("1000.5");
+    expect(item.amount).toEqual("1.");
+    expect(item.getTotal()).toEqual("THB 1,000.50");
+  });
   describe("note as item", () => {
     beforeEach(() => {
-      item = new PricedLineItem(
-        new Invoice(),
-        "Price for work below:",
-        "",
-        "0"
-      );
+      item = new PricedLineItem(new Invoice(), "Price for work below:", "", "");
     });
     it("should have no prices", () => {
       expect(item.price).toEqual("");

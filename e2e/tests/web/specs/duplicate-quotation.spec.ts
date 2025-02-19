@@ -22,11 +22,11 @@ test.describe("Create New Quotation Via Duplication Feature", () => {
     );
     await duplicatePage.editDocumentNumber("202001-008");
     await duplicatePage.editDocumentDate("2020-01-01");
-    await duplicatePage.editFirstItem("Technical coach", "1000", "12");
+    await duplicatePage.editFirstItem("Technical coach", "1000.5", "12.5");
     const viewPage = await duplicatePage.save();
     await viewPage.containsDocumentNumber("008");
-    await viewPage.containsFirstItem("Technical coach", "1000", "12");
-    await viewPage.containsText("USD 12,000.00");
+    await viewPage.containsFirstItem("Technical coach", "1,000.50", "12.5");
+    await viewPage.containsText("USD 12,506.25");
 
     await archivePage.visit(2020);
     await archivePage.containsDocument("202001-008");

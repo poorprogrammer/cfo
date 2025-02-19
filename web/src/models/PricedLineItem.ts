@@ -2,13 +2,10 @@ import LineItem from "./LineItem";
 import BillingDocument from "./BillingDocument";
 
 export default class PricedLineItem extends LineItem {
-  _price = 0;
-  _amount = 0;
-
   constructor(invoice: BillingDocument, name = "", price = "", amount = "") {
     super(name, 0, invoice);
-    this.price = price;
-    this.amount = amount;
+    this.price = price.toString();
+    this.amount = amount.toString();
   }
 
   override total(): number {
@@ -20,24 +17,24 @@ export default class PricedLineItem extends LineItem {
     return this.getCurrency(this.total());
   }
 
-  set price(value: string) {
-    this._price = value == "" ? 0 : parseFloat(value);
-  }
-
-  get price(): string {
-    return this._price == 0 ? "" : this._price.toString();
-  }
-
   getPrice(): string {
     if (this._price === 0) return "";
     return this.getCurrency(this._price);
   }
 
-  set amount(value: string) {
-    this._amount = value == "" ? 0 : parseFloat(value);
+  protected get _price(): number {
+    return PricedLineItem.parseFloat(this.price);
   }
 
-  get amount(): string {
-    return this._amount == 0 ? "" : this._amount.toString();
+  protected get _amount(): number {
+    return PricedLineItem.parseFloat(this.amount);
+  }
+
+  static parseFloat(value: string): number {
+    return value == "" ? 0 : parseFloat(value);
+  }
+
+  static numberToString(value: number): string {
+    return value == 0 ? "" : value.toString();
   }
 }

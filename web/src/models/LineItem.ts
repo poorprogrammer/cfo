@@ -2,6 +2,9 @@ import BillingDocument, { LineItemData } from "./BillingDocument";
 
 export default abstract class LineItem implements LineItemData {
   public name: string;
+  public price = "";
+  public amount = "";
+
   protected invoice: BillingDocument;
 
   constructor(name: string, value: number, invoice: BillingDocument) {
@@ -11,24 +14,8 @@ export default abstract class LineItem implements LineItemData {
 
   abstract getTotal(): string;
 
-  get price(): string {
-    return "";
-  }
-
-  set price(value: string) {
-    // do nothing
-  }
-
   getPrice(): string {
     return "";
-  }
-
-  get amount(): string {
-    return "";
-  }
-
-  set amount(value: string) {
-    // do nothing
   }
 
   getCurrency(n: number): string {
@@ -37,6 +24,24 @@ export default abstract class LineItem implements LineItemData {
 
   total(): number {
     return 0;
+  }
+}
+
+export abstract class UnpricedLineItem {
+  get price(): string {
+    return "";
+  }
+
+  set price(value: string) {
+    // do nothing
+  }
+
+  get amount(): string {
+    return "";
+  }
+
+  set amount(value: string) {
+    // do nothing
   }
 }
 

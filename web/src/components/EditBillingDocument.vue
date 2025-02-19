@@ -234,8 +234,6 @@
                 class="form-input text-right"
                 placeholder="Price"
                 v-model="item.price"
-                step="0.1"
-                type="number"
               />
             </td>
             <td class="text-right">
@@ -243,8 +241,6 @@
                 class="form-input text-right"
                 placeholder="Amount"
                 v-model="item.amount"
-                step="0.1"
-                type="number"
               />
             </td>
             <td class="text-right">{{ item.getTotal() }}</td>
