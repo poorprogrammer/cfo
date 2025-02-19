@@ -15,3 +15,7 @@ Design model สะท้อนการออกแบบของระบบ 
 
 ## การคำนวณ Total
 
+
+![Total](https://uc0ef7bc2d7d99512b22e316516a.previews.dropboxusercontent.com/p/thumb/ACgZX8HBMVJg1HgQzUIHtVBI0oCi67AuirPTtDjiO6fln8GeI9jZPOsRj-clVsagMJajNY0mgaLPEtyFii-wRCZ3-2qcIzwiO7v43lN7wNcR5e5SD1jNi0CSAtv4GEVwtSH2XKFJeXP_vh2xZNtZb00yVx-A1Uv3bh08iWPvBPHAys904Bi98MxUP-i9HVniTCylWw_XHTvtGn8ijP8KktesWuDm2GJFVCXBDNeOzI4X_jj7Av2JUHXlglPQIuZa08GXTekf8JqzdsQxXghiZ4ty8Pfl60VAiixNeJUx5EmGf84DlaJQx3cY3js4CLZwQNxVki34ItLcpOWF6vTt6uZ7L8BdZgevvJpZUYi3Vdzxyxof1UqmRNN4_NCNKlYO0rHHzm_sFO25SJ85D9pJjUxk/p.png?is_prewarmed=true)
+
+การคำนวณ total ของใบแจ้งหนี้ ต้องเปลี่ยน real time ตามจำนวน LineItem ที่เพิ่มลดทันที และสะท้อน currency ที่เลือกใน Billing Document ด้วย ทำให้ LineItem ต้องมี dependency กับ Billing Document ด้วย
