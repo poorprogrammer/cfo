@@ -272,7 +272,6 @@ export default abstract class BillingDocument implements BillingDocumentData {
     const dto: Partial<BillingDocument> = { ...this };
     dto.currency = this.currency;
     delete dto._currencies;
-    delete dto.id;
     if (!this.items) return dto as BillingDocumentData;
     dto.items = [];
     this.items.forEach((item: LineItem) => {

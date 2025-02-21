@@ -74,6 +74,6 @@ export default class InvoiceService implements BillingDocumentService {
     const dto = invoice.createDTO();
     delete dto.id;
     delete dto._id;
-    return this.createDTO(invoice);
+    return dto as InvoiceData;
   };
 }

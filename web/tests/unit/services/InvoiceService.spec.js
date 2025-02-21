@@ -92,6 +92,10 @@ describe("invoices API", () => {
         expect(dto.items[0].price).toEqual("20000");
         expect(dto.items[0].amount).toEqual("20");
       });
+      it("contains id so it can be updated, not recreated", async () => {
+        let dto = api.createDTO(Factory.createInvoice());
+        expect(dto.id).toEqual(Factory.json._id);
+      });
       it("remove circular dependencies to avoid save fail", async () => {
         let dto = api.createDTO(Factory.createInvoice());
         expect(dto.items[0].item).toEqual(undefined);
