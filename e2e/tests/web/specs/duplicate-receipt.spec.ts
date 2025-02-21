@@ -14,20 +14,28 @@ test.describe("Create New Receipt Via Receipt Duplication Feature", () => {
   test("Can create new Receipt by duplicate from existing one", async ({
     page,
   }) => {
-    await duplicateReceipt({
-      from: "202001-001",
-      to: "202001-008",
-      date: "2020-01-01",
-      items: [{ description: "Technical coach", rate: "1000", quantity: "12" }],
-    });
+    await duplicateReceipt(
+      {
+        from: "202001-001",
+        to: "202001-008",
+        date: "2020-01-01",
+        items: [
+          { description: "Technical coach", rate: "1000", quantity: "12" },
+        ],
+      },
+      page
+    );
 
-    await editReceipt({
-      number: "202001-008",
-      date: "2020-01-02",
-      items: [
-        { description: "Fullstack developer", rate: "1000", quantity: "10" },
-      ],
-    });
+    await editReceipt(
+      {
+        number: "202001-008",
+        date: "2020-01-02",
+        items: [
+          { description: "Fullstack developer", rate: "1000", quantity: "10" },
+        ],
+      },
+      page
+    );
 
     await deleteReceipt("202001-008");
   });
@@ -39,17 +47,20 @@ test.describe("Create New Receipt Via Receipt Duplication Feature", () => {
     archivePage = new BillingArchivePage(page, "Receipt");
   }
 
-  async function duplicateReceipt({
-    from,
-    to,
-    date,
-    items,
-  }: {
-    from: string;
-    to: string;
-    date: string;
-    items: Array<{ description: string; rate: string; quantity: string }>;
-  }) {
+  async function duplicateReceipt(
+    {
+      from,
+      to,
+      date,
+      items,
+    }: {
+      from: string;
+      to: string;
+      date: string;
+      items: Array<{ description: string; rate: string; quantity: string }>;
+    },
+    page: Page
+  ) {
     await archivePage.visit(2020);
     await archivePage.clickDuplicateDocumentNumber(from);
 
@@ -72,15 +83,18 @@ test.describe("Create New Receipt Via Receipt Duplication Feature", () => {
     await viewPage.containsText("USD 12,000.00");
   }
 
-  async function editReceipt({
-    number,
-    date,
-    items,
-  }: {
-    number: string;
-    date: string;
-    items: Array<{ description: string; rate: string; quantity: string }>;
-  }) {
+  async function editReceipt(
+    {
+      number,
+      date,
+      items,
+    }: {
+      number: string;
+      date: string;
+      items: Array<{ description: string; rate: string; quantity: string }>;
+    },
+    page: Page
+  ) {
     await archivePage.visit(2020);
     await archivePage.containsDocument(number);
     await archivePage.clickEditDocumentNumber(number);
