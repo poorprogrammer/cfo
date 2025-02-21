@@ -80,31 +80,6 @@ describe("invoices API", () => {
         expect(invoice.id).toEqual(Factory.json._id);
         expect(parsedInvoice.id).toEqual(Factory.json._id);
       });
-      it("contains currency", async () => {
-        let invoice = Factory.createInvoice();
-        let dto = api.createDTO(invoice);
-        expect(dto.currency).toEqual(invoice.currency);
-      });
-      it("contains item price and amount", async () => {
-        let invoice = Factory.createInvoice();
-        let dto = api.createDTO(invoice);
-        expect(dto.items[0] instanceof PricedLineItem).toBeFalsy();
-        expect(dto.items[0].price).toEqual("20000");
-        expect(dto.items[0].amount).toEqual("20");
-      });
-      it("contains id so it can be updated, not recreated", async () => {
-        let dto = api.createDTO(Factory.createInvoice());
-        expect(dto.id).toEqual(Factory.json._id);
-      });
-      it("remove circular dependencies to avoid save fail", async () => {
-        let dto = api.createDTO(Factory.createInvoice());
-        expect(dto.items[0].item).toEqual(undefined);
-        expect(dto.items[0].invoice).toEqual(undefined);
-      });
-      it("remove unused fields to avoid error when print invoice", async () => {
-        let dto = api.createDTO(Factory.createInvoice());
-        expect(dto._currencies).toBeUndefined();
-      });
     });
   });
 });

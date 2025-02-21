@@ -382,6 +382,33 @@ describe("Invoice", () => {
       expect(invoice.invoiceNumber).toEqual(`202001-008-cancelled-${t}`);
     });
   });
+  describe("edit invoice", () => {
+    it("contains currency", async () => {
+      const invoice = Factory.createInvoice();
+      const dto = invoice.createDTO();
+      expect(dto.currency).toEqual(invoice.currency);
+    });
+    it("contains item price and amount", async () => {
+      const invoice = Factory.createInvoice();
+      const dto = invoice.createDTO();
+      expect(dto.items?.[0] instanceof PricedLineItem).toBeFalsy();
+      expect(dto.items?.[0].price).toEqual("20000");
+      expect(dto.items?.[0].amount).toEqual("20");
+    });
+    it("contains id so it can be updated, not recreated", async () => {
+      const dto = invoice.createDTO();
+      expect(dto.id).toEqual(Factory.json._id);
+    });
+    it("remove circular dependencies to avoid save fail", async () => {
+      const dto: any = invoice.createDTO();
+      expect(dto.items?.[0].item).toEqual(undefined);
+      expect(dto.items?.[0].invoice).toEqual(undefined);
+    });
+    it("remove unused fields to avoid error when print invoice", async () => {
+      const dto: any = invoice.createDTO();
+      expect(dto._currencies).toBeUndefined();
+    });
+  });
 });
 function mockCurrentTimestamp(invoice: Invoice, timestamp: number) {
   vi.spyOn(invoice, "currentTimestamp").mockReturnValue(timestamp);
