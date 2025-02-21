@@ -58,4 +58,8 @@ export default class Invoice extends BillingDocument {
   set date(value: string) {
     this.invoiceDate = value;
   }
+
+  toString() {
+    return this.number;
+  }
 }

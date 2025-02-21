@@ -8,6 +8,6 @@ export default class DuplicateReceiptPage extends DuplicateDocumentPage {
   }
   async save() {
     await this.saveButton.click();
-    return ViewReceiptPage.create(this.page, this.documentType);
+    return ViewReceiptPage.create(this.page);
   }
 }

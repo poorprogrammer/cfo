@@ -103,6 +103,10 @@ describe("Invoice", () => {
       expect(invoice.payment).toEqual("bank transfer");
     });
 
+    test("can choose invoice for receipt generation in e2e test", () => {
+      expect(invoice.toString()).toEqual("I202001-001");
+    });
+
     describe("for each item", () => {
       let item: LineItem;
 
