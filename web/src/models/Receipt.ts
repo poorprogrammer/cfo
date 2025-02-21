@@ -2,7 +2,7 @@ import LineItem from "./LineItem";
 import BillingDocument, { BillingDocumentData } from "./BillingDocument";
 import Invoice from "./Invoice";
 
-interface ReceiptData extends BillingDocumentData {
+export interface ReceiptData extends BillingDocumentData {
   receiptNumber?: string;
   receiptDate?: string;
 }
@@ -14,7 +14,7 @@ export default class Receipt extends BillingDocument {
   static createFromInvoices(
     invoices: Invoice[],
     today: Date = new Date()
-  ): Receipt {
+  ): ReceiptData {
     const r = new Receipt(invoices[0] as unknown as ReceiptData);
     r.items = [];
     invoices.forEach((invoice: Invoice) => {
@@ -26,7 +26,7 @@ export default class Receipt extends BillingDocument {
     });
     r.setDateToday(today);
     r.number = `R${r.newInvoiceNumber(today)}`;
-    return r;
+    return r.createDTO();
   }
 
   constructor(data?: ReceiptData) {

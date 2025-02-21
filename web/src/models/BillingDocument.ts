@@ -268,6 +268,23 @@ export default abstract class BillingDocument implements BillingDocumentData {
     this._currency = value;
   }
 
+  public createDTO = (): BillingDocumentData => {
+    const dto: Partial<BillingDocument> = { ...this };
+    dto.currency = this.currency;
+    delete dto._currencies;
+    delete dto.id;
+    if (!this.items) return dto as BillingDocumentData;
+    dto.items = [];
+    this.items.forEach((item: LineItem) => {
+      dto.items?.push({
+        name: item.name,
+        price: item.price,
+        amount: item.amount,
+      } as LineItem);
+    });
+    return dto;
+  };
+
   // These properties should be implemented by child classes
   public abstract get documentType(): string;
   abstract get number(): string;

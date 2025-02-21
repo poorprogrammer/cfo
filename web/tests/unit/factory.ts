@@ -43,7 +43,7 @@ export class Factory {
   }
 
   static createReceipt(): Receipt {
-    return Receipt.createFromInvoices([Factory.createInvoice()]);
+    return new Receipt(Receipt.createFromInvoices([Factory.createInvoice()]));
   }
 }
 

@@ -44,7 +44,7 @@ export default class InvoiceService implements BillingDocumentService {
 
   update(invoice: Invoice): Promise<Invoice> {
     const url = this.itemUrl(invoice.number);
-    return axios.put(url, this.createDTO(invoice)).then(this.parseItem);
+    return axios.put(url, invoice.createDTO()).then(this.parseItem);
   }
 
   protected parseAll = (response: AxiosResponse<InvoiceData[]>): Invoice[] => {
@@ -68,24 +68,12 @@ export default class InvoiceService implements BillingDocumentService {
   }
 
   protected createDTO = (invoice: Invoice): InvoiceData => {
-    const dto: Partial<Invoice> = { ...invoice };
-    dto.currency = invoice.currency;
-    delete dto._currencies;
-    if (!invoice.items) return dto as InvoiceData;
-    dto.items = [];
-    invoice.items.forEach((item: LineItem) => {
-      dto.items?.push({
-        name: item.name,
-        price: item.price,
-        amount: item.amount,
-      } as LineItem);
-    });
-    return dto as InvoiceData;
+    return invoice.createDTO() as InvoiceData;
   };
   protected createNewInvoiceRequest = (invoice: Invoice): InvoiceData => {
-    const dto = this.createDTO(invoice);
+    const dto = invoice.createDTO();
     delete dto.id;
     delete dto._id;
-    return dto;
+    return this.createDTO(invoice);
   };
 }
