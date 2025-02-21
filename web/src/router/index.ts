@@ -12,6 +12,7 @@ import PageNotFound from "@/views/PageNotFound.vue";
 import UpdateInvoice from "@/views/UpdateInvoice.vue";
 import UpdateQuotation from "@/views/UpdateQuotation.vue";
 import UpdateReceipt from "@/views/UpdateReceipt.vue";
+import CreateReceipt from "@/views/CreateReceipt.vue";
 import {
   createRouter,
   createWebHistory,
@@ -137,6 +138,13 @@ const routes: Array<RouteRecordRaw> = [
     name: "receipt",
     component: Receipt,
     beforeEnter: isAuthenticated,
+  },
+  {
+    path: "/receipt/create",
+    name: "createReceipt",
+    component: CreateReceipt,
+    beforeEnter: isAuthenticated,
+    props: true,
   },
   {
     path: "/:pathMatch(.*)*",

@@ -5,9 +5,10 @@ import BillingArchivePresenter, {
   View,
 } from "./BillingArchivePresenter";
 import Invoice from "@/models/Invoice";
+import Receipt from "@/models/Receipt";
 
 export interface IInvoiceArchivePresenter extends Presenter {
-  selectedInvoices: BillingDocumentData[];
+  selectedInvoices: BillingDocument[];
   isGeneratingReceipt: boolean;
   toggleGenerateReceipt(): void;
   buttonColor: string;
@@ -18,7 +19,7 @@ export class InvoiceArchivePresenter
   implements IInvoiceArchivePresenter
 {
   public isGeneratingReceipt = false;
-  public selectedInvoices: BillingDocument[] = [];
+  public selectedInvoices: Invoice[] = [];
 
   constructor(view: View, api: InvoiceService) {
     super(view, api);
@@ -33,9 +34,11 @@ export class InvoiceArchivePresenter
 
   generateReceipt(): void {
     this.view.goTo({
-      name: "createReceipt",
-      params: {
-        invoices: this.selectedInvoices,
+      path: "/receipt/create",
+      query: {
+        receipt: JSON.stringify(
+          Receipt.createFromInvoices(this.selectedInvoices)
+        ),
       },
     });
   }

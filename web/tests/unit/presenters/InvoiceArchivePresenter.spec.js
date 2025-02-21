@@ -38,8 +38,12 @@ describe("InvoiceArchivePresenter", () => {
     }
     function expectToRedirectToCreateReceiptPage(view, selectedInvoices) {
       expect(view.goTo).toHaveBeenCalledWith({
-        name: "createReceipt",
-        params: { invoices: selectedInvoices },
+        path: "/receipt/create",
+        query: expect.objectContaining({
+          receipt:
+            expect.stringContaining(selectedInvoices[0].invoiceNumber) &&
+            expect.stringContaining(selectedInvoices[1].invoiceNumber),
+        }),
       });
     }
   });

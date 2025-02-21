@@ -34,8 +34,8 @@ import { View } from "@/presenters/BillingArchivePresenter";
 const router = useRouter();
 
 class MyView implements View {
-  goTo(path: string | { name: string; params: any }) {
-    router.push(path);
+  goTo(params: any) {
+    router.push(params);
   }
 }
 

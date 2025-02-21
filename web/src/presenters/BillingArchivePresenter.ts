@@ -9,7 +9,7 @@ interface Header {
 }
 
 export interface View {
-  goTo: (path: string | { name: string; params: any }) => void;
+  goTo: (params: any) => void;
 }
 
 export interface Presenter {
