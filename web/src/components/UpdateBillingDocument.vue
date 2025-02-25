@@ -32,8 +32,8 @@ const p = ref(props.presenter);
 
 onMounted(async () => {
   try {
-    const invoiceNumber = route.params.number as string;
-    await p.value.init(invoiceNumber);
+    const documentNumber = route.params.number as string;
+    await p.value.init(documentNumber);
   } finally {
     loading.value = false;
   }

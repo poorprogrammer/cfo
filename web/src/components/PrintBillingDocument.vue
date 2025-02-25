@@ -1,9 +1,9 @@
 <template>
-  <div class="invoice">
-    <div v-if="!invoice">Loading Please wait...</div>
+  <div class="document">
+    <div v-if="!document">Loading Please wait...</div>
     <div v-else>
       <div
-        v-for="{ id, title, css } in invoice.getTitles()"
+        v-for="{ id, title, css } in document.getTitles()"
         :key="id"
         :class="css"
       >
@@ -11,22 +11,22 @@
           <div class="full-width">
             <div class="no-print">
               <span class="font-weight-bold">Filename: </span>
-              {{ invoice.filename() }}
+              {{ document.filename() }}
             </div>
             <div class="company-card from-company">
               <div class="company-content">
                 <div class="company-details">
                   <p class="company-name">
-                    {{ invoice.getFromCompanyName() }}
+                    {{ document.getFromCompanyName() }}
                   </p>
                   <p class="company-address">
-                    {{ invoice.getFromCompanyAddress() }}
+                    {{ document.getFromCompanyAddress() }}
                   </p>
                   <p class="company-info">
                     <span class="label">Tax Id</span>
-                    {{ invoice.getFromCompanyTaxId() }}
+                    {{ document.getFromCompanyTaxId() }}
                     <span class="label">Tel</span>
-                    {{ invoice.getFromCompanyTel() }}
+                    {{ document.getFromCompanyTel() }}
                   </p>
                 </div>
 
@@ -50,19 +50,22 @@
 
         <div class="content-row">
           <div class="half-width left-pad">
-            <p class="company-name" :class="invoice.targetCompanyNameClass()">
-              {{ invoice.getTargetCompanyName() }}
+            <p class="company-name" :class="document.targetCompanyNameClass()">
+              {{ document.getTargetCompanyName() }}
             </p>
             <p class="company-address">
-              {{ invoice.getTargetCompanyAddress() }}
+              {{ document.getTargetCompanyAddress() }}
             </p>
             <div class="company-info">
               <div class="info-grid">
                 <base-text
                   label="Tax Id"
-                  :value="invoice.getTargetCompanyTaxId()"
+                  :value="document.getTargetCompanyTaxId()"
                 />
-                <base-text label="Tel" :value="invoice.getTargetCompanyTel()" />
+                <base-text
+                  label="Tel"
+                  :value="document.getTargetCompanyTel()"
+                />
               </div>
             </div>
           </div>
@@ -71,33 +74,33 @@
               <div class="info-grid">
                 <base-text
                   label="Quotation Number"
-                  :value="invoice.quotationNumber"
+                  :value="document.quotationNumber"
                 />
                 <base-text
                   label="Quotation Date"
-                  :value="invoice.quotationDate"
+                  :value="document.quotationDate"
                 />
                 <base-text
                   label="Purchase Order Number"
-                  :value="invoice.purchaseOrderNumber"
+                  :value="document.purchaseOrderNumber"
                 />
                 <base-text
                   label="Invoice Number"
-                  :value="invoice.invoiceNumber"
+                  :value="document.invoiceNumber"
                 />
-                <base-text label="Invoice Date" :value="invoice.invoiceDate" />
+                <base-text label="Invoice Date" :value="document.invoiceDate" />
                 <base-text
                   label="Receipt Number"
-                  :value="invoice.receiptNumber"
+                  :value="document.receiptNumber"
                 />
-                <base-text label="Receipt Date" :value="invoice.receiptDate" />
-                <base-text label="Remark" :value="invoice.remark" />
+                <base-text label="Receipt Date" :value="document.receiptDate" />
+                <base-text label="Remark" :value="document.remark" />
               </div>
             </div>
           </div>
         </div>
 
-        <table class="simple-table" :class="invoice.tablePaddingClass()">
+        <table class="simple-table" :class="document.tablePaddingClass()">
           <thead>
             <tr>
               <th scope="col" class="text-left">Item</th>
@@ -107,17 +110,17 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="item in invoice.getItems()" :key="item.name">
-              <td :class="invoice.itemClass()" class="item text-left">
+            <tr v-for="item in document.getItems()" :key="item.name">
+              <td :class="document.itemClass()" class="item text-left">
                 {{ item.name }}
               </td>
-              <td :class="invoice.itemClass()" class="item text-right">
+              <td :class="document.itemClass()" class="item text-right">
                 {{ item.getPrice() }}
               </td>
-              <td :class="invoice.itemClass()" class="item text-right">
+              <td :class="document.itemClass()" class="item text-right">
                 {{ item.amount }}
               </td>
-              <td :class="invoice.itemClass()" class="item text-right">
+              <td :class="document.itemClass()" class="item text-right">
                 {{ item.getTotal() }}
               </td>
             </tr>
@@ -125,9 +128,9 @@
         </table>
 
         <div class="content-row">
-          <div v-if="invoice.payment" class="full-width">
+          <div v-if="document.payment" class="full-width">
             <div class="payment-info">
-              {{ invoice.payment }}
+              {{ document.payment }}
             </div>
           </div>
         </div>
@@ -148,8 +151,8 @@
         </div>
       </div>
     </div>
-    <div class="no-print" v-if="invoice">
-      <back-button v-bind:target="invoice.listUrl"></back-button>
+    <div class="no-print" v-if="document">
+      <back-button v-bind:target="document.listUrl"></back-button>
     </div>
   </div>
 </template>
@@ -167,7 +170,7 @@ const props = defineProps<{
 }>();
 
 const route = useRoute();
-const invoice = computed(() => props.presenter.billingDocument.value);
+const document = computed(() => props.presenter.billingDocument.value);
 
 onMounted(async () => {
   const documentNumber = route.params.number as string;

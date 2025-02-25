@@ -1,12 +1,12 @@
 <template>
   <div class="invoice pa-3">
-    <div v-if="!invoice">Loading Please wait...</div>
+    <div v-if="!document">Loading Please wait...</div>
     <div v-else>
       <edit-billing-document
         v-bind:presenter="props.presenter"
       ></edit-billing-document>
       <div class="no-print">
-        <back-button v-bind:target="invoice.listUrl"></back-button>
+        <back-button v-bind:target="document.listUrl"></back-button>
         <save-button @save="save"></save-button>
       </div>
     </div>
@@ -24,7 +24,7 @@ const props = defineProps<{
   presenter: Presenter<BillingDocument>;
 }>();
 
-const invoice = computed(() => props.presenter.billingDocument.value);
+const document = computed(() => props.presenter.billingDocument.value);
 
 function save() {
   props.presenter.save();
