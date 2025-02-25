@@ -24,7 +24,7 @@ const props = defineProps<{
   presenter: Presenter<BillingDocument>;
 }>();
 
-const document = computed(() => props.presenter.billingDocument.value);
+const document = computed(() => props.presenter.billingDocument);
 
 function save() {
   props.presenter.save();

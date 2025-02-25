@@ -27,9 +27,9 @@ describe("Invoice Presenter", () => {
   it("should save the current invoice", () => {
     const invoiceNumber = "202001-001";
     vi.spyOn(p.API, "save").mockResolvedValueOnce("ok");
-    p.billingDocument.value.number = invoiceNumber;
+    p.billingDocument.number = invoiceNumber;
     p.save();
-    expect(p.API.save).toHaveBeenCalledWith(p.billingDocument.value);
+    expect(p.API.save).toHaveBeenCalledWith(p.billingDocument);
   });
   it("should redirect to view page after save new invoice so it is ready to be printed", async () => {
     givenSaveSuccessWithInvoiceNumber(invoiceNumber);

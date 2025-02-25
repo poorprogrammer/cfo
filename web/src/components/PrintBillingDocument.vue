@@ -170,7 +170,7 @@ const props = defineProps<{
 }>();
 
 const route = useRoute();
-const document = computed(() => props.presenter.billingDocument.value);
+const document = computed(() => props.presenter.billingDocument);
 
 onMounted(async () => {
   const documentNumber = route.params.number as string;

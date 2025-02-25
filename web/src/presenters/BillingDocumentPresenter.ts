@@ -1,4 +1,3 @@
-import { ref, Ref } from "vue";
 import LineItem from "@/models/LineItem";
 import BillingDocumentService from "@/services/BillingDocumentService";
 import { View } from "./BillingArchivePresenter";
@@ -7,7 +6,7 @@ import BillingDocument from "@/models/BillingDocument";
 export default class BillingDocumentPresenter<T extends BillingDocument> {
   view: View;
   API: BillingDocumentService;
-  billingDocument: Ref<T>;
+  billingDocument: T;
   documentFactory: new (data?: any) => T;
 
   constructor(
@@ -17,17 +16,17 @@ export default class BillingDocumentPresenter<T extends BillingDocument> {
   ) {
     this.view = view;
     this.API = api;
-    this.billingDocument = ref(new documentFactory()) as Ref<T>;
+    this.billingDocument = new documentFactory();
     this.documentFactory = documentFactory;
   }
 
   async init(documentNumber: string): Promise<void> {
     const documentData = await this.API.get(documentNumber);
-    this.billingDocument.value = new this.documentFactory(documentData);
+    this.billingDocument = new this.documentFactory(documentData);
   }
 
   save() {
-    this.API.save(this.billingDocument.value).then(
+    this.API.save(this.billingDocument).then(
       (documentNumber: string) => {
         this.view.goTo(this.getPrintPageParameters(documentNumber));
       },
@@ -38,7 +37,7 @@ export default class BillingDocumentPresenter<T extends BillingDocument> {
   }
 
   update() {
-    this.API.update(this.billingDocument.value).then(
+    this.API.update(this.billingDocument).then(
       (document: BillingDocument) => {
         this.view.goTo(this.getPrintPageParameters(document.number));
       },
@@ -50,23 +49,23 @@ export default class BillingDocumentPresenter<T extends BillingDocument> {
 
   getPrintPageParameters(documentNumber: string) {
     return {
-      name: this.billingDocument.value.documentType.toLowerCase(),
+      name: this.billingDocument.documentType.toLowerCase(),
       params: { number: documentNumber },
     };
   }
 
   addItemClickedOn(item: LineItem) {
     console.log("addItemClickedOn", item);
-    this.billingDocument.value.addItemBefore(item);
-    console.log("billingDocument.value", this.billingDocument.value);
+    this.billingDocument.addItemBefore(item);
+    console.log("billingDocument.value", this.billingDocument);
   }
 
   removeItemClickedOn(item: LineItem) {
-    this.billingDocument.value.removeItem(item);
+    this.billingDocument.removeItem(item);
   }
 
   todayClicked() {
-    this.billingDocument.value.setDateToday();
+    this.billingDocument.setDateToday();
   }
 
   showError(error: string) {

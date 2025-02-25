@@ -278,7 +278,7 @@ const props = defineProps<{
   presenter: Presenter<BillingDocument>;
 }>();
 
-const document = computed(() => props.presenter.billingDocument.value);
+const document = computed(() => props.presenter.billingDocument);
 
 // Change this to a computed property instead of ref
 const items = computed(() => document.value?.getItems() || []);

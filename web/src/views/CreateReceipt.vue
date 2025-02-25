@@ -29,6 +29,6 @@ onMounted(async () => {
     router.push("/invoices");
     return;
   }
-  p.value.billingDocument.value = receipt;
+  p.value.billingDocument = receipt;
 });
 </script>
