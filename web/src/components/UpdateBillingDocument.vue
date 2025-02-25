@@ -16,10 +16,10 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
-import Presenter from "@/presenters/BillingDocumentPresenter";
-import EditBillingDocument from "@/components/EditBillingDocument.vue";
-import BackButton from "@/components/BackButton.vue";
-import SaveButton from "@/components/SaveButton.vue";
+import Presenter from "../presenters/BillingDocumentPresenter";
+import EditBillingDocument from "../components/EditBillingDocument.vue";
+import BackButton from "../components/BackButton.vue";
+import SaveButton from "../components/SaveButton.vue";
 
 const props = defineProps<{
   presenter: Presenter;

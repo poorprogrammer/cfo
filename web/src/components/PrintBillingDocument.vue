@@ -157,10 +157,10 @@
 <script setup lang="ts">
 import { computed, onMounted } from "vue";
 import { useRoute } from "vue-router";
-import BillingDocumentPresenter from "@/presenters/BillingDocumentPresenter";
-import BillingDocument from "@/models/BillingDocument";
-import BackButton from "@/components/BackButton.vue";
-import BaseText from "@/components/BaseText.vue";
+import BillingDocumentPresenter from "../presenters/BillingDocumentPresenter";
+import BillingDocument from "../models/BillingDocument";
+import BackButton from "../components/BackButton.vue";
+import BaseText from "../components/BaseText.vue";
 
 const props = defineProps<{
   presenter: BillingDocumentPresenter<BillingDocument>;

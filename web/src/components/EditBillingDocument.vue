@@ -269,10 +269,10 @@
 
 <script setup lang="ts">
 import { computed } from "vue";
-import Presenter from "@/presenters/BillingDocumentPresenter";
-import BaseInput from "@/components/BaseInput.vue";
-import BillingDocument from "@/models/BillingDocument";
-import LineItem from "@/models/LineItem";
+import Presenter from "../presenters/BillingDocumentPresenter";
+import BaseInput from "../components/BaseInput.vue";
+import BillingDocument from "../models/BillingDocument";
+import LineItem from "../models/LineItem";
 
 const props = defineProps<{
   presenter: Presenter<BillingDocument>;

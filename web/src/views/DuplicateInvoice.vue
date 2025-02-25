@@ -5,10 +5,10 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
 import { useRoute, useRouter } from "vue-router";
-import Presenter from "@/presenters/BillingDocumentPresenter";
-import DuplicatedBillingDocument from "@/components/DuplicatedBillingDocument.vue";
-import API from "@/services/InvoiceService";
-import Invoice from "@/models/Invoice";
+import Presenter from "../presenters/BillingDocumentPresenter";
+import DuplicatedBillingDocument from "../components/DuplicatedBillingDocument.vue";
+import API from "../services/InvoiceService";
+import Invoice from "../models/Invoice";
 
 const route = useRoute();
 const router = useRouter();
