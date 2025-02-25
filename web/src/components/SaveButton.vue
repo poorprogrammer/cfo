@@ -4,10 +4,10 @@
   </button>
 </template>
 
-<script>
-export default {
-  name: "SaveButton",
-};
+<script setup lang="ts">
+defineEmits<{
+  (e: "save"): void;
+}>();
 </script>
 
 <style scoped>
