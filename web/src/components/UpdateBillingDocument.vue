@@ -20,9 +20,10 @@ import Presenter from "../presenters/BillingDocumentPresenter";
 import EditBillingDocument from "../components/EditBillingDocument.vue";
 import BackButton from "../components/BackButton.vue";
 import SaveButton from "../components/SaveButton.vue";
+import BillingDocument from "../models/BillingDocument";
 
 const props = defineProps<{
-  presenter: Presenter;
+  presenter: Presenter<BillingDocument>;
 }>();
 
 const route = useRoute();
