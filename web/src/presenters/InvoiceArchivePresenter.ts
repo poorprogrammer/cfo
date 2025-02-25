@@ -1,11 +1,11 @@
-import BillingDocument, { BillingDocumentData } from "@/models/BillingDocument";
+import BillingDocument from "@/models/BillingDocument";
+import Invoice from "@/models/Invoice";
+import Receipt from "@/models/Receipt";
 import InvoiceService from "@/services/InvoiceService";
 import BillingArchivePresenter, {
   Presenter,
   View,
 } from "./BillingArchivePresenter";
-import Invoice from "@/models/Invoice";
-import Receipt from "@/models/Receipt";
 
 export interface IInvoiceArchivePresenter extends Presenter {
   selectedInvoices: BillingDocument[];
