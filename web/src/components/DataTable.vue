@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import BillingDocument from "@/models/BillingDocument";
+import BillingDocument from "../models/BillingDocument";
 import { computed } from "vue";
 
 interface TableHeader {

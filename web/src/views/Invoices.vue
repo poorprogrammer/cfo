@@ -27,10 +27,10 @@
 <script setup lang="ts">
 import { Ref, ref } from "vue";
 import { useRouter } from "vue-router";
-import BillingArchive from "@/components/BillingArchive.vue";
-import InvoiceService from "@/services/InvoiceService";
-import { InvoiceArchivePresenter } from "@/presenters/InvoiceArchivePresenter";
-import { View } from "@/presenters/BillingArchivePresenter";
+import BillingArchive from "../components/BillingArchive.vue";
+import InvoiceService from "../services/InvoiceService";
+import { InvoiceArchivePresenter } from "../presenters/InvoiceArchivePresenter";
+import { View } from "../presenters/BillingArchivePresenter";
 const router = useRouter();
 
 class MyView implements View {

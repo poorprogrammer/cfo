@@ -70,8 +70,8 @@
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 import DataTable from "./DataTable.vue";
-import BillingDocument from "@/models/BillingDocument";
-import { Presenter } from "@/presenters/BillingArchivePresenter";
+import BillingDocument from "../models/BillingDocument";
+import { Presenter } from "../presenters/BillingArchivePresenter";
 
 const props = defineProps<{
   titleMsg: string;

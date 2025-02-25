@@ -3,10 +3,10 @@
 </template>
 
 <script>
-import Presenter from "@/presenters/BillingDocumentPresenter";
-import UpdateBillingDocument from "@/components/UpdateBillingDocument.vue";
-import API from "@/services/InvoiceService";
-import Invoice from "@/models/Invoice";
+import Presenter from "../presenters/BillingDocumentPresenter";
+import UpdateBillingDocument from "../components/UpdateBillingDocument.vue";
+import API from "../services/InvoiceService";
+import Invoice from "../models/Invoice";
 
 export default {
   components: { UpdateBillingDocument },

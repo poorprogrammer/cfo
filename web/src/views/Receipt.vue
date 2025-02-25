@@ -3,11 +3,11 @@
 </template>
 
 <script setup lang="ts">
-import Presenter from "@/presenters/BillingDocumentPresenter";
-import PrintBillingDocument from "@/components/PrintBillingDocument.vue";
-import { ReceiptService as API } from "@/services/ReceiptService";
+import Presenter from "../presenters/BillingDocumentPresenter";
+import PrintBillingDocument from "../components/PrintBillingDocument.vue";
+import { ReceiptService as API } from "../services/ReceiptService";
 import { ref } from "vue";
-import Receipt from "@/models/Receipt";
+import Receipt from "../models/Receipt";
 
 const p = ref(new Presenter<Receipt>({}, new API(), Receipt));
 </script>
