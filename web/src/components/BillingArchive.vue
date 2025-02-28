@@ -17,7 +17,7 @@
               class="action-button small"
               title="Duplicate"
             >
-              <span class="icon">📋</span>
+              <span class="icon">🍣</span>
             </button>
           </router-link>
 
