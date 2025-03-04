@@ -4,10 +4,24 @@ const keycloakConfig = {
   clientId: process.env.VUE_APP_KEYCLOAK_CLIENT_ID || "your-client-id",
 };
 
-// Using dynamic import
-const keycloak = await (async () => {
-  const Keycloak = (await import("keycloak-js")).default;
-  return new Keycloak(keycloakConfig);
-})();
+let keycloak: any = null;
+
+// Initialize in the router guard
+let initialized = false;
+export const initKeycloak = async () => {
+  if (!initialized) {
+    const Keycloak = (await import("keycloak-js")).default;
+    if (!keycloak) {
+      keycloak = new Keycloak(keycloakConfig);
+    }
+    initialized = true;
+    await keycloak.init({
+      onLoad: "check-sso",
+      silentCheckSsoRedirectUri:
+        window.location.origin + "/silent-check-sso.html",
+    });
+  }
+  return keycloak;
+};
 
 export default keycloak;

@@ -6189,10 +6189,15 @@ jsonfile@^6.0.1:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
-keycloak-js@*, keycloak-js@^26.2.0:
+keycloak-js@*:
   version "26.2.0"
   resolved "https://registry.yarnpkg.com/keycloak-js/-/keycloak-js-26.2.0.tgz#0924feec13a014563b2e041e255657c24c145714"
   integrity sha512-CrFcXTN+d6J0V/1v3Zpioys6qHNWE6yUzVVIsCUAmFn9H14GZ0vuYod+lt+SSpMgWGPuneDZBSGBAeLBFuqjsw==
+
+keycloak-js@^26.1.3:
+  version "26.1.3"
+  resolved "https://registry.yarnpkg.com/keycloak-js/-/keycloak-js-26.1.3.tgz#2067035cb7481a8488cd585a114f87ed7d04d9e8"
+  integrity sha512-H2NUTg4snjThwB1ZTjNXivOqriJcC5PqZw1nKjJmglw6rYNjV5A6rgQaNAuVPyLqs2582WTawsRHGJn/cDhWjQ==
 
 keyv@^4.5.3:
   version "4.5.4"
