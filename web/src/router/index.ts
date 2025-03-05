@@ -20,7 +20,7 @@ import {
   RouteLocationNormalized,
   RouteRecordRaw,
 } from "vue-router";
-import keycloak, { initKeycloak } from "@/services/KeycloakService";
+import { initKeycloak, login } from "@/services/KeycloakService";
 
 const isAuthenticated = async (
   to: RouteLocationNormalized,
@@ -30,10 +30,11 @@ const isAuthenticated = async (
   try {
     const kc = await initKeycloak();
     if (kc.authenticated) {
+      localStorage.setItem("token", kc.token || "");
       next();
     } else {
       localStorage.removeItem("token");
-      keycloak.login();
+      await login();
     }
   } catch (error) {
     console.error("Failed to initialize Keycloak:", error);
@@ -62,6 +63,14 @@ const routes: Array<RouteRecordRaw> = [
     path: "/login",
     name: "login",
     component: Login,
+    beforeEnter: async (to, from, next) => {
+      const kc = await initKeycloak();
+      if (kc.authenticated) {
+        next({ name: "invoices" });
+      } else {
+        next();
+      }
+    },
   },
   {
     path: "/",
