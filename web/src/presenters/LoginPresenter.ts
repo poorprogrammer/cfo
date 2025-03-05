@@ -9,9 +9,7 @@ export default class LoginPresenter {
   }
 
   login() {
-    keycloak.login({
-      redirectUri: window.location.origin + "/home",
-    });
+    keycloak.login();
   }
 
   showError(error: string) {

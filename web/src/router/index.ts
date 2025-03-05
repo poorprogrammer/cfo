@@ -33,9 +33,7 @@ const isAuthenticated = async (
       next();
     } else {
       localStorage.removeItem("token");
-      keycloak.login({
-        redirectUri: window.location.origin + to.fullPath,
-      });
+      keycloak.login();
     }
   } catch (error) {
     console.error("Failed to initialize Keycloak:", error);

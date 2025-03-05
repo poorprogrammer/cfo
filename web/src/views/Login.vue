@@ -12,15 +12,13 @@
 </template>
 
 <script>
-import keycloak from "../services/KeycloakService";
+import { login } from "../services/KeycloakService";
 
 export default {
   name: "LoginView",
   methods: {
-    login: function () {
-      keycloak.login({
-        redirectUri: window.location.origin + "/home",
-      });
+    login: async function () {
+      await login();
     },
   },
 };

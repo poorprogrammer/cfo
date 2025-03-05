@@ -7,14 +7,11 @@ const keycloakConfig = {
 let keycloak: any = null;
 
 // Initialize in the router guard
-let initialized = false;
+const initialized = false;
 export const initKeycloak = async () => {
-  if (!initialized) {
+  if (!keycloak) {
     const Keycloak = (await import("keycloak-js")).default;
-    if (!keycloak) {
-      keycloak = new Keycloak(keycloakConfig);
-    }
-    initialized = true;
+    keycloak = new Keycloak(keycloakConfig);
     await keycloak.init({
       onLoad: "check-sso",
       silentCheckSsoRedirectUri:
@@ -24,4 +21,11 @@ export const initKeycloak = async () => {
   return keycloak;
 };
 
-export default keycloak;
+export const login = async () => {
+  const kc = await initKeycloak();
+  return kc.login({
+    redirectUri: window.location.origin + "/invoices",
+  });
+};
+
+export default { initKeycloak, login };
