@@ -30,10 +30,8 @@ const isAuthenticated = async (
   try {
     const kc = await initKeycloak();
     if (kc.authenticated) {
-      localStorage.setItem("token", kc.token || "");
       next();
     } else {
-      localStorage.removeItem("token");
       await login();
     }
   } catch (error) {
