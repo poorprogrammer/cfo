@@ -40,7 +40,6 @@ services:
       context: ../../e2e
     environment:
       - PLAYWRIGHT_TEST_BASE_URL=http://web:8080
-      - KEYCLOAK_URL=http://keycloak:8080
     command: npx playwright test
     depends_on:
       web:
