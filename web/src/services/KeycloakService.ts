@@ -7,7 +7,6 @@ const keycloakConfig = {
 let keycloak: any = null;
 
 // Initialize in the router guard
-const initialized = false;
 export const initKeycloak = async () => {
   if (!keycloak) {
     const Keycloak = (await import("keycloak-js")).default;

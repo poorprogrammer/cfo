@@ -7,7 +7,6 @@ import Quotation from "@/views/Quotation.vue";
 import Quotations from "@/views/Quotations.vue";
 import Receipt from "@/views/Receipt.vue";
 import Receipts from "@/views/Receipts.vue";
-import Login from "@/views/Login.vue";
 import PageNotFound from "@/views/PageNotFound.vue";
 import UpdateInvoice from "@/views/UpdateInvoice.vue";
 import UpdateQuotation from "@/views/UpdateQuotation.vue";
@@ -36,7 +35,7 @@ const isAuthenticated = async (
     }
   } catch (error) {
     console.error("Failed to initialize Keycloak:", error);
-    next({ name: "login" });
+    next({ path: "/404" });
   }
 };
 
@@ -57,19 +56,6 @@ const handleOptionalYear = (
 };
 
 const routes: Array<RouteRecordRaw> = [
-  {
-    path: "/login",
-    name: "login",
-    component: Login,
-    beforeEnter: async (to, from, next) => {
-      const kc = await initKeycloak();
-      if (kc.authenticated) {
-        next({ name: "invoices" });
-      } else {
-        next();
-      }
-    },
-  },
   {
     path: "/",
     name: "home",
