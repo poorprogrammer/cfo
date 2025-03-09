@@ -3,6 +3,14 @@ const { test, expect } = require("@playwright/test");
 const { LoginPage } = require("../pages/LoginPage");
 
 test.describe("Invoice Page 2020", () => {
+  test.afterEach(async ({ page }, testInfo) => {
+    if (testInfo.status !== testInfo.expectedStatus) {
+      await page.screenshot({
+        path: `test-results/${testInfo.title}-failure.png`,
+      });
+    }
+  });
+
   test.describe("for guest", () => {
     test("requires login to see an invoice", async ({ page }) => {
       await openInvoiceDetailNumber("202001-001", page);

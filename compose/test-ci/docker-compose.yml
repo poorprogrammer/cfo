@@ -40,6 +40,9 @@ services:
       context: ../../e2e
     environment:
       - PLAYWRIGHT_TEST_BASE_URL=http://web:8080
+    volumes:
+      - ../../e2e/test-results:/app/test-results
+      - ../../e2e/playwright-report/:/app/playwright-report
     command: npx playwright test
     depends_on:
       web:
