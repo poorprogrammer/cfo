@@ -11,19 +11,23 @@
     "test:single": "vitest run"
   },
   "dependencies": {
+    "@types/keycloak-js": "^3.4.1",
+    "@types/node": "^18.15.0",
     "axios": "^1.7.8",
     "body-parser": "^1.20.2",
     "config": "^3.3.9",
     "core-js": "^3.8.3",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "keycloak-js": "^26.2.0",
     "pinia": "^2.2.8",
-    "vue": "^3.3.0",
-    "vue-router": "^4.0.3",
     "typescript": "~4.9.5",
-    "@types/node": "^18.15.0"
+    "vue": "^3.3.0",
+    "vue-router": "^4.0.3"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.x.x",
+    "@testing-library/vue": "^8.x.x",
     "@types/body-parser": "^1.19.2",
     "@types/config": "^3.3.0",
     "@types/cors": "^2.8.13",
@@ -31,6 +35,8 @@
     "@types/jest": "^29.5.0",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
+    "@vitejs/plugin-vue": "^5.x.x",
+    "@vitest/coverage-v8": "^2.1.6",
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
@@ -48,10 +54,7 @@
     "sass": "^1.32.7",
     "sass-loader": "^12.0.0",
     "ts-jest": "^29.1.0",
-    "vitest": "^2.1.6",
-    "@vitest/coverage-v8": "^2.1.6",
-    "@vitejs/plugin-vue": "^5.x.x",
-    "@testing-library/vue": "^8.x.x",
-    "@testing-library/jest-dom": "^6.x.x"
-  }
+    "vitest": "^2.1.6"
+  },
+  "type": "module"
 }

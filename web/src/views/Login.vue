@@ -2,15 +2,8 @@
   <div class="login-container">
     <div class="login-card">
       <div class="login-form">
-        <base-input id="username" label="Username" v-model="p.username" />
-        <base-input
-          id="password"
-          label="Password"
-          v-model="p.password"
-          type="password"
-        />
         <button id="login-button" class="login-button" @click="login">
-          <span class="button-text">Login</span>
+          <span class="button-text">Login with Keycloak</span>
           <span class="icon">➜</span>
         </button>
       </div>
@@ -19,23 +12,15 @@
 </template>
 
 <script>
-import Presenter from "../presenters/LoginPresenter";
-import BaseInput from "../components/BaseInput.vue";
+import keycloak from "../services/KeycloakService";
 
 export default {
   name: "LoginView",
-  components: { BaseInput },
-  data() {
-    return {
-      p: new Presenter(this),
-    };
-  },
   methods: {
     login: function () {
-      this.p.login();
-    },
-    goTo: function (path) {
-      this.$router.push(path);
+      keycloak.login({
+        redirectUri: window.location.origin + "/home",
+      });
     },
   },
 };

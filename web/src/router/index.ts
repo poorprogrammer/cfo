@@ -20,18 +20,35 @@ import {
   RouteLocationNormalized,
   RouteRecordRaw,
 } from "vue-router";
+import keycloak from "@/services/KeycloakService";
 
-const isAuthenticated = (
+const isAuthenticated = async (
   to: RouteLocationNormalized,
   from: RouteLocationNormalized,
   next: NavigationGuardNext
 ) => {
-  console.log("enter isAuthenticated");
-  if (localStorage.getItem("token")) {
-    next();
-    return;
+  try {
+    const authenticated = await keycloak.init({
+      onLoad: "check-sso",
+      silentCheckSsoRedirectUri:
+        window.location.origin + "/silent-check-sso.html",
+    });
+
+    if (authenticated) {
+      // Store the token
+      localStorage.setItem("token", keycloak.token || "");
+      next();
+    } else {
+      // Remove any existing token
+      localStorage.removeItem("token");
+      keycloak.login({
+        redirectUri: window.location.origin + to.fullPath,
+      });
+    }
+  } catch (error) {
+    console.error("Failed to initialize Keycloak:", error);
+    next({ name: "login" });
   }
-  next({ name: "login" });
 };
 
 // Add a navigation guard to handle optional year parameter
