@@ -16,5 +16,5 @@ FROM node:current-alpine3.12
 WORKDIR /app
 COPY --from=build /app/dist ./
 RUN npm install -g serve
-EXPOSE 3000
-CMD [ "serve", "-s", "-L", "/app" ]
+EXPOSE 8080
+CMD [ "serve", "-s", "-L", "/app", "-p", "8080" ]

@@ -1,46 +1,39 @@
 services:
   keycloak:
-    image: quay.io/keycloak/keycloak
-    container_name: keycloak
-    environment:
-      KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: admin
-    ports:
-      - "9000:8080"
+    extends:
+      file: ../keycloak/docker-compose.yml
+      service: keycloak
     volumes:
       - ../keycloak/realm-export.json:/opt/keycloak/data/import/realm-export.json
-    command: start-dev --import-realm
     networks:
       - cfo
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/admin"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
 
   api:
     build:
       context: ../../api
     command: /app/scripts/start_api_with_test_fixture
+    ports:
+      - "3000:3000"
     networks:
       - cfo
-    depends_on:
-      keycloak:
-        condition: service_healthy
 
   web:
     build:
       context: ../../web
       args:
         - VUE_APP_BASE_API=http://api:3000
-        - VUE_APP_KEYCLOAK_URL=http://localhost:9000
+        - VUE_APP_KEYCLOAK_URL=http://keycloak:8080
         - VUE_APP_KEYCLOAK_REALM=odds
         - VUE_APP_KEYCLOAK_CLIENT_ID=cfo
-    command: serve -s -L /app -p 8080
+    ports:
+      - "8080:8080"
     networks:
       - cfo
     depends_on:
-      - api
+      api:
+        condition: service_started
+      keycloak:
+        condition: service_healthy
 
   e2e:
     build:
@@ -50,8 +43,6 @@ services:
       - KEYCLOAK_URL=http://keycloak:8080
     command: npx playwright test
     depends_on:
-      keycloak:
-        condition: service_healthy
       web:
         condition: service_started
     networks:
