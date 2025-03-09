@@ -10,6 +10,14 @@ test.describe("Create New Quotation Via Duplication Feature", () => {
     await login(page);
   });
 
+  test.afterEach(async ({ page }, testInfo) => {
+    if (testInfo.status !== testInfo.expectedStatus) {
+      await page.screenshot({
+        path: `test-results/${testInfo.title}-failure.png`,
+      });
+    }
+  });
+
   test("Can create new Quotation by duplicate from existing one", async ({
     page,
   }) => {
