@@ -3,11 +3,10 @@ const { test, expect } = require("@playwright/test");
 const { LoginPage } = require("../pages/LoginPage");
 
 test.describe("Invoice Page 2020", () => {
-
   test.describe("for guest", () => {
     test("requires login to see an invoice", async ({ page }) => {
       await openInvoiceDetailNumber("202001-001", page);
-      await expect(page).toHaveURL(/login/);
+      await expect(page.getByText("Sign in to your account")).toBeVisible();
     });
   });
 
@@ -21,12 +20,16 @@ test.describe("Invoice Page 2020", () => {
       invoiceListPage = await loginPage.login();
     });
 
-    test("Visits the view invoice url should see the original invoice", async ({ page }) => {
+    test("Visits the view invoice url should see the original invoice", async ({
+      page,
+    }) => {
       await openInvoiceDetailNumber("202001-001", page);
       await shouldContainsOriginalInvoice(page);
     });
 
-    test("Can go back to see list of invoices from invoice detail page", async ({ page }) => {
+    test("Can go back to see list of invoices from invoice detail page", async ({
+      page,
+    }) => {
       await openInvoiceDetailNumber("202001-001", page);
       await goBackToInvoiceList(page);
       await expect(page.getByText("Invoice List")).toBeVisible();
@@ -51,5 +54,4 @@ test.describe("Invoice Page 2020", () => {
     await expect(page.getByText("Invoice Date").first()).toBeVisible();
     await expect(page.getByText("2020-01-03").first()).toBeVisible();
   }
-
 });
