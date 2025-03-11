@@ -4,10 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@cucumber/cucumber": "^11.2.0",
     "@playwright/test": "^1.44.1",
     "@types/node": "^20.14.7"
   },
   "scripts": {
-    "test": "DEV=true npx playwright test"
+    "test": "DEV=true npx playwright test",
+    "test:cucumber": "cucumber-js test"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.2"
   }
 }
