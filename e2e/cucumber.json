@@ -1,0 +1,10 @@
+{
+  "default": {
+    "formatOptions": {
+      "snippetInterface": "async-await"
+    },
+    "paths": ["cucumber/features/"],
+    "require": ["cucumber/step_definitions/*.steps.ts"],
+    "requireModule": ["ts-node/register"]
+  }
+}
