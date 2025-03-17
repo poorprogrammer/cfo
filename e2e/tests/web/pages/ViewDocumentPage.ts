@@ -9,7 +9,7 @@ export class ViewDocumentPage {
     this.documentType = documentType;
   }
 
-  static async create(page, documentType) {
+  static async create(page: Page, documentType: string) {
     let viewDocumentPage = new ViewDocumentPage(page, documentType);
     await viewDocumentPage.ready();
     return viewDocumentPage;
@@ -28,7 +28,11 @@ export class ViewDocumentPage {
     await expect(this.page.getByText(text).first()).toBeVisible();
   }
 
-  async containsFirstItem(itemName, itemPrice, itemQuantity) {
+  async containsFirstItem(
+    itemName: string,
+    itemPrice: string,
+    itemQuantity: string
+  ) {
     await expect(this.page.getByText(itemName).first()).toBeVisible();
     await expect(this.page.getByText(itemPrice).first()).toBeVisible();
     await expect(this.page.getByText(itemQuantity).first()).toBeVisible();
