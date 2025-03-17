@@ -5,7 +5,7 @@ export default class ViewReceiptPage extends ViewDocumentPage {
   constructor(page: Page) {
     super(page, "Receipt");
   }
-  static async create(page) {
+  static async create(page: Page) {
     let viewReceiptPage = new ViewReceiptPage(page);
     await viewReceiptPage.ready();
     return viewReceiptPage;
