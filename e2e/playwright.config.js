@@ -1,5 +1,5 @@
 // @ts-check
-const { defineConfig, devices } = require('@playwright/test');
+const { defineConfig, devices } = require("@playwright/test");
 
 /**
  * Read environment variables from file.
@@ -11,7 +11,7 @@ const { defineConfig, devices } = require('@playwright/test');
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
-  testDir: './tests',
+  testDir: "./tests",
 
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -23,14 +23,14 @@ module.exports = defineConfig({
   workers: process.env.CI ? 1 : 1,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   // reporter: 'html',
-  reporter: 'list',
+  reporter: "list",
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: process.env.DEV ? 'http://localhost:8080' : 'http://web:8080',
+    baseURL: process.env.DEV ? "http://localhost:8080" : "http://web:8080",
     // baseURL: 'http://localhost:8080',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: "on-first-retry",
   },
 
   /* Configure projects for major browsers */
@@ -40,9 +40,8 @@ module.exports = defineConfig({
     //   testMatch: /global\.setup\.js/,
     // },
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
-
+      name: "chromium",
+      use: { ...devices["Desktop Chrome"] },
     },
     // {
     //   name: 'Mobile Safari',
@@ -90,4 +89,3 @@ module.exports = defineConfig({
   //   reuseExistingServer: !process.env.CI,
   // },
 });
-
