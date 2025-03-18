@@ -1,6 +1,7 @@
 import { setWorldConstructor, World } from "@cucumber/cucumber";
 import { chromium, Browser, Page, BrowserContext } from "@playwright/test";
 import { LoginPage } from "../../tests/web/pages/LoginPage";
+import BillingArchivePage from "../../tests/web/pages/BillingArchivePage";
 import * as config from "../../playwright.config.js";
 
 class CustomWorld extends World {
@@ -8,6 +9,7 @@ class CustomWorld extends World {
   context!: BrowserContext;
   page!: Page;
   loginPage!: LoginPage;
+  invoiceArchivePage!: BillingArchivePage;
 
   async launchBrowser() {
     this.browser = await chromium.launch(config.use);
