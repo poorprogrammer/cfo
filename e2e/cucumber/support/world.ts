@@ -3,6 +3,7 @@ import { chromium, Browser, Page, BrowserContext } from "@playwright/test";
 import { LoginPage } from "../../tests/web/pages/LoginPage";
 import BillingArchivePage from "../../tests/web/pages/BillingArchivePage";
 import * as config from "../../playwright.config.js";
+import { ViewDocumentPage } from "../../tests/web/pages/ViewDocumentPage";
 
 class CustomWorld extends World {
   browser!: Browser;
@@ -10,6 +11,7 @@ class CustomWorld extends World {
   page!: Page;
   loginPage!: LoginPage;
   invoiceArchivePage!: BillingArchivePage;
+  viewReceiptPage!: ViewDocumentPage;
 
   async launchBrowser() {
     this.browser = await chromium.launch(config.use);

@@ -26,7 +26,6 @@ When(
       await this.invoiceArchivePage.clickDuplicateDocumentNumber(from);
     await duplicatePage.editDocumentNumber(to);
     await duplicatePage.editDocumentDate(date);
-    console.log(items);
     await duplicatePage.editFirstItem(
       items[0].description,
       items[0].rate,
@@ -50,9 +49,22 @@ When(
 
 When(
   "I create a receipt from invoices {string} and {string} with number {string}",
-  async function (string, string2, string3) {
-    // Write code here that turns the phrase above into concrete actions
-    return "pending";
+  async function (
+    this: CustomWorld,
+    invoice1: string,
+    invoice2: string,
+    receiptNumber: string
+  ) {
+    await this.invoiceArchivePage.visit(2020);
+    await this.invoiceArchivePage.containsDocument(invoice2);
+    const createReceiptPage =
+      await this.invoiceArchivePage.createReceiptFromInvoices([
+        invoice1,
+        invoice2,
+      ]);
+    await createReceiptPage.editDocumentNumber(receiptNumber);
+    this.viewReceiptPage = await createReceiptPage.save();
+    await this.viewReceiptPage.containsDocumentNumber(receiptNumber);
   }
 );
 
