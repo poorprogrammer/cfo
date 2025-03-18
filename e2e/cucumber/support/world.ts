@@ -1,7 +1,7 @@
 import { setWorldConstructor, World } from "@cucumber/cucumber";
 import { chromium, Browser, Page, BrowserContext } from "@playwright/test";
 import { LoginPage } from "../../tests/web/pages/LoginPage";
-import config from "../../playwright.config";
+import * as config from "../../playwright.config.js";
 
 class CustomWorld extends World {
   browser!: Browser;
