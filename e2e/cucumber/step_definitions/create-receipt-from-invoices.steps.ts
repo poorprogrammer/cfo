@@ -70,9 +70,13 @@ When(
 
 Then(
   "I should see the receipt with number {string} and amount {string}",
-  async function (string, string2) {
-    // Write code here that turns the phrase above into concrete actions
-    return "pending";
+  async function (
+    this: CustomWorld,
+    receiptNumber: string,
+    expectedAmount: string
+  ) {
+    await this.viewReceiptPage.containsDocumentNumber(receiptNumber);
+    await this.viewReceiptPage.containsText(expectedAmount);
   }
 );
 
