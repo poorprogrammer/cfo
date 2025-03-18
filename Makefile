@@ -34,6 +34,8 @@ e2e-cucumber:
 e2e-ci:
 	cd compose/test-ci/ && docker-compose build e2e
 	cd compose/test-ci/ && docker-compose run --rm e2e
+	cd compose/test-ci/ && docker-compose build e2e_cucumber
+	cd compose/test-ci/ && docker-compose run --rm e2e_cucumber
 	cd compose/test-ci/ && docker-compose stop
 
 test-web:

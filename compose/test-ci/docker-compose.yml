@@ -1,5 +1,4 @@
 services:
-
   api:
     build:
       context: ../../api
@@ -22,6 +21,15 @@ services:
     build:
       context: ../../e2e
     command: npx playwright test
+    depends_on:
+      - web
+    networks:
+      - cfo
+
+  e2e_cucumber:
+    build:
+      context: ../../e2e
+    command: npm run test:cucumber
     depends_on:
       - web
     networks:
