@@ -1,4 +1,4 @@
-.PHONY: dev dev-api dev-web install e2e e2e-ci test-web
+.PHONY: dev dev-api dev-web install e2e e2e-ci test-web e2e-cucumber
 
 # Default target
 dev: dev-api dev-web
@@ -26,6 +26,9 @@ fresh: stop install dev
 
 e2e:
 	cd e2e && DEV=true npx playwright test
+
+e2e-cucumber:
+	cd e2e && DEV=true npm run test:cucumber 
 
 # Run end-to-end tests in CI environment
 e2e-ci:
