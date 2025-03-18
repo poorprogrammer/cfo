@@ -1,5 +1,6 @@
 import { Given, When, Then } from "@cucumber/cucumber";
 import { CustomWorld } from "../support/world";
+import BillingArchivePage from "../../tests/web/pages/BillingArchivePage";
 
 Given("I am logged in", async function (this: CustomWorld) {
   await this.loginPage.goto();
@@ -82,8 +83,26 @@ Then(
 
 Then(
   "I cleanup documents with invoice {string} and receipt {string}",
-  async function (string, string2) {
-    // Write code here that turns the phrase above into concrete actions
-    return "pending";
+  async function (this: CustomWorld, invoice: string, receipt: string) {
+    await deleteInvoice(invoice, this);
+    await deleteReceipt(receipt, this);
   }
 );
+
+async function deleteInvoice(invoice: string, customWorld: CustomWorld) {
+  await customWorld.invoiceArchivePage.visit(2020);
+  await customWorld.invoiceArchivePage.containsDocument(invoice);
+  await customWorld.invoiceArchivePage.delete(invoice);
+  await customWorld.invoiceArchivePage.shouldNotContainDocument(invoice);
+}
+
+async function deleteReceipt(receipt: string, customWorld: CustomWorld) {
+  const receiptArchivePage = new BillingArchivePage(
+    customWorld.page,
+    "Receipt"
+  );
+  await receiptArchivePage.visit(new Date().getFullYear());
+  await receiptArchivePage.containsDocument(receipt);
+  await receiptArchivePage.delete(receipt);
+  await receiptArchivePage.shouldNotContainDocument(receipt);
+}
