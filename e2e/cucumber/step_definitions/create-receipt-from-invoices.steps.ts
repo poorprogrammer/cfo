@@ -3,6 +3,7 @@ import { CustomWorld } from "../support/world";
 
 Given("I am logged in", async function (this: CustomWorld) {
   await this.loginPage.goto();
+  this.invoiceArchivePage = await this.loginPage.login();
 });
 
 When(
