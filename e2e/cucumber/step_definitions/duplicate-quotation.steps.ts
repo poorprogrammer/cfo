@@ -39,8 +39,34 @@ Given(
 
 When(
   "I edit quotation {string} with date {string} and items:",
-  async function (string, string2, dataTable) {
-    return "pending";
+  async function (
+    this: CustomWorld,
+    quotationNumber: string,
+    date: string,
+    dataTable: { rawTable: Array<Array<string>> }
+  ) {
+    const items = dataTable.rawTable.slice(1).map((row) => ({
+      description: row[0],
+      rate: row[1],
+      quantity: row[2],
+    }));
+
+    await this.invoiceArchivePage.visit(2020);
+    await this.invoiceArchivePage.containsDocument(quotationNumber);
+
+    const editPage = await this.invoiceArchivePage.clickEditDocumentNumber(
+      quotationNumber
+    );
+    await editPage.editDocumentDate(date);
+    await editPage.editFirstItem(
+      items[0].description,
+      items[0].rate,
+      items[0].quantity
+    );
+
+    const viewPage = await editPage.save();
+    await viewPage.containsDocumentNumber(quotationNumber);
+    await viewPage.containsText("USD 10,000.00");
   }
 );
 
