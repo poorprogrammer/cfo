@@ -72,8 +72,18 @@ When(
 
 Then(
   "I should see the quotation with number {string} and amount {string}",
-  async function (string, string2) {
-    return "pending";
+  async function (
+    this: CustomWorld,
+    quotationNumber: string,
+    expectedAmount: string
+  ) {
+    await this.invoiceArchivePage.visit(2020);
+    const editPage = await this.invoiceArchivePage.clickEditDocumentNumber(
+      quotationNumber
+    );
+    const viewQuotationPage = await editPage.save();
+    await viewQuotationPage.containsDocumentNumber(quotationNumber);
+    await viewQuotationPage.containsText(expectedAmount);
   }
 );
 
