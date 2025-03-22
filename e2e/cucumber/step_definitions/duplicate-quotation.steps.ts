@@ -1,5 +1,6 @@
 import { Given, Then, When } from "@cucumber/cucumber";
 import { CustomWorld } from "../support/world";
+import BillingArchivePage from "../../tests/web/pages/BillingArchivePage";
 
 Given(
   "I duplicate quotation {string} to {string} with date {string} and items:",
@@ -87,6 +88,16 @@ Then(
   }
 );
 
-Then("I cleanup documents with quotation {string}", async function (string) {
-  return "pending";
-});
+Then(
+  "I cleanup documents with quotation {string}",
+  async function (this: CustomWorld, quotation: string) {
+    await deleteQuotation(quotation, this);
+  }
+);
+
+async function deleteQuotation(quotation: string, customWorld: CustomWorld) {
+  await customWorld.invoiceArchivePage.visit(2020);
+  await customWorld.invoiceArchivePage.containsDocument(quotation);
+  await customWorld.invoiceArchivePage.delete(quotation);
+  await customWorld.invoiceArchivePage.shouldNotContainDocument(quotation);
+}
