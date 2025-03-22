@@ -1,7 +1,7 @@
-import { Then, When } from "@cucumber/cucumber";
+import { Given, Then, When } from "@cucumber/cucumber";
 import { CustomWorld } from "../support/world";
 
-When(
+Given(
   "I duplicate invoice {string} to {string} with date {string} and items:",
   async function (
     this: CustomWorld,
