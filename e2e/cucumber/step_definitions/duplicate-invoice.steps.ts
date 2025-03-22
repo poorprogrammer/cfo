@@ -1,5 +1,6 @@
 import { Given, Then, When } from "@cucumber/cucumber";
 import { CustomWorld } from "../support/world";
+import BillingArchivePage from "../../tests/web/pages/BillingArchivePage";
 
 Given(
   "I duplicate invoice {string} to {string} with date {string} and items:",
@@ -98,7 +99,16 @@ Then(
   }
 );
 
-Then("I cleanup documents with invoice {string}", async function (string) {
-  // Write code here that turns the phrase above into concrete actions
-  return "pending";
-});
+Then(
+  "I cleanup documents with invoice {string}",
+  async function (this: CustomWorld, invoice: string) {
+    await deleteInvoice(invoice, this);
+  }
+);
+
+async function deleteInvoice(invoice: string, customWorld: CustomWorld) {
+  await customWorld.invoiceArchivePage.visit(2020);
+  await customWorld.invoiceArchivePage.containsDocument(invoice);
+  await customWorld.invoiceArchivePage.delete(invoice);
+  await customWorld.invoiceArchivePage.shouldNotContainDocument(invoice);
+}
