@@ -44,9 +44,42 @@ Given(
 
 When(
   "I edit invoice {string} with date {string} and items:",
-  async function (string, string2, dataTable) {
-    // Write code here that turns the phrase above into concrete actions
-    return "pending";
+  async function (
+    this: CustomWorld,
+    invoiceNumber: string,
+    date: string,
+    dataTable: { rawTable: Array<Array<string>> }
+  ) {
+    const items = dataTable.rawTable.slice(1).map((row) => ({
+      description: row[0],
+      rate: row[1],
+      quantity: row[2],
+    }));
+
+    await this.invoiceArchivePage.visit(2020);
+    await this.invoiceArchivePage.containsDocument(invoiceNumber);
+
+    const editPage = await this.invoiceArchivePage.clickEditDocumentNumber(
+      invoiceNumber
+    );
+    await editPage.editDocumentDate(date);
+    await editPage.editFirstItem(
+      items[0].description,
+      items[0].rate,
+      items[0].quantity
+    );
+    await editPage.editSecondItem(
+      items[1].description,
+      items[1].rate,
+      items[1].quantity
+    );
+
+    await editPage.addSecondItem("Scrum master", "4000", "10");
+    await editPage.removeSecondItem();
+
+    const viewPage = await editPage.save();
+    await viewPage.containsDocumentNumber(invoiceNumber);
+    await viewPage.containsText("THB 40,000.00");
   }
 );
 
