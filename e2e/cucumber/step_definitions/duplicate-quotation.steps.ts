@@ -30,7 +30,7 @@ Given(
     await viewQuotationPage.containsDocumentNumber(to);
     await viewQuotationPage.containsFirstItem(
       items[0].description,
-      items[0].rate,
+      "1,000.50",
       items[0].quantity
     );
     await viewQuotationPage.containsText("USD 12,506.25");
