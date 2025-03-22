@@ -77,17 +77,24 @@ When(
     await editPage.addSecondItem("Scrum master", "4000", "10");
     await editPage.removeSecondItem();
 
-    const viewPage = await editPage.save();
-    await viewPage.containsDocumentNumber(invoiceNumber);
-    await viewPage.containsText("THB 40,000.00");
+    await editPage.save();
   }
 );
 
 Then(
   "I should see the invoice with number {string} and amount {string}",
-  async function (string, string2) {
-    // Write code here that turns the phrase above into concrete actions
-    return "pending";
+  async function (
+    this: CustomWorld,
+    invoiceNumber: string,
+    expectedAmount: string
+  ) {
+    await this.invoiceArchivePage.visit(2020);
+    const editPage = await this.invoiceArchivePage.clickEditDocumentNumber(
+      invoiceNumber
+    );
+    const viewInvoicePage = await editPage.save();
+    await viewInvoicePage.containsDocumentNumber(invoiceNumber);
+    await viewInvoicePage.containsText(expectedAmount);
   }
 );
 
