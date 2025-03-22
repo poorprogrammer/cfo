@@ -1,4 +1,4 @@
-.PHONY: dev dev-api dev-web install e2e e2e-ci test-web e2e-cucumber keycloak
+.PHONY: dev dev-api dev-web install e2e e2e-ci test-web e2e-cucumber keycloak load-data
 
 # Default target
 dev: dev-api dev-web
@@ -14,7 +14,7 @@ dev-api: install
 
 # Start web in development mode
 dev-web: install keycloak
-	cd web && bun run serve
+	cd web && bun run serve &
 
 # Stop all development servers
 stop:
@@ -27,9 +27,18 @@ fresh: stop install dev
 e2e:
 	cd e2e && DEV=true npx playwright test
 
-e2e-cucumber:
-	cd e2e && DEV=true npm run test:cucumber 
+# Load data into the server
+load-data:
+	rm -rf /tmp/cfo/* &
+	cd api && node tests/fixtures/loadData.js
 
+# Run end-to-end tests in development environment
+e2e-cucumber: load-data dev
+	cd e2e && DEV=true npm run test:cucumber || true
+	$(MAKE) stop
+
+	
+	
 # Run end-to-end tests in CI environment
 e2e-ci:
 	cd compose/test-ci/ && docker-compose build e2e
