@@ -6,7 +6,9 @@
   "devDependencies": {
     "@cucumber/cucumber": "^11.2.0",
     "@playwright/test": "^1.44.1",
-    "@types/node": "^20.14.7"
+    "@types/node": "^20.14.7",
+    "install": "^0.13.0",
+    "typescript": "^5.8.2"
   },
   "scripts": {
     "test": "DEV=true npx playwright test",
