@@ -50,8 +50,11 @@ jobs:
         run: ./runtests.md
         working-directory: api
 
-      - name: run e2e tests
+      - name: run e2e tests (playwright)
         run: docker compose -f compose/test-ci/docker-compose.yml run e2e
+
+      - name: run e2e tests (cucumber)
+        run: docker compose -f compose/test-ci/docker-compose.yml run e2e_cucumber
 
       - name: Analyze with SonarCloud
         uses: sonarsource/sonarcloud-github-action@master
