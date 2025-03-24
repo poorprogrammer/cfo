@@ -10,5 +10,5 @@ Feature: Create New Receipt Via Duplication Feature
         When I edit receipt "202001-008" with date "2020-01-02" and items:
             | description         | rate | quantity |
             | Fullstack developer | 1000 | 10       |
-        Then I should see the receipt with number "202001-008" and amount "USD 10,000.00"
+        Then I should see the receipt at duplicate with number "202001-008" and amount "USD 10,000.00"
         And I cleanup documents with receipt "202001-008"

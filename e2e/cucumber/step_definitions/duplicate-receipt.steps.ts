@@ -39,11 +39,61 @@ Given(
 
 When(
   "I edit receipt {string} with date {string} and items:",
-  async function (string, string2, dataTable) {
-    return "pending";
+  async function (
+    this: CustomWorld,
+    receiptNumber: string,
+    date: string,
+    dataTable: { rawTable: Array<Array<string>> }
+  ) {
+    const items = dataTable.rawTable.slice(1).map((row) => ({
+      description: row[0],
+      rate: row[1],
+      quantity: row[2],
+    }));
+
+    await this.invoiceArchivePage.visit(2020);
+    const editPage = await this.invoiceArchivePage.clickEditDocumentNumber(
+      receiptNumber
+    );
+    await editPage.editDocumentDate(date);
+    await editPage.editFirstItem(
+      items[0].description,
+      items[0].rate,
+      items[0].quantity
+    );
+    const viewReceiptPage = await editPage.save();
+    await viewReceiptPage.containsDocumentNumber(receiptNumber);
+    await viewReceiptPage.containsFirstItem(
+      items[0].description,
+      items[0].rate,
+      items[0].quantity
+    );
   }
 );
 
-Then("I cleanup documents with receipt {string}", async function (string) {
-  return "pending";
-});
+Then(
+  "I should see the receipt at duplicate with number {string} and amount {string}",
+  async function (
+    this: CustomWorld,
+    receiptNumber: string,
+    expectedAmount: string
+  ) {
+    await this.invoiceArchivePage.visit(2020);
+    const editPage = await this.invoiceArchivePage.clickEditDocumentNumber(
+      receiptNumber
+    );
+    const viewReceiptPage = await editPage.save();
+    await viewReceiptPage.containsDocumentNumber(receiptNumber);
+    await viewReceiptPage.containsText(expectedAmount);
+  }
+);
+
+Then(
+  "I cleanup documents with receipt {string}",
+  async function (this: CustomWorld, receipt: string) {
+    await this.invoiceArchivePage.visit(2020);
+    await this.invoiceArchivePage.containsDocument(receipt);
+    await this.invoiceArchivePage.delete(receipt);
+    await this.invoiceArchivePage.shouldNotContainDocument(receipt);
+  }
+);
