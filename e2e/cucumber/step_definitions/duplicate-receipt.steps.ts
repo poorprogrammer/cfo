@@ -1,5 +1,6 @@
 import { Given, Then, When } from "@cucumber/cucumber";
 import { CustomWorld } from "../support/world";
+import { formatRate } from "../support/utillity";
 
 Given(
   "I duplicate receipt {string} to {string} with date {string} and items:",
@@ -30,7 +31,7 @@ Given(
     await viewReceiptPage.containsDocumentNumber(to);
     await viewReceiptPage.containsFirstItem(
       items[0].description,
-      "1,000",
+      formatRate(items[0].rate),
       items[0].quantity
     );
     await viewReceiptPage.containsText("USD 12,000.00");

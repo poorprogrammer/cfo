@@ -1,6 +1,6 @@
 import { Given, Then, When } from "@cucumber/cucumber";
 import { CustomWorld } from "../support/world";
-import BillingArchivePage from "../../tests/web/pages/BillingArchivePage";
+import { formatRate } from "../support/utillity";
 
 Given(
   "I duplicate quotation {string} to {string} with date {string} and items:",
@@ -31,7 +31,7 @@ Given(
     await viewQuotationPage.containsDocumentNumber(to);
     await viewQuotationPage.containsFirstItem(
       items[0].description,
-      "1,000.50",
+      formatRate(items[0].rate),
       items[0].quantity
     );
     await viewQuotationPage.containsText("USD 12,506.25");
