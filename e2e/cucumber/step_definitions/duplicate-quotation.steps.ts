@@ -85,19 +85,6 @@ Then(
     const viewQuotationPage = await editPage.save();
     await viewQuotationPage.containsDocumentNumber(quotationNumber);
     await viewQuotationPage.containsText(expectedAmount);
+    this.quotationsToCleanup.push(quotationNumber);
   }
 );
-
-Then(
-  "I cleanup documents with quotation {string}",
-  async function (this: CustomWorld, quotation: string) {
-    await deleteQuotation(quotation, this);
-  }
-);
-
-async function deleteQuotation(quotation: string, customWorld: CustomWorld) {
-  await customWorld.invoiceArchivePage.visit(2020);
-  await customWorld.invoiceArchivePage.containsDocument(quotation);
-  await customWorld.invoiceArchivePage.delete(quotation);
-  await customWorld.invoiceArchivePage.shouldNotContainDocument(quotation);
-}
