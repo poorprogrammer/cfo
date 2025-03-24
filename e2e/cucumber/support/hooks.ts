@@ -7,6 +7,7 @@ Before(async function (this: CustomWorld) {
 });
 
 After(async function (this: CustomWorld) {
+  console.log("\n🛑 Cleaning up documents after Scenario...");
+  await this.cleanupDocuments();
   await this.closeBrowser();
-  console.log("\n🛑 Closing Browser after Scenario...");
 });

@@ -8,4 +8,3 @@ Feature: Create New Receipt For Multiple Invoices
             | UX              | 2000 | 10       |
         When I create a receipt from invoices "202001-007" and "202001-008" with number "R202001-002"
         Then I should see the receipt with number "R202001-002" and amount "THB 432,800.00"
-        And I cleanup documents with invoice "202001-008" and receipt "R202001-002"

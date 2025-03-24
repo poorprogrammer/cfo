@@ -25,6 +25,9 @@ When(
     await createReceiptPage.editDocumentNumber(receiptNumber);
     this.viewReceiptPage = await createReceiptPage.save();
     await this.viewReceiptPage.containsDocumentNumber(receiptNumber);
+
+    this.invoicesToCleanup.push(invoice2);
+    this.receiptsToCleanup.push(receiptNumber);
   }
 );
 
@@ -39,29 +42,3 @@ Then(
     await this.viewReceiptPage.containsText(expectedAmount);
   }
 );
-
-Then(
-  "I cleanup documents with invoice {string} and receipt {string}",
-  async function (this: CustomWorld, invoice: string, receipt: string) {
-    await deleteInvoice(invoice, this);
-    await deleteReceipt(receipt, this);
-  }
-);
-
-async function deleteInvoice(invoice: string, customWorld: CustomWorld) {
-  await customWorld.invoiceArchivePage.visit(2020);
-  await customWorld.invoiceArchivePage.containsDocument(invoice);
-  await customWorld.invoiceArchivePage.delete(invoice);
-  await customWorld.invoiceArchivePage.shouldNotContainDocument(invoice);
-}
-
-async function deleteReceipt(receipt: string, customWorld: CustomWorld) {
-  const receiptArchivePage = new BillingArchivePage(
-    customWorld.page,
-    "Receipt"
-  );
-  await receiptArchivePage.visit(new Date().getFullYear());
-  await receiptArchivePage.containsDocument(receipt);
-  await receiptArchivePage.delete(receipt);
-  await receiptArchivePage.shouldNotContainDocument(receipt);
-}
