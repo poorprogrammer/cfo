@@ -96,19 +96,6 @@ Then(
     const viewInvoicePage = await editPage.save();
     await viewInvoicePage.containsDocumentNumber(invoiceNumber);
     await viewInvoicePage.containsText(expectedAmount);
+    this.invoicesToCleanup.push(invoiceNumber);
   }
 );
-
-Then(
-  "I cleanup documents with invoice {string}",
-  async function (this: CustomWorld, invoice: string) {
-    await deleteInvoice(invoice, this);
-  }
-);
-
-async function deleteInvoice(invoice: string, customWorld: CustomWorld) {
-  await customWorld.invoiceArchivePage.visit(2020);
-  await customWorld.invoiceArchivePage.containsDocument(invoice);
-  await customWorld.invoiceArchivePage.delete(invoice);
-  await customWorld.invoiceArchivePage.shouldNotContainDocument(invoice);
-}

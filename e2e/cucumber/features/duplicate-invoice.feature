@@ -13,4 +13,3 @@ Feature: Create New Invoice Via Invoice Duplication Feature
             | Fullstack developer | 1000 | 10       |
             | UX/UI               | 3000 | 10       |
         Then I should see the invoice with number "202001-008" and amount "THB 40,000.00"
-        And I cleanup documents with invoice "202001-008"
