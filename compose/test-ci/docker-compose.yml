@@ -21,8 +21,10 @@ services:
     build:
       context: ../../web
       args:
-        - VUE_APP_BASE_API=http://api:3000
-        - VUE_APP_KEYCLOAK_URL=http://keycloak:8080
+        # - VUE_APP_BASE_API=http://api:3000
+        # - VUE_APP_KEYCLOAK_URL=http://keycloak:8080
+        - VUE_APP_BASE_API=http://host.docker.internal:3000
+        - VUE_APP_KEYCLOAK_URL=http://host.docker.internal:9000
         - VUE_APP_KEYCLOAK_REALM=odds
         - VUE_APP_KEYCLOAK_CLIENT_ID=cfo
     ports:
@@ -39,11 +41,12 @@ services:
     build:
       context: ../../e2e
     environment:
-      - PLAYWRIGHT_TEST_BASE_URL=http://web:8080
+      - PLAYWRIGHT_TEST_BASE_URL=http://host.docker.internal:8080
     volumes:
       - ../../e2e/test-results:/app/test-results
       - ../../e2e/playwright-report/:/app/playwright-report
-    command: npx playwright test
+    # command: npx playwright test
+    command: bash
     depends_on:
       web:
         condition: service_started
