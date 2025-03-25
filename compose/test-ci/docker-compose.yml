@@ -67,7 +67,7 @@ services:
     volumes:
       - ../../e2e/test-results:/app/test-results
       - ../../e2e/playwright-report/:/app/playwright-report
-    command: npx playwright test
+    command: npx playwright test --reporter=list
     depends_on:
       web:
         condition: service_started
