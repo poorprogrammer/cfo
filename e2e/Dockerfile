@@ -4,9 +4,9 @@ WORKDIR /app
 COPY package*.json ./
 COPY yarn.lock ./
 RUN yarn install
-COPY . .
-
 RUN npx playwright install chromium
+
+COPY . .
 
 # Set the entry point for the container
 CMD ["npx", "playwright", "test"]
