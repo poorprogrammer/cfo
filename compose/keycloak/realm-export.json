@@ -689,12 +689,12 @@
       "clientAuthenticatorType": "client-secret",
       "redirectUris": [
         "http://localhost:8080/*",
-        "http://web:8080/*",
+        "https://web/*",
         "https://www.keycloak.org/app/*"
       ],
       "webOrigins": [
         "http://localhost:8080",
-        "http://web:8080",
+        "https://web",
         "https://www.keycloak.org"
       ],
       "notBefore": 0,

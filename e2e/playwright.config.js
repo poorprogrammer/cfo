@@ -26,11 +26,12 @@ module.exports = defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    baseURL: process.env.DEV ? "http://localhost:8080" : "http://web:8080",
+    baseURL: process.env.DEV ? "http://localhost:8080" : "https://web:443",
     // baseURL: 'http://localhost:8080',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "retain-on-failure",
     screenshot: "only-on-failure",
+    ignoreHTTPSErrors: true,
   },
 
   /* Configure projects for major browsers */

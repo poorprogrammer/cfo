@@ -5,50 +5,77 @@ services:
       service: keycloak
     volumes:
       - ../keycloak/realm-export.json:/opt/keycloak/data/import/realm-export.json
+    command: start-dev --import-realm --hostname-strict false --proxy-headers xforwarded
     networks:
       - cfo
+
+  keycloak_proxy:
+    image: nginx:alpine
+    volumes:
+      - ./ssl/nginx-keycloak.conf:/etc/nginx/conf.d/default.conf
+      - ./ssl:/etc/nginx/ssl
+    networks:
+      - cfo
+    depends_on:
+      keycloak:
+        condition: service_healthy
 
   api:
     build:
       context: ../../api
     command: /app/scripts/start_api_with_test_fixture
-    ports:
-      - "3000:3000"
     networks:
       - cfo
+
+  api_proxy:
+    image: nginx:alpine
+    ports:
+      - "3443:443"
+    volumes:
+      - ./ssl/nginx-api.conf:/etc/nginx/conf.d/default.conf
+      - ./ssl:/etc/nginx/ssl
+    networks:
+      - cfo
+    depends_on:
+      - api
 
   web:
     build:
       context: ../../web
       args:
-        # - VUE_APP_BASE_API=http://api:3000
-        # - VUE_APP_KEYCLOAK_URL=http://keycloak:8080
-        - VUE_APP_BASE_API=http://host.docker.internal:3000
-        - VUE_APP_KEYCLOAK_URL=http://host.docker.internal:9000
+        - VUE_APP_BASE_API=https://api_proxy
+        - VUE_APP_KEYCLOAK_URL=https://keycloak_proxy
         - VUE_APP_KEYCLOAK_REALM=odds
         - VUE_APP_KEYCLOAK_CLIENT_ID=cfo
     ports:
       - "8080:8080"
+      - "8443:443"
+    volumes:
+      - ./ssl/nginx-https.conf:/etc/nginx/conf.d/https.conf
+      - ./ssl:/etc/nginx/ssl
     networks:
       - cfo
     depends_on:
-      api:
+      api_proxy:
         condition: service_started
-      keycloak:
+      keycloak_proxy:
         condition: service_healthy
 
   e2e:
     build:
       context: ../../e2e
-    environment:
-      - PLAYWRIGHT_TEST_BASE_URL=http://host.docker.internal:8080
     volumes:
       - ../../e2e/test-results:/app/test-results
       - ../../e2e/playwright-report/:/app/playwright-report
-    # command: npx playwright test
-    command: bash
+    command: npx playwright test
     depends_on:
       web:
+        condition: service_healthy
+      keycloak_proxy:
+        condition: service_healthy
+      keycloak:
+        condition: service_healthy
+      api_proxy:
         condition: service_started
     networks:
       - cfo
