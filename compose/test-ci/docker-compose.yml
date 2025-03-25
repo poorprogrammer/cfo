@@ -58,7 +58,7 @@ services:
     depends_on:
       api_proxy:
         condition: service_started
-      keycloak_proxy:
+      keycloak:
         condition: service_healthy
 
   e2e:
