@@ -70,7 +70,7 @@ services:
     command: npx playwright test
     depends_on:
       web:
-        condition: service_healthy
+        condition: service_started
       keycloak:
         condition: service_healthy
       api_proxy:
