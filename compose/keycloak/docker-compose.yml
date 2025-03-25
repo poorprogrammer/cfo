@@ -1,6 +1,7 @@
 services:
   keycloak:
-    image: quay.io/keycloak/keycloak
+    build:
+      context: .
     container_name: keycloak
     environment:
       KEYCLOAK_ADMIN: admin
@@ -10,6 +11,12 @@ services:
     volumes:
       - ./realm-export.json:/opt/keycloak/data/import/realm-export.json
     command: start-dev --import-realm
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/realms/odds"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
     networks:
       - cfo
 networks:
