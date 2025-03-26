@@ -21,6 +21,13 @@ export const initKeycloak = async () => {
   return keycloak;
 };
 
+export const hasRequiredGroup = (kc: any): boolean => {
+  const groups = kc.tokenParsed?.groups || [];
+  return groups.some(
+    (group: string) => group === "/cfo" || group.endsWith("/cfo")
+  );
+};
+
 export const login = async () => {
   const kc = await initKeycloak();
   return kc.login({
@@ -28,4 +35,11 @@ export const login = async () => {
   });
 };
 
-export default { initKeycloak, login };
+export const logout = async () => {
+  const kc = await initKeycloak();
+  await kc.logout({
+    redirectUri: window.location.origin,
+  });
+};
+
+export default { initKeycloak, login, logout, hasRequiredGroup };

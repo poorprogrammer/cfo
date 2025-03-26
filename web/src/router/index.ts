@@ -19,7 +19,11 @@ import {
   RouteLocationNormalized,
   RouteRecordRaw,
 } from "vue-router";
-import { initKeycloak, login } from "@/services/KeycloakService";
+import {
+  initKeycloak,
+  login,
+  hasRequiredGroup,
+} from "@/services/KeycloakService";
 
 const isAuthenticated = async (
   to: RouteLocationNormalized,
@@ -29,7 +33,14 @@ const isAuthenticated = async (
   try {
     const kc = await initKeycloak();
     if (kc.authenticated) {
-      next();
+      if (hasRequiredGroup(kc)) {
+        next();
+      } else {
+        console.error("User does not have required permissions");
+        await kc.logout({
+          redirectUri: window.location.origin,
+        });
+      }
     } else {
       await login();
     }
