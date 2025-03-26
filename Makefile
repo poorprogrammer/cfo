@@ -34,8 +34,7 @@ load-data:
 
 # Run end-to-end tests in development environment
 e2e-cucumber: load-data dev
-	cd e2e && DEV=true npm run test:cucumber || true
-	$(MAKE) stop
+	cd e2e && DEV=true npm run test:cucumber
 
 	
 	
