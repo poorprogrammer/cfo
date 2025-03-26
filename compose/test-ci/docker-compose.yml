@@ -81,12 +81,8 @@ services:
       - cfo
 
   e2e_cucumber:
-    build:
-      context: ../../e2e
+    extends: e2e
     command: npm run test:cucumber
-    depends_on:
-      - web
-    networks:
-      - cfo
+
 networks:
   cfo:
