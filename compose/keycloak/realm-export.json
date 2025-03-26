@@ -469,7 +469,7 @@
       "disableableCredentialTypes": [],
       "requiredActions": [],
       "notBefore": 0,
-      "groups": []
+      "groups": ["/cfo"]
     }
   ],
   "scopeMappings": [
