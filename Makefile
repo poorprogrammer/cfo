@@ -10,7 +10,7 @@ install:
 
 # Start API in development mode (in background)
 dev-api: install
-	cd api && ./scripts/start_api_with_test_fixture &
+	cd api && bun tests/fixtures/loadData.js && bun src/server.js &
 
 # Start web in development mode
 dev-web: install keycloak
