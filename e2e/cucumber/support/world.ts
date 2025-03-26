@@ -5,7 +5,8 @@ import BillingArchivePage from "../../tests/web/pages/BillingArchivePage";
 import * as config from "../../playwright.config.js";
 import { ViewDocumentPage } from "../../tests/web/pages/ViewDocumentPage";
 import DuplicateReceiptPage from "../../tests/web/pages/DuplicateReceiptPage";
-import { deleteInvoice, deleteQuotation, deleteInvoiceReceipt } from "./cleanup"; // ✅ Import cleanup functions
+import { deleteInvoice, deleteQuotation, deleteInvoiceReceipt, deleteReceipt } from "./cleanup"; // ✅ Import cleanup functions
+
 
 class CustomWorld extends World {
   browser!: Browser;
@@ -19,6 +20,8 @@ class CustomWorld extends World {
   invoicesToCleanup: string[] = [];
   invoiceReceiptsToCleanup: string[] = [];
   quotationsToCleanup: string[] = [];
+  receiptsToCleanup: string[] = [];
+
 
   async launchBrowser() {
     this.browser = await chromium.launch();
@@ -40,6 +43,9 @@ class CustomWorld extends World {
     }
     for (const quotation of this.quotationsToCleanup) {
       await deleteQuotation(quotation, this);
+    }
+    for (const receipts of this.receiptsToCleanup) {
+      await deleteReceipt(receipts, this);
     }
   }
 }

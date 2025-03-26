@@ -86,15 +86,6 @@ Then(
     const viewReceiptPage = await editPage.save();
     await viewReceiptPage.containsDocumentNumber(receiptNumber);
     await viewReceiptPage.containsText(expectedAmount);
-  }
-);
-
-Then(
-  "I cleanup documents with receipt {string}",
-  async function (this: CustomWorld, receipt: string) {
-    await this.invoiceArchivePage.visit(2020);
-    await this.invoiceArchivePage.containsDocument(receipt);
-    await this.invoiceArchivePage.delete(receipt);
-    await this.invoiceArchivePage.shouldNotContainDocument(receipt);
+    this.receiptsToCleanup.push(receiptNumber);
   }
 );

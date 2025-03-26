@@ -20,7 +20,7 @@ export async function deleteInvoice(invoice: string, customWorld: CustomWorld) {
 }
 
 /**
- * ลบใบเสร็จรับเงิน (Receipt)
+ * ลบใบเสร็จรับเงิน (ReceiptForInvoice)
  * @param receipt หมายเลขใบเสร็จรับเงิน
  * @param customWorld world object ที่เก็บ browser และ context
  */
@@ -61,3 +61,19 @@ export async function deleteQuotation(
 }
 
 
+/**
+ * ลบใบเสร็จรับเงิน (Receipt)
+ * @param receipt หมายเลขใบเสร็จรับเงิน
+ * @param customWorld world object ที่เก็บ browser และ context
+ */
+export async function deleteReceipt(receipt: string, customWorld: CustomWorld) {
+  try {
+    await customWorld.invoiceArchivePage.visit(2020);
+    await customWorld.invoiceArchivePage.containsDocument(receipt);
+    console.log(`🗑️ Deleting receipt: ${receipt}`);
+    await customWorld.invoiceArchivePage.delete(receipt);
+    await customWorld.invoiceArchivePage.shouldNotContainDocument(receipt);
+  } catch (error) {
+    console.warn(`⚠️ Receipt ${receipt} not found, skipping delete.`);
+  }
+}
