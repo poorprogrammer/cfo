@@ -1,11 +1,13 @@
 import { Given, Then, When } from "@cucumber/cucumber";
 import { CustomWorld } from "../support/world";
+import { LoginPage } from "../../tests/web/pages/LoginPage";
 
 Given("I am a guest user", async function (this: CustomWorld) {
   await this.launchBrowser();
 });
 
 Given("I am an authenticated user", async function (this: CustomWorld) {
+  this.loginPage = new LoginPage(this.page);
   await this.loginPage.goto();
   await this.loginPage.login();
 });
