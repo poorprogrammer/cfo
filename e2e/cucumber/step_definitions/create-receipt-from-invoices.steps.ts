@@ -1,8 +1,10 @@
 import { Given, When, Then } from "@cucumber/cucumber";
 import { CustomWorld } from "../support/world";
 import BillingArchivePage from "../../tests/web/pages/BillingArchivePage";
+import { LoginPage } from "../../tests/web/pages/LoginPage";
 
 Given("I am logged in", async function (this: CustomWorld) {
+  this.loginPage = new LoginPage(this.page);
   await this.loginPage.goto();
   this.invoiceArchivePage = await this.loginPage.login();
 });

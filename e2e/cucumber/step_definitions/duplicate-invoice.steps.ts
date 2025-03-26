@@ -1,6 +1,5 @@
 import { Given, Then, When } from "@cucumber/cucumber";
 import { CustomWorld } from "../support/world";
-import BillingArchivePage from "../../tests/web/pages/BillingArchivePage";
 
 Given(
   "I duplicate invoice {string} to {string} with date {string} and items:",
