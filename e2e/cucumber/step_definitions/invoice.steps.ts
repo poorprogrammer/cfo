@@ -33,7 +33,7 @@ When("I go back to the invoice list", async function (this: CustomWorld) {
 Then(
   "I should be redirected to the login page",
   async function (this: CustomWorld) {
-    await this.page.waitForURL(/login/);
+    await this.page.waitForSelector("text=Sign in to your account");
   }
 );
 
