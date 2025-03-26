@@ -24,7 +24,7 @@ export async function deleteInvoice(invoice: string, customWorld: CustomWorld) {
  * @param receipt หมายเลขใบเสร็จรับเงิน
  * @param customWorld world object ที่เก็บ browser และ context
  */
-export async function deleteReceipt(receipt: string, customWorld: CustomWorld) {
+export async function deleteInvoiceReceipt(receipt: string, customWorld: CustomWorld) {
   try {
     const receiptArchivePage = new BillingArchivePage(
       customWorld.page,
@@ -59,3 +59,5 @@ export async function deleteQuotation(
     console.warn(`⚠️ Quotation ${quotation} not found, skipping delete.`);
   }
 }
+
+

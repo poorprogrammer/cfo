@@ -27,7 +27,7 @@ When(
     await this.viewReceiptPage.containsDocumentNumber(receiptNumber);
 
     this.invoicesToCleanup.push(invoice2);
-    this.receiptsToCleanup.push(receiptNumber);
+    this.invoiceReceiptsToCleanup.push(receiptNumber);
   }
 );
 
