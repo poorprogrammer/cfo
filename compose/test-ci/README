@@ -1,0 +1,12 @@
+### How to debug?
+
+```
+docker-compose run --rm e2e_debug
+```
+
+then on host machine:
+
+```
+cd e2e
+npx playwright show-report
+```

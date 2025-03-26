@@ -80,6 +80,10 @@ services:
     networks:
       - cfo
 
+  e2e_debug:
+    extends: e2e
+    command: npx playwright test
+
   e2e_cucumber:
     extends: e2e
     command: npm run test:cucumber
