@@ -1,5 +1,5 @@
 #!/bin/sh
 cd $(dirname "$0")
 cd ..
-node tests/fixtures/loadData.js
-node src/server.js
+bun tests/fixtures/loadData.js
+bun src/server.js

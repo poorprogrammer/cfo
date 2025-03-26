@@ -23,8 +23,7 @@ make e2e
 ## Run api server
 
 ```
-cd api
-npm run serve
+make dev-web
 ```
 
 ### Load initial fixtures
@@ -37,10 +36,8 @@ node tests/fixtures/loadData.js
 ## Run web server
 
 ```
-cd web
-npm run serve
+make dev-web
 ```
-
 
 
 ## Production configuration 

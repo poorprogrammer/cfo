@@ -1,4 +1,4 @@
-.PHONY: dev dev-api dev-web install e2e e2e-ci test-web e2e-cucumber
+.PHONY: dev dev-api dev-web install e2e e2e-ci test-web e2e-cucumber keycloak
 
 # Default target
 dev: dev-api dev-web
@@ -9,11 +9,11 @@ install:
 	cd web && bun install
 
 # Start API in development mode (in background)
-dev-api:
-	cd api && bun run serve &
+dev-api: install
+	cd api && ./scripts/start_api_with_test_fixture &
 
 # Start web in development mode
-dev-web:
+dev-web: install keycloak
 	cd web && bun run serve
 
 # Stop all development servers
@@ -43,3 +43,6 @@ test-web:
 
 test-web-ci:
 	cd web && npm run test:coverage
+
+keycloak:
+	cd compose/keycloak && docker-compose up -d
