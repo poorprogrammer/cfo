@@ -75,6 +75,8 @@ services:
         condition: service_healthy
       api_proxy:
         condition: service_started
+      keycloak_proxy:
+        condition: service_started
     networks:
       - cfo
 
