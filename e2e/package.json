@@ -12,7 +12,7 @@
   },
   "scripts": {
     "test": "DEV=true npx playwright test",
-    "test:cucumber": "cucumber-js test"
+    "test:cucumber": "cucumber-js test  --exit"
   },
   "dependencies": {
     "ts-node": "^10.9.2"
