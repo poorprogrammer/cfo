@@ -6,7 +6,35 @@ Design model สะท้อนการออกแบบของระบบ 
 
 ใน Billing Document 1 ใบ จะมีหลาย ๆ รายการ (LineItems) ซึ่ง LineItem มี 4 ประเภท คือ
 
-![LineItem Types](https://public-odds.obs.ap-southeast-2.myhuaweicloud.com/cfo/LineItemTypes.png)
+```mermaid
+classDiagram
+  note "Design model"
+
+  class BillingDocument
+
+  class LineItem {
+    <<abstract>>
+    name
+    value
+    +getTotal()
+  }
+
+  class PricedLineItem {
+    amount
+    price
+  }
+
+  class TotalLineItem
+  class TaxLineItem
+  class GrandTotalLineItem
+
+  BillingDocument *--> LineItem
+  PricedLineItem --|> LineItem
+  TotalLineItem --|> LineItem
+  TaxLineItem --|> LineItem
+  GrandTotalLineItem --|> LineItem
+
+```
 
 - Priced : Item ที่มีราคาต่อหน่วย
 - Total : รวมค่าสินค้า / บริการจากทุก PricedLineItem ใน Billing Document นั้นๆ
@@ -16,6 +44,29 @@ Design model สะท้อนการออกแบบของระบบ 
 ## การคำนวณ Total
 
 
-![Total](https://public-odds.obs.ap-southeast-2.myhuaweicloud.com/cfo/Total.png)
+```mermaid
+classDiagram
+direction LR
+    class BillingDocument {
+	    +getCurrentValueWithCurrency()
+    }
+
+    class LineItem {
+	    name
+	    value
+	    +getTotal()
+    }
+
+    class TotalLineItem {
+    }
+
+	<<abstract>> LineItem
+
+    BillingDocument *--> LineItem
+    TotalLineItem --|> LineItem
+    TotalLineItem ..> BillingDocument
+
+	note "Design model"
+```
 
 การคำนวณ total ของใบแจ้งหนี้ ต้องเปลี่ยน real time ตามจำนวน LineItem ที่เพิ่มลดทันที และสะท้อน currency ที่เลือกใน Billing Document ด้วย ทำให้ LineItem ต้องมี dependency กับ Billing Document ด้วย
