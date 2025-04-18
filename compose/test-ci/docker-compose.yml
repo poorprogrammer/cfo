@@ -86,7 +86,7 @@ services:
 
   e2e_cucumber:
     extends: e2e
-    command: npm run test:cucumber
+    command: npm run test:cucumber --exit
 
 networks:
   cfo:
